@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Course Introduction</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Source Sans 3',sans-serif;background:#f0f4f8;color:#1a2332;line-height:1.7}
+
+/* ── HERO ── */
+.hero{background:linear-gradient(135deg,#1d4ed8 0%,#2563eb 55%,#3b82f6 100%);padding:44px 32px 40px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-80px;right:-80px;width:320px;height:320px;border-radius:50%;background:rgba(255,255,255,0.05)}
+.hero::after{content:'';position:absolute;bottom:-60px;left:-20px;width:380px;height:380px;border-radius:50%;background:rgba(255,255,255,0.04)}
+.hero-flag{font-size:52px;margin-bottom:16px;display:block;position:relative;z-index:1}
+.hero-title{font-family:'Lora',serif;font-size:34px;font-weight:700;color:#fff;line-height:1.2;margin-bottom:14px;position:relative;z-index:1}
+.hero-title span{color:#fbbf24}
+.hero-sub{font-family:'Source Sans 3',sans-serif;font-size:16px;color:rgba(255,255,255,0.88);line-height:1.8;max-width:600px;margin:0 auto;position:relative;z-index:1}
+
+/* ── BODY ── */
+.body{padding:36px 32px 48px;max-width:800px;margin:0 auto;display:flex;flex-direction:column;gap:32px}
+
+/* ── OPENING ── */
+.opening{background:#fff;border-radius:14px;padding:28px 30px;border:1.5px solid #e2e8f0;box-shadow:0 2px 10px rgba(0,0,0,0.05)}
+.opening-title{font-family:'Lora',serif;font-size:22px;font-weight:700;color:#1e3a5f;margin-bottom:14px;line-height:1.3}
+.opening-text{font-family:'Source Sans 3',sans-serif;font-size:15px;color:#334155;line-height:1.9}
+.opening-text p{margin-bottom:14px}
+.opening-text p:last-child{margin-bottom:0}
+.opening-text strong{font-weight:600;color:#1e3a5f}
+
+/* ── DIVIDER ── */
+.divider{height:1.5px;background:linear-gradient(to right,#bfdbfe,transparent)}
+
+/* ── WHY THIS MATTERS ── */
+.why-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.why-card{background:#fff;border:1.5px solid #e2e8f0;border-radius:12px;padding:20px 18px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,0.04);transition:border-color .2s}
+.why-card:hover{border-color:#2563eb}
+.why-icon{font-size:32px;margin-bottom:10px}
+.why-title{font-family:'Lora',serif;font-size:16px;font-weight:600;color:#1e3a5f;margin-bottom:6px}
+.why-text{font-family:'Source Sans 3',sans-serif;font-size:13px;color:#64748b;line-height:1.6}
+
+/* ── PROMISE SECTION ── */
+.promise{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:1.5px solid #93c5fd;border-radius:14px;padding:28px 30px}
+.promise-title{font-family:'Lora',serif;font-size:20px;font-weight:700;color:#1e3a5f;margin-bottom:16px}
+.promise-list{display:flex;flex-direction:column;gap:10px}
+.promise-row{display:flex;gap:13px;align-items:flex-start}
+.pr-icon{width:28px;height:28px;border-radius:7px;background:#2563eb;color:#fff;font-size:13px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.pr-text{font-family:'Source Sans 3',sans-serif;font-size:14px;color:#1e3a5f;line-height:1.65}
+.pr-text strong{font-weight:600}
+
+/* ── WHO IS THIS FOR ── */
+.who{background:#fff;border-radius:14px;padding:28px 30px;border:1.5px solid #e2e8f0;box-shadow:0 2px 10px rgba(0,0,0,0.05)}
+.who-title{font-family:'Lora',serif;font-size:20px;font-weight:700;color:#1e3a5f;margin-bottom:16px}
+.who-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.who-card{display:flex;gap:11px;align-items:flex-start;padding:12px 14px;border-radius:10px;background:#f8faff;border:1.5px solid #e2e8f0}
+.wc-icon{font-size:20px;flex-shrink:0;margin-top:1px}
+.wc-text{font-family:'Source Sans 3',sans-serif;font-size:13px;color:#334155;line-height:1.6}
+.wc-text strong{font-weight:600;color:#1e3a5f}
+
+/* ── FACTS STRIP ── */
+.facts-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.fact-card{background:linear-gradient(135deg,#1d4ed8,#2563eb);border-radius:12px;padding:16px 14px;text-align:center}
+.fact-val{font-family:'Lora',serif;font-size:24px;font-weight:700;color:#fff;margin-bottom:3px}
+.fact-label{font-family:'Source Sans 3',sans-serif;font-size:11px;color:rgba(255,255,255,0.78);line-height:1.4}
+
+/* ── SOURCE NOTE ── */
+.source{background:#fff;border-radius:12px;padding:18px 22px;border:1.5px solid #e2e8f0;display:flex;gap:14px;align-items:flex-start}
+.src-icon{font-size:24px;flex-shrink:0;margin-top:2px}
+.src-text{font-family:'Source Sans 3',sans-serif;font-size:14px;color:#334155;line-height:1.7}
+.src-text strong{font-weight:600;color:#1e3a5f}
+
+/* ── CLOSING CALLOUT ── */
+.closing{background:linear-gradient(135deg,#1d4ed8,#2563eb);border-radius:14px;padding:34px 32px;text-align:center;position:relative;overflow:hidden}
+.closing::before{content:'🍁';font-size:130px;position:absolute;right:-10px;top:-20px;opacity:0.07;line-height:1}
+.closing-title{font-family:'Lora',serif;font-size:24px;font-weight:700;color:#fff;margin-bottom:12px;position:relative;z-index:1}
+.closing-text{font-family:'Source Sans 3',sans-serif;font-size:15px;color:rgba(255,255,255,0.88);line-height:1.8;max-width:520px;margin:0 auto;position:relative;z-index:1}
+.closing-text strong{color:#fbbf24;font-weight:600}
+
+@media(max-width:600px){
+  .hero-title{font-size:26px}
+  .body{padding:20px}
+  .why-grid{grid-template-columns:1fr}
+  .who-grid{grid-template-columns:1fr}
+  .facts-strip{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <span class="hero-flag">🍁</span>
+  <div class="hero-title">Your Canadian citizenship<br>is <span>closer than you think.</span></div>
+  <div class="hero-sub">This course gives you everything you need to walk into your citizenship test with confidence — and walk out with a passing score. The knowledge is here. The path is clear. All you have to do is begin.</div>
+</div>
+
+<div class="body">
+
+  <!-- OPENING MESSAGE -->
+  <div class="opening">
+    <div class="opening-title">This moment matters more than you know.</div>
+    <div class="opening-text">
+      <p>You have already done something extraordinary. You left the familiar, built a new life in a new country, learned the language, navigated the systems, and worked hard — year after year — to make Canada your home. And now, here you are: one test away from making it official.</p>
+      <p>The Canadian citizenship knowledge test is not a barrier. It is an <strong>invitation</strong> — a chance to show that you know the country you have chosen to call home. And the truth is, after living in Canada, you probably already know more than you think.</p>
+      <p>This course is designed to take what you already know, fill in the gaps, and sharpen everything into the confident, precise knowledge you need to <strong>pass on your first attempt.</strong> It is clear, focused, and built entirely around the real citizenship test — nothing unnecessary, nothing missing.</p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- WHY THIS MATTERS -->
+  <div>
+    <div style="font-family:'Lora',serif;font-size:22px;font-weight:700;color:#1e3a5f;margin-bottom:16px;border-left:4px solid #2563eb;padding-left:14px">Why Canadian citizenship is worth every bit of effort</div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">🗳️</div>
+        <div class="why-title">Your voice matters</div>
+        <div class="why-text">As a citizen you can vote in every election — federal, provincial, and municipal. Your voice helps shape the country you live in.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🌍</div>
+        <div class="why-title">A passport that opens doors</div>
+        <div class="why-text">The Canadian passport is one of the most powerful travel documents in the world — access to over 180 countries without a visa.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🛡️</div>
+        <div class="why-title">Security and belonging</div>
+        <div class="why-text">Citizenship means permanent belonging. No renewal requirements, no conditions — Canada is yours completely and officially, forever.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">👨‍👩‍👧</div>
+        <div class="why-title">Your children's future</div>
+        <div class="why-text">Your citizenship passes to your children. You are not just building your own future — you are securing theirs too.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">💼</div>
+        <div class="why-title">More opportunities</div>
+        <div class="why-text">Many government jobs, security clearances, and leadership roles require Canadian citizenship. Open every door — not just most of them.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🤝</div>
+        <div class="why-title">Full belonging</div>
+        <div class="why-text">Citizenship is a formal declaration that Canada is home. It is recognition, pride, and the deepest kind of belonging there is.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- WHAT THIS COURSE PROMISES -->
+  <div class="promise">
+    <div class="promise-title">What this course promises you</div>
+    <div class="promise-list">
+      <div class="promise-row"><div class="pr-icon">📖</div><div class="pr-text"><strong>Every topic on the real test — covered completely.</strong> This course is built entirely from Discover Canada, the official IRCC citizenship guide. Nothing guessed, nothing assumed — only exam-valid content.</div></div>
+      <div class="promise-row"><div class="pr-icon">🎯</div><div class="pr-text"><strong>Clarity over complexity.</strong> Every lesson is written in plain, clear English — no legal jargon, no confusing language. If you can read this, you can understand this course.</div></div>
+      <div class="promise-row"><div class="pr-icon">📝</div><div class="pr-text"><strong>375+ practice questions — all exam style.</strong> Every quiz question is written in the same format as the real test, with four options and a full explanation for every answer — right or wrong.</div></div>
+      <div class="promise-row"><div class="pr-icon">🏆</div><div class="pr-text"><strong>Three full mock exams in real test conditions.</strong> Before you sit the real test, you will have already done it three times — with a timer, 20 questions, and an instant pass/fail result.</div></div>
+      <div class="promise-row"><div class="pr-icon">💡</div><div class="pr-text"><strong>Smart study tools built in.</strong> Key Facts boxes in every lesson highlight exactly what to memorize. Orange highlight boxes flag the most commonly confused facts on the real exam.</div></div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- WHO IS THIS FOR -->
+  <div class="who">
+    <div class="who-title">This course is for you if...</div>
+    <div class="who-grid">
+      <div class="who-card"><div class="wc-icon">🌱</div><div class="wc-text"><strong>You are preparing for your first citizenship test</strong> and want to be fully ready — not just mostly ready.</div></div>
+      <div class="who-card"><div class="wc-icon">🔄</div><div class="wc-text"><strong>You have taken the test before</strong> and want to strengthen your knowledge before trying again.</div></div>
+      <div class="who-card"><div class="wc-icon">📅</div><div class="wc-text"><strong>You have a test date coming up</strong> and need a focused, efficient way to prepare without wasting time.</div></div>
+      <div class="who-card"><div class="wc-icon">🧠</div><div class="wc-text"><strong>You know some of it already</strong> but want to make sure you have not missed any important facts or details.</div></div>
+      <div class="who-card"><div class="wc-icon">👨‍👩‍👧‍👦</div><div class="wc-text"><strong>You are helping a family member prepare</strong> and want a structured course you can work through together.</div></div>
+      <div class="who-card"><div class="wc-icon">🌎</div><div class="wc-text"><strong>You are new to Canada's history and government</strong> and want to build a real understanding — not just memorize answers.</div></div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- FACTS STRIP -->
+  <div>
+    <div style="font-family:'Lora',serif;font-size:22px;font-weight:700;color:#1e3a5f;margin-bottom:14px;border-left:4px solid #2563eb;padding-left:14px">What is inside this course</div>
+    <div class="facts-strip">
+      <div class="fact-card"><div class="fact-val">5</div><div class="fact-label">Complete modules covering every real test topic</div></div>
+      <div class="fact-card"><div class="fact-val">15</div><div class="fact-label">In-depth lessons sourced from Discover Canada</div></div>
+      <div class="fact-card"><div class="fact-val">375+</div><div class="fact-label">Practice questions with full explanations</div></div>
+      <div class="fact-card"><div class="fact-val">3</div><div class="fact-label">Full timed mock exams in real test format</div></div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- SOURCE NOTE -->
+  <div class="source">
+    <div class="src-icon">🏛️</div>
+    <div class="src-text"><strong>100% sourced from the official IRCC guide.</strong> Every lesson, every quiz question, and every key fact in this course is drawn directly from <em>Discover Canada: The Rights and Responsibilities of Citizenship</em> — the official Government of Canada publication that the citizenship test is based on. There is no guesswork here. Everything you learn in this course is exam-valid and government-approved content.</div>
+  </div>
+
+  <!-- CLOSING -->
+  <div class="closing">
+    <div class="closing-title">Your citizenship journey ends here — with a pass.</div>
+    <div class="closing-text">You did not come this far to stop short. You have built a life in Canada — now it is time to make it <strong>completely, officially, permanently yours.</strong><br><br>Start the Course Orientation, work through the modules, and take the mock exams. By the time you sit the real test, you will not be hoping to pass. You will <strong>know</strong> you will pass.<br><br>Let's do this. 🍁</div>
+  </div>
+
+</div>
+</body>
+</html>
