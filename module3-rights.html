@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 3 — Rights & Responsibilities</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Source Sans 3',sans-serif;background:#f0f4f8;color:#1a2332;line-height:1.7}
+
+.tabs{display:flex;background:#fff;border-bottom:2px solid #e2e8f0;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,0.06)}
+.tab{flex:1;padding:14px 8px;font-size:13px;font-weight:500;font-family:'Source Sans 3',sans-serif;background:none;border:none;cursor:pointer;color:#64748b;border-bottom:3px solid transparent;margin-bottom:-2px;transition:all .2s}
+.tab:hover{color:#1d4ed8;background:#f8faff}
+.tab.on{color:#1d4ed8;border-bottom-color:#1d4ed8;background:#f8faff}
+.panel{display:none}
+.panel.on{display:block}
+
+.mod-header{background:linear-gradient(135deg,#1d4ed8 0%,#2563eb 50%,#3b82f6 100%);padding:32px 28px 28px;position:relative;overflow:hidden}
+.mod-header::before{content:'';position:absolute;top:-40px;right:-40px;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,0.06)}
+.mod-header::after{content:'';position:absolute;bottom:-20px;left:20%;width:300px;height:300px;border-radius:50%;background:rgba(255,255,255,0.04)}
+.mod-eyebrow{font-family:'Source Sans 3',sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.75);font-weight:600;margin-bottom:8px}
+.mod-title{font-family:'Lora',serif;font-size:32px;font-weight:700;color:#fff;margin-bottom:12px;line-height:1.2;position:relative;z-index:1}
+.mod-chips{display:flex;gap:12px;flex-wrap:wrap;position:relative;z-index:1}
+.chip{font-family:'Source Sans 3',sans-serif;font-size:12px;color:rgba(255,255,255,0.8);background:rgba(255,255,255,0.12);padding:4px 10px;border-radius:20px}
+
+.lesson-body{padding:24px 28px;display:flex;flex-direction:column;gap:20px;max-width:800px}
+.lnav{display:flex;gap:6px;flex-wrap:wrap}
+.lbtn{font-family:'Source Sans 3',sans-serif;font-size:12px;font-weight:500;padding:6px 14px;border-radius:20px;border:1.5px solid #cbd5e1;background:#fff;color:#64748b;cursor:pointer;transition:all .2s}
+.lbtn:hover,.lbtn.on{background:#2563eb;color:#fff;border-color:#2563eb;box-shadow:0 2px 8px rgba(37,99,235,0.3)}
+.ls{display:none;flex-direction:column;gap:18px}
+.ls.on{display:flex}
+
+.obj{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:1.5px solid #bfdbfe;border-radius:10px;padding:16px 18px}
+.obj-lbl{font-family:'Source Sans 3',sans-serif;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#1d4ed8;margin-bottom:10px}
+.obj-row{display:flex;gap:8px;font-family:'Source Sans 3',sans-serif;font-size:14px;color:#1e3a5f;line-height:1.55;margin-bottom:6px;align-items:flex-start}
+.obj-row:last-child{margin-bottom:0}
+.obj-ck{color:#2563eb;font-size:13px;flex-shrink:0;margin-top:1px;font-weight:700}
+
+.lt{font-family:'Lora',serif;font-size:20px;font-weight:600;color:#1e3a5f;border-left:4px solid #2563eb;padding-left:14px;line-height:1.3}
+.lp{font-family:'Source Sans 3',sans-serif;font-size:15px;line-height:1.85;color:#334155}
+.lp p{margin-bottom:13px}
+.lp p:last-child{margin-bottom:0}
+.lp strong{font-weight:600;color:#1e3a5f}
+
+.hbox{background:#fff7ed;border:1.5px solid #fed7aa;border-left:4px solid #f97316;border-radius:0 10px 10px 0;padding:14px 16px;font-family:'Source Sans 3',sans-serif;font-size:14px;line-height:1.65;color:#431407}
+.hbox strong{font-weight:600;color:#c2410c}
+
+/* Rights grid */
+.rights-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.right-card{border-radius:9px;padding:13px 14px;border:1.5px solid #bfdbfe;background:#eff6ff}
+.rc-cat{font-family:'Source Sans 3',sans-serif;font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:#1d4ed8;margin-bottom:5px}
+.rc-items{font-family:'Source Sans 3',sans-serif;font-size:13px;color:#1e3a5f;line-height:1.55}
+
+/* Duties list */
+.duties-list{display:flex;flex-direction:column;gap:8px}
+.duty-row{display:flex;gap:12px;align-items:flex-start;padding:11px 14px;border-radius:9px;background:#fff;border:1.5px solid #e2e8f0;box-shadow:0 1px 4px rgba(0,0,0,0.04)}
+.duty-icon{font-size:18px;flex-shrink:0;margin-top:1px}
+.duty-text{font-family:'Source Sans 3',sans-serif;font-size:13px;color:#334155;line-height:1.55}
+.duty-text strong{font-weight:600;color:#1e3a5f}
+
+.kf{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:1.5px solid #93c5fd;border-radius:12px;padding:18px 20px}
+.kf-lbl{font-family:'Source Sans 3',sans-serif;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#1d4ed8;margin-bottom:12px}
+.kf-row{display:flex;gap:10px;align-items:flex-start;margin-bottom:8px;font-family:'Source Sans 3',sans-serif;font-size:14px;line-height:1.55;color:#1e3a5f}
+.kf-row:last-child{margin-bottom:0}
+.kf-dot{width:7px;height:7px;border-radius:50%;background:#2563eb;flex-shrink:0;margin-top:5px}
+.kf-row strong{font-weight:600}
+
+.recap{background:linear-gradient(135deg,#1d4ed8,#2563eb);border-radius:10px;padding:18px 20px}
+.recap-lbl{font-family:'Source Sans 3',sans-serif;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:8px}
+.recap-t{font-family:'Source Sans 3',sans-serif;font-size:14px;color:rgba(255,255,255,0.92);line-height:1.75}
+
+.nxt{display:flex;justify-content:flex-end}
+.nbtn{background:#2563eb;color:#fff;border:none;border-radius:8px;padding:10px 22px;font-family:'Source Sans 3',sans-serif;font-size:14px;font-weight:500;cursor:pointer;transition:all .2s;box-shadow:0 2px 8px rgba(37,99,235,0.3)}
+.nbtn:hover{background:#1d4ed8;transform:translateY(-1px)}
+
+.quiz-body{padding:20px 28px;display:flex;flex-direction:column;gap:16px;max-width:800px}
+.quiz-hdr{background:linear-gradient(135deg,#1d4ed8,#2563eb);border-radius:10px;padding:16px 20px}
+.qh-eye{font-family:'Source Sans 3',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:4px}
+.qh-title{font-family:'Lora',serif;font-size:18px;font-weight:600;color:#fff}
+.qh-sub{font-family:'Source Sans 3',sans-serif;font-size:12px;color:rgba(255,255,255,0.7);margin-top:4px}
+
+.qpm{display:flex;justify-content:space-between;font-family:'Source Sans 3',sans-serif;font-size:13px;color:#64748b}
+.qpb{height:5px;background:#e2e8f0;border-radius:3px;overflow:hidden;margin-top:4px}
+.qpf{height:100%;background:linear-gradient(90deg,#2563eb,#3b82f6);border-radius:3px;transition:width .4s}
+
+.qcard{background:#fff;border:1.5px solid #e2e8f0;border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:14px;box-shadow:0 2px 8px rgba(0,0,0,0.04)}
+.qnum{font-family:'Source Sans 3',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#2563eb;font-weight:600}
+.qtxt{font-family:'Lora',serif;font-size:16px;font-weight:500;line-height:1.55;color:#1e3a5f}
+.qopts{display:flex;flex-direction:column;gap:8px}
+.qopt{padding:11px 15px;border-radius:8px;border:1.5px solid #e2e8f0;background:#f8faff;font-family:'Source Sans 3',sans-serif;font-size:14px;color:#334155;cursor:pointer;text-align:left;width:100%;transition:all .15s}
+.qopt:hover:not(:disabled){border-color:#2563eb;background:#eff6ff}
+.qopt.ok{background:#f0fdf4;border-color:#16a34a;color:#14532d}
+.qopt.ng{background:#fef2f2;border-color:#dc2626;color:#7f1d1d}
+.qopt.sh{background:#f0fdf4;border-color:#16a34a;color:#14532d}
+.qexp{font-family:'Source Sans 3',sans-serif;font-size:13px;line-height:1.65;padding:11px 13px;border-radius:8px;background:#f8faff;border:1px solid #bfdbfe;color:#334155;display:none}
+.qexp.on{display:block}
+
+.qnav{display:flex;justify-content:space-between;align-items:center}
+.qbtn{padding:9px 18px;border-radius:8px;font-family:'Source Sans 3',sans-serif;font-size:13px;font-weight:500;cursor:pointer;border:1.5px solid #cbd5e1;background:#fff;color:#475569;transition:all .15s}
+.qbtn:hover{border-color:#2563eb;color:#2563eb}
+.qbtn.pr{background:#2563eb;color:#fff;border-color:#2563eb;box-shadow:0 2px 8px rgba(37,99,235,0.3)}
+.qbtn.pr:hover{background:#1d4ed8}
+
+.sc{background:linear-gradient(135deg,#1d4ed8,#2563eb);border-radius:12px;padding:28px;text-align:center;display:none;flex-direction:column;gap:10px;align-items:center}
+.sc.on{display:flex}
+.scn{font-family:'Lora',serif;font-size:52px;font-weight:700;color:#fff}
+.scl{font-family:'Source Sans 3',sans-serif;font-size:14px;color:rgba(255,255,255,0.7)}
+.scm{font-family:'Source Sans 3',sans-serif;font-size:15px;font-weight:500;color:#fbbf24}
+.sca{display:flex;gap:10px;margin-top:8px;flex-wrap:wrap;justify-content:center}
+.sbtn{padding:9px 18px;border-radius:8px;font-family:'Source Sans 3',sans-serif;font-size:13px;font-weight:500;cursor:pointer;border:1.5px solid rgba(255,255,255,0.3);background:rgba(255,255,255,0.1);color:#fff;transition:all .15s}
+.sbtn:hover{background:rgba(255,255,255,0.2)}
+.sbtn.pr{background:#fff;color:#2563eb;border-color:#fff}
+
+@media(max-width:600px){
+  .mod-title{font-size:24px}
+  .lesson-body,.quiz-body{padding:16px}
+  .tab{font-size:11px;padding:12px 4px}
+  .rights-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<div class="tabs">
+  <button class="tab on" onclick="ST('l',this)">📖 Lessons</button>
+  <button class="tab" onclick="ST('a',this)">📝 Quiz A</button>
+  <button class="tab" onclick="ST('b',this)">📝 Quiz B</button>
+  <button class="tab" onclick="ST('c',this)">📝 Quiz C</button>
+</div>
+
+<!-- ══════ LESSONS ══════ -->
+<div id="pl" class="panel on">
+<div class="mod-header">
+  <div class="mod-eyebrow">Module 3 of 5</div>
+  <div class="mod-title">Rights & Responsibilities</div>
+  <div class="mod-chips">
+    <span class="chip">📖 5 lessons</span>
+    <span class="chip">⏱ ~50 min</span>
+    <span class="chip">🍁 Source: Discover Canada (IRCC)</span>
+    <span class="chip">🔴 Heavily tested</span>
+  </div>
+</div>
+<div class="lesson-body">
+  <div class="lnav">
+    <button class="lbtn on" onclick="SL(0,this)">1. The Charter</button>
+    <button class="lbtn" onclick="SL(1,this)">2. Fundamental freedoms</button>
+    <button class="lbtn" onclick="SL(2,this)">3. Democratic rights</button>
+    <button class="lbtn" onclick="SL(3,this)">4. Legal rights</button>
+    <button class="lbtn" onclick="SL(4,this)">5. Citizen duties</button>
+  </div>
+
+  <!-- LESSON 1 -->
+  <div class="ls on" id="l0">
+    <div class="obj">
+      <div class="obj-lbl">Learning Objectives</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Understand what the Charter is and when it was created</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Know the difference between the Charter and the Bill of Rights</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Know which governments the Charter applies to</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Understand why the Charter is the foundation of Canadian democracy</div>
+    </div>
+    <div class="lt">The Canadian Charter of Rights and Freedoms</div>
+    <div class="lp">
+      <p>The <strong>Canadian Charter of Rights and Freedoms</strong> is one of the most important documents in Canadian history. It was enshrined in the <strong>Constitution Act of 1982</strong>, signed by Prime Minister <strong>Pierre Elliott Trudeau</strong> and proclaimed by <strong>Queen Elizabeth II</strong> on April 17, 1982.</p>
+      <p>The Charter <strong>guarantees the rights and freedoms</strong> of every person in Canada. It applies to all governments — federal, provincial, and territorial — and ensures that no law or government action can violate the rights it protects. If a law conflicts with the Charter, the courts can <strong>strike it down</strong>.</p>
+      <p>Before the Charter, Canada had the <strong>Canadian Bill of Rights (1960)</strong>, introduced by Prime Minister <strong>John Diefenbaker</strong>. However, the Bill of Rights was only a federal statute — it did not apply to provincial laws and could be overridden by Parliament. The Charter changed this by embedding rights directly into the Constitution.</p>
+      <p>The Charter protects rights for <strong>everyone in Canada</strong> — not just citizens. Permanent residents, visitors, and others are also protected by most Charter rights.</p>
+    </div>
+    <div class="hbox"><strong>Exam distinction:</strong> The <strong>Canadian Bill of Rights (1960)</strong> — PM Diefenbaker — was a federal statute with limited power. The <strong>Charter (1982)</strong> — PM Trudeau — is part of the Constitution with supreme authority over all governments. Know both dates and both Prime Ministers.</div>
+    <div class="kf">
+      <div class="kf-lbl">📌 Key Facts — Memorize These</div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Charter enshrined in the <strong>Constitution Act of 1982</strong> — April 17, 1982</div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Signed by PM <strong>Pierre Elliott Trudeau</strong>, proclaimed by <strong>Queen Elizabeth II</strong></div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div><strong>Canadian Bill of Rights (1960)</strong> — PM <strong>John Diefenbaker</strong> — federal statute only</div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Charter applies to <strong>all governments</strong> — federal, provincial, territorial</div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Charter protects <strong>everyone in Canada</strong> — not just citizens</div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Courts can <strong>strike down laws</strong> that violate the Charter</div></div>
+    </div>
+    <div class="recap"><div class="recap-lbl">Lesson Recap</div><div class="recap-t">The Canadian Charter of Rights and Freedoms (1982) is the supreme protector of individual rights in Canada. It built on the 1960 Bill of Rights but went far further — embedding freedoms into the Constitution itself, applying to all governments, and giving courts the power to strike down laws that violate it. Next: the four fundamental freedoms the Charter guarantees every person in Canada.</div></div>
+    <div class="nxt"><button class="nbtn" onclick="SL(1,document.querySelectorAll('.lbtn')[1])">Next Lesson →</button></div>
+  </div>
+
+  <!-- LESSON 2 -->
+  <div class="ls" id="l1">
+    <div class="obj">
+      <div class="obj-lbl">Learning Objectives</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Name and explain the four fundamental freedoms</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Understand equality rights and who they protect</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Know Canada's language rights under the Charter</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Understand that rights can have reasonable limits</div>
+    </div>
+    <div class="lt">The four fundamental freedoms</div>
+    <div class="lp"><p>The Charter guarantees <strong>four fundamental freedoms</strong> to everyone in Canada — the bedrock of a free and democratic society:</p></div>
+    <div class="rights-grid">
+      <div class="right-card">
+        <div class="rc-cat">Freedom of conscience & religion</div>
+        <div class="rc-items">The right to hold any religious or moral belief, or none at all. No one can be forced to follow a particular religion.</div>
+      </div>
+      <div class="right-card">
+        <div class="rc-cat">Freedom of thought, belief & expression</div>
+        <div class="rc-items">The right to think freely and express yourself — includes freedom of the press and other media.</div>
+      </div>
+      <div class="right-card">
+        <div class="rc-cat">Freedom of peaceful assembly</div>
+        <div class="rc-items">The right to gather peacefully with others — for protests, demonstrations, or community events.</div>
+      </div>
+      <div class="right-card">
+        <div class="rc-cat">Freedom of association</div>
+        <div class="rc-items">The right to join groups, organizations, political parties, or unions of your choosing.</div>
+      </div>
+    </div>
+    <div class="lp">
+      <p><strong>Equality Rights</strong> (Section 15) state that every individual is equal before the law, without discrimination based on <strong>race, national or ethnic origin, colour, religion, sex, age, or mental or physical disability</strong>.</p>
+      <p><strong>Language Rights</strong> ensure that both <strong>English and French</strong> are official languages. Anyone in Canada has the right to communicate with the federal government in either official language.</p>
+      <p>Rights are <strong>not absolute</strong>. Section 1 — the <strong>"reasonable limits clause"</strong> — allows rights to be limited by law if the limitation is reasonable and justified in a free and democratic society.</p>
+    </div>
+    <div class="hbox"><strong>Memorize all four:</strong> (1) conscience and religion (2) thought, belief and expression (3) peaceful assembly (4) association. The exam may ask you to identify all four fundamental freedoms.</div>
+    <div class="kf">
+      <div class="kf-lbl">📌 Key Facts — Memorize These</div>
+      <div class="kf-row"><div class="kf-dot"></div><div><strong>4 fundamental freedoms:</strong> conscience/religion · thought/expression · peaceful assembly · association</div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div><strong>Equality Rights (s.15):</strong> no discrimination based on race, religion, sex, age, disability</div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div><strong>Two official languages:</strong> English and French — right to use either with federal government</div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div><strong>Reasonable limits clause (s.1):</strong> rights can be limited if justifiable in a free society</div></div>
+    </div>
+    <div class="recap"><div class="recap-lbl">Lesson Recap</div><div class="recap-t">The Charter's four fundamental freedoms — conscience, expression, assembly, and association — form the core of a free Canadian life. Equality rights ensure no one is discriminated against. Language rights preserve Canada's bilingual identity. Rights are strong but not absolute — the reasonable limits clause keeps them balanced with the needs of society. Next: democratic rights.</div></div>
+    <div class="nxt"><button class="nbtn" onclick="SL(2,document.querySelectorAll('.lbtn')[2])">Next Lesson →</button></div>
+  </div>
+
+  <!-- LESSON 3 -->
+  <div class="ls" id="l2">
+    <div class="obj">
+      <div class="obj-lbl">Learning Objectives</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Understand democratic rights and who holds them</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Know mobility rights — the right to live and work anywhere in Canada</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Understand the historic expansion of voting rights</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Know which rights belong only to citizens vs everyone in Canada</div>
+    </div>
+    <div class="lt">Democratic rights</div>
+    <div class="lp">
+      <p><strong>Democratic rights</strong> allow Canadians to participate in governing themselves. Every <strong>Canadian citizen</strong> has the right to <strong>vote</strong> in elections and to <strong>stand as a candidate</strong> in federal and provincial elections.</p>
+      <p>These rights are exclusive to <strong>Canadian citizens</strong>. Permanent residents — despite paying taxes and contributing to society — do not have the right to vote in federal or provincial elections. This is one of the key reasons many permanent residents choose to apply for citizenship.</p>
+      <p>Democratic rights also guarantee that <strong>Parliament must sit at least once every 12 months</strong> and that a federal election must be held at least every <strong>five years</strong>.</p>
+    </div>
+    <div class="lt">Mobility rights</div>
+    <div class="lp">
+      <p><strong>Mobility rights</strong> (Section 6) guarantee that every Canadian citizen has the right to <strong>enter, remain in, and leave Canada</strong>. Every citizen and permanent resident also has the right to <strong>live and work in any province or territory</strong> of their choosing.</p>
+      <p>Canada has expanded democratic participation over time. <strong>Women</strong> gained the federal vote in <strong>1918</strong>. <strong>Japanese Canadians</strong> regained voting rights in <strong>1948</strong>. <strong>Indigenous peoples</strong> gained full voting rights in <strong>1960</strong> under PM <strong>John Diefenbaker</strong>.</p>
+    </div>
+    <div class="hbox"><strong>Citizens only vs everyone:</strong> <strong>Democratic rights</strong> (voting, running for office) belong to <strong>Canadian citizens only</strong>. Most other Charter rights — fundamental freedoms, legal rights, equality rights — apply to <strong>everyone in Canada</strong> including permanent residents and visitors.</div>
+    <div class="kf">
+      <div class="kf-lbl">📌 Key Facts — Memorize These</div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Voting and running for office: <strong>Canadian citizens only</strong></div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Parliament must sit <strong>at least once every 12 months</strong></div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div">Federal election at least every <strong>5 years</strong></div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div><strong>Mobility rights:</strong> right to enter, remain in, leave Canada; live/work in any province</div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Women gained federal vote: <strong>1918</strong> · Japanese Canadians: <strong>1948</strong> · Indigenous peoples: <strong>1960</strong></div></div>
+    </div>
+    <div class="recap"><div class="recap-lbl">Lesson Recap</div><div class="recap-t">Democratic rights are the rights that make Canada self-governing — the right to vote, to run for office, and to have regular elections. Only citizens hold these rights. Mobility rights ensure all Canadians can freely move and work across the country. Canada has gradually expanded voting rights to all citizens, with Indigenous peoples gaining full rights in 1960. Next: the legal rights that protect you in the justice system.</div></div>
+    <div class="nxt"><button class="nbtn" onclick="SL(3,document.querySelectorAll('.lbtn')[3])">Next Lesson →</button></div>
+  </div>
+
+  <!-- LESSON 4 -->
+  <div class="ls" id="l3">
+    <div class="obj">
+      <div class="obj-lbl">Learning Objectives</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Understand the legal rights guaranteed by the Charter</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Know your rights if you are arrested or detained</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Understand presumption of innocence and habeas corpus</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Know the principle of the rule of law in Canada</div>
+    </div>
+    <div class="lt">Legal rights — your rights in the justice system</div>
+    <div class="lp">
+      <p><strong>Legal rights</strong> protect Canadians when interacting with the police, courts, and justice system. These rights apply to <strong>everyone in Canada</strong> — citizens, permanent residents, and visitors alike.</p>
+      <p><strong>The right to life, liberty and security of the person</strong> — no one can be arbitrarily imprisoned or have their physical safety threatened by the government.</p>
+      <p><strong>The right not to be subjected to unreasonable search or seizure</strong> — police cannot search your home, car, or belongings without proper legal authority (usually a warrant).</p>
+      <p><strong>The right not to be arbitrarily detained or imprisoned</strong> — you cannot be held without a legal reason.</p>
+      <p><strong>The right to be informed of the reason for arrest</strong> — if arrested, you must be told why.</p>
+      <p><strong>The right to retain and instruct a lawyer without delay</strong> — if arrested, you have the right to speak to a lawyer immediately. <strong>Legal Aid</strong> is available if you cannot afford one.</p>
+      <p><strong>Habeas corpus</strong> — the right to challenge your detention before a court. If held unlawfully, you can ask a court to order your release.</p>
+      <p><strong>Presumption of innocence</strong> — you are <strong>innocent until proven guilty</strong> in a court of law. The burden of proof lies with the prosecution.</p>
+      <p>Underpinning all of this is the <strong>rule of law</strong> — everyone in Canada, including the government, must obey the law. No one is above the law.</p>
+    </div>
+    <div class="hbox"><strong>Remember:</strong> <strong>Presumption of innocence</strong> — innocent until <em>proven</em> guilty. <strong>Habeas corpus</strong> — the right to challenge unlawful detention in court. <strong>Legal Aid</strong> — free legal help if you cannot afford a lawyer. All three appear frequently on the citizenship test.</div>
+    <div class="kf">
+      <div class="kf-lbl">📌 Key Facts — Memorize These</div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Legal rights apply to <strong>everyone in Canada</strong> — not just citizens</div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div><strong>Presumption of innocence</strong> — innocent until proven guilty in court</div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Right to <strong>retain a lawyer without delay</strong> upon arrest; <strong>Legal Aid</strong> available</div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div><strong>Habeas corpus</strong> — right to challenge unlawful detention before a court</div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Police need <strong>legal authority (warrant)</strong> to search — no unreasonable search</div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div><strong>Rule of law</strong> — everyone must obey the law, including the government</div></div>
+    </div>
+    <div class="recap"><div class="recap-lbl">Lesson Recap</div><div class="recap-t">Legal rights ensure Canada's justice system is fair and humane. From the right to a lawyer upon arrest, to presumption of innocence, to habeas corpus — these protections apply to every person on Canadian soil. The rule of law ties it all together: no one, not even the government, is above it. In our final lesson, we look at the responsibilities that come with living in Canada.</div></div>
+    <div class="nxt"><button class="nbtn" onclick="SL(4,document.querySelectorAll('.lbtn')[4])">Next Lesson →</button></div>
+  </div>
+
+  <!-- LESSON 5 -->
+  <div class="ls" id="l4">
+    <div class="obj">
+      <div class="obj-lbl">Learning Objectives</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Understand the responsibilities that come with Canadian citizenship</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Know the key civic duties expected of every Canadian</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Understand what it means to be an active, engaged citizen</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Know the key phrase from Discover Canada about rights and responsibilities</div>
+    </div>
+    <div class="lt">Responsibilities of Canadian citizenship</div>
+    <div class="lp">
+      <p>Rights and responsibilities go hand in hand. <em>Discover Canada</em> states: <strong>"In Canada, rights come with responsibilities."</strong> Being a Canadian citizen means enjoying extraordinary rights and freedoms — but also accepting important <strong>responsibilities</strong> to your community and country.</p>
+    </div>
+    <div class="duties-list">
+      <div class="duty-row"><div class="duty-icon">🗳️</div><div class="duty-text"><strong>Vote in elections.</strong> Voting is both a right and a civic responsibility in federal, provincial, and municipal elections. Many countries do not have free elections — in Canada, your vote matters.</div></div>
+      <div class="duty-row"><div class="duty-icon">⚖️</div><div class="duty-text"><strong>Obey Canada's laws.</strong> Every person in Canada must follow federal, provincial, and municipal laws. Ignorance of the law is not a legal defence.</div></div>
+      <div class="duty-row"><div class="duty-icon">👥</div><div class="duty-text"><strong>Serve on a jury if called.</strong> Jury duty is a fundamental civic responsibility. Juries ensure peers — not just judges — decide legal outcomes.</div></div>
+      <div class="duty-row"><div class="duty-icon">🛡️</div><div class="duty-text"><strong>Defend Canada if needed.</strong> Canadians have a responsibility to help defend Canada. Canada's military is <strong>all-volunteer</strong> — service is not mandatory in peacetime.</div></div>
+      <div class="duty-row"><div class="duty-icon">🧾</div><div class="duty-text"><strong>File your taxes.</strong> Paying taxes is a legal obligation. Tax revenues fund health care, education, roads, and social programs all Canadians benefit from.</div></div>
+      <div class="duty-row"><div class="duty-icon">🤝</div><div class="duty-text"><strong>Respect the rights of others.</strong> Your rights end where another person's rights begin. Every Canadian must respect the rights, freedoms, and dignity of others.</div></div>
+      <div class="duty-row"><div class="duty-icon">🍁</div><div class="duty-text"><strong>Eliminate discrimination.</strong> Every Canadian has a responsibility to treat all people with dignity and respect — regardless of background, belief, or identity.</div></div>
+    </div>
+    <div class="kf">
+      <div class="kf-lbl">📌 Key Facts — Memorize These</div>
+      <div class="kf-row"><div class="kf-dot"></div><div><strong>"In Canada, rights come with responsibilities"</strong> — Discover Canada</div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Key duties: <strong>vote · obey laws · jury duty · defend Canada · pay taxes · respect others · eliminate discrimination</strong></div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div><strong>Jury duty</strong> — a civic responsibility for eligible Canadian citizens</div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Canada's military is <strong>all-volunteer</strong> — peacetime service is not mandatory</div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div><strong>Filing taxes</strong> is a legal obligation — funds public services for all Canadians</div></div>
+    </div>
+    <div class="recap"><div class="recap-lbl">Module Recap</div><div class="recap-t">Module 3 has given you the full picture of rights and responsibilities in Canada. From the Charter's fundamental freedoms and equality rights, to your democratic right to vote, to the legal protections that safeguard you in the justice system — and the civic duties every Canadian owes to their community. Rights and responsibilities are two sides of the same coin. Canada asks you to exercise both with pride. You are ready for the quizzes!</div></div>
+    <div class="nxt"><button class="nbtn" onclick="ST('a',document.querySelectorAll('.tab')[1])">Take Quiz A →</button></div>
+  </div>
+</div>
+</div>
+
+<!-- ══════ QUIZ A ══════ -->
+<div id="pa" class="panel">
+<div class="quiz-body">
+  <div class="quiz-hdr">
+    <div class="qh-eye">Module 3 · Quiz Set A — The Charter & Freedoms</div>
+    <div class="qh-title">Rights, Freedoms & the Constitution</div>
+    <div class="qh-sub">15 questions · Direct recall · Exam format</div>
+  </div>
+  <div><div class="qpm"><span id="cA">Question 1 of 15</span><span id="sA">Score: 0</span></div><div class="qpb"><div class="qpf" id="fA" style="width:6.6%"></div></div></div>
+  <div class="qcard" id="dA"><div class="qnum" id="nA"></div><div class="qtxt" id="tA"></div><div class="qopts" id="oA"></div><div class="qexp" id="eA"></div></div>
+  <div class="qnav"><button class="qbtn" id="pvA" onclick="PQ('A')" style="visibility:hidden">← Prev</button><button class="qbtn pr" id="nxA" onclick="NQ('A')">Next →</button></div>
+  <div class="sc" id="scA"><div class="scn" id="snA"></div><div class="scl">Quiz Set A complete</div><div class="scm" id="smA"></div><div class="sca"><button class="sbtn" onclick="RS('A')">Retake</button><button class="sbtn pr" onclick="ST('b',document.querySelectorAll('.tab')[2])">Try Set B →</button></div></div>
+</div>
+</div>
+
+<!-- ══════ QUIZ B ══════ -->
+<div id="pb" class="panel">
+<div class="quiz-body">
+  <div class="quiz-hdr">
+    <div class="qh-eye">Module 3 · Quiz Set B — Application</div>
+    <div class="qh-title">Democratic, Mobility & Legal Rights</div>
+    <div class="qh-sub">15 questions · Scenario & application style</div>
+  </div>
+  <div><div class="qpm"><span id="cB">Question 1 of 15</span><span id="sB">Score: 0</span></div><div class="qpb"><div class="qpf" id="fB" style="width:6.6%"></div></div></div>
+  <div class="qcard" id="dB"><div class="qnum" id="nB"></div><div class="qtxt" id="tB"></div><div class="qopts" id="oB"></div><div class="qexp" id="eB"></div></div>
+  <div class="qnav"><button class="qbtn" id="pvB" onclick="PQ('B')" style="visibility:hidden">← Prev</button><button class="qbtn pr" id="nxB" onclick="NQ('B')">Next →</button></div>
+  <div class="sc" id="scB"><div class="scn" id="snB"></div><div class="scl">Quiz Set B complete</div><div class="scm" id="smB"></div><div class="sca"><button class="sbtn" onclick="RS('B')">Retake</button><button class="sbtn pr" onclick="ST('c',document.querySelectorAll('.tab')[3])">Try Set C →</button></div></div>
+</div>
+</div>
+
+<!-- ══════ QUIZ C ══════ -->
+<div id="pc" class="panel">
+<div class="quiz-body">
+  <div class="quiz-hdr">
+    <div class="qh-eye">Module 3 · Quiz Set C — Challenge</div>
+    <div class="qh-title">Responsibilities, Rule of Law & Charter Nuances</div>
+    <div class="qh-sub">15 questions · Harder distractors · Exam-level difficulty</div>
+  </div>
+  <div><div class="qpm"><span id="cC">Question 1 of 15</span><span id="sC">Score: 0</span></div><div class="qpb"><div class="qpf" id="fC" style="width:6.6%"></div></div></div>
+  <div class="qcard" id="dC"><div class="qnum" id="nC"></div><div class="qtxt" id="tC"></div><div class="qopts" id="oC"></div><div class="qexp" id="eC"></div></div>
+  <div class="qnav"><button class="qbtn" id="pvC" onclick="PQ('C')" style="visibility:hidden">← Prev</button><button class="qbtn pr" id="nxC" onclick="NQ('C')">Next →</button></div>
+  <div class="sc" id="scC"><div class="scn" id="snC"></div><div class="scl">Quiz Set C complete</div><div class="scm" id="smC"></div><div class="sca"><button class="sbtn" onclick="RS('C')">Retake</button><button class="sbtn pr" onclick="alert('Great work! Proceed to Module 4 in your course.')">Continue →</button></div></div>
+</div>
+</div>
+
+<script>
+const QD={
+A:[
+  {q:"In what year was the Canadian Charter of Rights and Freedoms enshrined in the Constitution?",o:["1960","1975","1982","1985"],c:2,e:"The Charter was enshrined in the Constitution Act of 1982, proclaimed on April 17, 1982 by Queen Elizabeth II and signed by PM Pierre Elliott Trudeau."},
+  {q:"Which Prime Minister introduced the Canadian Bill of Rights in 1960?",o:["Lester B. Pearson","Pierre Elliott Trudeau","John Diefenbaker","Sir Wilfrid Laurier"],c:2,e:"PM John Diefenbaker introduced the Canadian Bill of Rights in 1960 — Canada's first federal human rights legislation, though it had limited power compared to the 1982 Charter."},
+  {q:"How many fundamental freedoms are guaranteed by the Canadian Charter?",o:["2","3","4","5"],c:2,e:"The Charter guarantees 4 fundamental freedoms: freedom of conscience and religion; freedom of thought, belief and expression; freedom of peaceful assembly; and freedom of association."},
+  {q:"Which of the following is NOT one of the four fundamental freedoms in the Charter?",o:["Freedom of religion","Freedom of peaceful assembly","Freedom of the press","Freedom from taxation"],c:3,e:"Freedom from taxation is not a Charter right. The four fundamental freedoms are: conscience/religion, thought/belief/expression (includes press freedom), peaceful assembly, and association."},
+  {q:"What does Section 15 of the Charter protect?",o:["The right to vote","Freedom of religion","Equality rights — protection from discrimination","The right to a lawyer upon arrest"],c:2,e:"Section 15 guarantees equality rights — every individual is equal before the law without discrimination based on race, national/ethnic origin, colour, religion, sex, age, or mental/physical disability."},
+  {q:"What are the two official languages of Canada under the Charter?",o:["English and Inuktitut","English and French","French and Michif","English and Spanish"],c:1,e:"English and French are Canada's two official languages, enshrined in both the Charter and the Official Languages Act of 1969."},
+  {q:"What does the 'reasonable limits clause' (Section 1) allow?",o:["The government to suspend the Charter in wartime","Rights to be limited by law if reasonable and justified in a free society","The PM to override any Charter right","Provinces to opt out of the Charter"],c:1,e:"Section 1 allows rights to be limited by law — but only if the limitation is demonstrably justified in a free and democratic society. Courts test this standard rigorously."},
+  {q:"Who proclaimed the Constitution Act of 1982?",o:["PM Pierre Elliott Trudeau","Governor General Edward Schreyer","Queen Elizabeth II","Chief Justice Bora Laskin"],c:2,e:"The Constitution Act of 1982 was proclaimed by Queen Elizabeth II on April 17, 1982. PM Pierre Trudeau signed it."},
+  {q:"Does the Charter apply to private individuals and companies?",o:["Yes, to all people and organizations","Yes, but only large corporations","No, it applies to governments and government actions only","Only to federally regulated businesses"],c:2,e:"The Charter applies to governments and government actions — not to private individuals or companies. Private disputes are governed by human rights legislation."},
+  {q:"What is the key difference between the Bill of Rights (1960) and the Charter (1982)?",o:["The Bill was more powerful","The Charter applies only to Quebec","The Bill was only a federal statute; the Charter is part of the Constitution","The Bill included more rights than the Charter"],c:2,e:"The Bill of Rights (1960) was a federal statute — limited power, didn't apply to provincial laws. The Charter (1982) is part of the Constitution — applies to all governments, supreme authority."},
+  {q:"Freedom of expression under the Charter includes which of the following?",o:["The right to say anything without consequences","Freedom of the press and other media","The right to spread false information","Freedom from being criticized"],c:1,e:"Freedom of thought, belief, opinion and expression includes freedom of the press and other media. Expression is not absolute — hate speech can be restricted under the reasonable limits clause."},
+  {q:"To which levels of government does the Charter apply?",o:["Federal government only","Federal and provincial only","All levels — federal, provincial, and territorial","Municipal governments only"],c:2,e:"The Charter applies to all levels of government — federal, provincial, and territorial. No government can pass laws violating Charter rights without justification under Section 1."},
+  {q:"What is 'freedom of association' under the Charter?",o:["The right to associate only with your own culture","The right to join groups, organizations, political parties, or unions","The right to remain anonymous in public","The right to associate with foreign governments"],c:1,e:"Freedom of association guarantees the right to join groups, organizations, political parties, labour unions, or any other lawful associations."},
+  {q:"Can permanent residents vote in Canadian federal elections?",o:["Yes, after 3 years of residency","Yes, if they are taxpayers","No, voting is exclusive to Canadian citizens","Yes, in municipal elections only"],c:2,e:"Voting in federal and provincial elections is reserved exclusively for Canadian citizens. This is one of the key motivators for permanent residents to apply for citizenship."},
+  {q:"What is 'freedom of peaceful assembly'?",o:["The right to carry weapons in public","The right to gather peacefully with others — for protests, demonstrations, or events","The right to form your own government","The right to refuse to pay taxes"],c:1,e:"Freedom of peaceful assembly guarantees the right to gather peacefully with others — including for protests and demonstrations. This is fundamental to democratic participation."}
+],
+B:[
+  {q:"Maria is a permanent resident of Canada. She wants to vote in the next federal election. Is she eligible?",o:["Yes, after living in Canada for 3 years","Yes, in federal and provincial elections","No, only Canadian citizens can vote federally","Yes, if she files taxes in Canada"],c:2,e:"Voting in federal elections is exclusive to Canadian citizens. Permanent residents cannot vote federally or provincially regardless of how long they have lived in Canada."},
+  {q:"Ahmed is arrested by police. What right does he have immediately upon arrest?",o:["The right to remain silent only","The right to retain and instruct a lawyer without delay","The right to be released within 24 hours","The right to have his family notified first"],c:1,e:"Upon arrest, you have the right to retain and instruct a lawyer without delay. This is a key legal right under the Charter. Legal Aid is available if you cannot afford a lawyer."},
+  {q:"A Canadian citizen wants to move from Ontario to BC for work. Which right protects this?",o:["Equality rights","Democratic rights","Mobility rights","Fundamental freedoms"],c:2,e:"Mobility rights (Section 6) guarantee that every Canadian citizen and permanent resident has the right to live and work in any province or territory."},
+  {q:"What does 'presumption of innocence' mean in Canadian law?",o:["The accused is assumed guilty until they prove innocence","A person is innocent until proven guilty in court","The Crown must prove guilt without any evidence","All accused are automatically released on bail"],c:1,e:"Presumption of innocence means a person accused of a crime is considered innocent until the prosecution proves guilt beyond a reasonable doubt in court."},
+  {q:"A group of citizens wants to protest peacefully outside Parliament. Which Charter freedom protects this?",o:["Freedom of association","Freedom of the press","Freedom of peaceful assembly","Mobility rights"],c:2,e:"Freedom of peaceful assembly guarantees the right to gather peacefully — including for protests and demonstrations. It is one of the four fundamental freedoms."},
+  {q:"What is 'habeas corpus'?",o:["The right to a speedy trial","The right to challenge your detention before a court","The right to a jury of your peers","The right to confront your accuser"],c:1,e:"Habeas corpus is the right to challenge your detention before a court. If held unlawfully, you can ask a court to review and order your release."},
+  {q:"Which of the following is a responsibility — not a right — of Canadian citizens?",o:["Freedom of religion","The right to vote","Serving on a jury when called","The right to a lawyer upon arrest"],c:2,e:"Serving on a jury is a civic responsibility of eligible Canadian citizens, not a right. The right to vote, freedom of religion, and the right to a lawyer are all rights guaranteed by the Charter."},
+  {q:"In what year did Indigenous peoples gain full voting rights in Canada?",o:["1918","1945","1960","1982"],c:2,e:"Indigenous peoples gained full voting rights in 1960 under PM John Diefenbaker."},
+  {q:"What is the 'rule of law' in Canada?",o:["The government can make laws for certain groups only","Everyone in Canada, including the government, must obey the law","The PM has the final say on all legal matters","Laws only apply to permanent residents and citizens"],c:1,e:"The rule of law means everyone in Canada — including the government — must obey the law. No one is above the law. This is fundamental to Canadian democracy."},
+  {q:"Can the federal government pass a law that violates the Charter?",o:["Yes, if Parliament votes for it by majority","Yes, during a national emergency only","No, the Charter has supreme authority over all government laws","Yes, with approval of all provincial premiers"],c:2,e:"The Charter has supreme authority — it is part of the Constitution. Courts can strike down any government law that violates the Charter. Section 1 and Section 33 provide limited exceptions."},
+  {q:"What is the civic responsibility of filing taxes connected to?",o:["Renewing your permanent resident card","Funding public services like health care, education, and roads","Maintaining citizenship status","Applying for Employment Insurance"],c:1,e:"Filing taxes is a legal obligation. Tax revenue funds public services all Canadians benefit from — health care, education, roads, social programs, and national defence."},
+  {q:"How often must Parliament sit at minimum?",o:["Every 6 months","At least once every 12 months","At least once every 2 years","Whenever the PM decides"],c:1,e:"Democratic rights in the Charter guarantee that Parliament must sit at least once every 12 months, ensuring governments cannot govern without Parliamentary accountability."},
+  {q:"Which section of the Charter guarantees equality rights?",o:["Section 1","Section 6","Section 7","Section 15"],c:3,e:"Section 15 guarantees equality rights — protection from discrimination based on race, national origin, colour, religion, sex, age, or disability."},
+  {q:"What does it mean that Canada's military is 'all-volunteer'?",o:["All Canadians must serve at some point","Military service is not mandatory in peacetime","Only volunteers are paid; drafted soldiers serve for free","Foreign nationals can volunteer but citizens cannot"],c:1,e:"Canada's military is all-volunteer — military service is not mandatory in peacetime. Canadians who choose to serve do so voluntarily. Citizens still have a responsibility to defend Canada if needed."},
+  {q:"Which best describes the relationship between rights and responsibilities in Canada?",o:["Rights and responsibilities are completely separate","Rights are more important than responsibilities","In Canada, rights come with responsibilities — two sides of the same coin","Responsibilities only apply to citizens; rights apply to everyone"],c:2,e:"Discover Canada states 'In Canada, rights come with responsibilities.' Enjoying Charter rights comes with the expectation that you will fulfil civic responsibilities to your community and country."}
+],
+C:[
+  {q:"The Charter applies to government actions. What law governs discrimination by private employers?",o:["The Criminal Code of Canada","Human rights legislation (federal or provincial)","The Canadian Bill of Rights","The Official Languages Act"],c:1,e:"The Charter applies to governments, not private actors. Discrimination by private employers or landlords is addressed by federal or provincial human rights legislation."},
+  {q:"A provincial law is found to violate the Charter. What can the courts do?",o:["Refer it to the Governor General","Strike down the law or declare it of no force or effect","Require a national referendum","Nothing — provincial laws are not subject to the Charter"],c:1,e:"Courts have the power to strike down — declare invalid — any law that violates the Charter. This applies to federal, provincial, and territorial laws alike."},
+  {q:"What is the 'notwithstanding clause' (Section 33) of the Charter?",o:["The clause that allows rights to be limited if reasonable","The clause allowing Parliament or provincial legislatures to override certain Charter rights for up to 5 years","The clause protecting Indigenous rights","The clause guaranteeing bilingual education"],c:1,e:"Section 33 allows Parliament or a provincial legislature to override certain Charter rights for up to 5 years (renewable). It is a controversial but important part of Canada's constitutional framework."},
+  {q:"Which PM is most associated with the Charter of Rights and Freedoms?",o:["John Diefenbaker","Lester B. Pearson","Pierre Elliott Trudeau","Brian Mulroney"],c:2,e:"Pierre Elliott Trudeau is most associated with the Charter (1982). Diefenbaker is associated with the Bill of Rights (1960). Pearson is associated with the Maple Leaf flag (1965)."},
+  {q:"Why can Charter rights be limited under Section 1?",o:["The government always has the right to limit freedoms","Rights sometimes conflict and must be balanced in a free society","The PM has emergency powers","Rights only apply during peacetime"],c:1,e:"Section 1 recognizes that rights are not absolute. Sometimes they must be balanced against other rights or broader societal needs. Any limitation must be demonstrably justified in a free and democratic society."},
+  {q:"What unique right does a Canadian citizen have that a permanent resident does not?",o:["The right to a lawyer upon arrest","The right to live and work anywhere in Canada","The right to vote in federal elections and run for office","The right to be protected by the Charter"],c:2,e:"Voting and running for office are democratic rights exclusive to Canadian citizens. Both citizens and permanent residents have mobility rights. Both are protected by the Charter."},
+  {q:"How long can a notwithstanding clause override last before it must be renewed?",o:["1 year","3 years","5 years","10 years"],c:2,e:"A notwithstanding clause override lasts up to 5 years. After 5 years it expires automatically unless the legislature passes it again — a built-in sunset clause."},
+  {q:"What does 'freedom of conscience' protect?",o:["The right to remain silent when arrested","The right to hold any moral or religious belief, or none at all","The right to choose your political party","The right to education in your own language"],c:1,e:"Freedom of conscience and religion protects the right to hold any moral or religious belief — including the right to hold no religious belief (atheism or agnosticism)."},
+  {q:"Japanese Canadians had voting rights revoked during WWII. When were they restored?",o:["1945","1948","1960","1982"],c:1,e:"Japanese Canadians had voting rights revoked during WWII. They were restored in 1948 — over a decade before Indigenous peoples gained full voting rights in 1960."},
+  {q:"Which of the following is protected by equality rights under Section 15?",o:["The right to own property","Protection from discrimination based on age","The right to vote","The right to a free lawyer"],c:1,e:"Section 15 equality rights include protection from discrimination based on age — explicitly listed alongside race, religion, sex, national origin, and disability."},
+  {q:"What is Legal Aid in Canada?",o:["Government-funded legal advice for businesses","Free or subsidized legal services for those who cannot afford a lawyer","A program to train new lawyers","A service that assigns lawyers to all criminal cases automatically"],c:1,e:"Legal Aid provides free or subsidized legal services to people who cannot afford a lawyer. If arrested, you have the right to contact Legal Aid — ensuring access to justice for all."},
+  {q:"Which Charter right ensures you cannot be imprisoned without a legal reason?",o:["The right to equality","Freedom of association","The right not to be arbitrarily detained or imprisoned","The right to life and liberty only"],c:2,e:"Section 9 — the right not to be arbitrarily detained or imprisoned — means police cannot hold you without a legal reason. If detained without cause, you can challenge it through habeas corpus."},
+  {q:"What do minority language education rights protect?",o:["All children must be educated in English","French immersion is available but not a right","French-speaking Canadians outside Quebec and English-speaking Canadians in Quebec have the right to education in their own language where numbers warrant","Only the federal government can provide minority language education"],c:2,e:"Minority language education rights (Section 23) give French-speaking Canadians outside Quebec and English-speaking Canadians in Quebec the right to education in their own language where numbers justify it."},
+  {q:"What does it mean to 'eliminate discrimination' as a Canadian responsibility?",o:["Filing a complaint with the Human Rights Commission for others","Actively treating all people with dignity and speaking out against racism and prejudice","Ensuring all laws are applied equally by the government","Volunteering for multicultural organizations"],c:1,e:"Eliminating discrimination is a personal civic responsibility — treating every person with dignity regardless of background and actively speaking out against racism and prejudice in everyday life."},
+  {q:"The Charter was proclaimed on which date?",o:["July 1, 1867","November 11, 1918","April 17, 1982","October 27, 1995"],c:2,e:"The Charter was proclaimed on April 17, 1982, as part of the Constitution Act of 1982. This date is sometimes called Charter Day in Canada."}
+]};
+
+const ST2={A:{i:0,s:0,a:[]},B:{i:0,s:0,a:[]},C:{i:0,s:0,a:[]}};
+
+function RQ(k){
+  const d=QD[k],st=ST2[k],q=d[st.i];
+  document.getElementById('n'+k).textContent='Question '+(st.i+1);
+  document.getElementById('t'+k).textContent=q.q;
+  document.getElementById('c'+k).textContent='Question '+(st.i+1)+' of '+d.length;
+  document.getElementById('s'+k).textContent='Score: '+st.s;
+  document.getElementById('f'+k).style.width=((st.i+1)/d.length*100)+'%';
+  const ob=document.getElementById('o'+k);
+  ob.innerHTML='';
+  q.o.forEach((opt,i)=>{
+    const b=document.createElement('button');
+    b.className='qopt';b.textContent=opt;
+    if(st.a[st.i]!==undefined){
+      b.disabled=true;
+      if(i===q.c)b.classList.add('ok');
+      else if(i===st.a[st.i])b.classList.add('ng');
+    } else {b.onclick=()=>SA(k,i);}
+    ob.appendChild(b);
+  });
+  const ex=document.getElementById('e'+k);
+  if(st.a[st.i]!==undefined){ex.textContent='💡 '+q.e;ex.classList.add('on');}
+  else ex.classList.remove('on');
+  document.getElementById('pv'+k).style.visibility=st.i>0?'visible':'hidden';
+  const nb=document.getElementById('nx'+k);
+  nb.style.opacity=st.a[st.i]!==undefined?'1':'0.4';
+  if(st.i===d.length-1&&st.a[st.i]!==undefined){nb.textContent='See Results';nb.onclick=()=>SS(k);}
+  else{nb.textContent='Next →';nb.onclick=()=>NQ(k);}
+}
+
+function SA(k,i){
+  const st=ST2[k],q=QD[k][st.i];
+  if(st.a[st.i]!==undefined)return;
+  st.a[st.i]=i;
+  if(i===q.c)st.s++;
+  RQ(k);
+}
+
+function NQ(k){const st=ST2[k],d=QD[k];if(st.a[st.i]===undefined)return;if(st.i<d.length-1){st.i++;RQ(k);}else SS(k);}
+function PQ(k){if(ST2[k].i>0){ST2[k].i--;RQ(k);}}
+
+function SS(k){
+  document.getElementById('d'+k).style.display='none';
+  document.querySelector('#p'+k.toLowerCase()+' .qnav').style.display='none';
+  document.querySelector('#p'+k.toLowerCase()+' div:first-child').style.display='none';
+  const sc=document.getElementById('sc'+k);sc.classList.add('on');
+  const p=Math.round(ST2[k].s/QD[k].length*100);
+  document.getElementById('sn'+k).textContent=ST2[k].s+'/'+QD[k].length;
+  document.getElementById('sm'+k).textContent=p>=90?'Outstanding — fully ready!':p>=75?'Good pass — review missed ones.':p>=50?'Keep studying — revisit key facts.':'Review all lessons then retry.';
+}
+
+function RS(k){
+  ST2[k]={i:0,s:0,a:[]};
+  document.getElementById('d'+k).style.display='';
+  document.querySelector('#p'+k.toLowerCase()+' .qnav').style.display='';
+  document.querySelector('#p'+k.toLowerCase()+' div:first-child').style.display='';
+  document.getElementById('sc'+k).classList.remove('on');
+  RQ(k);
+}
+
+function SL(i,btn){
+  document.querySelectorAll('.ls').forEach(s=>s.classList.remove('on'));
+  document.querySelectorAll('.lbtn').forEach(b=>b.classList.remove('on'));
+  document.getElementById('l'+i).classList.add('on');
+  btn.classList.add('on');
+}
+
+function ST(id,btn){
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('on'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));
+  const map={l:'pl',a:'pa',b:'pb',c:'pc'};
+  document.getElementById(map[id]).classList.add('on');
+  btn.classList.add('on');
+  if(id==='a')RQ('A');
+  if(id==='b')RQ('B');
+  if(id==='c')RQ('C');
+}
+
+RQ('A');RQ('B');RQ('C');
+</script>
+</body>
+</html>
