@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 4 — Canadian Identity & Symbols</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Source Sans 3',sans-serif;background:#f0f4f8;color:#1a2332;line-height:1.7}
+
+.tabs{display:flex;background:#fff;border-bottom:2px solid #e2e8f0;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,0.06)}
+.tab{flex:1;padding:14px 8px;font-size:13px;font-weight:500;font-family:'Source Sans 3',sans-serif;background:none;border:none;cursor:pointer;color:#64748b;border-bottom:3px solid transparent;margin-bottom:-2px;transition:all .2s}
+.tab:hover{color:#1d4ed8;background:#f8faff}
+.tab.on{color:#1d4ed8;border-bottom-color:#1d4ed8;background:#f8faff}
+.panel{display:none}
+.panel.on{display:block}
+
+.mod-header{background:linear-gradient(135deg,#1d4ed8 0%,#2563eb 50%,#3b82f6 100%);padding:32px 28px 28px;position:relative;overflow:hidden}
+.mod-header::before{content:'';position:absolute;top:-40px;right:-40px;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,0.06)}
+.mod-header::after{content:'';position:absolute;bottom:-20px;left:20%;width:300px;height:300px;border-radius:50%;background:rgba(255,255,255,0.04)}
+.mod-eyebrow{font-family:'Source Sans 3',sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.75);font-weight:600;margin-bottom:8px}
+.mod-title{font-family:'Lora',serif;font-size:32px;font-weight:700;color:#fff;margin-bottom:12px;line-height:1.2;position:relative;z-index:1}
+.mod-chips{display:flex;gap:12px;flex-wrap:wrap;position:relative;z-index:1}
+.chip{font-family:'Source Sans 3',sans-serif;font-size:12px;color:rgba(255,255,255,0.8);background:rgba(255,255,255,0.12);padding:4px 10px;border-radius:20px}
+
+.lesson-body{padding:24px 28px;display:flex;flex-direction:column;gap:20px;max-width:800px}
+.lnav{display:flex;gap:6px;flex-wrap:wrap}
+.lbtn{font-family:'Source Sans 3',sans-serif;font-size:12px;font-weight:500;padding:6px 14px;border-radius:20px;border:1.5px solid #cbd5e1;background:#fff;color:#64748b;cursor:pointer;transition:all .2s}
+.lbtn:hover,.lbtn.on{background:#2563eb;color:#fff;border-color:#2563eb;box-shadow:0 2px 8px rgba(37,99,235,0.3)}
+.ls{display:none;flex-direction:column;gap:18px}
+.ls.on{display:flex}
+
+.obj{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:1.5px solid #bfdbfe;border-radius:10px;padding:16px 18px}
+.obj-lbl{font-family:'Source Sans 3',sans-serif;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#1d4ed8;margin-bottom:10px}
+.obj-row{display:flex;gap:8px;font-family:'Source Sans 3',sans-serif;font-size:14px;color:#1e3a5f;line-height:1.55;margin-bottom:6px;align-items:flex-start}
+.obj-row:last-child{margin-bottom:0}
+.obj-ck{color:#2563eb;font-size:13px;flex-shrink:0;margin-top:1px;font-weight:700}
+
+.lt{font-family:'Lora',serif;font-size:20px;font-weight:600;color:#1e3a5f;border-left:4px solid #2563eb;padding-left:14px;line-height:1.3}
+.lp{font-family:'Source Sans 3',sans-serif;font-size:15px;line-height:1.85;color:#334155}
+.lp p{margin-bottom:13px}
+.lp p:last-child{margin-bottom:0}
+.lp strong{font-weight:600;color:#1e3a5f}
+
+.hbox{background:#fff7ed;border:1.5px solid #fed7aa;border-left:4px solid #f97316;border-radius:0 10px 10px 0;padding:14px 16px;font-family:'Source Sans 3',sans-serif;font-size:14px;line-height:1.65;color:#431407}
+.hbox strong{font-weight:600;color:#c2410c}
+
+/* Symbols grid */
+.symbols-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.symbol-card{border-radius:9px;padding:13px 15px;border:1.5px solid #bfdbfe;background:#eff6ff}
+.sc-icon{font-size:24px;margin-bottom:6px}
+.sc-title{font-family:'Source Sans 3',sans-serif;font-size:13px;font-weight:600;color:#1d4ed8;margin-bottom:4px}
+.sc-desc{font-family:'Source Sans 3',sans-serif;font-size:12px;color:#1e3a5f;line-height:1.55}
+
+/* Values list */
+.values-list{display:flex;flex-direction:column;gap:8px}
+.value-row{display:flex;gap:12px;align-items:flex-start;padding:11px 14px;border-radius:9px;background:#fff;border:1.5px solid #e2e8f0;box-shadow:0 1px 4px rgba(0,0,0,0.04)}
+.value-icon{font-size:18px;flex-shrink:0;margin-top:1px}
+.value-text{font-family:'Source Sans 3',sans-serif;font-size:13px;color:#334155;line-height:1.55}
+.value-text strong{font-weight:600;color:#1e3a5f}
+
+.kf{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:1.5px solid #93c5fd;border-radius:12px;padding:18px 20px}
+.kf-lbl{font-family:'Source Sans 3',sans-serif;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#1d4ed8;margin-bottom:12px}
+.kf-row{display:flex;gap:10px;align-items:flex-start;margin-bottom:8px;font-family:'Source Sans 3',sans-serif;font-size:14px;line-height:1.55;color:#1e3a5f}
+.kf-row:last-child{margin-bottom:0}
+.kf-dot{width:7px;height:7px;border-radius:50%;background:#2563eb;flex-shrink:0;margin-top:5px}
+.kf-row strong{font-weight:600}
+
+.recap{background:linear-gradient(135deg,#1d4ed8,#2563eb);border-radius:10px;padding:18px 20px}
+.recap-lbl{font-family:'Source Sans 3',sans-serif;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:8px}
+.recap-t{font-family:'Source Sans 3',sans-serif;font-size:14px;color:rgba(255,255,255,0.92);line-height:1.75}
+
+.nxt{display:flex;justify-content:flex-end}
+.nbtn{background:#2563eb;color:#fff;border:none;border-radius:8px;padding:10px 22px;font-family:'Source Sans 3',sans-serif;font-size:14px;font-weight:500;cursor:pointer;transition:all .2s;box-shadow:0 2px 8px rgba(37,99,235,0.3)}
+.nbtn:hover{background:#1d4ed8;transform:translateY(-1px)}
+
+.quiz-body{padding:20px 28px;display:flex;flex-direction:column;gap:16px;max-width:800px}
+.quiz-hdr{background:linear-gradient(135deg,#1d4ed8,#2563eb);border-radius:10px;padding:16px 20px}
+.qh-eye{font-family:'Source Sans 3',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:4px}
+.qh-title{font-family:'Lora',serif;font-size:18px;font-weight:600;color:#fff}
+.qh-sub{font-family:'Source Sans 3',sans-serif;font-size:12px;color:rgba(255,255,255,0.7);margin-top:4px}
+
+.qpm{display:flex;justify-content:space-between;font-family:'Source Sans 3',sans-serif;font-size:13px;color:#64748b}
+.qpb{height:5px;background:#e2e8f0;border-radius:3px;overflow:hidden;margin-top:4px}
+.qpf{height:100%;background:linear-gradient(90deg,#2563eb,#3b82f6);border-radius:3px;transition:width .4s}
+
+.qcard{background:#fff;border:1.5px solid #e2e8f0;border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:14px;box-shadow:0 2px 8px rgba(0,0,0,0.04)}
+.qnum{font-family:'Source Sans 3',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#2563eb;font-weight:600}
+.qtxt{font-family:'Lora',serif;font-size:16px;font-weight:500;line-height:1.55;color:#1e3a5f}
+.qopts{display:flex;flex-direction:column;gap:8px}
+.qopt{padding:11px 15px;border-radius:8px;border:1.5px solid #e2e8f0;background:#f8faff;font-family:'Source Sans 3',sans-serif;font-size:14px;color:#334155;cursor:pointer;text-align:left;width:100%;transition:all .15s}
+.qopt:hover:not(:disabled){border-color:#2563eb;background:#eff6ff}
+.qopt.ok{background:#f0fdf4;border-color:#16a34a;color:#14532d}
+.qopt.ng{background:#fef2f2;border-color:#dc2626;color:#7f1d1d}
+.qopt.sh{background:#f0fdf4;border-color:#16a34a;color:#14532d}
+.qexp{font-family:'Source Sans 3',sans-serif;font-size:13px;line-height:1.65;padding:11px 13px;border-radius:8px;background:#f8faff;border:1px solid #bfdbfe;color:#334155;display:none}
+.qexp.on{display:block}
+
+.qnav{display:flex;justify-content:space-between;align-items:center}
+.qbtn{padding:9px 18px;border-radius:8px;font-family:'Source Sans 3',sans-serif;font-size:13px;font-weight:500;cursor:pointer;border:1.5px solid #cbd5e1;background:#fff;color:#475569;transition:all .15s}
+.qbtn:hover{border-color:#2563eb;color:#2563eb}
+.qbtn.pr{background:#2563eb;color:#fff;border-color:#2563eb;box-shadow:0 2px 8px rgba(37,99,235,0.3)}
+.qbtn.pr:hover{background:#1d4ed8}
+
+.sc{background:linear-gradient(135deg,#1d4ed8,#2563eb);border-radius:12px;padding:28px;text-align:center;display:none;flex-direction:column;gap:10px;align-items:center}
+.sc.on{display:flex}
+.scn{font-family:'Lora',serif;font-size:52px;font-weight:700;color:#fff}
+.scl{font-family:'Source Sans 3',sans-serif;font-size:14px;color:rgba(255,255,255,0.7)}
+.scm{font-family:'Source Sans 3',sans-serif;font-size:15px;font-weight:500;color:#fbbf24}
+.sca{display:flex;gap:10px;margin-top:8px;flex-wrap:wrap;justify-content:center}
+.sbtn{padding:9px 18px;border-radius:8px;font-family:'Source Sans 3',sans-serif;font-size:13px;font-weight:500;cursor:pointer;border:1.5px solid rgba(255,255,255,0.3);background:rgba(255,255,255,0.1);color:#fff;transition:all .15s}
+.sbtn:hover{background:rgba(255,255,255,0.2)}
+.sbtn.pr{background:#fff;color:#2563eb;border-color:#fff}
+
+@media(max-width:600px){
+  .mod-title{font-size:24px}
+  .lesson-body,.quiz-body{padding:16px}
+  .tab{font-size:11px;padding:12px 4px}
+  .symbols-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<div class="tabs">
+  <button class="tab on" onclick="ST('l',this)">📖 Lessons</button>
+  <button class="tab" onclick="ST('a',this)">📝 Quiz A</button>
+  <button class="tab" onclick="ST('b',this)">📝 Quiz B</button>
+  <button class="tab" onclick="ST('c',this)">📝 Quiz C</button>
+</div>
+
+<!-- ══════ LESSONS ══════ -->
+<div id="pl" class="panel on">
+<div class="mod-header">
+  <div class="mod-eyebrow">Module 4 of 5</div>
+  <div class="mod-title">Canadian Identity & Symbols</div>
+  <div class="mod-chips">
+    <span class="chip">📖 5 lessons</span>
+    <span class="chip">⏱ ~45 min</span>
+    <span class="chip">🍁 Source: Discover Canada (IRCC)</span>
+    <span class="chip">🔵 Moderately tested</span>
+  </div>
+</div>
+<div class="lesson-body">
+  <div class="lnav">
+    <button class="lbtn on" onclick="SL(0,this)">1. The Maple Leaf flag</button>
+    <button class="lbtn" onclick="SL(1,this)">2. Anthem & coat of arms</button>
+    <button class="lbtn" onclick="SL(2,this)">3. National symbols</button>
+    <button class="lbtn" onclick="SL(3,this)">4. Canadian values</button>
+    <button class="lbtn" onclick="SL(4,this)">5. Multiculturalism</button>
+  </div>
+
+  <!-- LESSON 1 -->
+  <div class="ls on" id="l0">
+    <div class="obj">
+      <div class="obj-lbl">Learning Objectives</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Know when and why Canada adopted the Maple Leaf flag</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Describe the design and colours of the Canadian flag</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Understand what the flag's colours and design represent</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Know which PM championed the new flag</div>
+    </div>
+    <div class="lt">The Canadian Flag — the Maple Leaf</div>
+    <div class="lp">
+      <p>Canada's iconic <strong>Maple Leaf flag</strong> was adopted on <strong>February 15, 1965</strong>, replacing the old Canadian Red Ensign which featured a British Union Jack. The new flag was championed by Prime Minister <strong>Lester B. Pearson</strong>, who believed Canada needed a distinct national symbol separate from British imagery.</p>
+      <p>The flag features a <strong>red maple leaf</strong> on a white background, with <strong>red borders on each side</strong>. The design is clean, simple, and unmistakably Canadian. The maple leaf has been a symbol of Canada since the 1700s and appears on the country's coat of arms, currency, and military insignia.</p>
+      <p>The colours of the Canadian flag — <strong>red and white</strong> — were proclaimed Canada's official colours by <strong>King George V</strong> in <strong>1921</strong>. Red represents England; white represents France — reflecting Canada's two founding European cultures.</p>
+      <p><strong>February 15</strong> is celebrated each year as <strong>National Flag of Canada Day</strong>.</p>
+    </div>
+    <div class="hbox"><strong>Remember:</strong> The Maple Leaf flag was adopted in <strong>1965</strong> under PM <strong>Lester B. Pearson</strong>. Canada's official colours — red and white — were proclaimed by <strong>King George V in 1921</strong>. Both facts appear on the citizenship test.</div>
+    <div class="kf">
+      <div class="kf-lbl">📌 Key Facts — Memorize These</div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Maple Leaf flag adopted: <strong>February 15, 1965</strong></div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Flag championed by PM <strong>Lester B. Pearson</strong></div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Flag replaced the <strong>Canadian Red Ensign</strong> which had the British Union Jack</div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Official colours <strong>red and white</strong> — proclaimed by <strong>King George V in 1921</strong></div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Red = England · White = France — reflecting two founding European cultures</div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div><strong>February 15</strong> = National Flag of Canada Day</div></div>
+    </div>
+    <div class="recap"><div class="recap-lbl">Lesson Recap</div><div class="recap-t">The Maple Leaf flag — adopted February 15, 1965 under PM Lester B. Pearson — is one of Canada's most recognized symbols worldwide. Its red and white colours, proclaimed by King George V in 1921, reflect Canada's French and English heritage. The maple leaf itself has symbolized Canada for centuries. Next: Canada's national anthem and coat of arms.</div></div>
+    <div class="nxt"><button class="nbtn" onclick="SL(1,document.querySelectorAll('.lbtn')[1])">Next Lesson →</button></div>
+  </div>
+
+  <!-- LESSON 2 -->
+  <div class="ls" id="l1">
+    <div class="obj">
+      <div class="obj-lbl">Learning Objectives</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Know the name and origin of Canada's national anthem</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Understand what the coat of arms represents</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Know Canada's motto and what it means</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Know key details about the Parliament buildings</div>
+    </div>
+    <div class="lt">O Canada — the national anthem</div>
+    <div class="lp">
+      <p>Canada's national anthem is <strong>"O Canada"</strong>. It was originally written in <strong>French</strong> by Sir Adolphe-Basile Routhier in <strong>1880</strong>, with music composed by <strong>Calixa Lavallée</strong>. The English version was written by Justice Robert Stanley Weir in <strong>1908</strong>.</p>
+      <p>"O Canada" was officially proclaimed Canada's national anthem on <strong>July 1, 1980</strong> — exactly <strong>100 years</strong> after it was first performed. Before this, "God Save the Queen" was used as the royal anthem.</p>
+      <p>The anthem is sung in both <strong>English and French</strong>, reflecting Canada's official bilingualism. It is performed at official ceremonies, sporting events, and school mornings across the country.</p>
+    </div>
+    <div class="lt">The Coat of Arms</div>
+    <div class="lp">
+      <p>Canada's <strong>coat of arms</strong> was granted by <strong>King George V</strong> in <strong>1921</strong>. It features symbols representing Canada's founding nations and heritage:</p>
+      <p>The shield features the <strong>three golden lions of England</strong>, the <strong>red lion of Scotland</strong>, the <strong>golden harp of Ireland</strong>, the <strong>golden fleurs-de-lis of France</strong>, and three <strong>red maple leaves</strong> representing Canada.</p>
+      <p>The supporters are a <strong>lion holding a Union Jack</strong> (representing Britain) and a <strong>unicorn holding a fleur-de-lis flag</strong> (representing France). At the top is a <strong>golden lion holding a red maple leaf</strong>.</p>
+      <p>Canada's official <strong>motto</strong> is <strong>"A Mari Usque Ad Mare"</strong> — Latin for <strong>"From Sea to Sea"</strong> — reflecting Canada's vast geography stretching from the Atlantic to the Pacific to the Arctic oceans.</p>
+    </div>
+    <div class="hbox"><strong>Key dates to memorize:</strong> "O Canada" first performed: <strong>1880</strong>. English version: <strong>1908</strong>. Officially proclaimed national anthem: <strong>July 1, 1980</strong>. Coat of arms granted: <strong>1921</strong> by King George V. Motto: <strong>"A Mari Usque Ad Mare"</strong> — From Sea to Sea.</div>
+    <div class="kf">
+      <div class="kf-lbl">📌 Key Facts — Memorize These</div>
+      <div class="kf-row"><div class="kf-dot"></div><div>"O Canada" first written in French by <strong>Adolphe-Basile Routhier</strong>, music by <strong>Calixa Lavallée</strong> — <strong>1880</strong></div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>English version by <strong>Robert Stanley Weir — 1908</strong></div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Officially proclaimed national anthem: <strong>July 1, 1980</strong></div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Coat of arms granted by <strong>King George V in 1921</strong></div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Canada's motto: <strong>"A Mari Usque Ad Mare"</strong> — From Sea to Sea</div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Coat of arms features lions, harp, fleurs-de-lis, and <strong>red maple leaves</strong></div></div>
+    </div>
+    <div class="recap"><div class="recap-lbl">Lesson Recap</div><div class="recap-t">"O Canada," first performed in 1880 and officially proclaimed on July 1, 1980, is sung in both English and French — reflecting Canada's bilingual identity. The coat of arms, granted in 1921, brings together symbols of England, Scotland, Ireland, France, and Canada itself. The motto "From Sea to Sea" captures Canada's extraordinary geographic reach. Next: Canada's other national symbols.</div></div>
+    <div class="nxt"><button class="nbtn" onclick="SL(2,document.querySelectorAll('.lbtn')[2])">Next Lesson →</button></div>
+  </div>
+
+  <!-- LESSON 3 -->
+  <div class="ls" id="l2">
+    <div class="obj">
+      <div class="obj-lbl">Learning Objectives</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Know Canada's key national symbols and what they represent</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Identify Canada's national animal, sport, and other symbols</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Know the significance of the maple leaf and the beaver</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Understand the role of the RCMP as a Canadian symbol</div>
+    </div>
+    <div class="lt">Canada's national symbols</div>
+    <div class="lp"><p>Canada has a rich collection of national symbols that reflect its history, geography, and culture. Here are the most important ones for the citizenship test:</p></div>
+    <div class="symbols-grid">
+      <div class="symbol-card">
+        <div class="sc-icon">🍁</div>
+        <div class="sc-title">The Maple Leaf</div>
+        <div class="sc-desc">Canada's most recognized symbol — appears on the flag, coat of arms, currency, and military insignia. The maple tree is native to Canada and has symbolized the country since the 1700s.</div>
+      </div>
+      <div class="symbol-card">
+        <div class="sc-icon">🦫</div>
+        <div class="sc-title">The Beaver</div>
+        <div class="sc-desc">Canada's national animal. The beaver played a key role in the fur trade that shaped early Canada. It appears on the Canadian nickel and is one of the oldest symbols of Canada.</div>
+      </div>
+      <div class="symbol-card">
+        <div class="sc-icon">🏒</div>
+        <div class="sc-title">Ice Hockey & Lacrosse</div>
+        <div class="sc-desc">Ice hockey is Canada's most popular sport and a major part of national identity. Lacrosse is Canada's official summer sport. Both are deeply woven into Canadian culture.</div>
+      </div>
+      <div class="symbol-card">
+        <div class="sc-icon">👮</div>
+        <div class="sc-title">The RCMP</div>
+        <div class="sc-desc">The Royal Canadian Mounted Police — Canada's national police force. The iconic red serge uniform of the Mounties is one of the most recognized Canadian symbols worldwide.</div>
+      </div>
+      <div class="symbol-card">
+        <div class="sc-icon">🌿</div>
+        <div class="sc-title">The Maple Tree</div>
+        <div class="sc-desc">Canada's national tree. Canada produces most of the world's maple syrup — a beloved Canadian product. The sugar maple's autumn colours are a celebrated part of the Canadian landscape.</div>
+      </div>
+      <div class="symbol-card">
+        <div class="sc-icon">🐦</div>
+        <div class="sc-title">The Common Loon</div>
+        <div class="sc-desc">Canada's national bird. The loon's distinctive call is associated with Canada's wilderness and lakes. It appears on the Canadian dollar coin — the "loonie."</div>
+      </div>
+    </div>
+    <div class="lp">
+      <p>The <strong>Canadian dollar coin</strong> is nicknamed the <strong>"loonie"</strong> because it features a common loon. The <strong>two-dollar coin</strong> is nicknamed the <strong>"toonie."</strong></p>
+      <p><strong>Parliament Hill</strong> in Ottawa, the <strong>CN Tower</strong> in Toronto, and <strong>Niagara Falls</strong> are among Canada's most iconic landmarks recognized around the world.</p>
+    </div>
+    <div class="hbox"><strong>Commonly tested:</strong> The <strong>beaver</strong> is Canada's national animal. <strong>Ice hockey</strong> is the most popular sport; <strong>lacrosse</strong> is the official summer sport. The <strong>loon</strong> appears on the dollar coin — the "loonie." The <strong>RCMP red serge</strong> is a globally recognized Canadian symbol.</div>
+    <div class="kf">
+      <div class="kf-lbl">📌 Key Facts — Memorize These</div>
+      <div class="kf-row"><div class="kf-dot"></div><div>National animal: <strong>the beaver</strong> — appears on the Canadian nickel</div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Most popular sport: <strong>ice hockey</strong> · Official summer sport: <strong>lacrosse</strong></div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>National bird: <strong>the common loon</strong> — appears on the dollar coin ("loonie")</div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>National tree: <strong>the maple tree</strong> — Canada produces most of the world's maple syrup</div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div><strong>RCMP</strong> red serge uniform — globally recognized Canadian symbol</div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Dollar coin = <strong>"loonie"</strong> (loon) · Two-dollar coin = <strong>"toonie"</strong></div></div>
+    </div>
+    <div class="recap"><div class="recap-lbl">Lesson Recap</div><div class="recap-t">Canada's national symbols — the beaver, maple leaf, loon, maple tree, RCMP, and the sports of hockey and lacrosse — tell the story of a country shaped by its wildlife, landscape, Indigenous heritage, and European roots. These symbols are recognized around the world and are central to Canadian identity. Next: the core values that define what it means to be Canadian.</div></div>
+    <div class="nxt"><button class="nbtn" onclick="SL(3,document.querySelectorAll('.lbtn')[3])">Next Lesson →</button></div>
+  </div>
+
+  <!-- LESSON 4 -->
+  <div class="ls" id="l3">
+    <div class="obj">
+      <div class="obj-lbl">Learning Objectives</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Understand the core values that define Canadian identity</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Know what distinguishes Canada as a unique country</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Understand Canada's commitment to peace and democracy</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Know Canada's relationship with the United States</div>
+    </div>
+    <div class="lt">What does Canada stand for?</div>
+    <div class="lp"><p>Canadian identity is shaped by a set of shared values that all citizens are expected to embrace. <em>Discover Canada</em> describes these as the foundation of Canadian society:</p></div>
+    <div class="values-list">
+      <div class="value-row"><div class="value-icon">⚖️</div><div class="value-text"><strong>Freedom and democracy.</strong> Canadians believe in freedom of speech, religion, and thought. They value the right to participate in democratic government and hold their leaders accountable.</div></div>
+      <div class="value-row"><div class="value-icon">🤝</div><div class="value-text"><strong>Respect for cultural differences.</strong> Canada celebrates diversity. People from all backgrounds are welcomed and their cultures respected — while sharing common Canadian values.</div></div>
+      <div class="value-row"><div class="value-icon">⚖️</div><div class="value-text"><strong>Equality of opportunity.</strong> Every Canadian has the right to develop their talents and be rewarded based on their efforts — regardless of background, race, religion, or gender.</div></div>
+      <div class="value-row"><div class="value-icon">🕊️</div><div class="value-text"><strong>Commitment to peace.</strong> Canada is known internationally for peacekeeping and resolving conflicts through dialogue and cooperation rather than force.</div></div>
+      <div class="value-row"><div class="value-icon">🌍</div><div class="value-text"><strong>Respect for the law.</strong> The rule of law applies equally to everyone. Canadians trust in the justice system to resolve disputes fairly and impartially.</div></div>
+    </div>
+    <div class="lt">Canada and the United States</div>
+    <div class="lp">
+      <p>Canada and the United States share the <strong>world's longest undefended border</strong> — nearly <strong>9,000 kilometres</strong> long. The two countries are each other's largest trading partners and have close cultural, economic, and historical ties.</p>
+      <p>Despite these close ties, Canada maintains its own distinct identity, values, foreign policy, and institutions. Canada's universal health care system, official bilingualism, and multicultural policy set it apart from the United States.</p>
+      <p>Canada is also a member of the <strong>G7</strong> — a group of the world's seven leading industrialized democracies — alongside the United States, United Kingdom, France, Germany, Italy, and Japan.</p>
+    </div>
+    <div class="hbox"><strong>Canada vs USA distinction:</strong> Canada and the United States are close allies but distinctly different countries. Canada has <strong>universal health care, two official languages (English and French), and an official multiculturalism policy</strong>. These are key Canadian distinctions that may appear on the test.</div>
+    <div class="kf">
+      <div class="kf-lbl">📌 Key Facts — Memorize These</div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Core Canadian values: <strong>freedom, democracy, respect for diversity, equality, peace, rule of law</strong></div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Canada-USA border: <strong>world's longest undefended border</strong> — ~9,000 km</div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>USA is Canada's <strong>largest trading partner</strong></div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Canada is a member of the <strong>G7</strong> — seven leading industrialized democracies</div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Canada distinguishes itself with <strong>universal health care, bilingualism, and multiculturalism</strong></div></div>
+    </div>
+    <div class="recap"><div class="recap-lbl">Lesson Recap</div><div class="recap-t">Canadian values — freedom, democracy, respect for diversity, equality, peace, and the rule of law — are the principles that bind Canadians together across their differences. Canada's close relationship with the United States is built on trade and shared history, but Canada remains distinctly itself — bilingual, multicultural, and committed to universal health care. Next: multiculturalism — one of Canada's most defining policies.</div></div>
+    <div class="nxt"><button class="nbtn" onclick="SL(4,document.querySelectorAll('.lbtn')[4])">Next Lesson →</button></div>
+  </div>
+
+  <!-- LESSON 5 -->
+  <div class="ls" id="l4">
+    <div class="obj">
+      <div class="obj-lbl">Learning Objectives</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Understand Canada's official multiculturalism policy</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Know when multiculturalism became official policy and under which PM</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Understand what makes Canada unique as a multicultural country</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Know how immigration has shaped Canadian identity</div>
+    </div>
+    <div class="lt">Canada — a multicultural nation</div>
+    <div class="lp">
+      <p>Canada is one of the most <strong>multicultural nations on earth</strong>. People from virtually every country in the world have made Canada their home, bringing with them languages, traditions, religions, and cultures that have enriched Canadian society.</p>
+      <p>In <strong>1971</strong>, Prime Minister <strong>Pierre Elliott Trudeau</strong> introduced Canada's official <strong>Multiculturalism Policy</strong> — the first country in the world to adopt multiculturalism as an official government policy. This policy affirms that all citizens are equal regardless of their racial or ethnic origins, language, or religion.</p>
+      <p>The <strong>Canadian Multiculturalism Act</strong> was passed in <strong>1988</strong>, giving the policy the force of law. It commits the Government of Canada to preserving and enhancing the multicultural heritage of Canadians.</p>
+      <p>Today, Canada has two official languages — <strong>English and French</strong> — but is home to speakers of hundreds of languages. <strong>Over 200 languages</strong> are spoken in Canada, making it one of the most linguistically diverse countries in the world.</p>
+    </div>
+    <div class="lt">Immigration and Canadian identity</div>
+    <div class="lp">
+      <p>Canada has been shaped by waves of immigration throughout its history. After Confederation, immigrants from Europe — especially Britain, Ireland, and Ukraine — settled the prairies. After World War II, immigrants arrived from Southern Europe. More recently, large communities have come from Asia, Africa, the Caribbean, and South America.</p>
+      <p>Today, Canada has one of the <strong>highest per-capita immigration rates</strong> in the world. Immigrants are welcomed as full members of Canadian society and encouraged to <strong>maintain their cultural heritage</strong> while embracing Canadian values and laws.</p>
+      <p><em>Discover Canada</em> describes Canada as a country where diversity is a <strong>strength</strong> — not a challenge to be managed. The motto <strong>"strength through diversity"</strong> captures this vision.</p>
+    </div>
+    <div class="hbox"><strong>Key policy facts:</strong> Multiculturalism Policy introduced: <strong>1971</strong> — PM <strong>Pierre Elliott Trudeau</strong>. Canadian Multiculturalism Act passed: <strong>1988</strong>. Canada was the <strong>first country in the world</strong> to adopt an official multiculturalism policy.</div>
+    <div class="kf">
+      <div class="kf-lbl">📌 Key Facts — Memorize These</div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Multiculturalism Policy introduced: <strong>1971</strong> — PM <strong>Pierre Elliott Trudeau</strong></div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Canada was the <strong>first country</strong> to adopt official multiculturalism policy</div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div><strong>Canadian Multiculturalism Act</strong> passed: <strong>1988</strong></div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Over <strong>200 languages</strong> spoken in Canada</div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Two official languages: <strong>English and French</strong></div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Diversity is a <strong>strength</strong> — "strength through diversity"</div></div>
+    </div>
+    <div class="recap"><div class="recap-lbl">Module Recap</div><div class="recap-t">Module 4 has taken you through the symbols, values, and identity that make Canada uniquely Canadian — from the Maple Leaf flag and "O Canada," to the beaver and the loon, to the core values of freedom, democracy, and respect for diversity. Canada's official multiculturalism policy, the first of its kind in the world, reflects a country that sees its diversity as its greatest strength. You are ready for the quizzes!</div></div>
+    <div class="nxt"><button class="nbtn" onclick="ST('a',document.querySelectorAll('.tab')[1])">Take Quiz A →</button></div>
+  </div>
+</div>
+</div>
+
+<!-- ══════ QUIZ A ══════ -->
+<div id="pa" class="panel">
+<div class="quiz-body">
+  <div class="quiz-hdr">
+    <div class="qh-eye">Module 4 · Quiz Set A — Symbols & Anthem</div>
+    <div class="qh-title">The Flag, Anthem, Coat of Arms & National Symbols</div>
+    <div class="qh-sub">15 questions · Direct recall · Exam format</div>
+  </div>
+  <div><div class="qpm"><span id="cA">Question 1 of 15</span><span id="sA">Score: 0</span></div><div class="qpb"><div class="qpf" id="fA" style="width:6.6%"></div></div></div>
+  <div class="qcard" id="dA"><div class="qnum" id="nA"></div><div class="qtxt" id="tA"></div><div class="qopts" id="oA"></div><div class="qexp" id="eA"></div></div>
+  <div class="qnav"><button class="qbtn" id="pvA" onclick="PQ('A')" style="visibility:hidden">← Prev</button><button class="qbtn pr" id="nxA" onclick="NQ('A')">Next →</button></div>
+  <div class="sc" id="scA"><div class="scn" id="snA"></div><div class="scl">Quiz Set A complete</div><div class="scm" id="smA"></div><div class="sca"><button class="sbtn" onclick="RS('A')">Retake</button><button class="sbtn pr" onclick="ST('b',document.querySelectorAll('.tab')[2])">Try Set B →</button></div></div>
+</div>
+</div>
+
+<!-- ══════ QUIZ B ══════ -->
+<div id="pb" class="panel">
+<div class="quiz-body">
+  <div class="quiz-hdr">
+    <div class="qh-eye">Module 4 · Quiz Set B — Values & Identity</div>
+    <div class="qh-title">Canadian Values, Multiculturalism & Identity</div>
+    <div class="qh-sub">15 questions · Application & scenario style</div>
+  </div>
+  <div><div class="qpm"><span id="cB">Question 1 of 15</span><span id="sB">Score: 0</span></div><div class="qpb"><div class="qpf" id="fB" style="width:6.6%"></div></div></div>
+  <div class="qcard" id="dB"><div class="qnum" id="nB"></div><div class="qtxt" id="tB"></div><div class="qopts" id="oB"></div><div class="qexp" id="eB"></div></div>
+  <div class="qnav"><button class="qbtn" id="pvB" onclick="PQ('B')" style="visibility:hidden">← Prev</button><button class="qbtn pr" id="nxB" onclick="NQ('B')">Next →</button></div>
+  <div class="sc" id="scB"><div class="scn" id="snB"></div><div class="scl">Quiz Set B complete</div><div class="scm" id="smB"></div><div class="sca"><button class="sbtn" onclick="RS('B')">Retake</button><button class="sbtn pr" onclick="ST('c',document.querySelectorAll('.tab')[3])">Try Set C →</button></div></div>
+</div>
+</div>
+
+<!-- ══════ QUIZ C ══════ -->
+<div id="pc" class="panel">
+<div class="quiz-body">
+  <div class="quiz-hdr">
+    <div class="qh-eye">Module 4 · Quiz Set C — Challenge</div>
+    <div class="qh-title">Harder Questions on Symbols, Dates & Canadian Identity</div>
+    <div class="qh-sub">15 questions · Exam-level difficulty</div>
+  </div>
+  <div><div class="qpm"><span id="cC">Question 1 of 15</span><span id="sC">Score: 0</span></div><div class="qpb"><div class="qpf" id="fC" style="width:6.6%"></div></div></div>
+  <div class="qcard" id="dC"><div class="qnum" id="nC"></div><div class="qtxt" id="tC"></div><div class="qopts" id="oC"></div><div class="qexp" id="eC"></div></div>
+  <div class="qnav"><button class="qbtn" id="pvC" onclick="PQ('C')" style="visibility:hidden">← Prev</button><button class="qbtn pr" id="nxC" onclick="NQ('C')">Next →</button></div>
+  <div class="sc" id="scC"><div class="scn" id="snC"></div><div class="scl">Quiz Set C complete</div><div class="scm" id="smC"></div><div class="sca"><button class="sbtn" onclick="RS('C')">Retake</button><button class="sbtn pr" onclick="alert('Excellent! Proceed to Module 5 — Geography & Economy.')">Continue →</button></div></div>
+</div>
+</div>
+
+<script>
+const QD={
+A:[
+  {q:"When was Canada's Maple Leaf flag officially adopted?",o:["July 1, 1867","November 11, 1945","February 15, 1965","April 17, 1982"],c:2,e:"The Maple Leaf flag was adopted on February 15, 1965, replacing the old Canadian Red Ensign. February 15 is now celebrated as National Flag of Canada Day."},
+  {q:"Which Prime Minister championed the adoption of the Maple Leaf flag?",o:["Pierre Elliott Trudeau","John Diefenbaker","Lester B. Pearson","Sir Wilfrid Laurier"],c:2,e:"PM Lester B. Pearson championed the Maple Leaf flag in 1965, believing Canada needed a distinct national symbol separate from British imagery."},
+  {q:"What are Canada's two official colours?",o:["Red and blue","Red and white","Blue and white","Red, white, and blue"],c:1,e:"Canada's official colours are red and white, proclaimed by King George V in 1921. Red represents England; white represents France."},
+  {q:"Who proclaimed Canada's official colours of red and white?",o:["Queen Elizabeth II","Prime Minister Pearson","King George V","King Charles III"],c:2,e:"Canada's official colours — red and white — were proclaimed by King George V in 1921. This was 44 years before the Maple Leaf flag was adopted."},
+  {q:"When was 'O Canada' officially proclaimed as Canada's national anthem?",o:["July 1, 1867","June 6, 1944","July 1, 1980","April 17, 1982"],c:2,e:"'O Canada' was officially proclaimed Canada's national anthem on July 1, 1980 — exactly 100 years after it was first performed publicly in 1880."},
+  {q:"Who wrote the original French lyrics of 'O Canada'?",o:["Calixa Lavallée","Robert Stanley Weir","Adolphe-Basile Routhier","Lester B. Pearson"],c:2,e:"The original French lyrics of 'O Canada' were written by Sir Adolphe-Basile Routhier in 1880. The music was composed by Calixa Lavallée."},
+  {q:"What is Canada's national animal?",o:["The moose","The loon","The beaver","The Canada goose"],c:2,e:"The beaver is Canada's national animal. It played a key role in the fur trade that shaped early Canada and appears on the Canadian nickel."},
+  {q:"What animal appears on the Canadian dollar coin, giving it its nickname?",o:["The beaver","The moose","The common loon","The Canada goose"],c:2,e:"The common loon appears on the Canadian dollar coin, which is why it is nicknamed the 'loonie.' The two-dollar coin is called the 'toonie.'"},
+  {q:"What is Canada's motto?",o:["From Many, One","Peace, Order and Good Government","A Mari Usque Ad Mare","One Country, Two Languages"],c:2,e:"Canada's motto is 'A Mari Usque Ad Mare' — Latin for 'From Sea to Sea' — reflecting Canada's vast geography from the Atlantic to the Pacific to the Arctic."},
+  {q:"Which of the following is Canada's official summer sport?",o:["Ice hockey","Basketball","Lacrosse","Soccer"],c:2,e:"Lacrosse is Canada's official summer sport. Ice hockey is Canada's most popular sport but lacrosse holds the designation of official summer sport."},
+  {q:"What does the Canadian coat of arms feature?",o:["Only the maple leaf and beaver","Symbols of England, Scotland, Ireland, France, and Canada","The flags of all ten provinces","Only British symbols"],c:1,e:"The coat of arms features the three golden lions of England, the red lion of Scotland, the golden harp of Ireland, the fleurs-de-lis of France, and three red maple leaves representing Canada."},
+  {q:"Who granted Canada its coat of arms?",o:["Queen Victoria","King George V","Queen Elizabeth II","King Charles III"],c:1,e:"Canada's coat of arms was granted by King George V in 1921 — the same year he proclaimed Canada's official colours of red and white."},
+  {q:"What is the RCMP known for as a Canadian symbol?",o:["Its blue uniform worn at state ceremonies","Its red serge uniform recognized worldwide","Its role in the Canadian military","Its fleet of canoes used in ceremonies"],c:1,e:"The Royal Canadian Mounted Police (RCMP) red serge uniform is one of Canada's most recognized symbols worldwide. The Mounties are Canada's national police force."},
+  {q:"Who composed the music for 'O Canada'?",o:["Adolphe-Basile Routhier","Robert Stanley Weir","Calixa Lavallée","Sir Wilfrid Laurier"],c:2,e:"The music for 'O Canada' was composed by Calixa Lavallée in 1880. The French lyrics were by Adolphe-Basile Routhier; the English version was later written by Robert Stanley Weir in 1908."},
+  {q:"What flag did the Maple Leaf flag replace in 1965?",o:["The Union Jack","The Royal Standard","The Canadian Red Ensign","The Flag of New France"],c:2,e:"The Maple Leaf flag replaced the Canadian Red Ensign, which featured the British Union Jack. PM Pearson wanted a distinctly Canadian flag free of colonial imagery."}
+],
+B:[
+  {q:"When did Canada officially adopt multiculturalism as government policy?",o:["1967","1971","1982","1988"],c:1,e:"PM Pierre Elliott Trudeau introduced Canada's official Multiculturalism Policy in 1971 — making Canada the first country in the world to adopt an official multiculturalism policy."},
+  {q:"Which Prime Minister introduced Canada's official Multiculturalism Policy?",o:["Lester B. Pearson","John Diefenbaker","Pierre Elliott Trudeau","Brian Mulroney"],c:2,e:"PM Pierre Elliott Trudeau introduced Canada's Multiculturalism Policy in 1971. It was later enshrined in law through the Canadian Multiculturalism Act (1988)."},
+  {q:"Canada was the first country in the world to do what?",o:["Adopt universal health care","Grant women the right to vote","Adopt an official multiculturalism policy","Create a national peacekeeping force"],c:2,e:"Canada was the first country in the world to adopt multiculturalism as an official government policy — in 1971 under PM Pierre Elliott Trudeau."},
+  {q:"When was the Canadian Multiculturalism Act passed?",o:["1971","1982","1985","1988"],c:3,e:"The Canadian Multiculturalism Act was passed in 1988, giving the multiculturalism policy the force of law and committing the government to preserving Canada's multicultural heritage."},
+  {q:"How many languages are spoken in Canada?",o:["Over 50","Over 100","Over 200","Over 300"],c:2,e:"Over 200 languages are spoken in Canada, making it one of the most linguistically diverse countries in the world — despite having only two official languages (English and French)."},
+  {q:"Canada and the United States share which distinction regarding their border?",o:["The world's most heavily guarded border","The world's longest undefended border","The world's oldest international border","The world's most crossed border"],c:1,e:"Canada and the United States share the world's longest undefended border — nearly 9,000 kilometres long. The two countries are each other's largest trading partners."},
+  {q:"Which group of nations does Canada belong to as one of the seven leading industrialized democracies?",o:["The G20","The G7","NATO","The Commonwealth"],c:1,e:"Canada is a member of the G7 — the group of seven leading industrialized democracies, which also includes the US, UK, France, Germany, Italy, and Japan."},
+  {q:"What makes Canada's approach to diversity unique according to Discover Canada?",o:["Canada requires all immigrants to speak English only","Diversity is seen as a strength — 'strength through diversity'","Immigrants must give up their cultural heritage to become citizens","Only European cultures are officially recognized"],c:1,e:"Discover Canada describes Canada as a country where diversity is a strength — not a challenge. The idea of 'strength through diversity' captures Canada's approach to its multicultural identity."},
+  {q:"What does Canada's multiculturalism policy affirm?",o:["English is the primary language of all Canadians","Only founding nations (English and French) have special status","All citizens are equal regardless of racial/ethnic origin, language, or religion","Immigrants must assimilate into English-Canadian culture"],c:2,e:"Canada's multiculturalism policy affirms that all citizens are equal regardless of their racial or ethnic origins, language, or religion — while sharing common Canadian values."},
+  {q:"Which of the following best represents a core Canadian value?",o:["Economic competition above all else","Assimilation of all cultures into one","Respect for cultural differences and equality of opportunity","Military strength and national security"],c:2,e:"Core Canadian values include respect for cultural differences, equality of opportunity, freedom, democracy, peace, and the rule of law — as described in Discover Canada."},
+  {q:"What distinguishes Canada from the United States in terms of policy?",o:["Canada has a stronger military","Canada has no official languages","Canada has universal health care, official bilingualism, and official multiculturalism","Canada is a republic, not a monarchy"],c:2,e:"Key distinctions include Canada's universal health care system, two official languages (English and French), and official multiculturalism policy — all of which differ from the United States."},
+  {q:"The Canadian dollar coin is nicknamed the 'loonie.' What is the two-dollar coin nicknamed?",o:["The beaver","The toonie","The maple","The loonard"],c:1,e:"The two-dollar coin is nicknamed the 'toonie' — a play on 'two' and 'loonie.' The loonie (dollar coin) features the common loon; the toonie features a polar bear."},
+  {q:"What role has immigration played in shaping Canadian identity?",o:["Immigration has been limited to European nations only","Immigration has shaped Canada into one of the world's most multicultural nations","Canada discourages immigration to protect its founding cultures","Immigration only began after World War II"],c:1,e:"Immigration has shaped Canada throughout its history — from European settlers post-Confederation, to post-WWII waves from Southern Europe, to today's arrivals from Asia, Africa, the Caribbean, and South America."},
+  {q:"What is the significance of the maple tree to Canada?",o:["It is Canada's national flower","Canada produces most of the world's maple syrup from the sugar maple","It was planted by the Fathers of Confederation","It appears only on the Canadian nickel"],c:1,e:"Canada produces most of the world's maple syrup from the sugar maple. The maple tree is Canada's national tree. The maple leaf has symbolized Canada since the 1700s."},
+  {q:"What does the RCMP stand for?",o:["Royal Canadian Military Police","Royal Canadian Mounted Police","Royal Commission on Multicultural Policy","Regional Canadian Municipal Police"],c:1,e:"RCMP stands for Royal Canadian Mounted Police — Canada's national police force, famous worldwide for its red serge uniform and historical role in opening the Canadian West."}
+],
+C:[
+  {q:"The English version of 'O Canada' was written in which year?",o:["1880","1900","1908","1920"],c:2,e:"The English version of 'O Canada' was written by Robert Stanley Weir in 1908 — 28 years after the original French version by Adolphe-Basile Routhier (1880)."},
+  {q:"What do the red and white colours of the Canadian flag represent?",o:["Blood of soldiers and winter snow","Red = England, White = France","Red = maple leaf, White = Arctic snow","Red = west, White = east"],c:1,e:"Canada's official colours — red and white — represent England (red) and France (white), reflecting Canada's two founding European cultures. Proclaimed by King George V in 1921."},
+  {q:"The coat of arms features a unicorn holding which flag?",o:["The Canadian Red Ensign","A fleur-de-lis flag representing France","The Union Jack representing Britain","The Maple Leaf flag"],c:1,e:"The coat of arms features a unicorn holding a fleur-de-lis flag representing France, and a lion holding a Union Jack representing Britain — together reflecting Canada's two founding European nations."},
+  {q:"What was 'O Canada' originally composed for?",o:["The coronation of King George V","Canada's centennial celebrations in 1967","A national holiday celebration in Quebec City in 1880","The opening of Parliament in Ottawa"],c:2,e:"'O Canada' was first performed publicly on June 24, 1880 (Saint-Jean-Baptiste Day) in Quebec City. It was composed specifically for this national holiday celebration."},
+  {q:"How long is the Canada-United States border?",o:["~5,000 kilometres","~7,000 kilometres","~9,000 kilometres","~12,000 kilometres"],c:2,e:"The Canada-United States border is nearly 9,000 kilometres long — the world's longest undefended border. It stretches from the Atlantic coast to the Pacific coast."},
+  {q:"In what year were Canada's official colours proclaimed?",o:["1867","1905","1921","1965"],c:2,e:"Canada's official colours of red and white were proclaimed by King George V in 1921 — the same year he granted Canada its coat of arms."},
+  {q:"Which sport has Indigenous origins and is Canada's official summer sport?",o:["Ice hockey","Curling","Lacrosse","Snowshoeing"],c:2,e:"Lacrosse has Indigenous origins and is Canada's official summer sport. It was played by Indigenous peoples long before European arrival and is deeply connected to Canada's Indigenous heritage."},
+  {q:"What animal appears on Canada's five-cent coin (the nickel)?",o:["The loon","The moose","The beaver","The polar bear"],c:2,e:"The beaver appears on Canada's five-cent coin (the nickel). The loon appears on the dollar coin (loonie). The polar bear appears on the two-dollar coin (toonie)."},
+  {q:"Which of the following is NOT a supporter on Canada's coat of arms?",o:["A lion holding a Union Jack","A unicorn holding a fleur-de-lis flag","An eagle holding a maple leaf","A golden lion holding a red maple leaf at the top"],c:2,e:"There is no eagle on Canada's coat of arms. The supporters are a lion (holding the Union Jack, representing Britain) and a unicorn (holding a fleur-de-lis flag, representing France). A golden lion holding a maple leaf crowns the top."},
+  {q:"What did the Canadian Multiculturalism Act (1988) do?",o:["Created Canada's two official languages","Gave the multiculturalism policy the force of law","Established the Canadian Charter of Rights","Introduced the Maple Leaf flag"],c:1,e:"The Canadian Multiculturalism Act (1988) gave the multiculturalism policy the force of law — committing the Government of Canada to preserving and enhancing the multicultural heritage of Canadians."},
+  {q:"What does 'A Mari Usque Ad Mare' mean?",o:["From Many, One","From Sea to Sea","From Coast to Coast to Coast","From the River to the Mountains"],c:1,e:"'A Mari Usque Ad Mare' is Latin for 'From Sea to Sea' — Canada's official motto, reflecting the country's vast geography stretching from the Atlantic to the Pacific (and Arctic) oceans."},
+  {q:"What does National Flag of Canada Day celebrate and when is it?",o:["Canada Day — July 1","The adoption of the Maple Leaf flag — February 15","The proclamation of the national anthem — July 1","The granting of the coat of arms — January 21"],c:1,e:"National Flag of Canada Day is February 15 — marking the day the Maple Leaf flag was officially adopted in 1965, replacing the Canadian Red Ensign."},
+  {q:"Which PM is associated with BOTH the Maple Leaf flag AND the Nobel Peace Prize?",o:["John Diefenbaker","Pierre Elliott Trudeau","Lester B. Pearson","Brian Mulroney"],c:2,e:"Lester B. Pearson won the Nobel Peace Prize in 1957 for creating UN peacekeeping forces, and championed the adoption of the Maple Leaf flag in 1965. Both achievements are exam-tested."},
+  {q:"What is the polar bear associated with on Canadian currency?",o:["The penny","The nickel","The loonie","The toonie"],c:3,e:"The polar bear appears on the two-dollar coin — the 'toonie.' The loonie (dollar coin) features the common loon, and the nickel features the beaver."},
+  {q:"Which statement about Canadian multiculturalism is accurate?",o:["Immigrants must give up their cultural heritage to become citizens","Canada was the first country to adopt official multiculturalism policy in 1971","Multiculturalism only applies to Indigenous peoples","The policy discourages the use of languages other than English and French"],c:1,e:"Canada was the first country in the world to adopt official multiculturalism policy — in 1971 under PM Pierre Elliott Trudeau. Immigrants are encouraged to maintain their heritage while embracing Canadian values."}
+]};
+
+const ST2={A:{i:0,s:0,a:[]},B:{i:0,s:0,a:[]},C:{i:0,s:0,a:[]}};
+
+function RQ(k){
+  const d=QD[k],st=ST2[k],q=d[st.i];
+  document.getElementById('n'+k).textContent='Question '+(st.i+1);
+  document.getElementById('t'+k).textContent=q.q;
+  document.getElementById('c'+k).textContent='Question '+(st.i+1)+' of '+d.length;
+  document.getElementById('s'+k).textContent='Score: '+st.s;
+  document.getElementById('f'+k).style.width=((st.i+1)/d.length*100)+'%';
+  const ob=document.getElementById('o'+k);ob.innerHTML='';
+  q.o.forEach((opt,i)=>{
+    const b=document.createElement('button');
+    b.className='qopt';b.textContent=opt;
+    if(st.a[st.i]!==undefined){
+      b.disabled=true;
+      if(i===q.c)b.classList.add('ok');
+      else if(i===st.a[st.i])b.classList.add('ng');
+    } else {b.onclick=()=>SA(k,i);}
+    ob.appendChild(b);
+  });
+  const ex=document.getElementById('e'+k);
+  if(st.a[st.i]!==undefined){ex.textContent='💡 '+q.e;ex.classList.add('on');}
+  else ex.classList.remove('on');
+  document.getElementById('pv'+k).style.visibility=st.i>0?'visible':'hidden';
+  const nb=document.getElementById('nx'+k);
+  nb.style.opacity=st.a[st.i]!==undefined?'1':'0.4';
+  if(st.i===d.length-1&&st.a[st.i]!==undefined){nb.textContent='See Results';nb.onclick=()=>SS(k);}
+  else{nb.textContent='Next →';nb.onclick=()=>NQ(k);}
+}
+
+function SA(k,i){
+  const st=ST2[k],q=QD[k][st.i];
+  if(st.a[st.i]!==undefined)return;
+  st.a[st.i]=i;if(i===q.c)st.s++;RQ(k);
+}
+
+function NQ(k){const st=ST2[k],d=QD[k];if(st.a[st.i]===undefined)return;if(st.i<d.length-1){st.i++;RQ(k);}else SS(k);}
+function PQ(k){if(ST2[k].i>0){ST2[k].i--;RQ(k);}}
+
+function SS(k){
+  document.getElementById('d'+k).style.display='none';
+  document.querySelector('#p'+k.toLowerCase()+' .qnav').style.display='none';
+  document.querySelector('#p'+k.toLowerCase()+' div:first-child').style.display='none';
+  const sc=document.getElementById('sc'+k);sc.classList.add('on');
+  const p=Math.round(ST2[k].s/QD[k].length*100);
+  document.getElementById('sn'+k).textContent=ST2[k].s+'/'+QD[k].length;
+  document.getElementById('sm'+k).textContent=p>=90?'Outstanding — fully ready!':p>=75?'Good pass — review missed ones.':p>=50?'Keep studying — revisit key facts.':'Review all lessons then retry.';
+}
+
+function RS(k){
+  ST2[k]={i:0,s:0,a:[]};
+  document.getElementById('d'+k).style.display='';
+  document.querySelector('#p'+k.toLowerCase()+' .qnav').style.display='';
+  document.querySelector('#p'+k.toLowerCase()+' div:first-child').style.display='';
+  document.getElementById('sc'+k).classList.remove('on');RQ(k);
+}
+
+function SL(i,btn){
+  document.querySelectorAll('.ls').forEach(s=>s.classList.remove('on'));
+  document.querySelectorAll('.lbtn').forEach(b=>b.classList.remove('on'));
+  document.getElementById('l'+i).classList.add('on');btn.classList.add('on');
+}
+
+function ST(id,btn){
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('on'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));
+  const map={l:'pl',a:'pa',b:'pb',c:'pc'};
+  document.getElementById(map[id]).classList.add('on');btn.classList.add('on');
+  if(id==='a')RQ('A');if(id==='b')RQ('B');if(id==='c')RQ('C');
+}
+
+RQ('A');RQ('B');RQ('C');
+</script>
+</body>
+</html>
