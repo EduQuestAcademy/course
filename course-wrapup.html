@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Course Complete — Canadian Citizenship Test Prep</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Source Sans 3',sans-serif;background:#f0f4f8;color:#1a2332;line-height:1.7}
+
+/* ── HERO ── */
+.hero{background:linear-gradient(135deg,#1d4ed8 0%,#2563eb 50%,#3b82f6 100%);padding:48px 28px 40px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-60px;right:-60px;width:280px;height:280px;border-radius:50%;background:rgba(255,255,255,0.06)}
+.hero::after{content:'';position:absolute;bottom:-40px;left:5%;width:360px;height:360px;border-radius:50%;background:rgba(255,255,255,0.04)}
+.hero-emoji{font-size:56px;margin-bottom:14px;position:relative;z-index:1;display:block}
+.hero-eyebrow{font-family:'Source Sans 3',sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.75);font-weight:600;margin-bottom:10px;position:relative;z-index:1}
+.hero-title{font-family:'Lora',serif;font-size:34px;font-weight:700;color:#fff;margin-bottom:12px;line-height:1.2;position:relative;z-index:1}
+.hero-sub{font-family:'Source Sans 3',sans-serif;font-size:16px;color:rgba(255,255,255,0.85);line-height:1.75;max-width:580px;margin:0 auto;position:relative;z-index:1}
+
+/* ── BODY ── */
+.body{padding:32px 28px 48px;display:flex;flex-direction:column;gap:28px;max-width:800px;margin:0 auto}
+
+.section-title{font-family:'Lora',serif;font-size:22px;font-weight:600;color:#1e3a5f;border-left:4px solid #2563eb;padding-left:14px;line-height:1.3;margin-bottom:12px}
+
+.lp{font-family:'Source Sans 3',sans-serif;font-size:15px;line-height:1.85;color:#334155}
+.lp strong{font-weight:600;color:#1e3a5f}
+
+/* Achievement cards */
+.achievement-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+.ach-card{background:#fff;border:1.5px solid #bfdbfe;border-radius:12px;padding:16px 14px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,0.04)}
+.ach-icon{font-size:28px;margin-bottom:8px}
+.ach-val{font-family:'Lora',serif;font-size:22px;font-weight:700;color:#1d4ed8;margin-bottom:2px}
+.ach-label{font-family:'Source Sans 3',sans-serif;font-size:12px;color:#64748b;line-height:1.4}
+
+/* Module recap */
+.module-list{display:flex;flex-direction:column;gap:8px}
+.mod-row{display:flex;align-items:center;gap:12px;padding:12px 16px;background:#fff;border:1.5px solid #e2e8f0;border-radius:10px;box-shadow:0 1px 4px rgba(0,0,0,0.03)}
+.mod-num{width:34px;height:34px;border-radius:8px;background:linear-gradient(135deg,#1d4ed8,#3b82f6);color:#fff;font-family:'Lora',serif;font-size:14px;font-weight:600;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.mod-info{flex:1}
+.mod-name{font-family:'Source Sans 3',sans-serif;font-size:13px;font-weight:600;color:#1e3a5f;margin-bottom:1px}
+.mod-sub{font-family:'Source Sans 3',sans-serif;font-size:11px;color:#64748b}
+.mod-check{font-size:16px;color:#16a34a}
+
+/* Test day checklist */
+.checklist{display:flex;flex-direction:column;gap:8px}
+.cl-row{display:flex;gap:12px;align-items:flex-start;padding:12px 16px;background:#fff;border:1.5px solid #e2e8f0;border-radius:10px}
+.cl-icon{font-size:18px;flex-shrink:0;margin-top:1px}
+.cl-body{}
+.cl-title{font-family:'Source Sans 3',sans-serif;font-size:13px;font-weight:600;color:#1e3a5f;margin-bottom:2px}
+.cl-desc{font-family:'Source Sans 3',sans-serif;font-size:12px;color:#64748b;line-height:1.55}
+
+/* Key numbers */
+.numbers-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.num-card{background:#fff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px}
+.num-val{font-family:'Lora',serif;font-size:26px;font-weight:700;color:#1d4ed8;margin-bottom:3px}
+.num-label{font-family:'Source Sans 3',sans-serif;font-size:12px;color:#1e3a5f;font-weight:600;margin-bottom:2px}
+.num-desc{font-family:'Source Sans 3',sans-serif;font-size:11px;color:#64748b;line-height:1.4}
+
+/* Tips for test day */
+.tips-list{display:flex;flex-direction:column;gap:8px}
+.tip-row{display:flex;gap:12px;align-items:flex-start;padding:11px 14px;background:#fff;border:1.5px solid #e2e8f0;border-radius:9px}
+.tip-num{width:24px;height:24px;border-radius:6px;background:#2563eb;color:#fff;font-size:11px;font-weight:600;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.tip-text{font-family:'Source Sans 3',sans-serif;font-size:13px;color:#334155;line-height:1.6}
+.tip-text strong{font-weight:600;color:#1e3a5f}
+
+/* Divider */
+.divider{height:1.5px;background:linear-gradient(to right,#bfdbfe,transparent);border-radius:2px}
+
+/* Callout */
+.callout{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:1.5px solid #93c5fd;border-radius:12px;padding:20px 22px}
+.callout-title{font-family:'Lora',serif;font-size:17px;font-weight:600;color:#1e3a5f;margin-bottom:8px}
+.callout-text{font-family:'Source Sans 3',sans-serif;font-size:14px;color:#1e3a5f;line-height:1.8}
+.callout-text strong{font-weight:600}
+
+/* Final closing */
+.closing{background:linear-gradient(135deg,#1d4ed8,#2563eb);border-radius:14px;padding:36px 28px;text-align:center;position:relative;overflow:hidden}
+.closing::before{content:'🍁';position:absolute;font-size:120px;opacity:0.06;top:-10px;right:-10px;line-height:1}
+.closing-flag{font-size:40px;margin-bottom:14px;display:block;position:relative;z-index:1}
+.closing-title{font-family:'Lora',serif;font-size:26px;font-weight:700;color:#fff;margin-bottom:12px;position:relative;z-index:1}
+.closing-text{font-family:'Source Sans 3',sans-serif;font-size:15px;color:rgba(255,255,255,0.88);line-height:1.8;max-width:520px;margin:0 auto 20px;position:relative;z-index:1}
+.closing-sig{font-family:'Lora',serif;font-size:16px;font-style:italic;color:rgba(255,255,255,0.75);position:relative;z-index:1}
+
+/* What to do next */
+.next-steps{display:flex;flex-direction:column;gap:8px}
+.ns-row{display:flex;gap:12px;align-items:flex-start;padding:12px 16px;background:#fff;border:1.5px solid #e2e8f0;border-radius:10px}
+.ns-icon{font-size:20px;flex-shrink:0;margin-top:1px}
+.ns-body{}
+.ns-title{font-family:'Source Sans 3',sans-serif;font-size:13px;font-weight:600;color:#1e3a5f;margin-bottom:2px}
+.ns-desc{font-family:'Source Sans 3',sans-serif;font-size:12px;color:#64748b;line-height:1.55}
+
+@media(max-width:600px){
+  .hero-title{font-size:26px}
+  .body{padding:20px}
+  .achievement-grid{grid-template-columns:1fr}
+  .numbers-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <span class="hero-emoji">🎉</span>
+  <div class="hero-eyebrow">EduQuest Academy · Canadian Citizenship Test Prep</div>
+  <div class="hero-title">You have completed the course!</div>
+  <div class="hero-sub">You have covered everything you need to pass your Canadian citizenship knowledge test. This page is your final checklist, your test day guide, and your send-off. You are ready.</div>
+</div>
+
+<div class="body">
+
+  <!-- WHAT YOU ACCOMPLISHED -->
+  <div>
+    <div class="section-title">What you have accomplished</div>
+    <div class="lp" style="margin-bottom:14px"><p>This is not a small thing. You have worked through the full history, government, rights, identity, and geography of Canada — the country you are choosing to call home. Here is what you completed:</p></div>
+    <div class="achievement-grid">
+      <div class="ach-card"><div class="ach-icon">📖</div><div class="ach-val">5</div><div class="ach-label">Complete modules covering every topic on the real test</div></div>
+      <div class="ach-card"><div class="ach-icon">📝</div><div class="ach-val">15</div><div class="ach-label">Lessons covering every chapter of Discover Canada</div></div>
+      <div class="ach-card"><div class="ach-icon">❓</div><div class="ach-val">375+</div><div class="ach-label">Practice questions with full explanations</div></div>
+      <div class="ach-card"><div class="ach-icon">🏆</div><div class="ach-val">3</div><div class="ach-label">Full mock exams in real test format</div></div>
+      <div class="ach-card"><div class="ach-icon">🍁</div><div class="ach-val">1</div><div class="ach-label">Country you now know deeply and are proud to call home</div></div>
+      <div class="ach-card"><div class="ach-icon">⭐</div><div class="ach-val">100%</div><div class="ach-label">Of Discover Canada content covered in this course</div></div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- MODULE SUMMARY -->
+  <div>
+    <div class="section-title">All five modules — completed</div>
+    <div class="module-list">
+      <div class="mod-row"><div class="mod-num">1</div><div class="mod-info"><div class="mod-name">The History of Canada</div><div class="mod-sub">Indigenous peoples · Confederation · World Wars · Modern Canada · 45 questions</div></div><div class="mod-check">✅</div></div>
+      <div class="mod-row"><div class="mod-num">2</div><div class="mod-info"><div class="mod-name">Government & Democracy</div><div class="mod-sub">Three branches · Parliament · Levels of government · Elections · The Crown · 45 questions</div></div><div class="mod-check">✅</div></div>
+      <div class="mod-row"><div class="mod-num">3</div><div class="mod-info"><div class="mod-name">Rights & Responsibilities</div><div class="mod-sub">The Charter · Fundamental freedoms · Democratic rights · Legal rights · Duties · 45 questions</div></div><div class="mod-check">✅</div></div>
+      <div class="mod-row"><div class="mod-num">4</div><div class="mod-info"><div class="mod-name">Canadian Identity & Symbols</div><div class="mod-sub">Flag · Anthem · Coat of arms · National symbols · Multiculturalism · 45 questions</div></div><div class="mod-check">✅</div></div>
+      <div class="mod-row"><div class="mod-num">5</div><div class="mod-info"><div class="mod-name">Geography & Economy</div><div class="mod-sub">Provinces · Territories · Natural resources · Economy · Key cities · 45 questions</div></div><div class="mod-check">✅</div></div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- KEY NUMBERS TO REMEMBER -->
+  <div>
+    <div class="section-title">The most important numbers — final review</div>
+    <div class="lp" style="margin-bottom:14px"><p>These are the numbers, dates, and figures most likely to appear on your real citizenship test. Read through them one final time before your test day.</p></div>
+    <div class="numbers-grid">
+      <div class="num-card"><div class="num-val">July 1, 1867</div><div class="num-label">Canada Day — Confederation</div><div class="num-desc">The day Canada became a country through the Constitution Act</div></div>
+      <div class="num-card"><div class="num-val">20 / 30 min</div><div class="num-label">Real test — questions and time</div><div class="num-desc">20 multiple-choice questions · 30 minutes · pass mark 15/20</div></div>
+      <div class="num-card"><div class="num-val">338 / 105</div><div class="num-label">MPs and Senators</div><div class="num-desc">338 elected MPs in House of Commons · 105 appointed Senators</div></div>
+      <div class="num-card"><div class="num-val">April 17, 1982</div><div class="num-label">Charter of Rights and Freedoms</div><div class="num-desc">Proclaimed by Queen Elizabeth II · signed by PM Pierre Trudeau</div></div>
+      <div class="num-card"><div class="num-val">10 + 3</div><div class="num-label">Provinces and territories</div><div class="num-desc">10 provinces · 3 territories (Yukon, NWT, Nunavut)</div></div>
+      <div class="num-card"><div class="num-val">Feb 15, 1965</div><div class="num-label">Maple Leaf flag adopted</div><div class="num-desc">Championed by PM Lester B. Pearson · replaced the Red Ensign</div></div>
+      <div class="num-card"><div class="num-val">1918 / 1960</div><div class="num-label">Voting rights expanded</div><div class="num-desc">Women gained the vote: 1918 · Indigenous peoples: 1960</div></div>
+      <div class="num-card"><div class="num-val">1971 / 1988</div><div class="num-label">Multiculturalism policy</div><div class="num-desc">Policy introduced 1971 · Multiculturalism Act passed 1988</div></div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- TEST DAY CHECKLIST -->
+  <div>
+    <div class="section-title">Test day checklist</div>
+    <div class="checklist">
+      <div class="cl-row"><div class="cl-icon">📬</div><div class="cl-body"><div class="cl-title">Bring your IRCC invitation letter</div><div class="cl-desc">You cannot enter the test without your official invitation from Immigration, Refugees and Citizenship Canada.</div></div></div>
+      <div class="cl-row"><div class="cl-icon">🪪</div><div class="cl-body"><div class="cl-title">Bring valid photo ID</div><div class="cl-desc">Government-issued photo identification is required — passport, provincial ID card, or driver's licence.</div></div></div>
+      <div class="cl-row"><div class="cl-icon">🚫</div><div class="cl-body"><div class="cl-title">Leave notes and study materials at home</div><div class="cl-desc">No notes, books, phones, or study aids are permitted in the test room. You will not need them.</div></div></div>
+      <div class="cl-row"><div class="cl-icon">⏰</div><div class="cl-body"><div class="cl-title">Arrive early</div><div class="cl-desc">Plan to arrive at least 15–20 minutes before your scheduled test time. Late arrivals may not be admitted.</div></div></div>
+      <div class="cl-row"><div class="cl-icon">🧘</div><div class="cl-body"><div class="cl-title">Stay calm and read carefully</div><div class="cl-desc">Read each question twice before answering. Eliminate obviously wrong answers. Trust your preparation — you have done the work.</div></div></div>
+      <div class="cl-row"><div class="cl-icon">✅</div><div class="cl-body"><div class="cl-title">Remember the pass mark</div><div class="cl-desc">You need 15 out of 20 correct (75%) to pass. You do not need a perfect score — you just need to pass.</div></div></div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- TIPS FOR TEST DAY -->
+  <div>
+    <div class="section-title">10 tips for the test itself</div>
+    <div class="tips-list">
+      <div class="tip-row"><div class="tip-num">1</div><div class="tip-text"><strong>Read every question twice</strong> before selecting your answer. Some questions are tricky because of one word.</div></div>
+      <div class="tip-row"><div class="tip-num">2</div><div class="tip-text"><strong>Eliminate wrong answers first.</strong> Even if you are unsure, you can usually rule out 1–2 options immediately, improving your odds.</div></div>
+      <div class="tip-row"><div class="tip-num">3</div><div class="tip-text"><strong>Watch for capital city traps.</strong> Victoria (not Vancouver) is BC's capital. Quebec City (not Montreal) is Quebec's capital. Edmonton (not Calgary) is Alberta's capital.</div></div>
+      <div class="tip-row"><div class="tip-num">4</div><div class="tip-text"><strong>Know your PM associations.</strong> Diefenbaker → Bill of Rights (1960). Pearson → Maple Leaf flag (1965) + Nobel Prize (1957). Pierre Trudeau → Official Languages (1969) + Charter (1982).</div></div>
+      <div class="tip-row"><div class="tip-num">5</div><div class="tip-text"><strong>Do not confuse head of state and head of government.</strong> Head of state = Sovereign (King Charles III). Head of government = Prime Minister.</div></div>
+      <div class="tip-row"><div class="tip-num">6</div><div class="tip-text"><strong>Remember what permanent residents cannot do.</strong> They cannot vote in federal or provincial elections. Voting is for citizens only.</div></div>
+      <div class="tip-row"><div class="tip-num">7</div><div class="tip-text"><strong>Know your levels of government responsibilities.</strong> Health care and education = provincial. Criminal law and immigration = federal. Roads and garbage = municipal.</div></div>
+      <div class="tip-row"><div class="tip-num">8</div><div class="tip-text"><strong>Manage your time.</strong> You have 30 minutes for 20 questions — 90 seconds per question. Do not spend too long on any one question.</div></div>
+      <div class="tip-row"><div class="tip-num">9</div><div class="tip-text"><strong>If you are unsure, make your best guess.</strong> There is no penalty for wrong answers. Always answer — never leave a question blank.</div></div>
+      <div class="tip-row"><div class="tip-num">10</div><div class="tip-text"><strong>If you do not pass, do not panic.</strong> You may be given a second chance through an interview with a citizenship officer. Many people pass at the interview stage.</div></div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- WHAT HAPPENS NEXT -->
+  <div>
+    <div class="section-title">What happens after the test</div>
+    <div class="next-steps">
+      <div class="ns-row"><div class="ns-icon">📋</div><div class="ns-body"><div class="ns-title">You pass the knowledge test</div><div class="ns-desc">You will also be assessed on your language skills (English or French) and reviewed for residency requirements. If everything is in order, you will be invited to a citizenship ceremony.</div></div></div>
+      <div class="ns-row"><div class="ns-icon">🎖️</div><div class="ns-body"><div class="ns-title">The citizenship ceremony</div><div class="ns-desc">At the ceremony you will take the Oath of Citizenship — swearing your loyalty to Canada and the King. You will receive your Certificate of Canadian Citizenship. This is one of the most meaningful moments of the journey.</div></div></div>
+      <div class="ns-row"><div class="ns-icon">📜</div><div class="ns-body"><div class="ns-title">The Oath of Citizenship</div><div class="ns-desc">"I swear (or affirm) that I will be faithful and bear true allegiance to His Majesty King Charles the Third, King of Canada, His Heirs and Successors, and that I will faithfully observe the laws of Canada and fulfil my duties as a Canadian citizen."</div></div></div>
+      <div class="ns-row"><div class="ns-icon">🍁</div><div class="ns-body"><div class="ns-title">You are a Canadian citizen</div><div class="ns-desc">You can now apply for a Canadian passport, vote in all elections, and exercise all the rights and responsibilities you studied in this course. Welcome to Canada — officially and completely.</div></div></div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ENCOURAGEMENT -->
+  <div class="callout">
+    <div class="callout-title">You are more prepared than you think</div>
+    <div class="callout-text">Thousands of people take the Canadian citizenship test every year, and the vast majority pass — especially those who prepare properly. You have not just memorized facts. You have learned Canada's story — its history, its values, its people, and its promise.<br><br>The rights you studied are now your rights. The history you learned is now your history. The country you have come to know through this course is now your country.<br><br><strong>Go pass that test. Canada is waiting to welcome you officially.</strong></div>
+  </div>
+
+  <!-- FINAL CLOSING -->
+  <div class="closing">
+    <span class="closing-flag">🍁</span>
+    <div class="closing-title">Welcome to Canada</div>
+    <div class="closing-text">You came from somewhere else. You built a life here. You learned Canada's story, its laws, and its values. And now you are ready to stand up and say — officially, legally, proudly — <em>I am Canadian.</em><br><br>That is not a small thing. That is everything.</div>
+    <div class="closing-sig">— EduQuest Academy</div>
+  </div>
+
+</div>
+</body>
+</html>
