@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Full Mock Exams — Canadian Citizenship Test Prep</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Source Sans 3',sans-serif;background:#f0f4f8;color:#1a2332;line-height:1.7}
+
+/* ── TABS ── */
+.tabs{display:flex;background:#fff;border-bottom:2px solid #e2e8f0;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,0.06)}
+.tab{flex:1;padding:14px 8px;font-size:13px;font-weight:500;font-family:'Source Sans 3',sans-serif;background:none;border:none;cursor:pointer;color:#64748b;border-bottom:3px solid transparent;margin-bottom:-2px;transition:all .2s}
+.tab:hover{color:#1d4ed8;background:#f8faff}
+.tab.on{color:#1d4ed8;border-bottom-color:#1d4ed8;background:#f8faff}
+.panel{display:none}
+.panel.on{display:block}
+
+/* ── HEADER ── */
+.mod-header{background:linear-gradient(135deg,#1d4ed8 0%,#2563eb 50%,#3b82f6 100%);padding:32px 28px 28px;position:relative;overflow:hidden}
+.mod-header::before{content:'';position:absolute;top:-40px;right:-40px;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,0.06)}
+.mod-header::after{content:'';position:absolute;bottom:-20px;left:20%;width:300px;height:300px;border-radius:50%;background:rgba(255,255,255,0.04)}
+.mod-eyebrow{font-family:'Source Sans 3',sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.75);font-weight:600;margin-bottom:8px}
+.mod-title{font-family:'Lora',serif;font-size:28px;font-weight:700;color:#fff;margin-bottom:10px;line-height:1.2;position:relative;z-index:1}
+.mod-chips{display:flex;gap:10px;flex-wrap:wrap;position:relative;z-index:1}
+.chip{font-family:'Source Sans 3',sans-serif;font-size:12px;color:rgba(255,255,255,0.85);background:rgba(255,255,255,0.12);padding:4px 10px;border-radius:20px}
+
+/* ── EXAM INTRO ── */
+.exam-intro{padding:24px 28px;display:flex;flex-direction:column;gap:16px;max-width:800px}
+.rules-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.rule-card{background:#fff;border:1.5px solid #bfdbfe;border-radius:10px;padding:13px 15px;display:flex;align-items:center;gap:11px}
+.rc-icon{font-size:22px;flex-shrink:0}
+.rc-label{font-family:'Source Sans 3',sans-serif;font-size:11px;color:#64748b;margin-bottom:2px}
+.rc-val{font-family:'Lora',serif;font-size:15px;font-weight:600;color:#1e3a5f}
+.start-btn{background:linear-gradient(135deg,#1d4ed8,#2563eb);color:#fff;border:none;border-radius:10px;padding:14px 28px;font-family:'Source Sans 3',sans-serif;font-size:15px;font-weight:600;cursor:pointer;transition:all .2s;box-shadow:0 4px 12px rgba(37,99,235,0.35);width:100%}
+.start-btn:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(37,99,235,0.45)}
+.tip-box{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:1.5px solid #93c5fd;border-radius:10px;padding:14px 16px;font-family:'Source Sans 3',sans-serif;font-size:13px;color:#1e3a5f;line-height:1.7}
+.tip-box strong{font-weight:600}
+
+/* ── EXAM BODY ── */
+.exam-body{padding:20px 28px;display:flex;flex-direction:column;gap:16px;max-width:800px}
+
+/* Timer */
+.timer-bar{background:#fff;border:1.5px solid #e2e8f0;border-radius:10px;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 6px rgba(0,0,0,0.04)}
+.timer-left{display:flex;align-items:center;gap:8px}
+.timer-icon{font-size:16px}
+.timer-label{font-family:'Source Sans 3',sans-serif;font-size:12px;color:#64748b}
+.timer-val{font-family:'Lora',serif;font-size:22px;font-weight:700;color:#1e3a5f}
+.timer-val.warn{color:#f97316}
+.timer-val.danger{color:#dc2626}
+.timer-right{display:flex;flex-direction:column;align-items:flex-end;gap:2px}
+.prog-label{font-family:'Source Sans 3',sans-serif;font-size:11px;color:#64748b}
+.prog-bar{width:140px;height:5px;background:#e2e8f0;border-radius:3px;overflow:hidden}
+.prog-fill{height:100%;background:linear-gradient(90deg,#2563eb,#3b82f6);border-radius:3px;transition:width .4s}
+
+/* Question card */
+.qcard{background:#fff;border:1.5px solid #e2e8f0;border-radius:12px;padding:22px;display:flex;flex-direction:column;gap:16px;box-shadow:0 2px 8px rgba(0,0,0,0.04)}
+.qnum{font-family:'Source Sans 3',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#2563eb;font-weight:600}
+.qtxt{font-family:'Lora',serif;font-size:17px;font-weight:500;line-height:1.55;color:#1e3a5f}
+.qopts{display:flex;flex-direction:column;gap:9px}
+.qopt{padding:12px 16px;border-radius:9px;border:1.5px solid #e2e8f0;background:#f8faff;font-family:'Source Sans 3',sans-serif;font-size:14px;color:#334155;cursor:pointer;text-align:left;width:100%;transition:all .15s;display:flex;align-items:center;gap:10px}
+.qopt:hover:not(:disabled){border-color:#2563eb;background:#eff6ff}
+.qopt.ok{background:#f0fdf4;border-color:#16a34a;color:#14532d}
+.qopt.ng{background:#fef2f2;border-color:#dc2626;color:#7f1d1d}
+.qopt-letter{width:24px;height:24px;border-radius:6px;background:#e2e8f0;color:#64748b;font-size:12px;font-weight:600;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .15s}
+.qopt.ok .qopt-letter{background:#16a34a;color:#fff}
+.qopt.ng .qopt-letter{background:#dc2626;color:#fff}
+.qopt:hover:not(:disabled) .qopt-letter{background:#2563eb;color:#fff}
+
+.qexp{font-family:'Source Sans 3',sans-serif;font-size:13px;line-height:1.65;padding:12px 14px;border-radius:9px;background:#f8faff;border:1.5px solid #bfdbfe;color:#334155;display:none}
+.qexp.on{display:block}
+
+.qnav{display:flex;justify-content:space-between;align-items:center}
+.qbtn{padding:10px 20px;border-radius:8px;font-family:'Source Sans 3',sans-serif;font-size:13px;font-weight:500;cursor:pointer;border:1.5px solid #cbd5e1;background:#fff;color:#475569;transition:all .15s}
+.qbtn:hover{border-color:#2563eb;color:#2563eb}
+.qbtn.pr{background:#2563eb;color:#fff;border-color:#2563eb;box-shadow:0 2px 8px rgba(37,99,235,0.3)}
+.qbtn.pr:hover{background:#1d4ed8}
+
+/* Results */
+.results{background:#fff;border:1.5px solid #e2e8f0;border-radius:14px;padding:28px;display:none;flex-direction:column;gap:18px;box-shadow:0 4px 16px rgba(0,0,0,0.06)}
+.results.on{display:flex}
+.res-header{text-align:center;display:flex;flex-direction:column;gap:6px;align-items:center}
+.res-badge{width:80px;height:80px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:36px;margin-bottom:4px}
+.res-badge.pass{background:linear-gradient(135deg,#16a34a,#22c55e)}
+.res-badge.fail{background:linear-gradient(135deg,#dc2626,#ef4444)}
+.res-score{font-family:'Lora',serif;font-size:40px;font-weight:700;color:#1e3a5f}
+.res-label{font-family:'Source Sans 3',sans-serif;font-size:14px;color:#64748b}
+.res-verdict{font-family:'Source Sans 3',sans-serif;font-size:16px;font-weight:600}
+.res-verdict.pass{color:#16a34a}
+.res-verdict.fail{color:#dc2626}
+.res-msg{font-family:'Source Sans 3',sans-serif;font-size:14px;color:#334155;text-align:center;line-height:1.65}
+
+.res-breakdown{display:flex;flex-direction:column;gap:8px}
+.rb-title{font-family:'Source Sans 3',sans-serif;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#64748b;margin-bottom:4px}
+.rb-row{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;background:#f8faff;border:1.5px solid #e2e8f0;font-family:'Source Sans 3',sans-serif;font-size:13px;color:#334155}
+.rb-row.correct{border-color:#86efac;background:#f0fdf4;color:#14532d}
+.rb-row.incorrect{border-color:#fca5a5;background:#fef2f2;color:#7f1d1d}
+.rb-num{font-weight:600;flex-shrink:0;width:20px}
+.rb-q{flex:1;line-height:1.4}
+.rb-icon{flex-shrink:0;font-size:14px}
+
+.res-actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.ra-btn{padding:10px 20px;border-radius:8px;font-family:'Source Sans 3',sans-serif;font-size:13px;font-weight:500;cursor:pointer;border:1.5px solid #cbd5e1;background:#fff;color:#475569;transition:all .15s}
+.ra-btn:hover{border-color:#2563eb;color:#2563eb}
+.ra-btn.pr{background:#2563eb;color:#fff;border-color:#2563eb;box-shadow:0 2px 8px rgba(37,99,235,0.3)}
+.ra-btn.pr:hover{background:#1d4ed8}
+
+@media(max-width:600px){
+  .mod-title{font-size:22px}
+  .exam-intro,.exam-body{padding:16px}
+  .tab{font-size:11px;padding:12px 4px}
+  .rules-grid{grid-template-columns:1fr}
+  .prog-bar{width:90px}
+}
+</style>
+</head>
+<body>
+
+<div class="tabs">
+  <button class="tab on" onclick="showPanel('i1',this)">📋 Mock Exam 1</button>
+  <button class="tab" onclick="showPanel('i2',this)">📋 Mock Exam 2</button>
+  <button class="tab" onclick="showPanel('i3',this)">📋 Mock Exam 3</button>
+</div>
+
+<!-- ══════════════════════════════════════════
+     MOCK EXAM 1 — INTRO
+══════════════════════════════════════════ -->
+<div id="i1" class="panel on">
+<div class="mod-header">
+  <div class="mod-eyebrow">Full Mock Exam · Set 1 of 3</div>
+  <div class="mod-title">Canadian Citizenship Knowledge Test</div>
+  <div class="mod-chips">
+    <span class="chip">📝 20 questions</span>
+    <span class="chip">⏱ 30 minutes</span>
+    <span class="chip">✅ Pass mark: 15/20 (75%)</span>
+    <span class="chip">🍁 All 5 modules</span>
+  </div>
+</div>
+<div class="exam-intro">
+  <div class="rules-grid">
+    <div class="rule-card"><div class="rc-icon">📝</div><div><div class="rc-label">Questions</div><div class="rc-val">20 multiple choice</div></div></div>
+    <div class="rule-card"><div class="rc-icon">⏱️</div><div><div class="rc-label">Time limit</div><div class="rc-val">30 minutes</div></div></div>
+    <div class="rule-card"><div class="rc-icon">✅</div><div><div class="rc-label">Pass mark</div><div class="rc-val">15 out of 20 (75%)</div></div></div>
+    <div class="rule-card"><div class="rc-icon">🔀</div><div><div class="rc-label">Coverage</div><div class="rc-val">All 5 modules mixed</div></div></div>
+  </div>
+  <div class="tip-box"><strong>Treat this as the real test.</strong> No notes. No looking things up. Answer each question on your own within the time limit. When you finish, review your results carefully — every wrong answer tells you exactly what to revisit before your real test.</div>
+  <button class="start-btn" onclick="startExam(1)">Begin Mock Exam 1 →</button>
+</div>
+</div>
+
+<!-- MOCK EXAM 1 — QUESTIONS -->
+<div id="e1" class="panel">
+<div class="exam-body">
+  <div class="timer-bar">
+    <div class="timer-left"><div class="timer-icon">⏱</div><div><div class="timer-label">Time remaining</div><div class="timer-val" id="t1">30:00</div></div></div>
+    <div class="timer-right"><div class="prog-label" id="p1l">Question 1 of 20</div><div class="prog-bar"><div class="prog-fill" id="p1f" style="width:5%"></div></div></div>
+  </div>
+  <div class="qcard"><div class="qnum" id="n1"></div><div class="qtxt" id="q1"></div><div class="qopts" id="o1"></div><div class="qexp" id="ex1"></div></div>
+  <div class="qnav"><button class="qbtn" id="pv1" onclick="prevQ(1)" style="visibility:hidden">← Previous</button><button class="qbtn pr" id="nx1" onclick="nextQ(1)">Next →</button></div>
+</div>
+</div>
+
+<!-- MOCK EXAM 1 — RESULTS -->
+<div id="r1" class="panel">
+<div class="exam-body">
+  <div class="results" id="res1">
+    <div class="res-header">
+      <div class="res-badge" id="rb1"></div>
+      <div class="res-score" id="rs1"></div>
+      <div class="res-label">out of 20</div>
+      <div class="res-verdict" id="rv1"></div>
+      <div class="res-msg" id="rm1"></div>
+    </div>
+    <div class="res-breakdown"><div class="rb-title">Question by question review</div><div id="rbd1"></div></div>
+    <div class="res-actions">
+      <button class="ra-btn" onclick="retakeExam(1)">Retake Exam 1</button>
+      <button class="ra-btn pr" onclick="showPanel('i2',document.querySelectorAll('.tab')[1])">Try Exam 2 →</button>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     MOCK EXAM 2 — INTRO
+══════════════════════════════════════════ -->
+<div id="i2" class="panel">
+<div class="mod-header">
+  <div class="mod-eyebrow">Full Mock Exam · Set 2 of 3</div>
+  <div class="mod-title">Canadian Citizenship Knowledge Test</div>
+  <div class="mod-chips">
+    <span class="chip">📝 20 questions</span>
+    <span class="chip">⏱ 30 minutes</span>
+    <span class="chip">✅ Pass mark: 15/20 (75%)</span>
+    <span class="chip">🍁 All 5 modules</span>
+  </div>
+</div>
+<div class="exam-intro">
+  <div class="rules-grid">
+    <div class="rule-card"><div class="rc-icon">📝</div><div><div class="rc-label">Questions</div><div class="rc-val">20 multiple choice</div></div></div>
+    <div class="rule-card"><div class="rc-icon">⏱️</div><div><div class="rc-label">Time limit</div><div class="rc-val">30 minutes</div></div></div>
+    <div class="rule-card"><div class="rc-icon">✅</div><div><div class="rc-label">Pass mark</div><div class="rc-val">15 out of 20 (75%)</div></div></div>
+    <div class="rule-card"><div class="rc-icon">🔀</div><div><div class="rc-label">Coverage</div><div class="rc-val">All 5 modules mixed</div></div></div>
+  </div>
+  <div class="tip-box"><strong>Different questions, same conditions.</strong> Mock Exam 2 tests different facts from across all five modules. If you passed Exam 1, aim for an even higher score here. If you struggled, use your Exam 1 results to guide extra study before attempting this one.</div>
+  <button class="start-btn" onclick="startExam(2)">Begin Mock Exam 2 →</button>
+</div>
+</div>
+
+<!-- MOCK EXAM 2 — QUESTIONS -->
+<div id="e2" class="panel">
+<div class="exam-body">
+  <div class="timer-bar">
+    <div class="timer-left"><div class="timer-icon">⏱</div><div><div class="timer-label">Time remaining</div><div class="timer-val" id="t2">30:00</div></div></div>
+    <div class="timer-right"><div class="prog-label" id="p2l">Question 1 of 20</div><div class="prog-bar"><div class="prog-fill" id="p2f" style="width:5%"></div></div></div>
+  </div>
+  <div class="qcard"><div class="qnum" id="n2"></div><div class="qtxt" id="q2"></div><div class="qopts" id="o2"></div><div class="qexp" id="ex2"></div></div>
+  <div class="qnav"><button class="qbtn" id="pv2" onclick="prevQ(2)" style="visibility:hidden">← Previous</button><button class="qbtn pr" id="nx2" onclick="nextQ(2)">Next →</button></div>
+</div>
+</div>
+
+<!-- MOCK EXAM 2 — RESULTS -->
+<div id="r2" class="panel">
+<div class="exam-body">
+  <div class="results" id="res2">
+    <div class="res-header">
+      <div class="res-badge" id="rb2"></div>
+      <div class="res-score" id="rs2"></div>
+      <div class="res-label">out of 20</div>
+      <div class="res-verdict" id="rv2"></div>
+      <div class="res-msg" id="rm2"></div>
+    </div>
+    <div class="res-breakdown"><div class="rb-title">Question by question review</div><div id="rbd2"></div></div>
+    <div class="res-actions">
+      <button class="ra-btn" onclick="retakeExam(2)">Retake Exam 2</button>
+      <button class="ra-btn pr" onclick="showPanel('i3',document.querySelectorAll('.tab')[2])">Try Exam 3 →</button>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     MOCK EXAM 3 — INTRO
+══════════════════════════════════════════ -->
+<div id="i3" class="panel">
+<div class="mod-header">
+  <div class="mod-eyebrow">Full Mock Exam · Set 3 of 3</div>
+  <div class="mod-title">Canadian Citizenship Knowledge Test</div>
+  <div class="mod-chips">
+    <span class="chip">📝 20 questions</span>
+    <span class="chip">⏱ 30 minutes</span>
+    <span class="chip">✅ Pass mark: 15/20 (75%)</span>
+    <span class="chip">🍁 All 5 modules — hardest set</span>
+  </div>
+</div>
+<div class="exam-intro">
+  <div class="rules-grid">
+    <div class="rule-card"><div class="rc-icon">📝</div><div><div class="rc-label">Questions</div><div class="rc-val">20 multiple choice</div></div></div>
+    <div class="rule-card"><div class="rc-icon">⏱️</div><div><div class="rc-label">Time limit</div><div class="rc-val">30 minutes</div></div></div>
+    <div class="rule-card"><div class="rc-icon">✅</div><div><div class="rc-label">Pass mark</div><div class="rc-val">15 out of 20 (75%)</div></div></div>
+    <div class="rule-card"><div class="rc-icon">🏆</div><div><div class="rc-label">Difficulty</div><div class="rc-val">Hardest — final readiness test</div></div></div>
+  </div>
+  <div class="tip-box"><strong>This is your final readiness test.</strong> Mock Exam 3 contains the most challenging questions across all five modules — similar to what the hardest real citizenship tests include. If you score 15 or above here, you are fully ready for your citizenship test. Good luck!</div>
+  <button class="start-btn" onclick="startExam(3)">Begin Mock Exam 3 →</button>
+</div>
+</div>
+
+<!-- MOCK EXAM 3 — QUESTIONS -->
+<div id="e3" class="panel">
+<div class="exam-body">
+  <div class="timer-bar">
+    <div class="timer-left"><div class="timer-icon">⏱</div><div><div class="timer-label">Time remaining</div><div class="timer-val" id="t3">30:00</div></div></div>
+    <div class="timer-right"><div class="prog-label" id="p3l">Question 1 of 20</div><div class="prog-bar"><div class="prog-fill" id="p3f" style="width:5%"></div></div></div>
+  </div>
+  <div class="qcard"><div class="qnum" id="n3"></div><div class="qtxt" id="q3"></div><div class="qopts" id="o3"></div><div class="qexp" id="ex3"></div></div>
+  <div class="qnav"><button class="qbtn" id="pv3" onclick="prevQ(3)" style="visibility:hidden">← Previous</button><button class="qbtn pr" id="nx3" onclick="nextQ(3)">Next →</button></div>
+</div>
+</div>
+
+<!-- MOCK EXAM 3 — RESULTS -->
+<div id="r3" class="panel">
+<div class="exam-body">
+  <div class="results" id="res3">
+    <div class="res-header">
+      <div class="res-badge" id="rb3"></div>
+      <div class="res-score" id="rs3"></div>
+      <div class="res-label">out of 20</div>
+      <div class="res-verdict" id="rv3"></div>
+      <div class="res-msg" id="rm3"></div>
+    </div>
+    <div class="res-breakdown"><div class="rb-title">Question by question review</div><div id="rbd3"></div></div>
+    <div class="res-actions">
+      <button class="ra-btn" onclick="retakeExam(3)">Retake Exam 3</button>
+      <button class="ra-btn pr" onclick="alert('Congratulations! You have completed all three mock exams. You are ready for your citizenship test. Good luck!')">✅ I am ready!</button>
+    </div>
+  </div>
+</div>
+</div>
+
+<script>
+const EXAMS = {
+1:[
+  {q:"What date is celebrated as Canada Day?",o:["June 24","July 1","July 4","August 1"],c:1,e:"Canada Day — July 1 — marks Confederation in 1867 when the Constitution Act created the Dominion of Canada."},
+  {q:"Who is Canada's head of state?",o:["The Prime Minister","The Governor General","The Sovereign — King Charles III","The Chief Justice"],c:2,e:"The Sovereign (King Charles III) is Canada's head of state. The PM is the head of government. The Governor General is the Sovereign's representative in Canada."},
+  {q:"What are the three main groups of Aboriginal peoples in Canada?",o:["Cree, Inuit, and Huron","First Nations, Métis, and Inuit","First Nations, Métis, and Loyalists","Inuit, Algonquin, and Métis"],c:1,e:"The three main Aboriginal groups are First Nations, Métis, and Inuit. The Métis are of mixed First Nations and European (mainly French) descent; the Inuit live in Arctic regions."},
+  {q:"How many elected Members of Parliament sit in the House of Commons?",o:["105","265","338","400"],c:2,e:"The House of Commons has 338 elected MPs. Each represents a riding or electoral district. The Senate has 105 appointed senators."},
+  {q:"What is the pass mark for the Canadian citizenship test?",o:["60% — 12 out of 20","70% — 14 out of 20","75% — 15 out of 20","80% — 16 out of 20"],c:2,e:"The pass mark is 75% — you must answer at least 15 of the 20 questions correctly to pass the citizenship knowledge test."},
+  {q:"Which Prime Minister introduced the Canadian Charter of Rights and Freedoms?",o:["John Diefenbaker","Lester B. Pearson","Pierre Elliott Trudeau","Brian Mulroney"],c:2,e:"PM Pierre Elliott Trudeau introduced the Charter as part of the Constitution Act of 1982, proclaimed by Queen Elizabeth II on April 17, 1982."},
+  {q:"What is Canada's national animal?",o:["The moose","The loon","The beaver","The Canada goose"],c:2,e:"The beaver is Canada's national animal. It played a key role in the fur trade and appears on the Canadian nickel."},
+  {q:"Which level of government is responsible for health care?",o:["Federal","Municipal","Provincial","Shared equally between federal and provincial"],c:2,e:"Health care is a provincial responsibility. This is why health cards are issued by provinces and health policies vary across the country."},
+  {q:"In what year did women gain the right to vote in federal elections?",o:["1900","1918","1929","1945"],c:1,e:"Women gained the right to vote in federal elections in 1918."},
+  {q:"What is the capital of Canada?",o:["Toronto","Montreal","Ottawa","Vancouver"],c:2,e:"Ottawa, Ontario is Canada's national capital — home to Parliament Hill, the Supreme Court, and the Governor General's residence (Rideau Hall)."},
+  {q:"What is the Canadian Senate sometimes called?",o:["The Upper House of Power","The chamber of sober second thought","The Council of Appointed Members","The House of Review"],c:1,e:"The Senate is called the 'chamber of sober second thought' because senators carefully review and revise legislation before it becomes law."},
+  {q:"What does 'kanata' mean — the word that became 'Canada'?",o:["Great river","Village or settlement","Land of the maple","Northern homeland"],c:1,e:"'Kanata' is a Huron-Iroquois word meaning 'village' or 'settlement.' Jacques Cartier heard it in 1534 and applied it to the whole region."},
+  {q:"When was the Maple Leaf flag adopted?",o:["July 1, 1867","November 11, 1945","February 15, 1965","April 17, 1982"],c:2,e:"The Maple Leaf flag was adopted on February 15, 1965 under PM Lester B. Pearson, replacing the Canadian Red Ensign."},
+  {q:"Which province is Canada's only officially bilingual province?",o:["Quebec","Ontario","Manitoba","New Brunswick"],c:3,e:"New Brunswick is Canada's only officially bilingual province, with both English and French as official languages."},
+  {q:"What is 'presumption of innocence'?",o:["The accused must prove they are innocent","A person is innocent until proven guilty in court","Police can assume guilt if evidence is strong","The Crown has no burden of proof"],c:1,e:"Presumption of innocence means an accused person is considered innocent until the prosecution proves guilt beyond a reasonable doubt in court."},
+  {q:"Which battle in 1759 decided control of Canada between Britain and France?",o:["Battle of Queenston Heights","Battle of Vimy Ridge","Battle of the Plains of Abraham","Battle of the Somme"],c:2,e:"The Battle of the Plains of Abraham (1759) saw British General Wolfe defeat French General Montcalm near Quebec City, ending French military control in North America."},
+  {q:"How many provinces and territories does Canada have in total?",o:["10 provinces, 2 territories","10 provinces, 3 territories","12 provinces, 1 territory","9 provinces, 4 territories"],c:1,e:"Canada has 10 provinces and 3 territories — 13 divisions in total. Provinces have constitutionally defined powers; territories have delegated powers from the federal government."},
+  {q:"What does the Official Languages Act (1969) establish?",o:["French as the only federal language","English as the primary federal language","English and French as the two official languages of Canada","A requirement for all citizens to be bilingual"],c:2,e:"The Official Languages Act (1969) under PM Pierre Trudeau established English and French as Canada's two official federal languages."},
+  {q:"What is Canada's national motto 'A Mari Usque Ad Mare' translated?",o:["From Many, One","Peace, Order and Good Government","From Sea to Sea","One Country, Two Languages"],c:2,e:"'A Mari Usque Ad Mare' is Latin for 'From Sea to Sea' — reflecting Canada's vast geography from the Atlantic to the Pacific (and Arctic) oceans."},
+  {q:"Which Canadian beach did troops storm on D-Day, June 6, 1944?",o:["Omaha Beach","Gold Beach","Sword Beach","Juno Beach"],c:3,e:"Canadian forces stormed Juno Beach at Normandy on D-Day, June 6, 1944 — advancing further inland than any other Allied force that day."}
+],
+2:[
+  {q:"In what year did Newfoundland join Confederation — the last province to do so?",o:["1905","1931","1949","1967"],c:2,e:"Newfoundland was the last province to join Confederation, doing so in 1949 — over 80 years after the original four provinces united in 1867."},
+  {q:"What is the first-past-the-post voting system?",o:["The candidate with a majority of all votes wins","Votes are allocated proportionally to parties","The candidate with the most votes in the riding wins","Two rounds of voting until someone gets 50%+"],c:2,e:"First-past-the-post means the candidate with the most votes in each riding wins — even without a majority. The party with the most seats forms the government."},
+  {q:"Who was Canada's first Prime Minister?",o:["Sir Wilfrid Laurier","Sir John A. Macdonald","Sir George-Étienne Cartier","Alexander Mackenzie"],c:1,e:"Sir John A. Macdonald was Canada's first Prime Minister in 1867. He championed Confederation and the Canadian Pacific Railway, completed in 1885."},
+  {q:"Which four provinces formed the original Confederation in 1867?",o:["Ontario, Quebec, Manitoba, Nova Scotia","Ontario, Quebec, New Brunswick, Nova Scotia","BC, Ontario, Quebec, New Brunswick","Ontario, Quebec, PEI, New Brunswick"],c:1,e:"The original four provinces of Confederation were Ontario, Quebec, New Brunswick, and Nova Scotia. Others joined later."},
+  {q:"What are 'mobility rights' under the Charter?",o:["The right to travel abroad freely","The right of citizens and permanent residents to live and work in any province","The right to move between municipal districts","The right to travel on public transit for free"],c:1,e:"Mobility rights (Section 6) guarantee that every Canadian citizen and permanent resident has the right to live and work in any province or territory of their choosing."},
+  {q:"Who was Canada's national anthem 'O Canada' originally written for?",o:["The coronation of Queen Victoria","A national holiday celebration in Quebec City in 1880","The 1967 Centennial celebrations","The opening of Parliament"],c:1,e:"'O Canada' was first performed on June 24, 1880 (Saint-Jean-Baptiste Day) in Quebec City. The French lyrics were by Adolphe-Basile Routhier; music by Calixa Lavallée."},
+  {q:"What is 'habeas corpus'?",o:["The right to a speedy trial","The right to challenge your detention before a court","The right to be tried by a jury","The right to confront your accuser in court"],c:1,e:"Habeas corpus is the right to challenge your detention before a court. If held unlawfully, you can ask a court to review and potentially order your release."},
+  {q:"Which Prime Minister introduced Canada's official Multiculturalism Policy in 1971?",o:["Lester B. Pearson","John Diefenbaker","Pierre Elliott Trudeau","Brian Mulroney"],c:2,e:"PM Pierre Elliott Trudeau introduced Canada's Multiculturalism Policy in 1971 — making Canada the first country in the world to adopt an official multiculturalism policy."},
+  {q:"What is Canada's largest city?",o:["Ottawa","Montreal","Vancouver","Toronto"],c:3,e:"Toronto, Ontario is Canada's largest city and financial capital — home to the Toronto Stock Exchange and the headquarters of Canada's major banks."},
+  {q:"Which level of government handles criminal law?",o:["Municipal","Provincial","Federal","Shared between federal and provincial"],c:2,e:"Criminal law is a federal responsibility. The Criminal Code of Canada applies nationwide, though policing can be provincial or municipal."},
+  {q:"How many senators sit in the Canadian Senate?",o:["75","105","150","338"],c:1,e:"The Senate has 105 appointed senators. They are appointed by the Governor General on the advice of the PM and serve until age 75."},
+  {q:"What is the 'reasonable limits clause' in the Charter?",o:["Rights can be suspended during wartime","Rights can be limited by law if justified in a free and democratic society","The PM can override any right in an emergency","Rights only apply to citizens, not permanent residents"],c:1,e:"Section 1 of the Charter — the reasonable limits clause — allows rights to be limited by law if the limitation is demonstrably justified in a free and democratic society."},
+  {q:"What was the Battle of Vimy Ridge?",o:["Canada's last battle of WWII","A Canadian victory in WWI — April 1917 — capturing a key ridge","Where Confederation was proposed","The D-Day beach stormed by Canadians"],c:1,e:"The Battle of Vimy Ridge (April 1917) was a defining WWI moment — Canadian troops captured a key ridge that British and French forces had previously failed to take."},
+  {q:"Which is the capital of Alberta?",o:["Calgary","Lethbridge","Red Deer","Edmonton"],c:3,e:"Edmonton is the capital of Alberta. Calgary is the largest city in Alberta and centre of the oil industry, but Edmonton is the provincial capital."},
+  {q:"What must a bill receive before it becomes law in Canada?",o:["The Prime Minister's signature","A national referendum","Royal Assent from the Governor General","Approval from all provincial premiers"],c:2,e:"Royal Assent — the Governor General's formal approval on behalf of the Sovereign — is the final step before a bill becomes law in Canada."},
+  {q:"What do Equality Rights under Section 15 of the Charter protect?",o:["The right to vote","Freedom from discrimination based on race, religion, sex, age, disability etc.","The right to own property","Freedom from unreasonable search"],c:1,e:"Section 15 guarantees equality rights — every individual is equal before the law, without discrimination based on race, national or ethnic origin, colour, religion, sex, age, or disability."},
+  {q:"When was Nunavut created?",o:["April 1, 1982","April 1, 1992","April 1, 1999","April 1, 2005"],c:2,e:"Nunavut was created on April 1, 1999 — carved out of the Northwest Territories to recognize and accommodate the Inuit people."},
+  {q:"What is Canada's position in terms of world size?",o:["Largest country in the world","Second largest country in the world","Third largest country in the world","Fourth largest country in the world"],c:1,e:"Canada is the second largest country in the world by total area — covering approximately 10 million square kilometres. Russia is the largest."},
+  {q:"What is the name of Canada's national police force?",o:["The Canadian Federal Police","The Royal Canadian Mounted Police (RCMP)","The National Security Police","The Canadian Border Services"],c:1,e:"The Royal Canadian Mounted Police (RCMP) is Canada's national police force, famous worldwide for its red serge uniform."},
+  {q:"What does it mean that Canada is a 'constitutional monarchy'?",o:["Canada has no written constitution","The PM has absolute power","The Sovereign is head of state and power is limited by the Constitution","Canada is governed directly by the British Parliament"],c:2,e:"As a constitutional monarchy, Canada's head of state is the Sovereign (King Charles III), but the Sovereign's power is defined and limited by the Constitution. The elected Parliament holds real governing power."}
+],
+3:[
+  {q:"What is the Magna Carta (1215) and why does it matter to Canada?",o:["The document that created Confederation","One of the first documents to limit ruler power — a foundation of Canadian democratic rights","The original Canadian Constitution","The document that gave women the right to vote"],c:1,e:"The Magna Carta (1215) was one of the first documents to limit the power of rulers — establishing that everyone, including the king, must obey the law. It is a foundational document in Canada's democratic tradition."},
+  {q:"How is the Prime Minister of Canada chosen?",o:["Directly elected by all Canadian voters","Appointed by the Governor General based on seniority","As the leader of the party with the most seats in the House of Commons","Chosen by the Senate"],c:2,e:"The PM is the leader of the party that wins the most seats in the House of Commons. Canadians elect local MPs; the PM emerges from whichever party wins the most seats."},
+  {q:"Which PM won the Nobel Peace Prize in 1957 for creating UN peacekeeping forces?",o:["Pierre Elliott Trudeau","John Diefenbaker","Lester B. Pearson","Sir Wilfrid Laurier"],c:2,e:"PM Lester B. Pearson won the Nobel Peace Prize in 1957 for creating the United Nations Emergency Force during the Suez Crisis — establishing modern international peacekeeping."},
+  {q:"What is the 'notwithstanding clause' (Section 33) of the Charter?",o:["The clause allowing rights to be limited if reasonable","The clause allowing Parliament or legislatures to override certain Charter rights for up to 5 years","The clause protecting Indigenous rights","The clause making bilingualism mandatory"],c:1,e:"Section 33 allows Parliament or a provincial legislature to override certain Charter rights for up to 5 years (renewable). It is a controversial but important part of Canada's constitutional framework."},
+  {q:"In what year did Indigenous peoples gain full voting rights in Canada?",o:["1918","1945","1960","1982"],c:2,e:"Indigenous peoples gained full federal voting rights in 1960 under PM John Diefenbaker."},
+  {q:"What does Canada's coat of arms motto 'A Mari Usque Ad Mare' reference?",o:["Canada's two official languages","Canada's vast geography — from the Atlantic to Pacific to Arctic oceans","The founding nations of Canada","Canada's peacekeeping role"],c:1,e:"'From Sea to Sea' refers to Canada's geographic reach — bordered by the Atlantic Ocean (east), Pacific Ocean (west), and Arctic Ocean (north)."},
+  {q:"Alberta and Saskatchewan both joined Confederation in the same year. When?",o:["1870","1873","1905","1912"],c:2,e:"Alberta and Saskatchewan both joined Confederation in 1905 — simultaneously, unlike most other provinces."},
+  {q:"What is the key distinction between the Senate and the House of Commons?",o:["The Senate is more powerful than the House","Senators are elected; MPs are appointed","MPs are elected by voters; senators are appointed by the GG on advice of the PM","Both are elected but senators serve longer terms"],c:2,e:"MPs in the House of Commons are elected by voters in their riding. Senators are appointed by the Governor General on the advice of the Prime Minister, serving until age 75."},
+  {q:"Canada was the first country in the world to do what in 1971?",o:["Grant women the vote","Adopt an official multiculturalism policy","Enshrine a Charter of Rights","Establish universal health care"],c:1,e:"Canada was the first country in the world to adopt multiculturalism as an official government policy — in 1971 under PM Pierre Elliott Trudeau."},
+  {q:"What is the 'rule of law' in Canada?",o:["The government can pass any law it chooses","Everyone in Canada — including the government — must obey the law","Laws only apply to citizens and permanent residents","The PM has the final say on all legal disputes"],c:1,e:"The rule of law is fundamental to Canadian democracy — everyone, including the government, must obey the law. No one is above it. This is a key principle tested on the citizenship exam."},
+  {q:"Which group of Canadians served in both WWI and WWII despite not having full voting rights?",o:["Women","Loyalists","Métis people only","Indigenous peoples"],c:3,e:"Indigenous peoples served with distinction in both World War I and World War II despite not having full federal voting rights until 1960. This is an important historical distinction."},
+  {q:"What is 'proroguing' Parliament?",o:["Permanently dissolving Parliament","Temporarily suspending a session of Parliament","Removing the Prime Minister from office","Calling a snap election"],c:1,e:"Proroguing means temporarily suspending a session of Parliament without dissolving it. It is done by the Governor General on the advice of the PM."},
+  {q:"Which province produces most of the world's maple syrup?",o:["Ontario","New Brunswick","Quebec","Nova Scotia"],c:2,e:"Quebec produces approximately 70–75% of the world's maple syrup supply."},
+  {q:"The Canadian Bill of Rights (1960) differed from the Charter (1982) in what key way?",o:["The Bill was more powerful","The Bill covered more rights","The Bill was only a federal statute with limited power; the Charter is in the Constitution","The Bill applied to all levels of government"],c:2,e:"The Bill of Rights was only a federal statute — it didn't apply to provincial laws and could be overridden by Parliament. The Charter is embedded in the Constitution with supreme authority over all governments."},
+  {q:"What is Canada's largest trading partner?",o:["China","United Kingdom","Mexico","United States"],c:3,e:"The United States is Canada's largest trading partner. The two countries share the world's largest bilateral trading relationship, governed by CUSMA (formerly NAFTA)."},
+  {q:"What does freedom of peaceful assembly protect?",o:["The right to carry weapons in public","The right to form a political party","The right to gather peacefully — for protests, demonstrations, or events","The right to refuse jury duty"],c:2,e:"Freedom of peaceful assembly — one of the four fundamental freedoms — guarantees the right to gather peacefully with others, including for protests and public demonstrations."},
+  {q:"What was the significance of the Quebec Act (1774)?",o:["It made Quebec an independent nation","It established English as Quebec's official language","It recognized French civil law, the Catholic religion, and French language rights","It created the province of Quebec"],c:2,e:"The Quebec Act (1774) recognized French civil law, the Catholic religion, and French language rights — a foundational compromise that still shapes bilingual Canada today."},
+  {q:"Canada shares the world's longest undefended border with which country?",o:["Russia","Greenland (Denmark)","United States","Mexico"],c:2,e:"Canada and the United States share the world's longest undefended border — nearly 9,000 kilometres — from the Atlantic coast to the Pacific coast."},
+  {q:"What is the capital of British Columbia?",o:["Vancouver","Kelowna","Victoria","Prince George"],c:2,e:"Victoria is the capital of British Columbia — not Vancouver. This is a common trap on the citizenship test. Vancouver is BC's largest city but Victoria is the provincial capital."},
+  {q:"When was 'O Canada' officially proclaimed as Canada's national anthem?",o:["July 1, 1867","July 1, 1967","July 1, 1980","April 17, 1982"],c:2,e:"'O Canada' was officially proclaimed Canada's national anthem on July 1, 1980 — exactly 100 years after it was first publicly performed in Quebec City in 1880."}
+]};
+
+const state = {
+  1:{cur:0,ans:[],timer:null,started:false},
+  2:{cur:0,ans:[],timer:null,started:false},
+  3:{cur:0,ans:[],timer:null,started:false}
+};
+
+function showPanel(id, btn){
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('on'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));
+  document.getElementById(id).classList.add('on');
+  if(btn) btn.classList.add('on');
+}
+
+function startExam(n){
+  state[n]={cur:0,ans:[],timer:null,started:true,secs:1800};
+  showPanel('e'+n, null);
+  document.querySelectorAll('.tab')[n-1].classList.add('on');
+  renderQ(n);
+  startTimer(n);
+}
+
+function startTimer(n){
+  if(state[n].timer) clearInterval(state[n].timer);
+  state[n].secs = 1800;
+  state[n].timer = setInterval(()=>{
+    state[n].secs--;
+    const m = Math.floor(state[n].secs/60);
+    const s = state[n].secs%60;
+    const tv = document.getElementById('t'+n);
+    tv.textContent = m+':'+(s<10?'0':'')+s;
+    tv.className = 'timer-val' + (state[n].secs<=300?' warn':'') + (state[n].secs<=60?' danger':'');
+    if(state[n].secs<=0){clearInterval(state[n].timer);finishExam(n);}
+  },1000);
+}
+
+function renderQ(n){
+  const st=state[n], qs=EXAMS[n], q=qs[st.cur];
+  document.getElementById('n'+n).textContent = 'Question '+(st.cur+1)+' of 20';
+  document.getElementById('q'+n).textContent = q.q;
+  document.getElementById('p'+n+'l').textContent = 'Question '+(st.cur+1)+' of 20';
+  document.getElementById('p'+n+'f').style.width = ((st.cur+1)/20*100)+'%';
+  const letters = ['A','B','C','D'];
+  const ob = document.getElementById('o'+n);
+  ob.innerHTML='';
+  q.o.forEach((opt,i)=>{
+    const b = document.createElement('button');
+    b.className = 'qopt';
+    b.innerHTML = '<span class="qopt-letter">'+letters[i]+'</span><span>'+opt+'</span>';
+    if(st.ans[st.cur]!==undefined){
+      b.disabled=true;
+      if(i===q.c) b.classList.add('ok');
+      else if(i===st.ans[st.cur]) b.classList.add('ng');
+    } else {
+      b.onclick=()=>answerQ(n,i);
+    }
+    ob.appendChild(b);
+  });
+  const ex = document.getElementById('ex'+n);
+  if(st.ans[st.cur]!==undefined){ex.textContent='💡 '+q.e;ex.classList.add('on');}
+  else ex.classList.remove('on');
+  document.getElementById('pv'+n).style.visibility = st.cur>0?'visible':'hidden';
+  const nb = document.getElementById('nx'+n);
+  nb.style.opacity = st.ans[st.cur]!==undefined?'1':'0.4';
+  if(st.cur===19 && st.ans[st.cur]!==undefined){
+    nb.textContent='See Results';
+    nb.onclick=()=>finishExam(n);
+  } else {
+    nb.textContent='Next →';
+    nb.onclick=()=>nextQ(n);
+  }
+}
+
+function answerQ(n,i){
+  const st=state[n];
+  if(st.ans[st.cur]!==undefined) return;
+  st.ans[st.cur]=i;
+  renderQ(n);
+}
+
+function nextQ(n){
+  const st=state[n];
+  if(st.ans[st.cur]===undefined) return;
+  if(st.cur<19){st.cur++;renderQ(n);}
+  else finishExam(n);
+}
+
+function prevQ(n){
+  if(state[n].cur>0){state[n].cur--;renderQ(n);}
+}
+
+function finishExam(n){
+  if(state[n].timer) clearInterval(state[n].timer);
+  const qs=EXAMS[n], ans=state[n].ans;
+  let score=0;
+  ans.forEach((a,i)=>{if(a===qs[i].c)score++;});
+  // also count unanswered as wrong
+  const total=20;
+  showPanel('r'+n, null);
+  document.querySelectorAll('.tab')[n-1].classList.add('on');
+  const pass = score>=15;
+  const rb = document.getElementById('rb'+n);
+  rb.className='res-badge '+(pass?'pass':'fail');
+  rb.textContent = pass?'🎉':'📚';
+  document.getElementById('rs'+n).textContent = score;
+  const rv = document.getElementById('rv'+n);
+  rv.className='res-verdict '+(pass?'pass':'fail');
+  rv.textContent = pass?'✅ PASSED':'❌ Not yet — keep studying';
+  const pct = Math.round(score/total*100);
+  document.getElementById('rm'+n).textContent = pass
+    ? (score===20?'Perfect score! You are absolutely ready for your citizenship test.'
+      : 'Well done — you scored '+pct+'%. You are ready for the real test. Review any wrong answers to push your score even higher.')
+    : 'You scored '+pct+'% ('+score+'/20). You need 15/20 to pass. Review the explanations below, revisit the relevant modules, and retake this exam.';
+  document.getElementById('res'+n).classList.add('on');
+  const bd = document.getElementById('rbd'+n);
+  bd.innerHTML='';
+  qs.forEach((q,i)=>{
+    const correct = ans[i]===q.c;
+    const div=document.createElement('div');
+    div.className='rb-row '+(correct?'correct':'incorrect');
+    div.innerHTML='<span class="rb-num">'+(i+1)+'.</span><span class="rb-q">'+q.q+'<br><small style="opacity:.8">'+(correct?'✓ Correct':'✗ Correct answer: '+q.o[q.c])+'</small></span><span class="rb-icon">'+(correct?'✅':'❌')+'</span>';
+    bd.appendChild(div);
+  });
+}
+
+function retakeExam(n){
+  state[n]={cur:0,ans:[],timer:null,started:false,secs:1800};
+  document.getElementById('res'+n).classList.remove('on');
+  showPanel('i'+n, null);
+  document.querySelectorAll('.tab')[n-1].classList.add('on');
+}
+</script>
+</body>
+</html>
