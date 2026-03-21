@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 2 — Government & Democracy</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Source Sans 3',sans-serif;background:#f0f4f8;color:#1a2332;line-height:1.7}
+
+.tabs{display:flex;background:#fff;border-bottom:2px solid #e2e8f0;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,0.06)}
+.tab{flex:1;padding:14px 8px;font-size:13px;font-weight:500;font-family:'Source Sans 3',sans-serif;background:none;border:none;cursor:pointer;color:#64748b;border-bottom:3px solid transparent;margin-bottom:-2px;transition:all .2s}
+.tab:hover{color:#1d4ed8;background:#f8faff}
+.tab.on{color:#1d4ed8;border-bottom-color:#1d4ed8;background:#f8faff}
+.panel{display:none}
+.panel.on{display:block}
+
+.mod-header{background:linear-gradient(135deg,#1d4ed8 0%,#2563eb 50%,#3b82f6 100%);padding:32px 28px 28px;position:relative;overflow:hidden}
+.mod-header::before{content:'';position:absolute;top:-40px;right:-40px;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,0.06)}
+.mod-header::after{content:'';position:absolute;bottom:-20px;left:20%;width:300px;height:300px;border-radius:50%;background:rgba(255,255,255,0.04)}
+.mod-eyebrow{font-family:'Source Sans 3',sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.75);font-weight:600;margin-bottom:8px}
+.mod-title{font-family:'Lora',serif;font-size:32px;font-weight:700;color:#fff;margin-bottom:12px;line-height:1.2;position:relative;z-index:1}
+.mod-chips{display:flex;gap:12px;flex-wrap:wrap;position:relative;z-index:1}
+.chip{font-family:'Source Sans 3',sans-serif;font-size:12px;color:rgba(255,255,255,0.8);display:flex;align-items:center;gap:4px;background:rgba(255,255,255,0.12);padding:4px 10px;border-radius:20px}
+
+.lesson-body{padding:24px 28px;display:flex;flex-direction:column;gap:20px;max-width:800px}
+.lnav{display:flex;gap:6px;flex-wrap:wrap}
+.lbtn{font-family:'Source Sans 3',sans-serif;font-size:12px;font-weight:500;padding:6px 14px;border-radius:20px;border:1.5px solid #cbd5e1;background:#fff;color:#64748b;cursor:pointer;transition:all .2s}
+.lbtn:hover,.lbtn.on{background:#2563eb;color:#fff;border-color:#2563eb;box-shadow:0 2px 8px rgba(37,99,235,0.3)}
+.ls{display:none;flex-direction:column;gap:18px}
+.ls.on{display:flex}
+
+.obj{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:1.5px solid #bfdbfe;border-radius:10px;padding:16px 18px}
+.obj-lbl{font-family:'Source Sans 3',sans-serif;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#1d4ed8;margin-bottom:10px}
+.obj-row{display:flex;gap:8px;font-family:'Source Sans 3',sans-serif;font-size:14px;color:#1e3a5f;line-height:1.55;margin-bottom:6px;align-items:flex-start}
+.obj-row:last-child{margin-bottom:0}
+.obj-ck{color:#2563eb;font-size:13px;flex-shrink:0;margin-top:1px;font-weight:700}
+
+.lt{font-family:'Lora',serif;font-size:20px;font-weight:600;color:#1e3a5f;border-left:4px solid #2563eb;padding-left:14px;line-height:1.3}
+.lp{font-family:'Source Sans 3',sans-serif;font-size:15px;line-height:1.85;color:#334155}
+.lp p{margin-bottom:13px}
+.lp p:last-child{margin-bottom:0}
+.lp strong{font-weight:600;color:#1e3a5f}
+
+/* Government structure diagram */
+.gov-diagram{display:flex;flex-direction:column;gap:8px;align-items:center}
+.gov-box{border-radius:8px;padding:12px 18px;text-align:center;width:100%}
+.gov-box.crown{background:linear-gradient(135deg,#1d4ed8,#2563eb);color:#fff}
+.gov-crown-title{font-family:'Lora',serif;font-size:14px;font-weight:600;color:#fff;margin-bottom:2px}
+.gov-crown-sub{font-family:'Source Sans 3',sans-serif;font-size:12px;color:rgba(255,255,255,0.8)}
+.gov-arrow{font-size:18px;color:#94a3b8;text-align:center}
+.gov-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;width:100%}
+.gov-branch{border-radius:8px;padding:12px 14px;text-align:center;border:1.5px solid}
+.gov-branch.exec{background:#eff6ff;border-color:#93c5fd}
+.gov-branch.leg{background:#fef3c7;border-color:#fcd34d}
+.gov-branch.jud{background:#f0fdf4;border-color:#86efac}
+.gb-title{font-family:'Source Sans 3',sans-serif;font-size:12px;font-weight:600;margin-bottom:3px}
+.exec .gb-title{color:#1d4ed8}
+.leg .gb-title{color:#92400e}
+.jud .gb-title{color:#14532d}
+.gb-sub{font-family:'Source Sans 3',sans-serif;font-size:11px;line-height:1.4}
+.exec .gb-sub{color:#3b82f6}
+.leg .gb-sub{color:#d97706}
+.jud .gb-sub{color:#16a34a}
+
+.hbox{background:#fff7ed;border:1.5px solid #fed7aa;border-left:4px solid #f97316;border-radius:0 10px 10px 0;padding:14px 16px;font-family:'Source Sans 3',sans-serif;font-size:14px;line-height:1.65;color:#431407}
+.hbox strong{font-weight:600;color:#c2410c}
+
+.kf{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:1.5px solid #93c5fd;border-radius:12px;padding:18px 20px}
+.kf-lbl{font-family:'Source Sans 3',sans-serif;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#1d4ed8;margin-bottom:12px}
+.kf-row{display:flex;gap:10px;align-items:flex-start;margin-bottom:8px;font-family:'Source Sans 3',sans-serif;font-size:14px;line-height:1.55;color:#1e3a5f}
+.kf-row:last-child{margin-bottom:0}
+.kf-dot{width:7px;height:7px;border-radius:50%;background:#2563eb;flex-shrink:0;margin-top:5px}
+.kf-row strong{font-weight:600}
+
+.recap{background:linear-gradient(135deg,#1d4ed8,#2563eb);border-radius:10px;padding:18px 20px}
+.recap-lbl{font-family:'Source Sans 3',sans-serif;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:8px}
+.recap-t{font-family:'Source Sans 3',sans-serif;font-size:14px;color:rgba(255,255,255,0.92);line-height:1.75}
+
+.nxt{display:flex;justify-content:flex-end}
+.nbtn{background:#2563eb;color:#fff;border:none;border-radius:8px;padding:10px 22px;font-family:'Source Sans 3',sans-serif;font-size:14px;font-weight:500;cursor:pointer;transition:all .2s;box-shadow:0 2px 8px rgba(37,99,235,0.3)}
+.nbtn:hover{background:#1d4ed8;transform:translateY(-1px)}
+
+.quiz-body{padding:20px 28px;display:flex;flex-direction:column;gap:16px;max-width:800px}
+.quiz-hdr{background:linear-gradient(135deg,#1d4ed8,#2563eb);border-radius:10px;padding:16px 20px}
+.qh-eye{font-family:'Source Sans 3',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:4px}
+.qh-title{font-family:'Lora',serif;font-size:18px;font-weight:600;color:#fff}
+.qh-sub{font-family:'Source Sans 3',sans-serif;font-size:12px;color:rgba(255,255,255,0.7);margin-top:4px}
+
+.qpm{display:flex;justify-content:space-between;font-family:'Source Sans 3',sans-serif;font-size:13px;color:#64748b}
+.qpb{height:5px;background:#e2e8f0;border-radius:3px;overflow:hidden;margin-top:4px}
+.qpf{height:100%;background:linear-gradient(90deg,#2563eb,#3b82f6);border-radius:3px;transition:width .4s}
+
+.qcard{background:#fff;border:1.5px solid #e2e8f0;border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:14px;box-shadow:0 2px 8px rgba(0,0,0,0.04)}
+.qnum{font-family:'Source Sans 3',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#2563eb;font-weight:600}
+.qtxt{font-family:'Lora',serif;font-size:16px;font-weight:500;line-height:1.55;color:#1e3a5f}
+.qopts{display:flex;flex-direction:column;gap:8px}
+.qopt{padding:11px 15px;border-radius:8px;border:1.5px solid #e2e8f0;background:#f8faff;font-family:'Source Sans 3',sans-serif;font-size:14px;color:#334155;cursor:pointer;text-align:left;width:100%;transition:all .15s}
+.qopt:hover:not(:disabled){border-color:#2563eb;background:#eff6ff}
+.qopt.ok{background:#f0fdf4;border-color:#16a34a;color:#14532d}
+.qopt.ng{background:#fef2f2;border-color:#dc2626;color:#7f1d1d}
+.qopt.sh{background:#f0fdf4;border-color:#16a34a;color:#14532d}
+.qexp{font-family:'Source Sans 3',sans-serif;font-size:13px;line-height:1.65;padding:11px 13px;border-radius:8px;background:#f8faff;border:1px solid #bfdbfe;color:#334155;display:none}
+.qexp.on{display:block}
+
+.qnav{display:flex;justify-content:space-between;align-items:center}
+.qbtn{padding:9px 18px;border-radius:8px;font-family:'Source Sans 3',sans-serif;font-size:13px;font-weight:500;cursor:pointer;border:1.5px solid #cbd5e1;background:#fff;color:#475569;transition:all .15s}
+.qbtn:hover{border-color:#2563eb;color:#2563eb}
+.qbtn.pr{background:#2563eb;color:#fff;border-color:#2563eb;box-shadow:0 2px 8px rgba(37,99,235,0.3)}
+.qbtn.pr:hover{background:#1d4ed8}
+
+.sc{background:linear-gradient(135deg,#1d4ed8,#2563eb);border-radius:12px;padding:28px;text-align:center;display:none;flex-direction:column;gap:10px;align-items:center}
+.sc.on{display:flex}
+.scn{font-family:'Lora',serif;font-size:52px;font-weight:700;color:#fff}
+.scl{font-family:'Source Sans 3',sans-serif;font-size:14px;color:rgba(255,255,255,0.7)}
+.scm{font-family:'Source Sans 3',sans-serif;font-size:15px;font-weight:500;color:#fbbf24}
+.sca{display:flex;gap:10px;margin-top:8px;flex-wrap:wrap;justify-content:center}
+.sbtn{padding:9px 18px;border-radius:8px;font-family:'Source Sans 3',sans-serif;font-size:13px;font-weight:500;cursor:pointer;border:1.5px solid rgba(255,255,255,0.3);background:rgba(255,255,255,0.1);color:#fff;transition:all .15s}
+.sbtn:hover{background:rgba(255,255,255,0.2)}
+.sbtn.pr{background:#fff;color:#2563eb;border-color:#fff}
+
+@media(max-width:600px){
+  .mod-title{font-size:24px}
+  .lesson-body,.quiz-body{padding:16px}
+  .tab{font-size:11px;padding:12px 4px}
+  .gov-row{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<div class="tabs">
+  <button class="tab on" onclick="ST('l',this)">📖 Lessons</button>
+  <button class="tab" onclick="ST('a',this)">📝 Quiz A</button>
+  <button class="tab" onclick="ST('b',this)">📝 Quiz B</button>
+  <button class="tab" onclick="ST('c',this)">📝 Quiz C</button>
+</div>
+
+<!-- ══════ LESSONS ══════ -->
+<div id="pl" class="panel on">
+<div class="mod-header">
+  <div class="mod-eyebrow">Module 2 of 5</div>
+  <div class="mod-title">Government & Democracy</div>
+  <div class="mod-chips">
+    <span class="chip">📖 5 lessons</span>
+    <span class="chip">⏱ ~50 min</span>
+    <span class="chip">🍁 Source: Discover Canada (IRCC)</span>
+    <span class="chip">🔴 2nd most tested module</span>
+  </div>
+</div>
+<div class="lesson-body">
+  <div class="lnav">
+    <button class="lbtn on" onclick="SL(0,this)">1. Structure of government</button>
+    <button class="lbtn" onclick="SL(1,this)">2. Parliament</button>
+    <button class="lbtn" onclick="SL(2,this)">3. Federal vs provincial</button>
+    <button class="lbtn" onclick="SL(3,this)">4. Elections & voting</button>
+    <button class="lbtn" onclick="SL(4,this)">5. The Crown & traditions</button>
+  </div>
+
+  <!-- LESSON 1 -->
+  <div class="ls on" id="l0">
+    <div class="obj">
+      <div class="obj-lbl">Learning Objectives</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Understand what type of government Canada has</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Name and explain the three branches of government</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Know who the head of state and head of government are</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Understand the role of the Governor General</div>
+    </div>
+    <div class="lt">What kind of government does Canada have?</div>
+    <div class="lp">
+      <p>Canada is a <strong>constitutional monarchy</strong>, a <strong>federal state</strong>, and a <strong>parliamentary democracy</strong>. These three things together define how Canada is governed.</p>
+      <p>As a <strong>constitutional monarchy</strong>, Canada's head of state is the <strong>Sovereign</strong> — currently <strong>King Charles III</strong>. The Sovereign's representative in Canada is the <strong>Governor General</strong>, appointed on the advice of the Prime Minister. In each province, the Sovereign is represented by a <strong>Lieutenant Governor</strong>.</p>
+      <p>The <strong>head of government</strong> is the <strong>Prime Minister</strong> — the leader of the party with the most seats in the House of Commons.</p>
+    </div>
+    <div class="lt">The three branches of government</div>
+    <div class="gov-diagram">
+      <div class="gov-box crown">
+        <div class="gov-crown-title">The Crown (Sovereign — King Charles III)</div>
+        <div class="gov-crown-sub">Head of State · represented by the Governor General</div>
+      </div>
+      <div class="gov-arrow">↓</div>
+      <div class="gov-row">
+        <div class="gov-branch exec">
+          <div class="gb-title">Executive</div>
+          <div class="gb-sub">Prime Minister + Cabinet · runs the government</div>
+        </div>
+        <div class="gov-branch leg">
+          <div class="gb-title">Legislative</div>
+          <div class="gb-sub">Parliament · makes laws · Senate + House of Commons</div>
+        </div>
+        <div class="gov-branch jud">
+          <div class="gb-title">Judicial</div>
+          <div class="gb-sub">Courts · interprets laws · Supreme Court of Canada</div>
+        </div>
+      </div>
+    </div>
+    <div class="lp">
+      <p>The <strong>Executive Branch</strong> is led by the Prime Minister and Cabinet — ministers responsible for government departments.</p>
+      <p>The <strong>Legislative Branch</strong> is Parliament — it makes federal laws. Parliament consists of the Sovereign (represented by the Governor General), the Senate, and the House of Commons.</p>
+      <p>The <strong>Judicial Branch</strong> consists of the courts, which interpret and apply the law. The highest court is the <strong>Supreme Court of Canada</strong>, with <strong>nine judges</strong> including the Chief Justice.</p>
+    </div>
+    <div class="hbox"><strong>Head of State vs Head of Government:</strong> These are two different roles. The <strong>head of state</strong> is the Sovereign (King Charles III), represented by the Governor General. The <strong>head of government</strong> is the Prime Minister. This distinction appears frequently on the exam.</div>
+    <div class="kf">
+      <div class="kf-lbl">📌 Key Facts — Memorize These</div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Canada is a <strong>constitutional monarchy, federal state, and parliamentary democracy</strong></div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Head of State: <strong>Sovereign (King Charles III)</strong> — represented by the Governor General</div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Head of Government: <strong>The Prime Minister</strong></div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Three branches: <strong>Executive</strong> (PM + Cabinet) · <strong>Legislative</strong> (Parliament) · <strong>Judicial</strong> (Courts)</div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div><strong>Supreme Court of Canada</strong> — 9 judges — highest court in the land</div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Each province has a <strong>Lieutenant Governor</strong> representing the Sovereign</div></div>
+    </div>
+    <div class="recap"><div class="recap-lbl">Lesson Recap</div><div class="recap-t">Canada's government combines three systems: a constitutional monarchy (the Crown), a federal state (powers shared between federal and provincial governments), and a parliamentary democracy (elected Parliament makes the laws). The Sovereign is head of state; the Prime Minister runs the government day to day. Three branches — Executive, Legislative, and Judicial — keep each other in balance. Next: how Parliament makes laws.</div></div>
+    <div class="nxt"><button class="nbtn" onclick="SL(1,document.querySelectorAll('.lbtn')[1])">Next Lesson →</button></div>
+  </div>
+
+  <!-- LESSON 2 -->
+  <div class="ls" id="l1">
+    <div class="obj">
+      <div class="obj-lbl">Learning Objectives</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Know the three parts of Parliament</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Understand the difference between the Senate and the House of Commons</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Know how a bill becomes law</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Understand the role of the Official Opposition</div>
+    </div>
+    <div class="lt">Parliament — how laws are made</div>
+    <div class="lp">
+      <p>Canada's <strong>Parliament</strong> has three parts: the <strong>Sovereign</strong> (represented by the Governor General), the <strong>Senate</strong>, and the <strong>House of Commons</strong>. All three must agree for a bill to become law.</p>
+      <p>The <strong>House of Commons</strong> is the most powerful part. It has <strong>338 elected Members of Parliament (MPs)</strong>. Each MP represents a geographic area called a <strong>riding</strong> or <strong>electoral district</strong>. The party that wins the most seats forms the government and its leader becomes <strong>Prime Minister</strong>.</p>
+      <p>The <strong>Senate</strong> has <strong>105 appointed senators</strong> who serve until age 75. The Senate reviews and approves legislation passed by the House of Commons. It is sometimes called the <strong>"chamber of sober second thought"</strong> — it carefully reviews bills before they become law.</p>
+      <p>The process of making a law: a <strong>bill</strong> is introduced in Parliament, debated, voted on in the House of Commons, reviewed by the Senate, and then receives <strong>Royal Assent</strong> — the Governor General's formal approval — to become law.</p>
+      <p>The leader of the party with the second-most seats becomes the <strong>Leader of the Official Opposition</strong> — a key role in holding the government accountable.</p>
+    </div>
+    <div class="hbox"><strong>Elected vs Appointed:</strong> MPs in the House of Commons are <strong>elected</strong> by voters. Senators are <strong>appointed</strong> by the Governor General on the advice of the PM. This is a common exam distinction.</div>
+    <div class="kf">
+      <div class="kf-lbl">📌 Key Facts — Memorize These</div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Parliament = <strong>Sovereign + Senate + House of Commons</strong></div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>House of Commons: <strong>338 elected MPs</strong> — each represents a riding</div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Senate: <strong>105 appointed senators</strong> — serve until age 75</div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Senate = <strong>"chamber of sober second thought"</strong></div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>A bill becomes law after <strong>Royal Assent</strong> from the Governor General</div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>2nd largest party = <strong>Official Opposition</strong></div></div>
+    </div>
+    <div class="recap"><div class="recap-lbl">Lesson Recap</div><div class="recap-t">Parliament's three parts — the Sovereign, Senate, and House of Commons — must all agree before a bill becomes law. The elected House of Commons holds the real power; the appointed Senate reviews carefully. Royal Assent from the Governor General is the final step. Next: which level of government handles what.</div></div>
+    <div class="nxt"><button class="nbtn" onclick="SL(2,document.querySelectorAll('.lbtn')[2])">Next Lesson →</button></div>
+  </div>
+
+  <!-- LESSON 3 -->
+  <div class="ls" id="l2">
+    <div class="obj">
+      <div class="obj-lbl">Learning Objectives</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Know the three levels of government and their responsibilities</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Distinguish federal from provincial from municipal powers</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Know the leaders at each level of government</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Understand that Canadians can vote in three separate elections</div>
+    </div>
+    <div class="lt">Three levels of government</div>
+    <div class="lp">
+      <p>Canada has <strong>three levels of government</strong> — federal, provincial/territorial, and municipal (local). Each has specific responsibilities defined by the Constitution.</p>
+      <p>The <strong>Federal Government</strong> (in Ottawa) handles matters affecting all Canadians: <strong>national defence, foreign policy, criminal law, banking, postal service, immigration, and Indigenous affairs</strong>. It also manages Employment Insurance (EI) and the Canada Pension Plan (CPP).</p>
+      <p><strong>Provincial and Territorial Governments</strong> handle matters closer to home: <strong>education, health care, natural resources, property and civil rights, highways, and municipal institutions</strong>. Each province is led by a <strong>Premier</strong>.</p>
+      <p><strong>Municipal (local) governments</strong> handle day-to-day community matters: <strong>garbage collection, snow removal, zoning, local roads, parks, and public transit</strong>. They are led by a <strong>Mayor</strong> and city council.</p>
+      <p>When you vote in Canada, you can vote in <strong>three separate elections</strong> — federal, provincial, and municipal — each with different representatives and issues.</p>
+    </div>
+    <div class="hbox"><strong>Commonly tested:</strong> <strong>Health care and education</strong> are <strong>provincial</strong> responsibilities — not federal. <strong>Criminal law and immigration</strong> are <strong>federal</strong>. These distinctions appear very frequently on the citizenship test.</div>
+    <div class="kf">
+      <div class="kf-lbl">📌 Key Facts — Memorize These</div>
+      <div class="kf-row"><div class="kf-dot"></div><div><strong>Federal:</strong> defence, foreign policy, criminal law, banking, immigration, postal service</div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div><strong>Provincial:</strong> education, health care, natural resources, highways, property rights</div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div><strong>Municipal:</strong> garbage, snow removal, zoning, local roads, parks, transit</div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Provincial leader = <strong>Premier</strong> · Municipal leader = <strong>Mayor</strong></div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Canadians can vote in <strong>three separate elections</strong> — federal, provincial, municipal</div></div>
+    </div>
+    <div class="recap"><div class="recap-lbl">Lesson Recap</div><div class="recap-t">Canada's three levels of government divide responsibilities clearly — the federal government handles national matters, provinces handle regional matters like health and education, and municipalities handle local community services. As a citizen you can participate in elections at all three levels. Next: how elections work and who can vote.</div></div>
+    <div class="nxt"><button class="nbtn" onclick="SL(3,document.querySelectorAll('.lbtn')[3])">Next Lesson →</button></div>
+  </div>
+
+  <!-- LESSON 4 -->
+  <div class="ls" id="l3">
+    <div class="obj">
+      <div class="obj-lbl">Learning Objectives</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Understand Canada's voting system</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Know the requirements to vote in a federal election</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Know the history of voting rights expansion in Canada</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Understand that voting is both a right and a responsibility</div>
+    </div>
+    <div class="lt">Canada's voting system</div>
+    <div class="lp">
+      <p>Canada uses a <strong>first-past-the-post</strong> voting system. In each riding, the candidate with the most votes wins — even without a majority. The party with the most seats forms the government.</p>
+      <p>Federal elections must be held at least every <strong>five years</strong>, but are typically held every four years. The Prime Minister can also ask the Governor General to dissolve Parliament and call an earlier election.</p>
+      <p>To vote in a federal election you must be: a <strong>Canadian citizen</strong>, at least <strong>18 years old</strong>, and registered on the <strong>voters list</strong> with Elections Canada. Voting is both a <strong>right and a responsibility</strong> of citizenship.</p>
+      <p><strong>Permanent residents cannot vote</strong> in federal or provincial elections. Voting is a right exclusive to Canadian citizens — one of the key reasons many permanent residents pursue citizenship.</p>
+    </div>
+    <div class="lt">The expansion of voting rights</div>
+    <div class="lp">
+      <p>Canada has a proud history of expanding democratic participation. <strong>Women</strong> gained the right to vote federally in <strong>1918</strong>. <strong>Japanese Canadians</strong> regained voting rights in <strong>1948</strong>. <strong>Indigenous peoples</strong> gained full voting rights in <strong>1960</strong> under PM <strong>John Diefenbaker</strong>.</p>
+      <p>Votes are cast by <strong>secret ballot</strong> — your vote is private and free from intimidation. You also have the right to join a political party, run as a candidate, and campaign for any party.</p>
+    </div>
+    <div class="hbox"><strong>Remember:</strong> Permanent residents <strong>cannot</strong> vote in federal or provincial elections. Only <strong>Canadian citizens</strong> aged 18+ who are registered can vote. This is one of the most tested distinctions on the citizenship exam.</div>
+    <div class="kf">
+      <div class="kf-lbl">📌 Key Facts — Memorize These</div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Voting system: <strong>first-past-the-post</strong> — most votes in a riding wins</div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Federal elections: at least every <strong>5 years</strong></div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>To vote: must be <strong>Canadian citizen, 18+, registered</strong> with Elections Canada</div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div><strong>Permanent residents cannot vote</strong> — voting is for citizens only</div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Women gained federal vote: <strong>1918</strong></div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Japanese Canadians regained rights: <strong>1948</strong></div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Indigenous peoples gained full voting rights: <strong>1960</strong> (PM Diefenbaker)</div></div>
+    </div>
+    <div class="recap"><div class="recap-lbl">Lesson Recap</div><div class="recap-t">Canada's first-past-the-post system means the candidate with the most votes in each riding wins a seat. Only Canadian citizens aged 18+ can vote — one of the most important rights of citizenship. Canada has gradually expanded voting rights to all citizens, with Indigenous peoples gaining full rights in 1960. Next: the Governor General and Canada's democratic traditions.</div></div>
+    <div class="nxt"><button class="nbtn" onclick="SL(4,document.querySelectorAll('.lbtn')[4])">Next Lesson →</button></div>
+  </div>
+
+  <!-- LESSON 5 -->
+  <div class="ls" id="l4">
+    <div class="obj">
+      <div class="obj-lbl">Learning Objectives</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Understand the role of the Governor General and the Crown</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Know the significance of the Magna Carta</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Understand the confidence convention and how governments fall</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Know where Parliament is located and its key symbols</div>
+    </div>
+    <div class="lt">The Crown and the Governor General</div>
+    <div class="lp">
+      <p>Canada's system of government evolved from <strong>British parliamentary traditions</strong> going back over 800 years, including the <strong>Magna Carta (1215)</strong> — one of the first documents to limit the power of rulers and protect citizens' rights.</p>
+      <p>The <strong>Governor General</strong> is the representative of the Sovereign in Canada. Key duties include: summoning, <strong>proroguing</strong> (suspending), and <strong>dissolving</strong> Parliament; granting <strong>Royal Assent</strong> to bills; reading the <strong>Speech from the Throne</strong> (which outlines the government's priorities); and swearing in the Prime Minister and Cabinet.</p>
+      <p>In Canada's parliamentary system, the government must maintain the <strong>confidence of the House of Commons</strong>. If the government loses a <strong>confidence vote</strong> — such as a vote on the budget — the government may fall and an election may be called.</p>
+    </div>
+    <div class="lt">Parliament Hill and Canadian democracy</div>
+    <div class="lp">
+      <p>Canada's Parliament buildings are located in <strong>Ottawa, Ontario</strong> — the nation's capital. The <strong>Peace Tower</strong> at the Centre Block of Parliament Hill is one of Canada's most recognized symbols. Parliament Hill overlooks the <strong>Ottawa River</strong>.</p>
+      <p>The <strong>rule of law</strong> — the principle that everyone in Canada, including the government, must obey the law — is the foundation of Canadian democracy. No one is above the law.</p>
+    </div>
+    <div class="hbox"><strong>Key terms to know:</strong> <strong>Proroguing</strong> = temporarily suspending Parliament. <strong>Dissolving</strong> Parliament = ending it and triggering an election. <strong>Royal Assent</strong> = Governor General's formal approval of a bill. <strong>Speech from the Throne</strong> = outlines government priorities, read by the Governor General.</div>
+    <div class="kf">
+      <div class="kf-lbl">📌 Key Facts — Memorize These</div>
+      <div class="kf-row"><div class="kf-dot"></div><div><strong>Magna Carta (1215)</strong> — first document to limit ruler power; foundation of democratic rights</div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Governor General: summons, proroges, dissolves Parliament; grants <strong>Royal Assent</strong></div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div><strong>Speech from the Throne</strong> — read by the Governor General — outlines government priorities</div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Government must maintain <strong>confidence of the House of Commons</strong></div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Parliament is in <strong>Ottawa, Ontario</strong> — Canada's capital city</div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div><strong>Peace Tower</strong> on Parliament Hill — iconic symbol of Canadian democracy</div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div><strong>Rule of law</strong> — everyone, including the government, must obey the law</div></div>
+    </div>
+    <div class="recap"><div class="recap-lbl">Module Recap</div><div class="recap-t">Module 2 has given you the full picture of Canadian government — from the three branches and Parliament's structure, to the division of powers between federal and provincial governments, to voting rights and the role of the Crown. These are the building blocks of Canadian democracy, rooted in traditions going back to the Magna Carta in 1215. You are ready for the quizzes!</div></div>
+    <div class="nxt"><button class="nbtn" onclick="ST('a',document.querySelectorAll('.tab')[1])">Take Quiz A →</button></div>
+  </div>
+</div>
+</div>
+
+<!-- ══════ QUIZ A ══════ -->
+<div id="pa" class="panel">
+<div class="quiz-body">
+  <div class="quiz-hdr">
+    <div class="qh-eye">Module 2 · Quiz Set A — Government Structure & Parliament</div>
+    <div class="qh-title">Constitutional Monarchy, Parliament & Three Branches</div>
+    <div class="qh-sub">15 questions · Direct recall · Exam format</div>
+  </div>
+  <div><div class="qpm"><span id="cA">Question 1 of 15</span><span id="sA">Score: 0</span></div><div class="qpb"><div class="qpf" id="fA" style="width:6.6%"></div></div></div>
+  <div class="qcard" id="dA"><div class="qnum" id="nA"></div><div class="qtxt" id="tA"></div><div class="qopts" id="oA"></div><div class="qexp" id="eA"></div></div>
+  <div class="qnav"><button class="qbtn" id="pvA" onclick="PQ('A')" style="visibility:hidden">← Prev</button><button class="qbtn pr" id="nxA" onclick="NQ('A')">Next →</button></div>
+  <div class="sc" id="scA"><div class="scn" id="snA"></div><div class="scl">Quiz Set A complete</div><div class="scm" id="smA"></div><div class="sca"><button class="sbtn" onclick="RS('A')">Retake</button><button class="sbtn pr" onclick="ST('b',document.querySelectorAll('.tab')[2])">Try Set B →</button></div></div>
+</div>
+</div>
+
+<!-- ══════ QUIZ B ══════ -->
+<div id="pb" class="panel">
+<div class="quiz-body">
+  <div class="quiz-hdr">
+    <div class="qh-eye">Module 2 · Quiz Set B — Levels of Government & Elections</div>
+    <div class="qh-title">Federal vs Provincial vs Municipal · Voting Rights</div>
+    <div class="qh-sub">15 questions · Application & scenario style</div>
+  </div>
+  <div><div class="qpm"><span id="cB">Question 1 of 15</span><span id="sB">Score: 0</span></div><div class="qpb"><div class="qpf" id="fB" style="width:6.6%"></div></div></div>
+  <div class="qcard" id="dB"><div class="qnum" id="nB"></div><div class="qtxt" id="tB"></div><div class="qopts" id="oB"></div><div class="qexp" id="eB"></div></div>
+  <div class="qnav"><button class="qbtn" id="pvB" onclick="PQ('B')" style="visibility:hidden">← Prev</button><button class="qbtn pr" id="nxB" onclick="NQ('B')">Next →</button></div>
+  <div class="sc" id="scB"><div class="scn" id="snB"></div><div class="scl">Quiz Set B complete</div><div class="scm" id="smB"></div><div class="sca"><button class="sbtn" onclick="RS('B')">Retake</button><button class="sbtn pr" onclick="ST('c',document.querySelectorAll('.tab')[3])">Try Set C →</button></div></div>
+</div>
+</div>
+
+<!-- ══════ QUIZ C ══════ -->
+<div id="pc" class="panel">
+<div class="quiz-body">
+  <div class="quiz-hdr">
+    <div class="qh-eye">Module 2 · Quiz Set C — Challenge Round</div>
+    <div class="qh-title">The Crown, Democratic Traditions & Harder Questions</div>
+    <div class="qh-sub">15 questions · Exam-level difficulty</div>
+  </div>
+  <div><div class="qpm"><span id="cC">Question 1 of 15</span><span id="sC">Score: 0</span></div><div class="qpb"><div class="qpf" id="fC" style="width:6.6%"></div></div></div>
+  <div class="qcard" id="dC"><div class="qnum" id="nC"></div><div class="qtxt" id="tC"></div><div class="qopts" id="oC"></div><div class="qexp" id="eC"></div></div>
+  <div class="qnav"><button class="qbtn" id="pvC" onclick="PQ('C')" style="visibility:hidden">← Prev</button><button class="qbtn pr" id="nxC" onclick="NQ('C')">Next →</button></div>
+  <div class="sc" id="scC"><div class="scn" id="snC"></div><div class="scl">Quiz Set C complete</div><div class="scm" id="smC"></div><div class="sca"><button class="sbtn" onclick="RS('C')">Retake</button><button class="sbtn pr" onclick="alert('Great work! Proceed to Module 3 in your course.')">Continue →</button></div></div>
+</div>
+</div>
+
+<script>
+const QD={
+A:[
+  {q:"What type of government does Canada have?",o:["A republic with an elected president","A constitutional monarchy, federal state, and parliamentary democracy","A direct democracy where citizens vote on all laws","A unitary state with one central government"],c:1,e:"Canada is a constitutional monarchy (headed by the Sovereign), a federal state (powers divided between federal and provincial governments), and a parliamentary democracy (elected Parliament makes laws)."},
+  {q:"Who is Canada's head of state?",o:["The Prime Minister","The Governor General","The Sovereign (King Charles III)","The Chief Justice of the Supreme Court"],c:2,e:"The Sovereign — King Charles III — is Canada's head of state. The Prime Minister is the head of government. These are two different roles."},
+  {q:"How many elected Members of Parliament are in the House of Commons?",o:["105","265","338","400"],c:2,e:"The House of Commons has 338 elected MPs. Each represents a riding or electoral district. The Senate has 105 appointed senators."},
+  {q:"How many senators are in the Canadian Senate?",o:["105","338","150","75"],c:0,e:"The Canadian Senate has 105 appointed senators, who serve until age 75."},
+  {q:"What is the role of the Judicial Branch?",o:["To propose and pass new laws","To represent Canada in foreign countries","To interpret and apply the law","To collect taxes and manage the budget"],c:2,e:"The Judicial Branch — the courts — interprets and applies the law. The Supreme Court of Canada, with 9 judges, is the highest court."},
+  {q:"Which branch of government is Parliament part of?",o:["The Executive Branch","The Judicial Branch","The Legislative Branch","The Administrative Branch"],c:2,e:"Parliament is the Legislative Branch. It consists of the Sovereign (Governor General), the Senate, and the House of Commons — together they make federal laws."},
+  {q:"What is a 'riding' in Canadian politics?",o:["A political party's headquarters","A geographic area represented by one MP","A special Senate committee","The Governor General's official residence"],c:1,e:"A riding, also called an electoral district or constituency, is the geographic area represented by one Member of Parliament."},
+  {q:"What must happen before a bill becomes law in Canada?",o:["The Prime Minister must sign it","It must be approved by national referendum","It must receive Royal Assent from the Governor General","It must pass a vote by all provincial premiers"],c:2,e:"After passing the House of Commons and Senate review, a bill must receive Royal Assent — the Governor General's formal approval — to become law."},
+  {q:"What is the Senate sometimes called?",o:["The Upper House of Power","The chamber of sober second thought","The Council of Provincial Leaders","The House of Appointed Members"],c:1,e:"The Senate is called the 'chamber of sober second thought' because senators carefully review and revise legislation before it becomes law."},
+  {q:"Who does the Governor General represent?",o:["The Prime Minister","The Supreme Court","The Sovereign (King or Queen)","The United Nations"],c:2,e:"The Governor General represents the Sovereign in Canada at the federal level. Each province has a Lieutenant Governor who represents the Sovereign provincially."},
+  {q:"How many judges sit on the Supreme Court of Canada?",o:["5","7","9","11"],c:2,e:"The Supreme Court of Canada has 9 judges, including the Chief Justice. It is the highest court and final court of appeal in Canada."},
+  {q:"Which party forms the Official Opposition?",o:["The party with the most Senate seats","The party that lost the last election","The party with the second-most seats in the House of Commons","Any party that votes against a bill"],c:2,e:"The Official Opposition is formed by the party that wins the second-most seats in the House of Commons. Its leader holds the government accountable."},
+  {q:"What does the Prime Minister's Cabinet do?",o:["Reviews laws passed by the House of Commons","Manages government departments and advises the PM","Appoints senators and judges","Represents Canada internationally"],c:1,e:"Cabinet ministers are chosen by the PM and manage specific government departments (Finance, Health, Justice, etc.) while advising the PM on policy."},
+  {q:"How are senators appointed?",o:["Elected by provincial legislatures","Elected directly by voters","Appointed by the Governor General on the advice of the PM","Chosen by current senators"],c:2,e:"Senators are appointed by the Governor General on the advice of the Prime Minister. They serve until age 75."},
+  {q:"Where is Canada's Parliament located?",o:["Toronto, Ontario","Montreal, Quebec","Ottawa, Ontario","Kingston, Ontario"],c:2,e:"Canada's Parliament buildings are in Ottawa, Ontario — the nation's capital. Parliament Hill overlooks the Ottawa River."}
+],
+B:[
+  {q:"Which level of government is responsible for health care in Canada?",o:["Federal government","Municipal government","Provincial government","A joint federal-municipal committee"],c:2,e:"Health care is a provincial responsibility. This is why health cards are issued by provinces and health policies differ across the country."},
+  {q:"Which level of government handles national defence?",o:["Municipal government","Provincial government","Federal government","Shared between all three levels"],c:2,e:"National defence is a federal responsibility. The federal government in Ottawa is responsible for Canada's military and national security."},
+  {q:"A new immigrant wants to apply for citizenship. Which government handles immigration?",o:["Municipal government","Provincial government","Federal government","Provincial and municipal together"],c:2,e:"Immigration is a federal responsibility, managed by Immigration, Refugees and Citizenship Canada (IRCC)."},
+  {q:"Your city wants to build a new park and improve garbage collection. Which level handles this?",o:["Federal government","Provincial government","Municipal (local) government","The Governor General's office"],c:2,e:"Municipal governments handle local services including parks, garbage collection, snow removal, zoning, and public transit."},
+  {q:"Who is the leader of a provincial government?",o:["The Prime Minister","The Governor General","The Premier","The Lieutenant Governor"],c:2,e:"The Premier is the head of government at the provincial level — equivalent to the Prime Minister federally."},
+  {q:"Which level of government is responsible for education?",o:["Federal government","Provincial government","Municipal government","A federal-provincial joint board"],c:1,e:"Education is a provincial responsibility. This is why school curricula and university regulations differ across provinces."},
+  {q:"Canada uses which voting system for federal elections?",o:["Proportional representation","Ranked ballot","First-past-the-post","Two-round runoff"],c:2,e:"Canada uses first-past-the-post. The candidate with the most votes in each riding wins — even without a majority."},
+  {q:"How often must a federal election be held at minimum?",o:["Every two years","Every three years","Every four years","Every five years"],c:3,e:"Under the Constitution, a federal election must be held at least every five years. In practice they are typically held every four years."},
+  {q:"What are the requirements to vote in a Canadian federal election?",o:["Permanent resident, 18+, and registered","Canadian citizen, 18+, and registered with Elections Canada","Canadian citizen, 16+, and have a valid passport","Canadian citizen, 18+, lived in Canada for 5 years"],c:1,e:"To vote federally you must be a Canadian citizen, at least 18 years old, and registered on the voters list with Elections Canada."},
+  {q:"Can permanent residents vote in Canadian federal elections?",o:["Yes, if they have lived here for 3+ years","Yes, in municipal elections only","No, voting is exclusive to Canadian citizens","Yes, if they pay income tax"],c:2,e:"Permanent residents cannot vote in federal or provincial elections. Voting is a right exclusive to Canadian citizens."},
+  {q:"In what year did women gain the right to vote federally in Canada?",o:["1900","1918","1929","1945"],c:1,e:"Women gained the right to vote in federal elections in 1918."},
+  {q:"In what year did Indigenous peoples gain full voting rights?",o:["1918","1945","1960","1982"],c:2,e:"Indigenous peoples gained full federal voting rights in 1960 under PM John Diefenbaker."},
+  {q:"What is the name of Canada's federal electoral agency?",o:["The Federal Voting Commission","Elections Canada","The Electoral Reform Office","The Parliamentary Voting Bureau"],c:1,e:"Elections Canada is the independent, non-partisan agency that administers federal elections and referendums."},
+  {q:"Which is a responsibility of municipal government?",o:["Criminal law enforcement","Issuing passports","Managing public transit and local roads","Regulating banks"],c:2,e:"Municipal governments handle public transit, local roads, zoning, garbage, snow removal, and parks. Criminal law and passports are federal."},
+  {q:"What is the role of the Leader of the Official Opposition?",o:["Manage the Senate on behalf of the PM","Hold the government accountable as leader of the second-largest party","Advise the Governor General on appointments","Chair the Supreme Court"],c:1,e:"The Leader of the Official Opposition leads the party with the second-most seats and plays a key role in holding the government accountable through debate."}
+],
+C:[
+  {q:"What was the Magna Carta (1215)?",o:["The document that created Canada","One of the first documents to limit ruler power and protect citizens' rights","The law that established the Canadian Senate","The agreement that gave women the right to vote"],c:1,e:"The Magna Carta (1215) was one of the first documents to limit the power of rulers — establishing that everyone, including the king, must obey the law. It is a foundational document of democratic rights."},
+  {q:"What is 'proroguing' Parliament?",o:["Permanently dissolving Parliament and calling an election","Temporarily suspending a session of Parliament","Removing the Prime Minister from office","Passing a bill through Royal Assent"],c:1,e:"Proroguing means temporarily suspending a session of Parliament without dissolving it. The Governor General prorogues Parliament on the advice of the PM."},
+  {q:"What does the Governor General do during the Speech from the Throne?",o:["Presents the federal budget","Announces election winners","Outlines the government's priorities and plans for the session","Swears in senators and judges"],c:2,e:"The Speech from the Throne is read by the Governor General at the opening of a new Parliament session. It outlines the government's legislative priorities."},
+  {q:"What happens if the government loses a confidence vote?",o:["The PM is automatically re-elected","The Senate takes over","The government may fall and an election may be called","The Governor General becomes Acting PM"],c:2,e:"Canada's system requires the government to maintain confidence of the House of Commons. Losing a confidence vote (e.g. on the budget) can cause the government to fall and trigger an election."},
+  {q:"Which building on Parliament Hill is an iconic Canadian symbol?",o:["The East Block","Rideau Hall","The Peace Tower","The Senate Chamber"],c:2,e:"The Peace Tower at the Centre Block of Parliament Hill in Ottawa is one of Canada's most recognized democratic symbols."},
+  {q:"What does it mean that Canada is a 'federal state'?",o:["All power rests with the national government","Powers are divided between federal and provincial/territorial governments","Canada is governed directly by the British Crown","All provinces have identical laws"],c:1,e:"Being a federal state means governing powers are divided between the central (federal) government and the provincial/territorial governments, each with defined areas of responsibility."},
+  {q:"Who swears in the Prime Minister and Cabinet?",o:["The Chief Justice","The Speaker of the House of Commons","The Governor General","The President of the Senate"],c:2,e:"The Governor General formally swears in the Prime Minister and Cabinet ministers — one of the key constitutional duties of the role."},
+  {q:"What is a riding in Canadian politics?",o:["A party constituency office","A provincial ward","A geographic area represented by one MP","A federal precinct"],c:2,e:"A riding (also called an electoral district or constituency) is the geographic area represented by one Member of Parliament. Canada has 338 ridings."},
+  {q:"What does 'Royal Assent' mean?",o:["The PM's signature on a bill","The Supreme Court's approval","The formal approval of a bill by the Governor General on behalf of the Sovereign","A Senate vote confirming a bill passed"],c:2,e:"Royal Assent is the Governor General's formal approval of a bill on behalf of the Sovereign. It is the final step before a bill becomes law."},
+  {q:"Which document outlines the division of powers between federal and provincial governments?",o:["The Canadian Charter of Rights and Freedoms","The Magna Carta","The Constitution of Canada","The Official Languages Act"],c:2,e:"The Constitution of Canada defines which level of government is responsible for which areas — e.g. health care (provincial) vs national defence (federal)."},
+  {q:"How is the Prime Minister chosen?",o:["Directly elected by all Canadian voters","Appointed by the Governor General based on seniority","Chosen by the Senate","As leader of the party with the most seats in the House of Commons"],c:3,e:"The PM is the leader of the party that wins the most seats in the House of Commons. Canadians elect local MPs; the PM emerges from whichever party wins the most seats."},
+  {q:"What is the difference between head of state and head of government?",o:["They are the same person — the PM","Head of state = Sovereign/Governor General; head of government = PM","Head of state = PM; head of government = Governor General","Head of state is elected; head of government is appointed"],c:1,e:"Canada has two leadership roles. The head of state is the Sovereign (represented by the Governor General) — largely ceremonial. The head of government is the PM, who runs day-to-day affairs."},
+  {q:"What does it mean to dissolve Parliament?",o:["Temporarily suspend a session","Grant Royal Assent to a bill","End Parliament and trigger a general election","Pass a confidence vote"],c:2,e:"Dissolution of Parliament ends it and triggers a general election. This is different from prorogation (temporary suspension). Dissolution happens on the advice of the PM."},
+  {q:"Which is NOT a federal government responsibility?",o:["Criminal law","National defence","Education","Immigration"],c:2,e:"Education is provincial, not federal. Federal responsibilities include criminal law, national defence, immigration, banking, and postal service."},
+  {q:"What principle ensures no single person holds unchecked authority in Canada?",o:["The principle of absolute monarchy","The separation and balance of powers","The principle of provincial sovereignty","The doctrine of parliamentary supremacy"],c:1,e:"The separation and balance of powers is foundational to Canadian democracy. The three branches each have distinct roles that check and balance each other."}
+]};
+
+const ST2={A:{i:0,s:0,a:[]},B:{i:0,s:0,a:[]},C:{i:0,s:0,a:[]}};
+
+function RQ(k){
+  const d=QD[k],st=ST2[k],q=d[st.i];
+  document.getElementById('n'+k).textContent='Question '+(st.i+1);
+  document.getElementById('t'+k).textContent=q.q;
+  document.getElementById('c'+k).textContent='Question '+(st.i+1)+' of '+d.length;
+  document.getElementById('s'+k).textContent='Score: '+st.s;
+  document.getElementById('f'+k).style.width=((st.i+1)/d.length*100)+'%';
+  const ob=document.getElementById('o'+k);
+  ob.innerHTML='';
+  q.o.forEach((opt,i)=>{
+    const b=document.createElement('button');
+    b.className='qopt';b.textContent=opt;
+    if(st.a[st.i]!==undefined){
+      b.disabled=true;
+      if(i===q.c)b.classList.add('ok');
+      else if(i===st.a[st.i])b.classList.add('ng');
+    } else {b.onclick=()=>SA(k,i);}
+    ob.appendChild(b);
+  });
+  const ex=document.getElementById('e'+k);
+  if(st.a[st.i]!==undefined){ex.textContent='💡 '+q.e;ex.classList.add('on');}
+  else ex.classList.remove('on');
+  document.getElementById('pv'+k).style.visibility=st.i>0?'visible':'hidden';
+  const nb=document.getElementById('nx'+k);
+  nb.style.opacity=st.a[st.i]!==undefined?'1':'0.4';
+  if(st.i===d.length-1&&st.a[st.i]!==undefined){nb.textContent='See Results';nb.onclick=()=>SS(k);}
+  else{nb.textContent='Next →';nb.onclick=()=>NQ(k);}
+}
+
+function SA(k,i){
+  const st=ST2[k],q=QD[k][st.i];
+  if(st.a[st.i]!==undefined)return;
+  st.a[st.i]=i;
+  if(i===q.c)st.s++;
+  RQ(k);
+}
+
+function NQ(k){const st=ST2[k],d=QD[k];if(st.a[st.i]===undefined)return;if(st.i<d.length-1){st.i++;RQ(k);}else SS(k);}
+function PQ(k){if(ST2[k].i>0){ST2[k].i--;RQ(k);}}
+
+function SS(k){
+  document.getElementById('d'+k).style.display='none';
+  document.querySelector('#p'+k.toLowerCase()+' .qnav').style.display='none';
+  document.querySelector('#p'+k.toLowerCase()+' div:first-child').style.display='none';
+  const sc=document.getElementById('sc'+k);sc.classList.add('on');
+  const p=Math.round(ST2[k].s/QD[k].length*100);
+  document.getElementById('sn'+k).textContent=ST2[k].s+'/'+QD[k].length;
+  document.getElementById('sm'+k).textContent=p>=90?'Outstanding — fully ready!':p>=75?'Good pass — review missed ones.':p>=50?'Keep studying — revisit key facts.':'Review all lessons then retry.';
+}
+
+function RS(k){
+  ST2[k]={i:0,s:0,a:[]};
+  document.getElementById('d'+k).style.display='';
+  document.querySelector('#p'+k.toLowerCase()+' .qnav').style.display='';
+  document.querySelector('#p'+k.toLowerCase()+' div:first-child').style.display='';
+  document.getElementById('sc'+k).classList.remove('on');
+  RQ(k);
+}
+
+function SL(i,btn){
+  document.querySelectorAll('.ls').forEach(s=>s.classList.remove('on'));
+  document.querySelectorAll('.lbtn').forEach(b=>b.classList.remove('on'));
+  document.getElementById('l'+i).classList.add('on');
+  btn.classList.add('on');
+}
+
+function ST(id,btn){
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('on'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));
+  const map={l:'pl',a:'pa',b:'pb',c:'pc'};
+  document.getElementById(map[id]).classList.add('on');
+  btn.classList.add('on');
+  if(id==='a')RQ('A');
+  if(id==='b')RQ('B');
+  if(id==='c')RQ('C');
+}
+
+RQ('A');RQ('B');RQ('C');
+</script>
+</body>
+</html>
