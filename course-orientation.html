@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Course Orientation — Canadian Citizenship Test Prep</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Source Sans 3',sans-serif;background:#f0f4f8;color:#1a2332;line-height:1.7}
+
+/* ── HERO HEADER ── */
+.hero{background:linear-gradient(135deg,#1d4ed8 0%,#2563eb 50%,#3b82f6 100%);padding:40px 28px 36px;position:relative;overflow:hidden;text-align:center}
+.hero::before{content:'';position:absolute;top:-60px;right:-60px;width:260px;height:260px;border-radius:50%;background:rgba(255,255,255,0.06)}
+.hero::after{content:'';position:absolute;bottom:-40px;left:10%;width:340px;height:340px;border-radius:50%;background:rgba(255,255,255,0.04)}
+.hero-flag{font-size:48px;margin-bottom:12px;position:relative;z-index:1}
+.hero-eyebrow{font-family:'Source Sans 3',sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.75);font-weight:600;margin-bottom:10px;position:relative;z-index:1}
+.hero-title{font-family:'Lora',serif;font-size:30px;font-weight:700;color:#fff;margin-bottom:10px;line-height:1.25;position:relative;z-index:1}
+.hero-sub{font-family:'Source Sans 3',sans-serif;font-size:15px;color:rgba(255,255,255,0.82);line-height:1.7;max-width:560px;margin:0 auto;position:relative;z-index:1}
+
+/* ── BODY ── */
+.body{padding:28px 28px 40px;display:flex;flex-direction:column;gap:24px;max-width:800px;margin:0 auto}
+
+/* Section titles */
+.section-title{font-family:'Lora',serif;font-size:22px;font-weight:600;color:#1e3a5f;border-left:4px solid #2563eb;padding-left:14px;line-height:1.3;margin-bottom:4px}
+
+/* About the test */
+.test-facts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.tf-card{background:#fff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 16px;display:flex;align-items:center;gap:12px}
+.tf-icon{font-size:22px;flex-shrink:0}
+.tf-label{font-family:'Source Sans 3',sans-serif;font-size:12px;color:#64748b;margin-bottom:2px}
+.tf-val{font-family:'Lora',serif;font-size:16px;font-weight:600;color:#1e3a5f}
+
+/* Course map */
+.course-map{display:flex;flex-direction:column;gap:8px}
+.cm-row{display:flex;align-items:center;gap:14px;padding:13px 16px;border-radius:10px;background:#fff;border:1.5px solid #e2e8f0;box-shadow:0 1px 4px rgba(0,0,0,0.04);transition:border-color .15s}
+.cm-row:hover{border-color:#2563eb}
+.cm-num{width:36px;height:36px;border-radius:9px;background:linear-gradient(135deg,#2563eb,#3b82f6);color:#fff;font-family:'Lora',serif;font-size:15px;font-weight:600;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.cm-num.intro{background:linear-gradient(135deg,#0f766e,#14b8a6)}
+.cm-num.exam{background:linear-gradient(135deg,#dc2626,#ef4444)}
+.cm-info{flex:1}
+.cm-name{font-family:'Source Sans 3',sans-serif;font-size:14px;font-weight:600;color:#1e3a5f;margin-bottom:2px}
+.cm-sub{font-family:'Source Sans 3',sans-serif;font-size:12px;color:#64748b}
+.cm-badge{font-family:'Source Sans 3',sans-serif;font-size:10px;font-weight:600;padding:3px 9px;border-radius:10px;white-space:nowrap}
+.badge-blue{background:#dbeafe;color:#1d4ed8}
+.badge-green{background:#dcfce7;color:#15803d}
+.badge-red{background:#fee2e2;color:#dc2626}
+.badge-teal{background:#ccfbf1;color:#0f766e}
+
+/* How to use steps */
+.steps{display:flex;flex-direction:column;gap:10px}
+.step{display:flex;gap:14px;padding:14px 16px;border-radius:10px;background:#fff;border:1.5px solid #e2e8f0;box-shadow:0 1px 4px rgba(0,0,0,0.04)}
+.step-num{width:32px;height:32px;border-radius:8px;background:#2563eb;color:#fff;font-family:'Source Sans 3',sans-serif;font-size:13px;font-weight:600;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.step-body{}
+.step-title{font-family:'Source Sans 3',sans-serif;font-size:14px;font-weight:600;color:#1e3a5f;margin-bottom:3px}
+.step-desc{font-family:'Source Sans 3',sans-serif;font-size:13px;color:#334155;line-height:1.65}
+
+/* Tips grid */
+.tips-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.tip-card{background:#fff;border:1.5px solid #e2e8f0;border-radius:10px;padding:14px 16px;box-shadow:0 1px 4px rgba(0,0,0,0.04)}
+.tip-icon{font-size:22px;margin-bottom:8px}
+.tip-title{font-family:'Source Sans 3',sans-serif;font-size:13px;font-weight:600;color:#1e3a5f;margin-bottom:4px}
+.tip-desc{font-family:'Source Sans 3',sans-serif;font-size:12px;color:#64748b;line-height:1.6}
+
+/* Do and don't */
+.do-dont{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.dd-card{border-radius:10px;padding:14px 16px}
+.dd-card.do{background:#f0fdf4;border:1.5px solid #86efac}
+.dd-card.dont{background:#fef2f2;border:1.5px solid #fca5a5}
+.dd-title{font-family:'Source Sans 3',sans-serif;font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px}
+.dd-card.do .dd-title{color:#15803d}
+.dd-card.dont .dd-title{color:#dc2626}
+.dd-item{display:flex;gap:7px;font-family:'Source Sans 3',sans-serif;font-size:12px;color:#334155;line-height:1.55;margin-bottom:6px;align-items:flex-start}
+.dd-item:last-child{margin-bottom:0}
+.dd-dot{flex-shrink:0;margin-top:2px;font-size:12px}
+
+/* Callout box */
+.callout{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:1.5px solid #93c5fd;border-radius:12px;padding:18px 20px}
+.callout-title{font-family:'Lora',serif;font-size:16px;font-weight:600;color:#1e3a5f;margin-bottom:8px}
+.callout-text{font-family:'Source Sans 3',sans-serif;font-size:14px;color:#1e3a5f;line-height:1.75}
+.callout-text strong{font-weight:600}
+
+/* Test day */
+.testday-list{display:flex;flex-direction:column;gap:8px}
+.td-row{display:flex;gap:12px;align-items:flex-start;padding:11px 14px;border-radius:9px;background:#fff;border:1.5px solid #e2e8f0}
+.td-icon{font-size:18px;flex-shrink:0;margin-top:1px}
+.td-text{font-family:'Source Sans 3',sans-serif;font-size:13px;color:#334155;line-height:1.55}
+.td-text strong{font-weight:600;color:#1e3a5f}
+
+/* Closing */
+.closing{background:linear-gradient(135deg,#1d4ed8,#2563eb);border-radius:12px;padding:28px;text-align:center}
+.closing-title{font-family:'Lora',serif;font-size:22px;font-weight:700;color:#fff;margin-bottom:10px}
+.closing-text{font-family:'Source Sans 3',sans-serif;font-size:14px;color:rgba(255,255,255,0.88);line-height:1.75;max-width:520px;margin:0 auto 16px}
+.start-btn{display:inline-block;background:#fff;color:#2563eb;font-family:'Source Sans 3',sans-serif;font-size:14px;font-weight:600;padding:12px 28px;border-radius:8px;border:none;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.15);transition:all .2s}
+.start-btn:hover{transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,0.2)}
+
+.lp{font-family:'Source Sans 3',sans-serif;font-size:15px;line-height:1.85;color:#334155}
+.lp p{margin-bottom:13px}
+.lp p:last-child{margin-bottom:0}
+.lp strong{font-weight:600;color:#1e3a5f}
+
+.divider{height:1.5px;background:linear-gradient(to right,#bfdbfe,transparent);border-radius:2px}
+
+@media(max-width:600px){
+  .hero-title{font-size:22px}
+  .body{padding:18px}
+  .test-facts,.tips-grid,.do-dont{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-flag">🍁</div>
+  <div class="hero-eyebrow">Welcome to EduQuest Academy</div>
+  <div class="hero-title">Canadian Citizenship Test Prep<br>Course Orientation</div>
+  <div class="hero-sub">Everything you need to know before you begin — how this course works, what to expect on test day, and how to study smarter.</div>
+</div>
+
+<div class="body">
+
+  <!-- ABOUT THE TEST -->
+  <div>
+    <div class="section-title">About the real citizenship test</div>
+    <div class="lp" style="margin:10px 0 14px"><p>The Canadian citizenship knowledge test is based entirely on <strong>Discover Canada: The Rights and Responsibilities of Citizenship</strong> — the official guide published by Immigration, Refugees and Citizenship Canada (IRCC). Everything in this course comes directly from that guide. Here are the key facts about the test itself:</p></div>
+    <div class="test-facts">
+      <div class="tf-card"><div class="tf-icon">📝</div><div><div class="tf-label">Number of questions</div><div class="tf-val">20 multiple-choice</div></div></div>
+      <div class="tf-card"><div class="tf-icon">⏱️</div><div><div class="tf-label">Time allowed</div><div class="tf-val">30 minutes</div></div></div>
+      <div class="tf-card"><div class="tf-icon">✅</div><div><div class="tf-label">Pass mark</div><div class="tf-val">75% — 15 out of 20</div></div></div>
+      <div class="tf-card"><div class="tf-icon">📖</div><div><div class="tf-label">Source material</div><div class="tf-val">Discover Canada (IRCC)</div></div></div>
+      <div class="tf-card"><div class="tf-icon">🎂</div><div><div class="tf-label">Who must take it</div><div class="tf-val">Applicants aged 18–54</div></div></div>
+      <div class="tf-card"><div class="tf-icon">🗣️</div><div><div class="tf-label">Format option</div><div class="tf-val">Written or oral (if needed)</div></div></div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- COURSE MAP -->
+  <div>
+    <div class="section-title">Your course at a glance</div>
+    <div class="lp" style="margin:10px 0 14px"><p>This course is organized into <strong>5 modules</strong> that mirror the structure of Discover Canada, followed by <strong>3 full mock exams</strong> in real test format. Follow them in order for the best results.</p></div>
+    <div class="course-map">
+      <div class="cm-row">
+        <div class="cm-num intro">👋</div>
+        <div class="cm-info"><div class="cm-name">Course Orientation</div><div class="cm-sub">You are here — how to use this course effectively</div></div>
+        <div class="cm-badge badge-teal">Start here</div>
+      </div>
+      <div class="cm-row">
+        <div class="cm-num">1</div>
+        <div class="cm-info"><div class="cm-name">The History of Canada</div><div class="cm-sub">Indigenous peoples · European arrival · Confederation · World Wars · Modern Canada</div></div>
+        <div class="cm-badge badge-red">Most tested</div>
+      </div>
+      <div class="cm-row">
+        <div class="cm-num">2</div>
+        <div class="cm-info"><div class="cm-name">Government & Democracy</div><div class="cm-sub">Three branches · Parliament · Federal vs provincial · Elections · The Crown</div></div>
+        <div class="cm-badge badge-red">Most tested</div>
+      </div>
+      <div class="cm-row">
+        <div class="cm-num">3</div>
+        <div class="cm-info"><div class="cm-name">Rights & Responsibilities</div><div class="cm-sub">The Charter · Fundamental freedoms · Democratic rights · Legal rights · Civic duties</div></div>
+        <div class="cm-badge badge-blue">Heavily tested</div>
+      </div>
+      <div class="cm-row">
+        <div class="cm-num">4</div>
+        <div class="cm-info"><div class="cm-name">Canadian Identity & Symbols</div><div class="cm-sub">Flag · Anthem · Coat of arms · National symbols · Values · Multiculturalism</div></div>
+        <div class="cm-badge badge-blue">Moderately tested</div>
+      </div>
+      <div class="cm-row">
+        <div class="cm-num">5</div>
+        <div class="cm-info"><div class="cm-name">Geography & Economy</div><div class="cm-sub">Provinces · Territories · Regions · Natural resources · Economic sectors</div></div>
+        <div class="cm-badge badge-blue">Moderately tested</div>
+      </div>
+      <div class="cm-row">
+        <div class="cm-num exam">📋</div>
+        <div class="cm-info"><div class="cm-name">Full Mock Exams (×3)</div><div class="cm-sub">20 questions · 30 minutes · Real test conditions · Complete all three</div></div>
+        <div class="cm-badge badge-green">Final prep</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- HOW TO USE -->
+  <div>
+    <div class="section-title">How to use this course effectively</div>
+    <div class="lp" style="margin:10px 0 14px"><p>Follow these six steps and you will be fully prepared for your citizenship test:</p></div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <div class="step-title">Go through modules in order</div>
+          <div class="step-desc">Start with Module 1 and work through to Module 5 in sequence. Each module builds on the previous one. Do not skip ahead — the knowledge connects.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <div class="step-title">Read every lesson fully before taking the quiz</div>
+          <div class="step-desc">Each lesson contains the lesson content, a highlight box of commonly confused facts, and a Key Facts box. Read all three before clicking to the quiz. The Key Facts box is your most important study tool.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <div class="step-title">Memorize the Key Facts boxes</div>
+          <div class="step-desc">Every lesson ends with a blue Key Facts box. These contain the dates, names, and numbers most likely to appear on your real test. Write them out. Say them aloud. Revisit them before bed.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <div class="step-title">Take all three quiz sets per module</div>
+          <div class="step-desc">Each module has Quiz A (direct recall), Quiz B (application and scenarios), and Quiz C (challenge level). Do all three. Quiz B and C reflect the real test's style more closely than Quiz A alone.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div class="step-body">
+          <div class="step-title">Read every wrong answer explanation</div>
+          <div class="step-desc">When you get a question wrong, do not just note the correct answer and move on. Read the explanation carefully. Understanding <em>why</em> an answer is right — and why the others are wrong — is where real learning happens.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">6</div>
+        <div class="step-body">
+          <div class="step-title">Complete all three mock exams under real conditions</div>
+          <div class="step-desc">Treat each mock exam as the real thing — 20 questions, 30 minutes, no notes, no breaks. If you score 15 or above (75%) consistently across all three mock exams, you are ready for your test.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- STUDY TIPS -->
+  <div>
+    <div class="section-title">Study tips that actually work</div>
+    <div class="lp" style="margin:10px 0 14px"><p>These strategies are proven to improve retention and help you pass first time:</p></div>
+    <div class="tips-grid">
+      <div class="tip-card">
+        <div class="tip-icon">📅</div>
+        <div class="tip-title">Study a little every day</div>
+        <div class="tip-desc">30 minutes daily for two weeks beats 6 hours the night before. Spaced repetition — reviewing content across multiple days — dramatically improves long-term memory.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">✍️</div>
+        <div class="tip-title">Write out key facts by hand</div>
+        <div class="tip-desc">Writing dates, names, and numbers by hand (rather than typing) strengthens memory. Keep a small notebook for Key Facts — one page per module.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">🗣️</div>
+        <div class="tip-title">Say it out loud</div>
+        <div class="tip-desc">Reading content aloud — or explaining it to a family member or friend — activates different parts of your brain and improves recall significantly.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">🔁</div>
+        <div class="tip-title">Retake quizzes you struggled with</div>
+        <div class="tip-desc">If you score below 75% on any quiz set, revisit that lesson's Key Facts box and retake the quiz. Keep retaking until you consistently score 75% or above.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">📖</div>
+        <div class="tip-title">Read Discover Canada alongside this course</div>
+        <div class="tip-desc">This course is built from Discover Canada, but reading the official guide alongside it gives extra context. It is free to download from the IRCC website.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">🎯</div>
+        <div class="tip-title">Focus extra time on Modules 1 and 2</div>
+        <div class="tip-desc">History and Government are the most heavily tested areas. Spend more time on Modules 1 and 2 than on Modules 4 and 5. The weighting reflects the real test.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- DO AND DON'T -->
+  <div>
+    <div class="section-title">Do this. Avoid that.</div>
+    <div class="lp" style="margin:10px 0 14px"><p>Common mistakes that cause learners to struggle — and the habits that lead to success:</p></div>
+    <div class="do-dont">
+      <div class="dd-card do">
+        <div class="dd-title">✅ Do</div>
+        <div class="dd-item"><div class="dd-dot">✓</div><div>Complete every lesson before the quiz</div></div>
+        <div class="dd-item"><div class="dd-dot">✓</div><div>Memorize the Key Facts boxes in each lesson</div></div>
+        <div class="dd-item"><div class="dd-dot">✓</div><div>Read explanations for every wrong answer</div></div>
+        <div class="dd-item"><div class="dd-dot">✓</div><div>Take all three quiz sets per module</div></div>
+        <div class="dd-item"><div class="dd-dot">✓</div><div>Do mock exams under timed, real conditions</div></div>
+        <div class="dd-item"><div class="dd-dot">✓</div><div>Review weak areas before your test date</div></div>
+      </div>
+      <div class="dd-card dont">
+        <div class="dd-title">❌ Avoid</div>
+        <div class="dd-item"><div class="dd-dot">✗</div><div>Skipping modules or doing them out of order</div></div>
+        <div class="dd-item"><div class="dd-dot">✗</div><div>Only doing Quiz A and skipping B and C</div></div>
+        <div class="dd-item"><div class="dd-dot">✗</div><div>Ignoring wrong answer explanations</div></div>
+        <div class="dd-item"><div class="dd-dot">✗</div><div>Cramming everything the night before</div></div>
+        <div class="dd-item"><div class="dd-dot">✗</div><div>Guessing and moving on without understanding why</div></div>
+        <div class="dd-item"><div class="dd-dot">✗</div><div>Skipping the mock exams at the end</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- TEST DAY -->
+  <div>
+    <div class="section-title">What to expect on test day</div>
+    <div class="testday-list">
+      <div class="td-row"><div class="td-icon">📍</div><div class="td-text"><strong>Where:</strong> At an IRCC office or designated testing centre. You will receive instructions by mail when your test is scheduled.</div></div>
+      <div class="td-row"><div class="td-icon">🪪</div><div class="td-text"><strong>What to bring:</strong> Your invitation letter from IRCC and valid government-issued photo identification. Do not bring notes or study materials.</div></div>
+      <div class="td-row"><div class="td-icon">📝</div><div class="td-text"><strong>The format:</strong> 20 multiple-choice questions. 4 options per question. Only one correct answer. You have 30 minutes. Read each question carefully before answering.</div></div>
+      <div class="td-row"><div class="td-icon">✅</div><div class="td-text"><strong>Passing:</strong> You need to answer at least <strong>15 out of 20 questions correctly (75%)</strong> to pass. If you do not pass, you may be given a second chance through an interview with a citizenship officer.</div></div>
+      <div class="td-row"><div class="td-icon">🧘</div><div class="td-text"><strong>Stay calm:</strong> If you have completed this course thoroughly, you are prepared. Take a breath, read each question twice, eliminate obviously wrong answers, and trust your preparation.</div></div>
+      <div class="td-row"><div class="td-icon">🗣️</div><div class="td-text"><strong>Oral test option:</strong> If you have difficulty reading or writing, you can request an oral test administered by a citizenship officer instead of the written test.</div></div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ENCOURAGEMENT -->
+  <div class="callout">
+    <div class="callout-title">A note from EduQuest Academy</div>
+    <div class="callout-text">Becoming a Canadian citizen is one of the most meaningful milestones in an immigrant's journey. You have already taken the courageous step of building a new life in Canada. This test is simply your opportunity to demonstrate what you already know — and what you are about to learn in this course.<br><br>Canada is a country built by people who came from everywhere in the world. <strong>You belong here.</strong> This course is going to help you prove it on paper. Study steadily, use the Key Facts boxes, take every quiz seriously — and you will walk into that test room ready.<br><br><strong>Welcome to EduQuest Academy. Let's get started.</strong></div>
+  </div>
+
+  <!-- CLOSING CTA -->
+  <div class="closing">
+    <div class="closing-title">Ready to begin?</div>
+    <div class="closing-text">Start with Module 1 — The History of Canada. It is the most heavily tested module, so give it the time and attention it deserves. Everything builds from here.</div>
+    <button class="start-btn" onclick="alert('Proceed to Module 1 — The History of Canada in your course curriculum.')">Start Module 1 →</button>
+  </div>
+
+</div>
+</body>
+</html>
