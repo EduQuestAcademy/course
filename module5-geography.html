@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 5 — Geography & Economy</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Source Sans 3',sans-serif;background:#f0f4f8;color:#1a2332;line-height:1.7}
+
+.tabs{display:flex;background:#fff;border-bottom:2px solid #e2e8f0;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,0.06)}
+.tab{flex:1;padding:14px 8px;font-size:13px;font-weight:500;font-family:'Source Sans 3',sans-serif;background:none;border:none;cursor:pointer;color:#64748b;border-bottom:3px solid transparent;margin-bottom:-2px;transition:all .2s}
+.tab:hover{color:#1d4ed8;background:#f8faff}
+.tab.on{color:#1d4ed8;border-bottom-color:#1d4ed8;background:#f8faff}
+.panel{display:none}
+.panel.on{display:block}
+
+.mod-header{background:linear-gradient(135deg,#1d4ed8 0%,#2563eb 50%,#3b82f6 100%);padding:32px 28px 28px;position:relative;overflow:hidden}
+.mod-header::before{content:'';position:absolute;top:-40px;right:-40px;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,0.06)}
+.mod-header::after{content:'';position:absolute;bottom:-20px;left:20%;width:300px;height:300px;border-radius:50%;background:rgba(255,255,255,0.04)}
+.mod-eyebrow{font-family:'Source Sans 3',sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.75);font-weight:600;margin-bottom:8px}
+.mod-title{font-family:'Lora',serif;font-size:32px;font-weight:700;color:#fff;margin-bottom:12px;line-height:1.2;position:relative;z-index:1}
+.mod-chips{display:flex;gap:12px;flex-wrap:wrap;position:relative;z-index:1}
+.chip{font-family:'Source Sans 3',sans-serif;font-size:12px;color:rgba(255,255,255,0.8);background:rgba(255,255,255,0.12);padding:4px 10px;border-radius:20px}
+
+.lesson-body{padding:24px 28px;display:flex;flex-direction:column;gap:20px;max-width:800px}
+.lnav{display:flex;gap:6px;flex-wrap:wrap}
+.lbtn{font-family:'Source Sans 3',sans-serif;font-size:12px;font-weight:500;padding:6px 14px;border-radius:20px;border:1.5px solid #cbd5e1;background:#fff;color:#64748b;cursor:pointer;transition:all .2s}
+.lbtn:hover,.lbtn.on{background:#2563eb;color:#fff;border-color:#2563eb;box-shadow:0 2px 8px rgba(37,99,235,0.3)}
+.ls{display:none;flex-direction:column;gap:18px}
+.ls.on{display:flex}
+
+.obj{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:1.5px solid #bfdbfe;border-radius:10px;padding:16px 18px}
+.obj-lbl{font-family:'Source Sans 3',sans-serif;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#1d4ed8;margin-bottom:10px}
+.obj-row{display:flex;gap:8px;font-family:'Source Sans 3',sans-serif;font-size:14px;color:#1e3a5f;line-height:1.55;margin-bottom:6px;align-items:flex-start}
+.obj-row:last-child{margin-bottom:0}
+.obj-ck{color:#2563eb;font-size:13px;flex-shrink:0;margin-top:1px;font-weight:700}
+
+.lt{font-family:'Lora',serif;font-size:20px;font-weight:600;color:#1e3a5f;border-left:4px solid #2563eb;padding-left:14px;line-height:1.3}
+.lp{font-family:'Source Sans 3',sans-serif;font-size:15px;line-height:1.85;color:#334155}
+.lp p{margin-bottom:13px}
+.lp p:last-child{margin-bottom:0}
+.lp strong{font-weight:600;color:#1e3a5f}
+
+.hbox{background:#fff7ed;border:1.5px solid #fed7aa;border-left:4px solid #f97316;border-radius:0 10px 10px 0;padding:14px 16px;font-family:'Source Sans 3',sans-serif;font-size:14px;line-height:1.65;color:#431407}
+.hbox strong{font-weight:600;color:#c2410c}
+
+/* Provinces grid */
+.prov-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.prov-card{border-radius:8px;padding:11px 13px;border:1.5px solid #bfdbfe;background:#eff6ff}
+.pc-region{font-family:'Source Sans 3',sans-serif;font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:#1d4ed8;margin-bottom:4px}
+.pc-name{font-family:'Source Sans 3',sans-serif;font-size:13px;font-weight:600;color:#1e3a5f;margin-bottom:2px}
+.pc-cap{font-family:'Source Sans 3',sans-serif;font-size:12px;color:#64748b}
+
+/* Territory cards */
+.terr-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.terr-card{border-radius:8px;padding:11px 13px;border:1.5px solid #c7d2fe;background:#eef2ff;text-align:center}
+.tc-name{font-family:'Source Sans 3',sans-serif;font-size:12px;font-weight:600;color:#3730a3;margin-bottom:3px}
+.tc-cap{font-family:'Source Sans 3',sans-serif;font-size:11px;color:#6366f1}
+
+/* Resources grid */
+.res-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.res-card{border-radius:8px;padding:12px 14px;border:1.5px solid #e2e8f0;background:#fff;display:flex;gap:10px;align-items:flex-start}
+.res-icon{font-size:20px;flex-shrink:0}
+.res-title{font-family:'Source Sans 3',sans-serif;font-size:12px;font-weight:600;color:#1e3a5f;margin-bottom:3px}
+.res-desc{font-family:'Source Sans 3',sans-serif;font-size:11px;color:#64748b;line-height:1.5}
+
+.kf{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:1.5px solid #93c5fd;border-radius:12px;padding:18px 20px}
+.kf-lbl{font-family:'Source Sans 3',sans-serif;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#1d4ed8;margin-bottom:12px}
+.kf-row{display:flex;gap:10px;align-items:flex-start;margin-bottom:8px;font-family:'Source Sans 3',sans-serif;font-size:14px;line-height:1.55;color:#1e3a5f}
+.kf-row:last-child{margin-bottom:0}
+.kf-dot{width:7px;height:7px;border-radius:50%;background:#2563eb;flex-shrink:0;margin-top:5px}
+.kf-row strong{font-weight:600}
+
+.recap{background:linear-gradient(135deg,#1d4ed8,#2563eb);border-radius:10px;padding:18px 20px}
+.recap-lbl{font-family:'Source Sans 3',sans-serif;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:8px}
+.recap-t{font-family:'Source Sans 3',sans-serif;font-size:14px;color:rgba(255,255,255,0.92);line-height:1.75}
+
+.nxt{display:flex;justify-content:flex-end}
+.nbtn{background:#2563eb;color:#fff;border:none;border-radius:8px;padding:10px 22px;font-family:'Source Sans 3',sans-serif;font-size:14px;font-weight:500;cursor:pointer;transition:all .2s;box-shadow:0 2px 8px rgba(37,99,235,0.3)}
+.nbtn:hover{background:#1d4ed8;transform:translateY(-1px)}
+
+.quiz-body{padding:20px 28px;display:flex;flex-direction:column;gap:16px;max-width:800px}
+.quiz-hdr{background:linear-gradient(135deg,#1d4ed8,#2563eb);border-radius:10px;padding:16px 20px}
+.qh-eye{font-family:'Source Sans 3',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:4px}
+.qh-title{font-family:'Lora',serif;font-size:18px;font-weight:600;color:#fff}
+.qh-sub{font-family:'Source Sans 3',sans-serif;font-size:12px;color:rgba(255,255,255,0.7);margin-top:4px}
+
+.qpm{display:flex;justify-content:space-between;font-family:'Source Sans 3',sans-serif;font-size:13px;color:#64748b}
+.qpb{height:5px;background:#e2e8f0;border-radius:3px;overflow:hidden;margin-top:4px}
+.qpf{height:100%;background:linear-gradient(90deg,#2563eb,#3b82f6);border-radius:3px;transition:width .4s}
+
+.qcard{background:#fff;border:1.5px solid #e2e8f0;border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:14px;box-shadow:0 2px 8px rgba(0,0,0,0.04)}
+.qnum{font-family:'Source Sans 3',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#2563eb;font-weight:600}
+.qtxt{font-family:'Lora',serif;font-size:16px;font-weight:500;line-height:1.55;color:#1e3a5f}
+.qopts{display:flex;flex-direction:column;gap:8px}
+.qopt{padding:11px 15px;border-radius:8px;border:1.5px solid #e2e8f0;background:#f8faff;font-family:'Source Sans 3',sans-serif;font-size:14px;color:#334155;cursor:pointer;text-align:left;width:100%;transition:all .15s}
+.qopt:hover:not(:disabled){border-color:#2563eb;background:#eff6ff}
+.qopt.ok{background:#f0fdf4;border-color:#16a34a;color:#14532d}
+.qopt.ng{background:#fef2f2;border-color:#dc2626;color:#7f1d1d}
+.qopt.sh{background:#f0fdf4;border-color:#16a34a;color:#14532d}
+.qexp{font-family:'Source Sans 3',sans-serif;font-size:13px;line-height:1.65;padding:11px 13px;border-radius:8px;background:#f8faff;border:1px solid #bfdbfe;color:#334155;display:none}
+.qexp.on{display:block}
+
+.qnav{display:flex;justify-content:space-between;align-items:center}
+.qbtn{padding:9px 18px;border-radius:8px;font-family:'Source Sans 3',sans-serif;font-size:13px;font-weight:500;cursor:pointer;border:1.5px solid #cbd5e1;background:#fff;color:#475569;transition:all .15s}
+.qbtn:hover{border-color:#2563eb;color:#2563eb}
+.qbtn.pr{background:#2563eb;color:#fff;border-color:#2563eb;box-shadow:0 2px 8px rgba(37,99,235,0.3)}
+.qbtn.pr:hover{background:#1d4ed8}
+
+.sc{background:linear-gradient(135deg,#1d4ed8,#2563eb);border-radius:12px;padding:28px;text-align:center;display:none;flex-direction:column;gap:10px;align-items:center}
+.sc.on{display:flex}
+.scn{font-family:'Lora',serif;font-size:52px;font-weight:700;color:#fff}
+.scl{font-family:'Source Sans 3',sans-serif;font-size:14px;color:rgba(255,255,255,0.7)}
+.scm{font-family:'Source Sans 3',sans-serif;font-size:15px;font-weight:500;color:#fbbf24}
+.sca{display:flex;gap:10px;margin-top:8px;flex-wrap:wrap;justify-content:center}
+.sbtn{padding:9px 18px;border-radius:8px;font-family:'Source Sans 3',sans-serif;font-size:13px;font-weight:500;cursor:pointer;border:1.5px solid rgba(255,255,255,0.3);background:rgba(255,255,255,0.1);color:#fff;transition:all .15s}
+.sbtn:hover{background:rgba(255,255,255,0.2)}
+.sbtn.pr{background:#fff;color:#2563eb;border-color:#fff}
+
+@media(max-width:600px){
+  .mod-title{font-size:24px}
+  .lesson-body,.quiz-body{padding:16px}
+  .tab{font-size:11px;padding:12px 4px}
+  .prov-grid,.res-grid{grid-template-columns:1fr}
+  .terr-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<div class="tabs">
+  <button class="tab on" onclick="ST('l',this)">📖 Lessons</button>
+  <button class="tab" onclick="ST('a',this)">📝 Quiz A</button>
+  <button class="tab" onclick="ST('b',this)">📝 Quiz B</button>
+  <button class="tab" onclick="ST('c',this)">📝 Quiz C</button>
+</div>
+
+<!-- ══════ LESSONS ══════ -->
+<div id="pl" class="panel on">
+<div class="mod-header">
+  <div class="mod-eyebrow">Module 5 of 5</div>
+  <div class="mod-title">Geography & Economy</div>
+  <div class="mod-chips">
+    <span class="chip">📖 5 lessons</span>
+    <span class="chip">⏱ ~45 min</span>
+    <span class="chip">🍁 Source: Discover Canada (IRCC)</span>
+    <span class="chip">🔵 Moderately tested</span>
+  </div>
+</div>
+<div class="lesson-body">
+  <div class="lnav">
+    <button class="lbtn on" onclick="SL(0,this)">1. Provinces</button>
+    <button class="lbtn" onclick="SL(1,this)">2. Territories & regions</button>
+    <button class="lbtn" onclick="SL(2,this)">3. Natural resources</button>
+    <button class="lbtn" onclick="SL(3,this)">4. The economy</button>
+    <button class="lbtn" onclick="SL(4,this)">5. Key cities & facts</button>
+  </div>
+
+  <!-- LESSON 1 -->
+  <div class="ls on" id="l0">
+    <div class="obj">
+      <div class="obj-lbl">Learning Objectives</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Name all ten Canadian provinces and their capitals</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Know the difference between provinces and territories</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Know which provinces are the largest and most populous</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Understand the regional character of each province</div>
+    </div>
+    <div class="lt">Canada's ten provinces</div>
+    <div class="lp"><p>Canada has <strong>ten provinces</strong> and <strong>three territories</strong>. Provinces have their own constitutionally defined powers; territories are governed differently and have powers delegated by the federal government. Here are all ten provinces with their capitals:</p></div>
+    <div class="prov-grid">
+      <div class="prov-card"><div class="pc-region">Atlantic Canada</div><div class="pc-name">Newfoundland and Labrador</div><div class="pc-cap">Capital: St. John's</div></div>
+      <div class="prov-card"><div class="pc-region">Atlantic Canada</div><div class="pc-name">Prince Edward Island</div><div class="pc-cap">Capital: Charlottetown</div></div>
+      <div class="prov-card"><div class="pc-region">Atlantic Canada</div><div class="pc-name">Nova Scotia</div><div class="pc-cap">Capital: Halifax</div></div>
+      <div class="prov-card"><div class="pc-region">Atlantic Canada</div><div class="pc-name">New Brunswick</div><div class="pc-cap">Capital: Fredericton</div></div>
+      <div class="prov-card"><div class="pc-region">Central Canada</div><div class="pc-name">Quebec</div><div class="pc-cap">Capital: Quebec City</div></div>
+      <div class="prov-card"><div class="pc-region">Central Canada</div><div class="pc-name">Ontario</div><div class="pc-cap">Capital: Toronto</div></div>
+      <div class="prov-card"><div class="pc-region">Prairie Provinces</div><div class="pc-name">Manitoba</div><div class="pc-cap">Capital: Winnipeg</div></div>
+      <div class="prov-card"><div class="pc-region">Prairie Provinces</div><div class="pc-name">Saskatchewan</div><div class="pc-cap">Capital: Regina</div></div>
+      <div class="prov-card"><div class="pc-region">Prairie Provinces</div><div class="pc-name">Alberta</div><div class="pc-cap">Capital: Edmonton</div></div>
+      <div class="prov-card"><div class="pc-region">West Coast</div><div class="pc-name">British Columbia</div><div class="pc-cap">Capital: Victoria</div></div>
+    </div>
+    <div class="lp">
+      <p><strong>Ontario</strong> is Canada's most populous province — home to the national capital Ottawa and the largest city Toronto. <strong>Quebec</strong> is the largest province by area in eastern Canada and is predominantly French-speaking. <strong>British Columbia</strong> is Canada's westernmost province, known for its mountains and Pacific coastline.</p>
+      <p><strong>Prince Edward Island (PEI)</strong> is Canada's smallest province — both in area and population. It is also known as the "Birthplace of Confederation."</p>
+    </div>
+    <div class="hbox"><strong>Commonly tested:</strong> Know that Canada has <strong>10 provinces and 3 territories</strong>. Know that <strong>Ontario</strong> is the most populous province and <strong>PEI</strong> is the smallest. Know that <strong>Quebec City</strong> is the capital of Quebec — not Montreal. Know that <strong>Victoria</strong> is the capital of BC — not Vancouver.</div>
+    <div class="kf">
+      <div class="kf-lbl">📌 Key Facts — Memorize These</div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Canada has <strong>10 provinces and 3 territories</strong></div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Most populous province: <strong>Ontario</strong> · Capital: Toronto</div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Smallest province: <strong>Prince Edward Island</strong> · Capital: Charlottetown</div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Largest French-speaking province: <strong>Quebec</strong> · Capital: Quebec City</div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Westernmost province: <strong>British Columbia</strong> · Capital: Victoria (not Vancouver)</div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>National capital: <strong>Ottawa, Ontario</strong></div></div>
+    </div>
+    <div class="recap"><div class="recap-lbl">Lesson Recap</div><div class="recap-t">Canada's ten provinces stretch from the Atlantic coast of Newfoundland to the Pacific coast of British Columbia. Each has its own capital city, regional character, and constitutional powers. Ontario is the most populous; PEI is the smallest; Quebec is the largest French-speaking province. Next: Canada's three territories and the five geographic regions.</div></div>
+    <div class="nxt"><button class="nbtn" onclick="SL(1,document.querySelectorAll('.lbtn')[1])">Next Lesson →</button></div>
+  </div>
+
+  <!-- LESSON 2 -->
+  <div class="ls" id="l1">
+    <div class="obj">
+      <div class="obj-lbl">Learning Objectives</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Name Canada's three territories and their capitals</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Know the difference between provinces and territories</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Identify Canada's five geographic regions</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Understand Canada's size and geographic diversity</div>
+    </div>
+    <div class="lt">Canada's three territories</div>
+    <div class="lp"><p>Canada's three territories are located in the north. Unlike provinces, territories do not have the same constitutional status — their powers are delegated by the federal government. All three territories have large Indigenous populations and vast wilderness areas.</p></div>
+    <div class="terr-grid">
+      <div class="terr-card"><div class="tc-name">Yukon</div><div class="tc-cap">Capital: Whitehorse</div></div>
+      <div class="terr-card"><div class="tc-name">Northwest Territories</div><div class="tc-cap">Capital: Yellowknife</div></div>
+      <div class="terr-card"><div class="tc-name">Nunavut</div><div class="tc-cap">Capital: Iqaluit</div></div>
+    </div>
+    <div class="lp" style="margin-top:10px">
+      <p><strong>Nunavut</strong> is Canada's newest territory — created on <strong>April 1, 1999</strong>. It was carved out of the Northwest Territories and is home to a predominantly <strong>Inuit</strong> population. Nunavut is the largest territory by area and one of the most remote regions in the world.</p>
+      <p>Canada is the <strong>second largest country in the world by total area</strong> — covering approximately <strong>10 million square kilometres</strong>. It borders the <strong>Atlantic Ocean</strong> to the east, the <strong>Pacific Ocean</strong> to the west, and the <strong>Arctic Ocean</strong> to the north.</p>
+    </div>
+    <div class="lt">Canada's five geographic regions</div>
+    <div class="lp">
+      <p><strong>1. The Atlantic Provinces</strong> — Newfoundland and Labrador, PEI, Nova Scotia, and New Brunswick. Known for fishing, seafood, and rugged coastlines.</p>
+      <p><strong>2. Central Canada</strong> — Quebec and Ontario. Home to the majority of Canada's population, manufacturing, and the seat of federal government.</p>
+      <p><strong>3. The Prairie Provinces</strong> — Manitoba, Saskatchewan, and Alberta. Known for vast wheat fields, cattle ranching, and oil and gas production.</p>
+      <p><strong>4. The West Coast</strong> — British Columbia. Known for mountains, forests, Pacific trade, and a mild climate.</p>
+      <p><strong>5. The North</strong> — Yukon, Northwest Territories, and Nunavut. Vast wilderness, rich in minerals and wildlife, home to many Indigenous communities.</p>
+    </div>
+    <div class="hbox"><strong>Remember:</strong> Nunavut was created in <strong>1999</strong> and is predominantly <strong>Inuit</strong>. Canada is the <strong>second largest country</strong> in the world. The motto "A Mari Usque Ad Mare" (From Sea to Sea) refers to the Atlantic, Pacific, and Arctic oceans that border Canada.</div>
+    <div class="kf">
+      <div class="kf-lbl">📌 Key Facts — Memorize These</div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Three territories: <strong>Yukon</strong> (Whitehorse) · <strong>Northwest Territories</strong> (Yellowknife) · <strong>Nunavut</strong> (Iqaluit)</div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div><strong>Nunavut</strong> created: <strong>April 1, 1999</strong> · predominantly Inuit · largest territory</div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Canada = <strong>second largest country</strong> in the world · ~10 million sq km</div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Five regions: <strong>Atlantic · Central · Prairies · West Coast · The North</strong></div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Canada bordered by: <strong>Atlantic</strong> (east) · <strong>Pacific</strong> (west) · <strong>Arctic</strong> (north) oceans</div></div>
+    </div>
+    <div class="recap"><div class="recap-lbl">Lesson Recap</div><div class="recap-t">Canada's three territories — Yukon, Northwest Territories, and Nunavut — cover the vast northern part of the country. Nunavut, created in 1999, is the youngest and largest territory. Canada's five geographic regions each have a distinct character — from the fishing communities of Atlantic Canada to the oil fields of the Prairies to the mountains of British Columbia. Next: Canada's remarkable natural resources.</div></div>
+    <div class="nxt"><button class="nbtn" onclick="SL(2,document.querySelectorAll('.lbtn')[2])">Next Lesson →</button></div>
+  </div>
+
+  <!-- LESSON 3 -->
+  <div class="ls" id="l2">
+    <div class="obj">
+      <div class="obj-lbl">Learning Objectives</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Know Canada's major natural resources and where they are found</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Understand the role of natural resources in Canada's economy</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Know which resources are associated with which regions</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Understand Canada's position as a global resource exporter</div>
+    </div>
+    <div class="lt">Canada's natural wealth</div>
+    <div class="lp"><p>Canada is extraordinarily rich in natural resources — one of the world's leading producers and exporters of energy, minerals, agricultural products, and forest products. Natural resources are managed primarily by <strong>provincial governments</strong>.</p></div>
+    <div class="res-grid">
+      <div class="res-card"><div class="res-icon">🛢️</div><div><div class="res-title">Oil & Natural Gas</div><div class="res-desc">Alberta holds most of Canada's oil reserves including the Oil Sands — one of the world's largest oil deposits. Saskatchewan and BC also produce significant oil and gas.</div></div></div>
+      <div class="res-card"><div class="res-icon">🌾</div><div><div class="res-title">Agriculture & Wheat</div><div class="res-desc">The Prairie provinces (Saskatchewan, Manitoba, Alberta) are among the world's top wheat producers. Canada is a major exporter of grain, canola, and cattle.</div></div></div>
+      <div class="res-card"><div class="res-icon">🌲</div><div><div class="res-title">Forests & Lumber</div><div class="res-desc">Canada has the third largest forest area in the world. British Columbia and Quebec lead in forestry. Canada is a major exporter of lumber, pulp, and paper.</div></div></div>
+      <div class="res-card"><div class="res-icon">⚡</div><div><div class="res-title">Hydroelectric Power</div><div class="res-desc">Canada is one of the world's top producers of hydroelectric power. Quebec and BC have massive hydro systems. Canada exports electricity to the United States.</div></div></div>
+      <div class="res-card"><div class="res-icon">🐟</div><div><div class="res-title">Fisheries</div><div class="res-desc">The Atlantic and Pacific coasts support major fisheries. The Grand Banks off Newfoundland were historically one of the richest fishing areas in the world.</div></div></div>
+      <div class="res-card"><div class="res-icon">⛏️</div><div><div class="res-title">Mining & Minerals</div><div class="res-desc">Canada is a leading producer of potash, uranium, nickel, gold, copper, and diamonds. Ontario, Quebec, and the territories are major mining regions.</div></div></div>
+    </div>
+    <div class="lp">
+      <p><strong>Canada produces most of the world's maple syrup</strong> — mainly from Quebec. Canada is also one of the world's leading producers of <strong>uranium</strong> (Saskatchewan) and <strong>potash</strong> (used as fertilizer), also from Saskatchewan.</p>
+    </div>
+    <div class="hbox"><strong>Key resource facts:</strong> Oil sands = <strong>Alberta</strong>. Wheat = <strong>Prairie provinces</strong>. Largest forestry = <strong>BC and Quebec</strong>. Maple syrup = mostly <strong>Quebec</strong>. Uranium and potash = <strong>Saskatchewan</strong>. Natural resources = <strong>provincial</strong> responsibility.</div>
+    <div class="kf">
+      <div class="kf-lbl">📌 Key Facts — Memorize These</div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Natural resources are managed by <strong>provincial governments</strong></div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Oil sands (major oil deposits): <strong>Alberta</strong></div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Wheat and grain production: <strong>Prairie provinces</strong> (SK, MB, AB)</div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Most of world's maple syrup: <strong>Quebec</strong></div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Uranium and potash: <strong>Saskatchewan</strong></div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Major hydroelectric power: <strong>Quebec and British Columbia</strong></div></div>
+    </div>
+    <div class="recap"><div class="recap-lbl">Lesson Recap</div><div class="recap-t">Canada's natural wealth — oil, wheat, forests, hydroelectric power, fish, and minerals — makes it one of the world's most resource-rich nations. Each region contributes differently: Alberta's oil sands, the Prairies' wheat fields, Quebec's maple syrup and hydroelectric power, BC's forests. Natural resources are a provincial responsibility and a cornerstone of Canada's economic strength. Next: Canada's broader economy.</div></div>
+    <div class="nxt"><button class="nbtn" onclick="SL(3,document.querySelectorAll('.lbtn')[3])">Next Lesson →</button></div>
+  </div>
+
+  <!-- LESSON 4 -->
+  <div class="ls" id="l3">
+    <div class="obj">
+      <div class="obj-lbl">Learning Objectives</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Understand the structure of Canada's economy</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Know Canada's major trading partners and trade agreements</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Understand the role of the service sector in Canada</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Know key facts about Canada's economic standing globally</div>
+    </div>
+    <div class="lt">Canada's economy</div>
+    <div class="lp">
+      <p>Canada has one of the <strong>largest economies in the world</strong> — consistently ranked among the top ten globally. Canada's economy is a <strong>mixed market economy</strong>, combining private enterprise with government programs and social services.</p>
+      <p>The economy has three main sectors:</p>
+      <p><strong>Primary sector</strong> — extracting natural resources: farming, fishing, forestry, mining, and energy production. This sector is especially important in rural and northern Canada.</p>
+      <p><strong>Secondary sector</strong> — manufacturing and processing: turning raw materials into goods. Major industries include automobile manufacturing (Ontario), aerospace (Quebec), and food processing.</p>
+      <p><strong>Tertiary sector (services)</strong> — the largest sector of Canada's economy. Includes retail, banking, health care, education, technology, tourism, and government services. Most Canadians work in the service sector.</p>
+    </div>
+    <div class="lt">Trade and international partnerships</div>
+    <div class="lp">
+      <p>The <strong>United States</strong> is Canada's largest trading partner by far — the two countries share the world's largest bilateral trading relationship. Canada exports oil, vehicles, machinery, gold, and agricultural products to the US.</p>
+      <p>Canada is a member of the <strong>Canada-United States-Mexico Agreement (CUSMA)</strong> — formerly NAFTA — which governs free trade across North America.</p>
+      <p>Canada is also a member of the <strong>Comprehensive and Progressive Agreement for Trans-Pacific Partnership (CPTPP)</strong>, giving it access to markets across Asia and the Pacific.</p>
+      <p>Canada's currency is the <strong>Canadian dollar (CAD)</strong>. The <strong>Bank of Canada</strong> is the country's central bank, responsible for monetary policy and issuing currency.</p>
+    </div>
+    <div class="hbox"><strong>Key economic facts:</strong> Canada's largest trading partner = <strong>United States</strong>. Free trade agreement = <strong>CUSMA</strong> (formerly NAFTA). Central bank = <strong>Bank of Canada</strong>. Largest economic sector = <strong>services (tertiary)</strong>. Canada is in the top 10 largest economies in the world.</div>
+    <div class="kf">
+      <div class="kf-lbl">📌 Key Facts — Memorize These</div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Canada is one of the <strong>top 10 largest economies</strong> in the world</div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Largest trading partner: <strong>United States</strong></div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>North American free trade agreement: <strong>CUSMA</strong> (formerly NAFTA)</div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Three sectors: <strong>Primary</strong> (resources) · <strong>Secondary</strong> (manufacturing) · <strong>Tertiary</strong> (services)</div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Largest sector: <strong>services (tertiary)</strong> — most Canadians work in services</div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Central bank: <strong>Bank of Canada</strong> · Currency: <strong>Canadian dollar (CAD)</strong></div></div>
+    </div>
+    <div class="recap"><div class="recap-lbl">Lesson Recap</div><div class="recap-t">Canada's mixed market economy combines resource extraction, manufacturing, and — most importantly — a vast service sector. The United States is Canada's dominant trading partner, connected through CUSMA. The Bank of Canada manages monetary policy. Canada consistently ranks among the world's top ten economies. Next: Canada's key cities, landmarks, and fast facts for the test.</div></div>
+    <div class="nxt"><button class="nbtn" onclick="SL(4,document.querySelectorAll('.lbtn')[4])">Next Lesson →</button></div>
+  </div>
+
+  <!-- LESSON 5 -->
+  <div class="ls" id="l4">
+    <div class="obj">
+      <div class="obj-lbl">Learning Objectives</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Know Canada's largest cities and their provinces</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Know key geographic and demographic facts about Canada</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Understand Canada's bilingual and multicultural character geographically</div>
+      <div class="obj-row"><div class="obj-ck">✓</div>Review the most important facts across all of Module 5</div>
+    </div>
+    <div class="lt">Canada's major cities</div>
+    <div class="lp">
+      <p><strong>Toronto, Ontario</strong> — Canada's largest city and financial capital. Home to the Toronto Stock Exchange and a major centre of banking, media, and technology.</p>
+      <p><strong>Montreal, Quebec</strong> — Canada's second largest city and the largest French-speaking city in North America outside of Paris. A major centre of culture, arts, and aerospace.</p>
+      <p><strong>Vancouver, British Columbia</strong> — Canada's third largest city and its primary Pacific port. A major hub for trade with Asia and a centre of the technology and film industries.</p>
+      <p><strong>Calgary, Alberta</strong> — the centre of Canada's oil and gas industry. One of Canada's fastest-growing cities.</p>
+      <p><strong>Ottawa, Ontario</strong> — Canada's <strong>national capital</strong>. Home to Parliament Hill, the Supreme Court of Canada, and the Governor General's residence (Rideau Hall).</p>
+      <p><strong>Quebec City, Quebec</strong> — Canada's oldest walled city and a UNESCO World Heritage site. The capital of Quebec province and a centre of French-Canadian culture.</p>
+    </div>
+    <div class="lt">Key facts for the test</div>
+    <div class="lp">
+      <p>Canada's population is approximately <strong>38–40 million people</strong>. Canada is one of the world's most urbanized countries — over <strong>80%</strong> of Canadians live in cities, most within <strong>300 kilometres of the US border</strong>.</p>
+      <p>Canada has <strong>two official languages — English and French</strong>. French is the primary language in Quebec and parts of New Brunswick, Ontario, and Manitoba. New Brunswick is Canada's <strong>only officially bilingual province</strong>.</p>
+      <p>The <strong>Canadian Shield</strong> is a massive area of ancient rock covering roughly half of Canada — running through northern Ontario, Quebec, and into the territories. It is rich in minerals but has thin soil unsuitable for farming.</p>
+      <p>The <strong>Great Lakes</strong> — shared with the United States — are the largest group of freshwater lakes in the world. They border Ontario and are a vital transportation and water resource.</p>
+      <p>The <strong>St. Lawrence River</strong> — flowing from the Great Lakes to the Atlantic — is one of Canada's most important waterways, connecting the interior of the continent to the ocean.</p>
+    </div>
+    <div class="hbox"><strong>Most tested city facts:</strong> <strong>Ottawa</strong> = national capital (Ontario). <strong>Toronto</strong> = largest city (Ontario). <strong>Montreal</strong> = largest French-speaking city in North America (Quebec). <strong>Quebec City</strong> = capital of Quebec province (not Montreal). <strong>New Brunswick</strong> = only officially bilingual province.</div>
+    <div class="kf">
+      <div class="kf-lbl">📌 Key Facts — Memorize These</div>
+      <div class="kf-row"><div class="kf-dot"></div><div>National capital: <strong>Ottawa, Ontario</strong></div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Largest city: <strong>Toronto, Ontario</strong></div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Largest French-speaking city in North America: <strong>Montreal, Quebec</strong></div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Only officially bilingual province: <strong>New Brunswick</strong></div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Canada's population: approximately <strong>38–40 million</strong></div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div>Over <strong>80% of Canadians</strong> live in cities, most within 300 km of the US border</div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div><strong>Great Lakes</strong> — largest freshwater lakes in the world — border Ontario</div></div>
+      <div class="kf-row"><div class="kf-dot"></div><div><strong>Canadian Shield</strong> — ancient rock covering half of Canada — rich in minerals</div></div>
+    </div>
+    <div class="recap"><div class="recap-lbl">Module & Course Recap</div><div class="recap-t">You have now completed all five modules of this course. From the Indigenous peoples who first called this land home, to the government that serves its citizens today, to the rights and responsibilities every Canadian holds, to the symbols that unite us, to the vast geography and economy that powers this country — you have covered it all. Canada is extraordinary. And you are ready to prove that you know it. Take the quizzes, complete the mock exams, and go pass your citizenship test. Welcome to Canada. 🍁</div></div>
+    <div class="nxt"><button class="nbtn" onclick="ST('a',document.querySelectorAll('.tab')[1])">Take Quiz A →</button></div>
+  </div>
+</div>
+</div>
+
+<!-- ══════ QUIZ A ══════ -->
+<div id="pa" class="panel">
+<div class="quiz-body">
+  <div class="quiz-hdr">
+    <div class="qh-eye">Module 5 · Quiz Set A — Provinces & Territories</div>
+    <div class="qh-title">Provinces, Capitals & Geographic Regions</div>
+    <div class="qh-sub">15 questions · Direct recall · Exam format</div>
+  </div>
+  <div><div class="qpm"><span id="cA">Question 1 of 15</span><span id="sA">Score: 0</span></div><div class="qpb"><div class="qpf" id="fA" style="width:6.6%"></div></div></div>
+  <div class="qcard" id="dA"><div class="qnum" id="nA"></div><div class="qtxt" id="tA"></div><div class="qopts" id="oA"></div><div class="qexp" id="eA"></div></div>
+  <div class="qnav"><button class="qbtn" id="pvA" onclick="PQ('A')" style="visibility:hidden">← Prev</button><button class="qbtn pr" id="nxA" onclick="NQ('A')">Next →</button></div>
+  <div class="sc" id="scA"><div class="scn" id="snA"></div><div class="scl">Quiz Set A complete</div><div class="scm" id="smA"></div><div class="sca"><button class="sbtn" onclick="RS('A')">Retake</button><button class="sbtn pr" onclick="ST('b',document.querySelectorAll('.tab')[2])">Try Set B →</button></div></div>
+</div>
+</div>
+
+<!-- ══════ QUIZ B ══════ -->
+<div id="pb" class="panel">
+<div class="quiz-body">
+  <div class="quiz-hdr">
+    <div class="qh-eye">Module 5 · Quiz Set B — Resources & Economy</div>
+    <div class="qh-title">Natural Resources, Economy & Trade</div>
+    <div class="qh-sub">15 questions · Application & scenario style</div>
+  </div>
+  <div><div class="qpm"><span id="cB">Question 1 of 15</span><span id="sB">Score: 0</span></div><div class="qpb"><div class="qpf" id="fB" style="width:6.6%"></div></div></div>
+  <div class="qcard" id="dB"><div class="qnum" id="nB"></div><div class="qtxt" id="tB"></div><div class="qopts" id="oB"></div><div class="qexp" id="eB"></div></div>
+  <div class="qnav"><button class="qbtn" id="pvB" onclick="PQ('B')" style="visibility:hidden">← Prev</button><button class="qbtn pr" id="nxB" onclick="NQ('B')">Next →</button></div>
+  <div class="sc" id="scB"><div class="scn" id="snB"></div><div class="scl">Quiz Set B complete</div><div class="scm" id="smB"></div><div class="sca"><button class="sbtn" onclick="RS('B')">Retake</button><button class="sbtn pr" onclick="ST('c',document.querySelectorAll('.tab')[3])">Try Set C →</button></div></div>
+</div>
+</div>
+
+<!-- ══════ QUIZ C ══════ -->
+<div id="pc" class="panel">
+<div class="quiz-body">
+  <div class="quiz-hdr">
+    <div class="qh-eye">Module 5 · Quiz Set C — Challenge</div>
+    <div class="qh-title">Cities, Landmarks & Harder Geography Questions</div>
+    <div class="qh-sub">15 questions · Exam-level difficulty</div>
+  </div>
+  <div><div class="qpm"><span id="cC">Question 1 of 15</span><span id="sC">Score: 0</span></div><div class="qpb"><div class="qpf" id="fC" style="width:6.6%"></div></div></div>
+  <div class="qcard" id="dC"><div class="qnum" id="nC"></div><div class="qtxt" id="tC"></div><div class="qopts" id="oC"></div><div class="qexp" id="eC"></div></div>
+  <div class="qnav"><button class="qbtn" id="pvC" onclick="PQ('C')" style="visibility:hidden">← Prev</button><button class="qbtn pr" id="nxC" onclick="NQ('C')">Next →</button></div>
+  <div class="sc" id="scC"><div class="scn" id="snC"></div><div class="scl">Quiz Set C complete</div><div class="scm" id="smC"></div><div class="sca"><button class="sbtn" onclick="RS('C')">Retake</button><button class="sbtn pr" onclick="alert('Congratulations! You have completed all 5 modules. Proceed to the Mock Exams to test your full readiness.')">Proceed to Mock Exams →</button></div></div>
+</div>
+</div>
+
+<script>
+const QD={
+A:[
+  {q:"How many provinces does Canada have?",o:["8","9","10","13"],c:2,e:"Canada has 10 provinces and 3 territories — 13 total divisions. Provinces have constitutionally defined powers; territories have powers delegated by the federal government."},
+  {q:"What is the capital of Canada?",o:["Toronto","Montreal","Vancouver","Ottawa"],c:3,e:"Ottawa, Ontario is Canada's national capital. Toronto is Ontario's provincial capital and Canada's largest city, but Ottawa is where the federal government is located."},
+  {q:"Which is Canada's most populous province?",o:["Quebec","British Columbia","Ontario","Alberta"],c:2,e:"Ontario is Canada's most populous province. It is home to both the national capital (Ottawa) and Canada's largest city (Toronto)."},
+  {q:"Which is Canada's smallest province?",o:["Nova Scotia","New Brunswick","Yukon","Prince Edward Island"],c:3,e:"Prince Edward Island (PEI) is Canada's smallest province — both in area and population. It is also known as the 'Birthplace of Confederation.'"},
+  {q:"What is the capital of British Columbia?",o:["Vancouver","Victoria","Kelowna","Surrey"],c:1,e:"Victoria is the capital of British Columbia — not Vancouver. This is a very common trick question on the citizenship test. Vancouver is the largest city in BC but Victoria is the capital."},
+  {q:"What is the capital of Quebec?",o:["Montreal","Laval","Quebec City","Gatineau"],c:2,e:"Quebec City is the capital of Quebec — not Montreal. Montreal is Quebec's largest city and Canada's second largest city, but Quebec City is the provincial capital."},
+  {q:"When was Nunavut created as Canada's newest territory?",o:["April 1, 1982","April 1, 1992","April 1, 1999","April 1, 2005"],c:2,e:"Nunavut was created on April 1, 1999, carved out of the Northwest Territories. It has a predominantly Inuit population and is Canada's largest territory by area."},
+  {q:"What is the capital of Nunavut?",o:["Yellowknife","Whitehorse","Iqaluit","Inuvik"],c:2,e:"Iqaluit is the capital of Nunavut. Yellowknife is the capital of the Northwest Territories, and Whitehorse is the capital of Yukon."},
+  {q:"Canada is the second largest country in the world. What is the largest?",o:["United States","Russia","China","Australia"],c:1,e:"Russia is the world's largest country by total area. Canada is second. Canada covers approximately 10 million square kilometres."},
+  {q:"Which three oceans border Canada?",o:["Atlantic, Pacific, and Indian","Atlantic, Pacific, and Arctic","Pacific, Arctic, and Southern","Atlantic, Indian, and Arctic"],c:1,e:"Canada is bordered by the Atlantic Ocean (east), the Pacific Ocean (west), and the Arctic Ocean (north). This is reflected in the motto 'A Mari Usque Ad Mare' — From Sea to Sea."},
+  {q:"Which province is Canada's only officially bilingual province?",o:["Quebec","Ontario","Manitoba","New Brunswick"],c:3,e:"New Brunswick is Canada's only officially bilingual province — with both English and French as official languages at the provincial level."},
+  {q:"What are the Prairie provinces?",o:["Ontario, Quebec, and Manitoba","Manitoba, Saskatchewan, and Alberta","Alberta, British Columbia, and Saskatchewan","Saskatchewan, Manitoba, and Ontario"],c:1,e:"The Prairie provinces are Manitoba, Saskatchewan, and Alberta — known for vast wheat fields, cattle ranching, and oil and gas production."},
+  {q:"What is the capital of Alberta?",o:["Calgary","Lethbridge","Red Deer","Edmonton"],c:3,e:"Edmonton is the capital of Alberta — not Calgary. Calgary is Alberta's largest city and the centre of the oil industry, but Edmonton is the provincial capital."},
+  {q:"Which territory has Whitehorse as its capital?",o:["Nunavut","Northwest Territories","Yukon","Northern Quebec"],c:2,e:"Whitehorse is the capital of Yukon. Yellowknife is the capital of the Northwest Territories, and Iqaluit is the capital of Nunavut."},
+  {q:"What geographic feature covers roughly half of Canada and is rich in minerals?",o:["The Rocky Mountains","The Canadian Shield","The Great Plains","The Laurentian Highlands"],c:1,e:"The Canadian Shield is a massive area of ancient rock covering roughly half of Canada — running through northern Ontario, Quebec, and into the territories. Rich in minerals but with thin soil unsuitable for large-scale farming."}
+],
+B:[
+  {q:"Which province contains Canada's major oil sands?",o:["British Columbia","Saskatchewan","Manitoba","Alberta"],c:3,e:"Alberta contains Canada's major oil sands — one of the world's largest oil deposits. Alberta is the centre of Canada's oil and gas industry."},
+  {q:"Which province produces most of the world's maple syrup?",o:["Ontario","New Brunswick","Quebec","Nova Scotia"],c:2,e:"Quebec produces most of the world's maple syrup — approximately 70–75% of global supply. The sugar maple thrives in Quebec's climate."},
+  {q:"Natural resources in Canada are managed primarily by which level of government?",o:["Federal government","Municipal government","Provincial governments","Territorial governments only"],c:2,e:"Natural resources are primarily a provincial responsibility in Canada. This is why oil revenues go to Alberta, not the federal government."},
+  {q:"Which provinces are the world's top wheat producers?",o:["Ontario and Quebec","BC and Alberta","The Prairie provinces — SK, MB, AB","Atlantic provinces"],c:2,e:"The Prairie provinces — Saskatchewan, Manitoba, and Alberta — are among the world's top wheat producers. Saskatchewan in particular is known as Canada's breadbasket."},
+  {q:"What is Canada's largest trading partner?",o:["China","United Kingdom","Mexico","United States"],c:3,e:"The United States is Canada's largest trading partner by far. The two countries share the world's largest bilateral trading relationship."},
+  {q:"What replaced NAFTA as the North American free trade agreement?",o:["CETA","CPTPP","CUSMA","CAFTA"],c:2,e:"CUSMA (Canada-United States-Mexico Agreement) replaced NAFTA. It governs free trade across North America between Canada, the United States, and Mexico."},
+  {q:"Which sector is the largest part of Canada's economy?",o:["Primary sector (resources)","Secondary sector (manufacturing)","Tertiary sector (services)","Agricultural sector"],c:2,e:"The tertiary (services) sector is Canada's largest economic sector. It includes retail, banking, health care, education, technology, and government services. Most Canadians work in services."},
+  {q:"Which province and territory are the major producers of hydroelectric power?",o:["Ontario and Yukon","Alberta and Nunavut","Quebec and British Columbia","Nova Scotia and Northwest Territories"],c:2,e:"Quebec and British Columbia are Canada's major hydroelectric power producers. Canada is one of the world's top hydroelectric power producers and exports electricity to the United States."},
+  {q:"What is Canada's currency?",o:["The American dollar","The Canadian pound","The Canadian dollar (CAD)","The Canadian franc"],c:2,e:"Canada's currency is the Canadian dollar (CAD). The Bank of Canada is the central bank responsible for monetary policy and issuing currency."},
+  {q:"Which province leads Canada in forestry production?",o:["Ontario and Alberta","British Columbia and Quebec","Manitoba and Saskatchewan","Nova Scotia and New Brunswick"],c:1,e:"British Columbia and Quebec lead Canada in forestry production. Canada has the third largest forest area in the world and is a major exporter of lumber, pulp, and paper."},
+  {q:"Where is Canada's largest group of freshwater lakes located?",o:["In the Prairie provinces","The Great Lakes bordering Ontario","In northern Quebec","In the Northwest Territories"],c:1,e:"The Great Lakes — Lake Superior, Lake Huron, Lake Erie, Lake Ontario, and Lake Michigan — are the largest group of freshwater lakes in the world. They border Ontario and are shared with the United States."},
+  {q:"Which province produces most of Canada's uranium?",o:["Alberta","Ontario","Quebec","Saskatchewan"],c:3,e:"Saskatchewan is Canada's leading uranium producer and one of the world's largest. Saskatchewan also produces most of Canada's potash — an important fertilizer."},
+  {q:"What is the primary industry of Canada's Atlantic provinces?",o:["Oil and gas","Wheat farming","Fishing and seafood","Automobile manufacturing"],c:2,e:"The Atlantic provinces — Newfoundland, PEI, Nova Scotia, and New Brunswick — are known primarily for fishing and seafood. The Grand Banks off Newfoundland was historically one of the richest fishing areas in the world."},
+  {q:"Where do most Canadians live?",o:["In rural farming communities","In the northern territories","In cities, mostly within 300 km of the US border","Evenly distributed across the country"],c:2,e:"Over 80% of Canadians live in cities, with most concentrated within 300 kilometres of the US border — in a relatively narrow band across southern Canada where the climate is milder."},
+  {q:"What is the Bank of Canada responsible for?",o:["Collecting taxes from all Canadians","Managing provincial budgets","Monetary policy and issuing currency","International trade negotiations"],c:2,e:"The Bank of Canada is Canada's central bank — responsible for monetary policy (managing interest rates and inflation) and issuing Canadian currency."}
+],
+C:[
+  {q:"Which city is the largest French-speaking city in North America after Paris?",o:["Quebec City","Ottawa","Montreal","Toronto"],c:2,e:"Montreal, Quebec is the largest French-speaking city in North America outside of Paris. It is Canada's second largest city and a major cultural, artistic, and economic centre."},
+  {q:"What is the St. Lawrence River's significance to Canada?",o:["It forms the border between Canada and the US","It connects the Great Lakes to the Atlantic Ocean","It is the longest river in Canada","It flows from the Rockies to the Pacific"],c:1,e:"The St. Lawrence River flows from the Great Lakes eastward to the Atlantic Ocean — connecting the interior of North America to the sea. It is one of Canada's most important waterways for trade and transportation."},
+  {q:"What distinguishes New Brunswick from all other Canadian provinces?",o:["It was the last province to join Confederation","It has the largest Indigenous population","It is Canada's only officially bilingual province","It has no provincial capital"],c:2,e:"New Brunswick is Canada's only officially bilingual province — with both English and French as official languages at the provincial level, reflecting its large Acadian (French-speaking) community."},
+  {q:"Which Canadian city is home to the Toronto Stock Exchange and is Canada's financial capital?",o:["Ottawa","Montreal","Vancouver","Toronto"],c:3,e:"Toronto is Canada's financial capital — home to the Toronto Stock Exchange, the headquarters of Canada's major banks, and a major centre of business, media, and technology."},
+  {q:"What is the capital of Manitoba?",o:["Brandon","Winnipeg","Regina","Saskatoon"],c:1,e:"Winnipeg is the capital of Manitoba. Regina is the capital of Saskatchewan (not Manitoba). Brandon is another Manitoba city. Saskatoon is Saskatchewan's largest city but not its capital."},
+  {q:"Quebec City holds which UNESCO designation?",o:["UNESCO World Capital of Culture","UNESCO World Heritage Site","UNESCO City of Literature","UNESCO Creative City"],c:1,e:"Quebec City is a UNESCO World Heritage Site — recognized for its outstanding historic architecture and its status as the only remaining walled city in North America north of Mexico."},
+  {q:"Which is the capital of Saskatchewan?",o:["Saskatoon","Moose Jaw","Regina","Prince Albert"],c:2,e:"Regina is the capital of Saskatchewan. Saskatoon is Saskatchewan's largest city but Regina is the provincial capital."},
+  {q:"What percentage of Canadians live in cities?",o:["About 50%","About 60%","About 70%","Over 80%"],c:3,e:"Over 80% of Canadians live in urban areas, making Canada one of the world's most urbanized countries despite its vast land area."},
+  {q:"Nunavut was created by dividing which territory?",o:["Yukon","The Northwest Territories","The Hudson Bay Territory","The Arctic Territory"],c:1,e:"Nunavut was carved out of the Northwest Territories on April 1, 1999. It was created to recognize and accommodate the land rights and governance needs of the Inuit people."},
+  {q:"Which Canadian city is the primary Pacific port and hub for trade with Asia?",o:["Victoria","Prince Rupert","Vancouver","Kelowna"],c:2,e:"Vancouver, BC is Canada's primary Pacific port and the main hub for Canada's trade with Asia. It is also a major centre of the technology and film industries."},
+  {q:"What is the capital of Nova Scotia?",o:["Dartmouth","Truro","Sydney","Halifax"],c:3,e:"Halifax is the capital of Nova Scotia. It is also the largest city in Atlantic Canada and a major port city."},
+  {q:"Canada's economy is best described as what type?",o:["A centrally planned economy","A pure free market economy","A mixed market economy","A resource-only economy"],c:2,e:"Canada has a mixed market economy — combining private enterprise and free markets with government programs, social services, and some public ownership (e.g., public health care, Crown corporations)."},
+  {q:"Which river connects the Great Lakes to the Atlantic Ocean?",o:["The Ottawa River","The Fraser River","The St. Lawrence River","The Saskatchewan River"],c:2,e:"The St. Lawrence River connects the Great Lakes to the Atlantic Ocean. It is one of Canada's most historically and economically important waterways."},
+  {q:"What is the capital of New Brunswick?",o:["Moncton","Saint John","Fredericton","Bathurst"],c:2,e:"Fredericton is the capital of New Brunswick. Moncton and Saint John are larger cities in New Brunswick, but Fredericton is the provincial capital."},
+  {q:"Which agreement governs free trade between Canada, the US, and Mexico?",o:["NAFTA","CETA","CPTPP","CUSMA"],c:3,e:"CUSMA (Canada-United States-Mexico Agreement) governs free trade in North America, replacing the earlier NAFTA. It came into force in 2020."}
+]};
+
+const ST2={A:{i:0,s:0,a:[]},B:{i:0,s:0,a:[]},C:{i:0,s:0,a:[]}};
+
+function RQ(k){
+  const d=QD[k],st=ST2[k],q=d[st.i];
+  document.getElementById('n'+k).textContent='Question '+(st.i+1);
+  document.getElementById('t'+k).textContent=q.q;
+  document.getElementById('c'+k).textContent='Question '+(st.i+1)+' of '+d.length;
+  document.getElementById('s'+k).textContent='Score: '+st.s;
+  document.getElementById('f'+k).style.width=((st.i+1)/d.length*100)+'%';
+  const ob=document.getElementById('o'+k);ob.innerHTML='';
+  q.o.forEach((opt,i)=>{
+    const b=document.createElement('button');
+    b.className='qopt';b.textContent=opt;
+    if(st.a[st.i]!==undefined){
+      b.disabled=true;
+      if(i===q.c)b.classList.add('ok');
+      else if(i===st.a[st.i])b.classList.add('ng');
+    } else {b.onclick=()=>SA(k,i);}
+    ob.appendChild(b);
+  });
+  const ex=document.getElementById('e'+k);
+  if(st.a[st.i]!==undefined){ex.textContent='💡 '+q.e;ex.classList.add('on');}
+  else ex.classList.remove('on');
+  document.getElementById('pv'+k).style.visibility=st.i>0?'visible':'hidden';
+  const nb=document.getElementById('nx'+k);
+  nb.style.opacity=st.a[st.i]!==undefined?'1':'0.4';
+  if(st.i===d.length-1&&st.a[st.i]!==undefined){nb.textContent='See Results';nb.onclick=()=>SS(k);}
+  else{nb.textContent='Next →';nb.onclick=()=>NQ(k);}
+}
+
+function SA(k,i){
+  const st=ST2[k],q=QD[k][st.i];
+  if(st.a[st.i]!==undefined)return;
+  st.a[st.i]=i;if(i===q.c)st.s++;RQ(k);
+}
+
+function NQ(k){const st=ST2[k],d=QD[k];if(st.a[st.i]===undefined)return;if(st.i<d.length-1){st.i++;RQ(k);}else SS(k);}
+function PQ(k){if(ST2[k].i>0){ST2[k].i--;RQ(k);}}
+
+function SS(k){
+  document.getElementById('d'+k).style.display='none';
+  document.querySelector('#p'+k.toLowerCase()+' .qnav').style.display='none';
+  document.querySelector('#p'+k.toLowerCase()+' div:first-child').style.display='none';
+  const sc=document.getElementById('sc'+k);sc.classList.add('on');
+  const p=Math.round(ST2[k].s/QD[k].length*100);
+  document.getElementById('sn'+k).textContent=ST2[k].s+'/'+QD[k].length;
+  document.getElementById('sm'+k).textContent=p>=90?'Outstanding — fully ready!':p>=75?'Good pass — review missed ones.':p>=50?'Keep studying — revisit key facts.':'Review all lessons then retry.';
+}
+
+function RS(k){
+  ST2[k]={i:0,s:0,a:[]};
+  document.getElementById('d'+k).style.display='';
+  document.querySelector('#p'+k.toLowerCase()+' .qnav').style.display='';
+  document.querySelector('#p'+k.toLowerCase()+' div:first-child').style.display='';
+  document.getElementById('sc'+k).classList.remove('on');RQ(k);
+}
+
+function SL(i,btn){
+  document.querySelectorAll('.ls').forEach(s=>s.classList.remove('on'));
+  document.querySelectorAll('.lbtn').forEach(b=>b.classList.remove('on'));
+  document.getElementById('l'+i).classList.add('on');btn.classList.add('on');
+}
+
+function ST(id,btn){
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('on'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));
+  const map={l:'pl',a:'pa',b:'pb',c:'pc'};
+  document.getElementById(map[id]).classList.add('on');btn.classList.add('on');
+  if(id==='a')RQ('A');if(id==='b')RQ('B');if(id==='c')RQ('C');
+}
+
+RQ('A');RQ('B');RQ('C');
+</script>
+</body>
+</html>
