@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit 12 – Geometry | Owl Smart 3rd Grade</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #f4f7fb; color: #2d2d2d; line-height: 1.8; }
+    .top-header { background: linear-gradient(135deg, #1a237e, #283593); color: white; text-align: center; padding: 24px 20px 16px; }
+    .top-header h1 { font-size: 1.5em; margin-bottom: 4px; }
+    .top-header p { font-size: 0.95em; opacity: 0.88; }
+    .nav-bar { background: #1a237e; padding: 0 10px; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.3); overflow-x: auto; white-space: nowrap; }
+    .nav-bar a { display: inline-block; color: rgba(255,255,255,0.8); text-decoration: none; padding: 12px 14px; font-size: 0.82em; font-weight: bold; border-bottom: 3px solid transparent; transition: all 0.2s; }
+    .nav-bar a:hover, .nav-bar a.active { color: white; border-bottom-color: #ffd600; }
+    .main { max-width: 860px; margin: 0 auto; padding: 20px; }
+    .lesson-section { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.08); margin-bottom: 40px; scroll-margin-top: 60px; }
+    .banner { color: white; text-align: center; padding: 28px 24px; }
+    .banner h2 { font-size: 1.45em; margin-bottom: 6px; }
+    .banner p { font-size: 0.97em; opacity: 0.92; margin-bottom: 10px; }
+    .lesson-num { display: inline-block; background: rgba(255,255,255,0.25); border-radius: 20px; padding: 3px 14px; font-size: 0.82em; font-weight: bold; }
+    .b1 { background: linear-gradient(135deg, #1a237e, #3949ab); }
+    .b2 { background: linear-gradient(135deg, #1b5e20, #388e3c); }
+    .b3 { background: linear-gradient(135deg, #880e4f, #c2185b); }
+    .b4 { background: linear-gradient(135deg, #e65100, #fb8c00); }
+    .b5 { background: linear-gradient(135deg, #4a148c, #7b1fa2); }
+    .b6 { background: linear-gradient(135deg, #004d40, #00897b); }
+    .lesson-content { padding: 26px; }
+    .section { border-left: 5px solid; border-radius: 0 10px 10px 0; padding: 18px 20px; margin-bottom: 20px; }
+    .s1 { background: #e8eaf6; border-color: #1a237e; } .s1 h3 { color: #1a237e; }
+    .s2 { background: #e8f5e9; border-color: #1b5e20; } .s2 h3 { color: #1b5e20; }
+    .s3 { background: #fce4ec; border-color: #880e4f; } .s3 h3 { color: #880e4f; }
+    .s4 { background: #fff3e0; border-color: #e65100; } .s4 h3 { color: #e65100; }
+    .s5 { background: #f3e5f5; border-color: #4a148c; } .s5 h3 { color: #4a148c; }
+    .s6 { background: #e0f2f1; border-color: #004d40; } .s6 h3 { color: #004d40; }
+    .section h3 { margin-bottom: 8px; font-size: 1.05em; }
+    .vocab-box { background: #fff8e1; border: 2px solid #ffc107; border-radius: 10px; padding: 18px 20px; margin-bottom: 20px; }
+    .vocab-box h3 { color: #e65100; margin-bottom: 12px; font-size: 1.05em; }
+    .vocab-item { margin: 8px 0; font-size: 0.95em; }
+    .word { font-weight: bold; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.93em; }
+    th { background: #37474f; color: white; padding: 9px 12px; text-align: left; }
+    td { padding: 9px 12px; border-bottom: 1px solid #e0e0e0; }
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) { background: #f5f5f5; }
+    .tip { background: #e8f5e9; border-left: 4px solid #43a047; border-radius: 0 8px 8px 0; padding: 12px 16px; margin: 12px 0; color: #1b5e20; font-size: 0.93em; }
+    .tip strong { color: #2e7d32; }
+    .try-it { background: #ede7f6; border: 2px dashed #7e57c2; border-radius: 10px; padding: 18px 20px; margin-bottom: 20px; }
+    .try-it h3 { color: #4527a0; margin-bottom: 10px; font-size: 1.05em; }
+    .try-it ol { padding-left: 20px; }
+    .try-it li { margin: 8px 0; font-size: 0.95em; }
+    .remember { background: #fff3e0; border: 2px solid #ff8f00; border-radius: 10px; padding: 18px 20px; text-align: center; margin-bottom: 4px; }
+    .remember h3 { color: #e65100; margin-bottom: 10px; font-size: 1.05em; }
+    .remember p { margin: 5px 0; font-size: 0.95em; }
+    .remember .cta { font-weight: bold; font-size: 1.05em; margin-top: 12px; }
+    .flex-row { display: flex; gap: 12px; flex-wrap: wrap; margin: 10px 0; }
+    .flex-col { flex: 1; min-width: 140px; border-radius: 10px; padding: 14px 16px; }
+    .fb-navy { background: #e8eaf6; border: 2px solid #3949ab; } .fb-navy h4 { color: #1a237e; margin-bottom: 6px; }
+    .fb-green { background: #e8f5e9; border: 2px solid #388e3c; } .fb-green h4 { color: #1b5e20; margin-bottom: 6px; }
+    .fb-pink { background: #fce4ec; border: 2px solid #e91e63; } .fb-pink h4 { color: #880e4f; margin-bottom: 6px; }
+    .fb-orange { background: #fff3e0; border: 2px solid #f57c00; } .fb-orange h4 { color: #e65100; margin-bottom: 6px; }
+    .fb-purple { background: #f3e5f5; border: 2px solid #7b1fa2; } .fb-purple h4 { color: #4a148c; margin-bottom: 6px; }
+    .fb-teal { background: #e0f2f1; border: 2px solid #00897b; } .fb-teal h4 { color: #004d40; margin-bottom: 6px; }
+    /* Shape cards */
+    .shape-grid { display: flex; flex-wrap: wrap; gap: 14px; margin: 12px 0; }
+    .shape-card { background: #f9f9f9; border: 2px solid #90a4ae; border-radius: 12px; padding: 14px 16px; text-align: center; flex: 1; min-width: 110px; max-width: 160px; }
+    .shape-card svg { display: block; margin: 0 auto 8px; }
+    .shape-name { font-weight: bold; font-size: 0.88em; color: #1a237e; margin-bottom: 3px; }
+    .shape-detail { font-size: 0.78em; color: #546e7a; }
+    /* 3D shape cards */
+    .solid-card { background: #e0f2f1; border: 2px solid #00897b; border-radius: 12px; padding: 14px 16px; text-align: center; flex: 1; min-width: 110px; }
+    .solid-card .solid-name { font-weight: bold; font-size: 0.88em; color: #004d40; margin-bottom: 4px; }
+    .solid-card .solid-detail { font-size: 0.78em; color: #37474f; }
+    .solid-card svg { display: block; margin: 0 auto 8px; }
+    /* Symmetry */
+    .sym-box { background: #f3e5f5; border: 2px solid #7b1fa2; border-radius: 10px; padding: 16px; text-align: center; }
+    .sym-box svg { display: block; margin: 0 auto 8px; }
+    /* Partition strip */
+    .part-strip { display: flex; height: 40px; border: 2px solid #e65100; border-radius: 6px; overflow: hidden; margin: 8px 0; }
+    .part-section { flex: 1; border-right: 2px solid #e65100; display: flex; align-items: center; justify-content: center; font-size: 0.8em; font-weight: bold; }
+    .part-section:last-child { border-right: none; }
+    .ps-orange { background: #fbe9e7; color: #e65100; }
+    .ps-orange-dark { background: #ff8a65; color: white; }
+    ul { padding-left: 20px; } li { margin: 5px 0; font-size: 0.95em; }
+    p { margin-bottom: 8px; font-size: 0.95em; }
+  </style>
+</head>
+<body>
+
+<div class="top-header">
+  <h1>Owl Smart: A 3rd Grade Learning Journey</h1>
+  <p>Unit 12 -- Geometry &nbsp;|&nbsp; 6 Lessons</p>
+</div>
+
+<div class="nav-bar">
+  <a href="#lesson1">12.1 Polygons</a>
+  <a href="#lesson2">12.2 Attributes</a>
+  <a href="#lesson3">12.3 Quadrilaterals</a>
+  <a href="#lesson4">12.4 Partitioning</a>
+  <a href="#lesson5">12.5 Symmetry</a>
+  <a href="#lesson6">12.6 3D Shapes</a>
+</div>
+
+<div class="main">
+
+<!-- LESSON 12.1 -->
+<div class="lesson-section" id="lesson1">
+  <div class="banner b1">
+    <span class="lesson-num">Lesson 12.1</span>
+    <h2>Shapes: Quadrilaterals, Triangles, and Polygons</h2>
+    <p>Explore the world of flat shapes -- and learn their mathematical names!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s1">
+      <h3>What Are We Learning Today?</h3>
+      <p>Shapes are everywhere! The screen you are reading on, the pages of your books, the tiles on the floor -- all shapes. Today we learn about <strong>polygons</strong> -- closed flat shapes made of straight sides -- and meet the most important families of polygons!</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#1a237e;">Polygon</span> -- A closed, flat shape made of three or more straight sides.</div>
+      <div class="vocab-item"><span class="word" style="color:#1a237e;">Side</span> -- One of the straight lines that make up a polygon.</div>
+      <div class="vocab-item"><span class="word" style="color:#1a237e;">Vertex (Vertices)</span> -- A corner where two sides of a polygon meet.</div>
+      <div class="vocab-item"><span class="word" style="color:#1a237e;">Triangle</span> -- A polygon with 3 sides and 3 vertices.</div>
+      <div class="vocab-item"><span class="word" style="color:#1a237e;">Quadrilateral</span> -- A polygon with 4 sides and 4 vertices. (Quad = 4)</div>
+      <div class="vocab-item"><span class="word" style="color:#1a237e;">Pentagon</span> -- A polygon with 5 sides. (Penta = 5)</div>
+      <div class="vocab-item"><span class="word" style="color:#1a237e;">Hexagon</span> -- A polygon with 6 sides. (Hex = 6)</div>
+      <div class="vocab-item"><span class="word" style="color:#1a237e;">Octagon</span> -- A polygon with 8 sides. (Oct = 8)</div>
+    </div>
+
+    <div class="section s1">
+      <h3>The Polygon Family</h3>
+      <div class="shape-grid">
+        <div class="shape-card">
+          <svg width="60" height="54" viewBox="0 0 60 54"><polygon points="30,4 56,50 4,50" fill="#e8eaf6" stroke="#1a237e" stroke-width="2.5"/></svg>
+          <div class="shape-name">Triangle</div>
+          <div class="shape-detail">3 sides, 3 vertices</div>
+        </div>
+        <div class="shape-card">
+          <svg width="60" height="54" viewBox="0 0 60 54"><rect x="6" y="8" width="48" height="38" fill="#e8eaf6" stroke="#1a237e" stroke-width="2.5"/></svg>
+          <div class="shape-name">Quadrilateral</div>
+          <div class="shape-detail">4 sides, 4 vertices</div>
+        </div>
+        <div class="shape-card">
+          <svg width="60" height="58" viewBox="0 0 60 58"><polygon points="30,3 57,22 47,53 13,53 3,22" fill="#e8eaf6" stroke="#1a237e" stroke-width="2.5"/></svg>
+          <div class="shape-name">Pentagon</div>
+          <div class="shape-detail">5 sides, 5 vertices</div>
+        </div>
+        <div class="shape-card">
+          <svg width="60" height="58" viewBox="0 0 60 58"><polygon points="30,3 56,16 56,42 30,55 4,42 4,16" fill="#e8eaf6" stroke="#1a237e" stroke-width="2.5"/></svg>
+          <div class="shape-name">Hexagon</div>
+          <div class="shape-detail">6 sides, 6 vertices</div>
+        </div>
+        <div class="shape-card">
+          <svg width="60" height="60" viewBox="0 0 60 60"><polygon points="22,3 38,3 57,22 57,38 38,57 22,57 3,38 3,22" fill="#e8eaf6" stroke="#1a237e" stroke-width="2.5"/></svg>
+          <div class="shape-name">Octagon</div>
+          <div class="shape-detail">8 sides, 8 vertices</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section s1">
+      <h3>Not a Polygon! -- What Polygons Must Have</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-green">
+          <h4>IS a Polygon:</h4>
+          <ul>
+            <li>Closed shape (no gaps)</li>
+            <li>All straight sides</li>
+            <li>At least 3 sides</li>
+          </ul>
+        </div>
+        <div class="flex-col fb-pink">
+          <h4>NOT a Polygon:</h4>
+          <ul>
+            <li>A circle (curved sides)</li>
+            <li>An open shape (gap between sides)</li>
+            <li>A shape with curved AND straight sides</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tip"><strong>Memory trick for sides and vertices:</strong> Triangles have 3 of each. The number of sides always equals the number of vertices in any polygon!</div>
+    </div>
+
+    <div class="section s1">
+      <h3>Naming Polygons by Their Number of Sides</h3>
+      <table>
+        <tr><th>Sides</th><th>Name</th><th>Real-World Example</th></tr>
+        <tr><td>3</td><td>Triangle</td><td>Yield sign, tortilla chip, musical triangle</td></tr>
+        <tr><td>4</td><td>Quadrilateral</td><td>Door, window, book, playing card</td></tr>
+        <tr><td>5</td><td>Pentagon</td><td>The Pentagon building, home plate in baseball</td></tr>
+        <tr><td>6</td><td>Hexagon</td><td>Honeycomb cells, a bolt head, snowflake shape</td></tr>
+        <tr><td>8</td><td>Octagon</td><td>Stop sign!</td></tr>
+      </table>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Look around your room. Find ONE example of each: a triangle, a quadrilateral, and a hexagon.</li>
+        <li>Is a circle a polygon? Is an oval a polygon? Explain why or why not.</li>
+        <li>Draw a polygon with 7 sides. What would it be called? (Hint: hepta = 7)</li>
+        <li>A shape has 6 vertices. How many sides does it have? What is its name?</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p>A <strong>polygon</strong> = closed shape + straight sides + at least 3 sides.</p>
+      <p>Sides always equal vertices in any polygon.</p>
+      <p><strong>3=triangle, 4=quadrilateral, 5=pentagon, 6=hexagon, 8=octagon</strong></p>
+      <p class="cta" style="color:#1a237e;">Great start! Click Lesson 12.2!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 12.2 -->
+<div class="lesson-section" id="lesson2">
+  <div class="banner b2">
+    <span class="lesson-num">Lesson 12.2</span>
+    <h2>Attributes of Shapes: Sides, Angles, and Vertices</h2>
+    <p>Describe shapes precisely using mathematical attributes!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s2">
+      <h3>What Are We Learning Today?</h3>
+      <p>Every shape has specific <strong>attributes</strong> -- measurable properties that describe exactly what kind of shape it is. Today we learn to identify and describe shapes by counting sides and vertices, and by identifying types of angles.</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Attribute</span> -- A property that describes a shape (number of sides, type of angles, equal sides).</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Angle</span> -- The amount of turn between two sides that meet at a vertex.</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Right Angle</span> -- A perfect square corner -- exactly 90 degrees. Looks like the corner of a piece of paper.</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Acute Angle</span> -- An angle smaller than a right angle. Sharp and pointy!</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Obtuse Angle</span> -- An angle larger than a right angle. Wide and open!</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Parallel Sides</span> -- Sides that are always the same distance apart and never meet, like train tracks.</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Equal Sides</span> -- Sides that are exactly the same length.</div>
+    </div>
+
+    <div class="section s2">
+      <h3>Three Types of Angles</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-green" style="text-align:center;">
+          <svg width="70" height="60" viewBox="0 0 70 60">
+            <polyline points="10,50 10,10 50,10" fill="none" stroke="#1b5e20" stroke-width="3"/>
+            <rect x="10" y="25" width="15" height="15" fill="none" stroke="#1b5e20" stroke-width="2"/>
+          </svg>
+          <h4>Right Angle</h4>
+          <p style="font-size:0.85em;">Exactly 90 degrees. The small square in the corner shows a right angle.</p>
+        </div>
+        <div class="flex-col fb-navy" style="text-align:center;">
+          <svg width="70" height="60" viewBox="0 0 70 60">
+            <polyline points="10,50 35,10 60,50" fill="none" stroke="#1a237e" stroke-width="3"/>
+          </svg>
+          <h4>Acute Angle</h4>
+          <p style="font-size:0.85em;">Less than 90 degrees. Sharp and narrow -- like a pointy mountain!</p>
+        </div>
+        <div class="flex-col fb-pink" style="text-align:center;">
+          <svg width="70" height="60" viewBox="0 0 70 60">
+            <polyline points="5,50 35,30 65,50" fill="none" stroke="#880e4f" stroke-width="3"/>
+          </svg>
+          <h4>Obtuse Angle</h4>
+          <p style="font-size:0.85em;">Greater than 90 degrees. Wide and open -- like a big smile!</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section s2">
+      <h3>Describing Shapes by Their Attributes</h3>
+      <table>
+        <tr><th>Shape</th><th>Sides</th><th>Vertices</th><th>Right Angles</th><th>Equal Sides</th></tr>
+        <tr><td><strong>Square</strong></td><td>4 equal sides</td><td>4</td><td>4</td><td>All 4 sides equal</td></tr>
+        <tr><td><strong>Rectangle</strong></td><td>2 pairs of equal sides</td><td>4</td><td>4</td><td>Opposite sides equal</td></tr>
+        <tr><td><strong>Equilateral Triangle</strong></td><td>3 equal sides</td><td>3</td><td>0</td><td>All 3 sides equal</td></tr>
+        <tr><td><strong>Right Triangle</strong></td><td>3 sides</td><td>3</td><td>1</td><td>Not necessarily</td></tr>
+        <tr><td><strong>Rhombus</strong></td><td>4 equal sides</td><td>4</td><td>0 (usually)</td><td>All 4 sides equal</td></tr>
+      </table>
+    </div>
+
+    <div class="section s2">
+      <h3>Parallel Sides</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-green">
+          <h4>Has Parallel Sides:</h4>
+          <p>Rectangle -- 2 pairs of parallel sides</p>
+          <p>Square -- 2 pairs of parallel sides</p>
+          <p>Parallelogram -- 2 pairs of parallel sides</p>
+          <p>Trapezoid -- exactly 1 pair</p>
+        </div>
+        <div class="flex-col fb-pink">
+          <h4>No Parallel Sides:</h4>
+          <p>Most triangles</p>
+          <p>Irregular quadrilaterals</p>
+          <p>Pentagons (usually)</p>
+        </div>
+      </div>
+      <div class="tip"><strong>How to spot parallel lines:</strong> Imagine the lines extending forever in both directions. If they would never meet -- they are parallel! Train tracks are the classic example.</div>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Describe a rectangle using four attributes (sides, angles, parallel sides, equal sides).</li>
+        <li>Draw a shape with exactly 2 right angles. What shape is it?</li>
+        <li>Which has more right angles -- a triangle or a rectangle? How many does each have?</li>
+        <li>Name a shape that has all equal sides but NO right angles.</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p><strong>Right angle</strong> = square corner (90°) &nbsp;|&nbsp; <strong>Acute</strong> = less than 90° &nbsp;|&nbsp; <strong>Obtuse</strong> = more than 90°</p>
+      <p><strong>Parallel sides</strong> never meet -- like train tracks.</p>
+      <p>Shapes are described by their sides, angles, and vertices!</p>
+      <p class="cta" style="color:#1b5e20;">Excellent! Click Lesson 12.3!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 12.3 -->
+<div class="lesson-section" id="lesson3">
+  <div class="banner b3">
+    <span class="lesson-num">Lesson 12.3</span>
+    <h2>Quadrilaterals: Squares, Rectangles, Rhombuses, and More</h2>
+    <p>Meet the whole family of four-sided shapes!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s3">
+      <h3>What Are We Learning Today?</h3>
+      <p>The quadrilateral family is large and fascinating! All quadrilaterals have 4 sides and 4 vertices -- but within that family there are many special shapes with extra attributes. Today we learn how they are related and what makes each one special.</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#880e4f;">Parallelogram</span> -- A quadrilateral with 2 pairs of parallel sides.</div>
+      <div class="vocab-item"><span class="word" style="color:#880e4f;">Rectangle</span> -- A parallelogram with 4 right angles.</div>
+      <div class="vocab-item"><span class="word" style="color:#880e4f;">Rhombus</span> -- A parallelogram with 4 equal sides.</div>
+      <div class="vocab-item"><span class="word" style="color:#880e4f;">Square</span> -- A rectangle AND a rhombus -- 4 equal sides AND 4 right angles.</div>
+      <div class="vocab-item"><span class="word" style="color:#880e4f;">Trapezoid</span> -- A quadrilateral with exactly 1 pair of parallel sides.</div>
+    </div>
+
+    <div class="section s3">
+      <h3>The Quadrilateral Family Tree</h3>
+      <div style="background:#fce4ec; border-radius:10px; padding:16px 18px; text-align:center; margin-bottom:14px;">
+        <p style="font-weight:bold; color:#880e4f; font-size:1.05em; margin-bottom:10px;">All Quadrilaterals (4 sides, 4 vertices)</p>
+        <div class="flex-row" style="justify-content:center;">
+          <div style="background:#e91e63; color:white; border-radius:10px; padding:10px 16px; text-align:center; flex:1; min-width:120px;">
+            <p style="font-weight:bold; font-size:0.9em;">Parallelogram</p>
+            <p style="font-size:0.78em;">2 pairs of parallel sides</p>
+          </div>
+          <div style="background:#ad1457; color:white; border-radius:10px; padding:10px 16px; text-align:center; flex:1; min-width:120px;">
+            <p style="font-weight:bold; font-size:0.9em;">Trapezoid</p>
+            <p style="font-size:0.78em;">1 pair of parallel sides</p>
+          </div>
+        </div>
+        <p style="color:#880e4f; font-size:0.9em; margin:8px 0;">Within Parallelograms:</p>
+        <div class="flex-row" style="justify-content:center;">
+          <div style="background:#6a1b9a; color:white; border-radius:10px; padding:10px 14px; text-align:center; flex:1; min-width:100px;">
+            <p style="font-weight:bold; font-size:0.88em;">Rectangle</p>
+            <p style="font-size:0.75em;">4 right angles</p>
+          </div>
+          <div style="background:#4a148c; color:white; border-radius:10px; padding:10px 14px; text-align:center; flex:1; min-width:100px;">
+            <p style="font-weight:bold; font-size:0.88em;">Rhombus</p>
+            <p style="font-size:0.75em;">4 equal sides</p>
+          </div>
+          <div style="background:#880e4f; color:white; border-radius:10px; padding:10px 14px; text-align:center; flex:1; min-width:100px;">
+            <p style="font-weight:bold; font-size:0.88em;">Square</p>
+            <p style="font-size:0.75em;">4 equal sides + 4 right angles</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section s3">
+      <h3>Comparing the Quadrilateral Family</h3>
+      <table>
+        <tr><th>Shape</th><th>4 Right Angles?</th><th>4 Equal Sides?</th><th>2 Pairs Parallel?</th></tr>
+        <tr><td><strong>Square</strong></td><td>YES</td><td>YES</td><td>YES</td></tr>
+        <tr><td><strong>Rectangle</strong></td><td>YES</td><td>NO (opposite equal)</td><td>YES</td></tr>
+        <tr><td><strong>Rhombus</strong></td><td>NOT always</td><td>YES</td><td>YES</td></tr>
+        <tr><td><strong>Parallelogram</strong></td><td>NOT always</td><td>NOT always</td><td>YES</td></tr>
+        <tr><td><strong>Trapezoid</strong></td><td>NOT always</td><td>NOT always</td><td>NO (only 1 pair)</td></tr>
+      </table>
+    </div>
+
+    <div class="section s3">
+      <h3>The BIG Idea: Squares are Special!</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-pink">
+          <h4>A square IS a rectangle because...</h4>
+          <p>It has 4 right angles. Rectangles just need 4 right angles -- and a square has them!</p>
+        </div>
+        <div class="flex-col fb-purple">
+          <h4>A square IS a rhombus because...</h4>
+          <p>It has 4 equal sides. Rhombuses just need 4 equal sides -- and a square has them!</p>
+        </div>
+      </div>
+      <div class="tip"><strong>Think of it like this:</strong> All squares are rectangles, but NOT all rectangles are squares (a rectangle could have sides of different lengths). A square is the most "special" quadrilateral of all!</div>
+    </div>
+
+    <div class="shape-grid">
+      <div class="shape-card">
+        <svg width="60" height="50" viewBox="0 0 60 50"><rect x="8" y="8" width="44" height="34" fill="#fce4ec" stroke="#880e4f" stroke-width="2.5"/><line x1="8" y1="8" x2="14" y2="8" stroke="#880e4f" stroke-width="2"/><line x1="8" y1="8" x2="8" y2="14" stroke="#880e4f" stroke-width="2"/></svg>
+        <div class="shape-name">Rectangle</div>
+        <div class="shape-detail">4 right angles, opposite sides equal</div>
+      </div>
+      <div class="shape-card">
+        <svg width="60" height="50" viewBox="0 0 60 50"><rect x="10" y="5" width="40" height="40" fill="#fce4ec" stroke="#880e4f" stroke-width="2.5"/></svg>
+        <div class="shape-name">Square</div>
+        <div class="shape-detail">4 right angles, all sides equal</div>
+      </div>
+      <div class="shape-card">
+        <svg width="60" height="54" viewBox="0 0 60 54"><polygon points="30,5 54,27 30,49 6,27" fill="#fce4ec" stroke="#880e4f" stroke-width="2.5"/></svg>
+        <div class="shape-name">Rhombus</div>
+        <div class="shape-detail">4 equal sides, no right angles</div>
+      </div>
+      <div class="shape-card">
+        <svg width="60" height="50" viewBox="0 0 60 50"><polygon points="14,8 52,8 46,42 8,42" fill="#fce4ec" stroke="#880e4f" stroke-width="2.5"/></svg>
+        <div class="shape-name">Parallelogram</div>
+        <div class="shape-detail">2 pairs of parallel sides</div>
+      </div>
+      <div class="shape-card">
+        <svg width="60" height="50" viewBox="0 0 60 50"><polygon points="16,8 44,8 54,42 6,42" fill="#fce4ec" stroke="#880e4f" stroke-width="2.5"/></svg>
+        <div class="shape-name">Trapezoid</div>
+        <div class="shape-detail">1 pair of parallel sides</div>
+      </div>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Can a rectangle also be a square? Can a square also be a rectangle? Explain both answers.</li>
+        <li>How is a rhombus different from a square if both have 4 equal sides?</li>
+        <li>Name two quadrilaterals that have EXACTLY 4 right angles.</li>
+        <li>Which quadrilateral has exactly 1 pair of parallel sides? Draw it!</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p><strong>Square</strong> = 4 equal sides + 4 right angles (the most special!)</p>
+      <p><strong>Rectangle</strong> = 4 right angles (not all sides equal)</p>
+      <p><strong>Rhombus</strong> = 4 equal sides (not always right angles)</p>
+      <p><strong>Trapezoid</strong> = exactly 1 pair of parallel sides</p>
+      <p class="cta" style="color:#880e4f;">Well done! Click Lesson 12.4!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 12.4 -->
+<div class="lesson-section" id="lesson4">
+  <div class="banner b4">
+    <span class="lesson-num">Lesson 12.4</span>
+    <h2>Partitioning Shapes into Equal Parts</h2>
+    <p>Divide shapes into equal parts to build deeper fraction understanding!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s4">
+      <h3>What Are We Learning Today?</h3>
+      <p><strong>Partitioning</strong> means dividing a shape into equal parts. This directly connects geometry to fractions! When you cut a rectangle into 4 equal parts, each part is one-fourth of the whole rectangle. Today we explore different ways to partition shapes and use fraction language to describe the parts.</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Partition</span> -- To divide a shape into equal parts.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Equal Parts</span> -- Parts that are all the same size, even if they look different in shape.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Halves</span> -- 2 equal parts. Each part = 1/2.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Thirds</span> -- 3 equal parts. Each part = 1/3.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Fourths / Quarters</span> -- 4 equal parts. Each part = 1/4.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Sixths</span> -- 6 equal parts. Each part = 1/6.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Eighths</span> -- 8 equal parts. Each part = 1/8.</div>
+    </div>
+
+    <div class="section s4">
+      <h3>Partitioning Rectangles and Circles</h3>
+      <p style="font-weight:bold; color:#e65100; margin-bottom:8px;">Dividing a rectangle into equal parts:</p>
+      <div class="part-strip">
+        <div class="part-section ps-orange-dark">1/2</div>
+        <div class="part-section ps-orange">1/2</div>
+      </div>
+      <p style="font-size:0.82em; color:#37474f; margin-bottom:10px;">2 equal parts -- each is one-half</p>
+      <div class="part-strip">
+        <div class="part-section ps-orange-dark">1/4</div>
+        <div class="part-section ps-orange">1/4</div>
+        <div class="part-section ps-orange-dark">1/4</div>
+        <div class="part-section ps-orange">1/4</div>
+      </div>
+      <p style="font-size:0.82em; color:#37474f; margin-bottom:10px;">4 equal parts -- each is one-fourth</p>
+      <div class="part-strip">
+        <div class="part-section ps-orange-dark" style="font-size:0.72em;">1/6</div>
+        <div class="part-section ps-orange" style="font-size:0.72em;">1/6</div>
+        <div class="part-section ps-orange-dark" style="font-size:0.72em;">1/6</div>
+        <div class="part-section ps-orange" style="font-size:0.72em;">1/6</div>
+        <div class="part-section ps-orange-dark" style="font-size:0.72em;">1/6</div>
+        <div class="part-section ps-orange" style="font-size:0.72em;">1/6</div>
+      </div>
+      <p style="font-size:0.82em; color:#37474f; margin-bottom:10px;">6 equal parts -- each is one-sixth</p>
+    </div>
+
+    <div class="section s4">
+      <h3>The Key Connection: More Parts = Smaller Parts</h3>
+      <table>
+        <tr><th>Number of Equal Parts</th><th>Name</th><th>Size of Each Part</th></tr>
+        <tr><td>2</td><td>Halves</td><td>1/2 -- largest parts</td></tr>
+        <tr><td>3</td><td>Thirds</td><td>1/3</td></tr>
+        <tr><td>4</td><td>Fourths/Quarters</td><td>1/4</td></tr>
+        <tr><td>6</td><td>Sixths</td><td>1/6</td></tr>
+        <tr><td>8</td><td>Eighths</td><td>1/8 -- smallest parts</td></tr>
+      </table>
+      <div class="tip"><strong>Big idea:</strong> The MORE equal parts you divide a shape into, the SMALLER each part becomes. Dividing the SAME shape into 8 parts gives much smaller pieces than dividing it into 2 parts. This is exactly why 1/8 &lt; 1/2!</div>
+    </div>
+
+    <div class="section s4">
+      <h3>Same Area, Different Shapes -- Still Equal!</h3>
+      <p>Two different ways to divide a square into fourths -- both are correct as long as the parts are the same size:</p>
+      <div class="flex-row">
+        <div class="flex-col" style="background:#fff3e0; border:2px solid #f57c00; border-radius:10px; text-align:center; padding:14px;">
+          <svg width="80" height="80" viewBox="0 0 80 80">
+            <rect x="5" y="5" width="70" height="70" fill="#ffe0b2" stroke="#e65100" stroke-width="2"/>
+            <line x1="40" y1="5" x2="40" y2="75" stroke="#e65100" stroke-width="2"/>
+            <line x1="5" y1="40" x2="75" y2="40" stroke="#e65100" stroke-width="2"/>
+          </svg>
+          <p style="font-size:0.82em; color:#e65100; font-weight:bold;">Vertical + Horizontal lines</p>
+        </div>
+        <div class="flex-col" style="background:#fff3e0; border:2px solid #f57c00; border-radius:10px; text-align:center; padding:14px;">
+          <svg width="80" height="80" viewBox="0 0 80 80">
+            <rect x="5" y="5" width="70" height="70" fill="#ffe0b2" stroke="#e65100" stroke-width="2"/>
+            <line x1="5" y1="5" x2="75" y2="75" stroke="#e65100" stroke-width="2"/>
+            <line x1="75" y1="5" x2="5" y2="75" stroke="#e65100" stroke-width="2"/>
+          </svg>
+          <p style="font-size:0.82em; color:#e65100; font-weight:bold;">Diagonal lines</p>
+        </div>
+      </div>
+      <p style="font-size:0.88em; color:#37474f; margin-top:8px; text-align:center;">Both show 4 equal parts, even though the triangles and squares look different in shape. Same area = equal parts!</p>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Draw a rectangle and partition it into thirds. What fraction does each part represent?</li>
+        <li>Draw a circle and partition it into sixths.</li>
+        <li>If you partition a square into 8 equal parts, what fraction is each part?</li>
+        <li>What happens to the size of each part as you increase the number of equal parts? Use an example.</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p>Partitioning connects <strong>geometry and fractions!</strong></p>
+      <p>More equal parts = <strong>smaller</strong> each part is.</p>
+      <p>Parts can look different in shape but still be <strong>equal in area!</strong></p>
+      <p class="cta" style="color:#e65100;">Keep going! Click Lesson 12.5!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 12.5 -->
+<div class="lesson-section" id="lesson5">
+  <div class="banner b5">
+    <span class="lesson-num">Lesson 12.5</span>
+    <h2>Symmetry and Lines of Symmetry</h2>
+    <p>When a shape folds perfectly in half -- that is the beauty of symmetry!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s5">
+      <h3>What Are We Learning Today?</h3>
+      <p>Have you ever looked at a butterfly and noticed both wings look identical? That is <strong>symmetry</strong>! A shape has symmetry when it can be folded along a line so that both halves match perfectly. The fold line is called a <strong>line of symmetry</strong>. Symmetry appears everywhere in nature, art, and architecture!</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Symmetry</span> -- When a shape can be divided into two matching halves that are mirror images of each other.</div>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Line of Symmetry</span> -- The line that divides a shape into two matching halves. Also called an axis of symmetry.</div>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Asymmetrical</span> -- A shape with NO line of symmetry -- it cannot be divided into matching halves.</div>
+    </div>
+
+    <div class="section s5">
+      <h3>Lines of Symmetry in Common Shapes</h3>
+      <div class="shape-grid">
+        <div class="shape-card">
+          <svg width="70" height="60" viewBox="0 0 70 60">
+            <rect x="8" y="10" width="54" height="40" fill="#f3e5f5" stroke="#4a148c" stroke-width="2"/>
+            <line x1="35" y1="4" x2="35" y2="56" stroke="#7b1fa2" stroke-width="2" stroke-dasharray="4,3"/>
+            <line x1="2" y1="30" x2="68" y2="30" stroke="#7b1fa2" stroke-width="2" stroke-dasharray="4,3"/>
+          </svg>
+          <div class="shape-name">Rectangle</div>
+          <div class="shape-detail">2 lines of symmetry</div>
+        </div>
+        <div class="shape-card">
+          <svg width="70" height="60" viewBox="0 0 70 60">
+            <rect x="12" y="8" width="46" height="46" fill="#f3e5f5" stroke="#4a148c" stroke-width="2"/>
+            <line x1="35" y1="2" x2="35" y2="58" stroke="#7b1fa2" stroke-width="2" stroke-dasharray="4,3"/>
+            <line x1="2" y1="31" x2="68" y2="31" stroke="#7b1fa2" stroke-width="2" stroke-dasharray="4,3"/>
+            <line x1="12" y1="8" x2="58" y2="54" stroke="#7b1fa2" stroke-width="2" stroke-dasharray="4,3"/>
+            <line x1="58" y1="8" x2="12" y2="54" stroke="#7b1fa2" stroke-width="2" stroke-dasharray="4,3"/>
+          </svg>
+          <div class="shape-name">Square</div>
+          <div class="shape-detail">4 lines of symmetry</div>
+        </div>
+        <div class="shape-card">
+          <svg width="70" height="60" viewBox="0 0 70 60">
+            <circle cx="35" cy="30" r="26" fill="#f3e5f5" stroke="#4a148c" stroke-width="2"/>
+            <line x1="35" y1="4" x2="35" y2="56" stroke="#7b1fa2" stroke-width="2" stroke-dasharray="4,3"/>
+            <line x1="9" y1="30" x2="61" y2="30" stroke="#7b1fa2" stroke-width="2" stroke-dasharray="4,3"/>
+          </svg>
+          <div class="shape-name">Circle</div>
+          <div class="shape-detail">Infinite lines of symmetry!</div>
+        </div>
+        <div class="shape-card">
+          <svg width="70" height="60" viewBox="0 0 70 60">
+            <polygon points="35,5 62,52 8,52" fill="#f3e5f5" stroke="#4a148c" stroke-width="2"/>
+            <line x1="35" y1="4" x2="35" y2="58" stroke="#7b1fa2" stroke-width="2" stroke-dasharray="4,3"/>
+          </svg>
+          <div class="shape-name">Equilateral Triangle</div>
+          <div class="shape-detail">3 lines of symmetry</div>
+        </div>
+        <div class="shape-card">
+          <svg width="70" height="60" viewBox="0 0 70 60">
+            <polygon points="35,5 62,52 8,52" fill="#f3e5f5" stroke="#4a148c" stroke-width="2" transform="scale(0.8) translate(9,4)"/>
+            <text x="8" y="54" font-size="10" fill="#7b1fa2">No symmetry</text>
+          </svg>
+          <div class="shape-name">Scalene Triangle</div>
+          <div class="shape-detail">0 lines of symmetry</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section s5">
+      <h3>How to Test for a Line of Symmetry</h3>
+      <div style="background:#f3e5f5; border-radius:10px; padding:14px 18px; margin-bottom:14px;">
+        <p style="font-weight:bold; color:#4a148c; margin-bottom:6px;">The Fold Test:</p>
+        <p>If you could fold the shape along the line and both halves match EXACTLY -- it is a line of symmetry!</p>
+        <p style="margin-top:8px; font-size:0.9em; color:#37474f;">Try it: draw a heart shape and fold it down the middle. The left and right halves match -- that is a line of symmetry!</p>
+      </div>
+    </div>
+
+    <div class="section s5">
+      <h3>Symmetry in the Real World</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-purple">
+          <h4>Symmetrical things:</h4>
+          <ul>
+            <li>Butterfly wings</li>
+            <li>Human faces</li>
+            <li>Most letters: A, H, M, O, T, U, V, W, X, Y</li>
+            <li>Snowflakes (6 lines!)</li>
+          </ul>
+        </div>
+        <div class="flex-col fb-pink">
+          <h4>Asymmetrical things:</h4>
+          <ul>
+            <li>The letter F, G, J, L, R, S, Z</li>
+            <li>A shoe (left vs right)</li>
+            <li>A map of most countries</li>
+            <li>Most cloud shapes</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Draw the line(s) of symmetry for each letter: A, B, C, D, H, M.</li>
+        <li>How many lines of symmetry does a regular hexagon have? (Hint: it has 6 equal sides.)</li>
+        <li>Draw a shape with exactly 2 lines of symmetry that is NOT a rectangle or square.</li>
+        <li>Is the letter "G" symmetrical? Draw it and try to find a line of symmetry.</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p>A <strong>line of symmetry</strong> divides a shape into two matching mirror-image halves.</p>
+      <p>Square = 4 lines &nbsp;|&nbsp; Rectangle = 2 lines &nbsp;|&nbsp; Circle = infinite lines!</p>
+      <p>Use the <strong>fold test</strong>: if both halves match, it is a line of symmetry!</p>
+      <p class="cta" style="color:#4a148c;">One final lesson! Click Lesson 12.6!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 12.6 -->
+<div class="lesson-section" id="lesson6">
+  <div class="banner b6">
+    <span class="lesson-num">Lesson 12.6</span>
+    <h2>Solid Figures: 3D Shapes</h2>
+    <p>Step into three dimensions -- explore the shapes that fill our world!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s6">
+      <h3>What Are We Learning Today?</h3>
+      <p>The shapes we have studied so far are flat -- they exist in two dimensions (2D). But the real world is <strong>three-dimensional (3D)</strong>! Boxes, balls, cans, ice cream cones -- these are all 3D shapes called <strong>solid figures</strong>. Today we learn to identify and describe them using faces, edges, and vertices.</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#004d40;">Solid Figure (3D Shape)</span> -- A shape that has length, width, AND height -- it takes up space.</div>
+      <div class="vocab-item"><span class="word" style="color:#004d40;">Face</span> -- A flat surface of a 3D shape.</div>
+      <div class="vocab-item"><span class="word" style="color:#004d40;">Edge</span> -- A line where two faces of a 3D shape meet.</div>
+      <div class="vocab-item"><span class="word" style="color:#004d40;">Vertex (Vertices)</span> -- A corner point where three or more edges meet.</div>
+      <div class="vocab-item"><span class="word" style="color:#004d40;">Curved Surface</span> -- A round, non-flat surface (like the side of a can).</div>
+    </div>
+
+    <div class="section s6">
+      <h3>The 3D Shape Family</h3>
+      <div class="shape-grid">
+        <div class="solid-card">
+          <svg width="70" height="60" viewBox="0 0 70 60">
+            <polygon points="10,45 60,45 50,15 20,15" fill="#b2dfdb" stroke="#004d40" stroke-width="2"/>
+            <line x1="10" y1="45" x2="20" y2="15" stroke="#004d40" stroke-width="1.5"/>
+            <line x1="60" y1="45" x2="50" y2="15" stroke="#004d40" stroke-width="1.5"/>
+            <line x1="20" y1="15" x2="50" y2="15" stroke="#004d40" stroke-width="1.5"/>
+            <line x1="10" y1="45" x2="60" y2="45" stroke="#004d40" stroke-width="1.5"/>
+            <line x1="10" y1="45" x2="14" y2="35" stroke="#004d40" stroke-width="1" stroke-dasharray="3,2"/>
+            <line x1="14" y1="35" x2="24" y2="5" stroke="#004d40" stroke-width="1" stroke-dasharray="3,2"/>
+            <line x1="14" y1="35" x2="64" y2="35" stroke="#004d40" stroke-width="1" stroke-dasharray="3,2"/>
+          </svg>
+          <div class="solid-name">Rectangular Prism</div>
+          <div class="solid-detail">6 faces, 12 edges, 8 vertices</div>
+        </div>
+        <div class="solid-card">
+          <svg width="70" height="60" viewBox="0 0 70 60">
+            <rect x="12" y="12" width="46" height="46" fill="#b2dfdb" stroke="#004d40" stroke-width="2"/>
+            <line x1="12" y1="12" x2="20" y2="4" stroke="#004d40" stroke-width="1.5"/>
+            <line x1="58" y1="12" x2="66" y2="4" stroke="#004d40" stroke-width="1.5"/>
+            <line x1="58" y1="58" x2="66" y2="50" stroke="#004d40" stroke-width="1.5"/>
+            <line x1="20" y1="4" x2="66" y2="4" stroke="#004d40" stroke-width="1.5"/>
+            <line x1="66" y1="4" x2="66" y2="50" stroke="#004d40" stroke-width="1.5"/>
+          </svg>
+          <div class="solid-name">Cube</div>
+          <div class="solid-detail">6 equal faces, 12 edges, 8 vertices</div>
+        </div>
+        <div class="solid-card">
+          <svg width="70" height="60" viewBox="0 0 70 60">
+            <ellipse cx="35" cy="45" rx="28" ry="9" fill="#a5d6a7" stroke="#004d40" stroke-width="2"/>
+            <line x1="7" y1="45" x2="35" y2="8" stroke="#004d40" stroke-width="2"/>
+            <line x1="63" y1="45" x2="35" y2="8" stroke="#004d40" stroke-width="2"/>
+            <path d="M 7,45 A 28,9 0 0,1 63,45" fill="#b2dfdb" stroke="#004d40" stroke-width="2"/>
+          </svg>
+          <div class="solid-name">Cone</div>
+          <div class="solid-detail">1 circular face, 1 curved surface, 1 vertex</div>
+        </div>
+        <div class="solid-card">
+          <svg width="70" height="60" viewBox="0 0 70 60">
+            <ellipse cx="35" cy="48" rx="28" ry="9" fill="#a5d6a7" stroke="#004d40" stroke-width="2"/>
+            <ellipse cx="35" cy="12" rx="28" ry="9" fill="#b2dfdb" stroke="#004d40" stroke-width="2"/>
+            <line x1="7" y1="12" x2="7" y2="48" stroke="#004d40" stroke-width="2"/>
+            <line x1="63" y1="12" x2="63" y2="48" stroke="#004d40" stroke-width="2"/>
+          </svg>
+          <div class="solid-name">Cylinder</div>
+          <div class="solid-detail">2 circular faces, 1 curved surface</div>
+        </div>
+        <div class="solid-card">
+          <svg width="70" height="60" viewBox="0 0 70 60">
+            <circle cx="35" cy="30" r="26" fill="#b2dfdb" stroke="#004d40" stroke-width="2"/>
+            <ellipse cx="35" cy="30" rx="26" ry="8" fill="none" stroke="#004d40" stroke-width="1.5" stroke-dasharray="4,3"/>
+          </svg>
+          <div class="solid-name">Sphere</div>
+          <div class="solid-detail">0 flat faces, 1 curved surface, 0 edges</div>
+        </div>
+        <div class="solid-card">
+          <svg width="70" height="60" viewBox="0 0 70 60">
+            <polygon points="35,4 6,52 64,52" fill="#b2dfdb" stroke="#004d40" stroke-width="2"/>
+            <line x1="35" y1="4" x2="26" y2="42" stroke="#004d40" stroke-width="1.5" stroke-dasharray="3,2"/>
+            <line x1="26" y1="42" x2="6" y2="52" stroke="#004d40" stroke-width="1.5" stroke-dasharray="3,2"/>
+            <line x1="26" y1="42" x2="64" y2="52" stroke="#004d40" stroke-width="1.5" stroke-dasharray="3,2"/>
+          </svg>
+          <div class="solid-name">Pyramid</div>
+          <div class="solid-detail">5 faces, 8 edges, 5 vertices</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section s6">
+      <h3>3D Shape Attributes Comparison</h3>
+      <table>
+        <tr><th>Shape</th><th>Faces</th><th>Edges</th><th>Vertices</th><th>Curved?</th></tr>
+        <tr><td><strong>Cube</strong></td><td>6</td><td>12</td><td>8</td><td>No</td></tr>
+        <tr><td><strong>Rectangular Prism</strong></td><td>6</td><td>12</td><td>8</td><td>No</td></tr>
+        <tr><td><strong>Triangular Prism</strong></td><td>5</td><td>9</td><td>6</td><td>No</td></tr>
+        <tr><td><strong>Square Pyramid</strong></td><td>5</td><td>8</td><td>5</td><td>No</td></tr>
+        <tr><td><strong>Cylinder</strong></td><td>2 flat</td><td>0</td><td>0</td><td>Yes</td></tr>
+        <tr><td><strong>Cone</strong></td><td>1 flat</td><td>0</td><td>1</td><td>Yes</td></tr>
+        <tr><td><strong>Sphere</strong></td><td>0</td><td>0</td><td>0</td><td>Yes (all curved)</td></tr>
+      </table>
+    </div>
+
+    <div class="section s6">
+      <h3>2D Faces of 3D Shapes</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-teal">
+          <h4>Each face is a 2D shape:</h4>
+          <p>Cube -- each face is a <strong>square</strong></p>
+          <p>Rectangular Prism -- faces are <strong>rectangles</strong></p>
+          <p>Pyramid -- base is a <strong>square</strong>, other faces are <strong>triangles</strong></p>
+          <p>Cylinder -- flat faces are <strong>circles</strong></p>
+        </div>
+        <div class="flex-col fb-green">
+          <h4>Real-world 3D shapes:</h4>
+          <p>Cube -- dice, ice cube</p>
+          <p>Sphere -- basketball, Earth</p>
+          <p>Cylinder -- can of soup, paper towel roll</p>
+          <p>Cone -- ice cream cone, party hat</p>
+          <p>Pyramid -- Egyptian pyramids</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Look around your home. Find one real-world example of each: a cube, a cylinder, a sphere, and a cone.</li>
+        <li>How many faces, edges, and vertices does a cube have? How is it different from a rectangular prism?</li>
+        <li>Which 3D shapes have NO vertices? How many curved surfaces do they have?</li>
+        <li>What 2D shape is the face of each: a cube? a cylinder? a pyramid's base?</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>YOU FINISHED ALL OF MATHEMATICS! Congratulations!</h3>
+      <p><strong>Face</strong> = flat surface &nbsp;|&nbsp; <strong>Edge</strong> = where faces meet &nbsp;|&nbsp; <strong>Vertex</strong> = corner point</p>
+      <p>Cube = 6 faces, 12 edges, 8 vertices.</p>
+      <p>Sphere, cylinder, and cone all have <strong>curved surfaces.</strong></p>
+      <p class="cta" style="color:#004d40;">INCREDIBLE! You completed all 6 lessons in Unit 12 -- and ALL of Mathematics! Take the Unit 12 Quiz to finish strong!</p>
+    </div>
+  </div>
+</div>
+
+</div>
+<script>
+  const sections = document.querySelectorAll('.lesson-section');
+  const navLinks = document.querySelectorAll('.nav-bar a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 80) current = s.getAttribute('id'); });
+    navLinks.forEach(l => { l.classList.remove('active'); if (l.getAttribute('href') === '#' + current) l.classList.add('active'); });
+  });
+</script>
+</body>
+</html>
