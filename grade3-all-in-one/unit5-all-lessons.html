@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit 5 – Grammar and Conventions | Owl Smart 3rd Grade</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #f4f7fb; color: #2d2d2d; line-height: 1.8; }
+    .top-header { background: linear-gradient(135deg, #4a148c, #7b1fa2); color: white; text-align: center; padding: 24px 20px 16px; }
+    .top-header h1 { font-size: 1.5em; margin-bottom: 4px; }
+    .top-header p { font-size: 0.95em; opacity: 0.88; }
+    .nav-bar { background: #4a148c; padding: 0 10px; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.3); overflow-x: auto; white-space: nowrap; }
+    .nav-bar a { display: inline-block; color: rgba(255,255,255,0.8); text-decoration: none; padding: 12px 14px; font-size: 0.82em; font-weight: bold; border-bottom: 3px solid transparent; transition: all 0.2s; }
+    .nav-bar a:hover, .nav-bar a.active { color: white; border-bottom-color: #ffd600; }
+    .main { max-width: 860px; margin: 0 auto; padding: 20px; }
+    .lesson-section { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.08); margin-bottom: 40px; scroll-margin-top: 60px; }
+    .banner { color: white; text-align: center; padding: 28px 24px; }
+    .banner h2 { font-size: 1.45em; margin-bottom: 6px; }
+    .banner p { font-size: 0.97em; opacity: 0.92; margin-bottom: 10px; }
+    .lesson-num { display: inline-block; background: rgba(255,255,255,0.25); border-radius: 20px; padding: 3px 14px; font-size: 0.82em; font-weight: bold; }
+    .b1 { background: linear-gradient(135deg, #4a148c, #7b1fa2); }
+    .b2 { background: linear-gradient(135deg, #1a237e, #3949ab); }
+    .b3 { background: linear-gradient(135deg, #b71c1c, #e53935); }
+    .b4 { background: linear-gradient(135deg, #004d40, #00897b); }
+    .b5 { background: linear-gradient(135deg, #e65100, #fb8c00); }
+    .b6 { background: linear-gradient(135deg, #1b5e20, #43a047); }
+    .b7 { background: linear-gradient(135deg, #37474f, #546e7a); }
+    .b8 { background: linear-gradient(135deg, #880e4f, #e91e63); }
+    .lesson-content { padding: 26px; }
+    .section { border-left: 5px solid; border-radius: 0 10px 10px 0; padding: 18px 20px; margin-bottom: 20px; }
+    .s1 { background: #f3e5f5; border-color: #4a148c; } .s1 h3 { color: #4a148c; }
+    .s2 { background: #e8eaf6; border-color: #1a237e; } .s2 h3 { color: #1a237e; }
+    .s3 { background: #ffebee; border-color: #b71c1c; } .s3 h3 { color: #b71c1c; }
+    .s4 { background: #e0f2f1; border-color: #004d40; } .s4 h3 { color: #004d40; }
+    .s5 { background: #fff3e0; border-color: #e65100; } .s5 h3 { color: #e65100; }
+    .s6 { background: #e8f5e9; border-color: #1b5e20; } .s6 h3 { color: #1b5e20; }
+    .s7 { background: #eceff1; border-color: #37474f; } .s7 h3 { color: #37474f; }
+    .s8 { background: #fce4ec; border-color: #880e4f; } .s8 h3 { color: #880e4f; }
+    .section h3 { margin-bottom: 8px; font-size: 1.05em; }
+    .vocab-box { background: #fff8e1; border: 2px solid #ffc107; border-radius: 10px; padding: 18px 20px; margin-bottom: 20px; }
+    .vocab-box h3 { color: #e65100; margin-bottom: 12px; font-size: 1.05em; }
+    .vocab-item { margin: 8px 0; font-size: 0.95em; }
+    .word { font-weight: bold; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.93em; }
+    th { background: #37474f; color: white; padding: 9px 12px; text-align: left; }
+    td { padding: 9px 12px; border-bottom: 1px solid #e0e0e0; }
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) { background: #f5f5f5; }
+    .tip { background: #e8f5e9; border-left: 4px solid #43a047; border-radius: 0 8px 8px 0; padding: 12px 16px; margin: 12px 0; color: #1b5e20; font-size: 0.93em; }
+    .tip strong { color: #2e7d32; }
+    .try-it { background: #ede7f6; border: 2px dashed #7e57c2; border-radius: 10px; padding: 18px 20px; margin-bottom: 20px; }
+    .try-it h3 { color: #4527a0; margin-bottom: 10px; font-size: 1.05em; }
+    .try-it ol { padding-left: 20px; }
+    .try-it li { margin: 8px 0; font-size: 0.95em; }
+    .remember { background: #fff3e0; border: 2px solid #ff8f00; border-radius: 10px; padding: 18px 20px; text-align: center; margin-bottom: 4px; }
+    .remember h3 { color: #e65100; margin-bottom: 10px; font-size: 1.05em; }
+    .remember p { margin: 5px 0; font-size: 0.95em; }
+    .remember .cta { font-weight: bold; font-size: 1.05em; margin-top: 12px; }
+    .flex-row { display: flex; gap: 12px; flex-wrap: wrap; margin: 10px 0; }
+    .flex-col { flex: 1; min-width: 160px; border-radius: 10px; padding: 14px 16px; }
+    .fb-purple { background: #f3e5f5; border: 2px solid #7b1fa2; } .fb-purple h4 { color: #4a148c; margin-bottom: 6px; }
+    .fb-blue { background: #e3f2fd; border: 2px solid #1976d2; } .fb-blue h4 { color: #0d47a1; margin-bottom: 6px; }
+    .fb-red { background: #ffebee; border: 2px solid #e53935; } .fb-red h4 { color: #b71c1c; margin-bottom: 6px; }
+    .fb-teal { background: #e0f2f1; border: 2px solid #00897b; } .fb-teal h4 { color: #004d40; margin-bottom: 6px; }
+    .fb-orange { background: #fff3e0; border: 2px solid #f57c00; } .fb-orange h4 { color: #e65100; margin-bottom: 6px; }
+    .fb-green { background: #e8f5e9; border: 2px solid #388e3c; } .fb-green h4 { color: #1b5e20; margin-bottom: 6px; }
+    .fb-grey { background: #eceff1; border: 2px solid #78909c; } .fb-grey h4 { color: #37474f; margin-bottom: 6px; }
+    .fb-pink { background: #fce4ec; border: 2px solid #e91e63; } .fb-pink h4 { color: #880e4f; margin-bottom: 6px; }
+    .tag { display: inline-block; border-radius: 16px; padding: 4px 14px; font-size: 0.85em; font-weight: bold; color: white; margin: 3px; }
+    .tag-purple { background: #4a148c; } .tag-blue { background: #1a237e; } .tag-red { background: #b71c1c; }
+    .tag-teal { background: #004d40; } .tag-orange { background: #e65100; } .tag-green { background: #1b5e20; }
+    .example-sentence { background: #f9f9f9; border-left: 4px solid #90a4ae; padding: 10px 14px; margin: 8px 0; border-radius: 0 8px 8px 0; font-style: italic; font-size: 0.95em; }
+    .correct { background: #e8f5e9; border-left: 4px solid #43a047; padding: 10px 14px; margin: 8px 0; border-radius: 0 8px 8px 0; font-size: 0.95em; }
+    .incorrect { background: #ffebee; border-left: 4px solid #e53935; padding: 10px 14px; margin: 8px 0; border-radius: 0 8px 8px 0; font-size: 0.95em; }
+    .correct::before { content: "CORRECT: "; font-weight: bold; color: #2e7d32; }
+    .incorrect::before { content: "INCORRECT: "; font-weight: bold; color: #c62828; }
+    ul { padding-left: 20px; } li { margin: 5px 0; font-size: 0.95em; }
+    p { margin-bottom: 8px; font-size: 0.95em; }
+    .sight-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; margin: 12px 0; }
+    .sight-word { background: #880e4f; color: white; text-align: center; border-radius: 8px; padding: 8px 4px; font-weight: bold; font-size: 0.9em; }
+  </style>
+</head>
+<body>
+
+<div class="top-header">
+  <h1>Owl Smart: A 3rd Grade Learning Journey</h1>
+  <p>Unit 5 -- Grammar and Conventions &nbsp;|&nbsp; 8 Lessons</p>
+</div>
+
+<div class="nav-bar">
+  <a href="#lesson1">5.1 Nouns</a>
+  <a href="#lesson2">5.2 Pronouns</a>
+  <a href="#lesson3">5.3 Verbs</a>
+  <a href="#lesson4">5.4 Adjectives</a>
+  <a href="#lesson5">5.5 Adverbs</a>
+  <a href="#lesson6">5.6 Conjunctions</a>
+  <a href="#lesson7">5.7 Capitalization</a>
+  <a href="#lesson8">5.8 Spelling</a>
+</div>
+
+<div class="main">
+
+<!-- LESSON 5.1 -->
+<div class="lesson-section" id="lesson1">
+  <div class="banner b1">
+    <span class="lesson-num">Lesson 5.1</span>
+    <h2>Nouns: Common, Proper, Abstract, and Plural</h2>
+    <p>Nouns name people, places, things, and ideas -- they are everywhere!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s1">
+      <h3>What Are We Learning Today?</h3>
+      <p>A <strong>noun</strong> is a word that names a person, place, thing, or idea. Nouns are one of the most important parts of speech -- almost every sentence has at least one! Today we learn about four types of nouns and how to make them plural.</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Noun</span> -- A word that names a person, place, thing, or idea.</div>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Common Noun</span> -- A general name for a person, place, or thing. NOT capitalised. Example: city, dog, teacher.</div>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Proper Noun</span> -- The specific name of a person, place, or thing. Always CAPITALISED. Example: Seattle, Sage Crest Elementary.</div>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Abstract Noun</span> -- A noun that names an idea or feeling you cannot touch. Example: happiness, freedom, courage.</div>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Plural Noun</span> -- More than one of something. Usually formed by adding -s or -es.</div>
+    </div>
+    <div class="section s1">
+      <h3>Four Types of Nouns</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-purple">
+          <h4>Common Nouns</h4>
+          <p>General names -- NOT capitalised.</p>
+          <p style="margin-top:6px; font-size:0.88em;">city, school, dog, teacher, river, book, country</p>
+        </div>
+        <div class="flex-col fb-blue">
+          <h4>Proper Nouns</h4>
+          <p>Specific names -- ALWAYS capitalised.</p>
+          <p style="margin-top:6px; font-size:0.88em;">Seattle, Sage Crest Elementary, Fido, Columbia River, Washington</p>
+        </div>
+        <div class="flex-col fb-teal">
+          <h4>Abstract Nouns</h4>
+          <p>Ideas and feelings you cannot touch.</p>
+          <p style="margin-top:6px; font-size:0.88em;">happiness, freedom, courage, love, justice, childhood, peace</p>
+        </div>
+      </div>
+    </div>
+    <div class="section s1">
+      <h3>Forming Plural Nouns</h3>
+      <table>
+        <tr><th>Rule</th><th>How to Form Plural</th><th>Examples</th></tr>
+        <tr><td>Most nouns</td><td>Add -s</td><td>cat → cats, book → books, dog → dogs</td></tr>
+        <tr><td>Ends in -s, -sh, -ch, -x, -z</td><td>Add -es</td><td>bus → buses, dish → dishes, box → boxes</td></tr>
+        <tr><td>Ends in consonant + y</td><td>Change y to i, add -es</td><td>baby → babies, city → cities, party → parties</td></tr>
+        <tr><td>Ends in -f or -fe</td><td>Change to -ves</td><td>leaf → leaves, knife → knives, wolf → wolves</td></tr>
+        <tr><td>Irregular plurals</td><td>Completely different word!</td><td>child → children, mouse → mice, foot → feet, tooth → teeth</td></tr>
+      </table>
+    </div>
+    <div class="tip"><strong>Remember:</strong> Proper nouns are ALWAYS capitalised -- even in the middle of a sentence! Common nouns are only capitalised at the beginning of a sentence.</div>
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Find THREE common nouns and THREE proper nouns in a book or article you are reading.</li>
+        <li>Write the plural of these nouns: <em>church, baby, leaf, child, fox, wish</em></li>
+        <li>Write a sentence using ONE abstract noun (happiness, courage, kindness, etc.).</li>
+      </ol>
+    </div>
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p><strong>Common</strong> -- general, not capitalised &nbsp;|&nbsp; <strong>Proper</strong> -- specific, ALWAYS capitalised</p>
+      <p><strong>Abstract</strong> -- ideas and feelings you cannot touch</p>
+      <p>Most plurals add <strong>-s</strong> or <strong>-es</strong>, but watch out for irregular plurals!</p>
+      <p class="cta" style="color:#4a148c;">Great start! Click Lesson 5.2!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 5.2 -->
+<div class="lesson-section" id="lesson2">
+  <div class="banner b2">
+    <span class="lesson-num">Lesson 5.2</span>
+    <h2>Pronouns and Pronoun-Antecedent Agreement</h2>
+    <p>Use pronouns correctly so your writing is clear and easy to follow!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s2">
+      <h3>What Are We Learning Today?</h3>
+      <p>A <strong>pronoun</strong> replaces a noun so we do not have to repeat the same word over and over. Instead of "Maya walked to the store. Maya bought Maya's favourite snack," we say "Maya walked to the store. She bought her favourite snack." Today we learn about pronouns and how to make sure they match the nouns they replace!</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#1a237e;">Pronoun</span> -- A word that replaces a noun. Example: he, she, they, it, we, I, you.</div>
+      <div class="vocab-item"><span class="word" style="color:#1a237e;">Antecedent</span> -- The noun that a pronoun replaces. The pronoun must match it!</div>
+      <div class="vocab-item"><span class="word" style="color:#1a237e;">Pronoun-Antecedent Agreement</span> -- The pronoun must match the noun it replaces in number (singular/plural) and gender.</div>
+      <div class="vocab-item"><span class="word" style="color:#1a237e;">Possessive Pronoun</span> -- A pronoun that shows ownership: my, your, his, her, its, our, their.</div>
+    </div>
+    <div class="section s2">
+      <h3>Common Pronouns</h3>
+      <table>
+        <tr><th>Type</th><th>Singular</th><th>Plural</th></tr>
+        <tr><td><strong>Subject Pronouns</strong></td><td>I, you, he, she, it</td><td>we, you, they</td></tr>
+        <tr><td><strong>Object Pronouns</strong></td><td>me, you, him, her, it</td><td>us, you, them</td></tr>
+        <tr><td><strong>Possessive Pronouns</strong></td><td>my, your, his, her, its</td><td>our, your, their</td></tr>
+      </table>
+    </div>
+    <div class="section s2">
+      <h3>Pronoun-Antecedent Agreement</h3>
+      <p>The pronoun MUST match the noun it replaces. If the noun is singular, use a singular pronoun. If plural, use a plural pronoun.</p>
+      <div class="correct">"Maya forgot her backpack." (Maya = singular, her = singular -- they match!)</div>
+      <div class="incorrect">"Maya forgot their backpack." (Maya = singular, their = plural -- they do NOT match!)</div>
+      <div class="correct">"The boys played outside. They had a great time." (boys = plural, they = plural -- they match!)</div>
+      <div class="incorrect">"The boys played outside. He had a great time." (boys = plural, he = singular -- mismatch!)</div>
+    </div>
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Replace the underlined nouns with correct pronouns: "<u>Sam</u> left <u>Sam's</u> lunch at home. <u>Sam</u> was hungry all day."</li>
+        <li>Fix the pronoun error: "The students finished their projects. He was very proud."</li>
+        <li>Write three sentences using three different pronouns (he, she, they).</li>
+      </ol>
+    </div>
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p>Pronouns <strong>replace nouns</strong> so we avoid repetition.</p>
+      <p>The pronoun must <strong>agree</strong> with the noun it replaces -- singular matches singular, plural matches plural!</p>
+      <p class="cta" style="color:#1a237e;">Excellent! Click Lesson 5.3!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 5.3 -->
+<div class="lesson-section" id="lesson3">
+  <div class="banner b3">
+    <span class="lesson-num">Lesson 5.3</span>
+    <h2>Verbs: Regular, Irregular, and Tenses</h2>
+    <p>Verbs show action and tell us WHEN something happens!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s3">
+      <h3>What Are We Learning Today?</h3>
+      <p>A <strong>verb</strong> is the action word in a sentence -- it tells us what someone or something does, is, or has. Verbs also tell us WHEN something happens through <strong>tense</strong> (past, present, or future). Today we learn about regular verbs, tricky irregular verbs, and the three simple tenses.</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#b71c1c;">Verb</span> -- A word that shows action or a state of being.</div>
+      <div class="vocab-item"><span class="word" style="color:#b71c1c;">Regular Verb</span> -- A verb that forms its past tense by adding -ed. Example: walk → walked.</div>
+      <div class="vocab-item"><span class="word" style="color:#b71c1c;">Irregular Verb</span> -- A verb that changes completely in the past tense. Example: run → ran, go → went.</div>
+      <div class="vocab-item"><span class="word" style="color:#b71c1c;">Tense</span> -- The form of a verb that shows WHEN the action happens (past, present, or future).</div>
+    </div>
+    <div class="section s3">
+      <h3>The Three Simple Tenses</h3>
+      <table>
+        <tr><th>Tense</th><th>When</th><th>How to Form</th><th>Example</th></tr>
+        <tr><td><strong>Past</strong></td><td>Already happened</td><td>Add -ed (regular) OR change the word (irregular)</td><td>I walked. / I ran.</td></tr>
+        <tr><td><strong>Present</strong></td><td>Happening now</td><td>Base form (add -s for he/she/it)</td><td>I walk. / She walks.</td></tr>
+        <tr><td><strong>Future</strong></td><td>Will happen later</td><td>will + base verb</td><td>I will walk. / She will run.</td></tr>
+      </table>
+    </div>
+    <div class="section s3">
+      <h3>Common Irregular Verbs -- Memorise These!</h3>
+      <table>
+        <tr><th>Base Form</th><th>Past Tense</th><th>Base Form</th><th>Past Tense</th></tr>
+        <tr><td>go</td><td>went</td><td>see</td><td>saw</td></tr>
+        <tr><td>run</td><td>ran</td><td>eat</td><td>ate</td></tr>
+        <tr><td>come</td><td>came</td><td>give</td><td>gave</td></tr>
+        <tr><td>take</td><td>took</td><td>write</td><td>wrote</td></tr>
+        <tr><td>say</td><td>said</td><td>know</td><td>knew</td></tr>
+        <tr><td>get</td><td>got</td><td>think</td><td>thought</td></tr>
+        <tr><td>bring</td><td>brought</td><td>buy</td><td>bought</td></tr>
+        <tr><td>begin</td><td>began</td><td>find</td><td>found</td></tr>
+      </table>
+    </div>
+    <div class="correct">"Yesterday, she ran to the park." (ran = correct irregular past tense of run)</div>
+    <div class="incorrect">"Yesterday, she runned to the park." (runned = WRONG -- run is irregular!)</div>
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Write the past tense of these verbs: <em>jump, swim, talk, bring, see, go, eat, write</em></li>
+        <li>Write one sentence in each tense (past, present, future) using the verb "play."</li>
+        <li>Find THREE irregular verbs in a book or story you are reading.</li>
+      </ol>
+    </div>
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p><strong>Regular verbs</strong> add -ed in the past tense.</p>
+      <p><strong>Irregular verbs</strong> change completely -- memorise them!</p>
+      <p>Past = already happened &nbsp;|&nbsp; Present = now &nbsp;|&nbsp; Future = will happen</p>
+      <p class="cta" style="color:#b71c1c;">Well done! Click Lesson 5.4!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 5.4 -->
+<div class="lesson-section" id="lesson4">
+  <div class="banner b4">
+    <span class="lesson-num">Lesson 5.4</span>
+    <h2>Adjectives: Comparative and Superlative</h2>
+    <p>Adjectives describe nouns -- and comparatives help us compare things!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s4">
+      <h3>What Are We Learning Today?</h3>
+      <p>An <strong>adjective</strong> is a word that describes a noun -- it tells us what something is like. Adjectives make our writing more vivid and interesting. Today we also learn about <strong>comparative</strong> adjectives (comparing two things) and <strong>superlative</strong> adjectives (comparing three or more).</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#004d40;">Adjective</span> -- A word that describes a noun. Example: tall, blue, happy, enormous, cold.</div>
+      <div class="vocab-item"><span class="word" style="color:#004d40;">Comparative Adjective</span> -- Compares TWO things. Usually add -er or use "more." Example: taller, more beautiful.</div>
+      <div class="vocab-item"><span class="word" style="color:#004d40;">Superlative Adjective</span> -- Compares THREE or MORE things. Usually add -est or use "most." Example: tallest, most beautiful.</div>
+    </div>
+    <div class="section s4">
+      <h3>Forming Comparative and Superlative Adjectives</h3>
+      <table>
+        <tr><th>Adjective</th><th>Comparative (2 things)</th><th>Superlative (3+ things)</th></tr>
+        <tr><td>tall</td><td>taller</td><td>tallest</td></tr>
+        <tr><td>fast</td><td>faster</td><td>fastest</td></tr>
+        <tr><td>happy</td><td>happier</td><td>happiest</td></tr>
+        <tr><td>big</td><td>bigger</td><td>biggest</td></tr>
+        <tr><td>beautiful</td><td>more beautiful</td><td>most beautiful</td></tr>
+        <tr><td>exciting</td><td>more exciting</td><td>most exciting</td></tr>
+        <tr><td>good</td><td>better</td><td>best</td></tr>
+        <tr><td>bad</td><td>worse</td><td>worst</td></tr>
+      </table>
+      <div class="tip"><strong>Rules:</strong> Short adjectives (1-2 syllables) usually add -er/-est. Long adjectives (3+ syllables) usually use more/most. Watch for doubles: big → bigger (double the g!). Watch for y → i: happy → happier.</div>
+    </div>
+    <div class="correct">"She is taller than her brother." (comparing two people)</div>
+    <div class="correct">"He is the tallest student in the class." (comparing three or more)</div>
+    <div class="incorrect">"She is the most tallest." (NEVER use -est AND most together!)</div>
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Write the comparative and superlative forms of: <em>small, clever, funny, bad, cold</em></li>
+        <li>Write two sentences using comparative adjectives to compare two animals.</li>
+        <li>Write one sentence using a superlative adjective to describe the best or worst thing about school.</li>
+      </ol>
+    </div>
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p><strong>Adjectives</strong> describe nouns.</p>
+      <p><strong>Comparative</strong> (-er / more) -- comparing TWO things.</p>
+      <p><strong>Superlative</strong> (-est / most) -- comparing THREE or MORE things.</p>
+      <p>NEVER use -est and "most" together -- that is a double superlative error!</p>
+      <p class="cta" style="color:#004d40;">Keep going! Click Lesson 5.5!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 5.5 -->
+<div class="lesson-section" id="lesson5">
+  <div class="banner b5">
+    <span class="lesson-num">Lesson 5.5</span>
+    <h2>Adverbs</h2>
+    <p>Adverbs tell us HOW, WHEN, WHERE, and HOW OFTEN something happens!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s5">
+      <h3>What Are We Learning Today?</h3>
+      <p>If adjectives describe nouns, <strong>adverbs</strong> describe verbs, adjectives, and other adverbs! They answer questions like HOW? WHEN? WHERE? and HOW OFTEN? Many adverbs end in <strong>-ly</strong>, but not all of them do.</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Adverb</span> -- A word that describes a verb, adjective, or another adverb.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Manner Adverb</span> -- Tells HOW something is done. Most end in -ly. Example: quickly, carefully, loudly.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Time Adverb</span> -- Tells WHEN something happens. Example: yesterday, soon, now, later, already.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Place Adverb</span> -- Tells WHERE something happens. Example: here, there, outside, nearby, everywhere.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Frequency Adverb</span> -- Tells HOW OFTEN something happens. Example: always, never, sometimes, often, rarely.</div>
+    </div>
+    <div class="section s5">
+      <h3>Types of Adverbs with Examples</h3>
+      <table>
+        <tr><th>Type</th><th>Question It Answers</th><th>Examples</th></tr>
+        <tr><td><strong>Manner</strong></td><td>How?</td><td>quickly, slowly, carefully, loudly, gently, happily</td></tr>
+        <tr><td><strong>Time</strong></td><td>When?</td><td>yesterday, today, soon, now, later, already, finally</td></tr>
+        <tr><td><strong>Place</strong></td><td>Where?</td><td>here, there, outside, nearby, everywhere, inside</td></tr>
+        <tr><td><strong>Frequency</strong></td><td>How often?</td><td>always, never, sometimes, often, rarely, usually</td></tr>
+      </table>
+    </div>
+    <div class="section s5">
+      <h3>Adjective vs. Adverb -- Know the Difference!</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-orange">
+          <h4>Adjective -- describes a NOUN</h4>
+          <p><em>"She is a <strong>quick</strong> runner."</em></p>
+          <p style="font-size:0.88em; margin-top:4px;">Quick describes the noun "runner."</p>
+        </div>
+        <div class="flex-col fb-green">
+          <h4>Adverb -- describes a VERB</h4>
+          <p><em>"She runs <strong>quickly</strong>."</em></p>
+          <p style="font-size:0.88em; margin-top:4px;">Quickly describes the verb "runs" -- tells HOW she runs.</p>
+        </div>
+      </div>
+    </div>
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Add an adverb to each sentence to make it more interesting: <em>"The dog barked." / "She finished her homework." / "It rained."</em></li>
+        <li>Identify whether each underlined word is an ADJECTIVE or ADVERB: "She spoke <u>softly</u>." / "He is a <u>soft</u> speaker." / "They <u>never</u> give up."</li>
+        <li>Write four sentences -- one using each type of adverb (manner, time, place, frequency).</li>
+      </ol>
+    </div>
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p>Adverbs describe <strong>verbs, adjectives, or other adverbs.</strong></p>
+      <p>They answer: <strong>How? When? Where? How often?</strong></p>
+      <p>Many adverbs end in <strong>-ly</strong> -- but not all! (soon, here, never, always)</p>
+      <p class="cta" style="color:#e65100;">Amazing! Click Lesson 5.6!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 5.6 -->
+<div class="lesson-section" id="lesson6">
+  <div class="banner b6">
+    <span class="lesson-num">Lesson 5.6</span>
+    <h2>Conjunctions: Coordinating and Subordinating</h2>
+    <p>Conjunctions join ideas together -- they are the glue of sentences!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s6">
+      <h3>What Are We Learning Today?</h3>
+      <p>A <strong>conjunction</strong> is a joining word that connects words, phrases, or clauses. Without conjunctions, we could only write short, choppy sentences. With them, we can build longer, more interesting sentences that show how ideas are related!</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Conjunction</span> -- A word that joins words, phrases, or clauses together.</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Coordinating Conjunction</span> -- Joins two equal parts (words, phrases, or independent clauses). Remembered by FANBOYS.</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Subordinating Conjunction</span> -- Joins a dependent clause to a main clause, showing a relationship like cause, time, or condition.</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">FANBOYS</span> -- A memory tool for coordinating conjunctions: For, And, Nor, But, Or, Yet, So.</div>
+    </div>
+    <div class="section s6">
+      <h3>Coordinating Conjunctions -- FANBOYS</h3>
+      <table>
+        <tr><th>Conjunction</th><th>Use</th><th>Example</th></tr>
+        <tr><td><strong>For</strong></td><td>Gives a reason</td><td>She stayed home, for she was ill.</td></tr>
+        <tr><td><strong>And</strong></td><td>Adds ideas together</td><td>I like cats and dogs.</td></tr>
+        <tr><td><strong>Nor</strong></td><td>Neither option</td><td>He neither ran nor walked.</td></tr>
+        <tr><td><strong>But</strong></td><td>Shows contrast</td><td>I was tired, but I kept going.</td></tr>
+        <tr><td><strong>Or</strong></td><td>Shows a choice</td><td>Do you want juice or water?</td></tr>
+        <tr><td><strong>Yet</strong></td><td>Shows contrast/surprise</td><td>It was cold, yet she swam.</td></tr>
+        <tr><td><strong>So</strong></td><td>Shows result</td><td>It rained, so we stayed inside.</td></tr>
+      </table>
+    </div>
+    <div class="section s6">
+      <h3>Common Subordinating Conjunctions</h3>
+      <div style="margin: 10px 0;">
+        <span class="tag tag-green">because</span><span class="tag tag-green">since</span><span class="tag tag-green">although</span><span class="tag tag-green">while</span><span class="tag tag-green">when</span><span class="tag tag-green">before</span><span class="tag tag-green">after</span><span class="tag tag-green">if</span><span class="tag tag-green">unless</span><span class="tag tag-green">until</span><span class="tag tag-green">even though</span><span class="tag tag-green">as soon as</span>
+      </div>
+      <div class="example-sentence">"Because it was raining, we stayed inside." (because shows REASON)</div>
+      <div class="example-sentence">"Although she was tired, she finished her homework." (although shows CONTRAST)</div>
+      <div class="example-sentence">"We will leave when the bell rings." (when shows TIME)</div>
+    </div>
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Join these two sentences using a coordinating conjunction: "I was hungry." + "There was no food in the fridge."</li>
+        <li>Complete these sentences with a subordinating conjunction: "___ it snowed, school was cancelled." / "She studied hard ___ she wanted to pass."</li>
+        <li>Write three sentences using three different FANBOYS conjunctions.</li>
+      </ol>
+    </div>
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p><strong>Coordinating conjunctions</strong> -- FANBOYS (For, And, Nor, But, Or, Yet, So)</p>
+      <p><strong>Subordinating conjunctions</strong> -- because, although, when, if, since, unless...</p>
+      <p>Conjunctions are the <strong>glue</strong> that joins ideas in a sentence!</p>
+      <p class="cta" style="color:#1b5e20;">One more! Click Lesson 5.7!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 5.7 -->
+<div class="lesson-section" id="lesson7">
+  <div class="banner b7">
+    <span class="lesson-num">Lesson 5.7</span>
+    <h2>Capitalization and Punctuation</h2>
+    <p>Learn the rules for capital letters and punctuation marks!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s7">
+      <h3>What Are We Learning Today?</h3>
+      <p>Capitalisation and punctuation are like the traffic signs of writing -- they tell the reader when to stop, pause, ask a question, or show excitement. Without them, writing would be impossible to read! Today we review the most important rules every 3rd-grade writer needs to know.</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#37474f;">Capitalisation</span> -- Using a capital (uppercase) letter at the start of specific words.</div>
+      <div class="vocab-item"><span class="word" style="color:#37474f;">Punctuation</span> -- Marks used in writing to organise sentences and show meaning (. , ! ? " ' ...).</div>
+      <div class="vocab-item"><span class="word" style="color:#37474f;">Comma</span> -- A mark (,) used to create a pause, separate items in a list, or join clauses.</div>
+      <div class="vocab-item"><span class="word" style="color:#37474f;">Apostrophe</span> -- A mark (') used to show ownership (Maya's book) or a contraction (don't = do not).</div>
+    </div>
+    <div class="section s7">
+      <h3>When to Use Capital Letters</h3>
+      <table>
+        <tr><th>Rule</th><th>Example</th></tr>
+        <tr><td>First word of every sentence</td><td><strong>T</strong>he dog ran outside.</td></tr>
+        <tr><td>The word "I"</td><td>Yesterday <strong>I</strong> went to the park.</td></tr>
+        <tr><td>Names of people</td><td><strong>M</strong>aya, <strong>J</strong>ake, <strong>D</strong>r. <strong>S</strong>mith</td></tr>
+        <tr><td>Names of places</td><td><strong>K</strong>ennewick, <strong>W</strong>ashington, <strong>S</strong>age <strong>C</strong>rest <strong>E</strong>lementary</td></tr>
+        <tr><td>Days and months</td><td><strong>M</strong>onday, <strong>J</strong>anuary, <strong>T</strong>hursday</td></tr>
+        <tr><td>Holidays and special events</td><td><strong>T</strong>hanksgiving, <strong>I</strong>ndependence <strong>D</strong>ay</td></tr>
+        <tr><td>Titles before names</td><td><strong>P</strong>resident Lincoln, <strong>M</strong>rs. <strong>J</strong>ones</td></tr>
+      </table>
+    </div>
+    <div class="section s7">
+      <h3>Punctuation Rules</h3>
+      <table>
+        <tr><th>Mark</th><th>Use</th><th>Example</th></tr>
+        <tr><td><strong>.</strong> Period</td><td>End of a statement</td><td>The cat is sleeping.</td></tr>
+        <tr><td><strong>?</strong> Question Mark</td><td>End of a question</td><td>Where did you go?</td></tr>
+        <tr><td><strong>!</strong> Exclamation Mark</td><td>Strong feeling or command</td><td>Watch out!</td></tr>
+        <tr><td><strong>,</strong> Comma</td><td>List, pause, joining clauses</td><td>I bought apples, bananas, and grapes.</td></tr>
+        <tr><td><strong>'</strong> Apostrophe</td><td>Ownership or contraction</td><td>Maya's book. Don't stop.</td></tr>
+        <tr><td><strong>" "</strong> Quotation Marks</td><td>Direct speech</td><td>"Come here," she said.</td></tr>
+      </table>
+    </div>
+    <div class="correct">"Last Monday, Maya and I visited the Seattle Aquarium with Dr. Chen."</div>
+    <div class="incorrect">"last monday, maya and i visited the seattle aquarium with dr. chen."</div>
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Fix the capitalisation errors: "my friend james lives in portland, oregon. every friday we play soccer."</li>
+        <li>Add the correct punctuation: "Where are you going _ she asked _ I am going to the park _ he replied"</li>
+        <li>Write a sentence using: a proper noun, a comma in a list, and an apostrophe for ownership.</li>
+      </ol>
+    </div>
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p>Capitalise: <strong>sentence starts, the word I, proper nouns, days and months, titles.</strong></p>
+      <p>Use a period for statements, question mark for questions, exclamation for excitement.</p>
+      <p>Use commas in lists, apostrophes for ownership and contractions.</p>
+      <p class="cta" style="color:#37474f;">Almost done! Click Lesson 5.8!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 5.8 -->
+<div class="lesson-section" id="lesson8">
+  <div class="banner b8">
+    <span class="lesson-num">Lesson 5.8</span>
+    <h2>Spelling: Suffixes and High-Frequency Words</h2>
+    <p>Master spelling patterns and the words that appear most often in writing!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s8">
+      <h3>What Are We Learning Today?</h3>
+      <p>Good spelling makes your writing clear and professional. Today we review important <strong>spelling rules for adding suffixes</strong> and practise the <strong>high-frequency words</strong> that appear most often in reading and writing. Knowing these patterns and words will make you a much more confident writer!</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#880e4f;">Spelling Pattern</span> -- A rule or group of letters that appear together in many words.</div>
+      <div class="vocab-item"><span class="word" style="color:#880e4f;">Double the Consonant</span> -- When a short-vowel word ends in one consonant, double it before adding -ed or -ing. Example: run → running.</div>
+      <div class="vocab-item"><span class="word" style="color:#880e4f;">Drop the E</span> -- When a word ends in silent e, drop the e before adding -ed or -ing. Example: hope → hoping.</div>
+      <div class="vocab-item"><span class="word" style="color:#880e4f;">Change Y to I</span> -- When a word ends in consonant + y, change y to i before adding -es or -ed. Example: carry → carried.</div>
+    </div>
+    <div class="section s8">
+      <h3>Three Important Spelling Rules for Suffixes</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-pink">
+          <h4>Rule 1: Double the Consonant</h4>
+          <p>Short vowel + single consonant at end = double before -ed/-ing</p>
+          <p style="margin-top:6px; font-size:0.88em;">run → running, sit → sitting, hop → hopped, big → bigger, swim → swimming</p>
+        </div>
+        <div class="flex-col fb-blue">
+          <h4>Rule 2: Drop the Silent E</h4>
+          <p>Word ends in silent e = drop the e before -ed/-ing</p>
+          <p style="margin-top:6px; font-size:0.88em;">hope → hoping, bake → baking, smile → smiled, write → writing, ride → riding</p>
+        </div>
+        <div class="flex-col fb-purple">
+          <h4>Rule 3: Change Y to I</h4>
+          <p>Consonant + y at end = change y to i before -es/-ed</p>
+          <p style="margin-top:6px; font-size:0.88em;">carry → carried, baby → babies, happy → happier, try → tried, cry → cried</p>
+        </div>
+      </div>
+    </div>
+    <div class="section s8">
+      <h3>Important High-Frequency Words to Spell Correctly</h3>
+      <div class="sight-grid">
+        <div class="sight-word">because</div>
+        <div class="sight-word">different</div>
+        <div class="sight-word">friend</div>
+        <div class="sight-word">people</div>
+        <div class="sight-word">school</div>
+        <div class="sight-word">thought</div>
+        <div class="sight-word">through</div>
+        <div class="sight-word">together</div>
+        <div class="sight-word">beautiful</div>
+        <div class="sight-word">favourite</div>
+        <div class="sight-word">important</div>
+        <div class="sight-word">usually</div>
+        <div class="sight-word">remember</div>
+        <div class="sight-word">probably</div>
+        <div class="sight-word">suddenly</div>
+        <div class="sight-word">happened</div>
+        <div class="sight-word">whether</div>
+        <div class="sight-word">special</div>
+        <div class="sight-word">enough</div>
+        <div class="sight-word">believe</div>
+      </div>
+    </div>
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Add -ing to these words using the correct rule: <em>make, run, carry, jump, ride, sit, try, hope</em></li>
+        <li>Add -ed to these words: <em>stop, bake, play, worry, drop, smile, fix, hurry</em></li>
+        <li>Choose FIVE words from the high-frequency word grid. Write each one in a sentence.</li>
+        <li>Test yourself: cover the grid and try to spell 10 words from memory!</li>
+      </ol>
+    </div>
+    <div class="remember">
+      <h3>You Finished Unit 5!</h3>
+      <p><strong>Double</strong> the consonant before -ed/-ing for short vowel words.</p>
+      <p><strong>Drop the e</strong> before -ed/-ing for words ending in silent e.</p>
+      <p><strong>Change y to i</strong> before -es/-ed for consonant + y words.</p>
+      <p>Practise high-frequency words every day -- they appear everywhere!</p>
+      <p class="cta" style="color:#880e4f;">Outstanding! You completed all 8 lessons in Unit 5! Now take the Unit 5 Quiz!</p>
+    </div>
+  </div>
+</div>
+
+</div>
+<script>
+  const sections = document.querySelectorAll('.lesson-section');
+  const navLinks = document.querySelectorAll('.nav-bar a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 80) current = s.getAttribute('id'); });
+    navLinks.forEach(l => { l.classList.remove('active'); if (l.getAttribute('href') === '#' + current) l.classList.add('active'); });
+  });
+</script>
+</body>
+</html>
