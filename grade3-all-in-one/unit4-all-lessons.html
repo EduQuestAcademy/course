@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit 4 – Writing | Owl Smart 3rd Grade</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #f4f7fb; color: #2d2d2d; line-height: 1.8; }
+    .top-header { background: linear-gradient(135deg, #004d40, #00695c); color: white; text-align: center; padding: 24px 20px 16px; }
+    .top-header h1 { font-size: 1.5em; margin-bottom: 4px; }
+    .top-header p { font-size: 0.95em; opacity: 0.88; }
+    .nav-bar { background: #004d40; padding: 0 10px; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.3); overflow-x: auto; white-space: nowrap; }
+    .nav-bar a { display: inline-block; color: rgba(255,255,255,0.8); text-decoration: none; padding: 12px 14px; font-size: 0.82em; font-weight: bold; border-bottom: 3px solid transparent; transition: all 0.2s; }
+    .nav-bar a:hover, .nav-bar a.active { color: white; border-bottom-color: #ffd600; }
+    .main { max-width: 860px; margin: 0 auto; padding: 20px; }
+    .lesson-section { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.08); margin-bottom: 40px; scroll-margin-top: 60px; }
+    .banner { color: white; text-align: center; padding: 28px 24px; }
+    .banner h2 { font-size: 1.45em; margin-bottom: 6px; }
+    .banner p { font-size: 0.97em; opacity: 0.92; margin-bottom: 10px; }
+    .lesson-num { display: inline-block; background: rgba(255,255,255,0.25); border-radius: 20px; padding: 3px 14px; font-size: 0.82em; font-weight: bold; }
+    .b1 { background: linear-gradient(135deg, #004d40, #00897b); }
+    .b2 { background: linear-gradient(135deg, #1a237e, #3949ab); }
+    .b3 { background: linear-gradient(135deg, #e65100, #fb8c00); }
+    .b4 { background: linear-gradient(135deg, #4a148c, #7b1fa2); }
+    .b5 { background: linear-gradient(135deg, #b71c1c, #e53935); }
+    .b6 { background: linear-gradient(135deg, #1b5e20, #43a047); }
+    .b7 { background: linear-gradient(135deg, #37474f, #546e7a); }
+    .lesson-content { padding: 26px; }
+    .section { border-left: 5px solid; border-radius: 0 10px 10px 0; padding: 18px 20px; margin-bottom: 20px; }
+    .s1 { background: #e0f2f1; border-color: #004d40; } .s1 h3 { color: #004d40; }
+    .s2 { background: #e8eaf6; border-color: #1a237e; } .s2 h3 { color: #1a237e; }
+    .s3 { background: #fff3e0; border-color: #e65100; } .s3 h3 { color: #e65100; }
+    .s4 { background: #f3e5f5; border-color: #4a148c; } .s4 h3 { color: #4a148c; }
+    .s5 { background: #ffebee; border-color: #b71c1c; } .s5 h3 { color: #b71c1c; }
+    .s6 { background: #e8f5e9; border-color: #1b5e20; } .s6 h3 { color: #1b5e20; }
+    .s7 { background: #eceff1; border-color: #37474f; } .s7 h3 { color: #37474f; }
+    .section h3 { margin-bottom: 8px; font-size: 1.05em; }
+    .vocab-box { background: #fff8e1; border: 2px solid #ffc107; border-radius: 10px; padding: 18px 20px; margin-bottom: 20px; }
+    .vocab-box h3 { color: #e65100; margin-bottom: 12px; font-size: 1.05em; }
+    .vocab-item { margin: 8px 0; font-size: 0.95em; }
+    .word { font-weight: bold; }
+    .writing-example { background: #f9f9f9; border: 2px solid #90a4ae; border-radius: 10px; padding: 18px 20px; margin-bottom: 16px; font-size: 0.95em; line-height: 1.9; }
+    .writing-example h4 { color: #37474f; margin-bottom: 8px; font-size: 1em; }
+    .highlight-opinion { background: #e8f5e9; border-left: 4px solid #43a047; padding: 3px 8px; border-radius: 0 4px 4px 0; }
+    .highlight-reason { background: #e3f2fd; border-left: 4px solid #1976d2; padding: 3px 8px; border-radius: 0 4px 4px 0; }
+    .highlight-link { background: #fff3e0; border-left: 4px solid #f57c00; padding: 3px 8px; border-radius: 0 4px 4px 0; }
+    .highlight-close { background: #fce4ec; border-left: 4px solid #e91e63; padding: 3px 8px; border-radius: 0 4px 4px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.93em; }
+    th { background: #37474f; color: white; padding: 9px 12px; text-align: left; }
+    td { padding: 9px 12px; border-bottom: 1px solid #e0e0e0; }
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) { background: #f5f5f5; }
+    .tip { background: #e8f5e9; border-left: 4px solid #43a047; border-radius: 0 8px 8px 0; padding: 12px 16px; margin: 12px 0; color: #1b5e20; font-size: 0.93em; }
+    .tip strong { color: #2e7d32; }
+    .try-it { background: #ede7f6; border: 2px dashed #7e57c2; border-radius: 10px; padding: 18px 20px; margin-bottom: 20px; }
+    .try-it h3 { color: #4527a0; margin-bottom: 10px; font-size: 1.05em; }
+    .try-it ol { padding-left: 20px; }
+    .try-it li { margin: 8px 0; font-size: 0.95em; }
+    .remember { background: #fff3e0; border: 2px solid #ff8f00; border-radius: 10px; padding: 18px 20px; text-align: center; margin-bottom: 4px; }
+    .remember h3 { color: #e65100; margin-bottom: 10px; font-size: 1.05em; }
+    .remember p { margin: 5px 0; font-size: 0.95em; }
+    .remember .cta { font-weight: bold; font-size: 1.05em; margin-top: 12px; }
+    .flex-row { display: flex; gap: 12px; flex-wrap: wrap; margin: 10px 0; }
+    .flex-col { flex: 1; min-width: 160px; border-radius: 10px; padding: 14px 16px; }
+    .fb-teal { background: #e0f2f1; border: 2px solid #00897b; } .fb-teal h4 { color: #004d40; margin-bottom: 6px; }
+    .fb-blue { background: #e3f2fd; border: 2px solid #1976d2; } .fb-blue h4 { color: #0d47a1; margin-bottom: 6px; }
+    .fb-orange { background: #fff3e0; border: 2px solid #f57c00; } .fb-orange h4 { color: #e65100; margin-bottom: 6px; }
+    .fb-purple { background: #f3e5f5; border: 2px solid #7b1fa2; } .fb-purple h4 { color: #4a148c; margin-bottom: 6px; }
+    .fb-red { background: #ffebee; border: 2px solid #e53935; } .fb-red h4 { color: #b71c1c; margin-bottom: 6px; }
+    .fb-green { background: #e8f5e9; border: 2px solid #388e3c; } .fb-green h4 { color: #1b5e20; margin-bottom: 6px; }
+    .fb-grey { background: #eceff1; border: 2px solid #78909c; } .fb-grey h4 { color: #37474f; margin-bottom: 6px; }
+    .tag { display: inline-block; border-radius: 16px; padding: 4px 14px; font-size: 0.85em; font-weight: bold; color: white; margin: 3px; }
+    .tag-teal { background: #004d40; }
+    .tag-blue { background: #1a237e; }
+    .tag-orange { background: #e65100; }
+    .tag-purple { background: #4a148c; }
+    .tag-red { background: #b71c1c; }
+    .tag-green { background: #1b5e20; }
+    .step-row { display: flex; align-items: flex-start; gap: 14px; margin: 12px 0; }
+    .step-circle { background: #004d40; color: white; border-radius: 50%; width: 34px; height: 34px; min-width: 34px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1em; }
+    ul { padding-left: 20px; } li { margin: 5px 0; font-size: 0.95em; }
+    p { margin-bottom: 8px; font-size: 0.95em; }
+    .checklist-item { display: flex; align-items: flex-start; gap: 10px; margin: 8px 0; }
+    .check { background: #004d40; color: white; border-radius: 4px; padding: 2px 8px; font-size: 0.85em; font-weight: bold; min-width: 24px; text-align: center; }
+  </style>
+</head>
+<body>
+
+<div class="top-header">
+  <h1>Owl Smart: A 3rd Grade Learning Journey</h1>
+  <p>Unit 4 -- Writing &nbsp;|&nbsp; 7 Lessons</p>
+</div>
+
+<div class="nav-bar">
+  <a href="#lesson1">4.1 Opinion Writing</a>
+  <a href="#lesson2">4.2 Linking Words</a>
+  <a href="#lesson3">4.3 Informational Writing</a>
+  <a href="#lesson4">4.4 Narrative Writing</a>
+  <a href="#lesson5">4.5 Dialogue &amp; Details</a>
+  <a href="#lesson6">4.6 Temporal Words</a>
+  <a href="#lesson7">4.7 Plan, Revise, Edit</a>
+</div>
+
+<div class="main">
+
+<!-- LESSON 4.1 -->
+<div class="lesson-section" id="lesson1">
+  <div class="banner b1">
+    <span class="lesson-num">Lesson 4.1</span>
+    <h2>Opinion Writing: Stating and Supporting a View</h2>
+    <p>Learn to share your opinion clearly and back it up with strong reasons!</p>
+  </div>
+  <div class="lesson-content">
+
+    <div class="section s1">
+      <h3>What Are We Learning Today?</h3>
+      <p>An <strong>opinion</strong> is what you think or believe about something. In opinion writing, you share your view AND give reasons to support it. Good opinion writing is not just saying "I like it because it's good" -- you need <strong>specific, convincing reasons</strong> that help the reader understand why you think the way you do!</p>
+    </div>
+
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#004d40;">Opinion</span> -- What you think or believe. Cannot be proven true or false.</div>
+      <div class="vocab-item"><span class="word" style="color:#004d40;">Reason</span> -- An explanation that supports your opinion and helps convince the reader.</div>
+      <div class="vocab-item"><span class="word" style="color:#004d40;">Introduction</span> -- The opening of your piece that states your opinion clearly.</div>
+      <div class="vocab-item"><span class="word" style="color:#004d40;">Body</span> -- The middle section where you give your reasons with details.</div>
+      <div class="vocab-item"><span class="word" style="color:#004d40;">Concluding Statement</span> -- The ending that wraps up your opinion and reminds the reader of your view.</div>
+      <div class="vocab-item"><span class="word" style="color:#004d40;">Persuade</span> -- To convince someone to agree with your opinion.</div>
+    </div>
+
+    <div class="section s1">
+      <h3>The Structure of Opinion Writing</h3>
+      <div class="step-row">
+        <div class="step-circle">1</div>
+        <div><strong>Introduction -- State your opinion clearly</strong><br>Tell the reader exactly what you think. Use phrases like: "I believe...", "In my opinion...", "I think..."</div>
+      </div>
+      <div class="step-row">
+        <div class="step-circle">2</div>
+        <div><strong>Reason 1 -- Your first reason + a detail</strong><br>Give your strongest reason. Add a specific fact or example to back it up.</div>
+      </div>
+      <div class="step-row">
+        <div class="step-circle">3</div>
+        <div><strong>Reason 2 -- Your second reason + a detail</strong><br>Give another reason. The more specific, the more convincing!</div>
+      </div>
+      <div class="step-row">
+        <div class="step-circle">4</div>
+        <div><strong>Concluding Statement -- Wrap it up</strong><br>Restate your opinion in a new way. Use phrases like: "That is why I believe...", "For these reasons..."</div>
+      </div>
+    </div>
+
+    <div class="writing-example">
+      <h4>Example Opinion Paragraph</h4>
+      <p><span class="highlight-opinion">I believe that every school should have a garden.</span> <span class="highlight-reason">First, a school garden teaches students about science in a hands-on way. When students grow vegetables and observe plants, they learn about life cycles, soil, and the environment much better than just reading about it.</span> <span class="highlight-reason">Second, gardens give students a peaceful place to relax and connect with nature, which helps reduce stress and improve focus in class.</span> <span class="highlight-close">For these reasons, I strongly believe school gardens would make every student's learning experience richer and more enjoyable.</span></p>
+    </div>
+
+    <div class="section s1">
+      <h3>Key Colour Guide</h3>
+      <p><span class="highlight-opinion">Green highlight = Opinion statement</span></p>
+      <p><span class="highlight-reason">Blue highlight = Reasons with details</span></p>
+      <p><span class="highlight-close">Pink highlight = Concluding statement</span></p>
+    </div>
+
+    <div class="tip"><strong>Strong Opinion Writing Tips:</strong> Be specific! "Dogs make better pets than cats because they can be trained to help people" is much stronger than "Dogs are better because they are nice." Give real reasons and details that prove your point!</div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <p>Choose one of these opinion topics and write a paragraph:</p>
+      <ul>
+        <li>Should students have homework every night?</li>
+        <li>Is summer or winter a better season?</li>
+        <li>Should schools have longer lunch breaks?</li>
+      </ul>
+      <ol>
+        <li>Write your <strong>opinion statement</strong> clearly.</li>
+        <li>Give <strong>two reasons</strong> with details to support your opinion.</li>
+        <li>Write a <strong>concluding statement</strong> that restates your opinion.</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p><strong>Opinion</strong> -- what you think or believe</p>
+      <p><strong>Reasons</strong> -- WHY you think that (be specific!)</p>
+      <p><strong>Concluding Statement</strong> -- wrap it up and restate your opinion</p>
+      <p class="cta" style="color:#004d40;">Great start! Click Lesson 4.2!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 4.2 -->
+<div class="lesson-section" id="lesson2">
+  <div class="banner b2">
+    <span class="lesson-num">Lesson 4.2</span>
+    <h2>Linking Words in Opinion Writing</h2>
+    <p>Use powerful linking words to connect your opinions and reasons smoothly!</p>
+  </div>
+  <div class="lesson-content">
+
+    <div class="section s2">
+      <h3>What Are We Learning Today?</h3>
+      <p>When you write an opinion piece, you need <strong>linking words</strong> to connect your opinion to your reasons and your reasons to each other. Without linking words, your writing sounds choppy and disconnected. With them, your writing flows smoothly and sounds professional!</p>
+    </div>
+
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#1a237e;">Linking Word</span> -- A word or phrase that connects ideas in writing, making it flow smoothly.</div>
+      <div class="vocab-item"><span class="word" style="color:#1a237e;">Transition</span> -- Moving smoothly from one idea to the next using linking words.</div>
+      <div class="vocab-item"><span class="word" style="color:#1a237e;">Connective</span> -- Another word for a linking word -- it connects two ideas together.</div>
+    </div>
+
+    <div class="section s2">
+      <h3>Linking Words for Opinion Writing</h3>
+      <table>
+        <tr><th>Purpose</th><th>Linking Words and Phrases</th></tr>
+        <tr><td><strong>To state your opinion</strong></td><td>I believe, I think, In my opinion, I feel that, It is my view that</td></tr>
+        <tr><td><strong>To give a reason</strong></td><td>because, since, due to, as a result of</td></tr>
+        <tr><td><strong>To add another reason</strong></td><td>First, Second, Third, Also, In addition, Furthermore, Another reason is</td></tr>
+        <tr><td><strong>To give an example</strong></td><td>For example, For instance, Such as, To illustrate</td></tr>
+        <tr><td><strong>To conclude</strong></td><td>Therefore, For these reasons, In conclusion, That is why, As a result</td></tr>
+      </table>
+    </div>
+
+    <div class="section s2">
+      <h3>See the Difference -- Without and With Linking Words</h3>
+      <div class="writing-example">
+        <h4>Without Linking Words (choppy and hard to follow):</h4>
+        <p>Dogs make great pets. They are loyal. They protect your home. They keep you company. Dogs are great.</p>
+      </div>
+      <div class="writing-example">
+        <h4>With Linking Words (smooth and convincing):</h4>
+        <p><span class="highlight-opinion">I believe dogs make the best pets.</span> <span class="highlight-link">First</span>, they are incredibly loyal and always happy to see you. <span class="highlight-link">In addition</span>, dogs can be trained to protect your home and keep your family safe. <span class="highlight-link">Furthermore</span>, they provide wonderful companionship, especially for people who live alone. <span class="highlight-close">For these reasons</span>, I strongly believe that dogs make the perfect pet for any family.</p>
+      </div>
+    </div>
+
+    <div class="tip"><strong>Writing Tip:</strong> Do not start every sentence with "I think" or "because." Use a variety of linking words to make your writing more interesting and to show the different types of connections between your ideas.</div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Take the opinion paragraph you wrote in Lesson 4.1. Add at least THREE linking words from the table above.</li>
+        <li>Write a new opinion paragraph about your favourite school subject. Use linking words to connect your opinion, reasons, and conclusion.</li>
+        <li>Find TWO linking words in a paragraph from a book or article. What purpose do they serve?</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p>Linking words <strong>connect</strong> your opinion, reasons, and conclusion.</p>
+      <p>Use a <strong>variety</strong> of linking words -- not just "because" and "also"!</p>
+      <p>Common opinion linking words: <strong>First, In addition, Because, For these reasons, Therefore</strong></p>
+      <p class="cta" style="color:#1a237e;">Excellent! Click Lesson 4.3!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 4.3 -->
+<div class="lesson-section" id="lesson3">
+  <div class="banner b3">
+    <span class="lesson-num">Lesson 4.3</span>
+    <h2>Informational / Explanatory Writing</h2>
+    <p>Share what you know about a topic clearly and accurately!</p>
+  </div>
+  <div class="lesson-content">
+
+    <div class="section s3">
+      <h3>What Are We Learning Today?</h3>
+      <p>Informational writing is all about sharing <strong>facts and knowledge</strong> about a real topic. Unlike opinion writing, you are not trying to convince the reader of your view -- you are <strong>explaining and informing</strong>. Your goal is to teach the reader something new!</p>
+    </div>
+
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Informational Writing</span> -- Writing that explains or describes a real topic using facts and details.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Topic Sentence</span> -- The first sentence of a paragraph that tells the reader what the paragraph is about.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Supporting Facts</span> -- Real, accurate details that develop and explain the topic.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Definition</span> -- An explanation of what something means -- used to clarify important terms.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Concluding Sentence</span> -- The final sentence that wraps up the paragraph.</div>
+    </div>
+
+    <div class="section s3">
+      <h3>Structure of Informational Writing</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-orange">
+          <h4 style="color:#e65100;">Introduction</h4>
+          <p>Introduce the topic. Tell the reader what they are about to learn. Write a clear <strong>topic sentence</strong>.</p>
+        </div>
+        <div class="flex-col fb-blue">
+          <h4 style="color:#0d47a1;">Body Paragraphs</h4>
+          <p>Each paragraph covers ONE aspect of the topic. Include <strong>facts, definitions, and details</strong>. Group related information together.</p>
+        </div>
+        <div class="flex-col fb-green">
+          <h4 style="color:#1b5e20;">Conclusion</h4>
+          <p>Wrap up by <strong>restating the main idea</strong> in a new way. Leave the reader with something interesting to think about.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="writing-example">
+      <h4>Example Informational Paragraph</h4>
+      <p><span class="highlight-opinion">Penguins are fascinating birds that cannot fly but are excellent swimmers.</span> Unlike most birds, penguins have wings shaped like flippers, which allow them to glide through the water at speeds of up to 25 miles per hour. They live mainly in the Southern Hemisphere, with most species found in Antarctica. Penguins are also highly social animals -- they live in large groups called colonies, which can contain thousands of birds. <span class="highlight-close">With their remarkable adaptations and social behaviours, penguins are truly one of nature's most extraordinary creatures.</span></p>
+    </div>
+
+    <div class="section s3">
+      <h3>Opinion Writing vs. Informational Writing</h3>
+      <table>
+        <tr><th>Feature</th><th>Opinion Writing</th><th>Informational Writing</th></tr>
+        <tr><td>Purpose</td><td>Convince the reader</td><td>Inform / explain to the reader</td></tr>
+        <tr><td>Content</td><td>Your beliefs + reasons</td><td>Facts + definitions + details</td></tr>
+        <tr><td>Language</td><td>"I believe," "I think"</td><td>Neutral -- no "I believe"</td></tr>
+        <tr><td>Tone</td><td>Persuasive</td><td>Factual and objective</td></tr>
+      </table>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <p>Choose a topic you know about (an animal, a place, a sport, a science topic). Write one informational paragraph:</p>
+      <ol>
+        <li>Write a clear <strong>topic sentence</strong> that introduces the subject.</li>
+        <li>Add <strong>three facts or details</strong> about the topic.</li>
+        <li>Include at least one <strong>definition</strong> of an important term.</li>
+        <li>Write a <strong>concluding sentence</strong> that wraps up the paragraph.</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p>Informational writing <strong>informs and explains</strong> -- it does NOT share your opinions.</p>
+      <p>Use <strong>facts, definitions, and details</strong> to develop your topic.</p>
+      <p>Start with a <strong>topic sentence</strong> and end with a <strong>concluding sentence.</strong></p>
+      <p class="cta" style="color:#e65100;">Well done! Click Lesson 4.4!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 4.4 -->
+<div class="lesson-section" id="lesson4">
+  <div class="banner b4">
+    <span class="lesson-num">Lesson 4.4</span>
+    <h2>Narrative Writing: Story Structure and Sequence</h2>
+    <p>Write your own stories with a strong beginning, middle, and end!</p>
+  </div>
+  <div class="lesson-content">
+
+    <div class="section s4">
+      <h3>What Are We Learning Today?</h3>
+      <p>Narrative writing is <strong>storytelling</strong>! You create characters, a setting, and a plot with events that unfold in order. Every great story has a clear structure -- a beginning that draws readers in, a middle where the excitement happens, and an end that satisfies the reader.</p>
+    </div>
+
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Narrative</span> -- A story -- real or imagined -- with characters, setting, and a sequence of events.</div>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Narrator</span> -- The voice telling the story (can be a character or an outside voice).</div>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Sequence</span> -- The order in which events happen in a story.</div>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Conflict</span> -- The problem or challenge the main character faces.</div>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Resolution</span> -- How the conflict is solved at the end of the story.</div>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Closure</span> -- A satisfying ending that wraps up the story and gives the reader a sense of completion.</div>
+    </div>
+
+    <div class="section s4">
+      <h3>The Story Mountain -- Structure of a Narrative</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-purple">
+          <h4>Beginning (Introduction)</h4>
+          <ul>
+            <li>Introduce the characters</li>
+            <li>Describe the setting</li>
+            <li>Set the scene -- hook the reader!</li>
+          </ul>
+        </div>
+        <div class="flex-col fb-red">
+          <h4>Middle (Rising Action + Conflict)</h4>
+          <ul>
+            <li>The problem appears</li>
+            <li>Events build up</li>
+            <li>Things get more exciting!</li>
+            <li>The highest point = the climax</li>
+          </ul>
+        </div>
+        <div class="flex-col fb-green">
+          <h4>End (Resolution + Closure)</h4>
+          <ul>
+            <li>The problem is solved</li>
+            <li>Characters learn something</li>
+            <li>The story wraps up with a satisfying ending</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="writing-example">
+      <h4>Example Narrative Opening</h4>
+      <p>The morning Zara found the strange door in her grandmother's attic, everything changed. It was painted midnight blue and covered in tiny silver stars that seemed to <em>move</em> when she wasn't looking directly at them. Her heart hammered. She had explored every corner of this attic a hundred times -- so where had this door come from? She reached for the handle, her hand trembling slightly. Behind her, she heard her grandmother's footsteps on the stairs. "Zara," came the old woman's voice, warm but urgent. "Don't open that door. Not yet."</p>
+    </div>
+
+    <div class="section s4">
+      <h3>What Makes a Great Narrative Opening?</h3>
+      <table>
+        <tr><th>Technique</th><th>Example from the Passage</th></tr>
+        <tr><td>Start in the middle of the action</td><td>"The morning Zara found the strange door..."</td></tr>
+        <tr><td>Create mystery or suspense</td><td>The door appeared with no explanation</td></tr>
+        <tr><td>Show character emotions</td><td>"Her heart hammered," "her hand trembling"</td></tr>
+        <tr><td>End with a cliffhanger</td><td>"Don't open that door. Not yet." -- we NEED to know more!</td></tr>
+      </table>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <p>Plan and write the BEGINNING of a short story. Include:</p>
+      <ol>
+        <li>A <strong>main character</strong> with a name and one character trait.</li>
+        <li>A clear <strong>setting</strong> -- where and when.</li>
+        <li>A <strong>hook</strong> -- something interesting or unexpected to grab the reader's attention.</li>
+        <li>A hint of the <strong>problem</strong> to come.</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p><strong>Beginning</strong> -- introduce characters and setting, hook the reader</p>
+      <p><strong>Middle</strong> -- conflict builds, events get exciting</p>
+      <p><strong>End</strong> -- problem solved, satisfying closure</p>
+      <p class="cta" style="color:#4a148c;">Keep going! Click Lesson 4.5!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 4.5 -->
+<div class="lesson-section" id="lesson5">
+  <div class="banner b5">
+    <span class="lesson-num">Lesson 4.5</span>
+    <h2>Using Dialogue and Descriptive Details</h2>
+    <p>Make your stories come alive with vivid details and character voices!</p>
+  </div>
+  <div class="lesson-content">
+
+    <div class="section s5">
+      <h3>What Are We Learning Today?</h3>
+      <p>The difference between a boring story and an exciting one often comes down to <strong>dialogue</strong> (what characters say) and <strong>descriptive details</strong> (vivid words that help readers see, hear, smell, and feel what is happening). Today we learn how to use both to make stories jump off the page!</p>
+    </div>
+
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#b71c1c;">Dialogue</span> -- The exact words spoken by characters, shown inside quotation marks.</div>
+      <div class="vocab-item"><span class="word" style="color:#b71c1c;">Descriptive Detail</span> -- A specific, vivid word or phrase that helps the reader picture or feel something.</div>
+      <div class="vocab-item"><span class="word" style="color:#b71c1c;">Show, Don't Tell</span> -- Describing actions and feelings through specific details instead of just stating them.</div>
+      <div class="vocab-item"><span class="word" style="color:#b71c1c;">Sensory Language</span> -- Words that appeal to the five senses: sight, sound, smell, taste, and touch.</div>
+      <div class="vocab-item"><span class="word" style="color:#b71c1c;">Speech Tag</span> -- Words that tell us WHO said something (he said, she whispered, they shouted).</div>
+    </div>
+
+    <div class="section s5">
+      <h3>How to Write Dialogue Correctly</h3>
+      <table>
+        <tr><th>Rule</th><th>Example</th></tr>
+        <tr><td>Put spoken words inside quotation marks</td><td>"I found it!" she cried.</td></tr>
+        <tr><td>Start a new line for each new speaker</td><td>"Are you ready?" asked Marco.<br>"Almost," replied Lily.</td></tr>
+        <tr><td>Use a speech tag to show who is speaking</td><td>"Watch out!" he shouted.</td></tr>
+        <tr><td>Use varied speech tags (not just "said")</td><td>whispered, shouted, asked, replied, exclaimed, muttered</td></tr>
+        <tr><td>Use punctuation inside the closing quote mark</td><td>"Let's go," she said. / "Are you ready?" he asked.</td></tr>
+      </table>
+    </div>
+
+    <div class="section s5">
+      <h3>Show, Don't Tell -- The Most Powerful Writing Technique</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-red">
+          <h4 style="color:#b71c1c;">TELLING (weak)</h4>
+          <p>She was scared.</p>
+          <p style="margin-top:8px;">He was happy.</p>
+          <p style="margin-top:8px;">It was cold outside.</p>
+        </div>
+        <div class="flex-col fb-green">
+          <h4 style="color:#1b5e20;">SHOWING (vivid and powerful)</h4>
+          <p>Her hands shook and she pressed herself against the wall, hardly daring to breathe.</p>
+          <p style="margin-top:8px;">He let out a whoop and spun around, punching the air.</p>
+          <p style="margin-top:8px;">The wind bit through her coat and her breath made little clouds in the air.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="writing-example">
+      <h4>Example -- Dialogue and Description Working Together</h4>
+      <p>The cave smelled of damp stone and something else -- something old and mysterious. Finn pressed forward, his torch casting dancing shadows on the walls.</p>
+      <p>"I think we should go back," whispered his sister Amal, grabbing his sleeve.</p>
+      <p>"We've come this far," he replied, his voice steadier than he felt. Somewhere deep in the darkness, something dripped. Something else moved.</p>
+      <p>"Finn." Amal's voice was barely a breath. "There's something in here with us."</p>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Rewrite these "telling" sentences using "showing" language:<br>a) "He was angry." &nbsp; b) "The food tasted good." &nbsp; c) "She was tired."</li>
+        <li>Write a short dialogue (4-6 lines) between two characters who have just discovered something surprising. Use varied speech tags and correct punctuation.</li>
+        <li>Add ONE sentence of descriptive detail to set the scene for your dialogue.</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p><strong>DIALOGUE</strong> -- spoken words in quotation marks, new line for new speaker</p>
+      <p><strong>DESCRIPTIVE DETAILS</strong> -- specific, vivid words that bring scenes to life</p>
+      <p><strong>SHOW, DON'T TELL</strong> -- describe actions and feelings, don't just state them!</p>
+      <p class="cta" style="color:#b71c1c;">Amazing! Click Lesson 4.6!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 4.6 -->
+<div class="lesson-section" id="lesson6">
+  <div class="banner b6">
+    <span class="lesson-num">Lesson 4.6</span>
+    <h2>Temporal Words: First, Next, Then, Finally</h2>
+    <p>Use time-order words to sequence events and guide your reader through your writing!</p>
+  </div>
+  <div class="lesson-content">
+
+    <div class="section s6">
+      <h3>What Are We Learning Today?</h3>
+      <p>When you write a story or explain a process, the <strong>order of events</strong> matters! Temporal words (also called time-order words or sequence words) tell the reader <em>when</em> things happen and help them follow the events in the right order. Without these words, writing can feel jumbled and confusing!</p>
+    </div>
+
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Temporal Words</span> -- Words that signal time and order in writing (first, next, then, finally, before, after).</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Sequence</span> -- The order in which events happen.</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Transition</span> -- Moving smoothly from one event or idea to the next.</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Time Signal</span> -- A word or phrase that tells the reader when something happened in relation to something else.</div>
+    </div>
+
+    <div class="section s6">
+      <h3>Temporal Words and Phrases to Use</h3>
+      <table>
+        <tr><th>Type</th><th>Words and Phrases</th></tr>
+        <tr><td><strong>Beginning</strong></td><td>First, To begin, At the start, In the beginning, One day, Early that morning</td></tr>
+        <tr><td><strong>Middle</strong></td><td>Next, Then, After that, Soon, Meanwhile, A little later, As soon as, When</td></tr>
+        <tr><td><strong>End</strong></td><td>Finally, At last, In the end, Eventually, After a while, By the time</td></tr>
+        <tr><td><strong>Specific time</strong></td><td>That morning, The next day, An hour later, Just as, Suddenly, At that moment</td></tr>
+      </table>
+    </div>
+
+    <div class="section s6">
+      <h3>See the Difference!</h3>
+      <div class="writing-example">
+        <h4>Without Temporal Words (confusing):</h4>
+        <p>Lily woke up. She ate breakfast. She got dressed. She missed the bus. She ran to school. She was late. She was out of breath.</p>
+      </div>
+      <div class="writing-example">
+        <h4>With Temporal Words (clear and flowing):</h4>
+        <p>One morning, Lily woke up much later than usual. First, she rushed through breakfast, barely tasting her cereal. Then she grabbed her bag and ran to get dressed. By the time she reached the bus stop, the bus was already disappearing around the corner. "Oh no!" she gasped. As fast as she could, she sprinted all the way to school. Finally, red-faced and out of breath, she burst through the classroom door -- just as the bell rang.</p>
+      </div>
+    </div>
+
+    <div class="tip"><strong>Writing Tip:</strong> Do not use the same temporal word over and over! Instead of writing "first... first... first..." use a variety: "To begin... Next... Shortly after... Eventually... Finally..."</div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Write the steps for making your favourite sandwich or snack. Use at least FIVE different temporal words to sequence the steps.</li>
+        <li>Look at a story you have already written. Add THREE temporal words to make the sequence of events clearer.</li>
+        <li>Write a short paragraph describing your morning routine from waking up to arriving at school. Use temporal words throughout!</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p>Temporal words tell the reader <strong>WHEN</strong> things happen and in what <strong>ORDER.</strong></p>
+      <p>Use a <strong>variety</strong> of temporal words -- not just "first, next, then, finally"!</p>
+      <p>Temporal words make your writing clearer and easier to follow.</p>
+      <p class="cta" style="color:#1b5e20;">One more to go! Click Lesson 4.7!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 4.7 -->
+<div class="lesson-section" id="lesson7">
+  <div class="banner b7">
+    <span class="lesson-num">Lesson 4.7</span>
+    <h2>Planning, Revising, and Editing</h2>
+    <p>Every great piece of writing goes through multiple steps -- learn the writing process!</p>
+  </div>
+  <div class="lesson-content">
+
+    <div class="section s7">
+      <h3>What Are We Learning Today?</h3>
+      <p>Did you know that even professional authors do not write a perfect piece on the first try? Great writing is a <strong>process</strong> -- it happens in stages. Today we learn the three most important stages: <strong>planning</strong> (before you write), <strong>revising</strong> (improving your ideas), and <strong>editing</strong> (fixing your mistakes).</p>
+    </div>
+
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#37474f;">Planning</span> -- Organising your ideas BEFORE you write. Using tools like graphic organisers, lists, or outlines.</div>
+      <div class="vocab-item"><span class="word" style="color:#37474f;">Draft</span> -- Your first attempt at writing -- not perfect, just getting your ideas down.</div>
+      <div class="vocab-item"><span class="word" style="color:#37474f;">Revising</span> -- Going back to improve your IDEAS -- adding details, reordering events, strengthening reasons.</div>
+      <div class="vocab-item"><span class="word" style="color:#37474f;">Editing</span> -- Fixing MISTAKES in spelling, punctuation, capitalisation, and grammar.</div>
+      <div class="vocab-item"><span class="word" style="color:#37474f;">Publishing</span> -- Creating a final, polished version to share with others.</div>
+      <div class="vocab-item"><span class="word" style="color:#37474f;">Peer Review</span> -- When a classmate or partner reads your work and gives helpful feedback.</div>
+    </div>
+
+    <div class="section s7">
+      <h3>The Writing Process -- 5 Stages</h3>
+      <div class="step-row">
+        <div class="step-circle" style="background:#37474f;">1</div>
+        <div><strong>PREWRITING (Planning)</strong> -- Brainstorm your ideas. Use a graphic organiser, web, or list. Decide on your topic, audience, and purpose. Answer: What do I want to say? Who am I writing for?</div>
+      </div>
+      <div class="step-row">
+        <div class="step-circle" style="background:#37474f;">2</div>
+        <div><strong>DRAFTING</strong> -- Write your first draft. Get ALL your ideas down. Do not worry about perfection -- just write! You can fix it later.</div>
+      </div>
+      <div class="step-row">
+        <div class="step-circle" style="background:#37474f;">3</div>
+        <div><strong>REVISING</strong> -- Improve your IDEAS. Add missing details. Remove things that do not belong. Reorder events or reasons. Strengthen weak sentences. Ask: Does this make sense? Is there anything missing?</div>
+      </div>
+      <div class="step-row">
+        <div class="step-circle" style="background:#37474f;">4</div>
+        <div><strong>EDITING</strong> -- Fix your MISTAKES. Check spelling, punctuation, capitalisation, and grammar. This is different from revising -- editing fixes errors, not ideas.</div>
+      </div>
+      <div class="step-row">
+        <div class="step-circle" style="background:#37474f;">5</div>
+        <div><strong>PUBLISHING</strong> -- Create your final version! Write neatly, type it up, add illustrations, or share it with others. Be proud of your work!</div>
+      </div>
+    </div>
+
+    <div class="section s7">
+      <h3>Revising vs. Editing -- Know the Difference!</h3>
+      <table>
+        <tr><th>Revising (Big picture -- IDEAS)</th><th>Editing (Details -- CORRECTNESS)</th></tr>
+        <tr><td>Add more descriptive details</td><td>Fix spelling mistakes</td></tr>
+        <tr><td>Strengthen a weak reason</td><td>Add missing punctuation marks</td></tr>
+        <tr><td>Remove sentences that don't fit</td><td>Capitalise proper nouns and sentence beginnings</td></tr>
+        <tr><td>Reorder events to make more sense</td><td>Correct subject-verb agreement</td></tr>
+        <tr><td>Make the beginning more engaging</td><td>Check that dialogue is punctuated correctly</td></tr>
+      </table>
+    </div>
+
+    <div class="section s7">
+      <h3>Editing Checklist -- Use This Every Time!</h3>
+      <div class="checklist-item"><div class="check">1</div><div>Every sentence starts with a capital letter.</div></div>
+      <div class="checklist-item"><div class="check">2</div><div>Every sentence ends with a period, question mark, or exclamation mark.</div></div>
+      <div class="checklist-item"><div class="check">3</div><div>All proper nouns (names of people and places) are capitalised.</div></div>
+      <div class="checklist-item"><div class="check">4</div><div>Dialogue is inside quotation marks with correct punctuation.</div></div>
+      <div class="checklist-item"><div class="check">5</div><div>Spelling has been checked -- especially sight words!</div></div>
+      <div class="checklist-item"><div class="check">6</div><div>Each paragraph has a clear main idea.</div></div>
+      <div class="checklist-item"><div class="check">7</div><div>The writing has a clear beginning, middle, and end.</div></div>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Take any piece of writing you have done in this unit. Go through the <strong>editing checklist</strong> above. Fix at least THREE things.</li>
+        <li>Now revise the same piece -- add ONE new descriptive detail and strengthen ONE reason or sentence.</li>
+        <li>Ask a parent or family member to read your revised piece. What feedback do they give? Can you improve it further?</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>You Finished Unit 4!</h3>
+      <p>The Writing Process: <strong>Plan → Draft → Revise → Edit → Publish</strong></p>
+      <p><strong>REVISING</strong> = improving your IDEAS (add, remove, reorder)</p>
+      <p><strong>EDITING</strong> = fixing MISTAKES (spelling, punctuation, capitalisation)</p>
+      <p>Every great writer revises and edits -- it is part of the process!</p>
+      <p class="cta" style="color:#37474f;">Outstanding! You have completed all 7 lessons in Unit 4! Now take the Unit 4 Quiz!</p>
+    </div>
+  </div>
+</div>
+
+</div>
+<script>
+  const sections = document.querySelectorAll('.lesson-section');
+  const navLinks = document.querySelectorAll('.nav-bar a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 80) current = s.getAttribute('id'); });
+    navLinks.forEach(l => { l.classList.remove('active'); if (l.getAttribute('href') === '#' + current) l.classList.add('active'); });
+  });
+</script>
+</body>
+</html>
