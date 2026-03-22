@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit 14 – Life Science: Ecosystems and Habitats | Owl Smart 3rd Grade</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #f4f7fb; color: #2d2d2d; line-height: 1.8; }
+    .top-header { background: linear-gradient(135deg, #004d40, #00695c); color: white; text-align: center; padding: 24px 20px 16px; }
+    .top-header h1 { font-size: 1.5em; margin-bottom: 4px; }
+    .top-header p { font-size: 0.95em; opacity: 0.88; }
+    .nav-bar { background: #004d40; padding: 0 10px; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.3); overflow-x: auto; white-space: nowrap; }
+    .nav-bar a { display: inline-block; color: rgba(255,255,255,0.8); text-decoration: none; padding: 12px 14px; font-size: 0.82em; font-weight: bold; border-bottom: 3px solid transparent; transition: all 0.2s; }
+    .nav-bar a:hover, .nav-bar a.active { color: white; border-bottom-color: #ffd600; }
+    .main { max-width: 860px; margin: 0 auto; padding: 20px; }
+    .lesson-section { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.08); margin-bottom: 40px; scroll-margin-top: 60px; }
+    .banner { color: white; text-align: center; padding: 28px 24px; }
+    .banner h2 { font-size: 1.45em; margin-bottom: 6px; }
+    .banner p { font-size: 0.97em; opacity: 0.92; margin-bottom: 10px; }
+    .lesson-num { display: inline-block; background: rgba(255,255,255,0.25); border-radius: 20px; padding: 3px 14px; font-size: 0.82em; font-weight: bold; }
+    .b1 { background: linear-gradient(135deg, #004d40, #00897b); }
+    .b2 { background: linear-gradient(135deg, #1b5e20, #388e3c); }
+    .b3 { background: linear-gradient(135deg, #e65100, #f57c00); }
+    .b4 { background: linear-gradient(135deg, #1a237e, #3949ab); }
+    .b5 { background: linear-gradient(135deg, #4a148c, #7b1fa2); }
+    .b6 { background: linear-gradient(135deg, #b71c1c, #e53935); }
+    .lesson-content { padding: 26px; }
+    .section { border-left: 5px solid; border-radius: 0 10px 10px 0; padding: 18px 20px; margin-bottom: 20px; }
+    .s1 { background: #e0f2f1; border-color: #004d40; } .s1 h3 { color: #004d40; }
+    .s2 { background: #e8f5e9; border-color: #1b5e20; } .s2 h3 { color: #1b5e20; }
+    .s3 { background: #fff3e0; border-color: #e65100; } .s3 h3 { color: #e65100; }
+    .s4 { background: #e8eaf6; border-color: #1a237e; } .s4 h3 { color: #1a237e; }
+    .s5 { background: #f3e5f5; border-color: #4a148c; } .s5 h3 { color: #4a148c; }
+    .s6 { background: #ffebee; border-color: #b71c1c; } .s6 h3 { color: #b71c1c; }
+    .section h3 { margin-bottom: 8px; font-size: 1.05em; }
+    .vocab-box { background: #fff8e1; border: 2px solid #ffc107; border-radius: 10px; padding: 18px 20px; margin-bottom: 20px; }
+    .vocab-box h3 { color: #e65100; margin-bottom: 12px; font-size: 1.05em; }
+    .vocab-item { margin: 8px 0; font-size: 0.95em; }
+    .word { font-weight: bold; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.93em; }
+    th { background: #004d40; color: white; padding: 9px 12px; text-align: left; }
+    td { padding: 9px 12px; border-bottom: 1px solid #e0e0e0; }
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) { background: #f5f5f5; }
+    .tip { background: #e8f5e9; border-left: 4px solid #43a047; border-radius: 0 8px 8px 0; padding: 12px 16px; margin: 12px 0; color: #1b5e20; font-size: 0.93em; }
+    .tip strong { color: #2e7d32; }
+    .try-it { background: #ede7f6; border: 2px dashed #7e57c2; border-radius: 10px; padding: 18px 20px; margin-bottom: 20px; }
+    .try-it h3 { color: #4527a0; margin-bottom: 10px; font-size: 1.05em; }
+    .try-it ol { padding-left: 20px; }
+    .try-it li { margin: 8px 0; font-size: 0.95em; }
+    .remember { background: #fff3e0; border: 2px solid #ff8f00; border-radius: 10px; padding: 18px 20px; text-align: center; margin-bottom: 4px; }
+    .remember h3 { color: #e65100; margin-bottom: 10px; font-size: 1.05em; }
+    .remember p { margin: 5px 0; font-size: 0.95em; }
+    .remember .cta { font-weight: bold; font-size: 1.05em; margin-top: 12px; }
+    .flex-row { display: flex; gap: 12px; flex-wrap: wrap; margin: 10px 0; }
+    .flex-col { flex: 1; min-width: 150px; border-radius: 10px; padding: 14px 16px; }
+    .fb-teal { background: #e0f2f1; border: 2px solid #00897b; } .fb-teal h4 { color: #004d40; margin-bottom: 6px; }
+    .fb-green { background: #e8f5e9; border: 2px solid #388e3c; } .fb-green h4 { color: #1b5e20; margin-bottom: 6px; }
+    .fb-orange { background: #fff3e0; border: 2px solid #f57c00; } .fb-orange h4 { color: #e65100; margin-bottom: 6px; }
+    .fb-blue { background: #e3f2fd; border: 2px solid #1976d2; } .fb-blue h4 { color: #0d47a1; margin-bottom: 6px; }
+    .fb-purple { background: #f3e5f5; border: 2px solid #7b1fa2; } .fb-purple h4 { color: #4a148c; margin-bottom: 6px; }
+    .fb-red { background: #ffebee; border: 2px solid #e53935; } .fb-red h4 { color: #b71c1c; margin-bottom: 6px; }
+    .fb-brown { background: #efebe9; border: 2px solid #795548; } .fb-brown h4 { color: #4e342e; margin-bottom: 6px; }
+    .science-box { background: #e0f2f1; border: 2px solid #00897b; border-radius: 10px; padding: 16px 18px; margin-bottom: 14px; }
+    .science-box h4 { color: #004d40; margin-bottom: 8px; font-size: 0.98em; }
+    .chain-row { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin: 12px 0; justify-content: center; }
+    .chain-box { border-radius: 10px; padding: 8px 14px; font-size: 0.88em; font-weight: bold; text-align: center; min-width: 90px; color: white; }
+    .cb-green { background: #2e7d32; }
+    .cb-orange { background: #e65100; }
+    .cb-blue { background: #0d47a1; }
+    .cb-purple { background: #4a148c; }
+    .cb-brown { background: #5d4037; }
+    .chain-arrow { color: #37474f; font-size: 1.4em; font-weight: bold; }
+    .role-tag { display: inline-block; border-radius: 16px; padding: 5px 16px; font-size: 0.88em; font-weight: bold; color: white; margin: 4px; }
+    .rt-producer { background: #2e7d32; }
+    .rt-consumer { background: #e65100; }
+    .rt-decomposer { background: #5d4037; }
+    .rt-carnivore { background: #b71c1c; }
+    .rt-herbivore { background: #558b2f; }
+    .rt-omnivore { background: #f57f17; }
+    ul { padding-left: 20px; } li { margin: 5px 0; font-size: 0.95em; }
+    p { margin-bottom: 8px; font-size: 0.95em; }
+  </style>
+</head>
+<body>
+
+<div class="top-header">
+  <h1>Owl Smart: A 3rd Grade Learning Journey</h1>
+  <p>Unit 14 -- Life Science: Ecosystems and Habitats &nbsp;|&nbsp; 6 Lessons</p>
+</div>
+
+<div class="nav-bar">
+  <a href="#lesson1">14.1 Ecosystems</a>
+  <a href="#lesson2">14.2 Food Chains</a>
+  <a href="#lesson3">14.3 Producers &amp; Consumers</a>
+  <a href="#lesson4">14.4 Habitats</a>
+  <a href="#lesson5">14.5 Interdependence</a>
+  <a href="#lesson6">14.6 Changes</a>
+</div>
+
+<div class="main">
+
+<!-- LESSON 14.1 -->
+<div class="lesson-section" id="lesson1">
+  <div class="banner b1">
+    <span class="lesson-num">Lesson 14.1</span>
+    <h2>What Is an Ecosystem?</h2>
+    <p>A community of living things interacting with each other and their environment!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s1">
+      <h3>What Are We Learning Today?</h3>
+      <p>Imagine a pond. It has water, rocks, soil, sunlight, fish, frogs, insects, plants, and bacteria -- all interacting with each other constantly. That whole system working together is an <strong>ecosystem</strong>! Today we learn what makes up an ecosystem, the different types that exist, and how living and nonliving parts work together.</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#004d40;">Ecosystem</span> -- All the living things and nonliving things in an area, interacting together.</div>
+      <div class="vocab-item"><span class="word" style="color:#004d40;">Biotic</span> -- The living parts of an ecosystem: plants, animals, fungi, bacteria.</div>
+      <div class="vocab-item"><span class="word" style="color:#004d40;">Abiotic</span> -- The nonliving parts of an ecosystem: sunlight, water, temperature, soil, air.</div>
+      <div class="vocab-item"><span class="word" style="color:#004d40;">Population</span> -- All members of the same species living in an area. Example: all the salmon in a river.</div>
+      <div class="vocab-item"><span class="word" style="color:#004d40;">Community</span> -- All the different populations living together in an area.</div>
+      <div class="vocab-item"><span class="word" style="color:#004d40;">Biome</span> -- A large geographic area with a similar climate and community of organisms.</div>
+    </div>
+
+    <div class="section s1">
+      <h3>The Parts of an Ecosystem</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-green">
+          <h4>Biotic (Living) Parts</h4>
+          <ul>
+            <li>Plants and trees</li>
+            <li>Animals (all types)</li>
+            <li>Fungi (mushrooms)</li>
+            <li>Bacteria and microbes</li>
+          </ul>
+        </div>
+        <div class="flex-col fb-blue">
+          <h4>Abiotic (Nonliving) Parts</h4>
+          <ul>
+            <li>Sunlight and temperature</li>
+            <li>Water and rain</li>
+            <li>Soil and rocks</li>
+            <li>Air and wind</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tip"><strong>Key Idea:</strong> In a healthy ecosystem, the biotic and abiotic parts are perfectly balanced and depend on each other. Changing one part -- even a nonliving part like rainfall -- can affect every living thing in the ecosystem.</div>
+    </div>
+
+    <div class="section s1">
+      <h3>Major Types of Ecosystems (Biomes)</h3>
+      <table>
+        <tr><th>Biome</th><th>Climate</th><th>Key Features</th><th>Example Location</th></tr>
+        <tr><td><strong>Rainforest</strong></td><td>Hot, very wet</td><td>Dense trees, enormous biodiversity</td><td>Amazon, Congo</td></tr>
+        <tr><td><strong>Desert</strong></td><td>Hot/cold, very dry</td><td>Little rain, extreme temperatures</td><td>Sahara, Sonoran</td></tr>
+        <tr><td><strong>Grassland</strong></td><td>Warm, moderate rain</td><td>Grasses dominate, few trees</td><td>African savanna, Great Plains</td></tr>
+        <tr><td><strong>Temperate Forest</strong></td><td>4 seasons, moderate rain</td><td>Deciduous trees, rich wildlife</td><td>Washington state, Eastern US</td></tr>
+        <tr><td><strong>Tundra</strong></td><td>Very cold, dry</td><td>Permafrost, low shrubs, few trees</td><td>Alaska, Northern Canada</td></tr>
+        <tr><td><strong>Ocean</strong></td><td>Varies by depth</td><td>Saltwater, enormous size (71% of Earth)</td><td>Pacific, Atlantic</td></tr>
+        <tr><td><strong>Freshwater</strong></td><td>Varies</td><td>Rivers, lakes, wetlands</td><td>Great Lakes, Columbia River</td></tr>
+      </table>
+    </div>
+
+    <div class="science-box">
+      <h4>Washington State Ecosystems</h4>
+      <p>Washington state is extraordinary -- it has MULTIPLE biomes! The west side has temperate rainforests (Olympic Peninsula receives over 140 inches of rain per year!). The Cascade Mountains create a "rain shadow," making eastern Washington a semi-arid shrub-steppe ecosystem. The Columbia River creates a rich freshwater ecosystem. Washington also borders the Pacific Ocean. Few states have such diverse ecosystems!</p>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>List THREE biotic and THREE abiotic parts of a forest ecosystem.</li>
+        <li>What is the difference between a population and a community?</li>
+        <li>Which biome do you think you live in near Kennewick, Washington? What clues tell you?</li>
+        <li>If all the rain stopped falling in a forest ecosystem, what would happen to the biotic parts? Explain.</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p><strong>Biotic</strong> = living parts &nbsp;|&nbsp; <strong>Abiotic</strong> = nonliving parts</p>
+      <p>An <strong>ecosystem</strong> = all living AND nonliving things in an area, interacting.</p>
+      <p>A <strong>biome</strong> is a large area with a similar climate and community.</p>
+      <p class="cta" style="color:#004d40;">Great start! Click Lesson 14.2!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 14.2 -->
+<div class="lesson-section" id="lesson2">
+  <div class="banner b2">
+    <span class="lesson-num">Lesson 14.2</span>
+    <h2>Food Chains and Food Webs</h2>
+    <p>Energy flows from one organism to the next -- follow the chain!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s2">
+      <h3>What Are We Learning Today?</h3>
+      <p>Every organism needs energy to live. Plants get energy from sunlight. Animals get energy by eating other organisms. A <strong>food chain</strong> shows this flow of energy from one organism to the next. But in real ecosystems, eating relationships are much more complex -- they form a <strong>food web</strong>!</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Food Chain</span> -- A sequence showing how energy passes from one organism to the next through eating.</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Food Web</span> -- Multiple interconnected food chains showing the complex feeding relationships in an ecosystem.</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Energy Flow</span> -- The transfer of energy from one organism to another through eating.</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Arrow in Food Chain</span> -- Points FROM what is eaten TO the eater (shows direction of energy flow).</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Trophic Level</span> -- Each level in a food chain (producers are first, primary consumers second, etc.).</div>
+    </div>
+
+    <div class="section s2">
+      <h3>Reading a Food Chain</h3>
+      <p style="margin-bottom:10px; font-size:0.95em;">The arrows show WHERE THE ENERGY GOES -- from the eaten to the eater!</p>
+      <div class="chain-row">
+        <div class="chain-box cb-green">Grass<br>(producer)</div>
+        <div class="chain-arrow">→</div>
+        <div class="chain-box cb-orange">Grasshopper<br>(primary consumer)</div>
+        <div class="chain-arrow">→</div>
+        <div class="chain-box cb-blue">Frog<br>(secondary consumer)</div>
+        <div class="chain-arrow">→</div>
+        <div class="chain-box cb-purple">Snake<br>(tertiary consumer)</div>
+        <div class="chain-arrow">→</div>
+        <div class="chain-box cb-brown">Hawk<br>(apex predator)</div>
+      </div>
+      <p style="font-size:0.88em; color:#37474f; text-align:center; margin-top:8px;">Energy flows: Grass → Grasshopper → Frog → Snake → Hawk. Each arrow means "is eaten by" or "energy flows to."</p>
+    </div>
+
+    <div class="section s2">
+      <h3>A Pacific Northwest Food Chain</h3>
+      <div class="chain-row">
+        <div class="chain-box cb-green">Algae &amp;<br>Aquatic Plants</div>
+        <div class="chain-arrow">→</div>
+        <div class="chain-box cb-orange">Small<br>Insects</div>
+        <div class="chain-arrow">→</div>
+        <div class="chain-box cb-blue">Salmon</div>
+        <div class="chain-arrow">→</div>
+        <div class="chain-box cb-purple">Black Bear</div>
+        <div class="chain-arrow">→</div>
+        <div class="chain-box cb-brown">Decomposers<br>(fungi, bacteria)</div>
+      </div>
+    </div>
+
+    <div class="section s2">
+      <h3>From Food Chain to Food Web</h3>
+      <p>Real ecosystems are more complex -- most animals eat more than one type of food, creating an interconnected <strong>food web</strong>:</p>
+      <div class="science-box">
+        <h4>Example Forest Food Web Connections:</h4>
+        <p>Mice eat seeds AND berries. Owls eat mice AND rabbits. Rabbits eat grass AND leaves. Foxes eat mice AND rabbits AND berries. A hawk eats mice AND rabbits AND snakes. All these interconnections create a web where removing ONE species affects many others!</p>
+      </div>
+      <div class="tip"><strong>Why food webs matter:</strong> If one animal in a food web disappears, it affects ALL the others connected to it. This is why the loss of even one species can ripple through an entire ecosystem!</div>
+    </div>
+
+    <div class="section s2">
+      <h3>What Happens When a Chain Is Broken?</h3>
+      <table>
+        <tr><th>If this disappears...</th><th>Effect on the food chain</th></tr>
+        <tr><td>All the grass (producers)</td><td>Grasshoppers starve → frogs starve → snakes starve → hawks starve. Entire chain collapses!</td></tr>
+        <tr><td>All the frogs</td><td>Grasshoppers multiply out of control (too many). Snakes starve (not enough food).</td></tr>
+        <tr><td>All the hawks (top predator)</td><td>Snake population explodes → too many snakes → frogs decline → grasshoppers explode.</td></tr>
+      </table>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Draw a food chain with at least 4 organisms from a forest. Label the producer and consumers.</li>
+        <li>In a food chain, what do the arrows represent?</li>
+        <li>Why is a food web more realistic than a single food chain?</li>
+        <li>If all the wolves disappeared from a forest, what might happen to the deer population? To the plants? Explain the chain reaction.</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p>Arrows in a food chain show the direction of <strong>energy flow</strong> (from eaten to eater).</p>
+      <p>Food chains start with <strong>producers</strong> (plants). Consumers follow.</p>
+      <p>A <strong>food web</strong> shows multiple interconnected food chains -- more realistic!</p>
+      <p class="cta" style="color:#1b5e20;">Excellent! Click Lesson 14.3!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 14.3 -->
+<div class="lesson-section" id="lesson3">
+  <div class="banner b3">
+    <span class="lesson-num">Lesson 14.3</span>
+    <h2>Producers, Consumers, and Decomposers</h2>
+    <p>Every organism plays a role in the ecosystem's energy cycle!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s3">
+      <h3>What Are We Learning Today?</h3>
+      <p>In every ecosystem, organisms play one of three key roles: they <strong>produce</strong> energy, <strong>consume</strong> energy, or <strong>decompose</strong> dead matter. Understanding these roles helps us see how energy and nutrients cycle continuously through an ecosystem -- nothing is ever wasted!</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Producer</span> -- An organism that makes its own food using sunlight (photosynthesis). All plants are producers.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Consumer</span> -- An organism that gets energy by eating other organisms.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Decomposer</span> -- An organism that breaks down dead plants and animals into nutrients that return to the soil.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Herbivore</span> -- A consumer that eats ONLY plants. Example: rabbit, deer, caterpillar.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Carnivore</span> -- A consumer that eats ONLY animals. Example: lion, eagle, shark.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Omnivore</span> -- A consumer that eats BOTH plants and animals. Example: bear, raccoon, humans.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Predator</span> -- An animal that hunts and eats other animals (prey).</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Prey</span> -- An animal that is hunted and eaten by predators.</div>
+    </div>
+
+    <div class="section s3">
+      <h3>The Three Roles</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-green">
+          <h4>PRODUCERS</h4>
+          <span class="role-tag rt-producer">Make their own food</span>
+          <p style="margin-top:8px;">All plants, algae, and some bacteria. Use photosynthesis to convert sunlight into sugar. The FOUNDATION of every ecosystem.</p>
+          <p style="font-size:0.88em; margin-top:6px;"><em>Examples: grass, trees, kelp, phytoplankton</em></p>
+        </div>
+        <div class="flex-col fb-orange">
+          <h4>CONSUMERS</h4>
+          <span class="role-tag rt-consumer">Eat other organisms</span>
+          <p style="margin-top:8px;">Must eat producers or other consumers for energy. Divided by what they eat and their level in the food chain.</p>
+          <p style="font-size:0.88em; margin-top:6px;"><em>Examples: deer (herbivore), wolf (carnivore), bear (omnivore)</em></p>
+        </div>
+        <div class="flex-col fb-brown">
+          <h4>DECOMPOSERS</h4>
+          <span class="role-tag rt-decomposer">Break down dead matter</span>
+          <p style="margin-top:8px;">Break down dead plants and animals, returning nutrients to the soil for new plants to use. ESSENTIAL recyclers!</p>
+          <p style="font-size:0.88em; margin-top:6px;"><em>Examples: mushrooms, bacteria, earthworms</em></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section s3">
+      <h3>Types of Consumers</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-green">
+          <h4>Herbivores (plant-eaters)</h4>
+          <span class="role-tag rt-herbivore">Eat plants only</span>
+          <p style="font-size:0.88em; margin-top:6px;">Rabbit, deer, cow, caterpillar, koala, horse, sheep, butterfly</p>
+        </div>
+        <div class="flex-col fb-red">
+          <h4>Carnivores (meat-eaters)</h4>
+          <span class="role-tag rt-carnivore">Eat animals only</span>
+          <p style="font-size:0.88em; margin-top:6px;">Lion, eagle, shark, wolf, orca, spider, dragonfly</p>
+        </div>
+        <div class="flex-col fb-orange">
+          <h4>Omnivores (both)</h4>
+          <span class="role-tag rt-omnivore">Eat plants AND animals</span>
+          <p style="font-size:0.88em; margin-top:6px;">Bear, raccoon, crow, pig, human, chipmunk, box turtle</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section s3">
+      <h3>Why Decomposers Are Heroes!</h3>
+      <p>Without decomposers, dead plants and animals would pile up everywhere -- and the nutrients locked inside them would never return to the soil. Decomposers are nature's recyclers:</p>
+      <div class="chain-row">
+        <div class="chain-box cb-brown">Dead plant<br>or animal</div>
+        <div class="chain-arrow">→</div>
+        <div class="chain-box cb-brown">Decomposers<br>break it down</div>
+        <div class="chain-arrow">→</div>
+        <div class="chain-box cb-green">Nutrients return<br>to soil</div>
+        <div class="chain-arrow">→</div>
+        <div class="chain-box cb-green">New plants<br>grow</div>
+        <div class="chain-arrow">→</div>
+        <div class="chain-box cb-orange">Consumers<br>eat plants</div>
+      </div>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Classify each organism as producer, consumer, or decomposer: mushroom, oak tree, grasshopper, earthworm, eagle, algae.</li>
+        <li>A bear eats berries in summer and salmon in autumn. What type of consumer is a bear?</li>
+        <li>Why would an ecosystem fail without decomposers? What would happen?</li>
+        <li>Give one example each of an herbivore, carnivore, and omnivore from Washington state.</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p><strong>PRODUCER</strong> = makes food (plants) &nbsp;|&nbsp; <strong>CONSUMER</strong> = eats other organisms</p>
+      <p><strong>DECOMPOSER</strong> = breaks down dead matter (mushrooms, bacteria)</p>
+      <p>Herbivore = plants only &nbsp;|&nbsp; Carnivore = animals only &nbsp;|&nbsp; Omnivore = both</p>
+      <p class="cta" style="color:#e65100;">Well done! Click Lesson 14.4!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 14.4 -->
+<div class="lesson-section" id="lesson4">
+  <div class="banner b4">
+    <span class="lesson-num">Lesson 14.4</span>
+    <h2>Habitats and Niches</h2>
+    <p>Where an organism lives and its role in the ecosystem!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s4">
+      <h3>What Are We Learning Today?</h3>
+      <p>Every organism has a <strong>habitat</strong> -- a specific place where it lives that provides everything it needs. But even within the same habitat, each organism has a unique <strong>niche</strong> -- a specific role it plays. Understanding habitats and niches helps us see why biodiversity is so valuable!</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#1a237e;">Habitat</span> -- The specific environment where an organism lives, which provides its food, water, shelter, and space.</div>
+      <div class="vocab-item"><span class="word" style="color:#1a237e;">Niche</span> -- An organism's specific role in its ecosystem -- what it eats, where it lives, how it behaves.</div>
+      <div class="vocab-item"><span class="word" style="color:#1a237e;">Biodiversity</span> -- The variety of different species in an ecosystem. More biodiversity = healthier ecosystem.</div>
+      <div class="vocab-item"><span class="word" style="color:#1a237e;">Competition</span> -- When organisms fight for the same limited resource (food, water, space, mates).</div>
+      <div class="vocab-item"><span class="word" style="color:#1a237e;">Predator-Prey</span> -- A relationship where one organism (predator) hunts and eats another (prey).</div>
+      <div class="vocab-item"><span class="word" style="color:#1a237e;">Symbiosis</span> -- A close relationship between two different species living together.</div>
+    </div>
+
+    <div class="section s4">
+      <h3>Major Habitat Types</h3>
+      <table>
+        <tr><th>Habitat</th><th>What It Provides</th><th>Animals That Live There</th></tr>
+        <tr><td><strong>Forest</strong></td><td>Trees for shelter/food, shade, soil</td><td>Deer, owls, bears, squirrels, woodpeckers</td></tr>
+        <tr><td><strong>Ocean</strong></td><td>Saltwater, enormous space, mineral nutrients</td><td>Whales, sharks, sea turtles, fish, octopus</td></tr>
+        <tr><td><strong>Pond / River</strong></td><td>Freshwater, plants, sediment</td><td>Frogs, otters, salmon, dragonflies, herons</td></tr>
+        <tr><td><strong>Desert</strong></td><td>Dry soil, rocks, sparse vegetation</td><td>Coyotes, rattlesnakes, roadrunners, scorpions</td></tr>
+        <tr><td><strong>Grassland</strong></td><td>Open space, grasses, seasonal water</td><td>Bison, prairie dogs, hawks, rabbits</td></tr>
+        <tr><td><strong>Arctic/Tundra</strong></td><td>Cold, ice, short summers</td><td>Polar bears, Arctic foxes, lemmings, snowy owls</td></tr>
+      </table>
+    </div>
+
+    <div class="section s4">
+      <h3>Niche -- Each Species Has a Unique Role!</h3>
+      <p>Even in the same forest, different animals have different niches so they do not compete for exactly the same resources:</p>
+      <div class="flex-row">
+        <div class="flex-col fb-blue">
+          <h4>Woodpecker</h4>
+          <p>Niche: pecks into tree bark to find insects. Lives in tree cavities. Active in daytime.</p>
+        </div>
+        <div class="flex-col fb-purple">
+          <h4>Owl</h4>
+          <p>Niche: hunts mice and voles at night using silent flight and night vision. Nests in tree holes.</p>
+        </div>
+        <div class="flex-col fb-teal">
+          <h4>Deer</h4>
+          <p>Niche: grazes on shrubs and plants on the forest floor. Most active at dawn and dusk.</p>
+        </div>
+      </div>
+      <div class="tip"><strong>The Niche Rule:</strong> No two species can occupy exactly the same niche in the same ecosystem for long. If they do, they compete intensely until one outcompetes the other. Different niches = less competition = more biodiversity!</div>
+    </div>
+
+    <div class="section s4">
+      <h3>Types of Symbiosis</h3>
+      <table>
+        <tr><th>Type</th><th>Who Benefits</th><th>Example</th></tr>
+        <tr><td><strong>Mutualism</strong></td><td>BOTH species benefit</td><td>Bee pollinates flower (flower gets pollinated, bee gets nectar)</td></tr>
+        <tr><td><strong>Commensalism</strong></td><td>ONE benefits, other is not affected</td><td>Barnacles attach to whale (barnacle gets transport, whale is fine)</td></tr>
+        <tr><td><strong>Parasitism</strong></td><td>ONE benefits, other is HARMED</td><td>Tick on a dog (tick feeds on blood, dog gets irritated/sick)</td></tr>
+      </table>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Describe the habitat of a salmon. What does it need the habitat to provide?</li>
+        <li>What is the difference between a habitat and a niche?</li>
+        <li>A bee visits a flower. What type of symbiosis is this? Who benefits and how?</li>
+        <li>Why does more biodiversity make an ecosystem healthier?</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p><strong>Habitat</strong> = WHERE an organism lives (forest, ocean, desert).</p>
+      <p><strong>Niche</strong> = the specific ROLE an organism plays (what it eats, when active).</p>
+      <p><strong>Mutualism</strong> = both benefit &nbsp;|&nbsp; <strong>Parasitism</strong> = one benefits, one harmed</p>
+      <p class="cta" style="color:#1a237e;">Keep going! Click Lesson 14.5!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 14.5 -->
+<div class="lesson-section" id="lesson5">
+  <div class="banner b5">
+    <span class="lesson-num">Lesson 14.5</span>
+    <h2>How Living Things Depend on Each Other</h2>
+    <p>In nature, everything is connected -- discover the web of interdependence!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s5">
+      <h3>What Are We Learning Today?</h3>
+      <p>No organism lives in isolation. Every living thing in an ecosystem affects others in complex ways. When we understand these connections, we see that <strong>interdependence</strong> -- the way living things depend on each other -- is what keeps ecosystems healthy and balanced. Today we explore these remarkable relationships!</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Interdependence</span> -- The way living things in an ecosystem depend on each other to survive.</div>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Keystone Species</span> -- A species that has a disproportionately large effect on its ecosystem -- removing it causes major changes.</div>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Balance</span> -- When populations in an ecosystem are stable because resources and needs are in harmony.</div>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Overpopulation</span> -- When a species grows too large and strains the ecosystem's resources.</div>
+    </div>
+
+    <div class="section s5">
+      <h3>Amazing Examples of Interdependence</h3>
+      <div class="science-box">
+        <h4>Example 1: Wolves and Yellowstone National Park</h4>
+        <p>Wolves were removed from Yellowstone in the 1920s. Without wolves, deer overpopulated and overgrazed, destroying vegetation near rivers. The banks eroded. Fish habitat disappeared. Then in 1995, wolves were reintroduced. Deer moved away from riverbanks. Vegetation grew back. Rivers stabilised. Fish returned. Songbirds returned. The wolves changed the very shape of the rivers -- this is called a <strong>trophic cascade!</strong></p>
+      </div>
+      <div class="science-box">
+        <h4>Example 2: Sea Otters and Kelp Forests</h4>
+        <p>Sea otters eat sea urchins. Sea urchins eat kelp. Without sea otters, sea urchins multiply and destroy kelp forests. Without kelp forests, hundreds of species lose their habitat. Sea otters are a <strong>keystone species</strong> -- they hold the whole kelp forest ecosystem together!</p>
+      </div>
+      <div class="science-box">
+        <h4>Example 3: Trees and Mycorrhizal Fungi</h4>
+        <p>Forest trees share nutrients through underground fungal networks -- scientists call it the "Wood Wide Web"! Fungi help trees absorb water and minerals; trees share sugar with fungi through their roots. Trees even send nutrients through these networks to help dying neighbours. Trees in a forest are literally connected and helping each other!</p>
+      </div>
+    </div>
+
+    <div class="section s5">
+      <h3>Predator-Prey Balance</h3>
+      <p>Predators and prey keep each other's populations in balance -- a delicate dance:</p>
+      <div class="flex-row">
+        <div class="flex-col fb-purple">
+          <h4>When prey increase:</h4>
+          <p>More food for predators → predator population grows → more predators eat more prey → prey population falls → predators have less food → predator population falls → cycle repeats</p>
+        </div>
+        <div class="flex-col fb-red">
+          <h4>When predators disappear:</h4>
+          <p>Prey population explodes → they overeat vegetation → plants decline → prey population crashes from starvation → whole ecosystem destabilised</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>What is a keystone species? Why is the sea otter a keystone species?</li>
+        <li>If all the bees disappeared, describe THREE things that would be affected in an ecosystem.</li>
+        <li>What is a trophic cascade? Describe the Yellowstone wolf example in your own words.</li>
+        <li>Why is biodiversity important for keeping ecosystems stable?</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p><strong>Interdependence</strong> = living things depend on each other.</p>
+      <p>A <strong>keystone species</strong> holds the ecosystem together -- removing it causes huge changes.</p>
+      <p>Predator-prey populations <strong>balance each other</strong> in a natural cycle.</p>
+      <p class="cta" style="color:#4a148c;">One more! Click Lesson 14.6!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 14.6 -->
+<div class="lesson-section" id="lesson6">
+  <div class="banner b6">
+    <span class="lesson-num">Lesson 14.6</span>
+    <h2>Changes to Ecosystems</h2>
+    <p>How natural events and human actions change the balance of ecosystems!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s6">
+      <h3>What Are We Learning Today?</h3>
+      <p>Ecosystems are always changing -- sometimes slowly, sometimes suddenly. Changes can be <strong>natural</strong> (wildfires, floods, volcanic eruptions) or caused by <strong>humans</strong> (deforestation, pollution, invasive species). Today we learn about these changes and -- importantly -- what we can do to help protect ecosystems!</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#b71c1c;">Natural Disaster</span> -- A natural event like a wildfire, flood, drought, or volcanic eruption that dramatically changes an ecosystem.</div>
+      <div class="vocab-item"><span class="word" style="color:#b71c1c;">Succession</span> -- The gradual process of an ecosystem recovering and rebuilding after a disturbance.</div>
+      <div class="vocab-item"><span class="word" style="color:#b71c1c;">Invasive Species</span> -- A species introduced to a new ecosystem where it has no natural predators and crowds out native species.</div>
+      <div class="vocab-item"><span class="word" style="color:#b71c1c;">Deforestation</span> -- The large-scale cutting down of forests, destroying habitat for many species.</div>
+      <div class="vocab-item"><span class="word" style="color:#b71c1c;">Pollution</span> -- Harmful substances introduced to an environment that damage living things.</div>
+      <div class="vocab-item"><span class="word" style="color:#b71c1c;">Conservation</span> -- Protecting and preserving natural ecosystems and species.</div>
+      <div class="vocab-item"><span class="word" style="color:#b71c1c;">Extinction</span> -- When ALL members of a species have died and can never return.</div>
+    </div>
+
+    <div class="section s6">
+      <h3>Natural Changes to Ecosystems</h3>
+      <table>
+        <tr><th>Natural Change</th><th>Short-Term Effect</th><th>Long-Term Effect</th></tr>
+        <tr><td><strong>Wildfire</strong></td><td>Destroys trees and drives animals away</td><td>Ash fertilises soil; fire-adapted plants regrow; many species return stronger</td></tr>
+        <tr><td><strong>Flood</strong></td><td>Drowns plants, displaces animals</td><td>Deposits rich sediment; wetland species thrive</td></tr>
+        <tr><td><strong>Drought</strong></td><td>Plants die; animals migrate or die</td><td>Ecosystem slowly recovers when rain returns</td></tr>
+        <tr><td><strong>Volcano</strong></td><td>Lava covers everything; total destruction</td><td>New fertile soil forms; life slowly returns (Mount St. Helens!)</td></tr>
+      </table>
+      <div class="tip"><strong>Washington Connection:</strong> Mount St. Helens erupted in 1980, devastating 230 square miles of forest. But within years, life began returning -- first wildflowers and insects, then birds and larger mammals. Today it is a thriving ecosystem AND a National Volcanic Monument!</div>
+    </div>
+
+    <div class="section s6">
+      <h3>Human Changes to Ecosystems</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-red">
+          <h4>Harmful Human Actions:</h4>
+          <ul>
+            <li><strong>Deforestation</strong> -- destroys habitat</li>
+            <li><strong>Pollution</strong> -- harms water, air, soil</li>
+            <li><strong>Overfishing</strong> -- depletes fish populations</li>
+            <li><strong>Invasive species</strong> -- outcompete native species</li>
+            <li><strong>Climate change</strong> -- shifts temperature and rainfall patterns</li>
+          </ul>
+        </div>
+        <div class="flex-col fb-green">
+          <h4>Helpful Human Actions:</h4>
+          <ul>
+            <li><strong>Conservation</strong> -- protecting wild areas</li>
+            <li><strong>Reforestation</strong> -- planting trees</li>
+            <li><strong>Wildlife corridors</strong> -- connecting habitats</li>
+            <li><strong>Reducing pollution</strong> -- cleaner energy</li>
+            <li><strong>Species reintroduction</strong> -- bringing back lost species</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="section s6">
+      <h3>What Kids Can Do!</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-green">
+          <h4>At School and Home:</h4>
+          <ul>
+            <li>Reduce, reuse, recycle</li>
+            <li>Plant native plants and flowers for pollinators</li>
+            <li>Turn off lights to save energy</li>
+            <li>Pick up litter, especially near water</li>
+          </ul>
+        </div>
+        <div class="flex-col fb-teal">
+          <h4>In Your Community:</h4>
+          <ul>
+            <li>Join a local clean-up event</li>
+            <li>Support conservation organisations</li>
+            <li>Learn about local native species</li>
+            <li>Speak up for the environment!</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>What is an invasive species? Why are they harmful? Give one example.</li>
+        <li>How can a wildfire actually HELP an ecosystem in the long run?</li>
+        <li>Name THREE things humans can do to protect ecosystems.</li>
+        <li>Why is extinction permanent and so serious? What makes it different from a population declining?</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>You Finished Unit 14!</h3>
+      <p>Ecosystems change from both <strong>natural events</strong> and <strong>human actions.</strong></p>
+      <p><strong>Invasive species</strong> disrupt ecosystems by outcompeting native species.</p>
+      <p><strong>Conservation</strong> protects ecosystems. Everyone can help!</p>
+      <p>Extinction is <strong>permanent</strong> -- once a species is gone, it is gone forever.</p>
+      <p class="cta" style="color:#b71c1c;">Outstanding! You completed all 6 lessons in Unit 14! Now take the Unit 14 Quiz!</p>
+    </div>
+  </div>
+</div>
+
+</div>
+<script>
+  const sections = document.querySelectorAll('.lesson-section');
+  const navLinks = document.querySelectorAll('.nav-bar a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 80) current = s.getAttribute('id'); });
+    navLinks.forEach(l => { l.classList.remove('active'); if (l.getAttribute('href') === '#' + current) l.classList.add('active'); });
+  });
+</script>
+</body>
+</html>
