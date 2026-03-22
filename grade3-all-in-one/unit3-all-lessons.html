@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit 3 – Reading Foundational Skills | Owl Smart 3rd Grade</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #f4f7fb; color: #2d2d2d; line-height: 1.8; }
+    .top-header { background: linear-gradient(135deg, #b71c1c, #e53935); color: white; text-align: center; padding: 24px 20px 16px; }
+    .top-header h1 { font-size: 1.5em; margin-bottom: 4px; }
+    .top-header p { font-size: 0.95em; opacity: 0.88; }
+    .nav-bar { background: #b71c1c; padding: 0 10px; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.3); overflow-x: auto; white-space: nowrap; }
+    .nav-bar a { display: inline-block; color: rgba(255,255,255,0.8); text-decoration: none; padding: 12px 14px; font-size: 0.82em; font-weight: bold; border-bottom: 3px solid transparent; transition: all 0.2s; }
+    .nav-bar a:hover, .nav-bar a.active { color: white; border-bottom-color: #ffd600; }
+    .main { max-width: 860px; margin: 0 auto; padding: 20px; }
+    .lesson-section { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.08); margin-bottom: 40px; scroll-margin-top: 60px; }
+    .banner { color: white; text-align: center; padding: 28px 24px; }
+    .banner h2 { font-size: 1.45em; margin-bottom: 6px; }
+    .banner p { font-size: 0.97em; opacity: 0.92; margin-bottom: 10px; }
+    .lesson-num { display: inline-block; background: rgba(255,255,255,0.25); border-radius: 20px; padding: 3px 14px; font-size: 0.82em; font-weight: bold; }
+    .b1 { background: linear-gradient(135deg, #b71c1c, #e53935); }
+    .b2 { background: linear-gradient(135deg, #1a237e, #3949ab); }
+    .b3 { background: linear-gradient(135deg, #1b5e20, #43a047); }
+    .b4 { background: linear-gradient(135deg, #e65100, #fb8c00); }
+    .b5 { background: linear-gradient(135deg, #4a148c, #7b1fa2); }
+    .lesson-content { padding: 26px; }
+    .section { border-left: 5px solid; border-radius: 0 10px 10px 0; padding: 18px 20px; margin-bottom: 20px; }
+    .s1 { background: #ffebee; border-color: #b71c1c; } .s1 h3 { color: #b71c1c; }
+    .s2 { background: #e8eaf6; border-color: #1a237e; } .s2 h3 { color: #1a237e; }
+    .s3 { background: #e8f5e9; border-color: #1b5e20; } .s3 h3 { color: #1b5e20; }
+    .s4 { background: #fff3e0; border-color: #e65100; } .s4 h3 { color: #e65100; }
+    .s5 { background: #f3e5f5; border-color: #4a148c; } .s5 h3 { color: #4a148c; }
+    .section h3 { margin-bottom: 8px; font-size: 1.05em; }
+    .vocab-box { background: #fff8e1; border: 2px solid #ffc107; border-radius: 10px; padding: 18px 20px; margin-bottom: 20px; }
+    .vocab-box h3 { color: #e65100; margin-bottom: 12px; font-size: 1.05em; }
+    .vocab-item { margin: 8px 0; font-size: 0.95em; }
+    .word { font-weight: bold; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.93em; }
+    th { background: #37474f; color: white; padding: 9px 12px; text-align: left; }
+    td { padding: 9px 12px; border-bottom: 1px solid #e0e0e0; }
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) { background: #f5f5f5; }
+    .tip { background: #e8f5e9; border-left: 4px solid #43a047; border-radius: 0 8px 8px 0; padding: 12px 16px; margin: 12px 0; color: #1b5e20; font-size: 0.93em; }
+    .tip strong { color: #2e7d32; }
+    .try-it { background: #ede7f6; border: 2px dashed #7e57c2; border-radius: 10px; padding: 18px 20px; margin-bottom: 20px; }
+    .try-it h3 { color: #4527a0; margin-bottom: 10px; font-size: 1.05em; }
+    .try-it ol { padding-left: 20px; }
+    .try-it li { margin: 8px 0; font-size: 0.95em; }
+    .remember { background: #fff3e0; border: 2px solid #ff8f00; border-radius: 10px; padding: 18px 20px; text-align: center; margin-bottom: 4px; }
+    .remember h3 { color: #e65100; margin-bottom: 10px; font-size: 1.05em; }
+    .remember p { margin: 5px 0; font-size: 0.95em; }
+    .remember .cta { font-weight: bold; font-size: 1.05em; margin-top: 12px; }
+    .flex-row { display: flex; gap: 12px; flex-wrap: wrap; margin: 10px 0; }
+    .flex-col { flex: 1; min-width: 160px; border-radius: 10px; padding: 14px 16px; }
+    .fb-red { background: #ffebee; border: 2px solid #e53935; }
+    .fb-red h4 { color: #b71c1c; margin-bottom: 6px; font-size: 0.98em; }
+    .fb-blue { background: #e3f2fd; border: 2px solid #1976d2; }
+    .fb-blue h4 { color: #0d47a1; margin-bottom: 6px; font-size: 0.98em; }
+    .fb-green { background: #e8f5e9; border: 2px solid #388e3c; }
+    .fb-green h4 { color: #1b5e20; margin-bottom: 6px; font-size: 0.98em; }
+    .fb-orange { background: #fff3e0; border: 2px solid #f57c00; }
+    .fb-orange h4 { color: #e65100; margin-bottom: 6px; font-size: 0.98em; }
+    .fb-purple { background: #f3e5f5; border: 2px solid #7b1fa2; }
+    .fb-purple h4 { color: #4a148c; margin-bottom: 6px; font-size: 0.98em; }
+    .word-card { display: inline-block; background: #b71c1c; color: white; border-radius: 10px; padding: 8px 16px; margin: 4px; font-size: 0.95em; font-weight: bold; }
+    .word-card.blue { background: #1a237e; }
+    .word-card.green { background: #1b5e20; }
+    .word-card.orange { background: #e65100; }
+    .word-card.purple { background: #4a148c; }
+    .word-card.grey { background: #546e7a; }
+    .syllable-box { background: #fff8e1; border: 2px solid #ffc107; border-radius: 10px; padding: 16px 18px; margin-bottom: 14px; }
+    .syllable-box h4 { color: #e65100; margin-bottom: 8px; }
+    .syl { display: inline-block; border: 2px solid #e65100; border-radius: 6px; padding: 4px 10px; margin: 3px; font-weight: bold; color: #e65100; }
+    .sight-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; margin: 12px 0; }
+    .sight-word { background: #1a237e; color: white; text-align: center; border-radius: 8px; padding: 8px 4px; font-weight: bold; font-size: 0.9em; }
+    .fluency-box { border-radius: 10px; padding: 16px 18px; margin-bottom: 14px; }
+    ul { padding-left: 20px; } li { margin: 5px 0; font-size: 0.95em; }
+    p { margin-bottom: 8px; font-size: 0.95em; }
+  </style>
+</head>
+<body>
+
+<div class="top-header">
+  <h1>Owl Smart: A 3rd Grade Learning Journey</h1>
+  <p>Unit 3 -- Reading Foundational Skills &nbsp;|&nbsp; 5 Lessons</p>
+</div>
+
+<div class="nav-bar">
+  <a href="#lesson1">3.1 Prefixes &amp; Suffixes</a>
+  <a href="#lesson2">3.2 Root Words</a>
+  <a href="#lesson3">3.3 Multisyllable Words</a>
+  <a href="#lesson4">3.4 Sight Words</a>
+  <a href="#lesson5">3.5 Fluency</a>
+</div>
+
+<div class="main">
+
+<!-- ============================================================ -->
+<!-- LESSON 3.1 -->
+<!-- ============================================================ -->
+<div class="lesson-section" id="lesson1">
+  <div class="banner b1">
+    <span class="lesson-num">Lesson 3.1</span>
+    <h2>Prefixes and Suffixes</h2>
+    <p>Unlock the meaning of hundreds of new words by learning word parts!</p>
+  </div>
+  <div class="lesson-content">
+
+    <div class="section s1">
+      <h3>What Are We Learning Today?</h3>
+      <p>Did you know that knowing just a few word parts can help you figure out the meaning of <strong>hundreds of new words</strong>? Today we learn about <strong>prefixes</strong> (word parts added to the beginning) and <strong>suffixes</strong> (word parts added to the end) and how they change the meaning of words!</p>
+    </div>
+
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#b71c1c;">Prefix</span> -- A word part added to the BEGINNING of a word that changes its meaning. Example: un- in unhappy.</div>
+      <div class="vocab-item"><span class="word" style="color:#b71c1c;">Suffix</span> -- A word part added to the END of a word that changes its meaning. Example: -ful in careful.</div>
+      <div class="vocab-item"><span class="word" style="color:#b71c1c;">Base Word</span> -- The main word before any prefixes or suffixes are added. Example: "happy" in unhappy.</div>
+      <div class="vocab-item"><span class="word" style="color:#b71c1c;">Word Part</span> -- Any piece of a word (prefix, suffix, or root) that carries meaning.</div>
+    </div>
+
+    <div class="section s1">
+      <h3>Common Prefixes -- Added to the Beginning</h3>
+      <table>
+        <tr><th>Prefix</th><th>Meaning</th><th>Example Words</th></tr>
+        <tr><td><strong>un-</strong></td><td>not / opposite of</td><td>unhappy, unkind, unsafe, unlock</td></tr>
+        <tr><td><strong>re-</strong></td><td>again / back</td><td>rewrite, redo, reread, return</td></tr>
+        <tr><td><strong>pre-</strong></td><td>before</td><td>preheat, preview, prepare, preschool</td></tr>
+        <tr><td><strong>dis-</strong></td><td>not / opposite of</td><td>disagree, disappear, dislike, dishonest</td></tr>
+        <tr><td><strong>mis-</strong></td><td>wrongly / badly</td><td>mistake, misread, misspell, misplace</td></tr>
+        <tr><td><strong>over-</strong></td><td>too much / above</td><td>overflow, overdue, overeat, overlook</td></tr>
+      </table>
+    </div>
+
+    <div class="section s1">
+      <h3>Common Suffixes -- Added to the End</h3>
+      <table>
+        <tr><th>Suffix</th><th>Meaning</th><th>Example Words</th></tr>
+        <tr><td><strong>-ful</strong></td><td>full of</td><td>careful, helpful, cheerful, thankful</td></tr>
+        <tr><td><strong>-less</strong></td><td>without</td><td>careless, hopeless, fearless, harmless</td></tr>
+        <tr><td><strong>-er / -or</strong></td><td>a person who</td><td>teacher, farmer, actor, director</td></tr>
+        <tr><td><strong>-ly</strong></td><td>in a certain way</td><td>quickly, slowly, kindly, happily</td></tr>
+        <tr><td><strong>-ness</strong></td><td>the state of being</td><td>happiness, kindness, darkness, sadness</td></tr>
+        <tr><td><strong>-tion / -sion</strong></td><td>the act or state of</td><td>action, pollution, decision, tension</td></tr>
+      </table>
+    </div>
+
+    <div class="section s1">
+      <h3>How Prefixes and Suffixes Change Meaning</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-red">
+          <h4 style="color:#b71c1c;">Base Word: HAPPY</h4>
+          <p><span class="word-card">happy</span> -- feeling joy</p>
+          <p><span class="word-card">unhappy</span> -- NOT happy</p>
+          <p><span class="word-card">happiness</span> -- the state of being happy</p>
+          <p><span class="word-card">happily</span> -- in a happy way</p>
+        </div>
+        <div class="flex-col fb-blue">
+          <h4 style="color:#0d47a1;">Base Word: CARE</h4>
+          <p><span class="word-card blue">care</span> -- to feel concern</p>
+          <p><span class="word-card blue">careful</span> -- full of care</p>
+          <p><span class="word-card blue">careless</span> -- without care</p>
+          <p><span class="word-card blue">carefully</span> -- in a careful way</p>
+        </div>
+        <div class="flex-col fb-green">
+          <h4 style="color:#1b5e20;">Base Word: WRITE</h4>
+          <p><span class="word-card green">write</span> -- to put words down</p>
+          <p><span class="word-card green">rewrite</span> -- to write again</p>
+          <p><span class="word-card green">writer</span> -- a person who writes</p>
+          <p><span class="word-card green">writing</span> -- the act of writing</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tip"><strong>Strategy:</strong> When you see a long word you do not know, look for a prefix or suffix first! Cover it up and read the base word. Then add back the prefix or suffix and think about what it adds to the meaning.</div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <p>For each word below, identify the prefix OR suffix, the base word, and what the whole word means:</p>
+      <ol>
+        <li><strong>unkind</strong> -- What is the prefix? What does it mean? What does "unkind" mean?</li>
+        <li><strong>hopeless</strong> -- What is the suffix? What does it mean? What does "hopeless" mean?</li>
+        <li><strong>preview</strong> -- What is the prefix? What does "preview" mean?</li>
+        <li><strong>teacher</strong> -- What is the suffix? What does it tell us about a teacher?</li>
+        <li>Now make YOUR OWN word using a prefix or suffix from the tables above!</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p><strong>PREFIX</strong> -- added to the BEGINNING (un-, re-, pre-, dis-, mis-)</p>
+      <p><strong>SUFFIX</strong> -- added to the END (-ful, -less, -er, -ly, -ness)</p>
+      <p>Cover the prefix or suffix and read the <strong>base word</strong> first, then add the meaning back!</p>
+      <p class="cta" style="color:#b71c1c;">Great start! Click Lesson 3.2!</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- LESSON 3.2 -->
+<!-- ============================================================ -->
+<div class="lesson-section" id="lesson2">
+  <div class="banner b2">
+    <span class="lesson-num">Lesson 3.2</span>
+    <h2>Root Words and Word Families</h2>
+    <p>One root word can grow into a whole family of related words!</p>
+  </div>
+  <div class="lesson-content">
+
+    <div class="section s2">
+      <h3>What Are We Learning Today?</h3>
+      <p>Imagine a tree. It has one trunk, but it grows many branches, leaves, and flowers. Words work the same way! One <strong>root word</strong> can grow into a whole <strong>family of related words</strong>. Learning one root word helps you understand many words at once!</p>
+    </div>
+
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#1a237e;">Root Word</span> -- The basic form of a word, before any prefixes or suffixes are added.</div>
+      <div class="vocab-item"><span class="word" style="color:#1a237e;">Word Family</span> -- A group of related words that all share the same root word.</div>
+      <div class="vocab-item"><span class="word" style="color:#1a237e;">Related Words</span> -- Words that share the same root and have connected meanings.</div>
+      <div class="vocab-item"><span class="word" style="color:#1a237e;">Latin Root</span> -- A word part from the Latin language that forms the base of many English words.</div>
+    </div>
+
+    <div class="section s2">
+      <h3>Word Families -- One Root, Many Words!</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-blue">
+          <h4 style="color:#0d47a1;">Root: PLAY</h4>
+          <span class="word-card blue">play</span>
+          <span class="word-card blue">plays</span>
+          <span class="word-card blue">played</span>
+          <span class="word-card blue">playing</span>
+          <span class="word-card blue">player</span>
+          <span class="word-card blue">playful</span>
+          <span class="word-card blue">playground</span>
+          <span class="word-card blue">replay</span>
+        </div>
+        <div class="flex-col fb-green">
+          <h4 style="color:#1b5e20;">Root: HELP</h4>
+          <span class="word-card green">help</span>
+          <span class="word-card green">helps</span>
+          <span class="word-card green">helped</span>
+          <span class="word-card green">helper</span>
+          <span class="word-card green">helpful</span>
+          <span class="word-card green">helpless</span>
+          <span class="word-card green">helpfully</span>
+          <span class="word-card green">unhelpful</span>
+        </div>
+        <div class="flex-col fb-orange">
+          <h4 style="color:#e65100;">Root: FRIEND</h4>
+          <span class="word-card orange">friend</span>
+          <span class="word-card orange">friends</span>
+          <span class="word-card orange">friendly</span>
+          <span class="word-card orange">unfriendly</span>
+          <span class="word-card orange">friendship</span>
+          <span class="word-card orange">friendless</span>
+          <span class="word-card orange">befriend</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="section s2">
+      <h3>Common Latin Roots in English Words</h3>
+      <table>
+        <tr><th>Latin Root</th><th>Meaning</th><th>English Words</th></tr>
+        <tr><td><strong>port</strong></td><td>carry</td><td>transport, export, import, portable, report</td></tr>
+        <tr><td><strong>rupt</strong></td><td>break</td><td>erupt, interrupt, disrupt, corrupt, bankrupt</td></tr>
+        <tr><td><strong>vis / vid</strong></td><td>see</td><td>visible, vision, video, evidence, provide</td></tr>
+        <tr><td><strong>dict</strong></td><td>say / tell</td><td>dictionary, predict, contradict, dictate</td></tr>
+        <tr><td><strong>scrib / script</strong></td><td>write</td><td>describe, script, subscribe, prescription</td></tr>
+        <tr><td><strong>aud</strong></td><td>hear</td><td>audience, audio, auditorium, audible</td></tr>
+      </table>
+    </div>
+
+    <div class="section s2">
+      <h3>Using Root Words as Clues</h3>
+      <p>Knowing a root word helps you figure out unfamiliar words. Look at this example:</p>
+      <div style="background:#e8eaf6; border-radius:10px; padding:16px 18px; margin:10px 0;">
+        <p>You see the word: <strong style="font-size:1.1em;">interrupt</strong></p>
+        <p style="margin-top:8px;">You know: <strong>rupt</strong> means "break" and <strong>inter</strong> means "between"</p>
+        <p style="margin-top:8px;">So <strong>interrupt</strong> = to break between (someone's speech or activity)</p>
+        <p style="margin-top:8px; color:#1a237e;"><strong>You figured it out without a dictionary!</strong></p>
+      </div>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Write ALL the words you can make from the root word <strong>HOPE</strong>. (hint: hopeful, hopeless...)</li>
+        <li>Write ALL the words you can make from the root word <strong>KIND</strong>.</li>
+        <li>The word "portable" contains the root "port" (carry). What does "portable" mean?</li>
+        <li>The word "auditorium" contains the root "aud" (hear). What do you think people do in an auditorium?</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p>A <strong>ROOT WORD</strong> is the basic form of a word -- the trunk of the word tree!</p>
+      <p>A <strong>WORD FAMILY</strong> is all the related words that grow from that root.</p>
+      <p>Knowing one root helps you understand <strong>many words at once!</strong></p>
+      <p class="cta" style="color:#1a237e;">Excellent! Click Lesson 3.3!</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- LESSON 3.3 -->
+<!-- ============================================================ -->
+<div class="lesson-section" id="lesson3">
+  <div class="banner b3">
+    <span class="lesson-num">Lesson 3.3</span>
+    <h2>Multisyllable Words</h2>
+    <p>Break big words into smaller parts and read them with confidence!</p>
+  </div>
+  <div class="lesson-content">
+
+    <div class="section s3">
+      <h3>What Are We Learning Today?</h3>
+      <p>Have you ever seen a really long word and felt nervous about reading it? Don't worry! Every long word is just a collection of smaller parts called <strong>syllables</strong>. When you break a big word into syllables, it becomes much easier to read and understand!</p>
+    </div>
+
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Syllable</span> -- A word part that has one vowel sound. Every syllable has exactly one vowel sound.</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Multisyllable Word</span> -- A word with more than one syllable. Example: "but-ter-fly" has 3 syllables.</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Vowel</span> -- The letters A, E, I, O, U (and sometimes Y).</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Consonant</span> -- All letters that are NOT vowels (b, c, d, f, g, h, j, k, l, m, n, p, q, r, s, t, v, w, x, y, z).</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Decode</span> -- To sound out and read a word by breaking it into parts.</div>
+    </div>
+
+    <div class="section s3">
+      <h3>How to Count Syllables</h3>
+      <p>The easiest way to count syllables: <strong>put your hand under your chin and say the word out loud</strong>. Every time your chin drops, that is one syllable!</p>
+      <div class="syllable-box">
+        <h4>1 Syllable</h4>
+        <span class="syl">cat</span><span class="syl">dog</span><span class="syl">run</span><span class="syl">bright</span><span class="syl">school</span>
+      </div>
+      <div class="syllable-box">
+        <h4>2 Syllables</h4>
+        <span class="syl">hap</span><span class="syl">py</span> &nbsp;
+        <span class="syl">rab</span><span class="syl">bit</span> &nbsp;
+        <span class="syl">pen</span><span class="syl">cil</span> &nbsp;
+        <span class="syl">stu</span><span class="syl">dent</span>
+      </div>
+      <div class="syllable-box">
+        <h4>3 Syllables</h4>
+        <span class="syl">but</span><span class="syl">ter</span><span class="syl">fly</span> &nbsp;
+        <span class="syl">com</span><span class="syl">pu</span><span class="syl">ter</span> &nbsp;
+        <span class="syl">fan</span><span class="syl">tas</span><span class="syl">tic</span>
+      </div>
+      <div class="syllable-box">
+        <h4>4+ Syllables</h4>
+        <span class="syl">in</span><span class="syl">for</span><span class="syl">ma</span><span class="syl">tion</span> &nbsp;
+        <span class="syl">un</span><span class="syl">be</span><span class="syl">liev</span><span class="syl">a</span><span class="syl">ble</span>
+      </div>
+    </div>
+
+    <div class="section s3">
+      <h3>Strategies for Reading Multisyllable Words</h3>
+      <table>
+        <tr><th>Step</th><th>Strategy</th><th>Example</th></tr>
+        <tr><td><strong>1</strong></td><td>Look for prefixes and suffixes first -- cover them up</td><td>"unhelpful" → cover "un-" and "-ful" → read "help"</td></tr>
+        <tr><td><strong>2</strong></td><td>Look for familiar smaller words inside the big word</td><td>"sunshine" → "sun" + "shine"</td></tr>
+        <tr><td><strong>3</strong></td><td>Break the word into syllables between consonants</td><td>"basket" → "bas-ket"</td></tr>
+        <tr><td><strong>4</strong></td><td>Sound out each syllable, then blend them together</td><td>"fan-tas-tic" → "fantastic"</td></tr>
+        <tr><td><strong>5</strong></td><td>Ask yourself if the word sounds like a real word you know</td><td>Does it make sense in the sentence?</td></tr>
+      </table>
+    </div>
+
+    <div class="section s3">
+      <h3>Practice Words -- Try Breaking These!</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-green">
+          <h4 style="color:#1b5e20;">3-Syllable Words</h4>
+          <p>ad-ven-ture</p>
+          <p>re-mem-ber</p>
+          <p>im-por-tant</p>
+          <p>to-mor-row</p>
+          <p>dis-cov-er</p>
+        </div>
+        <div class="flex-col fb-blue">
+          <h4 style="color:#0d47a1;">4-Syllable Words</h4>
+          <p>un-der-stand-ing</p>
+          <p>in-ter-est-ing</p>
+          <p>re-mem-ber-ing</p>
+          <p>com-mu-ni-ty</p>
+          <p>e-lec-tri-ci-ty</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tip"><strong>Remember:</strong> Every syllable must have at least ONE vowel sound (a, e, i, o, u). If you split a word and one part has no vowel sound, try splitting it differently!</div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Clap out the syllables in these words and write how many syllables each has: <em>elephant, banana, umbrella, September, multiplication</em></li>
+        <li>Break these words into syllables using dashes: <em>adventure, important, understand, discovery</em></li>
+        <li>Find THREE multisyllable words in a book or article you are reading. Break each one into syllables.</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p>Every syllable has exactly <strong>one vowel sound.</strong></p>
+      <p>Put your hand under your chin -- every time it drops = one syllable!</p>
+      <p>Break big words into parts: <strong>prefixes, suffixes, syllables.</strong></p>
+      <p class="cta" style="color:#1b5e20;">Well done! Click Lesson 3.4!</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- LESSON 3.4 -->
+<!-- ============================================================ -->
+<div class="lesson-section" id="lesson4">
+  <div class="banner b4">
+    <span class="lesson-num">Lesson 3.4</span>
+    <h2>Irregular Sight Words</h2>
+    <p>Master the tricky words that do not follow normal spelling rules!</p>
+  </div>
+  <div class="lesson-content">
+
+    <div class="section s4">
+      <h3>What Are We Learning Today?</h3>
+      <p>Most English words can be sounded out using letter patterns. But some words are <strong>tricky</strong> -- they do not follow the normal rules! These are called <strong>sight words</strong> or <strong>irregular words</strong>, and the best way to learn them is to <strong>see them and recognise them instantly</strong>, without sounding them out.</p>
+    </div>
+
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Sight Word</span> -- A common word that readers should recognise instantly by sight, without sounding it out.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Irregular Word</span> -- A word that does not follow normal phonics patterns. Example: "said" (not "sed"), "the" (not "thee").</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">High-Frequency Word</span> -- A word that appears very often in texts. Knowing these makes reading much smoother.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Fluency</span> -- Reading smoothly and quickly with good understanding.</div>
+    </div>
+
+    <div class="section s4">
+      <h3>Why Are Some Words "Irregular"?</h3>
+      <p>English words come from many different languages -- French, Latin, German, and more. This is why some words have surprising spellings!</p>
+      <div class="flex-row">
+        <div class="flex-col fb-orange">
+          <h4 style="color:#e65100;">These words look tricky because...</h4>
+          <p><strong>said</strong> -- sounds like "sed" but spelled s-a-i-d</p>
+          <p><strong>were</strong> -- sounds like "wer" not "wee-ree"</p>
+          <p><strong>would</strong> -- has a silent "l" and "ou" sounds like "oo"</p>
+          <p><strong>laugh</strong> -- "gh" makes an "f" sound!</p>
+          <p><strong>through</strong> -- "ough" sounds like "oo"</p>
+        </div>
+        <div class="flex-col fb-blue">
+          <h4 style="color:#0d47a1;">The best strategy:</h4>
+          <p>See the word often + read it in many sentences = your brain learns to recognise it automatically!</p>
+          <p style="margin-top:8px;">Flash cards, word walls, and reading every day all help build sight word recognition.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section s4">
+      <h3>Important 3rd Grade Sight Words to Know</h3>
+      <div class="sight-grid">
+        <div class="sight-word">said</div>
+        <div class="sight-word">were</div>
+        <div class="sight-word">there</div>
+        <div class="sight-word">their</div>
+        <div class="sight-word">they're</div>
+        <div class="sight-word">would</div>
+        <div class="sight-word">could</div>
+        <div class="sight-word">should</div>
+        <div class="sight-word">through</div>
+        <div class="sight-word">though</div>
+        <div class="sight-word">thought</div>
+        <div class="sight-word">enough</div>
+        <div class="sight-word">laugh</div>
+        <div class="sight-word">bought</div>
+        <div class="sight-word">brought</div>
+        <div class="sight-word">again</div>
+        <div class="sight-word">because</div>
+        <div class="sight-word">people</div>
+        <div class="sight-word">friend</div>
+        <div class="sight-word">straight</div>
+      </div>
+    </div>
+
+    <div class="section s4">
+      <h3>Tricky Homophones -- Same Sound, Different Spelling!</h3>
+      <table>
+        <tr><th>Word 1</th><th>Word 2</th><th>Word 3</th><th>What's the Difference?</th></tr>
+        <tr><td><strong>there</strong> (place)</td><td><strong>their</strong> (belonging to them)</td><td><strong>they're</strong> (they are)</td><td>"Put it over THERE." "That is THEIR dog." "THEY'RE coming soon."</td></tr>
+        <tr><td><strong>your</strong> (belonging to you)</td><td><strong>you're</strong> (you are)</td><td>--</td><td>"Is this YOUR book?" "YOU'RE so kind!"</td></tr>
+        <tr><td><strong>to</strong> (direction)</td><td><strong>too</strong> (also/very)</td><td><strong>two</strong> (the number)</td><td>"I'm going TO school." "Me TOO!" "I have TWO cats."</td></tr>
+      </table>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Write each sight word from the grid in a sentence of your own.</li>
+        <li>Choose the correct word: "I went __ the tunnel." (through / though / thought)</li>
+        <li>Choose the correct word: "She __ me a funny story." (told / tolled / tolld)</li>
+        <li>Practice reading the sight word grid out loud -- can you read all 20 without stopping?</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p><strong>SIGHT WORDS</strong> are recognised by sight -- not sounded out.</p>
+      <p>Many irregular words come from <strong>other languages</strong> -- that's why they look tricky!</p>
+      <p>The more you <strong>read and see</strong> these words, the faster you will recognise them!</p>
+      <p class="cta" style="color:#e65100;">Almost there! Click Lesson 3.5!</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- LESSON 3.5 -->
+<!-- ============================================================ -->
+<div class="lesson-section" id="lesson5">
+  <div class="banner b5">
+    <span class="lesson-num">Lesson 3.5</span>
+    <h2>Reading Fluency and Expression</h2>
+    <p>Read smoothly, accurately, and with feeling -- bring stories to life!</p>
+  </div>
+  <div class="lesson-content">
+
+    <div class="section s5">
+      <h3>What Are We Learning Today?</h3>
+      <p>You know the words. You understand the story. But are you reading it in a way that brings it <em>to life</em>? Today we learn about <strong>reading fluency</strong> -- reading smoothly and accurately -- and <strong>expression</strong> -- reading with feeling to match the text!</p>
+    </div>
+
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Fluency</span> -- Reading smoothly, accurately, and at a good pace -- not too fast, not too slow.</div>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Expression</span> -- Reading with feeling and emotion that matches what is happening in the text.</div>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Accuracy</span> -- Reading words correctly without making errors.</div>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Pace / Rate</span> -- How fast or slow you read. Good readers adjust their pace for different texts.</div>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Phrasing</span> -- Reading words in natural groups, not one word at a time.</div>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Punctuation</span> -- Marks like periods, question marks, and exclamation points that tell us how to read.</div>
+    </div>
+
+    <div class="section s5">
+      <h3>The Three Parts of Fluency</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-purple">
+          <h4 style="color:#4a148c;">Accuracy</h4>
+          <p>Reading the words <strong>correctly</strong>. When you make an error, good readers go back and self-correct!</p>
+        </div>
+        <div class="flex-col fb-blue">
+          <h4 style="color:#0d47a1;">Rate (Pace)</h4>
+          <p>Not too fast (rushing means missing meaning) and not too slow (sounds robotic). Read at a <strong>natural, conversational pace.</strong></p>
+        </div>
+        <div class="flex-col fb-green">
+          <h4 style="color:#1b5e20;">Expression</h4>
+          <p>Your voice goes UP for questions, gets LOUD for excitement, gets SOFT for sad moments. <strong>Match your voice to the meaning!</strong></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section s5">
+      <h3>Let Punctuation Guide Your Expression</h3>
+      <table>
+        <tr><th>Punctuation Mark</th><th>What It Means for Reading</th><th>Example</th></tr>
+        <tr><td><strong>. Period</strong></td><td>Stop. Take a breath. Move on calmly.</td><td>"The dog sat down."</td></tr>
+        <tr><td><strong>? Question Mark</strong></td><td>Your voice goes UP at the end.</td><td>"Are you coming with me?"</td></tr>
+        <tr><td><strong>! Exclamation Mark</strong></td><td>Read with excitement, surprise, or urgency!</td><td>"Watch out!"</td></tr>
+        <tr><td><strong>, Comma</strong></td><td>A short pause -- keep going but breathe briefly.</td><td>"I like cats, dogs, and birds."</td></tr>
+        <tr><td><strong>"" Quotation Marks</strong></td><td>Change your voice to sound like the character speaking.</td><td>"Help me!" she cried.</td></tr>
+        <tr><td><strong>... Ellipsis</strong></td><td>Slow down... create suspense or pause dramatically.</td><td>"And then she saw it..."</td></tr>
+      </table>
+    </div>
+
+    <div class="section s5">
+      <h3>Practise With This Passage -- Read It Aloud!</h3>
+      <div style="background:#f3e5f5; border: 2px solid #7b1fa2; border-radius:10px; padding:16px 18px; font-size:1.02em; line-height:2;">
+        <p>"I can't believe it!" Maya whispered, her eyes wide. She had never seen anything like it before. The cave was enormous -- bigger than her whole school -- and every wall was covered in glittering crystals. "Are we really going inside?" asked her friend Theo, his voice shaking slightly. Maya took a deep breath. "Yes," she said quietly. "We have to."</p>
+      </div>
+      <div class="tip" style="margin-top:12px;"><strong>Reading Guide:</strong> Read "I can't believe it!" with excitement. Read "her voice shaking slightly" -- Theo sounds nervous. Read Maya's final "Yes... We have to." slowly and with determination. Notice how the punctuation guides your expression!</div>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Read the passage above out loud three times. Each time, try to read more smoothly than before.</li>
+        <li>Choose a favourite book. Read one page out loud to a parent or family member.</li>
+        <li>Record yourself reading a paragraph. Play it back -- do you sound smooth and expressive?</li>
+        <li>Find a sentence with an exclamation mark. Read it in a flat voice first, then with expression. What is the difference?</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>You Finished Unit 3!</h3>
+      <p>Fluency = <strong>Accuracy + Rate + Expression</strong></p>
+      <p>Let <strong>punctuation</strong> guide your voice -- periods, question marks, and exclamation points all tell you how to read!</p>
+      <p>The more you <strong>read aloud</strong> every day, the more fluent you become!</p>
+      <p class="cta" style="color:#4a148c;">Fantastic work! You have completed all 5 lessons in Unit 3! Now take the Unit 3 Quiz!</p>
+    </div>
+  </div>
+</div>
+
+</div><!-- end main -->
+<script>
+  const sections = document.querySelectorAll('.lesson-section');
+  const navLinks = document.querySelectorAll('.nav-bar a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 80) current = s.getAttribute('id'); });
+    navLinks.forEach(l => { l.classList.remove('active'); if (l.getAttribute('href') === '#' + current) l.classList.add('active'); });
+  });
+</script>
+</body>
+</html>
