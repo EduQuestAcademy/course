@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit 19 – Government and Citizenship | Owl Smart 3rd Grade</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #f4f7fb; color: #2d2d2d; line-height: 1.8; }
+    .top-header { background: linear-gradient(135deg, #b71c1c, #c62828); color: white; text-align: center; padding: 24px 20px 16px; }
+    .top-header h1 { font-size: 1.5em; margin-bottom: 4px; }
+    .top-header p { font-size: 0.95em; opacity: 0.88; }
+    .nav-bar { background: #b71c1c; padding: 0 10px; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.3); overflow-x: auto; white-space: nowrap; }
+    .nav-bar a { display: inline-block; color: rgba(255,255,255,0.8); text-decoration: none; padding: 12px 14px; font-size: 0.82em; font-weight: bold; border-bottom: 3px solid transparent; transition: all 0.2s; }
+    .nav-bar a:hover, .nav-bar a.active { color: white; border-bottom-color: #ffd600; }
+    .main { max-width: 860px; margin: 0 auto; padding: 20px; }
+    .lesson-section { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.08); margin-bottom: 40px; scroll-margin-top: 60px; }
+    .banner { color: white; text-align: center; padding: 28px 24px; }
+    .banner h2 { font-size: 1.45em; margin-bottom: 6px; }
+    .banner p { font-size: 0.97em; opacity: 0.92; margin-bottom: 10px; }
+    .lesson-num { display: inline-block; background: rgba(255,255,255,0.25); border-radius: 20px; padding: 3px 14px; font-size: 0.82em; font-weight: bold; }
+    .b1 { background: linear-gradient(135deg, #b71c1c, #e53935); }
+    .b2 { background: linear-gradient(135deg, #1a237e, #3949ab); }
+    .b3 { background: linear-gradient(135deg, #1b5e20, #388e3c); }
+    .b4 { background: linear-gradient(135deg, #4e342e, #795548); }
+    .b5 { background: linear-gradient(135deg, #e65100, #f57c00); }
+    .b6 { background: linear-gradient(135deg, #4a148c, #7b1fa2); }
+    .lesson-content { padding: 26px; }
+    .section { border-left: 5px solid; border-radius: 0 10px 10px 0; padding: 18px 20px; margin-bottom: 20px; }
+    .s1 { background: #ffebee; border-color: #b71c1c; } .s1 h3 { color: #b71c1c; }
+    .s2 { background: #e8eaf6; border-color: #1a237e; } .s2 h3 { color: #1a237e; }
+    .s3 { background: #e8f5e9; border-color: #1b5e20; } .s3 h3 { color: #1b5e20; }
+    .s4 { background: #efebe9; border-color: #4e342e; } .s4 h3 { color: #4e342e; }
+    .s5 { background: #fff3e0; border-color: #e65100; } .s5 h3 { color: #e65100; }
+    .s6 { background: #f3e5f5; border-color: #4a148c; } .s6 h3 { color: #4a148c; }
+    .section h3 { margin-bottom: 8px; font-size: 1.05em; }
+    .vocab-box { background: #fff8e1; border: 2px solid #ffc107; border-radius: 10px; padding: 18px 20px; margin-bottom: 20px; }
+    .vocab-box h3 { color: #e65100; margin-bottom: 12px; font-size: 1.05em; }
+    .vocab-item { margin: 8px 0; font-size: 0.95em; }
+    .word { font-weight: bold; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.93em; }
+    th { background: #37474f; color: white; padding: 9px 12px; text-align: left; }
+    td { padding: 9px 12px; border-bottom: 1px solid #e0e0e0; }
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) { background: #f5f5f5; }
+    .tip { background: #e8f5e9; border-left: 4px solid #43a047; border-radius: 0 8px 8px 0; padding: 12px 16px; margin: 12px 0; color: #1b5e20; font-size: 0.93em; }
+    .tip strong { color: #2e7d32; }
+    .try-it { background: #ede7f6; border: 2px dashed #7e57c2; border-radius: 10px; padding: 18px 20px; margin-bottom: 20px; }
+    .try-it h3 { color: #4527a0; margin-bottom: 10px; font-size: 1.05em; }
+    .try-it ol { padding-left: 20px; }
+    .try-it li { margin: 8px 0; font-size: 0.95em; }
+    .remember { background: #fff3e0; border: 2px solid #ff8f00; border-radius: 10px; padding: 18px 20px; text-align: center; margin-bottom: 4px; }
+    .remember h3 { color: #e65100; margin-bottom: 10px; font-size: 1.05em; }
+    .remember p { margin: 5px 0; font-size: 0.95em; }
+    .remember .cta { font-weight: bold; font-size: 1.05em; margin-top: 12px; }
+    .flex-row { display: flex; gap: 12px; flex-wrap: wrap; margin: 10px 0; }
+    .flex-col { flex: 1; min-width: 150px; border-radius: 10px; padding: 14px 16px; }
+    .fb-red { background: #ffebee; border: 2px solid #e53935; } .fb-red h4 { color: #b71c1c; margin-bottom: 6px; }
+    .fb-navy { background: #e8eaf6; border: 2px solid #3949ab; } .fb-navy h4 { color: #1a237e; margin-bottom: 6px; }
+    .fb-green { background: #e8f5e9; border: 2px solid #388e3c; } .fb-green h4 { color: #1b5e20; margin-bottom: 6px; }
+    .fb-brown { background: #efebe9; border: 2px solid #795548; } .fb-brown h4 { color: #4e342e; margin-bottom: 6px; }
+    .fb-orange { background: #fff3e0; border: 2px solid #f57c00; } .fb-orange h4 { color: #e65100; margin-bottom: 6px; }
+    .fb-purple { background: #f3e5f5; border: 2px solid #7b1fa2; } .fb-purple h4 { color: #4a148c; margin-bottom: 6px; }
+    .fb-blue { background: #e3f2fd; border: 2px solid #1976d2; } .fb-blue h4 { color: #0d47a1; margin-bottom: 6px; }
+    .fb-yellow { background: #fffde7; border: 2px solid #f9a825; } .fb-yellow h4 { color: #f57f17; margin-bottom: 6px; }
+    .branch-card { border-radius: 12px; padding: 18px; margin-bottom: 14px; }
+    .bc-legislative { background: #e3f2fd; border: 3px solid #1976d2; }
+    .bc-executive { background: #ffebee; border: 3px solid #e53935; }
+    .bc-judicial { background: #e8f5e9; border: 3px solid #388e3c; }
+    .amendment-box { background: #f9f9f9; border-left: 4px solid #b71c1c; border-radius: 0 10px 10px 0; padding: 12px 16px; margin: 8px 0; font-size: 0.93em; }
+    .amendment-box strong { color: #b71c1c; }
+    .right-tag { display: inline-block; background: #b71c1c; color: white; border-radius: 16px; padding: 4px 14px; font-size: 0.85em; font-weight: bold; margin: 3px; }
+    .responsibility-tag { display: inline-block; background: #1a237e; color: white; border-radius: 16px; padding: 4px 14px; font-size: 0.85em; font-weight: bold; margin: 3px; }
+    ul { padding-left: 20px; } li { margin: 5px 0; font-size: 0.95em; }
+    p { margin-bottom: 8px; font-size: 0.95em; }
+  </style>
+</head>
+<body>
+
+<div class="top-header">
+  <h1>Owl Smart: A 3rd Grade Learning Journey</h1>
+  <p>Unit 19 -- Government and Citizenship &nbsp;|&nbsp; 6 Lessons</p>
+</div>
+
+<div class="nav-bar">
+  <a href="#lesson1">19.1 What is Government?</a>
+  <a href="#lesson2">19.2 Three Branches</a>
+  <a href="#lesson3">19.3 State &amp; Local Gov</a>
+  <a href="#lesson4">19.4 Constitution</a>
+  <a href="#lesson5">19.5 Rights &amp; Responsibilities</a>
+  <a href="#lesson6">19.6 Democracy in Action</a>
+</div>
+
+<div class="main">
+
+<!-- LESSON 19.1 -->
+<div class="lesson-section" id="lesson1">
+  <div class="banner b1">
+    <span class="lesson-num">Lesson 19.1</span>
+    <h2>What is Government and Why Do We Need It?</h2>
+    <p>Every community needs rules and leadership to function fairly -- discover why!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s1">
+      <h3>What Are We Learning Today?</h3>
+      <p>Imagine a school with no rules, no teachers, and no principal -- what would happen? Chaos! Communities need government to create order, protect people's rights, and provide services that individuals cannot provide for themselves. Today we explore what government is, why we need it, and the different levels of government that affect your daily life.</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#b71c1c;">Government</span> -- A system of people and laws that manage a community, city, state, or country.</div>
+      <div class="vocab-item"><span class="word" style="color:#b71c1c;">Laws</span> -- Rules that everyone in a community must follow. Laws protect people's rights and maintain order.</div>
+      <div class="vocab-item"><span class="word" style="color:#b71c1c;">Democracy</span> -- A system of government where citizens have the power to choose their leaders through voting.</div>
+      <div class="vocab-item"><span class="word" style="color:#b71c1c;">Republic</span> -- A type of democracy where citizens elect representatives to make decisions on their behalf.</div>
+      <div class="vocab-item"><span class="word" style="color:#b71c1c;">Public Services</span> -- Services provided by the government for everyone: roads, schools, fire protection, police.</div>
+      <div class="vocab-item"><span class="word" style="color:#b71c1c;">Taxes</span> -- Money collected by the government from citizens and businesses to pay for public services.</div>
+      <div class="vocab-item"><span class="word" style="color:#b71c1c;">Citizen</span> -- A person who is a member of a country and has rights and responsibilities within it.</div>
+    </div>
+
+    <div class="section s1">
+      <h3>Why Do We Need Government?</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-red">
+          <h4>Maintain Order</h4>
+          <p>Laws prevent chaos. Without traffic laws, roads would be dangerous. Without property laws, people could take your belongings. Government creates and enforces rules everyone must follow.</p>
+        </div>
+        <div class="flex-col fb-navy">
+          <h4>Protect Rights</h4>
+          <p>Government protects citizens' rights to safety, property, and fair treatment. Police and courts help ensure people are treated justly.</p>
+        </div>
+        <div class="flex-col fb-green">
+          <h4>Provide Services</h4>
+          <p>Some services benefit everyone and are too large for any one person to provide: roads, schools, fire departments, national defence, national parks.</p>
+        </div>
+        <div class="flex-col fb-orange">
+          <h4>Represent the People</h4>
+          <p>In a democracy, citizens elect leaders to make decisions on their behalf. This gives everyone a voice in how their community is run.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section s1">
+      <h3>Levels of Government in the United States</h3>
+      <table>
+        <tr><th>Level</th><th>Area It Governs</th><th>Examples of What It Does</th></tr>
+        <tr><td><strong>Federal (National)</strong></td><td>The entire United States</td><td>National defence, foreign policy, printing money, immigration, national parks</td></tr>
+        <tr><td><strong>State</strong></td><td>One state (e.g., Washington)</td><td>State roads, state universities, driver's licences, state parks, state courts</td></tr>
+        <tr><td><strong>Local</strong></td><td>City, county, or district</td><td>Local schools, fire and police departments, local roads, water and sewage, libraries</td></tr>
+      </table>
+      <div class="tip"><strong>Your Daily Life:</strong> Every day you benefit from all three levels! Federal government ensures safe food. Washington state runs your roads and schools. Kennewick's city government provides your local fire station, water, and parks. All three work together!</div>
+    </div>
+
+    <div class="section s1">
+      <h3>The United States is a Democratic Republic</h3>
+      <p>The United States is both a <strong>democracy</strong> (citizens have power) and a <strong>republic</strong> (citizens elect representatives to govern for them). Key features:</p>
+      <ul>
+        <li>Citizens vote to choose their leaders</li>
+        <li>Leaders are limited in their power by a Constitution</li>
+        <li>All citizens are equal under the law</li>
+        <li>The government must serve the people, not the other way around</li>
+        <li>A free press and free speech allow people to criticise the government</li>
+      </ul>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Name THREE public services in your community and which level of government provides each one.</li>
+        <li>What would happen in a community with no laws? Give TWO specific examples.</li>
+        <li>How are taxes used? What do they pay for in your community?</li>
+        <li>What is the difference between a democracy and a republic?</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p>Government maintains order, protects rights, provides services, and represents the people.</p>
+      <p>Three levels: <strong>Federal (national), State, Local (city/county).</strong></p>
+      <p>The US is a <strong>democratic republic</strong> -- citizens vote for representatives.</p>
+      <p class="cta" style="color:#b71c1c;">Great start! Click Lesson 19.2!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 19.2 -->
+<div class="lesson-section" id="lesson2">
+  <div class="banner b2">
+    <span class="lesson-num">Lesson 19.2</span>
+    <h2>The Three Branches of the US Government</h2>
+    <p>Power is divided into three branches to make sure no one person has too much control!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s2">
+      <h3>What Are We Learning Today?</h3>
+      <p>The framers of the US Constitution were afraid of one person or group having too much power. So they split the federal government into <strong>three branches</strong>, each with different jobs. And they gave each branch the ability to limit the power of the others -- this system is called <strong>checks and balances</strong>!</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#1a237e;">Legislative Branch</span> -- The branch that MAKES laws. Congress (Senate + House of Representatives).</div>
+      <div class="vocab-item"><span class="word" style="color:#1a237e;">Executive Branch</span> -- The branch that CARRIES OUT laws. Led by the President.</div>
+      <div class="vocab-item"><span class="word" style="color:#1a237e;">Judicial Branch</span> -- The branch that INTERPRETS laws. Led by the Supreme Court.</div>
+      <div class="vocab-item"><span class="word" style="color:#1a237e;">Checks and Balances</span> -- The system where each branch has ways to limit the power of the other two branches.</div>
+      <div class="vocab-item"><span class="word" style="color:#1a237e;">Congress</span> -- The legislative branch of the US government, made up of the Senate and the House of Representatives.</div>
+      <div class="vocab-item"><span class="word" style="color:#1a237e;">Veto</span> -- The President's power to reject a law passed by Congress.</div>
+      <div class="vocab-item"><span class="word" style="color:#1a237e;">Unconstitutional</span> -- When a law violates the Constitution -- the Supreme Court can declare it invalid.</div>
+    </div>
+
+    <div class="branch-card bc-legislative">
+      <h4 style="color:#1565c0; font-size:1.05em; margin-bottom:10px;">LEGISLATIVE BRANCH -- Congress (Makes Laws)</h4>
+      <div class="flex-row" style="margin:0;">
+        <div style="flex:1; min-width:160px;">
+          <p style="font-size:0.9em;"><strong>Who:</strong> Congress -- Senate (100 senators, 2 per state) + House of Representatives (435 members, based on population)</p>
+          <p style="font-size:0.9em; margin-top:6px;"><strong>Main Job:</strong> Write and pass laws, approve the federal budget, declare war</p>
+        </div>
+        <div style="flex:1; min-width:160px;">
+          <p style="font-size:0.9em;"><strong>Checks on others:</strong> Can override a President's veto; Senate approves Presidential appointments; can impeach the President</p>
+          <p style="font-size:0.9em; margin-top:6px;"><strong>Washington's senators:</strong> Washington has 2 US Senators and 10 US Representatives</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="branch-card bc-executive">
+      <h4 style="color:#c62828; font-size:1.05em; margin-bottom:10px;">EXECUTIVE BRANCH -- President (Carries Out Laws)</h4>
+      <div class="flex-row" style="margin:0;">
+        <div style="flex:1; min-width:160px;">
+          <p style="font-size:0.9em;"><strong>Who:</strong> The President, Vice President, and Cabinet (group of advisors who lead departments)</p>
+          <p style="font-size:0.9em; margin-top:6px;"><strong>Main Job:</strong> Enforce and carry out laws passed by Congress, command the military, conduct foreign policy</p>
+        </div>
+        <div style="flex:1; min-width:160px;">
+          <p style="font-size:0.9em;"><strong>Checks on others:</strong> Can veto (reject) laws from Congress; nominates Supreme Court justices; can issue executive orders</p>
+          <p style="font-size:0.9em; margin-top:6px;"><strong>Term:</strong> 4-year term, maximum 2 terms (8 years)</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="branch-card bc-judicial">
+      <h4 style="color:#2e7d32; font-size:1.05em; margin-bottom:10px;">JUDICIAL BRANCH -- Supreme Court (Interprets Laws)</h4>
+      <div class="flex-row" style="margin:0;">
+        <div style="flex:1; min-width:160px;">
+          <p style="font-size:0.9em;"><strong>Who:</strong> The Supreme Court (9 justices) and all federal courts below it</p>
+          <p style="font-size:0.9em; margin-top:6px;"><strong>Main Job:</strong> Decide if laws follow the Constitution; settle legal disputes; interpret what laws mean</p>
+        </div>
+        <div style="flex:1; min-width:160px;">
+          <p style="font-size:0.9em;"><strong>Checks on others:</strong> Can declare laws unconstitutional (strike them down); can rule Presidential actions illegal</p>
+          <p style="font-size:0.9em; margin-top:6px;"><strong>Term:</strong> Justices serve for life (to stay independent)</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section s2">
+      <h3>Checks and Balances -- How Each Branch Limits the Others</h3>
+      <table>
+        <tr><th>If...</th><th>Then...</th></tr>
+        <tr><td>Congress passes a law the President disagrees with</td><td>President can VETO (reject) it</td></tr>
+        <tr><td>President vetoes a law Congress really wants</td><td>Congress can OVERRIDE the veto with a 2/3 majority vote</td></tr>
+        <tr><td>Congress passes a law that violates the Constitution</td><td>Supreme Court can declare it UNCONSTITUTIONAL</td></tr>
+        <tr><td>President nominates a Supreme Court justice</td><td>Senate must APPROVE the nomination</td></tr>
+        <tr><td>President acts illegally or abuses power</td><td>Congress can IMPEACH (put on trial) the President</td></tr>
+      </table>
+      <div class="tip"><strong>Why Checks and Balances Matter:</strong> The framers of the Constitution had lived under the power of a king. They wanted to make sure no single person or group could ever have that much power in America. Checks and balances make sure power is always shared and limited!</div>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Name the three branches of government and the main job of each one.</li>
+        <li>What is a veto? Which branch can veto a law? Which branch can override a veto?</li>
+        <li>Why do you think Supreme Court justices serve for life instead of being elected?</li>
+        <li>If the President wanted to pass a law all by themselves without Congress, why would that be a problem?</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p><strong>Legislative</strong> = makes laws (Congress). <strong>Executive</strong> = carries out laws (President).</p>
+      <p><strong>Judicial</strong> = interprets laws (Supreme Court).</p>
+      <p><strong>Checks and balances</strong> = each branch limits the power of the others!</p>
+      <p class="cta" style="color:#1a237e;">Excellent! Click Lesson 19.3!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 19.3 -->
+<div class="lesson-section" id="lesson3">
+  <div class="banner b3">
+    <span class="lesson-num">Lesson 19.3</span>
+    <h2>State and Local Government</h2>
+    <p>Closer to home -- the governments that most directly affect your everyday life!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s3">
+      <h3>What Are We Learning Today?</h3>
+      <p>While the federal government handles national matters, the governments most likely to affect your daily life are <strong>state</strong> and <strong>local</strong> government. Your school, your road, your local park, your water -- all managed by state or local government. Today we explore Washington state's government and Kennewick's local government!</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Governor</span> -- The elected leader of a state government. Washington's state capital is Olympia.</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">State Legislature</span> -- The lawmaking body of a state. Washington's is called the Washington State Legislature (Senate + House of Representatives).</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Mayor</span> -- The elected leader of a city government.</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">City Council</span> -- The elected group that makes laws and decisions for a city.</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">County</span> -- A division of a state. Washington has 39 counties. Kennewick is in Benton County.</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">School Board</span> -- An elected group that oversees public schools in a district. Sage Crest Elementary is in the Kennewick School District!</div>
+    </div>
+
+    <div class="section s3">
+      <h3>Washington State Government</h3>
+      <p>Washington state has its own three branches, mirroring the federal government:</p>
+      <div class="flex-row">
+        <div class="flex-col fb-navy">
+          <h4>Legislative Branch</h4>
+          <p>Washington State Legislature with two chambers: the State Senate (49 senators) and the State House of Representatives (98 members). Meet in Olympia.</p>
+          <p style="font-size:0.85em; margin-top:6px;"><em>Make state laws, set the state budget</em></p>
+        </div>
+        <div class="flex-col fb-red">
+          <h4>Executive Branch</h4>
+          <p>The Governor leads the executive branch and is elected by Washington voters every 4 years. Also includes Lt. Governor, Secretary of State, and other officials.</p>
+          <p style="font-size:0.85em; margin-top:6px;"><em>Carries out state laws, manages state agencies</em></p>
+        </div>
+        <div class="flex-col fb-green">
+          <h4>Judicial Branch</h4>
+          <p>Washington State Supreme Court (9 justices) and lower state courts. Handle cases involving state laws.</p>
+          <p style="font-size:0.85em; margin-top:6px;"><em>Interprets state laws, ensures they follow WA Constitution</em></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section s3">
+      <h3>What Washington State Government Does</h3>
+      <table>
+        <tr><th>Service</th><th>Examples</th></tr>
+        <tr><td><strong>Education</strong></td><td>Funds and oversees public K-12 schools and state universities (UW, WSU, Eastern WA University)</td></tr>
+        <tr><td><strong>Transportation</strong></td><td>Builds and maintains state highways, ferries (Puget Sound), airports</td></tr>
+        <tr><td><strong>Public Safety</strong></td><td>State Patrol, Department of Corrections, Emergency Management</td></tr>
+        <tr><td><strong>Environment</strong></td><td>State parks, wildlife management, environmental regulation</td></tr>
+        <tr><td><strong>Health</strong></td><td>Department of Health, Medicaid, mental health services</td></tr>
+      </table>
+    </div>
+
+    <div class="section s3">
+      <h3>Local Government in Kennewick</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-orange">
+          <h4>City of Kennewick</h4>
+          <p>Kennewick has a <strong>City Council</strong> of 7 elected members and a <strong>City Manager</strong> who runs day-to-day operations.</p>
+          <p style="font-size:0.85em; margin-top:6px;"><em>Provides: local police, fire department, water and sewer, parks, local roads, building permits</em></p>
+        </div>
+        <div class="flex-col fb-brown">
+          <h4>Benton County</h4>
+          <p>Kennewick is in <strong>Benton County</strong>, governed by three elected County Commissioners.</p>
+          <p style="font-size:0.85em; margin-top:6px;"><em>Provides: county roads, county courts, sheriff, elections, county health department</em></p>
+        </div>
+        <div class="flex-col fb-purple">
+          <h4>Kennewick School District</h4>
+          <p>An elected <strong>School Board</strong> oversees your schools -- including Sage Crest Elementary!</p>
+          <p style="font-size:0.85em; margin-top:6px;"><em>Hires teachers and principals, sets curriculum, manages school budgets</em></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Who is the leader of Washington state's executive branch? What is their title?</li>
+        <li>What are TWO services the City of Kennewick provides to you and your family?</li>
+        <li>How is Washington state's government similar in structure to the federal government?</li>
+        <li>Who oversees your school -- Sage Crest Elementary? At what level of government?</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p>Washington state has its own <strong>three branches</strong>, led by the <strong>Governor</strong> in Olympia.</p>
+      <p>Kennewick's local government provides police, fire, water, parks, and local roads.</p>
+      <p>The <strong>Kennewick School District</strong> (with an elected School Board) oversees your school!</p>
+      <p class="cta" style="color:#1b5e20;">Well done! Click Lesson 19.4!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 19.4 -->
+<div class="lesson-section" id="lesson4">
+  <div class="banner b4">
+    <span class="lesson-num">Lesson 19.4</span>
+    <h2>The US Constitution and the Bill of Rights</h2>
+    <p>The supreme law of the land -- the document that created our democracy!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s4">
+      <h3>What Are We Learning Today?</h3>
+      <p>The <strong>US Constitution</strong> is the supreme law of the United States. Written in 1787, it established the framework of our government. The <strong>Bill of Rights</strong> -- the first 10 amendments -- was added in 1791 to protect the basic freedoms of all citizens. These documents still guide our nation today!</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#4e342e;">Constitution</span> -- The supreme law of the United States. Establishes the structure of government and the rights of citizens.</div>
+      <div class="vocab-item"><span class="word" style="color:#4e342e;">Amendment</span> -- A change or addition to the Constitution. There have been 27 amendments.</div>
+      <div class="vocab-item"><span class="word" style="color:#4e342e;">Bill of Rights</span> -- The first 10 amendments to the Constitution, protecting fundamental freedoms of citizens.</div>
+      <div class="vocab-item"><span class="word" style="color:#4e342e;">Preamble</span> -- The opening statement of the Constitution that explains its purpose: "We the People..."</div>
+      <div class="vocab-item"><span class="word" style="color:#4e342e;">Founding Fathers</span> -- The leaders who wrote and signed the Constitution (Washington, Madison, Franklin, Hamilton, and others).</div>
+      <div class="vocab-item"><span class="word" style="color:#4e342e;">Supreme Law of the Land</span> -- The Constitution overrides all other laws. No state or federal law can conflict with it.</div>
+    </div>
+
+    <div class="section s4">
+      <h3>The Preamble -- "We the People"</h3>
+      <div style="background:#efebe9; border-radius:10px; padding:16px 18px; border-left:4px solid #795548; margin-bottom:14px;">
+        <p style="font-style:italic; font-size:0.95em; color:#3e2723;">"We the People of the United States, in Order to form a more perfect Union, establish Justice, insure domestic Tranquility, provide for the common defence, promote the general Welfare, and secure the Blessings of Liberty to ourselves and our Posterity, do ordain and establish this Constitution for the United States of America."</p>
+        <p style="font-size:0.88em; color:#4e342e; margin-top:8px;"><strong>In plain English:</strong> We, the citizens, create this government to provide justice, peace, defence, well-being, and freedom for ourselves and future generations.</p>
+      </div>
+    </div>
+
+    <div class="section s4">
+      <h3>The Bill of Rights -- Your Fundamental Freedoms</h3>
+      <div class="amendment-box"><strong>1st Amendment:</strong> Freedom of religion, speech, press, peaceful assembly, and petition. Perhaps the most important -- you have the right to believe, say, write, and gather peacefully!</div>
+      <div class="amendment-box"><strong>2nd Amendment:</strong> The right to bear arms (have weapons).</div>
+      <div class="amendment-box"><strong>4th Amendment:</strong> Protection from unreasonable searches -- police generally need a warrant to search your home.</div>
+      <div class="amendment-box"><strong>5th Amendment:</strong> You cannot be forced to testify against yourself in court. You cannot be tried twice for the same crime.</div>
+      <div class="amendment-box"><strong>6th Amendment:</strong> Right to a fair and speedy trial by jury if accused of a crime. Right to have a lawyer.</div>
+      <div class="amendment-box"><strong>8th Amendment:</strong> Protection against cruel and unusual punishment.</div>
+      <div class="amendment-box"><strong>10th Amendment:</strong> Powers not given to the federal government belong to the states or the people.</div>
+    </div>
+
+    <div class="section s4">
+      <h3>Why the Constitution Still Matters Today</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-brown">
+          <h4>It limits government power</h4>
+          <p>The government cannot do whatever it wants. The Constitution says what the government CAN and CANNOT do. This protects citizens from tyranny.</p>
+        </div>
+        <div class="flex-col fb-orange">
+          <h4>It can be changed</h4>
+          <p>The amendment process allows the Constitution to adapt. The 13th Amendment ended slavery. The 19th Amendment gave women the right to vote. The Constitution grows with the nation.</p>
+        </div>
+        <div class="flex-col fb-navy">
+          <h4>It protects minorities</h4>
+          <p>Even if the majority wants something, the Constitution prevents the majority from violating the rights of smaller groups or individuals.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>What is the Preamble? What does "We the People" mean?</li>
+        <li>Name THREE freedoms protected by the 1st Amendment.</li>
+        <li>How can the Constitution be changed? What is the process called?</li>
+        <li>Why is freedom of speech important in a democracy? What might happen without it?</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p>The <strong>Constitution</strong> is the supreme law of the United States (1787).</p>
+      <p>The <strong>Bill of Rights</strong> = first 10 amendments protecting fundamental freedoms.</p>
+      <p>1st Amendment: <strong>religion, speech, press, assembly, petition.</strong></p>
+      <p class="cta" style="color:#4e342e;">Keep going! Click Lesson 19.5!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 19.5 -->
+<div class="lesson-section" id="lesson5">
+  <div class="banner b5">
+    <span class="lesson-num">Lesson 19.5</span>
+    <h2>Rights and Responsibilities of Citizens</h2>
+    <p>Being a citizen means both having rights AND taking on responsibilities!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s5">
+      <h3>What Are We Learning Today?</h3>
+      <p>Citizenship is more than just being born in a country -- it is an active role! Citizens have important <strong>rights</strong> that the government must protect. But rights come with <strong>responsibilities</strong> -- actions citizens are expected to take to keep democracy healthy and their community strong. Today we explore both sides of citizenship!</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Rights</span> -- Freedoms and protections that citizens are entitled to under the law.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Responsibilities</span> -- Duties that citizens are expected to fulfil to support their community and government.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Civic Duty</span> -- Actions citizens are expected or required to do: voting, jury duty, obeying laws, paying taxes.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Common Good</span> -- What is best for the whole community, not just individuals.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Jury Duty</span> -- The responsibility of citizens to serve as jurors in a court trial when called upon.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Naturalisation</span> -- The process by which a non-citizen becomes a citizen.</div>
+    </div>
+
+    <div class="section s5">
+      <h3>Rights of US Citizens</h3>
+      <div style="margin:10px 0;">
+        <span class="right-tag">Vote in elections</span>
+        <span class="right-tag">Freedom of speech</span>
+        <span class="right-tag">Freedom of religion</span>
+        <span class="right-tag">Fair trial by jury</span>
+        <span class="right-tag">Run for office</span>
+        <span class="right-tag">Apply for federal jobs</span>
+        <span class="right-tag">Bring family to the US</span>
+        <span class="right-tag">Travel with a US passport</span>
+        <span class="right-tag">Receive federal benefits</span>
+        <span class="right-tag">Protection under the law</span>
+      </div>
+    </div>
+
+    <div class="section s5">
+      <h3>Responsibilities of US Citizens</h3>
+      <div style="margin:10px 0;">
+        <span class="responsibility-tag">Obey the law</span>
+        <span class="responsibility-tag">Pay taxes</span>
+        <span class="responsibility-tag">Vote in elections</span>
+        <span class="responsibility-tag">Serve on a jury</span>
+        <span class="responsibility-tag">Serve in the military if called</span>
+        <span class="responsibility-tag">Stay informed on issues</span>
+        <span class="responsibility-tag">Respect others' rights</span>
+        <span class="responsibility-tag">Participate in community</span>
+        <span class="responsibility-tag">Register to vote at 18</span>
+      </div>
+    </div>
+
+    <div class="section s5">
+      <h3>Rights vs. Responsibilities -- Two Sides of Citizenship</h3>
+      <table>
+        <tr><th>Right</th><th>Matching Responsibility</th></tr>
+        <tr><td>Right to vote</td><td>Responsibility to stay informed about candidates and issues</td></tr>
+        <tr><td>Right to a fair trial</td><td>Responsibility to serve on a jury when called</td></tr>
+        <tr><td>Right to use public roads</td><td>Responsibility to follow traffic laws and pay taxes for road maintenance</td></tr>
+        <tr><td>Right to free speech</td><td>Responsibility to allow others the same right -- even when you disagree</td></tr>
+        <tr><td>Right to police protection</td><td>Responsibility to cooperate with and support law enforcement</td></tr>
+      </table>
+      <div class="tip"><strong>Even as a 3rd grader, you have civic responsibilities!</strong> Treating classmates fairly, following school rules, helping in your community, respecting others -- these are all acts of good citizenship that strengthen your community!</div>
+    </div>
+
+    <div class="section s5">
+      <h3>Good Citizenship at Every Age</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-orange">
+          <h4>At School</h4>
+          <ul>
+            <li>Follow school rules</li>
+            <li>Treat everyone fairly and respectfully</li>
+            <li>Help classmates</li>
+            <li>Take care of shared spaces</li>
+          </ul>
+        </div>
+        <div class="flex-col fb-purple">
+          <h4>In Your Community</h4>
+          <ul>
+            <li>Pick up litter</li>
+            <li>Volunteer to help others</li>
+            <li>Attend community events</li>
+            <li>Be kind and respectful to neighbours</li>
+          </ul>
+        </div>
+        <div class="flex-col fb-navy">
+          <h4>As You Grow Up</h4>
+          <ul>
+            <li>Register to vote at 18</li>
+            <li>Pay taxes honestly</li>
+            <li>Serve on jury duty</li>
+            <li>Stay informed on issues</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Name THREE rights that only US citizens have (that non-citizens do not have).</li>
+        <li>Name THREE responsibilities of citizens. Why is each one important?</li>
+        <li>Can you think of something YOU already do that shows good citizenship? Describe it.</li>
+        <li>Why is it important that even people who disagree with you have the same rights as you?</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p>Rights = what the government must protect for you.</p>
+      <p>Responsibilities = what you must do to support your community and democracy.</p>
+      <p>Good citizenship starts NOW -- at school, at home, and in your community!</p>
+      <p class="cta" style="color:#e65100;">One more! Click Lesson 19.6!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 19.6 -->
+<div class="lesson-section" id="lesson6">
+  <div class="banner b6">
+    <span class="lesson-num">Lesson 19.6</span>
+    <h2>Democracy in Action: Voting and Civic Participation</h2>
+    <p>Democracy only works when citizens participate -- every voice matters!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s6">
+      <h3>What Are We Learning Today?</h3>
+      <p>Democracy is not just a system of government -- it is an active practice that requires citizen participation. The most fundamental act of democracy is <strong>voting</strong>. But democracy also needs citizens who stay informed, speak up, volunteer, and engage with their community. Today we learn how ordinary people make democracy work!</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Voting</span> -- The act of choosing a candidate or policy by marking a ballot. The foundation of democracy.</div>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Election</span> -- An event where citizens vote to choose leaders or decide on issues.</div>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Ballot</span> -- The form or card used to record a vote.</div>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Candidate</span> -- A person who is running for an elected office.</div>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Civic Participation</span> -- Taking active part in your community and government: voting, volunteering, attending meetings, writing to representatives.</div>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Representative</span> -- A person elected to make decisions on behalf of the voters who elected them.</div>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Initiative</span> -- A process allowing citizens to propose new laws by collecting signatures and putting the issue to a vote.</div>
+    </div>
+
+    <div class="section s6">
+      <h3>How Voting Works in the US</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-purple">
+          <h4>Who Can Vote?</h4>
+          <ul>
+            <li>US citizens</li>
+            <li>At least 18 years old</li>
+            <li>Registered to vote</li>
+            <li>Not currently serving a felony sentence (in most states)</li>
+          </ul>
+        </div>
+        <div class="flex-col fb-blue">
+          <h4>What Do People Vote For?</h4>
+          <ul>
+            <li>President (every 4 years)</li>
+            <li>US Senators and Representatives</li>
+            <li>State Governor and legislators</li>
+            <li>Local officials (mayor, city council, school board)</li>
+            <li>Ballot measures and initiatives</li>
+          </ul>
+        </div>
+        <div class="flex-col fb-green">
+          <h4>Washington State Voting</h4>
+          <p>Washington is a <strong>vote-by-mail</strong> state! Every registered voter automatically receives a ballot in the mail. This makes voting easier and increases participation.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section s6">
+      <h3>Ways to Participate in Democracy Beyond Voting</h3>
+      <table>
+        <tr><th>Type of Participation</th><th>What It Looks Like</th><th>Why It Matters</th></tr>
+        <tr><td><strong>Stay informed</strong></td><td>Read news, follow local government meetings</td><td>You can only make good decisions with good information</td></tr>
+        <tr><td><strong>Contact representatives</strong></td><td>Write letters or emails to your Senators, Representatives, or city council</td><td>Elected officials listen to their constituents</td></tr>
+        <tr><td><strong>Volunteer</strong></td><td>Help in your community, work on campaigns</td><td>Strengthens community bonds and democracy</td></tr>
+        <tr><td><strong>Attend public meetings</strong></td><td>Go to city council or school board meetings</td><td>Allows citizens to voice their opinions directly</td></tr>
+        <tr><td><strong>Peaceful protest</strong></td><td>Marches, rallies, demonstrations</td><td>Protected by the 1st Amendment; shows leaders what people care about</td></tr>
+        <tr><td><strong>Sign petitions</strong></td><td>Support an initiative or appeal to government</td><td>Shows strength of public opinion</td></tr>
+      </table>
+    </div>
+
+    <div class="section s6">
+      <h3>How a Bill Becomes a Law</h3>
+      <div style="background:#f3e5f5; border-radius:10px; padding:16px 18px; margin-bottom:14px;">
+        <div style="display:flex; gap:8px; flex-wrap:wrap; justify-content:center; align-items:center;">
+          <div style="background:#4a148c; color:white; border-radius:8px; padding:8px 12px; font-size:0.82em; font-weight:bold; text-align:center;">1. Idea<br>for a Law</div>
+          <div style="color:#4a148c; font-size:1.2em; font-weight:bold;">→</div>
+          <div style="background:#4a148c; color:white; border-radius:8px; padding:8px 12px; font-size:0.82em; font-weight:bold; text-align:center;">2. Member of<br>Congress introduces<br>a bill</div>
+          <div style="color:#4a148c; font-size:1.2em; font-weight:bold;">→</div>
+          <div style="background:#4a148c; color:white; border-radius:8px; padding:8px 12px; font-size:0.82em; font-weight:bold; text-align:center;">3. Committees<br>discuss and<br>debate the bill</div>
+          <div style="color:#4a148c; font-size:1.2em; font-weight:bold;">→</div>
+          <div style="background:#4a148c; color:white; border-radius:8px; padding:8px 12px; font-size:0.82em; font-weight:bold; text-align:center;">4. Both House<br>and Senate<br>vote YES</div>
+          <div style="color:#4a148c; font-size:1.2em; font-weight:bold;">→</div>
+          <div style="background:#4a148c; color:white; border-radius:8px; padding:8px 12px; font-size:0.82em; font-weight:bold; text-align:center;">5. President<br>signs it →<br>IT'S A LAW!</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>What are the requirements to vote in the US? Why do you think each requirement exists?</li>
+        <li>Name TWO ways you can participate in democracy even before you are 18 years old.</li>
+        <li>How does Washington state make voting easier than many other states?</li>
+        <li>If you could write a letter to your city council about one issue in Kennewick, what would you say?</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>You Finished Unit 19!</h3>
+      <p>Voting is the most fundamental act of democracy -- and it matters!</p>
+      <p>Citizens participate through voting, contacting representatives, volunteering, staying informed, and peaceful protest.</p>
+      <p>Washington uses <strong>vote-by-mail</strong> to make voting easier for everyone.</p>
+      <p>Democracy needs <strong>YOUR participation</strong> to work!</p>
+      <p class="cta" style="color:#4a148c;">Outstanding! You completed all 6 lessons in Unit 19! Now take the Unit 19 Quiz!</p>
+    </div>
+  </div>
+</div>
+
+</div>
+<script>
+  const sections = document.querySelectorAll('.lesson-section');
+  const navLinks = document.querySelectorAll('.nav-bar a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 80) current = s.getAttribute('id'); });
+    navLinks.forEach(l => { l.classList.remove('active'); if (l.getAttribute('href') === '#' + current) l.classList.add('active'); });
+  });
+</script>
+</body>
+</html>
