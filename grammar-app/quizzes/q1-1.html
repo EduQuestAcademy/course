@@ -2,762 +2,446 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<title>Lesson 1.1 — Nouns | Grammar Mastery</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+<title>Lesson 1.2 — Pronouns: Replacing Nouns | Grammar Mastery</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap');
-  :root {
-    --accent: #4f8ef7; --accent-bg: rgba(79,142,247,0.15);
-    --correct: #34d399; --correct-bg: rgba(52,211,153,0.14);
-    --wrong: #f87171; --wrong-bg: rgba(248,113,113,0.14);
-    --gold: #fbbf24; --radius: 14px;
-    --td: rgba(255,255,255,0.65); --tf: rgba(255,255,255,0.38);
-    --border: rgba(255,255,255,0.15);
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap');
+  :root{
+    --bg:#f3f4f6;--white:#ffffff;--border:#e5e7eb;
+    --text:#111827;--text-md:#374151;--text-sm:#6b7280;--text-xs:#9ca3af;
+    --accent:#7c3aed;--accent-lt:#ede9fe;
+    --ok:#059669;--ok-lt:#d1fae5;--ok-dk:#065f46;
+    --no:#dc2626;--no-lt:#fee2e2;--no-dk:#7f1d1d;
+    --gold:#b45309;--radius:14px;
+    --shadow:0 1px 3px rgba(0,0,0,0.08),0 1px 2px rgba(0,0,0,0.04);
   }
-  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
-  html { scroll-behavior: smooth; }
-  body {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    background: linear-gradient(160deg,#1e3f7a 0%,#0f2552 55%,#091a3e 100%);
-    background-attachment: fixed;
-    color: #fff; min-height: 100vh; overflow-x: hidden;
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+  body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;}
+  .app{max-width:480px;margin:0 auto;padding-bottom:40px;background:var(--bg);min-height:100vh;}
+  .qh{
+    padding:14px 16px;display:flex;align-items:center;justify-content:space-between;
+    background:var(--white);border-bottom:1px solid var(--border);
+    position:sticky;top:0;z-index:50;box-shadow:var(--shadow);
   }
-  body::before {
-    content:''; position:fixed; inset:0;
-    background-image: radial-gradient(rgba(255,255,255,0.05) 1px,transparent 1px);
-    background-size:26px 26px; pointer-events:none; z-index:0;
+  .back{color:var(--accent);font-size:0.82em;font-weight:600;background:none;border:none;cursor:pointer;font-family:'Inter',sans-serif;text-decoration:none;}
+  .qm{text-align:right;}
+  .qc{font-size:0.7em;font-family:'JetBrains Mono',monospace;color:var(--accent);font-weight:700;}
+  .ql{font-size:0.62em;color:var(--text-xs);margin-top:1px;}
+  .mt{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:6px 8px;font-size:1em;cursor:pointer;}
+  .qp{height:5px;background:#e5e7eb;}
+  .qpf{height:100%;background:linear-gradient(90deg,#7c3aed,#2563eb);transition:width .4s cubic-bezier(.4,0,.2,1);}
+  .qa{padding:22px 16px 14px;}
+  .qtb{
+    display:inline-flex;align-items:center;
+    background:var(--accent-lt);border:1px solid #c4b5fd;
+    border-radius:20px;padding:4px 13px;
+    font-size:0.62em;font-weight:700;letter-spacing:0.06em;
+    color:var(--accent);text-transform:uppercase;
+    font-family:'JetBrains Mono',monospace;margin-bottom:12px;
   }
-  .app { position:relative; z-index:1; max-width:480px; margin:0 auto; padding-bottom:40px; }
-
-  /* HEADER */
-  .quiz-header {
-    padding: 16px 20px; display: flex; align-items: center; justify-content: space-between;
-    border-bottom: 1px solid var(--border);
-    position: sticky; top: 0; z-index: 50;
-    background: rgba(9,26,62,0.88); backdrop-filter: blur(22px); -webkit-backdrop-filter: blur(22px);
+  .qt{font-size:1.02em;font-weight:700;line-height:1.55;color:var(--text);}
+  .ol{display:flex;flex-direction:column;gap:9px;padding:0 16px;}
+  .ob{
+    display:flex;align-items:center;gap:13px;
+    background:var(--white);border:1.5px solid var(--border);
+    border-radius:var(--radius);padding:13px 15px;
+    cursor:pointer;transition:all .15s;text-align:left;
+    font-family:'Inter',sans-serif;width:100%;color:var(--text);
+    box-shadow:var(--shadow);
   }
-  .back-btn {
-    color: var(--accent); font-size: 0.82em; font-weight: 700;
-    background: none; border: none; cursor: pointer;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    display: flex; align-items: center; gap: 6px; text-decoration: none; padding: 6px 0;
+  .ob:hover{border-color:#a78bfa;box-shadow:0 2px 8px rgba(124,58,237,0.12);}
+  .ob:active{transform:scale(.98);}
+  .ob:disabled{cursor:default;}
+  .ok2{
+    width:30px;height:30px;flex-shrink:0;border-radius:8px;
+    background:var(--accent-lt);
+    display:flex;align-items:center;justify-content:center;
+    font-size:0.72em;font-weight:700;font-family:'JetBrains Mono',monospace;
+    color:var(--accent);transition:all .15s;
   }
-  .quiz-meta { text-align: right; }
-  .q-counter { font-size: 0.7em; font-family: 'JetBrains Mono', monospace; color: var(--accent); }
-  .q-lesson { font-size: 0.62em; color: var(--tf); margin-top: 1px; }
-  .mute-toggle {
-    background: rgba(255,255,255,0.1); border: 1px solid var(--border);
-    border-radius: 8px; padding: 6px 8px; font-size: 1em; cursor: pointer;
+  .ot{font-size:0.88em;line-height:1.4;flex:1;font-weight:500;color:var(--text);}
+  .oi{font-size:1em;opacity:0;transition:opacity .2s;}
+  .ob.correct{border-color:var(--ok);background:var(--ok-lt);}
+  .ob.correct .ok2{background:var(--ok);color:white;}
+  .ob.correct .oi{opacity:1;}
+  .ob.wrong{border-color:var(--no);background:var(--no-lt);}
+  .ob.wrong .ok2{background:var(--no);color:white;}
+  .ob.wrong .oi{opacity:1;}
+  .ob.dimmed{opacity:.38;}
+  .fb{padding:0 16px;}
+  .fi{
+    width:100%;background:var(--white);border:1.5px solid var(--border);
+    border-radius:var(--radius);padding:13px 15px;
+    font-family:'Inter',sans-serif;font-size:0.95em;color:var(--text);
+    outline:none;transition:border-color .2s;box-shadow:var(--shadow);
   }
-
-  /* PROGRESS */
-  .quiz-progress { height: 5px; background: rgba(255,255,255,0.1); }
-  .quiz-progress-fill {
-    height: 100%; background: linear-gradient(90deg, var(--accent), #34d399);
-    transition: width 0.4s cubic-bezier(0.4,0,0.2,1);
+  .fi:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(124,58,237,0.1);}
+  .fi.correct{border-color:var(--ok);background:var(--ok-lt);color:var(--ok-dk);}
+  .fi.wrong{border-color:var(--no);background:var(--no-lt);color:var(--no-dk);}
+  .fs{
+    margin-top:9px;width:100%;background:var(--accent);
+    border:none;border-radius:var(--radius);padding:13px;
+    font-family:'Inter',sans-serif;font-size:0.9em;font-weight:700;color:white;cursor:pointer;
+    box-shadow:0 2px 8px rgba(124,58,237,0.3);
   }
-
-  /* QUESTION AREA */
-  .question-area { padding: 24px 20px 16px; }
-  .q-type-badge {
-    display: inline-flex; align-items: center;
-    background: var(--accent-bg); border: 1px solid rgba(79,142,247,0.3);
-    border-radius: 20px; padding: 5px 14px;
-    font-size: 0.62em; font-weight: 700; letter-spacing: 0.06em;
-    color: var(--accent); text-transform: uppercase;
-    font-family: 'JetBrains Mono', monospace; margin-bottom: 14px;
+  .fs:disabled{opacity:.5;cursor:default;}
+  .tfo{display:grid;grid-template-columns:1fr 1fr;gap:9px;padding:0 16px;}
+  .eb{
+    margin:13px 16px 0;background:var(--white);border:1px solid var(--border);
+    border-radius:var(--radius);padding:13px 15px;
+    font-size:0.82em;line-height:1.65;color:var(--text-md);
+    display:none;box-shadow:var(--shadow);
   }
-  .q-text {
-    font-size: 1.05em; font-weight: 700; line-height: 1.55; color: #fff; margin-bottom: 8px;
+  .eb.show{display:block;animation:fi2 .3s ease;}
+  .el{font-size:0.7em;font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-family:'JetBrains Mono',monospace;margin-bottom:5px;}
+  .el.correct{color:var(--ok);}
+  .el.wrong{color:var(--no);}
+  .nb2{
+    display:none;margin:13px 16px 0;width:calc(100% - 32px);
+    background:var(--accent);border:none;border-radius:var(--radius);
+    padding:14px;font-family:'Inter',sans-serif;font-size:0.95em;
+    font-weight:700;color:white;cursor:pointer;
+    box-shadow:0 2px 8px rgba(124,58,237,0.3);
   }
-
-  /* OPTIONS */
-  .options-list { display: flex; flex-direction: column; gap: 10px; padding: 0 20px; }
-  .option-btn {
-    display: flex; align-items: center; gap: 14px;
-    background: rgba(255,255,255,0.92); border: 2px solid rgba(255,255,255,0.5);
-    border-radius: var(--radius); padding: 14px 16px;
-    cursor: pointer; transition: all 0.15s; text-align: left;
-    font-family: 'Plus Jakarta Sans', sans-serif; width: 100%; color: #1a3a6b;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  .nb2.show{display:block;animation:fu .3s ease;}
+  .nb2:active{transform:scale(.98);}
+  .rs{display:none;padding:28px 16px;flex-direction:column;align-items:center;}
+  .rs.show{display:flex;animation:fu .5s ease;}
+  .rtr{font-size:3.8em;margin-bottom:8px;animation:bn .6s ease;}
+  .rsb{
+    font-size:3.2em;font-weight:800;font-family:'JetBrains Mono',monospace;
+    background:linear-gradient(135deg,#7c3aed,#2563eb);
+    -webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px;
   }
-  .option-btn:hover { background: #ffffff; border-color: var(--accent); transform: translateY(-1px); box-shadow: 0 4px 14px rgba(0,0,0,0.2); }
-  .option-btn:active { transform: scale(0.98); }
-  .option-btn:disabled { cursor: default; }
-  .option-key {
-    width: 30px; height: 30px; flex-shrink: 0; border-radius: 8px;
-    background: #1e3f7a;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 0.72em; font-weight: 700; font-family: 'JetBrains Mono', monospace;
-    color: #fff; transition: all 0.15s;
+  .rl{font-size:0.88em;color:var(--text-sm);margin-bottom:22px;font-weight:500;}
+  .rbd{
+    width:100%;background:var(--white);border:1px solid var(--border);
+    border-radius:var(--radius);padding:14px;margin-bottom:18px;box-shadow:var(--shadow);
   }
-  .option-text { font-size: 0.9em; line-height: 1.4; flex: 1; font-weight: 600; color: #1a3a6b; }
-  .option-indicator { font-size: 1em; opacity: 0; transition: opacity 0.2s; }
-
-  /* Answer states */
-  .option-btn.correct { border-color: #059669; background: #d1fae5; color: #065f46; }
-  .option-btn.correct .option-key { background: #059669; color: #fff; }
-  .option-btn.correct .option-indicator { opacity: 1; }
-  .option-btn.wrong { border-color: #dc2626; background: #fee2e2; color: #7f1d1d; }
-  .option-btn.wrong .option-key { background: #dc2626; color: #fff; }
-  .option-btn.wrong .option-indicator { opacity: 1; }
-  .option-btn.dimmed { opacity: 0.45; }
-
-  /* FILL IN BLANK */
-  .fill-blank-wrap { padding: 0 20px; }
-  .fill-input {
-    width: 100%; background: rgba(255,255,255,0.92);
-    border: 2px solid rgba(255,255,255,0.5);
-    border-radius: var(--radius); padding: 14px 16px;
-    font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.95em; color: #1a3a6b;
-    outline: none; transition: border-color 0.2s;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  .bdr{display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid var(--border);font-size:0.82em;color:var(--text-md);}
+  .bdr:last-child{border-bottom:none;}
+  .bdc{color:var(--ok);font-weight:700;font-family:'JetBrains Mono',monospace;}
+  .bdw{color:var(--no);font-weight:700;font-family:'JetBrains Mono',monospace;}
+  .nbp{
+    background:#fffbeb;border:1px solid #fde68a;
+    border-radius:12px;padding:12px 15px;width:100%;
+    display:flex;align-items:center;gap:11px;margin-bottom:14px;
+    box-shadow:var(--shadow);
   }
-  .fill-input:focus { border-color: var(--accent); background: #fff; }
-  .fill-input.correct { border-color: #059669; background: #d1fae5; color: #065f46; }
-  .fill-input.wrong { border-color: #dc2626; background: #fee2e2; color: #7f1d1d; }
-  .fill-submit {
-    margin-top: 10px; width: 100%; background: var(--accent);
-    border: none; border-radius: var(--radius); padding: 13px;
-    font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.9em;
-    font-weight: 700; color: white; cursor: pointer;
-    box-shadow: 0 2px 8px rgba(79,142,247,0.35);
+  .rbs{display:flex;flex-direction:column;gap:9px;width:100%;}
+  .bp{
+    background:var(--accent);border:none;border-radius:var(--radius);
+    padding:14px;font-family:'Inter',sans-serif;font-size:0.95em;font-weight:700;
+    color:white;cursor:pointer;text-align:center;text-decoration:none;display:block;
+    box-shadow:0 2px 8px rgba(124,58,237,0.3);
   }
-  .fill-submit:disabled { opacity: 0.5; cursor: default; }
-
-  /* EXPLANATION */
-  .explanation-box {
-    margin: 14px 20px 0; background: rgba(255,255,255,0.07);
-    border: 1px solid rgba(255,255,255,0.13);
-    border-radius: var(--radius); padding: 14px 16px;
-    font-size: 0.82em; line-height: 1.65; color: rgba(255,255,255,0.75);
-    display: none; animation: fadeIn 0.3s ease;
+  .bs{
+    background:var(--white);border:1.5px solid var(--border);
+    border-radius:var(--radius);padding:13px;
+    font-family:'Inter',sans-serif;font-size:0.88em;font-weight:600;
+    color:var(--text-sm);cursor:pointer;text-align:center;text-decoration:none;display:block;
+    box-shadow:var(--shadow);
   }
-  .explanation-box.show { display: block; }
-  .expl-label { font-size: 0.7em; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; font-family: 'JetBrains Mono', monospace; margin-bottom: 6px; }
-  .expl-label.correct { color: var(--correct); }
-  .expl-label.wrong { color: var(--wrong); }
-
-  /* NEXT BUTTON */
-  .next-btn {
-    display: none; margin: 16px 20px 0; width: calc(100% - 40px);
-    background: var(--accent); border: none; border-radius: var(--radius);
-    padding: 15px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.95em;
-    font-weight: 700; color: white; cursor: pointer; transition: transform 0.15s;
-    animation: fadeUp 0.3s ease;
-  }
-  .next-btn.show { display: block; }
-  .next-btn:active { transform: scale(0.98); }
-
-  /* TRUE/FALSE */
-  .tf-options { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 0 20px; }
-
-  /* RESULTS SCREEN */
-  .results-screen { display: none; padding: 30px 20px; flex-direction: column; align-items: center; animation: fadeUp 0.5s ease; }
-  .results-screen.show { display: flex; }
-  .results-trophy { font-size: 4em; margin-bottom: 10px; animation: bounce 0.6s ease; }
-  .results-score-big {
-    font-size: 3.5em; font-weight: 800; font-family: 'JetBrains Mono', monospace;
-    background: linear-gradient(135deg, var(--accent), #34d399);
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 4px;
-  }
-  .results-label { font-size: 0.88em; color: var(--td); margin-bottom: 24px; }
-  .results-breakdown {
-    width: 100%; background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.15);
-    border-radius: var(--radius); padding: 16px; margin-bottom: 20px;
-  }
-  .breakdown-row {
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.1); font-size: 0.82em;
-  }
-  .breakdown-row:last-child { border-bottom: none; }
-  .bd-correct { color: var(--correct); font-weight: 600; font-family: 'JetBrains Mono', monospace; }
-  .bd-wrong { color: var(--wrong); font-weight: 600; font-family: 'JetBrains Mono', monospace; }
-
-  .new-badge-pop {
-    background: rgba(251,191,36,0.1); border: 1px solid rgba(251,191,36,0.3);
-    border-radius: 12px; padding: 12px 16px; width: 100%;
-    display: flex; align-items: center; gap: 12px; margin-bottom: 16px;
-  }
-  .nbp-icon { font-size: 1.8em; }
-  .nbp-title { font-size: 0.78em; font-weight: 700; color: var(--gold); }
-  .nbp-name { font-size: 0.7em; color: var(--td); }
-
-  .results-btns { display: flex; flex-direction: column; gap: 10px; width: 100%; }
-  .btn-primary {
-    background: var(--accent); border: none; border-radius: var(--radius);
-    padding: 15px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.95em;
-    font-weight: 700; color: white; cursor: pointer; transition: transform 0.15s;
-    text-align: center; text-decoration: none; display: block;
-  }
-  .btn-primary:active { transform: scale(0.98); }
-  .btn-secondary {
-    background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.15);
-    border-radius: var(--radius); padding: 14px;
-    font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.88em;
-    font-weight: 600; color: rgba(255,255,255,0.7); cursor: pointer;
-    transition: border-color 0.2s; text-align: center; text-decoration: none; display: block;
-  }
-  .btn-secondary:active { transform: scale(0.98); }
-
-  /* Animations */
-  @keyframes fadeUp { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
-  @keyframes fadeIn { from{opacity:0} to{opacity:1} }
-  @keyframes bounce { 0%,100%{transform:scale(1)} 50%{transform:scale(1.2)} }
-  @keyframes pulse { 0%,100%{box-shadow:0 0 0 0 rgba(251,191,36,0)} 50%{box-shadow:0 0 0 6px rgba(251,191,36,0)} }
-  @keyframes shake { 0%,100%{transform:translateX(0)} 25%{transform:translateX(-6px)} 75%{transform:translateX(6px)} }
-  .shake { animation: shake 0.35s ease; }
-
-  .question-card { animation: fadeUp 0.3s ease; }
+  .qcard{animation:fu .3s ease;}
+  @keyframes fu{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes fi2{from{opacity:0}to{opacity:1}}
+  @keyframes bn{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
+  @keyframes sk{0%,100%{transform:translateX(0)}25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+  .shake{animation:sk .3s ease;}
 </style>
 </head>
 <body>
 <div class="app">
-
-  <!-- HEADER -->
-  <div class="quiz-header">
-    <a class="back-btn" href="../modules/module1.html">← Module 1</a>
-    <div class="quiz-meta">
-      <div class="q-counter" id="qCounter">Q 1 of 20</div>
-      <div class="q-lesson">Lesson 1.1 — Nouns</div>
-    </div>
-    <button class="mute-toggle" id="muteBtn" onclick="toggleMute()">🔊</button>
-  </div>
-
-  <!-- PROGRESS BAR -->
-  <div class="quiz-progress">
-    <div class="quiz-progress-fill" id="progressFill" style="width:0%"></div>
-  </div>
-
-  <!-- QUIZ AREA -->
-  <div id="quizArea"></div>
-
-  <!-- RESULTS -->
-  <div class="results-screen" id="resultsScreen"></div>
-
+<div class="qh">
+  <a class="back" href="../modules/module1.html">&larr; Module 1</a>
+  <div class="qm"><div class="qc" id="qc">Q 1 of 20</div><div class="ql">Lesson 1.2 &mdash; Pronouns: Replacing Nouns</div></div>
+  <button class="mt" id="mb" onclick="tM()">&#128266;</button>
 </div>
-
+<div class="qp"><div class="qpf" id="pf" style="width:0%"></div></div>
+<div id="qa"></div>
+<div class="rs" id="rs"></div>
+</div>
 <script>
-// ═══════════════════════════════════════════════════════
-// AUDIO ENGINE
-// ═══════════════════════════════════════════════════════
-let audioCtx = null;
-function getAudioCtx() {
-  if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-  return audioCtx;
+var Q=[
+{
+"type": "mcq",
+"q": "Which of the following is a personal pronoun?",
+"options": [
+"This",
+"He",
+"Who",
+"Each"
+],
+"answer": 1,
+"explanation": "Personal pronouns refer to specific people. 'He' is a third-person singular personal pronoun. 'This' is demonstrative, 'who' is interrogative/relative, and 'each' is indefinite."
+},
+{
+"type": "mcq",
+"q": "Which sentence uses a reflexive pronoun correctly?",
+"options": [
+"He did it hisself.",
+"She hurt herself.",
+"They finished theirselves.",
+"We enjoyed ourself."
+],
+"answer": 1,
+"explanation": "Reflexive pronouns are used when subject and object refer to the same person. 'She hurt herself' is correct. 'Hisself' and 'theirselves' are not standard English forms."
+},
+{
+"type": "mcq",
+"q": "Identify the demonstrative pronoun in: 'These are the best results we have seen.'",
+"options": [
+"Best",
+"Results",
+"These",
+"Seen"
+],
+"answer": 2,
+"explanation": "'These' stands alone as the subject, replacing a noun — making it a demonstrative pronoun. Demonstrative pronouns: this, that, these, those."
+},
+{
+"type": "mcq",
+"q": "Which sentence uses a relative pronoun correctly?",
+"options": [
+"The book who I read was fascinating.",
+"The book which I read was fascinating.",
+"The book what I read was fascinating.",
+"The book whom I read was fascinating."
+],
+"answer": 1,
+"explanation": "'Which' introduces a relative clause referring to a thing ('the book'). 'Who/whom' refers to people. 'What' cannot introduce a relative clause modifying a noun this way."
+},
+{
+"type": "mcq",
+"q": "Which of the following is an indefinite pronoun?",
+"options": [
+"She",
+"Herself",
+"Which",
+"Everyone"
+],
+"answer": 3,
+"explanation": "Indefinite pronouns refer to non-specific people or things. 'Everyone' is an indefinite pronoun. 'She' is personal, 'herself' is reflexive, 'which' is relative."
+},
+{
+"type": "tf",
+"q": "The pronoun 'whom' is used as the subject of a verb.",
+"answer": false,
+"explanation": "False. 'Whom' is the OBJECT form of 'who'. Use 'who' as subject (Who did this?) and 'whom' as object (To whom did you speak?). A test: if you can replace it with 'him', use 'whom'."
+},
+{
+"type": "mcq",
+"q": "In which sentence is the pronoun used incorrectly?",
+"options": [
+"She gave the book to him.",
+"Between you and I, this is wrong.",
+"They invited us to the party.",
+"He and I went to the market."
+],
+"answer": 1,
+"explanation": "After a preposition, the object form must be used. 'Between you and I' is wrong — it should be 'between you and me'. 'Between' is a preposition requiring the object pronoun 'me'."
+},
+{
+"type": "mcq",
+"q": "Which sentence uses a possessive pronoun correctly?",
+"options": [
+"The decision is their's.",
+"The decision is theirs.",
+"The decision is her's.",
+"The decision is mines."
+],
+"answer": 1,
+"explanation": "Possessive pronouns (mine, yours, his, hers, ours, theirs) never take an apostrophe. 'Theirs' is correct. 'Their's', 'her's', and 'mines' are all incorrect forms."
+},
+{
+"type": "mcq",
+"q": "What is the function of 'it' in: 'It is raining heavily outside.'?",
+"options": [
+"Personal pronoun replacing a noun",
+"Reflexive pronoun",
+"Dummy subject pronoun",
+"Demonstrative pronoun"
+],
+"answer": 2,
+"explanation": "'It' here is a dummy (empty) subject — it doesn't refer to any noun but fills the grammatical subject position when talking about weather, time, or environment."
+},
+{
+"type": "mcq",
+"q": "Which sentence has clear and correct pronoun reference?",
+"options": [
+"After James spoke to David, he felt better.",
+"When Sarah called the office, it was closed.",
+"The manager submitted her report on time.",
+"They say it will rain tomorrow."
+],
+"answer": 2,
+"explanation": "'The manager submitted her report' has clear, unambiguous pronoun reference — 'her' clearly refers to 'the manager'. The other options have unclear or vague pronoun reference."
+},
+{
+"type": "fill",
+"q": "The pronouns myself, yourself, himself, herself, itself, ourselves, yourselves, and themselves are called ________ pronouns.",
+"answer": "reflexive",
+"hint": "They reflect back to the subject...",
+"explanation": "These are REFLEXIVE pronouns. They are used when the subject and object refer to the same person/thing, or for emphasis (intensive use). Never say 'hisself' or 'theirselves'."
+},
+{
+"type": "mcq",
+"q": "Which sentence uses an interrogative pronoun correctly?",
+"options": [
+"Who's jacket is this?",
+"Whose jacket is this?",
+"Whom jacket is this?",
+"Which jacket is her's?"
+],
+"answer": 1,
+"explanation": "'Whose' asks about possession. 'Who's' is a contraction of 'who is'. 'Whose jacket is this?' is correct. Possessive pronouns never have apostrophes."
+},
+{
+"type": "mcq",
+"q": "Choose the correct pronoun: 'Neither the students nor the teacher ___ ready.'",
+"options": [
+"were",
+"are",
+"is",
+"am"
+],
+"answer": 2,
+"explanation": "With 'neither...nor', the verb agrees with the closest subject. 'Teacher' is singular and closest, so we use 'is'. This is the proximity rule for subject-verb agreement with correlative conjunctions."
+},
+{
+"type": "tf",
+"q": "Pronouns must always agree with their antecedents in number and gender.",
+"answer": true,
+"explanation": "True. Pronoun-antecedent agreement is essential. 'Each student must submit their assignment' (singular antecedent, generic 'their') and 'The girls finished their work' (plural) both show agreement."
+},
+{
+"type": "mcq",
+"q": "Which sentence avoids sexist pronoun usage most effectively?",
+"options": [
+"Every student must bring his textbook.",
+"Every student must bring their textbook.",
+"Every student must bring her textbook.",
+"Every student must bring his or her textbook."
+],
+"answer": 1,
+"explanation": "'Their' used with a singular antecedent ('every student') is now widely accepted as a gender-neutral option, endorsed by major style guides. It avoids the assumption that all students are male."
+},
+{
+"type": "mcq",
+"q": "Identify the pronoun type in: 'One must do one's best at all times.'",
+"options": [
+"Personal pronoun",
+"Demonstrative pronoun",
+"Impersonal/indefinite pronoun",
+"Reflexive pronoun"
+],
+"answer": 2,
+"explanation": "'One' is an impersonal/indefinite pronoun used in formal or literary contexts to refer to people in general without specifying who. 'One's' is its possessive form."
+},
+{
+"type": "mcq",
+"q": "Which sentence uses a reciprocal pronoun correctly?",
+"options": [
+"They helped each other during the crisis.",
+"They helped themselves during the crisis.",
+"They helped one another by themselves.",
+"They helped theirselves during the crisis."
+],
+"answer": 0,
+"explanation": "Reciprocal pronouns (each other, one another) express a mutual action. 'They helped each other' correctly shows two people helping one another. 'Theirselves' is not a standard English form."
+},
+{
+"type": "fill",
+"q": "In the sentence 'It was she who solved the problem,' the pronoun 'she' is in the ________ case.",
+"answer": "nominative|subjective",
+"hint": "It comes after a linking verb...",
+"explanation": "After a linking verb like 'was', the subject form (nominative/subjective case) is used: 'It was she', 'It was he', 'It was I'. Informally, object forms are often used, but formally the nominative is correct."
+},
+{
+"type": "mcq",
+"q": "Which sentence contains an error in pronoun case?",
+"options": [
+"He and I completed the project.",
+"The prize was given to her and me.",
+"Between you and me, this is confidential.",
+"The teacher asked she and I to stay."
+],
+"answer": 3,
+"explanation": "'The teacher asked she and I to stay' is incorrect. After a verb ('asked'), object pronouns are needed: 'her and me'. 'She' and 'I' are subject pronouns wrongly used as objects."
+},
+{
+"type": "mcq",
+"q": "Which sentence demonstrates the most sophisticated and accurate pronoun use?",
+"options": [
+"Everyone in the office did their best, but the project, which nobody anticipated would fail, disappointed those who had invested themselves fully in it.",
+"Everyone in the office did his best, but the project which nobody anticipated would fail, disappointed those who invested theirselves fully in it.",
+"Everyone in the office did their best, but the project, whom nobody anticipated would fail, disappointed those who had invested themselves fully into it.",
+"Everyone in the offices did their best, but the project which nobody anticipated would fail, disappointed those who had invested themselves fully in it."
+],
+"answer": 0,
+"explanation": "Option A correctly uses: 'their' (gender-neutral with 'everyone'), 'which' (not 'whom' for a non-person antecedent), 'themselves' (not 'theirselves'), and 'in it' (not 'into it'). All pronoun choices are accurate."
 }
-function playTone(type) {
-  const d = getData();
-  if (d.muted) return;
-  try {
-    const ctx = getAudioCtx();
-    if (ctx.state === 'suspended') ctx.resume();
-    if (type === 'correct') playCorrect(ctx);
-    else if (type === 'wrong') playWrong(ctx);
-    else if (type === 'complete') playFanfare(ctx);
-  } catch(e) {}
-}
-
-function playCorrect(ctx) {
-  // Rising happy arpeggio C-E-G
-  [[523,0],[659,0.1],[784,0.2]].forEach(([freq,delay]) => {
-    const osc = ctx.createOscillator();
-    const gain = ctx.createGain();
-    osc.connect(gain); gain.connect(ctx.destination);
-    osc.frequency.value = freq;
-    osc.type = 'sine';
-    const t = ctx.currentTime + delay;
-    gain.gain.setValueAtTime(0, t);
-    gain.gain.linearRampToValueAtTime(0.18, t + 0.02);
-    gain.gain.exponentialRampToValueAtTime(0.001, t + 0.3);
-    osc.start(t); osc.stop(t + 0.3);
-  });
-}
-
-function playWrong(ctx) {
-  // Descending minor buzz
-  [[240,0],[200,0.1]].forEach(([freq,delay]) => {
-    const osc = ctx.createOscillator();
-    const gain = ctx.createGain();
-    osc.connect(gain); gain.connect(ctx.destination);
-    osc.frequency.value = freq;
-    osc.type = 'sawtooth';
-    const t = ctx.currentTime + delay;
-    gain.gain.setValueAtTime(0, t);
-    gain.gain.linearRampToValueAtTime(0.08, t + 0.02);
-    gain.gain.exponentialRampToValueAtTime(0.001, t + 0.25);
-    osc.start(t); osc.stop(t + 0.25);
-  });
-}
-
-function playFanfare(ctx) {
-  // Victory fanfare C-E-G-C
-  [[523,0],[659,0.15],[784,0.3],[1047,0.45]].forEach(([freq,delay]) => {
-    const osc = ctx.createOscillator();
-    const gain = ctx.createGain();
-    osc.connect(gain); gain.connect(ctx.destination);
-    osc.frequency.value = freq;
-    osc.type = 'sine';
-    const t = ctx.currentTime + delay;
-    gain.gain.setValueAtTime(0, t);
-    gain.gain.linearRampToValueAtTime(0.2, t + 0.03);
-    gain.gain.exponentialRampToValueAtTime(0.001, t + 0.5);
-    osc.start(t); osc.stop(t + 0.5);
-  });
-}
-
-// ═══════════════════════════════════════════════════════
-// STORAGE
-// ═══════════════════════════════════════════════════════
-function getData() { try{return JSON.parse(localStorage.getItem('grammar_app')||'{}');}catch(e){return{};} }
-function saveData(d) { try{localStorage.setItem('grammar_app',JSON.stringify(d));}catch(e){} }
-function toggleMute() {
-  const d = getData(); d.muted = !d.muted; saveData(d);
-  document.getElementById('muteBtn').textContent = d.muted ? '🔇' : '🔊';
-}
-
-// ═══════════════════════════════════════════════════════
-// QUESTIONS — LESSON 1.1: NOUNS
-// ═══════════════════════════════════════════════════════
-const QUIZ = {
-  module: 1, lesson: 1,
-  title: 'Nouns: People, Places, Things, and Ideas',
-  storageKey: 'm1_l1',
-  nextQuiz: 'q1-2.html',
-  moduleHub: '../modules/module1.html',
-  questions: [
-    {
-      type: 'mcq',
-      q: 'Which of the following is a noun?',
-      options: ['Running','Quickly','Beautiful','Happiness'],
-      answer: 3,
-      explanation: "'Happiness' is a noun — it names an abstract idea or concept. 'Running' is a verb, 'quickly' is an adverb, and 'beautiful' is an adjective."
-    },
-    {
-      type: 'mcq',
-      q: 'Which sentence contains a proper noun?',
-      options: ['The city is very busy.','She is a good teacher.','I visited London last summer.','The river flows quickly.'],
-      answer: 2,
-      explanation: "A proper noun names a specific person, place, or thing and is always capitalised. 'London' is a specific city, making it a proper noun. The other sentences contain only common nouns."
-    },
-    {
-      type: 'mcq',
-      q: 'Which of the following is an abstract noun?',
-      options: ['Mountain','Dog','Freedom','Chair'],
-      answer: 2,
-      explanation: "Abstract nouns name ideas, qualities, or states that cannot be physically seen or touched. 'Freedom' is abstract. 'Mountain', 'dog', and 'chair' are concrete nouns you can perceive with your senses."
-    },
-    {
-      type: 'mcq',
-      q: "Identify the collective noun in: 'A flock of birds flew over the house.'",
-      options: ['Birds','Flock','House','Over'],
-      answer: 1,
-      explanation: "A collective noun names a group treated as one unit. 'Flock' names a group of birds. 'Birds' is a common plural noun, 'house' is a concrete noun, and 'over' is a preposition."
-    },
-    {
-      type: 'mcq',
-      q: 'Which of the following is a compound noun?',
-      options: ['Quickly','Toothbrush','Bright','Run'],
-      answer: 1,
-      explanation: "A compound noun is formed by combining two or more words to create a new noun. 'Toothbrush' (tooth + brush) is a compound noun. The others are an adverb, adjective, and verb."
-    },
-    {
-      type: 'tf',
-      q: "A noun can function as the subject, object, or complement of a sentence.",
-      answer: true,
-      explanation: "True. Nouns are highly versatile — they can be the subject performing an action, the object receiving it, or the complement renaming/describing the subject after a linking verb."
-    },
-    {
-      type: 'mcq',
-      q: "In 'The children played in the garden,' which word is a plural noun?",
-      options: ['Garden','Played','The','Children'],
-      answer: 3,
-      explanation: "'Children' is the irregular plural of 'child'. It does not follow the regular -s/-es pattern. 'Garden' is singular, 'played' is a verb, and 'the' is a definite article."
-    },
-    {
-      type: 'mcq',
-      q: 'Which sentence uses a noun as the direct object of the verb?',
-      options: ['The dog barked loudly.','She reads books every night.','Silence filled the room.','The teacher arrived late.'],
-      answer: 1,
-      explanation: "In 'She reads books every night,' 'books' receives the action of 'reads' — making it the direct object. In the other sentences, the nouns function as subjects."
-    },
-    {
-      type: 'mcq',
-      q: 'Which of the following nouns is uncountable?',
-      options: ['Idea','Book','Water','City'],
-      answer: 2,
-      explanation: "Uncountable nouns cannot be counted individually and have no plural form. 'Water' is uncountable — we cannot say 'one water, two waters'. 'Idea', 'book', and 'city' are all countable."
-    },
-    {
-      type: 'tf',
-      q: "The word 'news' is a plural noun because it ends in -s.",
-      answer: false,
-      explanation: "False. 'News' ends in -s but is an uncountable singular noun. We say 'The news is' not 'The news are'. Many nouns ending in -s are singular (physics, mathematics, economics, series)."
-    },
-    {
-      type: 'mcq',
-      q: "In which sentence is the noun functioning as a subject complement (predicate noun)?",
-      options: ['We visited the museum yesterday.','The storm destroyed the bridge.','Marie is a scientist.','He gave her a gift.'],
-      answer: 2,
-      explanation: "A predicate noun follows a linking verb and renames the subject. In 'Marie is a scientist,' 'scientist' follows 'is' and renames 'Marie'. The other sentences use nouns as direct objects or subjects."
-    },
-    {
-      type: 'fill',
-      q: "A noun that names a group of people or things acting as one unit is called a ________ noun.",
-      answer: 'collective',
-      hint: 'Think: team, committee, flock...',
-      explanation: "A COLLECTIVE noun names a group acting as a single unit. Examples: team, committee, flock, jury, class, army. They can take singular or plural verbs depending on context."
-    },
-    {
-      type: 'mcq',
-      q: "Which option correctly identifies ALL the nouns in: 'The team celebrated their victory with great joy.'?",
-      options: ['Team, victory','Team, celebrated, joy','Team, victory, joy','Victory, great, joy'],
-      answer: 2,
-      explanation: "'Team' (collective), 'victory' (abstract), and 'joy' (abstract) are all nouns. 'Their' is a possessive pronoun, 'celebrated' is a verb, and 'great' is an adjective."
-    },
-    {
-      type: 'mcq',
-      q: 'Which noun is formed by adding a suffix to a verb?',
-      options: ['Freedom','Childhood','Employment','Friendship'],
-      answer: 2,
-      explanation: "'Employment' is formed from the verb 'employ' + suffix '-ment'. 'Freedom' comes from the adjective 'free', 'childhood' from the noun 'child', and 'friendship' from the noun 'friend'."
-    },
-    {
-      type: 'tf',
-      q: "Proper nouns are always capitalised regardless of where they appear in a sentence.",
-      answer: true,
-      explanation: "True. Proper nouns — names of specific people, places, organisations, or things — are always capitalised, whether at the beginning or middle of a sentence. 'I visited paris' is incorrect; it must be 'Paris'."
-    },
-    {
-      type: 'mcq',
-      q: "Identify the error in: 'She gave me an advise about my career.'",
-      options: [
-        "'An' should be 'a'",
-        "'Advise' should be 'advice' — advice is the noun, advise is the verb",
-        "'Gave' should be 'give'",
-        "No error — the sentence is correct"
-      ],
-      answer: 1,
-      explanation: "'Advice' is the noun (uncountable); 'advise' is the verb. This is a common error. Also, 'advice' is uncountable, so 'an advice' is wrong — it should be 'some advice' or simply 'advice'."
-    },
-    {
-      type: 'mcq',
-      q: "Which sentence uses a noun in the possessive case correctly?",
-      options: [
-        "The dogs bone was buried in the garden.",
-        "The dog's bone was buried in the garden.",
-        "The dogs' bone was buried in the garden.",
-        "The dogs bone' was buried in the garden."
-      ],
-      answer: 1,
-      explanation: "For a singular noun, the possessive is formed with apostrophe + s: 'dog's bone'. 'dogs bone' has no apostrophe. 'dogs'' would indicate multiple dogs. 'bone'' is not a valid possessive form."
-    },
-    {
-      type: 'fill',
-      q: "The noun 'laughter' is an example of an ________ noun because it cannot be seen or touched.",
-      answer: 'abstract',
-      hint: 'Opposite of concrete...',
-      explanation: "ABSTRACT nouns name things that exist as ideas, emotions, or concepts — things you cannot perceive with your five senses. Other examples: justice, courage, beauty, knowledge, time."
-    },
-    {
-      type: 'mcq',
-      q: "Which sentence demonstrates the most sophisticated use of nouns?",
-      options: [
-        "The dog ran fast.",
-        "A committee of experts recommended the abolition of the outdated regulation.",
-        "She has many things.",
-        "The boy went to a place."
-      ],
-      answer: 1,
-      explanation: "This sentence uses 'committee' (collective noun), 'experts' (plural common noun), 'abolition' (abstract noun formed from a verb), and 'regulation' (abstract/common noun) — demonstrating varied, precise noun use."
-    },
-    {
-      type: 'mcq',
-      q: "In which sentence is a noun used as an appositive?",
-      options: [
-        "Shakespeare wrote many plays.",
-        "Shakespeare, the playwright, wrote many plays.",
-        "He is a famous playwright.",
-        "Many plays were written in the 16th century."
-      ],
-      answer: 1,
-      explanation: "An appositive is a noun or noun phrase placed next to another noun to identify or describe it. 'The playwright' is an appositive — it renames and identifies 'Shakespeare' by being placed directly beside it."
-    }
-  ]
-};
-
-// ═══════════════════════════════════════════════════════
-// QUIZ ENGINE
-// ═══════════════════════════════════════════════════════
-let current = 0;
-let correct = 0;
-let answered = false;
-let startTime = Date.now();
-let questionStartTime = Date.now();
-
-function getData2() { try{return JSON.parse(localStorage.getItem('grammar_app')||'{}');}catch(e){return{};} }
-
-function renderQuestion() {
-  const q = QUIZ.questions[current];
-  answered = false;
-  questionStartTime = Date.now();
-
-  const pct = (current / QUIZ.questions.length) * 100;
-  document.getElementById('progressFill').style.width = pct + '%';
-  document.getElementById('qCounter').textContent = `Q ${current+1} of ${QUIZ.questions.length}`;
-
-  const area = document.getElementById('quizArea');
-
-  // Determine type label
-  const typeLabels = { mcq:'Multiple Choice', tf:'True or False', fill:'Fill in the Blank' };
-  const typeLabel = typeLabels[q.type] || 'Question';
-
-  let optionsHTML = '';
-
-  if (q.type === 'mcq') {
-    optionsHTML = `<div class="options-list">` +
-      q.options.map((opt, i) => `
-        <button class="option-btn" onclick="selectOption(${i})" data-idx="${i}">
-          <div class="option-key">${String.fromCharCode(65+i)}</div>
-          <div class="option-text">${opt}</div>
-          <div class="option-indicator">${i === q.answer ? '✓' : '✗'}</div>
-        </button>
-      `).join('') +
-    `</div>`;
-  } else if (q.type === 'tf') {
-    optionsHTML = `<div class="tf-options">
-      <button class="option-btn" onclick="selectTF(true)" data-val="true">
-        <div class="option-key">T</div>
-        <div class="option-text">True</div>
-        <div class="option-indicator">${q.answer ? '✓' : '✗'}</div>
-      </button>
-      <button class="option-btn" onclick="selectTF(false)" data-val="false">
-        <div class="option-key">F</div>
-        <div class="option-text">False</div>
-        <div class="option-indicator">${!q.answer ? '✓' : '✗'}</div>
-      </button>
-    </div>`;
-  } else if (q.type === 'fill') {
-    optionsHTML = `<div class="fill-blank-wrap">
-      <input class="fill-input" id="fillInput" type="text"
-        placeholder="Type your answer..." autocomplete="off"
-        autocapitalize="none" spellcheck="false"
-        onkeydown="if(event.key==='Enter')submitFill()">
-      ${q.hint ? `<div style="font-size:0.7em;color:var(--text-faint);margin-top:6px;padding-left:2px;">💡 Hint: ${q.hint}</div>` : ''}
-      <button class="fill-submit" id="fillSubmit" onclick="submitFill()">Check Answer</button>
-    </div>`;
+];
+var cur=0,cor=0,ans=false,st=Date.now(),ac=null;
+function gAC(){if(!ac)ac=new(window.AudioContext||window.webkitAudioContext)();return ac;}
+function gD(){try{return JSON.parse(localStorage.getItem('grammar_app')||'{}');}catch(e){return{};}}
+function sD(d){try{localStorage.setItem('grammar_app',JSON.stringify(d));}catch(e){}}
+function tM(){var d=gD();d.muted=!d.muted;sD(d);document.getElementById('mb').textContent=d.muted?'&#128263;':'&#128266;';}
+function pT(t){var d=gD();if(d.muted)return;try{var c=gAC();if(c.state==='suspended')c.resume();if(t==='c')pC(c);else if(t==='w')pW(c);else pF(c);}catch(e){}}
+function pC(c){[[523,0],[659,.1],[784,.2]].forEach(function(a){var o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);o.frequency.value=a[0];o.type='sine';var t=c.currentTime+a[1];g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.18,t+.02);g.gain.exponentialRampToValueAtTime(.001,t+.3);o.start(t);o.stop(t+.3);});}
+function pW(c){[[240,0],[200,.1]].forEach(function(a){var o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);o.frequency.value=a[0];o.type='sawtooth';var t=c.currentTime+a[1];g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.08,t+.02);g.gain.exponentialRampToValueAtTime(.001,t+.25);o.start(t);o.stop(t+.25);});}
+function pF(c){[[523,0],[659,.15],[784,.3],[1047,.45]].forEach(function(a){var o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);o.frequency.value=a[0];o.type='sine';var t=c.currentTime+a[1];g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.2,t+.03);g.gain.exponentialRampToValueAtTime(.001,t+.5);o.start(t);o.stop(t+.5);});}
+function rQ(){
+  var q=Q[cur];ans=false;
+  document.getElementById('pf').style.width=(cur/Q.length*100)+'%';
+  document.getElementById('qc').textContent='Q '+(cur+1)+' of '+Q.length;
+  var area=document.getElementById('qa');
+  var lbs={mcq:'Multiple Choice',tf:'True or False',fill:'Fill in the Blank',transform:'Sentence Transformation'};
+  var lbl=lbs[q.type]||'Question';
+  var oh='';
+  if(q.type==='mcq'){
+    oh='<div class="ol">'+q.options.map(function(o,i){return '<button class="ob" onclick="sO('+i+')" data-i="'+i+'"><div class="ok2">'+String.fromCharCode(65+i)+'</div><div class="ot">'+o+'</div><div class="oi">'+(i===q.answer?'&#10003;':'&#10007;')+'</div></button>';}).join('')+'</div>';
+  }else if(q.type==='tf'){
+    oh='<div class="tfo"><button class="ob" onclick="sT(true)" data-v="true"><div class="ok2">T</div><div class="ot">True</div><div class="oi">'+(q.answer?'&#10003;':'&#10007;')+'</div></button><button class="ob" onclick="sT(false)" data-v="false"><div class="ok2">F</div><div class="ot">False</div><div class="oi">'+(!q.answer?'&#10003;':'&#10007;')+'</div></button></div>';
+  }else{
+    oh='<div class="fb"><input class="fi" id="fi" type="text" placeholder="'+(q.type==='transform'?'Rewrite the sentence...':'Type your answer...')+'" autocomplete="off" autocapitalize="none" spellcheck="false" onkeydown="if(event.key==='Enter')sF()">'+(q.hint?'<div style="font-size:.7em;color:var(--tf);margin-top:6px;">&#128161; '+q.hint+'</div>':'')+'<button class="fs" id="fsb" onclick="sF()">Check Answer</button></div>';
   }
-
-  area.innerHTML = `
-    <div class="question-card">
-      <div class="question-area">
-        <div class="q-type-badge">${typeLabel}</div>
-        <div class="q-text">${q.q}</div>
-      </div>
-      ${optionsHTML}
-      <div class="explanation-box" id="explanationBox"></div>
-      <button class="next-btn" id="nextBtn" onclick="nextQuestion()">
-        ${current + 1 < QUIZ.questions.length ? 'Next Question →' : 'See Results 🎯'}
-      </button>
-    </div>
-  `;
-
-  // Focus fill input
-  if (q.type === 'fill') {
-    setTimeout(() => { const el = document.getElementById('fillInput'); if(el) el.focus(); }, 100);
-  }
-
-  // Mute state
-  const d = getData();
-  document.getElementById('muteBtn').textContent = d.muted ? '🔇' : '🔊';
+  area.innerHTML='<div class="qcard"><div class="qa"><div class="qtb">'+lbl+'</div><div class="qt">'+q.q+'</div></div>'+oh+'<div class="eb" id="eb"></div><button class="nb2" id="nb" onclick="nQ()">'+(cur+1<Q.length?'Next Question &rarr;':'See Results &#127919;')+'</button></div>';
+  if(q.type==='fill'||q.type==='transform')setTimeout(function(){var e=document.getElementById('fi');if(e)e.focus();},100);
+  var d=gD();document.getElementById('mb').textContent=d.muted?'&#128263;':'&#128266;';
 }
-
-function selectOption(idx) {
-  if (answered) return;
-  answered = true;
-  const q = QUIZ.questions[current];
-  const isCorrect = idx === q.answer;
-  if (isCorrect) correct++;
-  playTone(isCorrect ? 'correct' : 'wrong');
-  showFeedback(isCorrect, idx, q);
+function sO(i){if(ans)return;ans=true;var q=Q[cur];var ok=i===q.answer;if(ok)cor++;pT(ok?'c':'w');document.querySelectorAll('.ob').forEach(function(b,j){if(j===q.answer)b.classList.add('correct');else if(j===i&&!ok){b.classList.add('wrong');b.classList.add('shake');}else b.classList.add('dimmed');b.disabled=true;});shE(ok,q.explanation);document.getElementById('nb').classList.add('show');}
+function sT(v){if(ans)return;ans=true;var q=Q[cur];var ok=v===q.answer;if(ok)cor++;pT(ok?'c':'w');document.querySelectorAll('.ob').forEach(function(b){var bv=b.dataset.v==='true';if(bv===q.answer)b.classList.add('correct');else if(bv===v&&!ok)b.classList.add('wrong');else b.classList.add('dimmed');b.disabled=true;});shE(ok,q.explanation);document.getElementById('nb').classList.add('show');}
+function sF(){if(ans)return;var inp=document.getElementById('fi');if(!inp||!inp.value.trim())return;ans=true;var q=Q[cur];var v=inp.value.trim().toLowerCase();var aa=(q.answer||'').toLowerCase().split('|');var ok=aa.some(function(a){return v===a.trim();});if(ok)cor++;pT(ok?'c':'w');inp.classList.add(ok?'correct':'wrong');inp.disabled=true;document.getElementById('fsb').disabled=true;if(!ok){var cd=document.createElement('div');cd.style.cssText='font-size:.78em;color:var(--ok);margin-top:6px;';cd.textContent='Answer: '+q.answer;inp.parentNode.insertBefore(cd,document.getElementById('fsb'));inp.classList.add('shake');}shE(ok,q.explanation);document.getElementById('nb').classList.add('show');}
+function shE(ok,text){var b=document.getElementById('eb');b.innerHTML='<div class="el '+(ok?'correct':'wrong')+'">'+(ok?'&#10003; Correct!':'&#10007; Incorrect')+'</div><div>'+text+'</div>';b.classList.add('show');setTimeout(function(){b.scrollIntoView({behavior:'smooth',block:'nearest'});},100);}
+function nQ(){cur++;if(cur>=Q.length)shR();else{rQ();window.scrollTo({top:0,behavior:'smooth'});}}
+function shR(){
+  pT('complete');
+  document.getElementById('pf').style.width='100%';
+  document.getElementById('qa').style.display='none';
+  document.getElementById('qc').textContent='Complete!';
+  var tot=Q.length,pct=Math.round(cor/tot*100),tt=Math.round((Date.now()-st)/1000);
+  var d=gD();if(!d.progress)d.progress={};
+  var prev=d.progress["m1_l2"];var isF=prev===undefined;var isI=!isF&&pct>prev;
+  d.progress["m1_l2"]=Math.max(pct,prev||0);
+  if(!d.badges)d.badges=[];var nb2=[];
+  if(isF&&!d.badges.includes('first_quiz')){d.badges.push('first_quiz');nb2.push('&#11088; First Step');}
+  if(pct===100&&!d.badges.includes('perfect_score')){d.badges.push('perfect_score');nb2.push('&#128175; Perfect Score!');}
+  if(isI&&!d.badges.includes('comeback')){d.badges.push('comeback');nb2.push('&#128170; Comeback!');}
+  if(tt<120&&!d.badges.includes('speed_demon')){d.badges.push('speed_demon');nb2.push('&#9889; Speed Run!');}
+  sD(d);
+  var tr=pct>=90?'&#127942;':pct>=70?'&#127894;':pct>=50?'&#129352;':'&#128218;';
+  var msg=pct>=90?'Outstanding!':pct>=70?'Great work!':pct>=50?'Good effort!':'Keep practising!';
+  var bH=nb2.map(function(n){return '<div class="nbp"><span style="font-size:1.8em">'+n.split(' ')[0]+'</span><div><div style="font-size:.78em;font-weight:700;color:var(--gd)">Badge Unlocked!</div><div style="font-size:.7em;color:var(--td)">'+n.split(' ').slice(1).join(' ')+'</div></div></div>';}).join('');
+  var sc=document.getElementById('rs');
+  sc.innerHTML='<div class="rtr">'+tr+'</div><div class="rsb">'+pct+'%</div><div class="rl">'+msg+' '+cor+'/'+tot+' correct</div>'+bH+'<div class="rbd"><div class="bdr"><span>Correct</span><span class="bdc">&#10003; '+cor+'</span></div><div class="bdr"><span>Incorrect</span><span class="bdw">&#10007; '+(tot-cor)+'</span></div><div class="bdr"><span>Score</span><span style="font-weight:700;font-family:JetBrains Mono,monospace">'+pct+'%</span></div><div class="bdr"><span>Time</span><span style="font-family:JetBrains Mono,monospace;color:var(--td)">'+Math.floor(tt/60)+'m '+tt%60+'s</span></div></div><div class="rbs"><a class="bp" href="q1-3.html">Next Lesson &rarr;</a><button class="bs" onclick="rRQ()">&#8635; Retry</button><a class="bs" href="../modules/module1.html">&larr; Module 1</a></div>';
+  sc.classList.add('show');window.scrollTo({top:0,behavior:'smooth'});
 }
-
-function selectTF(val) {
-  if (answered) return;
-  answered = true;
-  const q = QUIZ.questions[current];
-  const isCorrect = val === q.answer;
-  if (isCorrect) correct++;
-  playTone(isCorrect ? 'correct' : 'wrong');
-
-  // Highlight buttons
-  document.querySelectorAll('.option-btn').forEach(btn => {
-    const bVal = btn.dataset.val === 'true';
-    if (bVal === q.answer) btn.classList.add('correct');
-    else if (bVal === val && !isCorrect) btn.classList.add('wrong');
-    else btn.classList.add('dimmed');
-    btn.disabled = true;
-  });
-
-  showExplanation(isCorrect, q.explanation);
-  document.getElementById('nextBtn').classList.add('show');
-}
-
-function submitFill() {
-  if (answered) return;
-  const input = document.getElementById('fillInput');
-  if (!input) return;
-  const val = input.value.trim().toLowerCase();
-  if (!val) return;
-  answered = true;
-
-  const q = QUIZ.questions[current];
-  const answers = q.answer.toLowerCase().split('|');
-  const isCorrect = answers.some(a => val === a || val === a.trim());
-  if (isCorrect) correct++;
-  playTone(isCorrect ? 'correct' : 'wrong');
-
-  input.classList.add(isCorrect ? 'correct' : 'wrong');
-  input.disabled = true;
-  document.getElementById('fillSubmit').disabled = true;
-
-  if (!isCorrect) {
-    // Show correct answer
-    const correctDiv = document.createElement('div');
-    correctDiv.style.cssText = 'font-size:0.78em;color:var(--correct);margin-top:6px;padding-left:2px;';
-    correctDiv.textContent = `✓ Correct: ${q.answer}`;
-    input.parentNode.insertBefore(correctDiv, document.getElementById('fillSubmit'));
-    input.classList.add('shake');
-  }
-
-  showExplanation(isCorrect, q.explanation);
-  document.getElementById('nextBtn').classList.add('show');
-}
-
-function showFeedback(isCorrect, selectedIdx, q) {
-  document.querySelectorAll('.option-btn').forEach((btn, i) => {
-    if (i === q.answer) btn.classList.add('correct');
-    else if (i === selectedIdx && !isCorrect) { btn.classList.add('wrong'); btn.classList.add('shake'); }
-    else btn.classList.add('dimmed');
-    btn.disabled = true;
-  });
-  showExplanation(isCorrect, q.explanation);
-  document.getElementById('nextBtn').classList.add('show');
-}
-
-function showExplanation(isCorrect, text) {
-  const box = document.getElementById('explanationBox');
-  box.innerHTML = `
-    <div class="expl-label ${isCorrect ? 'correct' : 'wrong'}">
-      ${isCorrect ? '✓ Correct!' : '✗ Incorrect'}
-    </div>
-    <div class="expl-text">${text}</div>
-  `;
-  box.classList.add('show');
-  // Scroll explanation into view
-  setTimeout(() => box.scrollIntoView({behavior:'smooth', block:'nearest'}), 100);
-}
-
-function nextQuestion() {
-  current++;
-  if (current >= QUIZ.questions.length) {
-    showResults();
-  } else {
-    renderQuestion();
-    window.scrollTo({top:0, behavior:'smooth'});
-  }
-}
-
-function showResults() {
-  playTone('complete');
-  document.getElementById('progressFill').style.width = '100%';
-  document.getElementById('quizArea').style.display = 'none';
-  document.getElementById('qCounter').textContent = 'Complete!';
-
-  const total = QUIZ.questions.length;
-  const pct = Math.round((correct / total) * 100);
-  const timeTaken = Math.round((Date.now() - startTime) / 1000);
-
-  // Save score
-  const d = getData2();
-  if (!d.progress) d.progress = {};
-  const prev = d.progress[QUIZ.storageKey];
-  const isImprovement = prev !== undefined && pct > prev;
-  const isFirst = prev === undefined;
-  d.progress[QUIZ.storageKey] = Math.max(pct, prev || 0);
-
-  // Badges
-  if (!d.badges) d.badges = [];
-  let newBadges = [];
-  if (isFirst && !d.badges.includes('first_quiz')) { d.badges.push('first_quiz'); newBadges.push({icon:'⭐',name:'First Step'}); }
-  if (pct === 100 && !d.badges.includes('perfect_score')) { d.badges.push('perfect_score'); newBadges.push({icon:'💯',name:'Perfect Score!'}); }
-  if (isImprovement && !d.badges.includes('comeback')) { d.badges.push('comeback'); newBadges.push({icon:'💪',name:'Comeback!'}); }
-  if (timeTaken < 120 && !d.badges.includes('speed_demon')) { d.badges.push('speed_demon'); newBadges.push({icon:'⚡',name:'Speed Run!'}); }
-  saveData(d);
-
-  // Trophy emoji by score
-  const trophy = pct >= 90 ? '🏆' : pct >= 70 ? '🎖️' : pct >= 50 ? '🥈' : '📚';
-  const msg = pct >= 90 ? 'Outstanding!' : pct >= 70 ? 'Great work!' : pct >= 50 ? 'Good effort!' : 'Keep practising!';
-  const wrong = total - correct;
-
-  const badgeHTML = newBadges.map(b => `
-    <div class="new-badge-pop">
-      <div class="nbp-icon">${b.icon}</div>
-      <div class="nbp-info">
-        <div class="nbp-title">Badge Unlocked!</div>
-        <div class="nbp-name">${b.name}</div>
-      </div>
-    </div>
-  `).join('');
-
-  const screen = document.getElementById('resultsScreen');
-  screen.innerHTML = `
-    <div class="results-trophy">${trophy}</div>
-    <div class="results-score-big">${pct}%</div>
-    <div class="results-label">${msg} ${correct}/${total} correct</div>
-    ${badgeHTML}
-    <div class="results-breakdown">
-      <div class="breakdown-row">
-        <span>Correct answers</span>
-        <span class="bd-correct">✓ ${correct}</span>
-      </div>
-      <div class="breakdown-row">
-        <span>Incorrect answers</span>
-        <span class="bd-wrong">✗ ${wrong}</span>
-      </div>
-      <div class="breakdown-row">
-        <span>Score</span>
-        <span style="font-weight:700;font-family:'JetBrains Mono',monospace">${pct}%</span>
-      </div>
-      <div class="breakdown-row">
-        <span>Time taken</span>
-        <span style="font-family:'JetBrains Mono',monospace;color:var(--text-dim)">${Math.floor(timeTaken/60)}m ${timeTaken%60}s</span>
-      </div>
-    </div>
-    <div class="results-btns">
-      <a class="btn-primary" href="${QUIZ.nextQuiz}">Next Lesson →</a>
-      <button class="btn-secondary" onclick="retryQuiz()">↺ Retry this quiz</button>
-      <a class="btn-secondary" href="${QUIZ.moduleHub}">← Back to Module 1</a>
-    </div>
-  `;
-  screen.classList.add('show');
-  window.scrollTo({top:0, behavior:'smooth'});
-}
-
-function retryQuiz() {
-  current = 0; correct = 0; answered = false;
-  startTime = Date.now();
-  document.getElementById('resultsScreen').classList.remove('show');
-  document.getElementById('quizArea').style.display = '';
-  renderQuestion();
-  window.scrollTo({top:0, behavior:'smooth'});
-}
-
-// Init
-const d0 = getData();
-document.getElementById('muteBtn').textContent = d0.muted ? '🔇' : '🔊';
-renderQuestion();
+function rRQ(){cur=0;cor=0;ans=false;st=Date.now();document.getElementById('rs').classList.remove('show');document.getElementById('qa').style.display='';rQ();window.scrollTo({top:0,behavior:'smooth'});}
+var d0=gD();document.getElementById('mb').textContent=d0.muted?'&#128263;':'&#128266;';
+rQ();
 </script>
 </body>
 </html>
