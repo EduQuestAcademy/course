@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit 13 – Life Science: Plants and Animals | Owl Smart 3rd Grade</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #f4f7fb; color: #2d2d2d; line-height: 1.8; }
+    .top-header { background: linear-gradient(135deg, #2e7d32, #43a047); color: white; text-align: center; padding: 24px 20px 16px; }
+    .top-header h1 { font-size: 1.5em; margin-bottom: 4px; }
+    .top-header p { font-size: 0.95em; opacity: 0.88; }
+    .nav-bar { background: #2e7d32; padding: 0 10px; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.3); overflow-x: auto; white-space: nowrap; }
+    .nav-bar a { display: inline-block; color: rgba(255,255,255,0.8); text-decoration: none; padding: 12px 14px; font-size: 0.82em; font-weight: bold; border-bottom: 3px solid transparent; transition: all 0.2s; }
+    .nav-bar a:hover, .nav-bar a.active { color: white; border-bottom-color: #ffd600; }
+    .main { max-width: 860px; margin: 0 auto; padding: 20px; }
+    .lesson-section { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.08); margin-bottom: 40px; scroll-margin-top: 60px; }
+    .banner { color: white; text-align: center; padding: 28px 24px; }
+    .banner h2 { font-size: 1.45em; margin-bottom: 6px; }
+    .banner p { font-size: 0.97em; opacity: 0.92; margin-bottom: 10px; }
+    .lesson-num { display: inline-block; background: rgba(255,255,255,0.25); border-radius: 20px; padding: 3px 14px; font-size: 0.82em; font-weight: bold; }
+    .b1 { background: linear-gradient(135deg, #2e7d32, #43a047); }
+    .b2 { background: linear-gradient(135deg, #1b5e20, #388e3c); }
+    .b3 { background: linear-gradient(135deg, #33691e, #558b2f); }
+    .b4 { background: linear-gradient(135deg, #1a237e, #3949ab); }
+    .b5 { background: linear-gradient(135deg, #e65100, #fb8c00); }
+    .b6 { background: linear-gradient(135deg, #880e4f, #c2185b); }
+    .lesson-content { padding: 26px; }
+    .section { border-left: 5px solid; border-radius: 0 10px 10px 0; padding: 18px 20px; margin-bottom: 20px; }
+    .s1 { background: #e8f5e9; border-color: #2e7d32; } .s1 h3 { color: #2e7d32; }
+    .s2 { background: #f1f8e9; border-color: #1b5e20; } .s2 h3 { color: #1b5e20; }
+    .s3 { background: #f9fbe7; border-color: #33691e; } .s3 h3 { color: #33691e; }
+    .s4 { background: #e8eaf6; border-color: #1a237e; } .s4 h3 { color: #1a237e; }
+    .s5 { background: #fff3e0; border-color: #e65100; } .s5 h3 { color: #e65100; }
+    .s6 { background: #fce4ec; border-color: #880e4f; } .s6 h3 { color: #880e4f; }
+    .section h3 { margin-bottom: 8px; font-size: 1.05em; }
+    .vocab-box { background: #fff8e1; border: 2px solid #ffc107; border-radius: 10px; padding: 18px 20px; margin-bottom: 20px; }
+    .vocab-box h3 { color: #e65100; margin-bottom: 12px; font-size: 1.05em; }
+    .vocab-item { margin: 8px 0; font-size: 0.95em; }
+    .word { font-weight: bold; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.93em; }
+    th { background: #2e7d32; color: white; padding: 9px 12px; text-align: left; }
+    td { padding: 9px 12px; border-bottom: 1px solid #e0e0e0; }
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) { background: #f5f5f5; }
+    .tip { background: #e8f5e9; border-left: 4px solid #43a047; border-radius: 0 8px 8px 0; padding: 12px 16px; margin: 12px 0; color: #1b5e20; font-size: 0.93em; }
+    .tip strong { color: #2e7d32; }
+    .try-it { background: #ede7f6; border: 2px dashed #7e57c2; border-radius: 10px; padding: 18px 20px; margin-bottom: 20px; }
+    .try-it h3 { color: #4527a0; margin-bottom: 10px; font-size: 1.05em; }
+    .try-it ol { padding-left: 20px; }
+    .try-it li { margin: 8px 0; font-size: 0.95em; }
+    .remember { background: #fff3e0; border: 2px solid #ff8f00; border-radius: 10px; padding: 18px 20px; text-align: center; margin-bottom: 4px; }
+    .remember h3 { color: #e65100; margin-bottom: 10px; font-size: 1.05em; }
+    .remember p { margin: 5px 0; font-size: 0.95em; }
+    .remember .cta { font-weight: bold; font-size: 1.05em; margin-top: 12px; }
+    .flex-row { display: flex; gap: 12px; flex-wrap: wrap; margin: 10px 0; }
+    .flex-col { flex: 1; min-width: 150px; border-radius: 10px; padding: 14px 16px; }
+    .fb-green { background: #e8f5e9; border: 2px solid #388e3c; } .fb-green h4 { color: #1b5e20; margin-bottom: 6px; }
+    .fb-lime { background: #f9fbe7; border: 2px solid #9ccc65; } .fb-lime h4 { color: #33691e; margin-bottom: 6px; }
+    .fb-blue { background: #e3f2fd; border: 2px solid #1976d2; } .fb-blue h4 { color: #0d47a1; margin-bottom: 6px; }
+    .fb-orange { background: #fff3e0; border: 2px solid #f57c00; } .fb-orange h4 { color: #e65100; margin-bottom: 6px; }
+    .fb-pink { background: #fce4ec; border: 2px solid #e91e63; } .fb-pink h4 { color: #880e4f; margin-bottom: 6px; }
+    .fb-yellow { background: #fffde7; border: 2px solid #f9a825; } .fb-yellow h4 { color: #f57f17; margin-bottom: 6px; }
+    .science-box { background: #f1f8e9; border: 2px solid #558b2f; border-radius: 10px; padding: 16px 18px; margin-bottom: 14px; }
+    .science-box h4 { color: #33691e; margin-bottom: 8px; font-size: 0.98em; }
+    .cycle-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin: 12px 0; justify-content: center; }
+    .cycle-box { background: #2e7d32; color: white; border-radius: 10px; padding: 8px 14px; font-size: 0.88em; font-weight: bold; text-align: center; min-width: 80px; }
+    .cycle-arrow { color: #2e7d32; font-size: 1.4em; font-weight: bold; }
+    .need-tag { display: inline-block; border-radius: 16px; padding: 4px 14px; font-size: 0.85em; font-weight: bold; color: white; margin: 3px; }
+    ul { padding-left: 20px; } li { margin: 5px 0; font-size: 0.95em; }
+    p { margin-bottom: 8px; font-size: 0.95em; }
+  </style>
+</head>
+<body>
+
+<div class="top-header">
+  <h1>Owl Smart: A 3rd Grade Learning Journey</h1>
+  <p>Unit 13 -- Life Science: Plants and Animals &nbsp;|&nbsp; 6 Lessons</p>
+</div>
+
+<div class="nav-bar">
+  <a href="#lesson1">13.1 Living Things</a>
+  <a href="#lesson2">13.2 Plant Parts</a>
+  <a href="#lesson3">13.3 Plant Growth</a>
+  <a href="#lesson4">13.4 Animal Groups</a>
+  <a href="#lesson5">13.5 Adaptations</a>
+  <a href="#lesson6">13.6 Life Cycles</a>
+</div>
+
+<div class="main">
+
+<!-- LESSON 13.1 -->
+<div class="lesson-section" id="lesson1">
+  <div class="banner b1">
+    <span class="lesson-num">Lesson 13.1</span>
+    <h2>What Living Things Need to Survive</h2>
+    <p>All living things share basic needs -- discover what they are!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s1">
+      <h3>What Are We Learning Today?</h3>
+      <p>From the tiniest ant to the tallest redwood tree to you -- all living things have <strong>basic needs</strong> that must be met to stay alive and healthy. Scientists call these needs <strong>life requirements</strong>. Today we learn what all living things need and how plants and animals meet those needs differently!</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#2e7d32;">Living Thing (Organism)</span> -- Any living creature -- bacteria, plant, fungus, or animal.</div>
+      <div class="vocab-item"><span class="word" style="color:#2e7d32;">Needs</span> -- Things an organism must have to survive and grow.</div>
+      <div class="vocab-item"><span class="word" style="color:#2e7d32;">Nutrients</span> -- Substances in food or soil that provide energy and building materials for growth.</div>
+      <div class="vocab-item"><span class="word" style="color:#2e7d32;">Shelter</span> -- A place that protects a living thing from weather and predators.</div>
+      <div class="vocab-item"><span class="word" style="color:#2e7d32;">Photosynthesis</span> -- The process plants use to make their own food using sunlight, water, and carbon dioxide.</div>
+      <div class="vocab-item"><span class="word" style="color:#2e7d32;">Nonliving</span> -- Things that have never been alive -- rocks, water, air, sunlight.</div>
+    </div>
+
+    <div class="section s1">
+      <h3>What ALL Living Things Need</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-blue">
+          <h4>Water</h4>
+          <p>Every living cell needs water to function. Without it, organisms dry out and die.</p>
+        </div>
+        <div class="flex-col fb-yellow">
+          <h4>Energy / Food</h4>
+          <p>Animals eat food. Plants make their own food through photosynthesis using sunlight.</p>
+        </div>
+        <div class="flex-col fb-lime">
+          <h4>Air / Gases</h4>
+          <p>Animals need oxygen. Plants need carbon dioxide AND oxygen for different processes.</p>
+        </div>
+        <div class="flex-col fb-orange">
+          <h4>Space / Shelter</h4>
+          <p>All living things need space to grow and a safe place to live and reproduce.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section s1">
+      <h3>How Plants and Animals Meet Their Needs Differently</h3>
+      <table>
+        <tr><th>Need</th><th>How Plants Get It</th><th>How Animals Get It</th></tr>
+        <tr><td><strong>Food / Energy</strong></td><td>Make their own food using sunlight (photosynthesis)</td><td>Eat plants or other animals</td></tr>
+        <tr><td><strong>Water</strong></td><td>Absorb through roots from soil</td><td>Drink water, eat moist food</td></tr>
+        <tr><td><strong>Air</strong></td><td>Take in CO2 through tiny pores in leaves</td><td>Breathe oxygen through lungs or gills</td></tr>
+        <tr><td><strong>Shelter</strong></td><td>Grow where conditions are right; bark protects the trunk</td><td>Build nests, burrows, shells, or use natural features</td></tr>
+      </table>
+    </div>
+
+    <div class="section s1">
+      <h3>Living vs. Nonliving</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-green">
+          <h4>Living Things:</h4>
+          <ul>
+            <li>Grow and develop</li>
+            <li>Reproduce (make more of themselves)</li>
+            <li>Respond to their environment</li>
+            <li>Need water, food, air</li>
+            <li>Made of cells</li>
+          </ul>
+        </div>
+        <div class="flex-col fb-orange">
+          <h4>Nonliving Things:</h4>
+          <ul>
+            <li>Do not grow on their own</li>
+            <li>Do not reproduce</li>
+            <li>Do not respond to environment</li>
+            <li>Examples: rocks, water, air, sunlight, fire</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tip"><strong>Important:</strong> Water, sunlight, and air are NONLIVING -- but they are essential for life! They are the ingredients that living things need, but they are not alive themselves.</div>
+    </div>
+
+    <div class="science-box">
+      <h4>Real-World Connection: Washington State Forests</h4>
+      <p>Washington state has incredible forests! The trees in places like the Olympic National Forest get everything they need: rainwater from the Pacific Ocean, sunlight, nutrients from the rich volcanic soil, and carbon dioxide from the air. This is why Washington forests are some of the greenest, most productive in the world!</p>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>List 4 basic needs that ALL living things share.</li>
+        <li>How does a plant get its food differently than an animal?</li>
+        <li>Is fire living or nonliving? It moves and grows -- but is it alive? Explain.</li>
+        <li>What would happen to a plant if it got no sunlight? No water? Why?</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p>All living things need: <strong>food/energy, water, air, and space/shelter.</strong></p>
+      <p>Plants MAKE their own food. Animals FIND or HUNT their food.</p>
+      <p>Nonliving things like sunlight and water are essential <strong>ingredients</strong> for life!</p>
+      <p class="cta" style="color:#2e7d32;">Great start! Click Lesson 13.2!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 13.2 -->
+<div class="lesson-section" id="lesson2">
+  <div class="banner b2">
+    <span class="lesson-num">Lesson 13.2</span>
+    <h2>Plant Parts and Their Functions</h2>
+    <p>Every part of a plant has a job -- discover what each one does!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s2">
+      <h3>What Are We Learning Today?</h3>
+      <p>A plant is like a perfectly designed machine -- every single part has a specific job to keep the plant alive and healthy. Today we explore the six main parts of a plant and what each one does, from the roots underground to the flowers at the top!</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Roots</span> -- Plant part underground that absorbs water and nutrients from soil and anchors the plant.</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Stem</span> -- The stalk that supports the plant and carries water and nutrients between roots and leaves.</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Leaves</span> -- Flat green parts where photosynthesis happens -- the plant's food factory!</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Flower</span> -- The reproductive part of a plant that produces seeds for new plants.</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Fruit</span> -- The part that forms around seeds to protect them and help them spread.</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Seed</span> -- Contains a tiny new plant (embryo) and food supply to start growing.</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Chlorophyll</span> -- The green pigment in leaves that captures sunlight for photosynthesis.</div>
+    </div>
+
+    <div class="section s2">
+      <h3>Six Plant Parts and Their Functions</h3>
+      <table>
+        <tr><th>Plant Part</th><th>Where Found</th><th>Main Function(s)</th></tr>
+        <tr><td><strong>Roots</strong></td><td>Underground</td><td>Absorb water and nutrients from soil; anchor the plant so it does not fall over</td></tr>
+        <tr><td><strong>Stem</strong></td><td>Above ground, main stalk</td><td>Supports the plant upright; transports water and food between parts; stores food in some plants</td></tr>
+        <tr><td><strong>Leaves</strong></td><td>Attached to stem and branches</td><td>Capture sunlight; perform photosynthesis to make food; exchange gases with the air</td></tr>
+        <tr><td><strong>Flower</strong></td><td>End of stems/branches</td><td>Attract pollinators; produce pollen and eggs; create seeds for reproduction</td></tr>
+        <tr><td><strong>Fruit</strong></td><td>Around seeds</td><td>Protect seeds; attract animals that will spread seeds to new locations</td></tr>
+        <tr><td><strong>Seed</strong></td><td>Inside fruit</td><td>Contain the embryo (baby plant) and a food supply for germination</td></tr>
+      </table>
+    </div>
+
+    <div class="section s2">
+      <h3>Photosynthesis -- The Leaf's Amazing Job</h3>
+      <div class="science-box">
+        <h4>The Photosynthesis Equation:</h4>
+        <p style="text-align:center; font-size:1.05em; margin:10px 0;">
+          <strong>Sunlight + Water + Carbon Dioxide → Sugar (food) + Oxygen</strong>
+        </p>
+        <p>Leaves are perfectly designed for photosynthesis: they are flat and wide to capture maximum sunlight, and they have tiny holes called <strong>stomata</strong> that let carbon dioxide in and oxygen out.</p>
+      </div>
+      <div class="tip"><strong>Did you know?</strong> The oxygen in the air you are breathing right now was produced by plants and trees through photosynthesis! Every breath you take depends on plants.</div>
+    </div>
+
+    <div class="section s2">
+      <h3>How Water Travels Through a Plant</h3>
+      <div class="cycle-row">
+        <div class="cycle-box">Roots<br>absorb water</div>
+        <div class="cycle-arrow">→</div>
+        <div class="cycle-box">Stem<br>carries water up</div>
+        <div class="cycle-arrow">→</div>
+        <div class="cycle-box">Leaves<br>use water for<br>photosynthesis</div>
+      </div>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Match each part to its function: stem, roots, leaves, flower. (Anchor / Photosynthesis / Transport / Reproduction)</li>
+        <li>Why are leaves usually green? What does the green colour tell us?</li>
+        <li>If a plant's roots were damaged, what would happen to the rest of the plant? Why?</li>
+        <li>Think of an apple. Which plant parts are: the skin and flesh? The seeds inside? The tree's branches?</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p><strong>Roots</strong> = absorb + anchor &nbsp;|&nbsp; <strong>Stem</strong> = support + transport</p>
+      <p><strong>Leaves</strong> = photosynthesis (food factory!) &nbsp;|&nbsp; <strong>Flower</strong> = reproduction</p>
+      <p>Sunlight + Water + CO2 → <strong>Sugar + Oxygen</strong> (photosynthesis!)</p>
+      <p class="cta" style="color:#1b5e20;">Excellent! Click Lesson 13.3!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 13.3 -->
+<div class="lesson-section" id="lesson3">
+  <div class="banner b3">
+    <span class="lesson-num">Lesson 13.3</span>
+    <h2>How Plants Grow and Reproduce</h2>
+    <p>From seed to sprout to flower -- the amazing journey of plant growth!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s3">
+      <h3>What Are We Learning Today?</h3>
+      <p>How does a tiny seed become a towering tree? Plants have a fascinating growth cycle that begins with a seed and ends with the production of new seeds. Today we learn about <strong>germination</strong>, plant growth, <strong>pollination</strong>, and the clever ways plants spread their seeds!</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#33691e;">Germination</span> -- When a seed starts to grow and a sprout pushes through the soil.</div>
+      <div class="vocab-item"><span class="word" style="color:#33691e;">Sprout</span> -- The first tiny plant that emerges from a germinating seed.</div>
+      <div class="vocab-item"><span class="word" style="color:#33691e;">Pollination</span> -- The transfer of pollen from one flower to another, which allows seeds to form.</div>
+      <div class="vocab-item"><span class="word" style="color:#33691e;">Pollinator</span> -- An animal (often a bee, butterfly, or bird) that carries pollen from flower to flower.</div>
+      <div class="vocab-item"><span class="word" style="color:#33691e;">Seed Dispersal</span> -- The spreading of seeds away from the parent plant to new locations.</div>
+      <div class="vocab-item"><span class="word" style="color:#33691e;">Annual</span> -- A plant that completes its full life cycle in one year.</div>
+      <div class="vocab-item"><span class="word" style="color:#33691e;">Perennial</span> -- A plant that lives for many years and blooms repeatedly.</div>
+    </div>
+
+    <div class="section s3">
+      <h3>From Seed to Plant -- Germination</h3>
+      <div class="cycle-row">
+        <div class="cycle-box">Seed<br>in soil</div>
+        <div class="cycle-arrow">→</div>
+        <div class="cycle-box">Water + warmth<br>triggers growth</div>
+        <div class="cycle-arrow">→</div>
+        <div class="cycle-box">Root grows<br>downward</div>
+        <div class="cycle-arrow">→</div>
+        <div class="cycle-box">Sprout pushes<br>upward</div>
+        <div class="cycle-arrow">→</div>
+        <div class="cycle-box">Seedling<br>grows leaves</div>
+      </div>
+      <p style="font-size:0.9em; color:#37474f; margin-top:8px; text-align:center;">A seed needs water, warmth, and oxygen to germinate. It does NOT need sunlight at first -- it uses the food stored inside the seed!</p>
+    </div>
+
+    <div class="section s3">
+      <h3>Pollination -- How Flowers Make Seeds</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-yellow">
+          <h4>What is Pollination?</h4>
+          <p>Flowers produce <strong>pollen</strong> (tiny golden grains). When pollen moves from one flower to another of the same species, seeds can form!</p>
+        </div>
+        <div class="flex-col fb-green">
+          <h4>Who Pollinates?</h4>
+          <ul>
+            <li>Bees -- attracted by bright colours and nectar</li>
+            <li>Butterflies -- love red and orange flowers</li>
+            <li>Hummingbirds -- attracted to red tubular flowers</li>
+            <li>Wind -- carries light pollen (grass, trees)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tip"><strong>Bees are superheroes!</strong> About 1/3 of all the food humans eat depends on bees for pollination -- including apples, almonds, blueberries, and many vegetables. Without bees, our food supply would be in serious trouble!</div>
+    </div>
+
+    <div class="section s3">
+      <h3>Seed Dispersal -- How Seeds Travel!</h3>
+      <table>
+        <tr><th>Method</th><th>How It Works</th><th>Example Plants</th></tr>
+        <tr><td><strong>Wind</strong></td><td>Seeds are light or have wings/parachutes to float on air currents</td><td>Dandelion, maple (helicopter seeds)</td></tr>
+        <tr><td><strong>Animals (eaten)</strong></td><td>Animals eat fruit and drop seeds far away in their waste</td><td>Berries, apples, cherries</td></tr>
+        <tr><td><strong>Animals (stuck)</strong></td><td>Seeds have hooks or spines that attach to fur or clothing</td><td>Burdock, velcro was inspired by this!</td></tr>
+        <tr><td><strong>Water</strong></td><td>Seeds float and drift to new shores</td><td>Coconut palm</td></tr>
+        <tr><td><strong>Explosion</strong></td><td>Seed pods burst open and shoot seeds outward</td><td>Squirting cucumber, witch hazel</td></tr>
+      </table>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>What three things does a seed need to germinate? Why doesn't it need sunlight at first?</li>
+        <li>Why do flowers have bright colours and sweet nectar?</li>
+        <li>A dandelion has feathery seeds. What is its dispersal method? Why is this design clever?</li>
+        <li>Find a piece of fruit (apple, orange, berry). Find the seeds inside. What type of dispersal do you think this plant uses?</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p><strong>Germination</strong> needs water, warmth, and oxygen -- not sunlight at first.</p>
+      <p><strong>Pollination</strong> allows flowers to form seeds.</p>
+      <p><strong>Seed dispersal</strong>: wind, animals, water, or explosion.</p>
+      <p class="cta" style="color:#33691e;">Well done! Click Lesson 13.4!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 13.4 -->
+<div class="lesson-section" id="lesson4">
+  <div class="banner b4">
+    <span class="lesson-num">Lesson 13.4</span>
+    <h2>Animal Groups: Vertebrates and Invertebrates</h2>
+    <p>Scientists sort animals into groups based on shared characteristics!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s4">
+      <h3>What Are We Learning Today?</h3>
+      <p>There are over 8 million species of animals on Earth! Scientists organize them into groups based on shared characteristics. The most fundamental division is between animals WITH a backbone (<strong>vertebrates</strong>) and animals WITHOUT a backbone (<strong>invertebrates</strong>).</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#1a237e;">Vertebrate</span> -- An animal WITH a backbone (spine). Example: fish, frogs, snakes, birds, mammals.</div>
+      <div class="vocab-item"><span class="word" style="color:#1a237e;">Invertebrate</span> -- An animal WITHOUT a backbone. Example: insects, worms, spiders, crabs.</div>
+      <div class="vocab-item"><span class="word" style="color:#1a237e;">Mammal</span> -- A warm-blooded vertebrate with hair/fur that feeds its young with milk.</div>
+      <div class="vocab-item"><span class="word" style="color:#1a237e;">Reptile</span> -- A cold-blooded vertebrate with scales. Most lay eggs.</div>
+      <div class="vocab-item"><span class="word" style="color:#1a237e;">Amphibian</span> -- A cold-blooded vertebrate that lives in water AND on land. Examples: frogs, salamanders.</div>
+      <div class="vocab-item"><span class="word" style="color:#1a237e;">Warm-Blooded</span> -- Body temperature stays the same regardless of the environment (mammals and birds).</div>
+      <div class="vocab-item"><span class="word" style="color:#1a237e;">Cold-Blooded</span> -- Body temperature changes with the environment (fish, reptiles, amphibians).</div>
+    </div>
+
+    <div class="section s4">
+      <h3>The Five Groups of Vertebrates</h3>
+      <table>
+        <tr><th>Group</th><th>Key Features</th><th>Examples</th></tr>
+        <tr><td><strong>Mammals</strong></td><td>Warm-blooded, hair/fur, feed young milk, breathe air</td><td>Dog, whale, bat, human, bear, deer</td></tr>
+        <tr><td><strong>Birds</strong></td><td>Warm-blooded, feathers, wings, lay eggs, breathe air</td><td>Eagle, penguin, robin, ostrich, owl</td></tr>
+        <tr><td><strong>Reptiles</strong></td><td>Cold-blooded, dry scales, most lay eggs, breathe air</td><td>Snake, turtle, lizard, crocodile, gecko</td></tr>
+        <tr><td><strong>Amphibians</strong></td><td>Cold-blooded, moist skin, hatch in water, breathe through skin and lungs</td><td>Frog, toad, salamander, axolotl</td></tr>
+        <tr><td><strong>Fish</strong></td><td>Cold-blooded, scales, gills (breathe underwater), fins</td><td>Salmon, shark, goldfish, tuna</td></tr>
+      </table>
+    </div>
+
+    <div class="section s4">
+      <h3>Invertebrates -- The Largest Group!</h3>
+      <p>About <strong>97% of all animal species</strong> are invertebrates! They have no backbone but may have other support structures like shells or exoskeletons.</p>
+      <div class="flex-row">
+        <div class="flex-col fb-blue">
+          <h4>Insects</h4>
+          <p>6 legs, 3 body parts (head, thorax, abdomen), most have wings. Examples: bees, butterflies, beetles, ants</p>
+        </div>
+        <div class="flex-col fb-lime">
+          <h4>Arachnids</h4>
+          <p>8 legs, 2 body parts. Examples: spiders, scorpions, ticks, mites</p>
+        </div>
+        <div class="flex-col fb-orange">
+          <h4>Crustaceans</h4>
+          <p>Hard shell (exoskeleton), usually in water. Examples: crabs, lobsters, shrimp</p>
+        </div>
+        <div class="flex-col fb-green">
+          <h4>Worms &amp; Others</h4>
+          <p>Earthworms, jellyfish, snails, sea stars, sponges</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Sort these animals into vertebrates or invertebrates: salmon, spider, eagle, earthworm, frog, crab, horse, ant.</li>
+        <li>What makes mammals different from all other vertebrate groups?</li>
+        <li>A frog starts life in water and moves to land as an adult. Which vertebrate group is this?</li>
+        <li>How many legs do insects have? How is this different from arachnids?</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p><strong>Vertebrates</strong> = have a backbone (mammals, birds, reptiles, amphibians, fish)</p>
+      <p><strong>Invertebrates</strong> = no backbone (insects, spiders, worms, crabs) -- 97% of all animals!</p>
+      <p>Mammals: warm-blooded + hair + milk. Birds: warm-blooded + feathers.</p>
+      <p class="cta" style="color:#1a237e;">Keep going! Click Lesson 13.5!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 13.5 -->
+<div class="lesson-section" id="lesson5">
+  <div class="banner b5">
+    <span class="lesson-num">Lesson 13.5</span>
+    <h2>Animal Adaptations</h2>
+    <p>Special features that help animals survive in their environment!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s5">
+      <h3>What Are We Learning Today?</h3>
+      <p>Why does a polar bear have thick white fur? Why does a cactus store water? Why does a cheetah have spots? Every organism has special features called <strong>adaptations</strong> that help it survive in its specific environment. Adaptations develop over thousands of generations and are perfectly matched to where the animal lives!</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Adaptation</span> -- A physical feature or behavior that helps an organism survive in its environment.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Physical Adaptation</span> -- A body part or feature that helps survival. Example: sharp claws, thick fur, long beak.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Behavioral Adaptation</span> -- An action that helps survival. Example: migrating, hibernating, camouflage.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Camouflage</span> -- Colouring or patterns that help an animal blend into its surroundings.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Mimicry</span> -- When a harmless animal looks like a dangerous one to fool predators.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Hibernation</span> -- A deep winter sleep that conserves energy when food is scarce.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Migration</span> -- Seasonal movement to a warmer location for food and warmth.</div>
+    </div>
+
+    <div class="section s5">
+      <h3>Physical Adaptations</h3>
+      <table>
+        <tr><th>Animal</th><th>Adaptation</th><th>How It Helps</th></tr>
+        <tr><td>Polar Bear</td><td>Thick white fur, layer of fat</td><td>Keeps warm in Arctic cold; white fur = camouflage in snow</td></tr>
+        <tr><td>Duck</td><td>Webbed feet, waterproof feathers</td><td>Webbed feet for swimming; feathers repel water</td></tr>
+        <tr><td>Eagle</td><td>Sharp talons, hooked beak</td><td>Catch and tear apart prey</td></tr>
+        <tr><td>Camel</td><td>Hump (stores fat), wide hooves</td><td>Energy reserve in desert; hooves spread weight on sand</td></tr>
+        <tr><td>Chameleon</td><td>Colour-changing skin</td><td>Camouflage to hide from predators or sneak up on prey</td></tr>
+        <tr><td>Porcupine</td><td>Sharp quills</td><td>Defence against predators</td></tr>
+      </table>
+    </div>
+
+    <div class="section s5">
+      <h3>Behavioral Adaptations</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-orange">
+          <h4>Hibernation</h4>
+          <p>Bears, groundhogs, and some bats sleep through winter when food is scarce. Heart rate and body temperature drop dramatically to save energy.</p>
+        </div>
+        <div class="flex-col fb-yellow">
+          <h4>Migration</h4>
+          <p>Gray whales travel 10,000+ miles each year. Arctic terns travel pole to pole! Birds fly south for winter where food and warmth are available.</p>
+        </div>
+        <div class="flex-col fb-green">
+          <h4>Camouflage Behaviour</h4>
+          <p>Arctic foxes, snowshoe hares, and ptarmigan birds change colour white in winter -- perfect camouflage against snow!</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="science-box">
+      <h4>Washington State Connection: Pacific Salmon</h4>
+      <p>Pacific salmon have incredible adaptations! They hatch in freshwater rivers in Washington, migrate to the Pacific Ocean to grow, then return to the EXACT river where they were born to spawn (reproduce). They can detect the unique chemical signature of their home river. After spawning, they die -- but their bodies fertilise the forest, feeding bears, eagles, and even the trees!</p>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Describe TWO adaptations of a duck and explain how each one helps it survive.</li>
+        <li>What is the difference between camouflage and mimicry?</li>
+        <li>Why do some animals hibernate instead of migrating? What are the advantages of each?</li>
+        <li>Think of an animal you know. Describe ONE physical and ONE behavioral adaptation it has.</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p><strong>Physical adaptations</strong>: body parts that help survival (claws, fur, beaks).</p>
+      <p><strong>Behavioral adaptations</strong>: actions that help survival (hibernate, migrate, camouflage).</p>
+      <p>Adaptations develop over many generations to match the environment!</p>
+      <p class="cta" style="color:#e65100;">One more! Click Lesson 13.6!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 13.6 -->
+<div class="lesson-section" id="lesson6">
+  <div class="banner b6">
+    <span class="lesson-num">Lesson 13.6</span>
+    <h2>Life Cycles</h2>
+    <p>The stages every living thing goes through from birth to reproduction!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s6">
+      <h3>What Are We Learning Today?</h3>
+      <p>Every living thing goes through a series of stages from birth to death called a <strong>life cycle</strong>. Some life cycles are short (a housefly lives about 28 days), others are extraordinarily long (some bristlecone pine trees are over 5,000 years old!). Today we explore the life cycles of plants, insects, frogs, and mammals.</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#880e4f;">Life Cycle</span> -- The series of stages an organism goes through from birth to death.</div>
+      <div class="vocab-item"><span class="word" style="color:#880e4f;">Metamorphosis</span> -- A dramatic change in body form during a life cycle.</div>
+      <div class="vocab-item"><span class="word" style="color:#880e4f;">Complete Metamorphosis</span> -- Four stages: egg, larva, pupa, adult. (Butterflies, beetles, bees)</div>
+      <div class="vocab-item"><span class="word" style="color:#880e4f;">Incomplete Metamorphosis</span> -- Three stages: egg, nymph, adult. (Grasshoppers, dragonflies)</div>
+      <div class="vocab-item"><span class="word" style="color:#880e4f;">Larva</span> -- The worm-like stage after hatching (caterpillar, maggot, grub).</div>
+      <div class="vocab-item"><span class="word" style="color:#880e4f;">Pupa</span> -- The resting, transforming stage inside a cocoon or chrysalis.</div>
+    </div>
+
+    <div class="section s6">
+      <h3>The Butterfly Life Cycle -- Complete Metamorphosis</h3>
+      <div class="cycle-row">
+        <div class="cycle-box" style="background:#880e4f;">Egg<br>(laid on leaf)</div>
+        <div class="cycle-arrow" style="color:#880e4f;">→</div>
+        <div class="cycle-box" style="background:#880e4f;">Larva<br>(caterpillar --<br>eats and grows)</div>
+        <div class="cycle-arrow" style="color:#880e4f;">→</div>
+        <div class="cycle-box" style="background:#880e4f;">Pupa<br>(chrysalis --<br>transforms)</div>
+        <div class="cycle-arrow" style="color:#880e4f;">→</div>
+        <div class="cycle-box" style="background:#880e4f;">Adult<br>(butterfly --<br>lays eggs)</div>
+      </div>
+      <p style="font-size:0.9em; color:#37474f; margin-top:8px; text-align:center;">The caterpillar and the butterfly look COMPLETELY different -- that is why it is called complete metamorphosis!</p>
+    </div>
+
+    <div class="section s6">
+      <h3>The Frog Life Cycle</h3>
+      <div class="cycle-row">
+        <div class="cycle-box" style="background:#1b5e20;">Egg<br>(in water)</div>
+        <div class="cycle-arrow" style="color:#1b5e20;">→</div>
+        <div class="cycle-box" style="background:#1b5e20;">Tadpole<br>(lives in water,<br>has tail, gills)</div>
+        <div class="cycle-arrow" style="color:#1b5e20;">→</div>
+        <div class="cycle-box" style="background:#1b5e20;">Froglet<br>(grows legs,<br>loses tail)</div>
+        <div class="cycle-arrow" style="color:#1b5e20;">→</div>
+        <div class="cycle-box" style="background:#1b5e20;">Adult Frog<br>(lives on land<br>and water)</div>
+      </div>
+    </div>
+
+    <div class="section s6">
+      <h3>Comparing Life Cycles</h3>
+      <table>
+        <tr><th>Animal</th><th>Type of Cycle</th><th>Stages</th><th>Special Feature</th></tr>
+        <tr><td><strong>Butterfly</strong></td><td>Complete metamorphosis</td><td>Egg → Larva → Pupa → Adult</td><td>Transforms completely in chrysalis</td></tr>
+        <tr><td><strong>Grasshopper</strong></td><td>Incomplete metamorphosis</td><td>Egg → Nymph → Adult</td><td>Nymph looks like tiny adult</td></tr>
+        <tr><td><strong>Frog</strong></td><td>Metamorphosis</td><td>Egg → Tadpole → Froglet → Adult</td><td>Changes from aquatic to land animal</td></tr>
+        <tr><td><strong>Dog (mammal)</strong></td><td>No metamorphosis</td><td>Birth → Juvenile → Adult</td><td>Born live, fed milk by mother</td></tr>
+        <tr><td><strong>Flowering plant</strong></td><td>Seed cycle</td><td>Seed → Sprout → Plant → Flower → Seed</td><td>Cycle repeats with new seeds</td></tr>
+      </table>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Draw and label the four stages of a butterfly's life cycle.</li>
+        <li>What is the difference between complete and incomplete metamorphosis? Give one example of each.</li>
+        <li>How is a frog's life cycle different from a butterfly's?</li>
+        <li>Why is it important for living things to reproduce? What would happen to a species if they stopped reproducing?</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>You Finished Unit 13!</h3>
+      <p><strong>Complete metamorphosis</strong>: egg → larva → pupa → adult (butterfly!)</p>
+      <p><strong>Incomplete metamorphosis</strong>: egg → nymph → adult (grasshopper!)</p>
+      <p>All life cycles end with <strong>reproduction</strong> -- making new life!</p>
+      <p class="cta" style="color:#880e4f;">Amazing work! You completed all 6 lessons in Unit 13! Now take the Unit 13 Quiz!</p>
+    </div>
+  </div>
+</div>
+
+</div>
+<script>
+  const sections = document.querySelectorAll('.lesson-section');
+  const navLinks = document.querySelectorAll('.nav-bar a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 80) current = s.getAttribute('id'); });
+    navLinks.forEach(l => { l.classList.remove('active'); if (l.getAttribute('href') === '#' + current) l.classList.add('active'); });
+  });
+</script>
+</body>
+</html>
