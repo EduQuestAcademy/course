@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit 16 – Physical Science: Matter, Forces, and Energy | Owl Smart 3rd Grade</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #f4f7fb; color: #2d2d2d; line-height: 1.8; }
+    .top-header { background: linear-gradient(135deg, #4a148c, #6a1b9a); color: white; text-align: center; padding: 24px 20px 16px; }
+    .top-header h1 { font-size: 1.5em; margin-bottom: 4px; }
+    .top-header p { font-size: 0.95em; opacity: 0.88; }
+    .nav-bar { background: #4a148c; padding: 0 10px; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.3); overflow-x: auto; white-space: nowrap; }
+    .nav-bar a { display: inline-block; color: rgba(255,255,255,0.8); text-decoration: none; padding: 12px 14px; font-size: 0.82em; font-weight: bold; border-bottom: 3px solid transparent; transition: all 0.2s; }
+    .nav-bar a:hover, .nav-bar a.active { color: white; border-bottom-color: #ffd600; }
+    .main { max-width: 860px; margin: 0 auto; padding: 20px; }
+    .lesson-section { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.08); margin-bottom: 40px; scroll-margin-top: 60px; }
+    .banner { color: white; text-align: center; padding: 28px 24px; }
+    .banner h2 { font-size: 1.45em; margin-bottom: 6px; }
+    .banner p { font-size: 0.97em; opacity: 0.92; margin-bottom: 10px; }
+    .lesson-num { display: inline-block; background: rgba(255,255,255,0.25); border-radius: 20px; padding: 3px 14px; font-size: 0.82em; font-weight: bold; }
+    .b1 { background: linear-gradient(135deg, #4a148c, #7b1fa2); }
+    .b2 { background: linear-gradient(135deg, #1565c0, #1976d2); }
+    .b3 { background: linear-gradient(135deg, #b71c1c, #e53935); }
+    .b4 { background: linear-gradient(135deg, #1b5e20, #388e3c); }
+    .b5 { background: linear-gradient(135deg, #e65100, #fb8c00); }
+    .b6 { background: linear-gradient(135deg, #37474f, #546e7a); }
+    .lesson-content { padding: 26px; }
+    .section { border-left: 5px solid; border-radius: 0 10px 10px 0; padding: 18px 20px; margin-bottom: 20px; }
+    .s1 { background: #f3e5f5; border-color: #4a148c; } .s1 h3 { color: #4a148c; }
+    .s2 { background: #e3f2fd; border-color: #1565c0; } .s2 h3 { color: #1565c0; }
+    .s3 { background: #ffebee; border-color: #b71c1c; } .s3 h3 { color: #b71c1c; }
+    .s4 { background: #e8f5e9; border-color: #1b5e20; } .s4 h3 { color: #1b5e20; }
+    .s5 { background: #fff3e0; border-color: #e65100; } .s5 h3 { color: #e65100; }
+    .s6 { background: #eceff1; border-color: #37474f; } .s6 h3 { color: #37474f; }
+    .section h3 { margin-bottom: 8px; font-size: 1.05em; }
+    .vocab-box { background: #fff8e1; border: 2px solid #ffc107; border-radius: 10px; padding: 18px 20px; margin-bottom: 20px; }
+    .vocab-box h3 { color: #e65100; margin-bottom: 12px; font-size: 1.05em; }
+    .vocab-item { margin: 8px 0; font-size: 0.95em; }
+    .word { font-weight: bold; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.93em; }
+    th { background: #37474f; color: white; padding: 9px 12px; text-align: left; }
+    td { padding: 9px 12px; border-bottom: 1px solid #e0e0e0; }
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) { background: #f5f5f5; }
+    .tip { background: #e8f5e9; border-left: 4px solid #43a047; border-radius: 0 8px 8px 0; padding: 12px 16px; margin: 12px 0; color: #1b5e20; font-size: 0.93em; }
+    .tip strong { color: #2e7d32; }
+    .try-it { background: #ede7f6; border: 2px dashed #7e57c2; border-radius: 10px; padding: 18px 20px; margin-bottom: 20px; }
+    .try-it h3 { color: #4527a0; margin-bottom: 10px; font-size: 1.05em; }
+    .try-it ol { padding-left: 20px; }
+    .try-it li { margin: 8px 0; font-size: 0.95em; }
+    .remember { background: #fff3e0; border: 2px solid #ff8f00; border-radius: 10px; padding: 18px 20px; text-align: center; margin-bottom: 4px; }
+    .remember h3 { color: #e65100; margin-bottom: 10px; font-size: 1.05em; }
+    .remember p { margin: 5px 0; font-size: 0.95em; }
+    .remember .cta { font-weight: bold; font-size: 1.05em; margin-top: 12px; }
+    .flex-row { display: flex; gap: 12px; flex-wrap: wrap; margin: 10px 0; }
+    .flex-col { flex: 1; min-width: 150px; border-radius: 10px; padding: 14px 16px; }
+    .fb-purple { background: #f3e5f5; border: 2px solid #7b1fa2; } .fb-purple h4 { color: #4a148c; margin-bottom: 6px; }
+    .fb-blue { background: #e3f2fd; border: 2px solid #1976d2; } .fb-blue h4 { color: #1565c0; margin-bottom: 6px; }
+    .fb-red { background: #ffebee; border: 2px solid #e53935; } .fb-red h4 { color: #b71c1c; margin-bottom: 6px; }
+    .fb-green { background: #e8f5e9; border: 2px solid #388e3c; } .fb-green h4 { color: #1b5e20; margin-bottom: 6px; }
+    .fb-orange { background: #fff3e0; border: 2px solid #f57c00; } .fb-orange h4 { color: #e65100; margin-bottom: 6px; }
+    .fb-grey { background: #eceff1; border: 2px solid #78909c; } .fb-grey h4 { color: #37474f; margin-bottom: 6px; }
+    .fb-yellow { background: #fffde7; border: 2px solid #f9a825; } .fb-yellow h4 { color: #f57f17; margin-bottom: 6px; }
+    .fb-teal { background: #e0f7fa; border: 2px solid #00838f; } .fb-teal h4 { color: #006064; margin-bottom: 6px; }
+    .science-box { background: #f3e5f5; border: 2px solid #7b1fa2; border-radius: 10px; padding: 16px 18px; margin-bottom: 14px; }
+    .science-box h4 { color: #4a148c; margin-bottom: 8px; font-size: 0.98em; }
+    .state-card { border-radius: 10px; padding: 14px 16px; text-align: center; }
+    .sc-solid { background: #e8eaf6; border: 3px solid #3949ab; }
+    .sc-solid h4 { color: #1a237e; }
+    .sc-liquid { background: #e3f2fd; border: 3px solid #1976d2; }
+    .sc-liquid h4 { color: #1565c0; }
+    .sc-gas { background: #e0f7fa; border: 3px solid #0097a7; }
+    .sc-gas h4 { color: #006064; }
+    .energy-tag { display: inline-block; border-radius: 16px; padding: 5px 16px; font-size: 0.88em; font-weight: bold; color: white; margin: 4px; }
+    .et-kinetic { background: #e65100; }
+    .et-potential { background: #1565c0; }
+    .et-thermal { background: #c62828; }
+    .et-light { background: #f9a825; color: #333; }
+    .et-sound { background: #4a148c; }
+    .et-electrical { background: #1b5e20; }
+    .et-chemical { background: #37474f; }
+    .change-box { border-radius: 10px; padding: 14px 16px; margin-bottom: 12px; }
+    ul { padding-left: 20px; } li { margin: 5px 0; font-size: 0.95em; }
+    p { margin-bottom: 8px; font-size: 0.95em; }
+  </style>
+</head>
+<body>
+
+<div class="top-header">
+  <h1>Owl Smart: A 3rd Grade Learning Journey</h1>
+  <p>Unit 16 -- Physical Science: Matter, Forces, and Energy &nbsp;|&nbsp; 6 Lessons</p>
+</div>
+
+<div class="nav-bar">
+  <a href="#lesson1">16.1 Matter</a>
+  <a href="#lesson2">16.2 Changes in Matter</a>
+  <a href="#lesson3">16.3 Forces</a>
+  <a href="#lesson4">16.4 Motion &amp; Magnetism</a>
+  <a href="#lesson5">16.5 Forms of Energy</a>
+  <a href="#lesson6">16.6 Light, Sound &amp; Heat</a>
+</div>
+
+<div class="main">
+
+<!-- LESSON 16.1 -->
+<div class="lesson-section" id="lesson1">
+  <div class="banner b1">
+    <span class="lesson-num">Lesson 16.1</span>
+    <h2>Matter: Properties and States</h2>
+    <p>Everything around you is made of matter -- learn to describe and classify it!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s1">
+      <h3>What Are We Learning Today?</h3>
+      <p>Look around you -- your chair, the air you breathe, the water in your glass. All of it is <strong>matter</strong>! Matter is anything that has mass and takes up space. Today we learn to describe matter using its properties and understand the three states matter can exist in.</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Matter</span> -- Anything that has mass and takes up space. Everything physical is made of matter!</div>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Mass</span> -- The amount of matter in an object. Measured in grams or kilograms.</div>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Volume</span> -- The amount of space matter takes up.</div>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Property</span> -- A characteristic that describes matter: colour, texture, hardness, flexibility, conductivity.</div>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Solid</span> -- A state of matter with a definite shape and definite volume. Particles are tightly packed.</div>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Liquid</span> -- A state of matter with a definite volume but no definite shape (takes the shape of its container).</div>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Gas</span> -- A state of matter with no definite shape or volume. Spreads to fill any container.</div>
+    </div>
+
+    <div class="section s1">
+      <h3>The Three States of Matter</h3>
+      <div class="flex-row">
+        <div class="flex-col state-card sc-solid">
+          <h4>SOLID</h4>
+          <p style="font-size:0.88em; margin-top:4px;">Definite shape + definite volume</p>
+          <p style="font-size:0.85em; color:#37474f; margin-top:6px;">Particles are tightly packed and vibrate in place. Strong forces hold them together.</p>
+          <p style="font-size:0.85em; margin-top:6px; font-weight:bold; color:#1a237e;">Examples: rock, ice, wood, metal, bone</p>
+        </div>
+        <div class="flex-col state-card sc-liquid">
+          <h4>LIQUID</h4>
+          <p style="font-size:0.88em; margin-top:4px;">No definite shape + definite volume</p>
+          <p style="font-size:0.85em; color:#37474f; margin-top:6px;">Particles are close but can slide past each other. Takes the shape of its container.</p>
+          <p style="font-size:0.85em; margin-top:6px; font-weight:bold; color:#1565c0;">Examples: water, juice, milk, lava, mercury</p>
+        </div>
+        <div class="flex-col state-card sc-gas">
+          <h4>GAS</h4>
+          <p style="font-size:0.88em; margin-top:4px;">No definite shape + no definite volume</p>
+          <p style="font-size:0.85em; color:#37474f; margin-top:6px;">Particles move rapidly and spread far apart. Fills any container completely.</p>
+          <p style="font-size:0.85em; margin-top:6px; font-weight:bold; color:#006064;">Examples: air, steam, oxygen, helium, carbon dioxide</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section s1">
+      <h3>Physical Properties of Matter</h3>
+      <table>
+        <tr><th>Property</th><th>What It Describes</th><th>Example</th></tr>
+        <tr><td><strong>Colour</strong></td><td>The visual appearance</td><td>Gold is yellow; copper is orange</td></tr>
+        <tr><td><strong>Texture</strong></td><td>How the surface feels</td><td>Sandpaper is rough; silk is smooth</td></tr>
+        <tr><td><strong>Hardness</strong></td><td>How resistant to scratching</td><td>Diamond is very hard; chalk is soft</td></tr>
+        <tr><td><strong>Flexibility</strong></td><td>Ability to bend without breaking</td><td>Rubber is flexible; glass is not</td></tr>
+        <tr><td><strong>Conductivity</strong></td><td>Ability to conduct heat or electricity</td><td>Metals conduct well; plastic does not</td></tr>
+        <tr><td><strong>Magnetism</strong></td><td>Attracted to magnets or not</td><td>Iron is magnetic; wood is not</td></tr>
+        <tr><td><strong>Density</strong></td><td>How much mass is packed into a space</td><td>Gold sinks; wood floats in water</td></tr>
+        <tr><td><strong>Solubility</strong></td><td>Ability to dissolve in water</td><td>Salt dissolves; sand does not</td></tr>
+      </table>
+    </div>
+
+    <div class="science-box">
+      <h4>Matter is Made of Atoms!</h4>
+      <p>Everything is made of incredibly tiny particles called <strong>atoms</strong>. Atoms are so small that millions of them could fit on the period at the end of this sentence! Different types of atoms make up different materials. In a solid, atoms are packed tightly and barely move. In a liquid, they slide around. In a gas, they bounce around rapidly in all directions!</p>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Classify each as solid, liquid, or gas: ice cube, steam from a kettle, honey, a rock, the air in a balloon.</li>
+        <li>Name THREE physical properties of a wooden pencil.</li>
+        <li>If you pour water into a square container and then into a round container, the water changes shape but not volume. Which state of matter does this describe?</li>
+        <li>What is the difference between mass and volume?</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p><strong>Matter</strong> = anything with mass and volume.</p>
+      <p><strong>Solid</strong>: definite shape + volume. <strong>Liquid</strong>: definite volume, no definite shape.</p>
+      <p><strong>Gas</strong>: no definite shape or volume -- expands to fill any container.</p>
+      <p class="cta" style="color:#4a148c;">Great start! Click Lesson 16.2!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 16.2 -->
+<div class="lesson-section" id="lesson2">
+  <div class="banner b2">
+    <span class="lesson-num">Lesson 16.2</span>
+    <h2>Changes in Matter: Physical and Chemical</h2>
+    <p>Matter can change -- but some changes can be undone and some cannot!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s2">
+      <h3>What Are We Learning Today?</h3>
+      <p>Matter is always changing! Ice melts, wood burns, bread rises. But not all changes are equal. Some changes only alter the <strong>form</strong> of matter (physical changes), while others create an entirely <strong>new substance</strong> (chemical changes). Learning to tell them apart is a key science skill!</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#1565c0;">Physical Change</span> -- A change that alters the form or appearance of matter but does NOT create a new substance. Usually reversible.</div>
+      <div class="vocab-item"><span class="word" style="color:#1565c0;">Chemical Change</span> -- A change that creates a new substance with different properties. Usually irreversible.</div>
+      <div class="vocab-item"><span class="word" style="color:#1565c0;">Reversible</span> -- A change that can be undone. Example: melting ice can be refrozen.</div>
+      <div class="vocab-item"><span class="word" style="color:#1565c0;">Irreversible</span> -- A change that CANNOT be undone. Example: you cannot un-burn wood.</div>
+      <div class="vocab-item"><span class="word" style="color:#1565c0;">Mixture</span> -- Two or more substances combined but NOT chemically joined. They can be separated.</div>
+      <div class="vocab-item"><span class="word" style="color:#1565c0;">Solution</span> -- A special mixture where one substance is completely dissolved in another (like salt in water).</div>
+    </div>
+
+    <div class="section s2">
+      <h3>Physical Changes -- Same Substance, Different Form</h3>
+      <div class="change-box fb-blue">
+        <h4 style="color:#1565c0; margin-bottom:10px;">Physical Change Examples:</h4>
+        <table>
+          <tr><th>Change</th><th>What Happens</th><th>Reversible?</th></tr>
+          <tr><td>Ice melting</td><td>Solid → liquid water (still H2O!)</td><td>YES -- refreeze it</td></tr>
+          <tr><td>Tearing paper</td><td>Changes shape, not substance</td><td>Mostly (tape it back)</td></tr>
+          <tr><td>Dissolving salt</td><td>Salt mixes into water but is still salt</td><td>YES -- evaporate water</td></tr>
+          <tr><td>Crushing a can</td><td>Changes shape, still aluminium</td><td>Mostly</td></tr>
+          <tr><td>Cutting hair</td><td>Changes length, still hair</td><td>Eventually (grows back)</td></tr>
+          <tr><td>Water boiling</td><td>Liquid → gas (still H2O)</td><td>YES -- condense it</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="section s2">
+      <h3>Chemical Changes -- New Substance Created!</h3>
+      <div class="change-box fb-red">
+        <h4 style="color:#b71c1c; margin-bottom:10px;">Signs of a Chemical Change:</h4>
+        <div class="flex-row">
+          <div class="flex-col fb-red">
+            <ul>
+              <li>Colour change (unexpected)</li>
+              <li>Gas bubbles produced</li>
+              <li>Light or heat released</li>
+            </ul>
+          </div>
+          <div class="flex-col fb-red">
+            <ul>
+              <li>New smell produced</li>
+              <li>Solid forms in liquid (precipitate)</li>
+              <li>Cannot easily be reversed</li>
+            </ul>
+          </div>
+        </div>
+        <table style="margin-top:10px;">
+          <tr><th>Chemical Change</th><th>New Substance Formed</th><th>Signs</th></tr>
+          <tr><td>Burning wood</td><td>Ash, carbon dioxide, water vapour</td><td>Heat, light, smoke, new smell</td></tr>
+          <tr><td>Rusting iron</td><td>Iron oxide (rust)</td><td>Colour change (orange), cannot be undone</td></tr>
+          <tr><td>Baking a cake</td><td>Completely new substance!</td><td>Bubbles from baking soda, colour change, new texture/smell</td></tr>
+          <tr><td>Vinegar + baking soda</td><td>Carbon dioxide gas + water + salt</td><td>Bubbling, fizzing!</td></tr>
+          <tr><td>Digesting food</td><td>Nutrients and waste</td><td>Irreversible chemical reactions in your stomach</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="tip"><strong>Quick Test:</strong> Ask "Is it the SAME substance, just different form?" → Physical change. Ask "Is a NEW substance formed?" → Chemical change. Burning produces ash (new!) = chemical. Melting ice produces water (still H2O!) = physical.</div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Classify each as physical or chemical change: toasting bread, folding a piece of paper, mixing vinegar and baking soda, melting butter, rusting metal, cutting a watermelon.</li>
+        <li>What are THREE signs that a chemical change has occurred?</li>
+        <li>Why is burning wood a chemical change but melting ice only a physical change?</li>
+        <li>Can you reverse a chemical change? Give an example to support your answer.</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p><strong>Physical change</strong>: same substance, different form. Usually reversible.</p>
+      <p><strong>Chemical change</strong>: NEW substance created. Usually irreversible.</p>
+      <p>Signs of chemical change: bubbles, colour change, heat, light, new smell.</p>
+      <p class="cta" style="color:#1565c0;">Excellent! Click Lesson 16.3!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 16.3 -->
+<div class="lesson-section" id="lesson3">
+  <div class="banner b3">
+    <span class="lesson-num">Lesson 16.3</span>
+    <h2>Forces: Push, Pull, and Gravity</h2>
+    <p>Forces make things move, stop, or change direction -- discover how!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s3">
+      <h3>What Are We Learning Today?</h3>
+      <p>Why does a ball fall when you drop it? Why does a door open when you pull it? The answer is <strong>forces</strong>! A force is a push or a pull that acts on an object. Forces are everywhere -- and understanding them explains how everything in our world moves. Today we explore forces including the most powerful of all: <strong>gravity</strong>!</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#b71c1c;">Force</span> -- A push or a pull that acts on an object and can change its motion, shape, or direction.</div>
+      <div class="vocab-item"><span class="word" style="color:#b71c1c;">Gravity</span> -- A force that pulls all objects toward each other. Earth's gravity pulls everything toward its centre.</div>
+      <div class="vocab-item"><span class="word" style="color:#b71c1c;">Friction</span> -- A force that opposes motion when two surfaces rub against each other. Slows things down.</div>
+      <div class="vocab-item"><span class="word" style="color:#b71c1c;">Applied Force</span> -- A force directly applied by a person or object. Example: pushing a box, kicking a ball.</div>
+      <div class="vocab-item"><span class="word" style="color:#b71c1c;">Balanced Forces</span> -- Equal forces in opposite directions. Object does not move (no net force).</div>
+      <div class="vocab-item"><span class="word" style="color:#b71c1c;">Unbalanced Forces</span> -- Unequal forces that cause an object to move, change speed, or change direction.</div>
+      <div class="vocab-item"><span class="word" style="color:#b71c1c;">Net Force</span> -- The overall force after all forces are combined.</div>
+    </div>
+
+    <div class="section s3">
+      <h3>Forces Change Motion</h3>
+      <table>
+        <tr><th>Force Applied</th><th>Effect on Object</th><th>Real-World Example</th></tr>
+        <tr><td>Push forward</td><td>Object starts moving or speeds up</td><td>Kicking a soccer ball</td></tr>
+        <tr><td>Push backward (friction)</td><td>Object slows down and stops</td><td>Brakes on a bike</td></tr>
+        <tr><td>Force from the side</td><td>Object changes direction</td><td>Wind blowing a kite sideways</td></tr>
+        <tr><td>Gravity downward</td><td>Object falls toward Earth</td><td>Dropping a book</td></tr>
+        <tr><td>Balanced forces</td><td>Object stays still</td><td>Book sitting on a table</td></tr>
+      </table>
+    </div>
+
+    <div class="section s3">
+      <h3>Gravity -- The Universal Force</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-red">
+          <h4>What is Gravity?</h4>
+          <p>Gravity is a force of attraction between all objects with mass. The MORE mass an object has, the STRONGER its gravitational pull. Earth is so massive that its gravity pulls everything toward its centre.</p>
+        </div>
+        <div class="flex-col fb-blue">
+          <h4>Gravity Facts</h4>
+          <ul>
+            <li>Keeps you on the ground</li>
+            <li>Makes things fall</li>
+            <li>Keeps the Moon orbiting Earth</li>
+            <li>Keeps Earth orbiting the Sun</li>
+            <li>Works over any distance!</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="section s3">
+      <h3>Friction -- The Force That Slows Things Down</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-orange">
+          <h4>High Friction (rough surfaces)</h4>
+          <p>Lots of resistance. Objects slow down quickly.</p>
+          <p style="margin-top:6px; font-size:0.88em;"><em>Examples: sandpaper on wood, rubber sole on concrete, car tyres on road</em></p>
+        </div>
+        <div class="flex-col fb-blue">
+          <h4>Low Friction (smooth surfaces)</h4>
+          <p>Less resistance. Objects slide easily.</p>
+          <p style="margin-top:6px; font-size:0.88em;"><em>Examples: ice skates on ice, ball bearings in a wheel, lubricated engine parts</em></p>
+        </div>
+      </div>
+      <div class="tip"><strong>Friction is both helpful and harmful!</strong> Helpful: car brakes, grip on floors, pencil writing on paper. Harmful: wears out tyres and shoes, slows machines down, causes heat in engines.</div>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Name TWO examples each of a push force and a pull force in everyday life.</li>
+        <li>A book is sitting still on a table. Are the forces balanced or unbalanced? How do you know?</li>
+        <li>Why do cars need both engine force AND brakes? What force does each one create?</li>
+        <li>Why would it be impossible to walk on perfectly frictionless ground? What would happen?</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p>A <strong>force</strong> = a push or a pull that changes motion.</p>
+      <p><strong>Gravity</strong> pulls all objects toward Earth's centre.</p>
+      <p><strong>Friction</strong> opposes motion and slows objects down.</p>
+      <p>Balanced forces = no movement. Unbalanced forces = movement!</p>
+      <p class="cta" style="color:#b71c1c;">Well done! Click Lesson 16.4!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 16.4 -->
+<div class="lesson-section" id="lesson4">
+  <div class="banner b4">
+    <span class="lesson-num">Lesson 16.4</span>
+    <h2>Motion and Magnetism</h2>
+    <p>Describe how things move and discover the invisible force of magnets!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s4">
+      <h3>What Are We Learning Today?</h3>
+      <p>Motion is everywhere -- a bouncing ball, a spinning wheel, a flowing river. Scientists describe motion using speed, direction, and position. And then there is magnetism -- a mysterious force that acts at a distance, pushing and pulling without even touching! Today we explore both.</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Motion</span> -- A change in the position of an object over time.</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Speed</span> -- How fast an object moves. Calculated as distance divided by time.</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Direction</span> -- The way an object is moving (forward, backward, up, down, left, right).</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Magnet</span> -- An object that produces a magnetic force, attracting certain metals.</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Magnetic Poles</span> -- The two ends of a magnet (north pole and south pole) where the force is strongest.</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Attract</span> -- When opposite poles of magnets pull toward each other (N + S attract).</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Repel</span> -- When like poles of magnets push away from each other (N + N or S + S repel).</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Magnetic Field</span> -- The invisible area around a magnet where its force acts.</div>
+    </div>
+
+    <div class="section s4">
+      <h3>Describing Motion</h3>
+      <table>
+        <tr><th>Concept</th><th>What It Means</th><th>Example</th></tr>
+        <tr><td><strong>Position</strong></td><td>Where an object is located</td><td>"The ball is 3 metres to the left of the goal"</td></tr>
+        <tr><td><strong>Speed</strong></td><td>How fast = distance / time</td><td>A cheetah runs 70 mph; a snail moves 0.03 mph</td></tr>
+        <tr><td><strong>Direction</strong></td><td>Which way it moves</td><td>North, south, up, clockwise</td></tr>
+        <tr><td><strong>Acceleration</strong></td><td>Speeding up or slowing down</td><td>A car speeding up at a green light</td></tr>
+        <tr><td><strong>Vibration</strong></td><td>Back-and-forth motion</td><td>A guitar string vibrating to make sound</td></tr>
+      </table>
+    </div>
+
+    <div class="section s4">
+      <h3>Magnetism -- The Invisible Force</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-green">
+          <h4>The Rules of Magnets</h4>
+          <p style="margin-top:4px;"><strong>Opposite poles attract:</strong></p>
+          <p style="font-size:0.88em;">North + South = PULL together</p>
+          <p style="margin-top:8px;"><strong>Like poles repel:</strong></p>
+          <p style="font-size:0.88em;">North + North = PUSH apart</p>
+          <p style="font-size:0.88em;">South + South = PUSH apart</p>
+        </div>
+        <div class="flex-col fb-blue">
+          <h4>Magnetic Materials</h4>
+          <p>NOT all metals are magnetic! Only:</p>
+          <ul style="font-size:0.88em; margin-top:6px;">
+            <li>Iron (and steel)</li>
+            <li>Nickel</li>
+            <li>Cobalt</li>
+          </ul>
+          <p style="font-size:0.88em; margin-top:8px;">NOT magnetic: aluminium, copper, gold, plastic, wood, glass</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section s4">
+      <h3>Magnets in Real Life</h3>
+      <table>
+        <tr><th>Application</th><th>How Magnetism Is Used</th></tr>
+        <tr><td>Compass</td><td>A magnetised needle points to Earth's magnetic north pole</td></tr>
+        <tr><td>Electric motors</td><td>Magnets create rotation to power fans, cars, and appliances</td></tr>
+        <tr><td>MRI machines</td><td>Powerful magnets create detailed images inside the human body</td></tr>
+        <tr><td>Maglev trains</td><td>Magnetic repulsion lifts the train, eliminating friction!</td></tr>
+        <tr><td>Fridge magnets</td><td>Magnetic strip attaches to iron in the fridge door</td></tr>
+        <tr><td>Credit cards</td><td>Magnetic strip stores data</td></tr>
+      </table>
+      <div class="science-box">
+        <h4>Earth is a Giant Magnet!</h4>
+        <p>Earth has its own magnetic field generated by the movement of liquid iron in its outer core. This field creates a north and south magnetic pole. Compass needles align with Earth's magnetic field, always pointing toward magnetic north -- which is how navigation worked before GPS was invented!</p>
+      </div>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>If you hold a north pole of one magnet next to the north pole of another, what happens? Why?</li>
+        <li>Which of these are magnetic: a steel paper clip, a copper penny, a iron nail, a plastic button?</li>
+        <li>A car travels 60 miles in 1 hour. What is its speed?</li>
+        <li>How does a compass work? What force is involved?</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p>Opposite poles <strong>ATTRACT</strong>. Like poles <strong>REPEL.</strong></p>
+      <p>Only iron, nickel, and cobalt are attracted to magnets.</p>
+      <p>Speed = <strong>distance / time.</strong></p>
+      <p>Earth has its own magnetic field -- that is why compasses work!</p>
+      <p class="cta" style="color:#1b5e20;">Keep going! Click Lesson 16.5!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 16.5 -->
+<div class="lesson-section" id="lesson5">
+  <div class="banner b5">
+    <span class="lesson-num">Lesson 16.5</span>
+    <h2>Forms of Energy</h2>
+    <p>Energy makes everything happen -- discover its many amazing forms!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s5">
+      <h3>What Are We Learning Today?</h3>
+      <p>Energy is the ability to do <strong>work</strong> or cause <strong>change</strong>. Without energy, nothing in the universe would move, grow, or change. Energy comes in many forms and -- crucially -- it can change from one form to another but it is NEVER created or destroyed. This is the <strong>Law of Conservation of Energy!</strong></p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Energy</span> -- The ability to do work or cause change.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Kinetic Energy</span> -- The energy of motion. Anything moving has kinetic energy.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Potential Energy</span> -- Stored energy. An object has potential energy because of its position or condition.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Thermal Energy</span> -- Heat energy. The total kinetic energy of all the particles in a substance.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Light Energy</span> -- Energy carried by light waves (electromagnetic radiation).</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Sound Energy</span> -- Energy carried by vibrations through matter.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Electrical Energy</span> -- Energy from moving electrons through a conductor.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Chemical Energy</span> -- Energy stored in the bonds of chemicals (food, fuel, batteries).</div>
+    </div>
+
+    <div class="section s5">
+      <h3>The Major Forms of Energy</h3>
+      <div style="margin: 12px 0;">
+        <span class="energy-tag et-kinetic">Kinetic (motion)</span>
+        <span class="energy-tag et-potential">Potential (stored)</span>
+        <span class="energy-tag et-thermal">Thermal (heat)</span>
+        <span class="energy-tag et-light">Light</span>
+        <span class="energy-tag et-sound">Sound</span>
+        <span class="energy-tag et-electrical">Electrical</span>
+        <span class="energy-tag et-chemical">Chemical</span>
+      </div>
+      <table style="margin-top:12px;">
+        <tr><th>Form of Energy</th><th>Description</th><th>Real-World Examples</th></tr>
+        <tr><td><strong>Kinetic</strong></td><td>Energy of motion -- faster + heavier = more</td><td>Running, a rolling ball, flowing water</td></tr>
+        <tr><td><strong>Potential</strong></td><td>Stored energy ready to be released</td><td>A stretched rubber band, water behind a dam, a raised hammer</td></tr>
+        <tr><td><strong>Thermal (Heat)</strong></td><td>Energy from moving particles inside matter</td><td>A campfire, the sun's warmth, cooking on a stove</td></tr>
+        <tr><td><strong>Light</strong></td><td>Energy that travels as electromagnetic waves</td><td>Sunlight, lamp light, laser, firefly</td></tr>
+        <tr><td><strong>Sound</strong></td><td>Energy that travels as vibrations through matter</td><td>Music, thunder, voices, a barking dog</td></tr>
+        <tr><td><strong>Electrical</strong></td><td>Energy from moving electrons</td><td>Lightning, wall outlets, batteries, electric eels</td></tr>
+        <tr><td><strong>Chemical</strong></td><td>Energy stored in chemical bonds</td><td>Food (calories), gasoline, batteries, wood</td></tr>
+      </table>
+    </div>
+
+    <div class="section s5">
+      <h3>Energy Transfers and Transformations</h3>
+      <p>Energy constantly transforms from one form to another:</p>
+      <div class="flex-row">
+        <div class="flex-col fb-orange">
+          <h4>Solar Panel</h4>
+          <p style="font-size:0.88em;">Light energy → Electrical energy</p>
+        </div>
+        <div class="flex-col fb-yellow">
+          <h4>Light Bulb</h4>
+          <p style="font-size:0.88em;">Electrical energy → Light energy + Heat energy</p>
+        </div>
+        <div class="flex-col fb-green">
+          <h4>Human Body</h4>
+          <p style="font-size:0.88em;">Chemical energy (food) → Kinetic energy (movement) + Heat energy</p>
+        </div>
+        <div class="flex-col fb-blue">
+          <h4>Hydroelectric Dam</h4>
+          <p style="font-size:0.88em;">Potential energy (stored water) → Kinetic energy (flowing water) → Electrical energy</p>
+        </div>
+      </div>
+      <div class="tip"><strong>The Big Rule:</strong> Energy is NEVER created or destroyed -- it only changes form! This is the Law of Conservation of Energy. When you eat food, the chemical energy in it does not disappear -- it becomes kinetic energy (movement) and thermal energy (body heat).</div>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>A roller coaster is at the TOP of a hill before descending. Does it have more kinetic or potential energy at the top? What about at the bottom?</li>
+        <li>When you turn on a flashlight, what energy transformation occurs?</li>
+        <li>Name the form of energy stored in: food, a stretched bow, a moving car, a campfire.</li>
+        <li>Washington state gets much of its electricity from hydroelectric dams. Trace the energy transformations from the original source (sun) to your light switch.</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p>Energy is <strong>never created or destroyed</strong> -- it only changes form!</p>
+      <p><strong>Kinetic</strong> = energy of motion. <strong>Potential</strong> = stored energy.</p>
+      <p>Energy can transform: light → electrical → heat → sound → motion!</p>
+      <p class="cta" style="color:#e65100;">Last lesson! Click Lesson 16.6!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 16.6 -->
+<div class="lesson-section" id="lesson6">
+  <div class="banner b6">
+    <span class="lesson-num">Lesson 16.6</span>
+    <h2>Light, Sound, and Heat</h2>
+    <p>Three essential forms of energy that shape our everyday experience!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s6">
+      <h3>What Are We Learning Today?</h3>
+      <p>Light lets us see. Sound lets us communicate. Heat keeps us alive. These three forms of energy are among the most important in our daily lives. Today we take a deeper look at how each one works, how it travels, and how we experience it every single day!</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#37474f;">Reflection</span> -- When light bounces off a surface.</div>
+      <div class="vocab-item"><span class="word" style="color:#37474f;">Refraction</span> -- When light bends as it passes from one material to another (e.g., water to air).</div>
+      <div class="vocab-item"><span class="word" style="color:#37474f;">Absorption</span> -- When a material takes in light (or heat) rather than reflecting it.</div>
+      <div class="vocab-item"><span class="word" style="color:#37474f;">Vibration</span> -- The rapid back-and-forth movement that creates sound waves.</div>
+      <div class="vocab-item"><span class="word" style="color:#37474f;">Pitch</span> -- How high or low a sound is, determined by the frequency (speed) of vibration.</div>
+      <div class="vocab-item"><span class="word" style="color:#37474f;">Volume</strong> -- How loud or soft a sound is, determined by the amplitude (size) of vibration.</div>
+      <div class="vocab-item"><span class="word" style="color:#37474f;">Conduction</span> -- Transfer of heat through direct contact between materials.</div>
+      <div class="vocab-item"><span class="word" style="color:#37474f;">Convection</span> -- Transfer of heat through the movement of a fluid (liquid or gas).</div>
+      <div class="vocab-item"><span class="word" style="color:#37474f;">Radiation</span> -- Transfer of heat through electromagnetic waves without requiring matter. (How the sun heats Earth!)</div>
+    </div>
+
+    <div class="section s6">
+      <h3>Light Energy</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-yellow">
+          <h4>How Light Travels</h4>
+          <p>Light travels as waves at 186,000 miles per SECOND -- the fastest speed in the universe! Light can travel through a vacuum (empty space) -- that is how sunlight reaches Earth.</p>
+        </div>
+        <div class="flex-col fb-grey">
+          <h4>Reflection, Refraction, Absorption</h4>
+          <p><strong>Reflection</strong>: mirrors, shiny surfaces bounce light back.</p>
+          <p><strong>Refraction</strong>: a straw looks bent in water -- light bends!</p>
+          <p><strong>Absorption</strong>: black objects absorb light (get hot). White reflects it (stays cool).</p>
+        </div>
+      </div>
+      <div class="tip"><strong>Rainbows!</strong> White light is actually ALL colours mixed together. When light passes through water droplets or a prism, it refracts and separates into its component colours: Red, Orange, Yellow, Green, Blue, Indigo, Violet (ROY G BIV)!</div>
+    </div>
+
+    <div class="section s6">
+      <h3>Sound Energy</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-grey">
+          <h4>How Sound Travels</h4>
+          <p>Sound is created by vibrations. Vibrating objects push and pull nearby air particles, creating waves that travel outward in all directions.</p>
+          <p style="margin-top:6px; font-size:0.88em;">Sound travels faster through liquids and solids than through air! And sound CANNOT travel through a vacuum (no particles to vibrate -- space is silent!).</p>
+        </div>
+        <div class="flex-col fb-purple">
+          <h4>Pitch and Volume</h4>
+          <p><strong>High pitch</strong> = fast vibrations (piccolo, whistle)</p>
+          <p><strong>Low pitch</strong> = slow vibrations (bass guitar, thunder)</p>
+          <p style="margin-top:6px;"><strong>Loud</strong> = large vibrations (concert speaker)</p>
+          <p><strong>Soft</strong> = small vibrations (whisper)</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section s6">
+      <h3>Heat Energy (Thermal Energy)</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-red">
+          <h4>Conduction</h4>
+          <p>Heat transfers through DIRECT CONTACT. Metals are great conductors -- that is why metal spoons get hot in hot soup!</p>
+          <p style="font-size:0.88em; margin-top:6px;"><em>Wood and plastic are poor conductors (insulators) -- great for pot handles!</em></p>
+        </div>
+        <div class="flex-col fb-orange">
+          <h4>Convection</h4>
+          <p>Heat transfers through moving fluids. Warm air or water rises; cooler air or water sinks, creating a circulation pattern called a convection current.</p>
+          <p style="font-size:0.88em; margin-top:6px;"><em>Why the top of a room is warmer than the bottom!</em></p>
+        </div>
+        <div class="flex-col fb-yellow">
+          <h4>Radiation</h4>
+          <p>Heat transfers as electromagnetic waves -- no matter needed! This is the ONLY way heat can travel through space.</p>
+          <p style="font-size:0.88em; margin-top:6px;"><em>The sun heats Earth through 93 million miles of empty space by radiation!</em></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="science-box">
+      <h4>Real-World Connections</h4>
+      <p><strong>Light:</strong> Solar panels capture light energy and convert it to electricity -- powering homes across Washington state. <strong>Sound:</strong> Ultrasound uses high-frequency sound waves to create images inside the human body (used in hospitals!). <strong>Heat:</strong> Washington's geothermal energy harnesses heat from inside the Earth. Understanding light, sound, and heat opens doors to all of modern technology!</p>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Why does a straw look bent when placed in a glass of water? What property of light causes this?</li>
+        <li>What would happen to sound in outer space? Why?</li>
+        <li>Which type of heat transfer warms you when you sit next to a campfire but don't touch it?</li>
+        <li>Why do dark-coloured cars get hotter in sunlight than light-coloured cars? Use the word "absorption" in your answer.</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>YOU HAVE COMPLETED ALL OF SCIENCE! Congratulations!</h3>
+      <p>Light: reflects, refracts, and is absorbed. White light = all colours!</p>
+      <p>Sound: needs matter to travel. High pitch = fast vibrations.</p>
+      <p>Heat transfers by: <strong>Conduction</strong> (contact) + <strong>Convection</strong> (fluid) + <strong>Radiation</strong> (waves)</p>
+      <p class="cta" style="color:#37474f;">PHENOMENAL work! You completed all 6 lessons in Unit 16 and ALL of Science! Take the Unit 16 Quiz!</p>
+    </div>
+  </div>
+</div>
+
+</div>
+<script>
+  const sections = document.querySelectorAll('.lesson-section');
+  const navLinks = document.querySelectorAll('.nav-bar a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 80) current = s.getAttribute('id'); });
+    navLinks.forEach(l => { l.classList.remove('active'); if (l.getAttribute('href') === '#' + current) l.classList.add('active'); });
+  });
+</script>
+</body>
+</html>
