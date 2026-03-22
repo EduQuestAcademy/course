@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+<title>Lesson 1.5 — Adverbs: Describing Verbs and More | Grammar Mastery</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0f2552;--sf:rgba(255,255,255,0.09);--sf2:rgba(255,255,255,0.05);--br:rgba(255,255,255,0.15);--tx:#ffffff;--td:rgba(255,255,255,0.65);--tf:rgba(255,255,255,0.36);--ac:#4f8ef7;--ab:rgba(79,142,247,0.15);--ok:#34d399;--ob:rgba(52,211,153,0.14);--no:#f87171;--nb:rgba(248,113,113,0.14);--gd:#fbbf24;--r:14px;}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:linear-gradient(160deg,#1e3f7a 0%,#0f2552 55%,#091a3e 100%);background-attachment:fixed;color:#fff;min-height:100vh;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:radial-gradient(rgba(255,255,255,0.05) 1px,transparent 1px);background-size:26px 26px;pointer-events:none;z-index:0;}
+.app{position:relative;z-index:1;max-width:480px;margin:0 auto;padding-bottom:40px;}
+.qh{padding:16px 20px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--br);position:sticky;top:0;z-index:50;background:rgba(9,26,62,0.88);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);}
+.back{color:var(--ac);font-size:.82em;font-weight:600;background:none;border:none;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;text-decoration:none;}
+.qm{text-align:right;}
+.qc{font-size:.7em;font-family:'JetBrains Mono',monospace;color:var(--ac);}
+.ql{font-size:.62em;color:var(--tf);margin-top:1px;}
+.mt{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:6px 8px;font-size:1em;cursor:pointer;}
+.qp{height:4px;background:var(--sf2);}
+.qpf{height:100%;background:linear-gradient(90deg,var(--ac),#818cf8);transition:width .4s cubic-bezier(.4,0,.2,1);}
+.qa{padding:24px 20px 16px;}
+.qtb{display:inline-flex;align-items:center;background:var(--ab);border:1px solid rgba(99,102,241,.2);border-radius:20px;padding:4px 12px;font-size:.62em;font-weight:600;letter-spacing:.05em;color:var(--ac);text-transform:uppercase;font-family:'JetBrains Mono',monospace;margin-bottom:14px;}
+.qt{font-size:1.02em;font-weight:600;line-height:1.55;color:var(--tx);margin-bottom:8px;}
+.ol{display:flex;flex-direction:column;gap:10px;padding:0 20px;}
+.ob{display:flex;align-items:center;gap:14px;background:rgba(255,255,255,0.08);border:1.5px solid rgba(255,255,255,0.15);border-radius:var(--r);padding:14px 16px;cursor:pointer;transition:all .15s;text-align:left;font-family:'Plus Jakarta Sans',sans-serif;width:100%;color:var(--tx);}
+.ob:active{transform:scale(.98);}
+.ob:disabled{cursor:default;}
+.ok2{width:28px;height:28px;flex-shrink:0;border-radius:8px;background:rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;font-size:.72em;font-weight:700;font-family:'JetBrains Mono',monospace;color:var(--td);transition:all .15s;}
+.ot{font-size:.88em;line-height:1.4;flex:1;}
+.oi{font-size:1em;opacity:0;transition:opacity .2s;}
+.ob.correct{border-color:var(--ok);background:var(--ob);}
+.ob.correct .ok2{background:var(--ok);color:white;}
+.ob.correct .oi{opacity:1;}
+.ob.wrong{border-color:var(--no);background:var(--nb);}
+.ob.wrong .ok2{background:var(--no);color:white;}
+.ob.wrong .oi{opacity:1;}
+.ob.dimmed{opacity:.35;}
+.fb{padding:0 20px;}
+.fi{width:100%;background:rgba(255,255,255,0.08);border:1.5px solid rgba(255,255,255,0.15);border-radius:var(--r);padding:14px 16px;font-family:'Plus Jakarta Sans',sans-serif;font-size:.95em;color:#fff;outline:none;transition:border-color .2s;}
+.fi:focus{border-color:var(--ac);}
+.fi.correct{border-color:var(--ok);background:var(--ob);}
+.fi.wrong{border-color:var(--no);background:var(--nb);}
+.fs{margin-top:10px;width:100%;background:var(--ac);border:none;border-radius:var(--r);padding:13px;font-family:'Plus Jakarta Sans',sans-serif;font-size:.9em;font-weight:600;color:white;cursor:pointer;}
+.fs:disabled{opacity:.5;cursor:default;}
+.tfo{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:0 20px;}
+.eb{margin:14px 20px 0;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12);border-radius:var(--r);padding:14px 16px;font-size:.82em;line-height:1.6;color:var(--td);display:none;}
+.eb.show{display:block;animation:fi2 .3s ease;}
+.el{font-size:.7em;font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-family:'JetBrains Mono',monospace;margin-bottom:6px;}
+.el.correct{color:var(--ok);}
+.el.wrong{color:var(--no);}
+.nb2{display:none;margin:16px 20px 0;width:calc(100% - 40px);background:var(--ac);border:none;border-radius:var(--r);padding:15px;font-family:'Plus Jakarta Sans',sans-serif;font-size:.95em;font-weight:700;color:white;cursor:pointer;}
+.nb2.show{display:block;animation:fu .3s ease;}
+.nb2:active{transform:scale(.98);}
+.rs{display:none;padding:30px 20px;flex-direction:column;align-items:center;}
+.rs.show{display:flex;animation:fu .5s ease;}
+.rtr{font-size:4em;margin-bottom:10px;animation:bn .6s ease;}
+.rsb{font-size:3.5em;font-weight:800;font-family:'JetBrains Mono',monospace;background:linear-gradient(135deg,var(--ac),#818cf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px;}
+.rl{font-size:.88em;color:var(--td);margin-bottom:24px;}
+.rbd{width:100%;background:rgba(255,255,255,0.09);border:1px solid rgba(255,255,255,0.15);border-radius:var(--r);padding:16px;margin-bottom:20px;}
+.bdr{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.1);font-size:.82em;}
+.bdr:last-child{border-bottom:none;}
+.bdc{color:var(--ok);font-weight:600;font-family:'JetBrains Mono',monospace;}
+.bdw{color:var(--no);font-weight:600;font-family:'JetBrains Mono',monospace;}
+.nbp{background:rgba(251,191,36,.1);border:1px solid rgba(251,191,36,.3);border-radius:12px;padding:12px 16px;width:100%;display:flex;align-items:center;gap:12px;margin-bottom:16px;}
+.rbs{display:flex;flex-direction:column;gap:10px;width:100%;}
+.bp{background:var(--ac);border:none;border-radius:var(--r);padding:15px;font-family:'Plus Jakarta Sans',sans-serif;font-size:.95em;font-weight:700;color:white;cursor:pointer;text-align:center;text-decoration:none;display:block;}
+.bs{background:rgba(255,255,255,0.09);border:1px solid rgba(255,255,255,0.15);border-radius:var(--r);padding:14px;font-family:'Plus Jakarta Sans',sans-serif;font-size:.88em;font-weight:600;color:rgba(255,255,255,0.65);cursor:pointer;text-align:center;text-decoration:none;display:block;}
+.qcard{animation:fu .3s ease;}
+@keyframes fu{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fi2{from{opacity:0}to{opacity:1}}
+@keyframes bn{0%,100%{transform:scale(1)}50%{transform:scale(1.2)}}
+@keyframes sk{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.shake{animation:sk .35s ease;}
+</style>
+</head>
+<body>
+<div class="app">
+<div class="qh">
+  <a class="back" href="../modules/module1.html">&larr; Module 1</a>
+  <div class="qm"><div class="qc" id="qc">Q 1 of 20</div><div class="ql">Lesson 1.5 &mdash; Adverbs: Describing Verbs and More</div></div>
+  <button class="mt" id="mb" onclick="tM()">&#128266;</button>
+</div>
+<div class="qp"><div class="qpf" id="pf" style="width:0%"></div></div>
+<div id="qa"></div>
+<div class="rs" id="rs"></div>
+</div>
+<script>
+var Q=[
+{
+"type": "mcq",
+"q": "Which of the following is an adverb?",
+"options": [
+"Careful",
+"Care",
+"Carefully",
+"Caring"
+],
+"answer": 2,
+"explanation": "'Carefully' is an adverb of manner — it describes how an action is performed. 'Careful' is an adjective, 'care' is a noun, and 'caring' can be a verb or adjective."
+},
+{
+"type": "mcq",
+"q": "What type of adverb is used in: 'She will call you tomorrow.'?",
+"options": [
+"Adverb of manner",
+"Adverb of place",
+"Adverb of frequency",
+"Adverb of time"
+],
+"answer": 3,
+"explanation": "'Tomorrow' tells when the action will happen — it's an adverb of time. Manner = how, place = where, frequency = how often, time = when."
+},
+{
+"type": "mcq",
+"q": "Which sentence places the adverb of frequency correctly?",
+"options": [
+"Always she arrives early.",
+"She always arrives early.",
+"She arrives always early.",
+"She arrives early always."
+],
+"answer": 1,
+"explanation": "Adverbs of frequency (always, usually, often, sometimes, rarely, never) come before the main verb but after auxiliary verbs and 'to be'. 'She always arrives early' is correct."
+},
+{
+"type": "mcq",
+"q": "In which sentence does the adverb modify an adjective?",
+"options": [
+"He ran quickly to catch the bus.",
+"She speaks very softly.",
+"The exam was extremely difficult.",
+"They arrived late to the meeting."
+],
+"answer": 2,
+"explanation": "'Extremely' modifies the adjective 'difficult'. In the other sentences: 'quickly' modifies 'ran' (verb), 'softly' modifies 'speaks' (verb), 'late' modifies 'arrived' (verb)."
+},
+{
+"type": "mcq",
+"q": "Which sentence uses a conjunctive adverb correctly?",
+"options": [
+"He was tired, however he continued working.",
+"He was tired; however, he continued working.",
+"He was tired however, he continued working.",
+"He was tired however he continued working."
+],
+"answer": 1,
+"explanation": "Conjunctive adverbs connecting two independent clauses need a semicolon before and a comma after: 'tired; however, he'. A comma alone creates a comma splice error."
+},
+{
+"type": "tf",
+"q": "The word 'hard' can function as both an adjective and an adverb.",
+"answer": true,
+"explanation": "True. 'A hard question' (adjective) and 'She worked hard' (adverb). Note: 'hardly' means 'almost not' — a very different meaning. 'She worked hardly' would mean she barely worked at all!"
+},
+{
+"type": "mcq",
+"q": "Which sentence contains an adverb modifying another adverb?",
+"options": [
+"The dog barked loudly at the stranger.",
+"She finished the task quite quickly.",
+"He is an extremely talented painter.",
+"They moved slowly down the road."
+],
+"answer": 1,
+"explanation": "'Quite' (adverb of degree) modifies 'quickly' (adverb of manner). In option C, 'extremely' modifies the adjective 'talented', not another adverb."
+},
+{
+"type": "mcq",
+"q": "Identify the error in: 'He drives more careful than his brother.'",
+"options": [
+"'Drives' should be 'is driving'",
+"'More careful' should be 'more carefully' — an adverb is needed to modify the verb",
+"'His brother' should be 'him'",
+"No error"
+],
+"answer": 1,
+"explanation": "To modify the verb 'drives', an adverb is needed: 'more carefully'. 'Careful' is an adjective and cannot modify a verb directly. Adjective/adverb confusion is a common error."
+},
+{
+"type": "mcq",
+"q": "Which sentence demonstrates correct adverb placement?",
+"options": [
+"She is enough tall to reach the shelf.",
+"She is tall enough to reach the shelf.",
+"She is tall too to reach the shelf.",
+"She is very enough tall to reach the shelf."
+],
+"answer": 1,
+"explanation": "'Enough' follows the adjective it modifies: 'tall enough'. 'Too' and 'very' precede adjectives. 'She is too tall', 'She is very tall', 'She is tall enough' — these are the correct patterns."
+},
+{
+"type": "fill",
+"q": "An adverb that expresses how often something happens (e.g., always, never, sometimes) is called an adverb of ________.",
+"answer": "frequency",
+"hint": "How often does it happen?",
+"explanation": "Adverbs of FREQUENCY tell us how often an action occurs: always, usually, often, sometimes, rarely, never. They typically come before the main verb but after 'to be' and auxiliary verbs."
+},
+{
+"type": "mcq",
+"q": "Which word is NOT an adverb?",
+"options": [
+"Quite",
+"Although",
+"Very",
+"Never"
+],
+"answer": 1,
+"explanation": "'Although' is a subordinating conjunction, not an adverb. 'Quite', 'very', and 'never' are all adverbs. 'Although' introduces a subordinate clause of concession."
+},
+{
+"type": "mcq",
+"q": "Which sentence uses 'yet' as an adverb correctly?",
+"options": [
+"I have yet finished the report.",
+"I haven't finished the report yet.",
+"Yet I haven't finished the report.",
+"I haven't yet finish the report."
+],
+"answer": 1,
+"explanation": "'Yet' used as a time adverb meaning 'up to now' goes at the END of a negative sentence or question: 'I haven't finished yet.' 'I haven't finished the report yet' is correct."
+},
+{
+"type": "tf",
+"q": "Adverbs can only modify verbs — they cannot modify adjectives or other adverbs.",
+"answer": false,
+"explanation": "False. Adverbs can modify: (1) verbs: 'He runs quickly'; (2) adjectives: 'She is extremely talented'; (3) other adverbs: 'He ran very quickly'; (4) whole sentences: 'Fortunately, she passed.'"
+},
+{
+"type": "mcq",
+"q": "Which sentence uses an adverb of degree correctly?",
+"options": [
+"She is too much intelligent.",
+"The coffee is enough hot for me.",
+"The music is far too loud for this small room.",
+"He is pretty very talented."
+],
+"answer": 2,
+"explanation": "'Far too + adjective' is a correct intensifying structure. 'Too much' before an adjective is wrong (use 'too' alone). 'Enough' follows adjectives (not before them). 'Pretty very' combines two degree adverbs incorrectly."
+},
+{
+"type": "mcq",
+"q": "What is the function of 'frankly' in: 'Frankly, I don't care about the result.'?",
+"options": [
+"Adverb of manner",
+"Adverb of time",
+"Sentence adverb (commenting adverb)",
+"Adverb of degree"
+],
+"answer": 2,
+"explanation": "'Frankly' is a sentence adverb (or commenting adverb) — it modifies the entire statement and expresses the speaker's attitude rather than describing how the verb is performed. Other examples: honestly, clearly, unfortunately, surprisingly."
+},
+{
+"type": "mcq",
+"q": "Identify the adverb in: 'The nearly finished project impressed everyone.'",
+"options": [
+"Project",
+"Nearly",
+"Impressed",
+"Finished"
+],
+"answer": 1,
+"explanation": "'Nearly' is an adverb of degree modifying the participial adjective 'finished'. It tells us how close to finished the project is. 'Finished' functions as a participial adjective here."
+},
+{
+"type": "mcq",
+"q": "Which sentence avoids the common error of using an adjective instead of an adverb?",
+"options": [
+"She speaks English very good.",
+"He did terrible on the exam.",
+"The team played brilliantly in the final.",
+"She felt badly about the mistake."
+],
+"answer": 2,
+"explanation": "'Brilliantly' correctly modifies the verb 'played'. 'Good' should be 'well', 'terrible' should be 'terribly'. Note: 'felt bad' (not 'badly') is correct after a linking verb — 'feel' is a linking verb here, so an adjective (not adverb) is needed."
+},
+{
+"type": "fill",
+"q": "The adverb 'however' used to connect two contrasting independent clauses is called a ________ adverb.",
+"answer": "conjunctive",
+"hint": "It joins clauses like a conjunction...",
+"explanation": "A CONJUNCTIVE adverb connects two independent clauses and shows a logical relationship. Examples: however, therefore, moreover, furthermore, consequently, nevertheless. They need a semicolon before them and a comma after when connecting clauses."
+},
+{
+"type": "mcq",
+"q": "Which sentence uses multiple adverb types correctly?",
+"options": [
+"She carefully always speaks very softly.",
+"She always speaks very carefully and quite softly.",
+"She very speaks always carefully and soft.",
+"Always carefully she very speaks softly."
+],
+"answer": 1,
+"explanation": "'Always' (frequency) correctly precedes the main verb 'speaks'. 'Very carefully' (degree + manner) and 'quite softly' (degree + manner) are correctly placed after the verb. The word order follows standard adverb placement rules."
+},
+{
+"type": "mcq",
+"q": "Which sentence demonstrates the most sophisticated use of adverbs?",
+"options": [
+"He spoke really very loudly and very quickly.",
+"Characteristically, the diplomat spoke with measured precision, choosing each word extraordinarily carefully so as to inadvertently commit to nothing.",
+"He always speaks loudly and fast.",
+"She speaks loudly always and very fast usually."
+],
+"answer": 1,
+"explanation": "Option B uses: 'characteristically' (sentence adverb), 'extraordinarily carefully' (adverb of degree + manner), 'inadvertently' (adverb of manner). The adverbs add precise nuance. Options A and C overuse 'very'; option D has incorrect adverb placement."
+}
+];
+var cur=0,cor=0,ans=false,st=Date.now(),ac=null;
+function gAC(){if(!ac)ac=new(window.AudioContext||window.webkitAudioContext)();return ac;}
+function gD(){try{return JSON.parse(localStorage.getItem('grammar_app')||'{}');}catch(e){return{};}}
+function sD(d){try{localStorage.setItem('grammar_app',JSON.stringify(d));}catch(e){}}
+function tM(){var d=gD();d.muted=!d.muted;sD(d);document.getElementById('mb').textContent=d.muted?'&#128263;':'&#128266;';}
+function pT(t){var d=gD();if(d.muted)return;try{var c=gAC();if(c.state==='suspended')c.resume();if(t==='c')pC(c);else if(t==='w')pW(c);else pF(c);}catch(e){}}
+function pC(c){[[523,0],[659,.1],[784,.2]].forEach(function(a){var o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);o.frequency.value=a[0];o.type='sine';var t=c.currentTime+a[1];g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.18,t+.02);g.gain.exponentialRampToValueAtTime(.001,t+.3);o.start(t);o.stop(t+.3);});}
+function pW(c){[[240,0],[200,.1]].forEach(function(a){var o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);o.frequency.value=a[0];o.type='sawtooth';var t=c.currentTime+a[1];g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.08,t+.02);g.gain.exponentialRampToValueAtTime(.001,t+.25);o.start(t);o.stop(t+.25);});}
+function pF(c){[[523,0],[659,.15],[784,.3],[1047,.45]].forEach(function(a){var o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);o.frequency.value=a[0];o.type='sine';var t=c.currentTime+a[1];g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.2,t+.03);g.gain.exponentialRampToValueAtTime(.001,t+.5);o.start(t);o.stop(t+.5);});}
+function rQ(){
+  var q=Q[cur];ans=false;
+  document.getElementById('pf').style.width=(cur/Q.length*100)+'%';
+  document.getElementById('qc').textContent='Q '+(cur+1)+' of '+Q.length;
+  var area=document.getElementById('qa');
+  var lbs={mcq:'Multiple Choice',tf:'True or False',fill:'Fill in the Blank',transform:'Sentence Transformation'};
+  var lbl=lbs[q.type]||'Question';
+  var oh='';
+  if(q.type==='mcq'){
+    oh='<div class="ol">'+q.options.map(function(o,i){return '<button class="ob" onclick="sO('+i+')" data-i="'+i+'"><div class="ok2">'+String.fromCharCode(65+i)+'</div><div class="ot">'+o+'</div><div class="oi">'+(i===q.answer?'&#10003;':'&#10007;')+'</div></button>';}).join('')+'</div>';
+  }else if(q.type==='tf'){
+    oh='<div class="tfo"><button class="ob" onclick="sT(true)" data-v="true"><div class="ok2">T</div><div class="ot">True</div><div class="oi">'+(q.answer?'&#10003;':'&#10007;')+'</div></button><button class="ob" onclick="sT(false)" data-v="false"><div class="ok2">F</div><div class="ot">False</div><div class="oi">'+(!q.answer?'&#10003;':'&#10007;')+'</div></button></div>';
+  }else{
+    oh='<div class="fb"><input class="fi" id="fi" type="text" placeholder="'+(q.type==='transform'?'Rewrite the sentence...':'Type your answer...')+'" autocomplete="off" autocapitalize="none" spellcheck="false" onkeydown="if(event.key==='Enter')sF()">'+(q.hint?'<div style="font-size:.7em;color:var(--tf);margin-top:6px;">&#128161; '+q.hint+'</div>':'')+'<button class="fs" id="fsb" onclick="sF()">Check Answer</button></div>';
+  }
+  area.innerHTML='<div class="qcard"><div class="qa"><div class="qtb">'+lbl+'</div><div class="qt">'+q.q+'</div></div>'+oh+'<div class="eb" id="eb"></div><button class="nb2" id="nb" onclick="nQ()">'+(cur+1<Q.length?'Next Question &rarr;':'See Results &#127919;')+'</button></div>';
+  if(q.type==='fill'||q.type==='transform')setTimeout(function(){var e=document.getElementById('fi');if(e)e.focus();},100);
+  var d=gD();document.getElementById('mb').textContent=d.muted?'&#128263;':'&#128266;';
+}
+function sO(i){if(ans)return;ans=true;var q=Q[cur];var ok=i===q.answer;if(ok)cor++;pT(ok?'c':'w');document.querySelectorAll('.ob').forEach(function(b,j){if(j===q.answer)b.classList.add('correct');else if(j===i&&!ok){b.classList.add('wrong');b.classList.add('shake');}else b.classList.add('dimmed');b.disabled=true;});shE(ok,q.explanation);document.getElementById('nb').classList.add('show');}
+function sT(v){if(ans)return;ans=true;var q=Q[cur];var ok=v===q.answer;if(ok)cor++;pT(ok?'c':'w');document.querySelectorAll('.ob').forEach(function(b){var bv=b.dataset.v==='true';if(bv===q.answer)b.classList.add('correct');else if(bv===v&&!ok)b.classList.add('wrong');else b.classList.add('dimmed');b.disabled=true;});shE(ok,q.explanation);document.getElementById('nb').classList.add('show');}
+function sF(){if(ans)return;var inp=document.getElementById('fi');if(!inp||!inp.value.trim())return;ans=true;var q=Q[cur];var v=inp.value.trim().toLowerCase();var aa=(q.answer||'').toLowerCase().split('|');var ok=aa.some(function(a){return v===a.trim();});if(ok)cor++;pT(ok?'c':'w');inp.classList.add(ok?'correct':'wrong');inp.disabled=true;document.getElementById('fsb').disabled=true;if(!ok){var cd=document.createElement('div');cd.style.cssText='font-size:.78em;color:var(--ok);margin-top:6px;';cd.textContent='Answer: '+q.answer;inp.parentNode.insertBefore(cd,document.getElementById('fsb'));inp.classList.add('shake');}shE(ok,q.explanation);document.getElementById('nb').classList.add('show');}
+function shE(ok,text){var b=document.getElementById('eb');b.innerHTML='<div class="el '+(ok?'correct':'wrong')+'">'+(ok?'&#10003; Correct!':'&#10007; Incorrect')+'</div><div>'+text+'</div>';b.classList.add('show');setTimeout(function(){b.scrollIntoView({behavior:'smooth',block:'nearest'});},100);}
+function nQ(){cur++;if(cur>=Q.length)shR();else{rQ();window.scrollTo({top:0,behavior:'smooth'});}}
+function shR(){
+  pT('complete');
+  document.getElementById('pf').style.width='100%';
+  document.getElementById('qa').style.display='none';
+  document.getElementById('qc').textContent='Complete!';
+  var tot=Q.length,pct=Math.round(cor/tot*100),tt=Math.round((Date.now()-st)/1000);
+  var d=gD();if(!d.progress)d.progress={};
+  var prev=d.progress["m1_l5"];var isF=prev===undefined;var isI=!isF&&pct>prev;
+  d.progress["m1_l5"]=Math.max(pct,prev||0);
+  if(!d.badges)d.badges=[];var nb2=[];
+  if(isF&&!d.badges.includes('first_quiz')){d.badges.push('first_quiz');nb2.push('&#11088; First Step');}
+  if(pct===100&&!d.badges.includes('perfect_score')){d.badges.push('perfect_score');nb2.push('&#128175; Perfect Score!');}
+  if(isI&&!d.badges.includes('comeback')){d.badges.push('comeback');nb2.push('&#128170; Comeback!');}
+  if(tt<120&&!d.badges.includes('speed_demon')){d.badges.push('speed_demon');nb2.push('&#9889; Speed Run!');}
+  sD(d);
+  var tr=pct>=90?'&#127942;':pct>=70?'&#127894;':pct>=50?'&#129352;':'&#128218;';
+  var msg=pct>=90?'Outstanding!':pct>=70?'Great work!':pct>=50?'Good effort!':'Keep practising!';
+  var bH=nb2.map(function(n){return '<div class="nbp"><span style="font-size:1.8em">'+n.split(' ')[0]+'</span><div><div style="font-size:.78em;font-weight:700;color:var(--gd)">Badge Unlocked!</div><div style="font-size:.7em;color:var(--td)">'+n.split(' ').slice(1).join(' ')+'</div></div></div>';}).join('');
+  var sc=document.getElementById('rs');
+  sc.innerHTML='<div class="rtr">'+tr+'</div><div class="rsb">'+pct+'%</div><div class="rl">'+msg+' '+cor+'/'+tot+' correct</div>'+bH+'<div class="rbd"><div class="bdr"><span>Correct</span><span class="bdc">&#10003; '+cor+'</span></div><div class="bdr"><span>Incorrect</span><span class="bdw">&#10007; '+(tot-cor)+'</span></div><div class="bdr"><span>Score</span><span style="font-weight:700;font-family:JetBrains Mono,monospace">'+pct+'%</span></div><div class="bdr"><span>Time</span><span style="font-family:JetBrains Mono,monospace;color:rgba(255,255,255,0.6)">'+Math.floor(tt/60)+'m '+tt%60+'s</span></div></div><div class="rbs"><a class="bp" href="q1-6.html">Next Lesson &rarr;</a><button class="bs" onclick="rRQ()">&#8635; Retry</button><a class="bs" href="../modules/module1.html">&larr; Module 1</a></div>';
+  sc.classList.add('show');window.scrollTo({top:0,behavior:'smooth'});
+}
+function rRQ(){cur=0;cor=0;ans=false;st=Date.now();document.getElementById('rs').classList.remove('show');document.getElementById('qa').style.display='';rQ();window.scrollTo({top:0,behavior:'smooth'});}
+var d0=gD();document.getElementById('mb').textContent=d0.muted?'&#128263;':'&#128266;';
+rQ();
+</script>
+</body>
+</html>
