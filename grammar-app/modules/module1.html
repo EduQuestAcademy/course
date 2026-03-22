@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 1 — Parts of Speech | Grammar Mastery</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+  :root {
+    --bg: #0a0a0f; --surface: #13131a; --surface2: #1c1c26;
+    --border: rgba(255,255,255,0.06); --text: #f0f0f8;
+    --text-dim: #7a7a9a; --text-faint: #3a3a55;
+    --accent: #6366f1; --accent-bg: rgba(99,102,241,0.12);
+    --gold: #fbbf24; --radius: 16px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Sora', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+  body::before {
+    content: ''; position: fixed; inset: 0;
+    background-image: linear-gradient(rgba(99,102,241,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(99,102,241,0.03) 1px, transparent 1px);
+    background-size: 40px 40px; pointer-events: none; z-index: 0;
+  }
+  .app { position: relative; z-index: 1; max-width: 480px; margin: 0 auto; padding-bottom: 40px; }
+
+  .header {
+    padding: 20px; border-bottom: 1px solid var(--border);
+    background: linear-gradient(180deg, rgba(99,102,241,0.18) 0%, transparent 100%);
+    position: sticky; top: 0; z-index: 50;
+    backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  }
+  .back-btn {
+    display: flex; align-items: center; gap: 8px;
+    color: var(--accent); font-size: 0.82em; font-weight: 600;
+    background: none; border: none; cursor: pointer;
+    font-family: 'Sora', sans-serif; padding: 0; margin-bottom: 16px;
+    text-decoration: none;
+  }
+  .module-hero {
+    display: flex; align-items: center; gap: 14px; margin-bottom: 14px;
+  }
+  .hero-icon {
+    width: 52px; height: 52px; border-radius: 14px;
+    background: var(--accent-bg); border: 1px solid rgba(99,102,241,0.3);
+    display: flex; align-items: center; justify-content: center; font-size: 1.5em;
+  }
+  .hero-info {}
+  .hero-tag { font-size: 0.65em; font-weight: 600; letter-spacing: 0.1em; color: var(--accent); text-transform: uppercase; font-family: 'JetBrains Mono', monospace; }
+  .hero-title { font-size: 1.1em; font-weight: 700; margin-top: 2px; }
+  .hero-sub { font-size: 0.72em; color: var(--text-dim); margin-top: 3px; }
+
+  .module-progress-row { display: flex; align-items: center; gap: 12px; }
+  .mod-prog-track { flex: 1; height: 6px; background: var(--surface2); border-radius: 3px; overflow: hidden; }
+  .mod-prog-fill { height: 100%; background: var(--accent); border-radius: 3px; transition: width 0.8s; }
+  .mod-prog-pct { font-size: 0.7em; font-family: 'JetBrains Mono', monospace; color: var(--accent); min-width: 36px; text-align: right; }
+
+  .section-label {
+    font-size: 0.65em; font-weight: 600; letter-spacing: 0.12em;
+    color: var(--text-faint); text-transform: uppercase;
+    padding: 20px 20px 10px;
+  }
+
+  .lessons-list { display: flex; flex-direction: column; gap: 10px; padding: 0 20px; }
+
+  .lesson-card {
+    display: flex; align-items: center; gap: 14px;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 14px; padding: 14px 16px;
+    text-decoration: none; color: inherit;
+    transition: transform 0.15s, border-color 0.15s;
+    cursor: pointer;
+  }
+  .lesson-card:active { transform: scale(0.98); }
+  .lesson-card.completed { border-color: rgba(99,102,241,0.4); }
+  .lesson-card.locked { opacity: 0.45; cursor: not-allowed; pointer-events: none; }
+
+  .lesson-num-badge {
+    width: 36px; height: 36px; flex-shrink: 0;
+    border-radius: 10px; background: var(--surface2);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.72em; font-weight: 700; font-family: 'JetBrains Mono', monospace;
+    color: var(--text-dim);
+  }
+  .lesson-card.completed .lesson-num-badge { background: var(--accent-bg); color: var(--accent); }
+  .lesson-card.in-progress .lesson-num-badge { background: var(--accent-bg); color: var(--accent); }
+
+  .lesson-info { flex: 1; min-width: 0; }
+  .lesson-title { font-size: 0.88em; font-weight: 600; line-height: 1.3; }
+  .lesson-meta { font-size: 0.65em; color: var(--text-dim); margin-top: 3px; }
+
+  .lesson-right { flex-shrink: 0; display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
+  .lesson-score {
+    font-size: 0.72em; font-weight: 700; font-family: 'JetBrains Mono', monospace;
+    color: var(--accent);
+  }
+  .lesson-chevron { color: var(--text-faint); font-size: 0.9em; }
+  .lesson-status-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--surface2);
+  }
+  .lesson-card.completed .lesson-status-dot { background: var(--accent); }
+
+  .module-quiz-card {
+    margin: 16px 20px 0;
+    background: linear-gradient(135deg, rgba(99,102,241,0.15), rgba(99,102,241,0.06));
+    border: 1px solid rgba(99,102,241,0.3);
+    border-radius: 14px; padding: 16px;
+    cursor: pointer; text-decoration: none; color: inherit;
+    display: block; transition: transform 0.15s;
+  }
+  .module-quiz-card:active { transform: scale(0.98); }
+  .module-quiz-card.locked { opacity: 0.4; pointer-events: none; }
+  .mqc-top { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+  .mqc-icon { font-size: 1.4em; }
+  .mqc-info {}
+  .mqc-tag { font-size: 0.62em; font-weight: 600; letter-spacing: 0.1em; color: var(--accent); text-transform: uppercase; font-family: 'JetBrains Mono', monospace; }
+  .mqc-title { font-size: 0.92em; font-weight: 700; }
+  .mqc-sub { font-size: 0.7em; color: var(--text-dim); }
+  .mqc-lock { font-size: 0.7em; color: var(--text-dim); margin-top: 6px; }
+
+  @keyframes fadeUp { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+  .lesson-card { animation: fadeUp 0.3s ease both; }
+  .lesson-card:nth-child(1) { animation-delay:0.05s; }
+  .lesson-card:nth-child(2) { animation-delay:0.1s; }
+  .lesson-card:nth-child(3) { animation-delay:0.15s; }
+  .lesson-card:nth-child(4) { animation-delay:0.2s; }
+  .lesson-card:nth-child(5) { animation-delay:0.25s; }
+  .lesson-card:nth-child(6) { animation-delay:0.3s; }
+  .lesson-card:nth-child(7) { animation-delay:0.35s; }
+  .lesson-card:nth-child(8) { animation-delay:0.4s; }
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="header">
+    <a class="back-btn" href="../index.html">← Back to Dashboard</a>
+    <div class="module-hero">
+      <div class="hero-icon">🔤</div>
+      <div class="hero-info">
+        <div class="hero-tag">Module 1</div>
+        <div class="hero-title">The Parts of Speech System</div>
+        <div class="hero-sub">8 lessons · 1 module quiz · 180 questions</div>
+      </div>
+    </div>
+    <div class="module-progress-row">
+      <div class="mod-prog-track">
+        <div class="mod-prog-fill" id="modProgFill" style="width:0%"></div>
+      </div>
+      <div class="mod-prog-pct" id="modProgPct">0%</div>
+    </div>
+  </div>
+
+  <div class="section-label">Lessons</div>
+  <div class="lessons-list" id="lessonsList"></div>
+
+  <a class="module-quiz-card" id="moduleQuizCard" href="../quizzes/q1-9.html">
+    <div class="mqc-top">
+      <div class="mqc-icon">🏆</div>
+      <div class="mqc-info">
+        <div class="mqc-tag">Module Quiz</div>
+        <div class="mqc-title">Parts of Speech — Full Assessment</div>
+      </div>
+    </div>
+    <div class="mqc-sub">10 questions · Covers all 8 lessons · Mixed difficulty</div>
+    <div class="mqc-lock" id="mqcLock"></div>
+  </a>
+</div>
+
+<script>
+const LESSONS = [
+  { id:1, title:'Nouns: People, Places, Things, and Ideas', questions:20 },
+  { id:2, title:'Pronouns: Replacing Nouns', questions:20 },
+  { id:3, title:'Verbs: Types, Functions, and Structure', questions:20 },
+  { id:4, title:'Adjectives: Defining Nouns', questions:20 },
+  { id:5, title:'Adverbs: Describing Verbs and More', questions:20 },
+  { id:6, title:'Prepositions: Showing Relationship', questions:20 },
+  { id:7, title:'Conjunctions: Joining Words and Ideas', questions:20 },
+  { id:8, title:'Interjections: Expressing Emotions', questions:20 },
+];
+
+function getData() { try { return JSON.parse(localStorage.getItem('grammar_app')||'{}'); } catch(e){return{};} }
+
+function render() {
+  const d = getData();
+  const progress = d.progress || {};
+
+  let done = 0;
+  const total = LESSONS.length + 1;
+
+  const list = document.getElementById('lessonsList');
+  list.innerHTML = LESSONS.map((l,i) => {
+    const key = `m1_l${l.id}`;
+    const score = progress[key];
+    const completed = score !== undefined;
+    const inProgress = !completed && i === Object.keys(progress).filter(k=>k.startsWith('m1_l')).length;
+    if (completed) done++;
+
+    return `
+    <a class="lesson-card ${completed?'completed':''} ${inProgress?'in-progress':''}"
+       href="../quizzes/q1-${l.id}.html">
+      <div class="lesson-num-badge">${completed ? '✓' : String(l.id).padStart(2,'0')}</div>
+      <div class="lesson-info">
+        <div class="lesson-title">Lesson 1.${l.id} — ${l.title}</div>
+        <div class="lesson-meta">${l.questions} questions · Multiple choice, T/F, Fill-in</div>
+      </div>
+      <div class="lesson-right">
+        ${completed ? `<div class="lesson-score">${score}%</div>` : ''}
+        <div class="lesson-status-dot"></div>
+        <div class="lesson-chevron">›</div>
+      </div>
+    </a>`;
+  }).join('');
+
+  // Module quiz
+  const mqKey = 'm1_l9';
+  const mqScore = progress[mqKey];
+  const mqDone = mqScore !== undefined;
+  if (mqDone) done++;
+  const allLessonsDone = done >= LESSONS.length;
+
+  const mqCard = document.getElementById('moduleQuizCard');
+  const mqLock = document.getElementById('mqcLock');
+  if (!allLessonsDone) {
+    mqCard.classList.add('locked');
+    mqLock.textContent = `🔒 Complete all 8 lessons to unlock`;
+  } else {
+    mqCard.classList.remove('locked');
+    mqLock.textContent = mqDone ? `Best score: ${mqScore}%` : 'Ready to attempt!';
+  }
+
+  const pct = Math.round((done / total) * 100);
+  document.getElementById('modProgFill').style.width = pct + '%';
+  document.getElementById('modProgPct').textContent = pct + '%';
+}
+
+render();
+</script>
+</body>
+</html>
