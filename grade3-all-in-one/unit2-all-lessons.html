@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit 2 – Reading: Informational Text | Owl Smart 3rd Grade</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #f4f7fb; color: #2d2d2d; line-height: 1.8; }
+    .top-header { background: linear-gradient(135deg, #1b5e20, #388e3c); color: white; text-align: center; padding: 24px 20px 16px; }
+    .top-header h1 { font-size: 1.5em; margin-bottom: 4px; }
+    .top-header p { font-size: 0.95em; opacity: 0.88; }
+    .nav-bar { background: #1b5e20; padding: 0 10px; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.3); overflow-x: auto; white-space: nowrap; }
+    .nav-bar a { display: inline-block; color: rgba(255,255,255,0.8); text-decoration: none; padding: 12px 14px; font-size: 0.82em; font-weight: bold; border-bottom: 3px solid transparent; transition: all 0.2s; }
+    .nav-bar a:hover, .nav-bar a.active { color: white; border-bottom-color: #ffd600; }
+    .main { max-width: 860px; margin: 0 auto; padding: 20px; }
+    .lesson-section { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.08); margin-bottom: 40px; scroll-margin-top: 60px; }
+    .banner { color: white; text-align: center; padding: 28px 24px; }
+    .banner h2 { font-size: 1.45em; margin-bottom: 6px; }
+    .banner p { font-size: 0.97em; opacity: 0.92; margin-bottom: 10px; }
+    .banner .lesson-num { display: inline-block; background: rgba(255,255,255,0.25); border-radius: 20px; padding: 3px 14px; font-size: 0.82em; font-weight: bold; }
+    .b1 { background: linear-gradient(135deg, #1b5e20, #43a047); }
+    .b2 { background: linear-gradient(135deg, #0d47a1, #1976d2); }
+    .b3 { background: linear-gradient(135deg, #e65100, #fb8c00); }
+    .b4 { background: linear-gradient(135deg, #880e4f, #e91e63); }
+    .b5 { background: linear-gradient(135deg, #4a148c, #7b1fa2); }
+    .b6 { background: linear-gradient(135deg, #006064, #00acc1); }
+    .lesson-content { padding: 26px; }
+    .section { border-left: 5px solid; border-radius: 0 10px 10px 0; padding: 18px 20px; margin-bottom: 20px; }
+    .s1 { background: #e8f5e9; border-color: #1b5e20; } .s1 h3 { color: #1b5e20; }
+    .s2 { background: #e3f2fd; border-color: #0d47a1; } .s2 h3 { color: #0d47a1; }
+    .s3 { background: #fff3e0; border-color: #e65100; } .s3 h3 { color: #e65100; }
+    .s4 { background: #fce4ec; border-color: #880e4f; } .s4 h3 { color: #880e4f; }
+    .s5 { background: #f3e5f5; border-color: #4a148c; } .s5 h3 { color: #4a148c; }
+    .s6 { background: #e0f7fa; border-color: #006064; } .s6 h3 { color: #006064; }
+    .section h3 { margin-bottom: 8px; font-size: 1.05em; }
+    .vocab-box { background: #fff8e1; border: 2px solid #ffc107; border-radius: 10px; padding: 18px 20px; margin-bottom: 20px; }
+    .vocab-box h3 { color: #e65100; margin-bottom: 12px; font-size: 1.05em; }
+    .vocab-item { margin: 8px 0; font-size: 0.95em; }
+    .word { font-weight: bold; }
+    .nonfic-box { background: #f1f8e9; border: 2px solid #558b2f; border-radius: 10px; padding: 18px 20px; margin-bottom: 20px; }
+    .nonfic-box h3 { color: #33691e; margin-bottom: 10px; font-size: 1.05em; }
+    .nonfic-title { font-weight: bold; font-size: 1.05em; color: #1b5e20; margin-bottom: 8px; }
+    .feature-box { border-radius: 10px; padding: 16px 18px; margin-bottom: 14px; }
+    .fb-blue { background: #e3f2fd; border: 2px solid #1976d2; }
+    .fb-blue h4 { color: #0d47a1; margin-bottom: 6px; font-size: 0.98em; }
+    .fb-orange { background: #fff3e0; border: 2px solid #f57c00; }
+    .fb-orange h4 { color: #e65100; margin-bottom: 6px; font-size: 0.98em; }
+    .fb-green { background: #e8f5e9; border: 2px solid #388e3c; }
+    .fb-green h4 { color: #1b5e20; margin-bottom: 6px; font-size: 0.98em; }
+    .fb-purple { background: #f3e5f5; border: 2px solid #7b1fa2; }
+    .fb-purple h4 { color: #4a148c; margin-bottom: 6px; font-size: 0.98em; }
+    .fb-teal { background: #e0f7fa; border: 2px solid #00838f; }
+    .fb-teal h4 { color: #006064; margin-bottom: 6px; font-size: 0.98em; }
+    .fb-red { background: #ffebee; border: 2px solid #e53935; }
+    .fb-red h4 { color: #b71c1c; margin-bottom: 6px; font-size: 0.98em; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.93em; }
+    th { background: #37474f; color: white; padding: 9px 12px; text-align: left; }
+    td { padding: 9px 12px; border-bottom: 1px solid #e0e0e0; }
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) { background: #f5f5f5; }
+    .tip { background: #e8f5e9; border-left: 4px solid #43a047; border-radius: 0 8px 8px 0; padding: 12px 16px; margin: 12px 0; color: #1b5e20; font-size: 0.93em; }
+    .tip strong { color: #2e7d32; }
+    .try-it { background: #ede7f6; border: 2px dashed #7e57c2; border-radius: 10px; padding: 18px 20px; margin-bottom: 20px; }
+    .try-it h3 { color: #4527a0; margin-bottom: 10px; font-size: 1.05em; }
+    .try-it ol { padding-left: 20px; }
+    .try-it li { margin: 8px 0; font-size: 0.95em; }
+    .remember { background: #fff3e0; border: 2px solid #ff8f00; border-radius: 10px; padding: 18px 20px; text-align: center; margin-bottom: 4px; }
+    .remember h3 { color: #e65100; margin-bottom: 10px; font-size: 1.05em; }
+    .remember p { margin: 5px 0; font-size: 0.95em; }
+    .remember .cta { font-weight: bold; font-size: 1.05em; margin-top: 12px; }
+    .flex-row { display: flex; gap: 12px; flex-wrap: wrap; margin: 10px 0; }
+    .flex-col { flex: 1; min-width: 180px; border-radius: 10px; padding: 14px 16px; }
+    ul { padding-left: 20px; } li { margin: 5px 0; font-size: 0.95em; }
+    p { margin-bottom: 8px; font-size: 0.95em; }
+    .compare-col { flex: 1; min-width: 200px; border-radius: 10px; padding: 14px 16px; }
+    .col-left { background: #e3f2fd; border: 2px solid #1976d2; }
+    .col-left h4 { color: #0d47a1; margin-bottom: 6px; }
+    .col-right { background: #fce4ec; border: 2px solid #e91e63; }
+    .col-right h4 { color: #880e4f; margin-bottom: 6px; }
+    .col-mid { background: #e8f5e9; border: 2px solid #43a047; }
+    .col-mid h4 { color: #1b5e20; margin-bottom: 6px; }
+    .highlight { background: #ffff8d; padding: 2px 6px; border-radius: 4px; font-weight: bold; }
+    .connector-tag { display: inline-block; background: #0d47a1; color: white; border-radius: 16px; padding: 3px 12px; font-size: 0.83em; font-weight: bold; margin: 3px; }
+    .connector-tag.cause { background: #880e4f; }
+    .connector-tag.compare { background: #4a148c; }
+    .connector-tag.time { background: #006064; }
+  </style>
+</head>
+<body>
+
+<div class="top-header">
+  <h1>Owl Smart: A 3rd Grade Learning Journey</h1>
+  <p>Unit 2 -- Reading: Informational Text &nbsp;|&nbsp; 6 Lessons</p>
+</div>
+
+<div class="nav-bar">
+  <a href="#lesson1">2.1 Main Idea</a>
+  <a href="#lesson2">2.2 Questions in Nonfiction</a>
+  <a href="#lesson3">2.3 Text Features</a>
+  <a href="#lesson4">2.4 Connections</a>
+  <a href="#lesson5">2.5 Comparing Texts</a>
+  <a href="#lesson6">2.6 Vocabulary</a>
+</div>
+
+<div class="main">
+
+<!-- ============================================================ -->
+<!-- LESSON 2.1 -->
+<!-- ============================================================ -->
+<div class="lesson-section" id="lesson1">
+  <div class="banner b1">
+    <span class="lesson-num">Lesson 2.1</span>
+    <h2>Main Idea and Key Details</h2>
+    <p>Find the most important idea in any nonfiction text!</p>
+  </div>
+  <div class="lesson-content">
+
+    <div class="section s1">
+      <h3>What Are We Learning Today?</h3>
+      <p>When you read a nonfiction text — like a science article, a history passage, or an informational book — the author has one <strong>most important idea</strong> they want you to understand. Everything else in the text supports that idea.</p>
+      <p>Today we learn how to find the <strong>main idea</strong> and the <strong>key details</strong> that support it!</p>
+    </div>
+
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Main Idea</span> -- The most important point an author makes about a topic. What the whole text is mostly about.</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Key Details</span> -- Facts, examples, or explanations that support and prove the main idea.</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Topic</span> -- The subject the text is about. (One or two words: "frogs," "the moon")</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Supporting Detail</span> -- A piece of information that backs up the main idea with evidence.</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Summarise</span> -- To restate the main idea and key details in your own words, briefly.</div>
+    </div>
+
+    <div class="section s1">
+      <h3>Main Idea vs. Topic -- What is the Difference?</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-orange">
+          <h4 style="color:#e65100;">Topic</h4>
+          <p>What the text is ABOUT -- just one or two words.</p>
+          <p style="margin-top:8px; font-style:italic;">Example: "Bees"</p>
+        </div>
+        <div class="flex-col fb-green">
+          <h4 style="color:#1b5e20;">Main Idea</h4>
+          <p>The MOST IMPORTANT point the author makes about the topic -- a full sentence!</p>
+          <p style="margin-top:8px; font-style:italic;">Example: "Bees are important pollinators that help plants grow and produce food."</p>
+        </div>
+      </div>
+      <div class="tip"><strong>Remember:</strong> The topic is just a word or two. The main idea is a complete sentence that tells us the most important thing about the topic!</div>
+    </div>
+
+    <div class="nonfic-box">
+      <h3>Read This Informational Passage</h3>
+      <p class="nonfic-title">Amazing Bees</p>
+      <p>Bees are one of the most important insects on Earth. They help flowers and plants reproduce by carrying pollen from one plant to another -- a process called pollination. Without bees, many of our favourite fruits and vegetables would not grow. Bees also make honey, which humans have used as food and medicine for thousands of years. A single bee colony can contain up to 80,000 bees, all working together to keep their hive healthy and productive.</p>
+    </div>
+
+    <div class="section s1">
+      <h3>Finding the Main Idea and Key Details</h3>
+      <table>
+        <tr><th>Element</th><th>In "Amazing Bees"</th></tr>
+        <tr><td><strong>Topic</strong></td><td>Bees</td></tr>
+        <tr><td><strong>Main Idea</strong></td><td>Bees are one of the most important insects on Earth.</td></tr>
+        <tr><td><strong>Key Detail 1</strong></td><td>Bees pollinate plants, helping fruits and vegetables grow.</td></tr>
+        <tr><td><strong>Key Detail 2</strong></td><td>Without bees, many plants would not reproduce.</td></tr>
+        <tr><td><strong>Key Detail 3</strong></td><td>Bees make honey used as food and medicine for thousands of years.</td></tr>
+        <tr><td><strong>Key Detail 4</strong></td><td>A bee colony can have up to 80,000 bees working together.</td></tr>
+      </table>
+      <div class="tip"><strong>Strategy:</strong> Ask yourself -- "What is this MOSTLY about?" Your answer in a full sentence is the main idea. Then ask "What details does the author give to PROVE that?" Those are your key details!</div>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <p>Read this short passage: <em>"Dogs make wonderful pets for many reasons. They are loyal and love spending time with their owners. Dogs can also be trained to help people -- guiding the blind, detecting danger, and even helping people with disabilities. Studies show that pet owners who have dogs are often happier and healthier than people without pets."</em></p>
+      <ol>
+        <li>What is the TOPIC of this passage? (one or two words)</li>
+        <li>What is the MAIN IDEA? (write a full sentence)</li>
+        <li>List TWO key details that support the main idea.</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p><strong>TOPIC</strong> -- what the text is about (one or two words)</p>
+      <p><strong>MAIN IDEA</strong> -- the most important point (a full sentence!)</p>
+      <p><strong>KEY DETAILS</strong> -- facts and examples that support the main idea</p>
+      <p class="cta" style="color:#1b5e20;">Great start! Click Lesson 2.2 to continue!</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- LESSON 2.2 -->
+<!-- ============================================================ -->
+<div class="lesson-section" id="lesson2">
+  <div class="banner b2">
+    <span class="lesson-num">Lesson 2.2</span>
+    <h2>Asking Questions and Finding Answers in Nonfiction</h2>
+    <p>Use questions to dig deeper into informational texts!</p>
+  </div>
+  <div class="lesson-content">
+
+    <div class="section s2">
+      <h3>What Are We Learning Today?</h3>
+      <p>In Unit 1 we learned to ask questions about stories. Nonfiction texts are different -- they give us <strong>real facts and information</strong>. Today we learn how to ask smart questions <strong>before, during, and after</strong> reading nonfiction to help us understand it better.</p>
+    </div>
+
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#0d47a1;">Nonfiction</span> -- Writing about real people, places, events, and facts. It is true!</div>
+      <div class="vocab-item"><span class="word" style="color:#0d47a1;">Fiction</span> -- Made-up stories that are not real.</div>
+      <div class="vocab-item"><span class="word" style="color:#0d47a1;">Prior Knowledge</span> -- What you already know about a topic before you read.</div>
+      <div class="vocab-item"><span class="word" style="color:#0d47a1;">KWL Chart</span> -- A reading tool: Know, Want to Know, Learned. Helps organise your thinking.</div>
+      <div class="vocab-item"><span class="word" style="color:#0d47a1;">Explicit Answer</span> -- An answer stated directly in the text -- it is right there!</div>
+      <div class="vocab-item"><span class="word" style="color:#0d47a1;">Implicit Answer</span> -- An answer you have to figure out using clues from the text.</div>
+    </div>
+
+    <div class="section s2">
+      <h3>When to Ask Questions in Nonfiction</h3>
+      <table>
+        <tr><th>When</th><th>What to Ask</th><th>Why It Helps</th></tr>
+        <tr><td><strong>Before Reading</strong></td><td>"What do I already know?" "What do I want to find out?"</td><td>Gets your brain ready and curious!</td></tr>
+        <tr><td><strong>During Reading</strong></td><td>"Does this answer my question?" "What does this mean?" "Why is this important?"</td><td>Keeps you focused and thinking.</td></tr>
+        <tr><td><strong>After Reading</strong></td><td>"What did I learn?" "What questions do I still have?"</td><td>Helps you remember and think deeper.</td></tr>
+      </table>
+    </div>
+
+    <div class="section s2">
+      <h3>The KWL Chart -- A Super Helpful Tool!</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-blue">
+          <h4 style="color:#0d47a1;">K -- What I KNOW</h4>
+          <p>Before reading, write what you already know about the topic.</p>
+          <p style="margin-top:6px; font-style:italic; font-size:0.88em;">Example for "Volcanoes": I know volcanoes shoot out lava.</p>
+        </div>
+        <div class="flex-col fb-orange">
+          <h4 style="color:#e65100;">W -- What I WANT to Know</h4>
+          <p>Before reading, write your questions -- what do you want to find out?</p>
+          <p style="margin-top:6px; font-style:italic; font-size:0.88em;">Example: How hot is lava? Why do volcanoes erupt?</p>
+        </div>
+        <div class="flex-col fb-green">
+          <h4 style="color:#1b5e20;">L -- What I LEARNED</h4>
+          <p>After reading, write the answers you found and new things you discovered.</p>
+          <p style="margin-top:6px; font-style:italic; font-size:0.88em;">Example: Lava can reach 2,200 degrees Fahrenheit!</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="nonfic-box">
+      <h3>Read and Find Answers</h3>
+      <p class="nonfic-title">Volcanoes</p>
+      <p>A volcano is an opening in the Earth's surface through which hot melted rock, called magma, can escape. When magma reaches the surface, it is called lava. Lava can reach temperatures of over 2,200 degrees Fahrenheit -- hot enough to melt most metals! Volcanoes can be found on land and even under the ocean. There are about 1,500 potentially active volcanoes on Earth today. While volcanic eruptions can be destructive, they also create new land and enrich the soil, making it excellent for farming.</p>
+    </div>
+
+    <div class="section s2">
+      <h3>Questions and Answers from the Passage</h3>
+      <table>
+        <tr><th>Question</th><th>Answer</th><th>Type</th></tr>
+        <tr><td>What is magma?</td><td>Hot melted rock inside the Earth.</td><td>Explicit -- right in the text</td></tr>
+        <tr><td>How hot can lava get?</td><td>Over 2,200 degrees Fahrenheit.</td><td>Explicit -- right in the text</td></tr>
+        <tr><td>Are volcanoes only found on land?</td><td>No -- they are found under the ocean too.</td><td>Explicit -- stated in the text</td></tr>
+        <tr><td>Why might farmers like living near a volcano?</td><td>Eruptions enrich the soil, making it great for farming.</td><td>Implicit -- need to think about it</td></tr>
+      </table>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <p>Choose any nonfiction topic you find interesting (animals, space, weather, history). Write a KWL chart:</p>
+      <ol>
+        <li>Write THREE things you already KNOW about the topic.</li>
+        <li>Write THREE questions about what you WANT to know.</li>
+        <li>Find a book or article about the topic. Write THREE things you LEARNED.</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p>Ask questions <strong>before, during, and after</strong> reading nonfiction.</p>
+      <p>Use a <strong>KWL chart</strong> -- Know, Want to Know, Learned.</p>
+      <p><strong>Explicit</strong> answers are right in the text. <strong>Implicit</strong> answers need thinking!</p>
+      <p class="cta" style="color:#0d47a1;">Excellent! Click Lesson 2.3!</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- LESSON 2.3 -->
+<!-- ============================================================ -->
+<div class="lesson-section" id="lesson3">
+  <div class="banner b3">
+    <span class="lesson-num">Lesson 2.3</span>
+    <h2>Text Features: Headings, Captions, Bold Words, and Diagrams</h2>
+    <p>Nonfiction texts have special features that help you find information fast!</p>
+  </div>
+  <div class="lesson-content">
+
+    <div class="section s3">
+      <h3>What Are We Learning Today?</h3>
+      <p>Open any nonfiction book and you will notice it looks different from a story! There are headings, bold words, photos with captions, and diagrams. These are called <strong>text features</strong> -- and they are like a map that helps you find information quickly and understand it better.</p>
+    </div>
+
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Text Feature</span> -- A special part of a nonfiction text that helps readers find and understand information.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Heading</span> -- A title at the top of a section that tells you what that section is about.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Caption</span> -- Words below a photo or picture that explain what it shows.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Bold Words</span> -- Words in dark, heavy print that show they are important vocabulary.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Diagram</span> -- A labelled drawing that shows how something works or is organised.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Table of Contents</span> -- A list at the front of a book showing chapters and page numbers.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Index</span> -- An alphabetical list at the back of a book helping you find specific topics.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Glossary</span> -- A mini-dictionary at the back of a book explaining key vocabulary words.</div>
+    </div>
+
+    <div class="section s3">
+      <h3>Common Text Features and What They Do</h3>
+      <table>
+        <tr><th>Text Feature</th><th>What It Looks Like</th><th>How It Helps</th></tr>
+        <tr><td><strong>Heading</strong></td><td>Bold title above a section of text</td><td>Tells you what that section is about before you read</td></tr>
+        <tr><td><strong>Subheading</strong></td><td>Smaller title within a section</td><td>Breaks a long section into smaller parts</td></tr>
+        <tr><td><strong>Bold Words</strong></td><td><strong>Words in heavy dark print</strong></td><td>Signals important vocabulary to learn</td></tr>
+        <tr><td><strong>Caption</strong></td><td>Small text under a photo</td><td>Explains what the photo shows</td></tr>
+        <tr><td><strong>Diagram</strong></td><td>Labelled drawing or chart</td><td>Shows how something looks or works</td></tr>
+        <tr><td><strong>Table of Contents</strong></td><td>List at the front of the book</td><td>Shows what chapters are included and where</td></tr>
+        <tr><td><strong>Glossary</strong></td><td>Mini-dictionary at the back</td><td>Explains the meaning of key words</td></tr>
+        <tr><td><strong>Index</strong></td><td>Alphabetical list at the back</td><td>Helps you find specific topics quickly</td></tr>
+      </table>
+    </div>
+
+    <div class="section s3">
+      <h3>Why Do Nonfiction Books Use Text Features?</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-blue">
+          <h4 style="color:#0d47a1;">Find Information Fast</h4>
+          <p>Instead of reading every word, you can use headings and an index to jump straight to what you need.</p>
+        </div>
+        <div class="flex-col fb-green">
+          <h4 style="color:#1b5e20;">Understand Better</h4>
+          <p>Diagrams and captions explain things that are hard to describe in words alone -- like how a volcano works.</p>
+        </div>
+        <div class="flex-col fb-orange">
+          <h4 style="color:#e65100;">Learn New Words</h4>
+          <p>Bold words and glossaries help you identify and learn the important vocabulary in the text.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tip"><strong>Reading Tip:</strong> Before reading a nonfiction text, do a "text feature walk" -- look at the headings, photos, captions, and diagrams FIRST. This gives you a preview of what you are about to learn and helps you read with purpose!</div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <p>Find any nonfiction book or magazine. Look through it and find as many text features as you can. In your notebook, write:</p>
+      <ol>
+        <li>List FIVE text features you found. What type is each one?</li>
+        <li>Choose ONE text feature. What information does it give you?</li>
+        <li>Would the text be harder to understand without that feature? Why?</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p><strong>TEXT FEATURES</strong> are special parts of nonfiction texts.</p>
+      <p>Headings, captions, bold words, diagrams, glossaries, and indexes all help readers <strong>find and understand</strong> information.</p>
+      <p>Always do a <strong>text feature walk</strong> before reading!</p>
+      <p class="cta" style="color:#e65100;">Well done! Click Lesson 2.4!</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- LESSON 2.4 -->
+<!-- ============================================================ -->
+<div class="lesson-section" id="lesson4">
+  <div class="banner b4">
+    <span class="lesson-num">Lesson 2.4</span>
+    <h2>Connections Between Events, Concepts, and Ideas</h2>
+    <p>See how ideas in nonfiction texts are linked together!</p>
+  </div>
+  <div class="lesson-content">
+
+    <div class="section s4">
+      <h3>What Are We Learning Today?</h3>
+      <p>In nonfiction texts, ideas are not just listed randomly -- they are <strong>connected</strong> to each other. Events happen because of other events. Ideas lead to other ideas. Today we learn how to spot these connections using special <strong>signal words</strong> that show us how ideas are related!</p>
+    </div>
+
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#880e4f;">Cause</span> -- The reason why something happens.</div>
+      <div class="vocab-item"><span class="word" style="color:#880e4f;">Effect</span> -- What happens as a result of a cause.</div>
+      <div class="vocab-item"><span class="word" style="color:#880e4f;">Sequence</span> -- The order in which events happen (first, next, then, finally).</div>
+      <div class="vocab-item"><span class="word" style="color:#880e4f;">Compare</span> -- To show how two things are similar.</div>
+      <div class="vocab-item"><span class="word" style="color:#880e4f;">Contrast</span> -- To show how two things are different.</div>
+      <div class="vocab-item"><span class="word" style="color:#880e4f;">Signal Words</span> -- Words that show HOW ideas are connected (because, therefore, first, however).</div>
+    </div>
+
+    <div class="section s4">
+      <h3>Types of Connections and Their Signal Words</h3>
+      <div style="margin-bottom:14px;">
+        <p style="font-weight:bold; color:#880e4f; margin-bottom:6px;">Cause and Effect -- Why something happens</p>
+        <span class="connector-tag cause">because</span>
+        <span class="connector-tag cause">as a result</span>
+        <span class="connector-tag cause">therefore</span>
+        <span class="connector-tag cause">so</span>
+        <span class="connector-tag cause">caused by</span>
+        <span class="connector-tag cause">led to</span>
+      </div>
+      <div style="margin-bottom:14px;">
+        <p style="font-weight:bold; color:#006064; margin-bottom:6px;">Sequence -- The order things happen</p>
+        <span class="connector-tag time">first</span>
+        <span class="connector-tag time">next</span>
+        <span class="connector-tag time">then</span>
+        <span class="connector-tag time">after</span>
+        <span class="connector-tag time">finally</span>
+        <span class="connector-tag time">before</span>
+      </div>
+      <div>
+        <p style="font-weight:bold; color:#4a148c; margin-bottom:6px;">Compare and Contrast -- Similarities and differences</p>
+        <span class="connector-tag compare">however</span>
+        <span class="connector-tag compare">but</span>
+        <span class="connector-tag compare">similarly</span>
+        <span class="connector-tag compare">on the other hand</span>
+        <span class="connector-tag compare">both</span>
+        <span class="connector-tag compare">unlike</span>
+      </div>
+    </div>
+
+    <div class="nonfic-box">
+      <h3>Read and Find the Connections</h3>
+      <p class="nonfic-title">The Water Cycle</p>
+      <p>The water cycle is the continuous movement of water on Earth. First, heat from the sun causes water in oceans, lakes, and rivers to evaporate -- turning from liquid into water vapour. Next, the water vapour rises into the atmosphere and cools down. As it cools, it condenses into tiny droplets, forming clouds. Then, when the clouds become heavy enough, the water falls back to Earth as precipitation -- rain, snow, or hail. Finally, the water flows into rivers and oceans, and the cycle begins again.</p>
+    </div>
+
+    <div class="section s4">
+      <h3>Connections in "The Water Cycle"</h3>
+      <table>
+        <tr><th>Connection Type</th><th>Example from the Text</th></tr>
+        <tr><td><strong>Cause and Effect</strong></td><td>Heat from the sun CAUSES water to evaporate. Clouds becoming heavy CAUSES precipitation.</td></tr>
+        <tr><td><strong>Sequence</strong></td><td>First (evaporation) → Next (rising and cooling) → Then (condensation) → Finally (precipitation)</td></tr>
+        <tr><td><strong>Signal Words Used</strong></td><td>"First," "Next," "Then," "Finally," "causes," "As it cools"</td></tr>
+      </table>
+      <div class="tip"><strong>Strategy:</strong> When you see a signal word like "because," "first," or "however," STOP and ask yourself: "What kind of connection is the author showing me here?"</div>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <p>Read any nonfiction paragraph from a book or article. Write:</p>
+      <ol>
+        <li>Find ONE cause-and-effect connection. What CAUSED something? What was the EFFECT?</li>
+        <li>Find ONE sequence. Write the events in order using: First... Next... Then... Finally...</li>
+        <li>What signal words helped you spot these connections?</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p><strong>CAUSE and EFFECT</strong> -- signal words: because, therefore, as a result</p>
+      <p><strong>SEQUENCE</strong> -- signal words: first, next, then, finally</p>
+      <p><strong>COMPARE and CONTRAST</strong> -- signal words: however, similarly, unlike</p>
+      <p>Signal words are your CLUES for finding connections!</p>
+      <p class="cta" style="color:#880e4f;">Keep going! Click Lesson 2.5!</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- LESSON 2.5 -->
+<!-- ============================================================ -->
+<div class="lesson-section" id="lesson5">
+  <div class="banner b5">
+    <span class="lesson-num">Lesson 2.5</span>
+    <h2>Comparing Two Texts on the Same Topic</h2>
+    <p>What happens when two authors write about the same subject?</p>
+  </div>
+  <div class="lesson-content">
+
+    <div class="section s5">
+      <h3>What Are We Learning Today?</h3>
+      <p>Imagine two different books about sharks. One author might focus on how dangerous sharks are. Another might focus on how important sharks are to the ocean. Same topic -- very different information!</p>
+      <p>Today we learn how to compare two nonfiction texts on the <strong>same topic</strong> and notice what is the same and what is different.</p>
+    </div>
+
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Author's Purpose</span> -- The reason an author wrote the text (to inform, to persuade, to entertain).</div>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Point of View (Nonfiction)</span> -- The author's opinion or perspective on the topic.</div>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Fact</span> -- Something that can be proven to be true.</div>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Opinion</span> -- What someone thinks or believes -- cannot be proven true or false.</div>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Source</span> -- Where information comes from. Different sources can give different information!</div>
+    </div>
+
+    <div class="nonfic-box">
+      <h3>Read These Two Passages About Wolves</h3>
+      <div class="flex-row">
+        <div class="compare-col col-left">
+          <h4 style="color:#0d47a1;">Passage A: Wolves in the Wild</h4>
+          <p style="font-size:0.9em;">Wolves are magnificent animals that play a vital role in maintaining healthy ecosystems. As predators, they keep deer and elk populations balanced, which prevents overgrazing of plants and forests. When wolves were reintroduced to Yellowstone National Park in 1995, the entire ecosystem improved -- rivers, plants, and other animals all benefited. Wolves live in family groups called packs and show remarkable intelligence and cooperation.</p>
+        </div>
+        <div class="compare-col col-right">
+          <h4 style="color:#880e4f;">Passage B: Living with Wolves</h4>
+          <p style="font-size:0.9em;">For farmers and ranchers in rural areas, wolves present a serious challenge. Wolf populations have grown in recent years, leading to increased attacks on livestock such as sheep and cattle. Farmers report losing hundreds of animals each year to wolf predation. While wolves are protected by law, many rural communities feel that current protections make it impossible to keep their animals safe. Finding a balance between wolf conservation and farming needs remains a complex issue.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section s5">
+      <h3>Comparing the Two Passages</h3>
+      <table>
+        <tr><th>Element</th><th>Passage A</th><th>Passage B</th></tr>
+        <tr><td><strong>Topic</strong></td><td>Wolves</td><td>Wolves</td></tr>
+        <tr><td><strong>Main Focus</strong></td><td>Benefits of wolves to ecosystems</td><td>Problems wolves cause for farmers</td></tr>
+        <tr><td><strong>Author's Purpose</strong></td><td>To show wolves are important and helpful</td><td>To show wolves cause challenges for farmers</td></tr>
+        <tr><td><strong>Tone</strong></td><td>Positive about wolves</td><td>Concerned about wolf impact</td></tr>
+        <tr><td><strong>What's the Same?</strong></td><td colspan="2">Both discuss wolves and their relationship with humans. Both include factual information.</td></tr>
+      </table>
+      <div class="tip"><strong>Important Lesson:</strong> The same topic can be presented very differently depending on the author's purpose and point of view. Smart readers think about WHO wrote the text and WHY!</div>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <p>Find two books or articles about the same topic (animals, weather, a historical event). Compare them:</p>
+      <ol>
+        <li>What FACTS appear in BOTH texts?</li>
+        <li>What information is in one text but NOT the other?</li>
+        <li>Does each author seem to have a different point of view? How can you tell?</li>
+        <li>Which text do you think is more helpful? Why?</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p>Two texts on the same topic can have <strong>very different information</strong> depending on the author's purpose and point of view.</p>
+      <p>Look for what is <strong>SAME</strong> and what is <strong>DIFFERENT</strong> between two texts.</p>
+      <p>Always think: <strong>WHO wrote this and WHY?</strong></p>
+      <p class="cta" style="color:#4a148c;">One more! Click Lesson 2.6!</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- LESSON 2.6 -->
+<!-- ============================================================ -->
+<div class="lesson-section" id="lesson6">
+  <div class="banner b6">
+    <span class="lesson-num">Lesson 2.6</span>
+    <h2>Understanding Vocabulary in Informational Text</h2>
+    <p>Learn powerful strategies for figuring out new words in nonfiction!</p>
+  </div>
+  <div class="lesson-content">
+
+    <div class="section s6">
+      <h3>What Are We Learning Today?</h3>
+      <p>Nonfiction texts are full of <strong>domain-specific vocabulary</strong> -- special words used in science, history, maths, and other subjects. When you come across an unfamiliar word, you do not have to give up! Today we learn powerful strategies for figuring out what new words mean.</p>
+    </div>
+
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#006064;">Domain-Specific Vocabulary</span> -- Special words used in a particular subject area (e.g., "photosynthesis" in science).</div>
+      <div class="vocab-item"><span class="word" style="color:#006064;">Context Clues</span> -- Words or sentences around an unknown word that hint at its meaning.</div>
+      <div class="vocab-item"><span class="word" style="color:#006064;">Definition</span> -- A clear explanation of what a word means.</div>
+      <div class="vocab-item"><span class="word" style="color:#006064;">Synonym</span> -- A word that means the same or nearly the same as another word.</div>
+      <div class="vocab-item"><span class="word" style="color:#006064;">Prefix</span> -- A word part added to the beginning of a word to change its meaning (un-, re-, pre-).</div>
+      <div class="vocab-item"><span class="word" style="color:#006064;">Suffix</span> -- A word part added to the end of a word to change its meaning (-ful, -less, -ing).</div>
+    </div>
+
+    <div class="section s6">
+      <h3>Strategies for Figuring Out New Words</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-teal">
+          <h4 style="color:#006064;">Strategy 1: Context Clues</h4>
+          <p>Read the sentences AROUND the unknown word. The author often gives hints!</p>
+          <p style="margin-top:6px; font-style:italic; font-size:0.88em;">"The volcano erupted, sending hot magma -- melted rock from deep inside the Earth -- shooting into the air."</p>
+          <p style="font-size:0.88em; margin-top:4px;"><em>The dash gives us the definition of "magma" right in the sentence!</em></p>
+        </div>
+        <div class="flex-col fb-blue">
+          <h4 style="color:#0d47a1;">Strategy 2: Prefixes and Suffixes</h4>
+          <p>Break the word into parts you know!</p>
+          <p style="margin-top:6px; font-size:0.88em;"><strong>un</strong>comfortable = un (not) + comfortable = not comfortable</p>
+          <p style="font-size:0.88em;"><strong>re</strong>cycle = re (again) + cycle = to cycle again</p>
+          <p style="font-size:0.88em;">care<strong>less</strong> = care + less (without) = without care</p>
+        </div>
+        <div class="flex-col fb-green">
+          <h4 style="color:#1b5e20;">Strategy 3: Use the Glossary</h4>
+          <p>Most nonfiction books have a glossary at the back with definitions of bold or important words. Check it first!</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section s6">
+      <h3>Common Prefixes and Suffixes to Know</h3>
+      <div class="flex-row">
+        <div style="flex:1; min-width:200px;">
+          <table>
+            <tr><th>Prefix</th><th>Meaning</th><th>Example</th></tr>
+            <tr><td>un-</td><td>not</td><td>unhappy</td></tr>
+            <tr><td>re-</td><td>again</td><td>rewrite</td></tr>
+            <tr><td>pre-</td><td>before</td><td>preheat</td></tr>
+            <tr><td>dis-</td><td>not, opposite</td><td>disagree</td></tr>
+          </table>
+        </div>
+        <div style="flex:1; min-width:200px;">
+          <table>
+            <tr><th>Suffix</th><th>Meaning</th><th>Example</th></tr>
+            <tr><td>-ful</td><td>full of</td><td>careful</td></tr>
+            <tr><td>-less</td><td>without</td><td>careless</td></tr>
+            <tr><td>-er/-or</td><td>a person who</td><td>teacher</td></tr>
+            <tr><td>-tion</td><td>the act of</td><td>pollution</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="nonfic-box">
+      <h3>Practice: Figure Out the Bold Words</h3>
+      <p><em>"Photosynthesis is the process by which plants use sunlight, water, and carbon dioxide to produce their own food. During this process, plants release oxygen as a by-product. Without photosynthesis, most life on Earth would not be possible, as it forms the foundation of nearly every food chain."</em></p>
+      <div class="tip" style="margin-top:12px;"><strong>Try it:</strong> What does "photosynthesis" mean? Use context clues -- the sentence after it explains the process! What does "by-product" mean? "By" means alongside, "product" means something made -- so a by-product is something made alongside the main thing!</div>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <p>Find a nonfiction article or book. Find THREE words you do not know. For each word:</p>
+      <ol>
+        <li>Write the sentence the word appears in.</li>
+        <li>Use context clues or prefixes/suffixes to guess the meaning.</li>
+        <li>Check a dictionary or glossary -- were you right?</li>
+        <li>Write your own sentence using the new word.</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>You Finished Unit 2!</h3>
+      <p>Use <strong>context clues</strong> -- read the words around the unknown word.</p>
+      <p>Use <strong>prefixes and suffixes</strong> -- break the word into parts.</p>
+      <p>Use the <strong>glossary</strong> -- the author may have defined it for you!</p>
+      <p>Learning new vocabulary makes you a stronger reader in <strong>every subject!</strong></p>
+      <p class="cta" style="color:#006064;">Amazing work! You have completed all 6 lessons in Unit 2! Now take the Unit 2 Quiz!</p>
+    </div>
+  </div>
+</div>
+
+</div><!-- end main -->
+
+<script>
+  const sections = document.querySelectorAll('.lesson-section');
+  const navLinks = document.querySelectorAll('.nav-bar a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      if (window.scrollY >= section.offsetTop - 80) current = section.getAttribute('id');
+    });
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === '#' + current) link.classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>
