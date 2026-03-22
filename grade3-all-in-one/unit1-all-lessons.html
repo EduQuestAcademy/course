@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit 1 – Reading: Literature | Owl Smart 3rd Grade</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #f4f7fb; color: #2d2d2d; line-height: 1.8; }
+
+    /* TOP HEADER */
+    .top-header {
+      background: linear-gradient(135deg, #1a237e, #3949ab);
+      color: white;
+      text-align: center;
+      padding: 24px 20px 16px;
+    }
+    .top-header h1 { font-size: 1.5em; margin-bottom: 4px; }
+    .top-header p { font-size: 0.95em; opacity: 0.88; }
+
+    /* NAV BAR */
+    .nav-bar {
+      background: #1a237e;
+      padding: 0 10px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .nav-bar a {
+      display: inline-block;
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      padding: 12px 14px;
+      font-size: 0.82em;
+      font-weight: bold;
+      border-bottom: 3px solid transparent;
+      transition: all 0.2s;
+    }
+    .nav-bar a:hover { color: white; border-bottom-color: #ffd600; }
+    .nav-bar a.active { color: white; border-bottom-color: #ffd600; }
+
+    /* MAIN CONTENT */
+    .main { max-width: 860px; margin: 0 auto; padding: 20px; }
+
+    /* LESSON SECTION */
+    .lesson-section {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      margin-bottom: 40px;
+      scroll-margin-top: 60px;
+    }
+
+    /* LESSON BANNERS - each lesson gets its own colour */
+    .banner { color: white; text-align: center; padding: 28px 24px; }
+    .banner h2 { font-size: 1.45em; margin-bottom: 6px; }
+    .banner p { font-size: 0.97em; opacity: 0.92; margin-bottom: 10px; }
+    .banner .lesson-num { display: inline-block; background: rgba(255,255,255,0.25); border-radius: 20px; padding: 3px 14px; font-size: 0.82em; font-weight: bold; }
+
+    .b1 { background: linear-gradient(135deg, #1565c0, #42a5f5); }
+    .b2 { background: linear-gradient(135deg, #6a1b9a, #ab47bc); }
+    .b3 { background: linear-gradient(135deg, #e65100, #ff8f00); }
+    .b4 { background: linear-gradient(135deg, #c62828, #ef5350); }
+    .b5 { background: linear-gradient(135deg, #00695c, #26a69a); }
+    .b6 { background: linear-gradient(135deg, #1a237e, #3949ab); }
+    .b7 { background: linear-gradient(135deg, #004d40, #00897b); }
+    .b8 { background: linear-gradient(135deg, #4527a0, #7e57c2); }
+    .b9 { background: linear-gradient(135deg, #bf360c, #e64a19); }
+
+    /* LESSON CONTENT */
+    .lesson-content { padding: 26px; }
+
+    /* SECTION BOXES */
+    .section { border-left: 5px solid; border-radius: 0 10px 10px 0; padding: 18px 20px; margin-bottom: 20px; }
+    .s1 { background: #e8f0fe; border-color: #1565c0; }
+    .s1 h3 { color: #1565c0; }
+    .s2 { background: #f3e5f5; border-color: #6a1b9a; }
+    .s2 h3 { color: #6a1b9a; }
+    .s3 { background: #fff3e0; border-color: #e65100; }
+    .s3 h3 { color: #e65100; }
+    .s4 { background: #ffebee; border-color: #c62828; }
+    .s4 h3 { color: #c62828; }
+    .s5 { background: #e0f2f1; border-color: #00695c; }
+    .s5 h3 { color: #00695c; }
+    .s6 { background: #e8eaf6; border-color: #1a237e; }
+    .s6 h3 { color: #1a237e; }
+    .s7 { background: #e0f2f1; border-color: #004d40; }
+    .s7 h3 { color: #004d40; }
+    .s8 { background: #ede7f6; border-color: #4527a0; }
+    .s8 h3 { color: #4527a0; }
+    .s9 { background: #fbe9e7; border-color: #bf360c; }
+    .s9 h3 { color: #bf360c; }
+    .section h3 { margin-bottom: 8px; font-size: 1.05em; }
+
+    /* VOCAB */
+    .vocab-box { background: #fff8e1; border: 2px solid #ffc107; border-radius: 10px; padding: 18px 20px; margin-bottom: 20px; }
+    .vocab-box h3 { color: #e65100; margin-bottom: 12px; font-size: 1.05em; }
+    .vocab-item { margin: 8px 0; font-size: 0.95em; }
+    .word { font-weight: bold; }
+
+    /* STORY BOX */
+    .story-box { background: #f0f9f0; border: 2px solid #4caf50; border-radius: 10px; padding: 18px 20px; margin-bottom: 20px; }
+    .story-box h3 { color: #2e7d32; margin-bottom: 10px; font-size: 1.05em; }
+    .story-title { font-weight: bold; font-size: 1.05em; color: #1b5e20; margin-bottom: 8px; }
+
+    /* TIP */
+    .tip { background: #e8f5e9; border-left: 4px solid #43a047; border-radius: 0 8px 8px 0; padding: 12px 16px; margin: 12px 0; color: #1b5e20; font-size: 0.93em; }
+    .tip strong { color: #2e7d32; }
+
+    /* TABLE */
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.93em; }
+    th { background: #37474f; color: white; padding: 9px 12px; text-align: left; }
+    td { padding: 9px 12px; border-bottom: 1px solid #e0e0e0; }
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) { background: #f5f5f5; }
+
+    /* TRY IT */
+    .try-it { background: #ede7f6; border: 2px dashed #7e57c2; border-radius: 10px; padding: 18px 20px; margin-bottom: 20px; }
+    .try-it h3 { color: #4527a0; margin-bottom: 10px; font-size: 1.05em; }
+    .try-it ol { padding-left: 20px; }
+    .try-it li { margin: 8px 0; font-size: 0.95em; }
+
+    /* REMEMBER */
+    .remember { background: #fff3e0; border: 2px solid #ff8f00; border-radius: 10px; padding: 18px 20px; text-align: center; margin-bottom: 4px; }
+    .remember h3 { color: #e65100; margin-bottom: 10px; font-size: 1.05em; }
+    .remember p { margin: 5px 0; font-size: 0.95em; }
+    .remember .cta { font-weight: bold; font-size: 1.05em; margin-top: 12px; }
+
+    /* DIVIDER */
+    .lesson-divider { border: none; border-top: 3px dashed #e0e0e0; margin: 10px 0 30px; }
+
+    /* MISC */
+    ul { padding-left: 20px; }
+    li { margin: 5px 0; font-size: 0.95em; }
+    p { margin-bottom: 8px; font-size: 0.95em; }
+    .inline-box { border-radius: 10px; padding: 16px 18px; margin-bottom: 14px; }
+    .ib-blue { background: #e3f2fd; border: 2px solid #1976d2; }
+    .ib-blue h4 { color: #1565c0; margin-bottom: 6px; }
+    .ib-purple { background: #f3e5f5; border: 2px solid #7b1fa2; }
+    .ib-purple h4 { color: #6a1b9a; margin-bottom: 6px; }
+    .ib-green { background: #e8f5e9; border: 2px solid #388e3c; }
+    .ib-green h4 { color: #2e7d32; margin-bottom: 6px; }
+    .ib-orange { background: #fff3e0; border: 2px solid #f57c00; }
+    .ib-orange h4 { color: #e65100; margin-bottom: 6px; }
+    .ib-red { background: #ffebee; border: 2px solid #e53935; }
+    .ib-red h4 { color: #c62828; margin-bottom: 6px; }
+    .ib-teal { background: #e0f2f1; border: 2px solid #00897b; }
+    .ib-teal h4 { color: #004d40; margin-bottom: 6px; }
+    .tag { display: inline-block; border-radius: 16px; padding: 4px 14px; font-size: 0.85em; font-weight: bold; color: white; margin: 3px; }
+    .tag-green { background: #2e7d32; }
+    .tag-blue { background: #1565c0; }
+    .tag-purple { background: #6a1b9a; }
+    .tag-red { background: #c62828; }
+    .tag-teal { background: #004d40; }
+    .tag-grey { background: #546e7a; }
+    .flex-row { display: flex; gap: 12px; flex-wrap: wrap; margin: 10px 0; }
+    .flex-col { flex: 1; min-width: 180px; border-radius: 10px; padding: 14px 16px; }
+  </style>
+</head>
+<body>
+
+<!-- TOP HEADER -->
+<div class="top-header">
+  <h1>Owl Smart: A 3rd Grade Learning Journey</h1>
+  <p>Unit 1 -- Reading: Literature &nbsp;|&nbsp; 9 Lessons</p>
+</div>
+
+<!-- NAVIGATION -->
+<div class="nav-bar">
+  <a href="#lesson1">1.1 Questions</a>
+  <a href="#lesson2">1.2 Story Elements</a>
+  <a href="#lesson3">1.3 Fables & Myths</a>
+  <a href="#lesson4">1.4 Characters</a>
+  <a href="#lesson5">1.5 Literal Language</a>
+  <a href="#lesson6">1.6 Story Parts</a>
+  <a href="#lesson7">1.7 Point of View</a>
+  <a href="#lesson8">1.8 Illustrations</a>
+  <a href="#lesson9">1.9 Comparing Stories</a>
+</div>
+
+<div class="main">
+
+<!-- ============================================================ -->
+<!-- LESSON 1.1 -->
+<!-- ============================================================ -->
+<div class="lesson-section" id="lesson1">
+  <div class="banner b1">
+    <span class="lesson-num">Lesson 1.1</span>
+    <h2>Asking and Answering Questions About a Story</h2>
+    <p>Learn how to ask great questions and find the answers right inside a story!</p>
+  </div>
+  <div class="lesson-content">
+
+    <div class="section s1">
+      <h3>What Are We Learning Today?</h3>
+      <p>Have you ever read a story and wondered, "What just happened?" or "Why did that character do that?" That's your brain asking questions! Great readers ask questions <strong>before, during, and after</strong> they read. Finding the answer in the story is called using <strong>text evidence</strong>.</p>
+    </div>
+
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#1565c0;">Question</span> -- Something you ask to find out more information.</div>
+      <div class="vocab-item"><span class="word" style="color:#1565c0;">Text Evidence</span> -- A detail from the story that proves your answer is correct.</div>
+      <div class="vocab-item"><span class="word" style="color:#1565c0;">Explicit</span> -- Stated directly in the text -- the answer is right there!</div>
+      <div class="vocab-item"><span class="word" style="color:#1565c0;">Inference</span> -- A smart guess using text clues plus what you already know.</div>
+    </div>
+
+    <div class="section s1">
+      <h3>The 5 Question Words -- The "5 Ws"</h3>
+      <table>
+        <tr><th>Question Word</th><th>What It Asks</th><th>Example</th></tr>
+        <tr><td><strong>WHO</strong></td><td>A person or character</td><td>Who is the main character?</td></tr>
+        <tr><td><strong>WHAT</strong></td><td>A thing, event, or action</td><td>What happened at the end?</td></tr>
+        <tr><td><strong>WHERE</strong></td><td>A place or location</td><td>Where did the story happen?</td></tr>
+        <tr><td><strong>WHEN</strong></td><td>A time or moment</td><td>When did the adventure begin?</td></tr>
+        <tr><td><strong>WHY</strong></td><td>A reason or cause</td><td>Why did the character run away?</td></tr>
+      </table>
+      <div class="tip"><strong>Memory Tip:</strong> Remember the 5 Ws -- Who, What, Where, When, Why. Add HOW to make it the "5 Ws and 1 H"!</div>
+    </div>
+
+    <div class="story-box">
+      <h3>Read This Short Story</h3>
+      <p class="story-title">The Lost Kitten</p>
+      <p>One rainy afternoon, Maya was walking home from school when she heard a tiny sound coming from behind a bush. She stopped and looked -- there was a small, wet kitten shivering in the cold. Maya gently picked it up and wrapped it in her scarf. "Don't worry," she whispered. She brought the kitten to the animal shelter two streets away, where workers promised to find it a loving home. Maya walked home with a warm feeling in her heart.</p>
+    </div>
+
+    <div class="section s1">
+      <h3>Asking and Answering the 5 Ws</h3>
+      <table>
+        <tr><th>Question</th><th>Answer from the Text</th></tr>
+        <tr><td><strong>WHO</strong> is the story about?</td><td>Maya, a girl walking home from school.</td></tr>
+        <tr><td><strong>WHAT</strong> did Maya find?</td><td>A small, wet kitten behind a bush.</td></tr>
+        <tr><td><strong>WHERE</strong> did Maya take the kitten?</td><td>The animal shelter two streets away.</td></tr>
+        <tr><td><strong>WHEN</strong> did this happen?</td><td>On a rainy afternoon after school.</td></tr>
+        <tr><td><strong>WHY</strong> did Maya pick up the kitten?</td><td>Because it was shivering in the cold and needed help.</td></tr>
+      </table>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <p><strong>The Big Game:</strong> Sam had practiced every day for three weeks. Today was the basketball championship. His hands shook as he laced his sneakers. When the game started, he missed his first two shots. But he didn't give up. In the last minute, he caught the ball and threw it -- swish! Sam's team won!</p>
+      <ol>
+        <li>Write a WHO question and find the answer in the text.</li>
+        <li>Write a WHAT question and find the answer in the text.</li>
+        <li>Write a WHY question and explain how you found the answer.</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p>Ask questions using WHO, WHAT, WHERE, WHEN, or WHY.</p>
+      <p>Look back at the text for your answer.</p>
+      <p>Use real words from the story as your evidence.</p>
+      <p class="cta" style="color:#1565c0;">Great job! Scroll up and click Lesson 1.2 to continue!</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- LESSON 1.2 -->
+<!-- ============================================================ -->
+<div class="lesson-section" id="lesson2">
+  <div class="banner b2">
+    <span class="lesson-num">Lesson 1.2</span>
+    <h2>Story Elements: Characters, Setting, and Plot</h2>
+    <p>The building blocks of every great story!</p>
+  </div>
+  <div class="lesson-content">
+
+    <div class="section s2">
+      <h3>What Are We Learning Today?</h3>
+      <p>Every story is built from the same three building blocks. When you understand these three elements, you can understand <strong>any</strong> story you read!</p>
+      <ul>
+        <li><strong style="color:#1565c0;">Characters</strong> -- WHO the story is about</li>
+        <li><strong style="color:#2e7d32;">Setting</strong> -- WHERE and WHEN the story takes place</li>
+        <li><strong style="color:#e65100;">Plot</strong> -- WHAT happens from beginning to end</li>
+      </ul>
+    </div>
+
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#6a1b9a;">Character</span> -- A person, animal, or creature in a story.</div>
+      <div class="vocab-item"><span class="word" style="color:#6a1b9a;">Setting</span> -- The time and place where a story happens.</div>
+      <div class="vocab-item"><span class="word" style="color:#6a1b9a;">Plot</span> -- The sequence of events from start to finish.</div>
+      <div class="vocab-item"><span class="word" style="color:#6a1b9a;">Problem</span> -- The challenge the main character must face.</div>
+      <div class="vocab-item"><span class="word" style="color:#6a1b9a;">Solution</span> -- How the problem gets solved at the end.</div>
+    </div>
+
+    <div class="flex-row">
+      <div class="flex-col ib-blue">
+        <h4 style="color:#1565c0;">Characters</h4>
+        <p>People, animals, or creatures. The <strong>main character</strong> is the most important one. We learn about characters through what they say, do, feel, and think.</p>
+      </div>
+      <div class="flex-col ib-green">
+        <h4 style="color:#2e7d32;">Setting</h4>
+        <p>WHERE (a forest, a school, outer space) and WHEN (long ago, in the future, on a Tuesday morning). Settings can be real or made up!</p>
+      </div>
+      <div class="flex-col ib-orange">
+        <h4 style="color:#e65100;">Plot</h4>
+        <p><strong>Beginning</strong> -- meet characters and setting, problem appears.<br><strong>Middle</strong> -- character tries to solve it.<br><strong>End</strong> -- problem is solved!</p>
+      </div>
+    </div>
+
+    <div class="story-box">
+      <h3>Read and Identify the Elements</h3>
+      <p class="story-title">The Missing Trophy</p>
+      <p>Ella loved her swimming trophy more than anything. One morning she woke up and it was gone! She searched everywhere but could not find it. She asked her little brother Jake. His face turned pink. He led her to his room -- the trophy sat on his shelf. "I just wanted to show my friends," he said quietly. Ella took a deep breath. "Next time, just ask me," she said with a smile. They went down for breakfast together.</p>
+    </div>
+
+    <div class="section s2">
+      <h3>Story Elements in "The Missing Trophy"</h3>
+      <table>
+        <tr><th>Element</th><th>In the Story</th></tr>
+        <tr><td><strong>Characters</strong></td><td>Ella (main character) and Jake (her brother)</td></tr>
+        <tr><td><strong>Setting</strong></td><td>Their home -- Ella's and Jake's bedrooms, in the morning</td></tr>
+        <tr><td><strong>Problem</strong></td><td>Ella's trophy was missing</td></tr>
+        <tr><td><strong>Solution</strong></td><td>Jake admitted taking it; Ella forgave him</td></tr>
+      </table>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <p>Think of a story you know. In your notebook, write:</p>
+      <ol>
+        <li>Who are the characters? Who is the main character?</li>
+        <li>What is the setting -- where and when?</li>
+        <li>What is the problem? How is it solved?</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p><strong style="color:#1565c0;">CHARACTERS</strong> -- Who is the story about?</p>
+      <p><strong style="color:#2e7d32;">SETTING</strong> -- Where and when does it happen?</p>
+      <p><strong style="color:#e65100;">PLOT</strong> -- Beginning, Middle, End + Problem and Solution</p>
+      <p class="cta" style="color:#6a1b9a;">Great job! Click Lesson 1.3 in the menu above!</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- LESSON 1.3 -->
+<!-- ============================================================ -->
+<div class="lesson-section" id="lesson3">
+  <div class="banner b3">
+    <span class="lesson-num">Lesson 1.3</span>
+    <h2>Fables, Folktales, and Myths</h2>
+    <p>Amazing stories from cultures all around the world!</p>
+  </div>
+  <div class="lesson-content">
+
+    <div class="section s3">
+      <h3>What Are We Learning Today?</h3>
+      <p>People have been telling stories for thousands of years -- long before books! These ancient stories were passed from parents to children. Today we learn about three special types of stories from cultures around the world.</p>
+    </div>
+
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Fable</span> -- A short story with animal characters that teaches a life lesson.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Moral</span> -- The life lesson at the end of a fable.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Folktale</span> -- An old story passed down through generations by telling and retelling.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Myth</span> -- An ancient story created to explain things in nature or the world.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Central Message</span> -- The big idea or lesson the author wants you to take away.</div>
+    </div>
+
+    <div class="flex-row">
+      <div class="flex-col ib-green">
+        <h4 style="color:#2e7d32;">Fables</h4>
+        <p>Short stories with <strong>animal characters</strong> that end with a <strong>moral</strong>. Written by Aesop 2,500 years ago!</p>
+        <p style="margin-top:6px; font-size:0.88em;"><em>Examples: The Tortoise and the Hare, The Fox and the Crow, The Ant and the Grasshopper</em></p>
+      </div>
+      <div class="flex-col ib-blue">
+        <h4 style="color:#1565c0;">Folktales</h4>
+        <p>Told out loud and <strong>passed down</strong> through generations. Every culture has its own!</p>
+        <p style="margin-top:6px; font-size:0.88em;"><em>Examples: Cinderella (500+ versions worldwide!), Anansi the Spider, The Three Little Pigs</em></p>
+      </div>
+      <div class="flex-col ib-purple">
+        <h4 style="color:#6a1b9a;">Myths</h4>
+        <p>Ancient stories that <strong>explain nature</strong> -- why the sun rises, where thunder comes from, how the world began.</p>
+        <p style="margin-top:6px; font-size:0.88em;"><em>Examples: Why the Zebra Got Its Stripes, Persephone and the Seasons</em></p>
+      </div>
+    </div>
+
+    <div class="story-box">
+      <h3>Read This Fable</h3>
+      <p class="story-title">The Fox and the Crow</p>
+      <p>A crow found a piece of cheese and flew to a tree branch to eat it. A clever fox saw the crow and said, "Oh, beautiful crow! You must have a wonderful singing voice! Please sing for me!" The crow was so flattered that she opened her beak to sing -- and the cheese fell right down to the fox, who snapped it up and ran away laughing.</p>
+      <div class="tip"><strong>Moral:</strong> Do not let flattery fool you. People who use fake compliments to trick you do not really care about you!</div>
+    </div>
+
+    <div class="section s3">
+      <h3>Quick Comparison</h3>
+      <table>
+        <tr><th>Type</th><th>Characters</th><th>Purpose</th><th>Ends With</th></tr>
+        <tr><td><strong>Fable</strong></td><td>Usually animals</td><td>Teach a life lesson</td><td>A moral</td></tr>
+        <tr><td><strong>Folktale</strong></td><td>People, animals, magical beings</td><td>Share culture</td><td>Often happily ever after</td></tr>
+        <tr><td><strong>Myth</strong></td><td>Gods, heroes, creatures</td><td>Explain nature</td><td>An explanation</td></tr>
+      </table>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <p>Think of a fable, folktale, or myth you know. Write:</p>
+      <ol>
+        <li>What type of story is it? How do you know?</li>
+        <li>Who are the main characters?</li>
+        <li>What is the central message or moral?</li>
+        <li>What details from the story teach that message?</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p><strong style="color:#2e7d32;">FABLE</strong> -- Animal characters + moral (life lesson)</p>
+      <p><strong style="color:#1565c0;">FOLKTALE</strong> -- Passed down through generations</p>
+      <p><strong style="color:#6a1b9a;">MYTH</strong> -- Explains something in nature</p>
+      <p class="cta" style="color:#e65100;">Excellent! Keep going -- click Lesson 1.4!</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- LESSON 1.4 -->
+<!-- ============================================================ -->
+<div class="lesson-section" id="lesson4">
+  <div class="banner b4">
+    <span class="lesson-num">Lesson 1.4</span>
+    <h2>Describing Characters: Traits, Feelings, and Motivations</h2>
+    <p>Getting to know story characters really well!</p>
+  </div>
+  <div class="lesson-content">
+
+    <div class="section s4">
+      <h3>What Are We Learning Today?</h3>
+      <p>Have you ever felt like you really <em>knew</em> a story character -- almost like they were a real friend? Today we learn how to describe characters by looking at their <strong>traits</strong>, <strong>feelings</strong>, and <strong>motivations</strong>.</p>
+    </div>
+
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#c62828;">Character Trait</span> -- A word describing a character's personality (brave, kind, stubborn).</div>
+      <div class="vocab-item"><span class="word" style="color:#c62828;">Feeling / Emotion</span> -- How a character feels at a moment in the story.</div>
+      <div class="vocab-item"><span class="word" style="color:#c62828;">Motivation</span> -- The reason WHY a character does something.</div>
+      <div class="vocab-item"><span class="word" style="color:#c62828;">Inference</span> -- A smart guess using text clues and what you know.</div>
+    </div>
+
+    <div class="section s4">
+      <h3>Character Trait Words</h3>
+      <div style="margin:10px 0;">
+        <span class="tag tag-green">Brave</span><span class="tag tag-green">Kind</span><span class="tag tag-green">Honest</span><span class="tag tag-green">Generous</span><span class="tag tag-green">Determined</span><span class="tag tag-red">Selfish</span><span class="tag tag-red">Sneaky</span><span class="tag tag-red">Greedy</span><span class="tag tag-purple">Curious</span><span class="tag tag-purple">Shy</span><span class="tag tag-purple">Stubborn</span><span class="tag tag-blue">Imaginative</span>
+      </div>
+    </div>
+
+    <div class="section s4">
+      <h3>How Do We Find Character Traits?</h3>
+      <table>
+        <tr><th>Clue Type</th><th>Example</th><th>Trait It Shows</th></tr>
+        <tr><td><strong>What they DO</strong></td><td>She shares her lunch with a hungry classmate.</td><td>Generous, kind</td></tr>
+        <tr><td><strong>What they SAY</strong></td><td>"I won't give up, no matter what!"</td><td>Determined, brave</td></tr>
+        <tr><td><strong>What they THINK</strong></td><td>He worried about saying the wrong thing.</td><td>Anxious, shy</td></tr>
+        <tr><td><strong>What OTHERS say</strong></td><td>"You can always count on Maria," said her teacher.</td><td>Reliable, trustworthy</td></tr>
+      </table>
+    </div>
+
+    <div class="story-box">
+      <h3>Read and Analyse</h3>
+      <p class="story-title">The New Student</p>
+      <p>When Jaylen walked into the classroom on his first day, he noticed a girl sitting alone, staring at her desk. Everyone else was laughing with friends. Without hesitating, Jaylen walked over and sat next to her. "Hi, I'm Jaylen. Want to be partners for the science project?" The girl's face lit up. Jaylen knew exactly how it felt to be the new kid with no one to talk to.</p>
+      <div class="tip"><strong>Notice:</strong> The author never says "Jaylen is kind." We figure that out from his ACTIONS -- that's an inference! His motivation is empathy -- he remembered his own experience of feeling left out.</div>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <p>Think of a character from a book you know. Write:</p>
+      <ol>
+        <li>Two character traits that describe them.</li>
+        <li>What did the character do or say that shows those traits?</li>
+        <li>What is the character's motivation -- why do they do what they do?</li>
+        <li>How do the character's feelings change from beginning to end?</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p><strong>TRAITS</strong> -- personality words (brave, kind, curious)</p>
+      <p><strong>FEELINGS</strong> -- emotions at a moment (happy, scared, proud)</p>
+      <p><strong>MOTIVATION</strong> -- the reason WHY a character acts</p>
+      <p class="cta" style="color:#c62828;">Well done! Click Lesson 1.5 to continue!</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- LESSON 1.5 -->
+<!-- ============================================================ -->
+<div class="lesson-section" id="lesson5">
+  <div class="banner b5">
+    <span class="lesson-num">Lesson 1.5</span>
+    <h2>Literal vs. Nonliteral Language</h2>
+    <p>When words mean exactly what they say -- and when they don't!</p>
+  </div>
+  <div class="lesson-content">
+
+    <div class="section s5">
+      <h3>What Are We Learning Today?</h3>
+      <p>Have you heard "It's raining cats and dogs!" and looked outside for falling animals? Of course not! Some words mean exactly what they say. Others are used in a creative, imaginative way. Today we learn the difference!</p>
+    </div>
+
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#00695c;">Literal Language</span> -- Words that mean exactly what they say. No hidden meaning.</div>
+      <div class="vocab-item"><span class="word" style="color:#00695c;">Nonliteral Language</span> -- Words used creatively where the meaning is different from the actual words.</div>
+      <div class="vocab-item"><span class="word" style="color:#00695c;">Idiom</span> -- A phrase with a hidden meaning. Example: "butterflies in my stomach."</div>
+      <div class="vocab-item"><span class="word" style="color:#00695c;">Simile</span> -- Comparison using "like" or "as." Example: "as fast as lightning."</div>
+      <div class="vocab-item"><span class="word" style="color:#00695c;">Metaphor</span> -- Says one thing IS another. Example: "The classroom was a zoo."</div>
+      <div class="vocab-item"><span class="word" style="color:#00695c;">Personification</span> -- Giving human qualities to non-humans. Example: "The stars danced."</div>
+    </div>
+
+    <div class="flex-row">
+      <div class="flex-col ib-blue">
+        <h4 style="color:#1565c0;">Literal Language</h4>
+        <p>Words mean exactly what they say.</p>
+        <p style="margin-top:6px;"><em>"The dog is brown and white."</em></p>
+        <p><em>"She ate three apples for lunch."</em></p>
+        <p><em>"It rained heavily on Tuesday."</em></p>
+      </div>
+      <div class="flex-col ib-red">
+        <h4 style="color:#c62828;">Nonliteral Language</h4>
+        <p>Words used in a creative, imaginative way.</p>
+        <p style="margin-top:6px;"><em>"It's raining cats and dogs."</em></p>
+        <p><em>"I have butterflies in my stomach."</em></p>
+        <p><em>"She flew down the hallway."</em></p>
+      </div>
+    </div>
+
+    <div class="section s5">
+      <h3>Types of Nonliteral Language</h3>
+      <table>
+        <tr><th>Type</th><th>What It Is</th><th>Example</th><th>Real Meaning</th></tr>
+        <tr><td><strong>Idiom</strong></td><td>Phrase with hidden meaning</td><td>"Break a leg!"</td><td>Good luck!</td></tr>
+        <tr><td><strong>Simile</strong></td><td>Comparison using like or as</td><td>"He was as quiet as a mouse."</td><td>He was very quiet.</td></tr>
+        <tr><td><strong>Metaphor</strong></td><td>Says one thing IS another</td><td>"The moon is a silver coin."</td><td>The moon is round and shiny.</td></tr>
+        <tr><td><strong>Personification</strong></td><td>Human qualities to non-humans</td><td>"The wind whispered."</td><td>The wind made a soft sound.</td></tr>
+      </table>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <p>Decide if each sentence is LITERAL or NONLITERAL. If nonliteral, write what it really means:</p>
+      <ol>
+        <li>"The sun smiled down on the children."</li>
+        <li>"She put her backpack next to the door."</li>
+        <li>"He was so hungry he could eat a horse!"</li>
+        <li>"The cat sat on the warm windowsill."</li>
+        <li>"Her voice was as sweet as honey."</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p><strong>LITERAL</strong> -- Words mean exactly what they say.</p>
+      <p><strong>NONLITERAL</strong> -- Words are used creatively; meaning is different.</p>
+      <p>Types: Idioms, Similes, Metaphors, Personification</p>
+      <p class="cta" style="color:#00695c;">Keep it up! Click Lesson 1.6!</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- LESSON 1.6 -->
+<!-- ============================================================ -->
+<div class="lesson-section" id="lesson6">
+  <div class="banner b6">
+    <span class="lesson-num">Lesson 1.6</span>
+    <h2>Parts of a Story: Chapters, Scenes, and Stanzas</h2>
+    <p>How stories, plays, and poems are organised into parts!</p>
+  </div>
+  <div class="lesson-content">
+
+    <div class="section s6">
+      <h3>What Are We Learning Today?</h3>
+      <p>Just like a pizza is cut into slices to make it easier to eat, stories, plays, and poems are divided into <strong>smaller parts</strong> to make them easier to read and understand!</p>
+    </div>
+
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#1a237e;">Chapter</span> -- A section of a longer book that organises the story into smaller parts.</div>
+      <div class="vocab-item"><span class="word" style="color:#1a237e;">Scene</span> -- A section of a play. Each scene takes place in one location at one time.</div>
+      <div class="vocab-item"><span class="word" style="color:#1a237e;">Stanza</span> -- A group of lines in a poem that belong together, separated by a blank line.</div>
+      <div class="vocab-item"><span class="word" style="color:#1a237e;">Cliffhanger</span> -- When a chapter ends at an exciting moment to keep you reading!</div>
+      <div class="vocab-item"><span class="word" style="color:#1a237e;">Stage Directions</span> -- Instructions in a play telling actors what to do. Not spoken aloud.</div>
+    </div>
+
+    <div class="section s6">
+      <h3>Quick Comparison Chart</h3>
+      <table>
+        <tr><th>Part</th><th>Found In</th><th>What It Does</th></tr>
+        <tr><td><strong>Chapter</strong></td><td>Books and novels</td><td>Organises a long story into smaller sections</td></tr>
+        <tr><td><strong>Scene</strong></td><td>Plays and dramas</td><td>Shows action in one place and time</td></tr>
+        <tr><td><strong>Stanza</strong></td><td>Poems</td><td>Groups related lines together like a paragraph</td></tr>
+      </table>
+    </div>
+
+    <div class="story-box">
+      <h3>Read This Poem -- Notice the Stanzas!</h3>
+      <div style="background:white; border-radius:8px; padding:14px 18px; margin:10px 0; border-left:4px solid #7b1fa2;">
+        <p style="font-weight:bold; color:#7b1fa2; font-size:0.85em;">Stanza 1</p>
+        <p>The sun woke up and stretched its rays,<br>And painted the morning gold.<br>The birds began their cheerful songs,<br>A story to be told.</p>
+      </div>
+      <div style="background:white; border-radius:8px; padding:14px 18px; margin:10px 0; border-left:4px solid #7b1fa2;">
+        <p style="font-weight:bold; color:#7b1fa2; font-size:0.85em;">Stanza 2</p>
+        <p>The flowers opened one by one,<br>And lifted up their heads.<br>While butterflies danced in the breeze,<br>Above their flowery beds.</p>
+      </div>
+      <div class="tip"><strong>Notice:</strong> Stanza 1 describes the sun and birds. Stanza 2 adds flowers and butterflies. Each stanza BUILDS on the previous one!</div>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Think of a chapter book you know. How does each new chapter build on the one before?</li>
+        <li>What is a cliffhanger? Can you think of a chapter that ended with one?</li>
+        <li>What is the difference between a chapter, a scene, and a stanza?</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p><strong>CHAPTER</strong> -- section of a book</p>
+      <p><strong>SCENE</strong> -- section of a play (one place and time)</p>
+      <p><strong>STANZA</strong> -- group of lines in a poem</p>
+      <p>Each new part <strong>builds on</strong> the parts before it!</p>
+      <p class="cta" style="color:#1a237e;">Fantastic! Click Lesson 1.7!</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- LESSON 1.7 -->
+<!-- ============================================================ -->
+<div class="lesson-section" id="lesson7">
+  <div class="banner b7">
+    <span class="lesson-num">Lesson 1.7</span>
+    <h2>Point of View: Narrator vs. Characters</h2>
+    <p>Who is telling the story -- and how does that change what we know?</p>
+  </div>
+  <div class="lesson-content">
+
+    <div class="section s7">
+      <h3>What Are We Learning Today?</h3>
+      <p>Imagine a car accident happened on your street. A driver, a pedestrian, and a bystander all saw the same event -- but each has a <em>different</em> story to tell! In stories, WHO is telling the story matters a lot. Today we learn about <strong>point of view</strong>.</p>
+    </div>
+
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#004d40;">Point of View</span> -- Who is telling the story and how they see events.</div>
+      <div class="vocab-item"><span class="word" style="color:#004d40;">Narrator</span> -- The voice that tells the story to the reader.</div>
+      <div class="vocab-item"><span class="word" style="color:#004d40;">First-Person</span> -- Narrator IS a character. Uses "I," "me," "my," "we."</div>
+      <div class="vocab-item"><span class="word" style="color:#004d40;">Third-Person</span> -- Narrator is OUTSIDE the story. Uses "he," "she," "they," character names.</div>
+    </div>
+
+    <div class="flex-row">
+      <div class="flex-col ib-blue">
+        <h4 style="color:#1565c0;">First-Person Point of View</h4>
+        <p>The narrator IS in the story. We only know what they see, hear, and feel.</p>
+        <p style="margin-top:8px; font-style:italic; font-size:0.9em;">"I walked into the dark cave and my heart began to pound."</p>
+        <p style="margin-top:6px; font-size:0.88em;"><strong>Key words:</strong> I, me, my, we, our</p>
+      </div>
+      <div class="flex-col ib-purple">
+        <h4 style="color:#6a1b9a;">Third-Person Point of View</h4>
+        <p>The narrator watches from OUTSIDE. Can tell us about multiple characters.</p>
+        <p style="margin-top:8px; font-style:italic; font-size:0.9em;">"She walked into the dark cave and her heart began to pound."</p>
+        <p style="margin-top:6px; font-size:0.88em;"><strong>Key words:</strong> he, she, they, character names</p>
+      </div>
+    </div>
+
+    <div class="story-box">
+      <h3>Different Characters, Different Points of View</h3>
+      <table>
+        <tr><th>Character</th><th>Their Point of View on the Same Event</th></tr>
+        <tr><td><strong>Goldilocks</strong></td><td>The house looked empty and the porridge smelled delicious -- she just wanted to rest!</td></tr>
+        <tr><td><strong>The Three Bears</strong></td><td>Someone broke into their home, ate their food, and broke their furniture!</td></tr>
+      </table>
+      <div class="tip">Same story. Very different points of view! Understanding each character's perspective helps us understand WHY they act the way they do.</div>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Is your favourite book written in first-person or third-person? How do you know?</li>
+        <li>Choose two characters from a story. How do they see the same event differently?</li>
+        <li>Would the story change if told from a different character's point of view? How?</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p><strong>FIRST-PERSON</strong> -- Narrator is IN the story. Uses "I" and "me."</p>
+      <p><strong>THIRD-PERSON</strong> -- Narrator watches from OUTSIDE. Uses "he," "she," "they."</p>
+      <p>Different characters have <strong>different points of view</strong> about the same event!</p>
+      <p class="cta" style="color:#004d40;">Almost there! Click Lesson 1.8!</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- LESSON 1.8 -->
+<!-- ============================================================ -->
+<div class="lesson-section" id="lesson8">
+  <div class="banner b8">
+    <span class="lesson-num">Lesson 1.8</span>
+    <h2>How Illustrations Help Tell the Story</h2>
+    <p>Discover how pictures and words work together to create amazing stories!</p>
+  </div>
+  <div class="lesson-content">
+
+    <div class="section s8">
+      <h3>What Are We Learning Today?</h3>
+      <p>Have you ever looked at a picture in a book and already felt something -- nervous, happy, or excited -- before reading a single word? Illustrations are not just decorations. They are a <strong>powerful part of storytelling</strong>!</p>
+    </div>
+
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#4527a0;">Illustrator</span> -- The artist who creates the pictures for a book.</div>
+      <div class="vocab-item"><span class="word" style="color:#4527a0;">Mood</span> -- The feeling or atmosphere an illustration creates for the reader.</div>
+      <div class="vocab-item"><span class="word" style="color:#4527a0;">Facial Expression</span> -- The look on a character's face that shows how they feel.</div>
+      <div class="vocab-item"><span class="word" style="color:#4527a0;">Body Language</span> -- How a character's body position shows their feelings.</div>
+    </div>
+
+    <div class="section s8">
+      <h3>What Can Illustrations Do?</h3>
+      <table>
+        <tr><th>What Illustrations Can Do</th><th>Example</th></tr>
+        <tr><td>Show character feelings</td><td>A character's tears or wide eyes tell us how they feel.</td></tr>
+        <tr><td>Create mood</td><td>Dark colours = scary; bright colours = happy.</td></tr>
+        <tr><td>Show details not in the words</td><td>Text says "she entered the room" -- picture shows a messy, mysterious room.</td></tr>
+        <tr><td>Help visualise the setting</td><td>A snowy mountain picture helps readers see where the story takes place.</td></tr>
+        <tr><td>Add humour</td><td>Character claims to be brave -- picture shows them hiding under a bed!</td></tr>
+      </table>
+    </div>
+
+    <div class="section s8">
+      <h3>Colours and Mood</h3>
+      <div class="flex-row">
+        <div class="flex-col" style="background:#37474f; color:white; border-radius:10px; padding:14px 16px;">
+          <strong>Dark blues and blacks</strong><br>
+          <span style="font-size:0.9em;">Mysterious, scary, lonely</span>
+        </div>
+        <div class="flex-col" style="background:#f57f17; color:white; border-radius:10px; padding:14px 16px;">
+          <strong>Warm yellows and oranges</strong><br>
+          <span style="font-size:0.9em;">Happy, cosy, exciting</span>
+        </div>
+        <div class="flex-col" style="background:#2e7d32; color:white; border-radius:10px; padding:14px 16px;">
+          <strong>Soft pinks and greens</strong><br>
+          <span style="font-size:0.9em;">Gentle, peaceful, hopeful</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="story-box">
+      <h3>Analyse This Illustration Description</h3>
+      <p style="background:#4527a0; color:white; border-radius:8px; padding:14px 16px; font-style:italic;">"A small girl stands at the edge of a vast, dark forest. She is tiny compared to the tall trees. Her lantern is the only spot of warm yellow light. The sky is deep purple-black."</p>
+      <table style="margin-top:12px;">
+        <tr><th>Detail</th><th>What It Tells Us</th></tr>
+        <tr><td>Dark forest and sky</td><td>Mysterious, possibly dangerous setting</td></tr>
+        <tr><td>Girl is tiny compared to trees</td><td>She feels small and alone</td></tr>
+        <tr><td>Lantern is the only light</td><td>She is brave -- facing darkness with courage</td></tr>
+      </table>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <p>Think of an illustration from a book you know. Write:</p>
+      <ol>
+        <li>Describe what you see in the illustration.</li>
+        <li>What mood does it create? What details create that mood?</li>
+        <li>Does the illustration show something the words do NOT say?</li>
+        <li>How does it help tell the story better?</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p>Illustrations show <strong>mood, details, character emotions,</strong> and <strong>setting</strong>.</p>
+      <p>Colours, light, and shapes create the <strong>feeling</strong> of a story.</p>
+      <p>Sometimes illustrations show things the <strong>words do not say!</strong></p>
+      <p class="cta" style="color:#4527a0;">One more! Click Lesson 1.9!</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- LESSON 1.9 -->
+<!-- ============================================================ -->
+<div class="lesson-section" id="lesson9">
+  <div class="banner b9">
+    <span class="lesson-num">Lesson 1.9</span>
+    <h2>Comparing Stories by the Same Author</h2>
+    <p>Discover patterns and connections across an author's books!</p>
+  </div>
+  <div class="lesson-content">
+
+    <div class="section s9">
+      <h3>What Are We Learning Today?</h3>
+      <p>Have you ever read two books by the same author and thought, "These feel similar somehow"? Authors have their own special style -- favourite themes, types of characters, and ways of writing. Today we learn how to <strong>compare and contrast</strong> two stories by the same author!</p>
+    </div>
+
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#bf360c;">Compare</span> -- To look for what is SIMILAR between two things.</div>
+      <div class="vocab-item"><span class="word" style="color:#bf360c;">Contrast</span> -- To look for what is DIFFERENT between two things.</div>
+      <div class="vocab-item"><span class="word" style="color:#bf360c;">Theme</span> -- The big idea or life lesson running through a story.</div>
+      <div class="vocab-item"><span class="word" style="color:#bf360c;">Author's Voice</span> -- The unique style that makes an author's writing recognisable.</div>
+      <div class="vocab-item"><span class="word" style="color:#bf360c;">Venn Diagram</span> -- Two overlapping circles used to compare and contrast two things.</div>
+    </div>
+
+    <div class="section s9">
+      <h3>What to Look for When Comparing</h3>
+      <table>
+        <tr><th>Story Element</th><th>Questions to Ask</th></tr>
+        <tr><td><strong>Characters</strong></td><td>Are the same characters in both? Do both have similar types of heroes?</td></tr>
+        <tr><td><strong>Setting</strong></td><td>Are the settings similar or different?</td></tr>
+        <tr><td><strong>Theme</strong></td><td>Do both stories share a similar big idea or lesson?</td></tr>
+        <tr><td><strong>Author's Style</strong></td><td>Does the author use humour? Beautiful descriptions? Short sentences?</td></tr>
+      </table>
+    </div>
+
+    <div class="story-box">
+      <h3>Example: Two Magic Tree House Books by Mary Pope Osborne</h3>
+      <div class="flex-row">
+        <div class="flex-col ib-blue">
+          <h4 style="color:#1565c0;">Dinosaurs Before Dark</h4>
+          <ul style="font-size:0.9em;">
+            <li>Setting: Prehistoric times</li>
+            <li>Characters: Jack and Annie</li>
+            <li>Problem: Stranded with dinosaurs</li>
+          </ul>
+        </div>
+        <div class="flex-col ib-red">
+          <h4 style="color:#c62828;">Knights and Castles</h4>
+          <ul style="font-size:0.9em;">
+            <li>Setting: Medieval England</li>
+            <li>Characters: Jack and Annie</li>
+            <li>Problem: Trapped in a castle</li>
+          </ul>
+        </div>
+      </div>
+      <table style="margin-top:10px;">
+        <tr><th>What's the SAME?</th><th>What's DIFFERENT?</th></tr>
+        <tr><td>Same characters: Jack and Annie</td><td>Different settings and time periods</td></tr>
+        <tr><td>Both use the magic tree house</td><td>Different historical challenges</td></tr>
+        <tr><td>Both have a theme of adventure and learning</td><td>Different facts learned</td></tr>
+      </table>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <p>Choose two books by the same author. In your notebook, draw a Venn diagram and fill it in:</p>
+      <ol>
+        <li>What are the titles and author?</li>
+        <li>What is SIMILAR between the two books?</li>
+        <li>What is DIFFERENT between the two books?</li>
+        <li>What do the similarities tell you about what this author cares about?</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>You Finished Unit 1!</h3>
+      <p><strong>COMPARE</strong> -- Find what is SIMILAR.</p>
+      <p><strong>CONTRAST</strong> -- Find what is DIFFERENT.</p>
+      <p>Authors often use the same <strong>themes, character types, and style</strong> across their books -- that's their <strong>author's voice!</strong></p>
+      <p class="cta" style="color:#bf360c;">Amazing work! You have completed all 9 lessons in Unit 1! Now take the Unit 1 Quiz!</p>
+    </div>
+  </div>
+</div>
+
+</div><!-- end main -->
+
+<script>
+  // Highlight active nav link based on scroll position
+  const sections = document.querySelectorAll('.lesson-section');
+  const navLinks = document.querySelectorAll('.nav-bar a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 80;
+      if (window.scrollY >= sectionTop) current = section.getAttribute('id');
+    });
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === '#' + current) link.classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>
