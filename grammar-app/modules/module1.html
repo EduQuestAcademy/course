@@ -2,95 +2,157 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Module 1 — Parts of Speech | Grammar Mastery</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap');
   :root{
-    --bg:#e8f0fe;--white:#ffffff;--border:#c7d2fe;
-    --text:#1e1b4b;--text-sm:#6b7280;--text-xs:#9ca3af;
+    --bg:#eef2ff;--surface:#fff;--surface2:#f5f3ff;
+    --border:#ddd6fe;--border-md:#c4b5fd;
+    --tx:#1e1b4b;--tx-sm:#6b7280;--tx-xs:#9ca3af;
     --accent:#5b21b6;--accent-mid:#7c3aed;--accent-lt:#ede9fe;
-    --radius:14px;--shadow:0 1px 4px rgba(0,0,0,0.07),0 1px 2px rgba(0,0,0,0.04);
+    --ok:#059669;
+    --r-sm:8px;--r-md:12px;--r-lg:16px;--r-xl:20px;--r-full:999px;
+    --sh-sm:0 1px 4px rgba(0,0,0,0.07),0 1px 2px rgba(0,0,0,0.04);
+    --sh-md:0 4px 16px rgba(0,0,0,0.08);
+    --sh-lg:0 8px 32px rgba(0,0,0,0.10);
   }
-  *{box-sizing:border-box;margin:0;padding:0;}
-  body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;}
-  .app{max-width:480px;margin:0 auto;padding-bottom:40px;min-height:100vh;}
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--tx);min-height:100vh;font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased;}
 
-  .header{
-    padding:16px;background:var(--white);border-bottom:1px solid var(--border);
+  .page{max-width:480px;margin:0 auto;padding-bottom:40px;min-height:100vh;}
+  @media(min-width:640px){.page{max-width:700px;font-size:15.5px;}}
+  @media(min-width:1024px){
+    body{
+      background:linear-gradient(135deg,#eef2ff 0%,#f5f3ff 50%,#ede9fe 100%);
+      background-attachment:fixed;
+    }
+    .page{
+      max-width:960px;padding:32px;padding-bottom:40px;
+      display:grid;grid-template-columns:280px 1fr;
+      grid-template-rows:auto 1fr;gap:0;align-items:start;
+    }
+    .mod-header{
+      grid-column:1/-1;
+      border-radius:var(--r-xl) var(--r-xl) 0 0;
+      box-shadow:none;position:relative;
+    }
+    .mod-left{
+      border-right:1px solid var(--border);
+      border-radius:0 0 0 var(--r-xl);
+      background:var(--surface);
+      box-shadow:var(--sh-lg);
+      position:sticky;top:32px;
+      height:fit-content;
+    }
+    .mod-right{
+      background:var(--surface);
+      border-radius:0 0 var(--r-xl) 0;
+      box-shadow:var(--sh-lg);
+      padding-bottom:32px;
+      overflow:hidden;
+    }
+  }
+
+  /* HEADER */
+  .mod-header{
+    padding:16px;background:var(--surface);
+    border-bottom:1px solid var(--border);
     position:sticky;top:0;z-index:50;
-    box-shadow:0 2px 10px rgba(99,102,241,0.1);
+    box-shadow:0 2px 10px rgba(99,102,241,0.08);
   }
   .back-btn{
     display:inline-flex;align-items:center;gap:6px;
-    color:var(--accent-mid);font-size:0.83em;font-weight:700;
+    color:var(--accent-mid);font-size:0.82em;font-weight:700;
     background:none;border:none;cursor:pointer;
-    font-family:'Inter',sans-serif;text-decoration:none;margin-bottom:14px;
+    font-family:inherit;text-decoration:none;margin-bottom:14px;
+    padding:6px 10px;border-radius:var(--r-sm);
+    transition:background .15s;
   }
-  .module-hero{display:flex;align-items:center;gap:13px;margin-bottom:13px;}
+  .back-btn:hover{background:var(--accent-lt);}
+  .hero{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
   .hero-icon{
-    width:50px;height:50px;border-radius:13px;
+    width:48px;height:48px;border-radius:var(--r-md);
     background:linear-gradient(135deg,#5b21b6,#7c3aed);
-    display:flex;align-items:center;justify-content:center;font-size:1.4em;
-    box-shadow:0 3px 10px rgba(91,33,182,0.3);
+    display:flex;align-items:center;justify-content:center;font-size:1.35em;
+    box-shadow:0 3px 10px rgba(91,33,182,0.28);flex-shrink:0;
   }
-  .hero-tag{font-size:0.63em;font-weight:700;letter-spacing:0.08em;color:var(--accent-mid);text-transform:uppercase;font-family:'JetBrains Mono',monospace;}
-  .hero-title{font-size:1.05em;font-weight:800;margin-top:2px;color:var(--text);}
-  .hero-sub{font-size:0.7em;color:var(--text-sm);margin-top:2px;font-weight:500;}
-
+  .hero-tag{font-size:0.62em;font-weight:700;letter-spacing:.08em;color:var(--accent-mid);text-transform:uppercase;font-family:'JetBrains Mono',monospace;}
+  .hero-title{font-size:1.02em;font-weight:800;margin-top:2px;color:var(--tx);}
+  .hero-sub{font-size:0.68em;color:var(--tx-sm);margin-top:2px;font-weight:500;}
   .prog-row{display:flex;align-items:center;gap:10px;}
-  .prog-track{flex:1;height:7px;background:#c7d2fe;border-radius:4px;overflow:hidden;}
-  .prog-fill{height:100%;background:linear-gradient(90deg,#5b21b6,#7c3aed);border-radius:4px;transition:width 0.8s;}
+  .prog-track{flex:1;height:6px;background:var(--border);border-radius:var(--r-full);overflow:hidden;}
+  .prog-fill{height:100%;background:linear-gradient(90deg,#5b21b6,#7c3aed);border-radius:var(--r-full);transition:width .8s;}
   .prog-pct{font-size:0.7em;font-family:'JetBrains Mono',monospace;color:var(--accent-mid);font-weight:700;min-width:32px;text-align:right;}
 
-  .sec-label{font-size:0.65em;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#6366f1;padding:18px 16px 8px;}
-
-  .lessons-list{display:flex;flex-direction:column;gap:8px;padding:0 16px;}
-  .lesson-card{
-    display:flex;align-items:center;gap:13px;
-    background:var(--white);border:1.5px solid var(--border);
-    border-radius:var(--radius);padding:13px 14px;
-    text-decoration:none;color:var(--text);
-    box-shadow:var(--shadow);transition:box-shadow 0.15s,transform 0.15s;
+  /* MODULE INFO PANEL (desktop left) */
+  .mod-left{padding:20px;}
+  .mod-info-card{
+    background:linear-gradient(135deg,#5b21b6,#1d4ed8);
+    border-radius:var(--r-lg);padding:16px;color:#fff;
+    box-shadow:0 4px 16px rgba(91,33,182,0.3);
   }
-  .lesson-card:hover{box-shadow:0 4px 12px rgba(91,33,182,0.14);border-color:#a78bfa;}
-  .lesson-card:active{transform:scale(0.98);}
-  .lesson-card.completed{border-color:#a78bfa;background:#faf5ff;}
-  .lesson-card.locked{opacity:0.45;pointer-events:none;}
+  .mi-label{font-size:0.62em;font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-family:'JetBrains Mono',monospace;color:rgba(255,255,255,0.7);margin-bottom:6px;}
+  .mi-stat{font-size:1.8em;font-weight:800;font-family:'JetBrains Mono',monospace;color:#fff;line-height:1;}
+  .mi-sub{font-size:0.7em;color:rgba(255,255,255,0.7);margin-top:2px;}
+  .mi-divider{height:1px;background:rgba(255,255,255,0.2);margin:12px 0;}
 
-  .lesson-badge{
-    width:35px;height:35px;flex-shrink:0;border-radius:9px;
+  .sec-label{font-size:0.62em;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#6366f1;padding:16px 16px 8px;}
+  @media(min-width:1024px){.mod-right .sec-label{padding:18px 20px 8px;}}
+
+  /* LESSON CARDS */
+  .lessons-list{display:flex;flex-direction:column;gap:7px;padding:0 16px;}
+  @media(min-width:1024px){.lessons-list{padding:0 20px;}}
+
+  .lesson-card{
+    display:flex;align-items:center;gap:12px;
+    background:var(--surface);border:1.5px solid var(--border);
+    border-radius:var(--r-lg);padding:12px 14px;
+    text-decoration:none;color:var(--tx);
+    box-shadow:var(--sh-sm);
+    transition:box-shadow .15s,border-color .15s,transform .12s;
+  }
+  .lesson-card:hover{box-shadow:var(--sh-md);border-color:var(--border-md);}
+  .lesson-card:active{transform:scale(.98);}
+  .lesson-card.completed{border-color:var(--border-md);background:#faf5ff;}
+  .lesson-card.locked{opacity:.4;pointer-events:none;}
+
+  .les-badge{
+    width:34px;height:34px;flex-shrink:0;border-radius:var(--r-sm);
     background:var(--accent-lt);
     display:flex;align-items:center;justify-content:center;
-    font-size:0.73em;font-weight:700;font-family:'JetBrains Mono',monospace;
-    color:var(--accent-mid);
+    font-size:0.72em;font-weight:700;font-family:'JetBrains Mono',monospace;color:var(--accent-mid);
   }
-  .lesson-card.completed .lesson-badge{background:linear-gradient(135deg,#5b21b6,#7c3aed);color:#fff;}
-  .lesson-info{flex:1;min-width:0;}
-  .lesson-title{font-size:0.87em;font-weight:700;line-height:1.3;color:var(--text);}
-  .lesson-meta{font-size:0.65em;color:var(--text-sm);margin-top:2px;font-weight:500;}
-  .lesson-right{flex-shrink:0;display:flex;align-items:center;gap:8px;}
-  .lesson-score{font-size:0.72em;font-weight:700;font-family:'JetBrains Mono',monospace;color:var(--accent-mid);}
-  .lesson-chevron{color:#c4b5fd;font-size:1.1em;font-weight:700;}
+  .lesson-card.completed .les-badge{background:linear-gradient(135deg,#5b21b6,#7c3aed);color:#fff;}
+  .les-info{flex:1;min-width:0;}
+  .les-title{font-size:0.86em;font-weight:700;line-height:1.3;color:var(--tx);}
+  .les-meta{font-size:0.63em;color:var(--tx-sm);margin-top:2px;font-weight:500;}
+  .les-right{flex-shrink:0;display:flex;align-items:center;gap:7px;}
+  .les-score{font-size:0.72em;font-weight:700;font-family:'JetBrains Mono',monospace;color:var(--accent-mid);}
+  .les-chevron{color:var(--border-md);font-size:1.05em;font-weight:700;}
 
-  .module-quiz-card{
+  /* MODULE QUIZ */
+  .mod-quiz-card{
     margin:14px 16px 0;display:block;text-decoration:none;
     background:linear-gradient(135deg,#5b21b6,#1d4ed8);
-    border-radius:var(--radius);padding:16px;
-    box-shadow:0 4px 16px rgba(91,33,182,0.3);
-    transition:transform 0.15s;
+    border-radius:var(--r-lg);padding:16px;
+    box-shadow:0 4px 16px rgba(91,33,182,0.28);
+    transition:transform .15s,box-shadow .15s;
   }
-  .module-quiz-card:active{transform:scale(0.98);}
-  .module-quiz-card.locked{opacity:0.45;pointer-events:none;box-shadow:none;}
-  .mqc-top{display:flex;align-items:center;gap:11px;margin-bottom:7px;}
-  .mqc-icon{font-size:1.3em;}
-  .mqc-tag{font-size:0.62em;font-weight:700;letter-spacing:0.08em;color:rgba(255,255,255,0.7);text-transform:uppercase;font-family:'JetBrains Mono',monospace;}
-  .mqc-title{font-size:0.93em;font-weight:800;color:#fff;}
-  .mqc-sub{font-size:0.7em;color:rgba(255,255,255,0.72);font-weight:500;}
-  .mqc-note{font-size:0.68em;color:rgba(255,255,255,0.6);margin-top:5px;}
+  @media(min-width:1024px){.mod-quiz-card{margin:14px 20px 0;}}
+  .mod-quiz-card:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(91,33,182,0.35);}
+  .mod-quiz-card:active{transform:scale(.98);}
+  .mod-quiz-card.locked{opacity:.4;pointer-events:none;box-shadow:none;}
+  .mqc-top{display:flex;align-items:center;gap:10px;margin-bottom:6px;}
+  .mqc-icon{font-size:1.25em;}
+  .mqc-tag{font-size:0.6em;font-weight:700;letter-spacing:.08em;color:rgba(255,255,255,0.68);text-transform:uppercase;font-family:'JetBrains Mono',monospace;}
+  .mqc-title{font-size:0.92em;font-weight:800;color:#fff;}
+  .mqc-sub{font-size:0.68em;color:rgba(255,255,255,0.7);font-weight:500;}
+  .mqc-note{font-size:0.65em;color:rgba(255,255,255,0.58);margin-top:4px;}
 
   @keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
-  .lesson-card{animation:fadeUp 0.3s ease both;}
+  .lesson-card{animation:fadeUp .3s ease both;}
   .lesson-card:nth-child(1){animation-delay:.04s}.lesson-card:nth-child(2){animation-delay:.08s}
   .lesson-card:nth-child(3){animation-delay:.12s}.lesson-card:nth-child(4){animation-delay:.16s}
   .lesson-card:nth-child(5){animation-delay:.20s}.lesson-card:nth-child(6){animation-delay:.24s}
@@ -98,10 +160,11 @@
 </style>
 </head>
 <body>
-<div class="app">
-  <div class="header">
+<div class="page">
+
+  <div class="mod-header">
     <a class="back-btn" href="../index.html">← Back to Dashboard</a>
-    <div class="module-hero">
+    <div class="hero">
       <div class="hero-icon">🔤</div>
       <div>
         <div class="hero-tag">Module 1</div>
@@ -115,20 +178,36 @@
     </div>
   </div>
 
-  <div class="sec-label">Lessons</div>
-  <div class="lessons-list" id="lessonsList"></div>
-
-  <a class="module-quiz-card" id="mqCard" href="../quizzes/q1-9.html">
-    <div class="mqc-top">
-      <div class="mqc-icon">🏆</div>
-      <div>
-        <div class="mqc-tag">Module Quiz</div>
-        <div class="mqc-title">Parts of Speech — Full Assessment</div>
-      </div>
+  <!-- Desktop left: info panel -->
+  <div class="mod-left">
+    <div class="mod-info-card">
+      <div class="mi-label">Module Progress</div>
+      <div class="mi-stat" id="leftPct">0%</div>
+      <div class="mi-sub">of all 9 quizzes complete</div>
+      <div class="mi-divider"></div>
+      <div class="mi-label">Questions</div>
+      <div class="mi-stat">180</div>
+      <div class="mi-sub">across 8 lessons + module quiz</div>
     </div>
-    <div class="mqc-sub">20 questions · Covers all 8 lessons · Mixed difficulty</div>
-    <div class="mqc-note" id="mqNote"></div>
-  </a>
+  </div>
+
+  <!-- Desktop right: lessons -->
+  <div class="mod-right">
+    <div class="sec-label">Lessons</div>
+    <div class="lessons-list" id="lessonsList"></div>
+    <a class="mod-quiz-card" id="mqCard" href="../quizzes/q1-9.html">
+      <div class="mqc-top">
+        <div class="mqc-icon">🏆</div>
+        <div>
+          <div class="mqc-tag">Module Quiz</div>
+          <div class="mqc-title">Parts of Speech — Full Assessment</div>
+        </div>
+      </div>
+      <div class="mqc-sub">20 questions · Covers all 8 lessons · Mixed difficulty</div>
+      <div class="mqc-note" id="mqNote"></div>
+    </a>
+  </div>
+
 </div>
 <script>
 const LESSONS=[
@@ -148,24 +227,25 @@ function render(){
     const key=`m1_l${l.id}`,score=p[key],completed=score!==undefined;
     if(completed)done++;
     return `<a class="lesson-card ${completed?'completed':''}" href="../quizzes/q1-${l.id}.html">
-      <div class="lesson-badge">${completed?'✓':String(l.id).padStart(2,'0')}</div>
-      <div class="lesson-info">
-        <div class="lesson-title">Lesson 1.${l.id} — ${l.title}</div>
-        <div class="lesson-meta">20 questions · Multiple choice, True/False, Fill-in-blank</div>
+      <div class="les-badge">${completed?'✓':String(l.id).padStart(2,'0')}</div>
+      <div class="les-info">
+        <div class="les-title">Lesson 1.${l.id} — ${l.title}</div>
+        <div class="les-meta">20 questions · Multiple choice · True/False · Fill-in-blank</div>
       </div>
-      <div class="lesson-right">
-        ${completed?`<div class="lesson-score">${score}%</div>`:''}
-        <div class="lesson-chevron">›</div>
+      <div class="les-right">
+        ${completed?`<div class="les-score">${score}%</div>`:''}
+        <div class="les-chevron">›</div>
       </div>
     </a>`;
   }).join('');
   const mqScore=p['m1_l9'],mqDone=mqScore!==undefined,allDone=done>=LESSONS.length;
   const mqCard=document.getElementById('mqCard'),mqNote=document.getElementById('mqNote');
   if(!allDone){mqCard.classList.add('locked');mqNote.textContent='🔒 Complete all 8 lessons to unlock';}
-  else{mqCard.classList.remove('locked');mqNote.textContent=mqDone?`Your score: ${mqScore}%`:'Ready — tap to begin!';}
+  else{mqCard.classList.remove('locked');mqNote.textContent=mqDone?`Your best score: ${mqScore}%`:'Ready — tap to begin!';}
   const pct=Math.round((done+(mqDone?1:0))/9*100);
   document.getElementById('modFill').style.width=pct+'%';
   document.getElementById('modPct').textContent=pct+'%';
+  document.getElementById('leftPct').textContent=pct+'%';
 }
 render();
 </script>
