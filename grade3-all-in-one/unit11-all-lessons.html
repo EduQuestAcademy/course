@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit 11 – Measurement and Data | Owl Smart 3rd Grade</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #f4f7fb; color: #2d2d2d; line-height: 1.8; }
+    .top-header { background: linear-gradient(135deg, #37474f, #546e7a); color: white; text-align: center; padding: 24px 20px 16px; }
+    .top-header h1 { font-size: 1.5em; margin-bottom: 4px; }
+    .top-header p { font-size: 0.95em; opacity: 0.88; }
+    .nav-bar { background: #37474f; padding: 0 10px; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.3); overflow-x: auto; white-space: nowrap; }
+    .nav-bar a { display: inline-block; color: rgba(255,255,255,0.8); text-decoration: none; padding: 12px 14px; font-size: 0.82em; font-weight: bold; border-bottom: 3px solid transparent; transition: all 0.2s; }
+    .nav-bar a:hover, .nav-bar a.active { color: white; border-bottom-color: #ffd600; }
+    .main { max-width: 860px; margin: 0 auto; padding: 20px; }
+    .lesson-section { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.08); margin-bottom: 40px; scroll-margin-top: 60px; }
+    .banner { color: white; text-align: center; padding: 28px 24px; }
+    .banner h2 { font-size: 1.45em; margin-bottom: 6px; }
+    .banner p { font-size: 0.97em; opacity: 0.92; margin-bottom: 10px; }
+    .lesson-num { display: inline-block; background: rgba(255,255,255,0.25); border-radius: 20px; padding: 3px 14px; font-size: 0.82em; font-weight: bold; }
+    .b1 { background: linear-gradient(135deg, #37474f, #546e7a); }
+    .b2 { background: linear-gradient(135deg, #1a237e, #3949ab); }
+    .b3 { background: linear-gradient(135deg, #1b5e20, #388e3c); }
+    .b4 { background: linear-gradient(135deg, #880e4f, #c2185b); }
+    .b5 { background: linear-gradient(135deg, #e65100, #fb8c00); }
+    .b6 { background: linear-gradient(135deg, #0d47a1, #1976d2); }
+    .lesson-content { padding: 26px; }
+    .section { border-left: 5px solid; border-radius: 0 10px 10px 0; padding: 18px 20px; margin-bottom: 20px; }
+    .s1 { background: #eceff1; border-color: #37474f; } .s1 h3 { color: #37474f; }
+    .s2 { background: #e8eaf6; border-color: #1a237e; } .s2 h3 { color: #1a237e; }
+    .s3 { background: #e8f5e9; border-color: #1b5e20; } .s3 h3 { color: #1b5e20; }
+    .s4 { background: #fce4ec; border-color: #880e4f; } .s4 h3 { color: #880e4f; }
+    .s5 { background: #fff3e0; border-color: #e65100; } .s5 h3 { color: #e65100; }
+    .s6 { background: #e3f2fd; border-color: #0d47a1; } .s6 h3 { color: #0d47a1; }
+    .section h3 { margin-bottom: 8px; font-size: 1.05em; }
+    .vocab-box { background: #fff8e1; border: 2px solid #ffc107; border-radius: 10px; padding: 18px 20px; margin-bottom: 20px; }
+    .vocab-box h3 { color: #e65100; margin-bottom: 12px; font-size: 1.05em; }
+    .vocab-item { margin: 8px 0; font-size: 0.95em; }
+    .word { font-weight: bold; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.93em; }
+    th { background: #37474f; color: white; padding: 9px 12px; text-align: left; }
+    td { padding: 9px 12px; border-bottom: 1px solid #e0e0e0; }
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) { background: #f5f5f5; }
+    .tip { background: #e8f5e9; border-left: 4px solid #43a047; border-radius: 0 8px 8px 0; padding: 12px 16px; margin: 12px 0; color: #1b5e20; font-size: 0.93em; }
+    .tip strong { color: #2e7d32; }
+    .try-it { background: #ede7f6; border: 2px dashed #7e57c2; border-radius: 10px; padding: 18px 20px; margin-bottom: 20px; }
+    .try-it h3 { color: #4527a0; margin-bottom: 10px; font-size: 1.05em; }
+    .try-it ol { padding-left: 20px; }
+    .try-it li { margin: 8px 0; font-size: 0.95em; }
+    .remember { background: #fff3e0; border: 2px solid #ff8f00; border-radius: 10px; padding: 18px 20px; text-align: center; margin-bottom: 4px; }
+    .remember h3 { color: #e65100; margin-bottom: 10px; font-size: 1.05em; }
+    .remember p { margin: 5px 0; font-size: 0.95em; }
+    .remember .cta { font-weight: bold; font-size: 1.05em; margin-top: 12px; }
+    .flex-row { display: flex; gap: 12px; flex-wrap: wrap; margin: 10px 0; }
+    .flex-col { flex: 1; min-width: 150px; border-radius: 10px; padding: 14px 16px; }
+    .fb-grey { background: #eceff1; border: 2px solid #78909c; } .fb-grey h4 { color: #37474f; margin-bottom: 6px; }
+    .fb-blue { background: #e3f2fd; border: 2px solid #1976d2; } .fb-blue h4 { color: #0d47a1; margin-bottom: 6px; }
+    .fb-green { background: #e8f5e9; border: 2px solid #388e3c; } .fb-green h4 { color: #1b5e20; margin-bottom: 6px; }
+    .fb-pink { background: #fce4ec; border: 2px solid #e91e63; } .fb-pink h4 { color: #880e4f; margin-bottom: 6px; }
+    .fb-orange { background: #fff3e0; border: 2px solid #f57c00; } .fb-orange h4 { color: #e65100; margin-bottom: 6px; }
+    .fb-navy { background: #e8eaf6; border: 2px solid #3949ab; } .fb-navy h4 { color: #1a237e; margin-bottom: 6px; }
+    /* Clock face */
+    .clock-wrap { text-align: center; margin: 14px 0; }
+    .clock-face { display: inline-block; width: 160px; height: 160px; border-radius: 50%; border: 4px solid #37474f; background: white; position: relative; }
+    .clock-number { position: absolute; font-size: 0.78em; font-weight: bold; color: #37474f; }
+    .clock-center { position: absolute; width: 10px; height: 10px; background: #37474f; border-radius: 50%; top: 50%; left: 50%; transform: translate(-50%,-50%); z-index: 3; }
+    /* Time number line */
+    .time-line { background: #e8eaf6; border-radius: 10px; padding: 14px 18px; margin: 12px 0; overflow-x: auto; }
+    .tl-inner { display: flex; align-items: center; gap: 0; min-width: 380px; position: relative; }
+    .tl-seg { text-align: center; flex: 1; }
+    .tl-top { font-size: 0.75em; font-weight: bold; color: #1a237e; margin-bottom: 4px; }
+    .tl-bar { height: 10px; border-radius: 5px; }
+    .tl-bot { font-size: 0.75em; color: #37474f; margin-top: 4px; font-weight: bold; }
+    /* Bar chart */
+    .bar-chart { background: #e3f2fd; border-radius: 10px; padding: 18px; margin: 12px 0; }
+    .bar-chart h4 { color: #0d47a1; margin-bottom: 14px; font-size: 0.98em; }
+    .chart-row { display: flex; align-items: center; gap: 10px; margin: 6px 0; }
+    .chart-label { min-width: 80px; font-size: 0.88em; font-weight: bold; color: #37474f; text-align: right; }
+    .chart-bar { height: 28px; border-radius: 0 6px 6px 0; display: flex; align-items: center; padding-left: 8px; color: white; font-size: 0.82em; font-weight: bold; }
+    .chart-axis { display: flex; margin-left: 90px; margin-top: 6px; }
+    .chart-tick { flex: 1; text-align: center; font-size: 0.78em; color: #546e7a; }
+    /* Perimeter grid */
+    .grid-shape { display: inline-grid; gap: 2px; margin: 10px 6px; }
+    .grid-cell { width: 28px; height: 28px; border-radius: 3px; }
+    .cell-filled { background: #e65100; }
+    .cell-empty { background: transparent; }
+    .cell-border { background: white; border: 2px solid #e65100; }
+    /* Pictograph */
+    .picto-row { display: flex; align-items: center; gap: 8px; margin: 6px 0; }
+    .picto-label { min-width: 80px; font-size: 0.88em; font-weight: bold; }
+    .picto-icons { display: flex; gap: 4px; }
+    .icon { font-size: 1.2em; }
+    ul { padding-left: 20px; } li { margin: 5px 0; font-size: 0.95em; }
+    p { margin-bottom: 8px; font-size: 0.95em; }
+    .step { display: flex; gap: 12px; align-items: flex-start; margin: 10px 0; }
+    .step-num { background: #37474f; color: white; border-radius: 50%; width: 28px; height: 28px; min-width: 28px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 0.9em; }
+  </style>
+</head>
+<body>
+
+<div class="top-header">
+  <h1>Owl Smart: A 3rd Grade Learning Journey</h1>
+  <p>Unit 11 -- Measurement and Data &nbsp;|&nbsp; 6 Lessons</p>
+</div>
+
+<div class="nav-bar">
+  <a href="#lesson1">11.1 Telling Time</a>
+  <a href="#lesson2">11.2 Elapsed Time</a>
+  <a href="#lesson3">11.3 Length</a>
+  <a href="#lesson4">11.4 Volume &amp; Mass</a>
+  <a href="#lesson5">11.5 Perimeter &amp; Area</a>
+  <a href="#lesson6">11.6 Graphs &amp; Data</a>
+</div>
+
+<div class="main">
+
+<!-- LESSON 11.1 -->
+<div class="lesson-section" id="lesson1">
+  <div class="banner b1">
+    <span class="lesson-num">Lesson 11.1</span>
+    <h2>Telling Time to the Minute</h2>
+    <p>Read any clock -- analog or digital -- with total confidence!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s1">
+      <h3>What Are We Learning Today?</h3>
+      <p>Being able to tell time is one of the most practical math skills you will ever learn! Today we read both <strong>analog clocks</strong> (with hands) and <strong>digital clocks</strong> (with numbers) to the minute, and understand a.m. and p.m.</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#37474f;">Analog Clock</span> -- A clock with an hour hand and a minute hand that move around a circular face.</div>
+      <div class="vocab-item"><span class="word" style="color:#37474f;">Digital Clock</span> -- A clock that shows time with numbers (e.g., 3:47).</div>
+      <div class="vocab-item"><span class="word" style="color:#37474f;">Hour Hand</span> -- The SHORT hand on an analog clock. Points to the hour.</div>
+      <div class="vocab-item"><span class="word" style="color:#37474f;">Minute Hand</span> -- The LONG hand on an analog clock. Points to the minutes.</div>
+      <div class="vocab-item"><span class="word" style="color:#37474f;">a.m.</span> -- The hours from midnight (12:00 a.m.) to just before noon (11:59 a.m.).</div>
+      <div class="vocab-item"><span class="word" style="color:#37474f;">p.m.</span> -- The hours from noon (12:00 p.m.) to just before midnight (11:59 p.m.).</div>
+    </div>
+
+    <div class="section s1">
+      <h3>Reading an Analog Clock</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-grey">
+          <h4>The Hour Hand (SHORT)</h4>
+          <ul>
+            <li>Points directly at a number = that hour exactly</li>
+            <li>Points between two numbers = the lower number is the hour</li>
+            <li>Moves slowly -- takes 12 hours to go all the way around</li>
+          </ul>
+        </div>
+        <div class="flex-col fb-navy">
+          <h4>The Minute Hand (LONG)</h4>
+          <ul>
+            <li>Points at 12 = 0 minutes (:00)</li>
+            <li>Points at 3 = 15 minutes (:15)</li>
+            <li>Points at 6 = 30 minutes (:30)</li>
+            <li>Points at 9 = 45 minutes (:45)</li>
+            <li>Each small tick = 1 minute</li>
+            <li>Each number = 5 more minutes</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="section s1">
+      <h3>The Minute Hand -- Count by 5s!</h3>
+      <table>
+        <tr><th>Minute Hand Points At...</th><th>Minutes Past the Hour</th><th>Example</th></tr>
+        <tr><td>12</td><td>0 minutes (:00)</td><td>4:00 -- "four o'clock"</td></tr>
+        <tr><td>1</td><td>5 minutes (:05)</td><td>4:05 -- "four oh five"</td></tr>
+        <tr><td>2</td><td>10 minutes (:10)</td><td>4:10 -- "four ten"</td></tr>
+        <tr><td>3</td><td>15 minutes (:15)</td><td>4:15 -- "quarter past four"</td></tr>
+        <tr><td>6</td><td>30 minutes (:30)</td><td>4:30 -- "half past four"</td></tr>
+        <tr><td>9</td><td>45 minutes (:45)</td><td>4:45 -- "quarter to five"</td></tr>
+        <tr><td>11</td><td>55 minutes (:55)</td><td>4:55 -- "five minutes to five"</td></tr>
+      </table>
+    </div>
+
+    <div class="section s1">
+      <h3>a.m. and p.m. -- Morning vs Afternoon/Night</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-grey">
+          <h4>a.m. (midnight to noon)</h4>
+          <p>12:00 a.m. -- midnight</p>
+          <p>7:30 a.m. -- wake up for school!</p>
+          <p>9:00 a.m. -- school morning</p>
+          <p>11:59 a.m. -- just before noon</p>
+        </div>
+        <div class="flex-col fb-navy">
+          <h4>p.m. (noon to midnight)</h4>
+          <p>12:00 p.m. -- noon (lunch!)</p>
+          <p>3:15 p.m. -- after school</p>
+          <p>6:00 p.m. -- dinner time</p>
+          <p>9:00 p.m. -- bedtime!</p>
+        </div>
+      </div>
+      <div class="tip"><strong>Memory trick:</strong> a.m. = "After Midnight" (morning). p.m. = "Past Midday" (afternoon and evening).</div>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Write the time shown: Hour hand between 7 and 8, minute hand pointing at 4. What time is it?</li>
+        <li>Write these times in digital format: "quarter past nine," "half past two," "twenty minutes to six."</li>
+        <li>Is 7:30 a.m. or p.m. the time you usually eat breakfast? What about dinner?</li>
+        <li>How many minutes are in one hour? How many hours are in one day?</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p><strong>Short hand</strong> = hour &nbsp;|&nbsp; <strong>Long hand</strong> = minutes</p>
+      <p>Minute hand at 12 = :00 &nbsp;|&nbsp; at 3 = :15 &nbsp;|&nbsp; at 6 = :30 &nbsp;|&nbsp; at 9 = :45</p>
+      <p><strong>a.m.</strong> = midnight to noon &nbsp;|&nbsp; <strong>p.m.</strong> = noon to midnight</p>
+      <p class="cta" style="color:#37474f;">Great start! Click Lesson 11.2!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 11.2 -->
+<div class="lesson-section" id="lesson2">
+  <div class="banner b2">
+    <span class="lesson-num">Lesson 11.2</span>
+    <h2>Elapsed Time</h2>
+    <p>Calculate how much time has passed between a start and end time!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s2">
+      <h3>What Are We Learning Today?</h3>
+      <p><strong>Elapsed time</strong> is the amount of time that passes between a start time and an end time. "How long did the movie last?" "How many hours until lunch?" These are elapsed time questions! Today we learn two powerful strategies: the number line jump strategy and the counting-up method.</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#1a237e;">Elapsed Time</span> -- The amount of time that passes from a start time to an end time.</div>
+      <div class="vocab-item"><span class="word" style="color:#1a237e;">Start Time</span> -- When an event begins.</div>
+      <div class="vocab-item"><span class="word" style="color:#1a237e;">End Time</span> -- When an event finishes.</div>
+      <div class="vocab-item"><span class="word" style="color:#1a237e;">Duration</span> -- How long something lasts -- another word for elapsed time.</div>
+    </div>
+
+    <div class="section s2">
+      <h3>Strategy 1: Count Up on a Number Line</h3>
+      <p><strong>Problem:</strong> School starts at 8:15 a.m. and ends at 3:00 p.m. How long is the school day?</p>
+      <div class="time-line">
+        <div style="font-size:0.82em; font-weight:bold; color:#1a237e; margin-bottom:8px;">Jump from 8:15 a.m. to 3:00 p.m.:</div>
+        <div class="flex-row" style="gap:6px; flex-wrap:wrap;">
+          <div style="background:#3949ab; color:white; border-radius:8px; padding:6px 12px; font-size:0.82em; font-weight:bold;">8:15 a.m.</div>
+          <div style="color:#1a237e; font-weight:bold; align-self:center;">+45 min</div>
+          <div style="background:#3949ab; color:white; border-radius:8px; padding:6px 12px; font-size:0.82em; font-weight:bold;">9:00 a.m.</div>
+          <div style="color:#1a237e; font-weight:bold; align-self:center;">+6 hrs</div>
+          <div style="background:#3949ab; color:white; border-radius:8px; padding:6px 12px; font-size:0.82em; font-weight:bold;">3:00 p.m.</div>
+        </div>
+        <p style="margin-top:10px; font-size:0.88em; color:#37474f;">Total: 45 minutes + 6 hours = <strong>6 hours 45 minutes</strong></p>
+      </div>
+    </div>
+
+    <div class="section s2">
+      <h3>Strategy 2: Count by Hours Then Minutes</h3>
+      <p><strong>Problem:</strong> A movie starts at 2:20 p.m. and ends at 4:45 p.m. How long is the movie?</p>
+      <div class="step"><div class="step-num" style="background:#1a237e;">1</div><div>Count the hours: 2:20 p.m. → 4:20 p.m. = <strong>2 hours</strong></div></div>
+      <div class="step"><div class="step-num" style="background:#1a237e;">2</div><div>Count remaining minutes: 4:20 p.m. → 4:45 p.m. = <strong>25 minutes</strong></div></div>
+      <div class="step"><div class="step-num" style="background:#1a237e;">3</div><div>Add together: 2 hours + 25 minutes = <strong>2 hours 25 minutes</strong></div></div>
+    </div>
+
+    <div class="section s2">
+      <h3>Finding the End Time</h3>
+      <p><strong>Problem:</strong> Practice starts at 3:30 p.m. and lasts 1 hour 45 minutes. What time does it end?</p>
+      <div class="step"><div class="step-num" style="background:#1a237e;">1</div><div>Start: 3:30 p.m. Add 1 hour → 4:30 p.m.</div></div>
+      <div class="step"><div class="step-num" style="background:#1a237e;">2</div><div>Add 45 minutes: 4:30 + 45 min → 5:15 p.m.</div></div>
+      <div class="step"><div class="step-num" style="background:#1a237e;">3</div><div>Practice ends at <strong>5:15 p.m.</strong></div></div>
+    </div>
+
+    <div class="section s2">
+      <h3>Quick Conversion Facts</h3>
+      <table>
+        <tr><th>Time Fact</th><th>Value</th></tr>
+        <tr><td>Minutes in 1 hour</td><td>60 minutes</td></tr>
+        <tr><td>Hours in 1 day</td><td>24 hours</td></tr>
+        <tr><td>Days in 1 week</td><td>7 days</td></tr>
+        <tr><td>Months in 1 year</td><td>12 months</td></tr>
+        <tr><td>Days in 1 year</td><td>365 days (366 in a leap year)</td></tr>
+      </table>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>A movie starts at 1:15 p.m. and ends at 3:40 p.m. How long is the movie?</li>
+        <li>Sam starts homework at 4:30 p.m. and finishes at 5:45 p.m. How long did he work?</li>
+        <li>A party starts at 2:00 p.m. and lasts 2 hours 30 minutes. What time does it end?</li>
+        <li>How many minutes are in 2 hours? In 2 hours 15 minutes?</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p><strong>Elapsed time</strong> = end time minus start time.</p>
+      <p>Jump strategy: count up to the next hour, then count hours, then remaining minutes.</p>
+      <p>60 minutes = 1 hour &nbsp;|&nbsp; 24 hours = 1 day</p>
+      <p class="cta" style="color:#1a237e;">Excellent! Click Lesson 11.3!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 11.3 -->
+<div class="lesson-section" id="lesson3">
+  <div class="banner b3">
+    <span class="lesson-num">Lesson 11.3</span>
+    <h2>Measuring Length: Inches, Feet, Centimeters, and Meters</h2>
+    <p>Measure everything around you using the right unit!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s3">
+      <h3>What Are We Learning Today?</h3>
+      <p>Length is one of the most common things we measure. Today we learn to use both <strong>customary units</strong> (inches and feet -- used in the USA) and <strong>metric units</strong> (centimeters and meters -- used in science and most of the world), and choose the right unit for each object.</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Inch (in.)</span> -- A small customary unit. About the width of your thumb!</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Foot (ft.)</span> -- 12 inches. About the length of a ruler.</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Yard (yd.)</span> -- 3 feet or 36 inches. About the height of a doorknob.</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Centimeter (cm)</span> -- A small metric unit. About the width of your pinky fingernail!</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Meter (m)</span> -- 100 centimeters. A little more than 3 feet. About the height of a door handle.</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Estimate</span> -- An approximate measurement before you measure exactly.</div>
+    </div>
+
+    <div class="section s3">
+      <h3>Customary Units (Used in the USA)</h3>
+      <table>
+        <tr><th>Unit</th><th>Abbreviation</th><th>Equals</th><th>Real-World Reference</th></tr>
+        <tr><td><strong>Inch</strong></td><td>in.</td><td>--</td><td>Width of a thumb / a large paperclip</td></tr>
+        <tr><td><strong>Foot</strong></td><td>ft.</td><td>12 inches</td><td>Length of a standard ruler</td></tr>
+        <tr><td><strong>Yard</strong></td><td>yd.</td><td>3 feet = 36 inches</td><td>Length from nose to fingertip of outstretched arm</td></tr>
+      </table>
+    </div>
+
+    <div class="section s3">
+      <h3>Metric Units (Used in Science and Most of the World)</h3>
+      <table>
+        <tr><th>Unit</th><th>Abbreviation</th><th>Equals</th><th>Real-World Reference</th></tr>
+        <tr><td><strong>Centimeter</strong></td><td>cm</td><td>--</td><td>Width of a pinky fingernail</td></tr>
+        <tr><td><strong>Meter</strong></td><td>m</td><td>100 centimeters</td><td>About the height of a door handle from the floor</td></tr>
+      </table>
+    </div>
+
+    <div class="section s3">
+      <h3>Choosing the Right Unit</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-green">
+          <h4>Use INCHES or CM for:</h4>
+          <ul>
+            <li>A pencil</li>
+            <li>A book</li>
+            <li>Your hand</li>
+            <li>A leaf</li>
+          </ul>
+        </div>
+        <div class="flex-col fb-blue">
+          <h4>Use FEET or METERS for:</h4>
+          <ul>
+            <li>A classroom</li>
+            <li>A person's height</li>
+            <li>A swimming pool</li>
+            <li>A hallway</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tip"><strong>Rule of thumb:</strong> Use smaller units for smaller objects and larger units for larger objects. It would be silly to measure your pencil in miles or your city block in inches!</div>
+    </div>
+
+    <div class="section s3">
+      <h3>How to Measure with a Ruler</h3>
+      <div class="step"><div class="step-num" style="background:#1b5e20;">1</div><div>Line up the ZERO mark of the ruler with one end of the object.</div></div>
+      <div class="step"><div class="step-num" style="background:#1b5e20;">2</div><div>Read the number at the other end of the object.</div></div>
+      <div class="step"><div class="step-num" style="background:#1b5e20;">3</div><div>Include the unit in your answer (e.g., 7 cm, not just 7).</div></div>
+      <div class="tip"><strong>Important:</strong> Always start measuring from the zero mark, not the edge of the ruler! Many rulers have a small gap before the zero mark.</div>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Which unit would you use to measure: a crayon? the school hallway? a swimming pool? your fingernail?</li>
+        <li>Convert: 2 feet = ___ inches &nbsp;|&nbsp; 36 inches = ___ yards &nbsp;|&nbsp; 3 meters = ___ centimeters</li>
+        <li>Find 5 objects around your home. Estimate their length, then measure and record the actual length.</li>
+        <li>Which is longer -- 2 feet or 20 inches? Show your work.</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p><strong>12 inches = 1 foot</strong> &nbsp;|&nbsp; <strong>3 feet = 1 yard</strong></p>
+      <p><strong>100 centimeters = 1 meter</strong></p>
+      <p>Always include the <strong>unit</strong> with your measurement!</p>
+      <p class="cta" style="color:#1b5e20;">Well done! Click Lesson 11.4!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 11.4 -->
+<div class="lesson-section" id="lesson4">
+  <div class="banner b4">
+    <span class="lesson-num">Lesson 11.4</span>
+    <h2>Liquid Volume and Mass</h2>
+    <p>Measure how much liquid fits in a container and how heavy objects are!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s4">
+      <h3>What Are We Learning Today?</h3>
+      <p>Not everything can be measured with a ruler! <strong>Liquid volume</strong> measures how much liquid fits in a container. <strong>Mass</strong> measures how heavy an object is. Today we learn the units for both, and understand the difference between mass and weight.</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#880e4f;">Liquid Volume</span> -- The amount of liquid a container holds. Measured in liters (L) or milliliters (mL).</div>
+      <div class="vocab-item"><span class="word" style="color:#880e4f;">Liter (L)</span> -- The standard metric unit of liquid volume. A large water bottle holds about 1 liter.</div>
+      <div class="vocab-item"><span class="word" style="color:#880e4f;">Milliliter (mL)</span> -- A very small metric unit. 1,000 milliliters = 1 liter. A teaspoon holds about 5 mL.</div>
+      <div class="vocab-item"><span class="word" style="color:#880e4f;">Mass</span> -- The amount of matter in an object. Measured in grams (g) or kilograms (kg).</div>
+      <div class="vocab-item"><span class="word" style="color:#880e4f;">Gram (g)</span> -- A small metric unit of mass. A paper clip has a mass of about 1 gram.</div>
+      <div class="vocab-item"><span class="word" style="color:#880e4f;">Kilogram (kg)</span> -- 1,000 grams. A large textbook has a mass of about 1 kilogram.</div>
+    </div>
+
+    <div class="section s4">
+      <h3>Liquid Volume -- Liters and Milliliters</h3>
+      <table>
+        <tr><th>Unit</th><th>Abbreviation</th><th>Equals</th><th>Real-World Reference</th></tr>
+        <tr><td><strong>Milliliter</strong></td><td>mL</td><td>--</td><td>A few drops of water; 1 teaspoon = ~5 mL</td></tr>
+        <tr><td><strong>Liter</strong></td><td>L</td><td>1,000 mL</td><td>A large plastic water bottle; a big juice carton</td></tr>
+      </table>
+      <div class="flex-row">
+        <div class="flex-col fb-pink">
+          <h4>Use mL for small amounts:</h4>
+          <p>Medicine doses (5 mL)</p>
+          <p>Eye drops (1-2 mL)</p>
+          <p>A spoonful of syrup</p>
+        </div>
+        <div class="flex-col fb-grey">
+          <h4>Use L for large amounts:</h4>
+          <p>Water in a fish tank (20 L)</p>
+          <p>A bottle of juice (1 L)</p>
+          <p>A bathtub (150 L)</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section s4">
+      <h3>Mass -- Grams and Kilograms</h3>
+      <table>
+        <tr><th>Unit</th><th>Abbreviation</th><th>Equals</th><th>Real-World Reference</th></tr>
+        <tr><td><strong>Gram</strong></td><td>g</td><td>--</td><td>A paper clip (~1 g), a strawberry (~10 g)</td></tr>
+        <tr><td><strong>Kilogram</strong></td><td>kg</td><td>1,000 g</td><td>A large textbook (~1 kg), a pineapple (~1 kg)</td></tr>
+      </table>
+      <div class="flex-row">
+        <div class="flex-col fb-pink">
+          <h4>Use grams for light objects:</h4>
+          <p>A pencil (~7 g)</p>
+          <p>A grape (~5 g)</p>
+          <p>A coin (~5-10 g)</p>
+        </div>
+        <div class="flex-col fb-grey">
+          <h4>Use kilograms for heavy objects:</h4>
+          <p>A backpack full of books (~5 kg)</p>
+          <p>A bag of flour (~1 kg)</p>
+          <p>A large dog (~30 kg)</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section s4">
+      <h3>Important Conversions</h3>
+      <table>
+        <tr><th>Conversion</th><th>Value</th></tr>
+        <tr><td>1 liter (L)</td><td>= 1,000 milliliters (mL)</td></tr>
+        <tr><td>1 kilogram (kg)</td><td>= 1,000 grams (g)</td></tr>
+        <tr><td>2 liters</td><td>= 2,000 milliliters</td></tr>
+        <tr><td>3 kilograms</td><td>= 3,000 grams</td></tr>
+      </table>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Which unit would you use: a swimming pool (L or mL)? A dose of cough syrup (L or mL)?</li>
+        <li>Which unit would you use: a feather (g or kg)? An elephant (g or kg)?</li>
+        <li>Convert: 4 liters = ___ mL &nbsp;|&nbsp; 5,000 g = ___ kg &nbsp;|&nbsp; 2.5 kg = ___ g</li>
+        <li>A recipe needs 500 mL of milk. How much of a 1-liter carton will you use?</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p><strong>1 liter = 1,000 milliliters</strong> &nbsp;|&nbsp; <strong>1 kilogram = 1,000 grams</strong></p>
+      <p>Use <strong>mL and g</strong> for small amounts. Use <strong>L and kg</strong> for large amounts.</p>
+      <p class="cta" style="color:#880e4f;">Keep going! Click Lesson 11.5!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 11.5 -->
+<div class="lesson-section" id="lesson5">
+  <div class="banner b5">
+    <span class="lesson-num">Lesson 11.5</span>
+    <h2>Perimeter and Area</h2>
+    <p>Measure around a shape AND the space it covers!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s5">
+      <h3>What Are We Learning Today?</h3>
+      <p>Perimeter and area are two different ways to measure a shape. <strong>Perimeter</strong> measures the distance AROUND the outside. <strong>Area</strong> measures the space INSIDE. Both are essential for real-world tasks like fencing a yard or laying carpet on a floor!</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Perimeter</span> -- The total distance around the outside edge of a shape. Add all the side lengths!</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Area</span> -- The amount of space INSIDE a shape. Measured in square units.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Square Unit</span> -- A square that is 1 unit x 1 unit -- used to measure area.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Square Centimeter (cm2)</span> -- Area of a 1 cm x 1 cm square.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Square Meter (m2)</span> -- Area of a 1 m x 1 m square.</div>
+    </div>
+
+    <div class="section s5">
+      <h3>Perimeter -- Add All the Sides!</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-orange">
+          <h4>Rectangle Perimeter</h4>
+          <p>Add all 4 sides:</p>
+          <p style="margin-top:6px; font-size:0.9em;">Length = 8 cm, Width = 5 cm</p>
+          <p>P = 8 + 5 + 8 + 5 = <strong>26 cm</strong></p>
+          <p style="font-size:0.85em; margin-top:4px; color:#37474f;">Or: P = 2 x (length + width)</p>
+          <p style="font-size:0.85em; color:#37474f;">P = 2 x (8 + 5) = 2 x 13 = 26 cm</p>
+        </div>
+        <div class="flex-col fb-green">
+          <h4>Irregular Shape Perimeter</h4>
+          <p>Just add ALL the sides!</p>
+          <p style="margin-top:6px; font-size:0.9em;">Sides: 4, 3, 5, 3, 2 cm</p>
+          <p>P = 4 + 3 + 5 + 3 + 2</p>
+          <p>P = <strong>17 cm</strong></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section s5">
+      <h3>Area -- Count or Multiply the Square Units!</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-orange">
+          <h4>Count Square Units</h4>
+          <p>Count each unit square inside the shape.</p>
+          <div class="grid-shape" style="grid-template-columns: repeat(4, 28px); margin-top:8px;">
+            <div class="grid-cell cell-filled"></div><div class="grid-cell cell-filled"></div><div class="grid-cell cell-filled"></div><div class="grid-cell cell-filled"></div>
+            <div class="grid-cell cell-filled"></div><div class="grid-cell cell-filled"></div><div class="grid-cell cell-filled"></div><div class="grid-cell cell-filled"></div>
+            <div class="grid-cell cell-filled"></div><div class="grid-cell cell-filled"></div><div class="grid-cell cell-filled"></div><div class="grid-cell cell-filled"></div>
+          </div>
+          <p style="font-size:0.88em; margin-top:6px;">4 x 3 grid = <strong>12 square units</strong></p>
+        </div>
+        <div class="flex-col fb-green">
+          <h4>Multiply (Faster!)</h4>
+          <p>For rectangles:</p>
+          <p style="margin-top:6px; font-size:1em; font-weight:bold; color:#e65100;">Area = length x width</p>
+          <p style="font-size:0.9em; margin-top:6px;">Length = 6 cm, Width = 4 cm</p>
+          <p>Area = 6 x 4 = <strong>24 cm²</strong></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section s5">
+      <h3>Perimeter vs Area -- Side by Side</h3>
+      <table>
+        <tr><th>Feature</th><th>Perimeter</th><th>Area</th></tr>
+        <tr><td>What it measures</td><td>Distance AROUND the outside</td><td>Space INSIDE the shape</td></tr>
+        <tr><td>How to find it</td><td>Add all side lengths</td><td>Count squares OR length x width</td></tr>
+        <tr><td>Units used</td><td>cm, m, in., ft. (regular units)</td><td>cm², m², in.², ft.² (SQUARE units)</td></tr>
+        <tr><td>Real-world use</td><td>Fencing a yard, framing a picture</td><td>Carpet on a floor, tiles on a wall</td></tr>
+      </table>
+      <div class="tip"><strong>Perimeter vs Area confusion buster:</strong> Perimeter = going for a run around the EDGE of a park. Area = laying out a picnic blanket to cover the INSIDE of that park.</div>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Find the perimeter and area of a rectangle with length 9 cm and width 4 cm.</li>
+        <li>A square has a side length of 6 m. What is its perimeter? What is its area?</li>
+        <li>A room is 8 meters long and 5 meters wide. How many square meters of carpet are needed to cover the floor?</li>
+        <li>Two rectangles have the same area of 24 cm². Can they have different perimeters? Give an example.</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p><strong>Perimeter</strong> = add all sides (unit: cm, m, ft.)</p>
+      <p><strong>Area</strong> = length x width (unit: cm², m², ft.²)</p>
+      <p>Perimeter is the edge. Area is the inside space.</p>
+      <p class="cta" style="color:#e65100;">Almost there! Click Lesson 11.6!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 11.6 -->
+<div class="lesson-section" id="lesson6">
+  <div class="banner b6">
+    <span class="lesson-num">Lesson 11.6</span>
+    <h2>Reading Graphs and Data</h2>
+    <p>Collect, organise, and make sense of data using different types of graphs!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s6">
+      <h3>What Are We Learning Today?</h3>
+      <p>Data is information collected through observation or surveys. Graphs help us <strong>organise and visualise data</strong> so it is easier to understand and compare. Today we learn to read and interpret three types of graphs: pictographs, bar graphs, and line plots.</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#0d47a1;">Data</span> -- Information collected through observation, counting, or measurement.</div>
+      <div class="vocab-item"><span class="word" style="color:#0d47a1;">Tally Chart</span> -- A way to record data using tally marks (||||).</div>
+      <div class="vocab-item"><span class="word" style="color:#0d47a1;">Pictograph</span> -- A graph that uses pictures or symbols to represent data. A key tells you how many each symbol represents.</div>
+      <div class="vocab-item"><span class="word" style="color:#0d47a1;">Bar Graph</span> -- A graph that uses bars of different lengths to show and compare data.</div>
+      <div class="vocab-item"><span class="word" style="color:#0d47a1;">Line Plot</span> -- A graph that shows data points on a number line with X marks above each value.</div>
+      <div class="vocab-item"><span class="word" style="color:#0d47a1;">Scale</span> -- The numbers along the side or bottom of a graph showing what values the bars or lines represent.</div>
+    </div>
+
+    <div class="section s6">
+      <h3>Type 1: Pictograph</h3>
+      <p style="margin-bottom:8px;">Favourite school subjects in 3rd Grade. (Each star = 2 students)</p>
+      <div style="background:#e3f2fd; border-radius:10px; padding:14px 18px; margin-bottom:14px;">
+        <div class="picto-row"><div class="picto-label">Math</div><div class="picto-icons"><span class="icon">⭐</span><span class="icon">⭐</span><span class="icon">⭐</span><span class="icon">⭐</span><span class="icon">⭐</span></div></div>
+        <div class="picto-row"><div class="picto-label">Reading</div><div class="picto-icons"><span class="icon">⭐</span><span class="icon">⭐</span><span class="icon">⭐</span><span class="icon">⭐</span></div></div>
+        <div class="picto-row"><div class="picto-label">Science</div><div class="picto-icons"><span class="icon">⭐</span><span class="icon">⭐</span><span class="icon">⭐</span><span class="icon">⭐</span><span class="icon">⭐</span><span class="icon">⭐</span></div></div>
+        <div class="picto-row"><div class="picto-label">Art</div><div class="picto-icons"><span class="icon">⭐</span><span class="icon">⭐</span><span class="icon">⭐</span></div></div>
+        <p style="font-size:0.82em; color:#37474f; margin-top:8px;"><strong>Key:</strong> ⭐ = 2 students</p>
+      </div>
+      <p style="font-size:0.9em;"><strong>Questions to answer:</strong> Which subject is most popular? (Science -- 12 students). How many chose Math? (5 stars x 2 = 10 students). How many more students chose Science over Art? (12 - 6 = 6 more students).</p>
+    </div>
+
+    <div class="section s6">
+      <h3>Type 2: Bar Graph</h3>
+      <div class="bar-chart">
+        <h4>Books Read by 3rd Graders in One Month</h4>
+        <div class="chart-row"><div class="chart-label">Maya</div><div class="chart-bar" style="width:180px; background:#0d47a1;">9</div></div>
+        <div class="chart-row"><div class="chart-label">Jaylen</div><div class="chart-bar" style="width:120px; background:#0d47a1;">6</div></div>
+        <div class="chart-row"><div class="chart-label">Amal</div><div class="chart-bar" style="width:240px; background:#0d47a1;">12</div></div>
+        <div class="chart-row"><div class="chart-label">Sam</div><div class="chart-bar" style="width:80px; background:#0d47a1;">4</div></div>
+        <div class="chart-row"><div class="chart-label">Priya</div><div class="chart-bar" style="width:160px; background:#0d47a1;">8</div></div>
+        <div class="chart-axis">
+          <div class="chart-tick">0</div><div class="chart-tick">2</div><div class="chart-tick">4</div><div class="chart-tick">6</div><div class="chart-tick">8</div><div class="chart-tick">10</div><div class="chart-tick">12</div>
+        </div>
+        <p style="font-size:0.82em; color:#37474f; margin-top:4px;">Number of books read</p>
+      </div>
+      <p style="font-size:0.9em; margin-top:8px;"><strong>Read the graph:</strong> Who read the most? (Amal -- 12). How many books total? (9+6+12+4+8 = 39). How many more did Maya read than Sam? (9-4 = 5 more).</p>
+    </div>
+
+    <div class="section s6">
+      <h3>Type 3: Line Plot</h3>
+      <p style="margin-bottom:8px;">Heights of plants after 2 weeks (in centimeters):</p>
+      <div style="background:#e3f2fd; border-radius:10px; padding:14px 18px; margin-bottom:14px; overflow-x:auto;">
+        <div style="min-width:300px;">
+          <div style="display:flex; gap:0; margin-bottom:4px;">
+            <div style="width:50px;"></div>
+            <div style="flex:1; display:flex;">
+              <div style="flex:1; text-align:center; font-size:0.82em; color:#0d47a1;"></div>
+              <div style="flex:1; text-align:center; font-size:0.82em; color:#0d47a1; font-weight:bold;">X</div>
+              <div style="flex:1; text-align:center; font-size:0.82em; color:#0d47a1;"></div>
+              <div style="flex:1; text-align:center; font-size:0.82em; color:#0d47a1; font-weight:bold;">X<br>X</div>
+              <div style="flex:1; text-align:center; font-size:0.82em; color:#0d47a1; font-weight:bold;">X<br>X<br>X</div>
+              <div style="flex:1; text-align:center; font-size:0.82em; color:#0d47a1; font-weight:bold;">X</div>
+              <div style="flex:1; text-align:center; font-size:0.82em; color:#0d47a1;"></div>
+            </div>
+          </div>
+          <div style="display:flex; align-items:center; border-top:2px solid #0d47a1;">
+            <div style="width:50px; font-size:0.78em; color:#37474f;">cm</div>
+            <div style="flex:1; display:flex;">
+              <div style="flex:1; text-align:center; font-size:0.82em; font-weight:bold; color:#0d47a1;">4</div>
+              <div style="flex:1; text-align:center; font-size:0.82em; font-weight:bold; color:#0d47a1;">5</div>
+              <div style="flex:1; text-align:center; font-size:0.82em; font-weight:bold; color:#0d47a1;">6</div>
+              <div style="flex:1; text-align:center; font-size:0.82em; font-weight:bold; color:#0d47a1;">7</div>
+              <div style="flex:1; text-align:center; font-size:0.82em; font-weight:bold; color:#0d47a1;">8</div>
+              <div style="flex:1; text-align:center; font-size:0.82em; font-weight:bold; color:#0d47a1;">9</div>
+              <div style="flex:1; text-align:center; font-size:0.82em; font-weight:bold; color:#0d47a1;">10</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p style="font-size:0.9em;"><strong>Read the line plot:</strong> Each X = 1 plant. Most plants are 8 cm tall (3 plants). The tallest plants are 9 cm. No plants are exactly 4, 6, or 10 cm.</p>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Using the pictograph above: How many students chose Reading? How many more chose Science over Reading?</li>
+        <li>Using the bar graph above: How many books did Sam and Jaylen read together?</li>
+        <li>Conduct your own survey: Ask 10 classmates or family members their favourite colour. Record the data in a tally chart, then draw a bar graph.</li>
+        <li>What is the difference between a pictograph and a bar graph? When might you choose one over the other?</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>You Finished Unit 11!</h3>
+      <p><strong>Pictograph</strong> -- pictures represent data (check the key!).</p>
+      <p><strong>Bar graph</strong> -- bars show and compare amounts.</p>
+      <p><strong>Line plot</strong> -- X marks on a number line show measurement data.</p>
+      <p>Always read the <strong>title, labels, and key/scale</strong> before interpreting any graph!</p>
+      <p class="cta" style="color:#0d47a1;">Phenomenal work! You completed all 6 lessons in Unit 11! Now take the Unit 11 Quiz!</p>
+    </div>
+  </div>
+</div>
+
+</div>
+<script>
+  const sections = document.querySelectorAll('.lesson-section');
+  const navLinks = document.querySelectorAll('.nav-bar a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 80) current = s.getAttribute('id'); });
+    navLinks.forEach(l => { l.classList.remove('active'); if (l.getAttribute('href') === '#' + current) l.classList.add('active'); });
+  });
+</script>
+</body>
+</html>
