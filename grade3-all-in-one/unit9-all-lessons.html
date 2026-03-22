@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit 9 – Addition and Subtraction | Owl Smart 3rd Grade</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #f4f7fb; color: #2d2d2d; line-height: 1.8; }
+    .top-header { background: linear-gradient(135deg, #1b5e20, #388e3c); color: white; text-align: center; padding: 24px 20px 16px; }
+    .top-header h1 { font-size: 1.5em; margin-bottom: 4px; }
+    .top-header p { font-size: 0.95em; opacity: 0.88; }
+    .nav-bar { background: #1b5e20; padding: 0 10px; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.3); overflow-x: auto; white-space: nowrap; }
+    .nav-bar a { display: inline-block; color: rgba(255,255,255,0.8); text-decoration: none; padding: 12px 14px; font-size: 0.82em; font-weight: bold; border-bottom: 3px solid transparent; transition: all 0.2s; }
+    .nav-bar a:hover, .nav-bar a.active { color: white; border-bottom-color: #ffd600; }
+    .main { max-width: 860px; margin: 0 auto; padding: 20px; }
+    .lesson-section { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.08); margin-bottom: 40px; scroll-margin-top: 60px; }
+    .banner { color: white; text-align: center; padding: 28px 24px; }
+    .banner h2 { font-size: 1.45em; margin-bottom: 6px; }
+    .banner p { font-size: 0.97em; opacity: 0.92; margin-bottom: 10px; }
+    .lesson-num { display: inline-block; background: rgba(255,255,255,0.25); border-radius: 20px; padding: 3px 14px; font-size: 0.82em; font-weight: bold; }
+    .b1 { background: linear-gradient(135deg, #1b5e20, #388e3c); }
+    .b2 { background: linear-gradient(135deg, #0d47a1, #1976d2); }
+    .b3 { background: linear-gradient(135deg, #880e4f, #c2185b); }
+    .b4 { background: linear-gradient(135deg, #e65100, #fb8c00); }
+    .b5 { background: linear-gradient(135deg, #4a148c, #7b1fa2); }
+    .b6 { background: linear-gradient(135deg, #004d40, #00897b); }
+    .lesson-content { padding: 26px; }
+    .section { border-left: 5px solid; border-radius: 0 10px 10px 0; padding: 18px 20px; margin-bottom: 20px; }
+    .s1 { background: #e8f5e9; border-color: #1b5e20; } .s1 h3 { color: #1b5e20; }
+    .s2 { background: #e3f2fd; border-color: #0d47a1; } .s2 h3 { color: #0d47a1; }
+    .s3 { background: #fce4ec; border-color: #880e4f; } .s3 h3 { color: #880e4f; }
+    .s4 { background: #fff3e0; border-color: #e65100; } .s4 h3 { color: #e65100; }
+    .s5 { background: #f3e5f5; border-color: #4a148c; } .s5 h3 { color: #4a148c; }
+    .s6 { background: #e0f2f1; border-color: #004d40; } .s6 h3 { color: #004d40; }
+    .section h3 { margin-bottom: 8px; font-size: 1.05em; }
+    .vocab-box { background: #fff8e1; border: 2px solid #ffc107; border-radius: 10px; padding: 18px 20px; margin-bottom: 20px; }
+    .vocab-box h3 { color: #e65100; margin-bottom: 12px; font-size: 1.05em; }
+    .vocab-item { margin: 8px 0; font-size: 0.95em; }
+    .word { font-weight: bold; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.93em; }
+    th { background: #37474f; color: white; padding: 9px 12px; text-align: left; }
+    td { padding: 9px 12px; border-bottom: 1px solid #e0e0e0; }
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) { background: #f5f5f5; }
+    .tip { background: #e8f5e9; border-left: 4px solid #43a047; border-radius: 0 8px 8px 0; padding: 12px 16px; margin: 12px 0; color: #1b5e20; font-size: 0.93em; }
+    .tip strong { color: #2e7d32; }
+    .try-it { background: #ede7f6; border: 2px dashed #7e57c2; border-radius: 10px; padding: 18px 20px; margin-bottom: 20px; }
+    .try-it h3 { color: #4527a0; margin-bottom: 10px; font-size: 1.05em; }
+    .try-it ol { padding-left: 20px; }
+    .try-it li { margin: 8px 0; font-size: 0.95em; }
+    .remember { background: #fff3e0; border: 2px solid #ff8f00; border-radius: 10px; padding: 18px 20px; text-align: center; margin-bottom: 4px; }
+    .remember h3 { color: #e65100; margin-bottom: 10px; font-size: 1.05em; }
+    .remember p { margin: 5px 0; font-size: 0.95em; }
+    .remember .cta { font-weight: bold; font-size: 1.05em; margin-top: 12px; }
+    .flex-row { display: flex; gap: 12px; flex-wrap: wrap; margin: 10px 0; }
+    .flex-col { flex: 1; min-width: 160px; border-radius: 10px; padding: 14px 16px; }
+    .fb-green { background: #e8f5e9; border: 2px solid #388e3c; } .fb-green h4 { color: #1b5e20; margin-bottom: 6px; }
+    .fb-blue { background: #e3f2fd; border: 2px solid #1976d2; } .fb-blue h4 { color: #0d47a1; margin-bottom: 6px; }
+    .fb-pink { background: #fce4ec; border: 2px solid #e91e63; } .fb-pink h4 { color: #880e4f; margin-bottom: 6px; }
+    .fb-orange { background: #fff3e0; border: 2px solid #f57c00; } .fb-orange h4 { color: #e65100; margin-bottom: 6px; }
+    .fb-purple { background: #f3e5f5; border: 2px solid #7b1fa2; } .fb-purple h4 { color: #4a148c; margin-bottom: 6px; }
+    .fb-teal { background: #e0f2f1; border: 2px solid #00897b; } .fb-teal h4 { color: #004d40; margin-bottom: 6px; }
+    .math-work { background: #f9f9f9; border: 2px solid #90a4ae; border-radius: 10px; padding: 18px 22px; margin-bottom: 16px; font-family: 'Courier New', monospace; font-size: 1em; }
+    .math-work h4 { font-family: 'Segoe UI', Arial, sans-serif; color: #37474f; margin-bottom: 10px; font-size: 0.98em; }
+    .regroup { color: #e53935; font-weight: bold; font-size: 0.88em; }
+    .step { display: flex; gap: 12px; align-items: flex-start; margin: 10px 0; }
+    .step-num { background: #1b5e20; color: white; border-radius: 50%; width: 28px; height: 28px; min-width: 28px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 0.9em; }
+    .word-problem { background: #f3e5f5; border: 2px solid #7b1fa2; border-radius: 10px; padding: 16px 18px; margin-bottom: 14px; }
+    .word-problem h4 { color: #4a148c; margin-bottom: 8px; font-size: 1em; }
+    .number-bond { display: flex; align-items: center; justify-content: center; gap: 16px; margin: 14px 0; }
+    .nb-circle { width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.1em; color: white; }
+    .nb-whole { background: #1b5e20; }
+    .nb-part { background: #0d47a1; }
+    .nb-line { width: 30px; height: 3px; background: #37474f; }
+    .pattern-row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin: 10px 0; }
+    .p-num { background: #1b5e20; color: white; border-radius: 8px; padding: 6px 14px; font-weight: bold; font-size: 0.95em; }
+    .p-arrow { color: #1b5e20; font-size: 1.2em; font-weight: bold; }
+    .highlight-add { background: #c8e6c9; padding: 2px 6px; border-radius: 4px; font-weight: bold; }
+    .highlight-sub { background: #ffcdd2; padding: 2px 6px; border-radius: 4px; font-weight: bold; }
+    ul { padding-left: 20px; } li { margin: 5px 0; font-size: 0.95em; }
+    p { margin-bottom: 8px; font-size: 0.95em; }
+  </style>
+</head>
+<body>
+
+<div class="top-header">
+  <h1>Owl Smart: A 3rd Grade Learning Journey</h1>
+  <p>Unit 9 -- Addition and Subtraction &nbsp;|&nbsp; 6 Lessons</p>
+</div>
+
+<div class="nav-bar">
+  <a href="#lesson1">9.1 Addition Strategies</a>
+  <a href="#lesson2">9.2 Adding with Regrouping</a>
+  <a href="#lesson3">9.3 Subtraction Strategies</a>
+  <a href="#lesson4">9.4 Subtracting with Regrouping</a>
+  <a href="#lesson5">9.5 Estimating</a>
+  <a href="#lesson6">9.6 Word Problems</a>
+</div>
+
+<div class="main">
+
+<!-- LESSON 9.1 -->
+<div class="lesson-section" id="lesson1">
+  <div class="banner b1">
+    <span class="lesson-num">Lesson 9.1</span>
+    <h2>Addition Strategies: Making Tens and Hundreds</h2>
+    <p>Smart strategies make adding fast and accurate!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s1">
+      <h3>What Are We Learning Today?</h3>
+      <p>You already know how to add -- but today we learn <strong>strategies</strong> that make addition faster and easier in your head! Instead of just counting up, these strategies help you use what you already know about numbers to add efficiently.</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Sum</span> -- The answer to an addition problem. In 34 + 52 = 86, the sum is 86.</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Addend</span> -- Each number being added. In 34 + 52, both 34 and 52 are addends.</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Make a Ten</span> -- A strategy where you break one addend apart to make the other addend reach 10 (or 20, 30...).</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Decompose</span> -- To break a number into smaller parts to make calculating easier.</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Number Bond</span> -- A diagram showing how a whole number is made up of two parts.</div>
+    </div>
+
+    <div class="section s1">
+      <h3>Strategy 1: Make a Ten (or Hundred)</h3>
+      <p>When one addend is close to a round number (10, 20, 100...), adjust both numbers to make a "nice" number first!</p>
+      <div class="math-work">
+        <h4>Example: 47 + 35</h4>
+        <p>47 is 3 away from 50. Take 3 from 35:</p>
+        <p>47 + 3 = 50, and 35 - 3 = 32</p>
+        <p>Now: <strong>50 + 32 = 82</strong></p>
+      </div>
+      <div class="math-work">
+        <h4>Example: 298 + 46</h4>
+        <p>298 is 2 away from 300. Take 2 from 46:</p>
+        <p>298 + 2 = 300, and 46 - 2 = 44</p>
+        <p>Now: <strong>300 + 44 = 344</strong></p>
+      </div>
+    </div>
+
+    <div class="section s1">
+      <h3>Strategy 2: Break Apart (Decompose) an Addend</h3>
+      <p>Split one number by place value, then add each part separately.</p>
+      <div class="math-work">
+        <h4>Example: 154 + 232</h4>
+        <p>Break 232 into 200 + 30 + 2</p>
+        <p>154 + 200 = 354</p>
+        <p>354 + 30 = 384</p>
+        <p>384 + 2 = <strong>386</strong></p>
+      </div>
+    </div>
+
+    <div class="section s1">
+      <h3>Strategy 3: Use Known Facts and Doubles</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-green">
+          <h4>Doubles</h4>
+          <p>6 + 6 = 12, so 6 + 7 = 13 (one more)</p>
+          <p>8 + 8 = 16, so 8 + 9 = 17</p>
+          <p>These are called <strong>doubles plus one!</strong></p>
+        </div>
+        <div class="flex-col fb-blue">
+          <h4>Commutative Property</h4>
+          <p>Add in the easier order! 3 + 97 is easier as 97 + 3 = 100</p>
+          <p>Always start with the bigger number when counting up.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section s1">
+      <h3>Strategy 4: Number Bonds -- Part + Part = Whole</h3>
+      <div class="number-bond">
+        <div class="nb-circle nb-whole">86</div>
+        <div>
+          <div style="display:flex; gap:30px;">
+            <div class="nb-circle nb-part">54</div>
+            <div class="nb-circle nb-part">32</div>
+          </div>
+        </div>
+      </div>
+      <p style="text-align:center; font-size:0.9em; color:#37474f;">54 + 32 = 86 &nbsp;|&nbsp; 32 + 54 = 86 &nbsp;|&nbsp; 86 - 54 = 32 &nbsp;|&nbsp; 86 - 32 = 54</p>
+      <div class="tip"><strong>Key Idea:</strong> One number bond gives you FOUR related facts -- two addition and two subtraction. Addition and subtraction are inverse operations, just like multiplication and division!</div>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Use the "make a hundred" strategy to solve: 197 + 45</li>
+        <li>Use the break-apart strategy to solve: 263 + 124</li>
+        <li>Use doubles-plus-one to solve: 7 + 8</li>
+        <li>Draw a number bond for 75 and write all four related facts.</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p><strong>Make a ten/hundred</strong> -- adjust to a round number first.</p>
+      <p><strong>Break apart</strong> -- decompose by place value then add piece by piece.</p>
+      <p><strong>Doubles plus one</strong> -- use what you already know!</p>
+      <p class="cta" style="color:#1b5e20;">Great start! Click Lesson 9.2!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 9.2 -->
+<div class="lesson-section" id="lesson2">
+  <div class="banner b2">
+    <span class="lesson-num">Lesson 9.2</span>
+    <h2>Adding 2- and 3-Digit Numbers with Regrouping</h2>
+    <p>Master the standard algorithm for addition -- including carrying!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s2">
+      <h3>What Are We Learning Today?</h3>
+      <p>When the digits in a column add up to 10 or more, we need to <strong>regroup</strong> (also called "carrying"). This is the standard algorithm -- the step-by-step method taught in school. Today we master adding with regrouping in both the tens AND hundreds columns!</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#0d47a1;">Algorithm</span> -- A step-by-step procedure for solving a math problem.</div>
+      <div class="vocab-item"><span class="word" style="color:#0d47a1;">Regrouping</span> -- When 10 ones become 1 ten, or 10 tens become 1 hundred -- also called "carrying."</div>
+      <div class="vocab-item"><span class="word" style="color:#0d47a1;">Carrying</span> -- Moving the extra ten (or hundred) to the next column to the left.</div>
+    </div>
+
+    <div class="section s2">
+      <h3>The Standard Algorithm -- Step by Step</h3>
+      <div class="step"><div class="step-num">1</div><div>Line up the numbers by place value (ones under ones, tens under tens, hundreds under hundreds).</div></div>
+      <div class="step"><div class="step-num">2</div><div>Add the ONES column first. If the sum is 10 or more, write the ones digit and carry the tens digit to the top of the tens column.</div></div>
+      <div class="step"><div class="step-num">3</div><div>Add the TENS column (including any carried number). Regroup again if needed.</div></div>
+      <div class="step"><div class="step-num">4</div><div>Add the HUNDREDS column. Write the full sum.</div></div>
+    </div>
+
+    <div class="flex-row">
+      <div class="flex-col fb-blue">
+        <h4>Example 1: No Regrouping</h4>
+        <div class="math-work" style="margin:8px 0;">
+          <p>&nbsp;&nbsp;3 4 5</p>
+          <p>+ 2 3 2</p>
+          <p>-------</p>
+          <p>&nbsp;&nbsp;5 7 7</p>
+        </div>
+        <p style="font-size:0.88em;">5+2=7 (ones), 4+3=7 (tens), 3+2=5 (hundreds). No regrouping needed!</p>
+      </div>
+      <div class="flex-col fb-green">
+        <h4>Example 2: Regroup Once</h4>
+        <div class="math-work" style="margin:8px 0;">
+          <p>&nbsp;<span class="regroup">1</span></p>
+          <p>&nbsp;&nbsp;2 4 8</p>
+          <p>+ 1 3 5</p>
+          <p>-------</p>
+          <p>&nbsp;&nbsp;3 8 3</p>
+        </div>
+        <p style="font-size:0.88em;">8+5=13: write 3, carry 1. Then 1+4+3=8 (tens). 2+1=3 (hundreds).</p>
+      </div>
+      <div class="flex-col fb-pink">
+        <h4>Example 3: Regroup Twice</h4>
+        <div class="math-work" style="margin:8px 0;">
+          <p>&nbsp;<span class="regroup">1 1</span></p>
+          <p>&nbsp;&nbsp;3 6 7</p>
+          <p>+ 2 5 8</p>
+          <p>-------</p>
+          <p>&nbsp;&nbsp;6 2 5</p>
+        </div>
+        <p style="font-size:0.88em;">7+8=15: write 5, carry 1. 1+6+5=12: write 2, carry 1. 1+3+2=6.</p>
+      </div>
+    </div>
+
+    <div class="tip"><strong>Always start from the RIGHT (ones column) and work LEFT. Never add from left to right -- you might miss a carry!</strong></div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Solve with the standard algorithm: &nbsp; 456 + 327 &nbsp; | &nbsp; 183 + 249</li>
+        <li>Solve (regroup twice): &nbsp; 375 + 456 &nbsp; | &nbsp; 487 + 364</li>
+        <li>A school collected 347 cans in Week 1 and 285 cans in Week 2. How many cans in total?</li>
+        <li>Check your answer to #3 using the break-apart strategy from Lesson 9.1.</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p>Always add <strong>right to left</strong>: ones first, then tens, then hundreds.</p>
+      <p>If a column sum is 10 or more: write the <strong>ones digit</strong>, carry the <strong>tens digit.</strong></p>
+      <p>Always check your answer using a different strategy!</p>
+      <p class="cta" style="color:#0d47a1;">Excellent! Click Lesson 9.3!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 9.3 -->
+<div class="lesson-section" id="lesson3">
+  <div class="banner b3">
+    <span class="lesson-num">Lesson 9.3</span>
+    <h2>Subtraction Strategies: Counting Up and Back</h2>
+    <p>Smart strategies make subtraction easier than you think!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s3">
+      <h3>What Are We Learning Today?</h3>
+      <p>Subtraction can feel trickier than addition -- but with the right strategies, it becomes much easier! Today we learn mental math strategies for subtraction: counting up (thinking addition), counting back, and using place value to break apart numbers.</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#880e4f;">Difference</span> -- The answer to a subtraction problem. In 85 - 32 = 53, the difference is 53.</div>
+      <div class="vocab-item"><span class="word" style="color:#880e4f;">Minuend</span> -- The number being subtracted FROM. In 85 - 32, the minuend is 85.</div>
+      <div class="vocab-item"><span class="word" style="color:#880e4f;">Subtrahend</span> -- The number being subtracted. In 85 - 32, the subtrahend is 32.</div>
+      <div class="vocab-item"><span class="word" style="color:#880e4f;">Count Up</span> -- A subtraction strategy where you count forward from the smaller number to the larger number.</div>
+    </div>
+
+    <div class="section s3">
+      <h3>Strategy 1: Count Up (Think Addition!)</h3>
+      <p>Instead of taking away, ADD UP from the smaller number to the larger number. The amount you add is the difference!</p>
+      <div class="math-work">
+        <h4>Example: 83 - 57 = ?</h4>
+        <p>Start at 57. Count up to 83:</p>
+        <p>57 + 3 = 60 (get to a round number)</p>
+        <p>60 + 20 = 80</p>
+        <p>80 + 3 = 83</p>
+        <p>Total added: 3 + 20 + 3 = <strong>26</strong></p>
+        <p>So 83 - 57 = <strong>26</strong></p>
+      </div>
+      <div class="tip"><strong>When to use this:</strong> Count up works especially well when the two numbers are close together, such as 82 - 75 (just count up 7).</div>
+    </div>
+
+    <div class="section s3">
+      <h3>Strategy 2: Count Back</h3>
+      <p>Start at the larger number and count backwards by the subtrahend.</p>
+      <div class="math-work">
+        <h4>Example: 65 - 30 = ?</h4>
+        <p>Start at 65. Count back by tens: 55, 45, 35</p>
+        <p>65 - 30 = <strong>35</strong></p>
+      </div>
+      <div class="tip"><strong>When to use this:</strong> Count back works best when subtracting small or round numbers (subtract 10s or single digits).</div>
+    </div>
+
+    <div class="section s3">
+      <h3>Strategy 3: Break Apart the Subtrahend</h3>
+      <p>Split the number you are subtracting into parts and subtract one piece at a time.</p>
+      <div class="math-work">
+        <h4>Example: 152 - 47 = ?</h4>
+        <p>Break 47 into 40 + 7</p>
+        <p>152 - 40 = 112</p>
+        <p>112 - 7 = <strong>105</strong></p>
+      </div>
+    </div>
+
+    <div class="section s3">
+      <h3>Strategy 4: Adjust to a Round Number</h3>
+      <div class="math-work">
+        <h4>Example: 400 - 198 = ?</h4>
+        <p>198 is close to 200. Subtract 200 instead:</p>
+        <p>400 - 200 = 200</p>
+        <p>But we subtracted 2 too many, so ADD 2 back:</p>
+        <p>200 + 2 = <strong>202</strong></p>
+      </div>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Use count-up to solve: 72 - 48</li>
+        <li>Use break-apart to solve: 163 - 45</li>
+        <li>Use the round-number strategy to solve: 300 - 197</li>
+        <li>Which strategy would YOU choose for 500 - 299? Explain why.</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p><strong>Count up</strong> -- add from small to large number (great for close numbers).</p>
+      <p><strong>Break apart</strong> -- split the subtrahend and subtract in pieces.</p>
+      <p><strong>Round number</strong> -- adjust to a near hundred, then fix the answer.</p>
+      <p class="cta" style="color:#880e4f;">Well done! Click Lesson 9.4!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 9.4 -->
+<div class="lesson-section" id="lesson4">
+  <div class="banner b4">
+    <span class="lesson-num">Lesson 9.4</span>
+    <h2>Subtracting 2- and 3-Digit Numbers with Regrouping</h2>
+    <p>Master borrowing -- the key skill for subtracting larger numbers!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s4">
+      <h3>What Are We Learning Today?</h3>
+      <p>Sometimes when we subtract, the top digit in a column is <strong>smaller than the bottom digit</strong>. When this happens, we need to <strong>regroup</strong> (also called "borrowing") -- we take 1 ten from the tens column and trade it for 10 ones. Today we master this essential skill!</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Regrouping (Subtraction)</span> -- Trading 1 ten for 10 ones (or 1 hundred for 10 tens) when the top digit is too small to subtract from.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Borrowing</span> -- Another name for regrouping in subtraction -- you "borrow" from the next column.</div>
+    </div>
+
+    <div class="section s4">
+      <h3>The Standard Algorithm for Subtraction</h3>
+      <div class="step"><div class="step-num" style="background:#e65100;">1</div><div>Line up the numbers by place value.</div></div>
+      <div class="step"><div class="step-num" style="background:#e65100;">2</div><div>Start with the ONES column. If the top digit is smaller than the bottom, regroup: borrow 1 ten from the tens column (cross it out and write one less), and add 10 to the ones column.</div></div>
+      <div class="step"><div class="step-num" style="background:#e65100;">3</div><div>Subtract the ones column.</div></div>
+      <div class="step"><div class="step-num" style="background:#e65100;">4</div><div>Repeat for the tens column, regrouping from the hundreds if needed.</div></div>
+      <div class="step"><div class="step-num" style="background:#e65100;">5</div><div>Subtract the hundreds column.</div></div>
+    </div>
+
+    <div class="flex-row">
+      <div class="flex-col fb-orange">
+        <h4>Example 1: Regroup Once</h4>
+        <div class="math-work" style="margin:8px 0;">
+          <p>&nbsp;&nbsp;<span class="regroup">3 14</span></p>
+          <p>&nbsp;&nbsp;<s>4</s> 4</p>
+          <p>&nbsp;&nbsp;5 <s>4</s>2</p>
+          <p>-&nbsp;2 &nbsp;7</p>
+          <p>------</p>
+          <p>&nbsp;&nbsp;3 1 5</p>
+        </div>
+        <p style="font-size:0.85em;">542 - 27: ones 2 &lt; 7, borrow from tens. 12-7=5. Then 3-2=1 (tens). 5-0=5 (hundreds).</p>
+      </div>
+      <div class="flex-col fb-orange">
+        <h4>Example 2: Regroup Twice</h4>
+        <div class="math-work" style="margin:8px 0;">
+          <p>&nbsp;<span class="regroup">2 13 12</span></p>
+          <p>&nbsp;<s>3</s>&nbsp;<s>4</s></p>
+          <p>&nbsp;&nbsp;4 &nbsp;2 &nbsp;5</p>
+          <p>-&nbsp;1 &nbsp;8 &nbsp;7</p>
+          <p>--------</p>
+          <p>&nbsp;&nbsp;2 &nbsp;3 &nbsp;8</p>
+        </div>
+        <p style="font-size:0.85em;">425 - 187: 5&lt;7, borrow → 15-7=8. 1&lt;8, borrow → 11-8=3. 3-1=2.</p>
+      </div>
+    </div>
+
+    <div class="section s4">
+      <h3>Subtracting Across a Zero -- Extra Care!</h3>
+      <div class="math-work">
+        <h4>Example: 400 - 156 = ?</h4>
+        <p>We cannot borrow from the tens (it is 0!)</p>
+        <p>So we borrow from the hundreds FIRST:</p>
+        <p>400 → 3 hundreds, 10 tens, 0 ones</p>
+        <p>Then borrow from tens for ones:</p>
+        <p>3 hundreds, 9 tens, 10 ones</p>
+        <p>Now subtract: 10-6=4, 9-5=4, 3-1=2 → <strong>244</strong></p>
+      </div>
+      <div class="tip"><strong>Tip for zeros:</strong> When subtracting from a number with a zero, look to the left to find a non-zero digit to borrow from. Work your way right, regrouping step by step.</div>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Solve with the standard algorithm: &nbsp; 734 - 258 &nbsp; | &nbsp; 561 - 375</li>
+        <li>Solve (subtract across zero): &nbsp; 500 - 234 &nbsp; | &nbsp; 703 - 456</li>
+        <li>Check your answer to 734 - 258 by adding: 258 + ___ = 734</li>
+        <li>A store had 425 items. They sold 178. How many are left?</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p>When the top digit is smaller than the bottom -- <strong>REGROUP!</strong></p>
+      <p>Borrow 1 ten = 10 extra ones. Borrow 1 hundred = 10 extra tens.</p>
+      <p>For zeros: borrow from the first <strong>non-zero</strong> digit to the left.</p>
+      <p>Always check: <strong>Difference + Subtrahend = Minuend.</strong></p>
+      <p class="cta" style="color:#e65100;">Keep going! Click Lesson 9.5!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 9.5 -->
+<div class="lesson-section" id="lesson5">
+  <div class="banner b5">
+    <span class="lesson-num">Lesson 9.5</span>
+    <h2>Estimating Sums and Differences</h2>
+    <p>Get a quick, close answer without calculating exactly!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s5">
+      <h3>What Are We Learning Today?</h3>
+      <p>An <strong>estimate</strong> is an approximate answer -- close but not exact. Estimating is useful when you need a quick answer, want to check if your exact answer is reasonable, or do not need a precise result. Today we learn to estimate sums and differences by rounding first!</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Estimate</span> -- An approximate answer that is close to the exact answer.</div>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Reasonable</span> -- An answer that makes sense and is close to the estimate.</div>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Front-End Estimation</span> -- Using only the leading (first) digit of each number to estimate quickly.</div>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Overestimate</span> -- An estimate that is higher than the exact answer.</div>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Underestimate</span> -- An estimate that is lower than the exact answer.</div>
+    </div>
+
+    <div class="section s5">
+      <h3>How to Estimate -- Round First, Then Calculate</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-purple">
+          <h4>Estimating a Sum</h4>
+          <p>Exact: 347 + 263</p>
+          <p style="margin-top:8px;">Round to nearest 100:</p>
+          <p>347 → 300</p>
+          <p>263 → 300</p>
+          <p>Estimate: <strong>300 + 300 = 600</strong></p>
+          <p style="font-size:0.88em; margin-top:4px; color:#37474f;">Exact answer: 610 -- close!</p>
+        </div>
+        <div class="flex-col fb-blue">
+          <h4>Estimating a Difference</h4>
+          <p>Exact: 782 - 319</p>
+          <p style="margin-top:8px;">Round to nearest 100:</p>
+          <p>782 → 800</p>
+          <p>319 → 300</p>
+          <p>Estimate: <strong>800 - 300 = 500</strong></p>
+          <p style="font-size:0.88em; margin-top:4px; color:#37474f;">Exact answer: 463 -- reasonable!</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section s5">
+      <h3>Using Estimation to Check Answers</h3>
+      <p>Always ask: "Is my exact answer close to my estimate?" If not, check your work!</p>
+      <table>
+        <tr><th>Problem</th><th>Estimate</th><th>Exact Answer</th><th>Reasonable?</th></tr>
+        <tr><td>456 + 312</td><td>500 + 300 = 800</td><td>768</td><td>Yes -- close to 800!</td></tr>
+        <tr><td>634 - 281</td><td>600 - 300 = 300</td><td>353</td><td>Yes -- close to 300!</td></tr>
+        <tr><td>278 + 345</td><td>300 + 300 = 600</td><td>900</td><td>No -- check your work!</td></tr>
+      </table>
+    </div>
+
+    <div class="section s5">
+      <h3>Over and Under Estimating</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-pink">
+          <h4>Overestimate</h4>
+          <p>Both numbers rounded UP.</p>
+          <p style="margin-top:6px; font-size:0.88em;">247 + 163: round to 300 + 200 = 500. Exact = 410. Estimate is higher.</p>
+        </div>
+        <div class="flex-col fb-green">
+          <h4>Underestimate</h4>
+          <p>Both numbers rounded DOWN.</p>
+          <p style="margin-top:6px; font-size:0.88em;">247 + 163: round to 200 + 100 = 300. Exact = 410. Estimate is lower.</p>
+        </div>
+      </div>
+      <div class="tip"><strong>Real-world use:</strong> When shopping, always OVERESTIMATE so you know you have enough money. Better to think you need more and have some left over than to think you need less and come up short!</div>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Estimate by rounding to the nearest hundred: &nbsp; 523 + 441 &nbsp; | &nbsp; 867 - 324</li>
+        <li>Estimate by rounding to the nearest ten: &nbsp; 73 + 48 &nbsp; | &nbsp; 92 - 35</li>
+        <li>A student got 623 as the answer to 287 + 448. Use estimation to check -- is 623 a reasonable answer?</li>
+        <li>You want to buy items costing $3.75 and $4.25. Should you overestimate or underestimate to make sure you have enough money? Why?</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p><strong>Round first</strong>, then add or subtract -- that is your estimate!</p>
+      <p>Use estimation to check if an exact answer is <strong>reasonable.</strong></p>
+      <p>When shopping or budgeting, it is better to <strong>overestimate!</strong></p>
+      <p class="cta" style="color:#4a148c;">One more! Click Lesson 9.6!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 9.6 -->
+<div class="lesson-section" id="lesson6">
+  <div class="banner b6">
+    <span class="lesson-num">Lesson 9.6</span>
+    <h2>Solving Addition and Subtraction Word Problems</h2>
+    <p>Use everything you know to solve real-life math situations!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s6">
+      <h3>What Are We Learning Today?</h3>
+      <p>Word problems bring math to life! Today we practice identifying whether to add or subtract using key words, then solve using the 4-step strategy. We also tackle <strong>two-step problems</strong> -- where you need to perform two operations to reach the answer.</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#004d40;">Two-Step Problem</span> -- A word problem that requires two separate calculations to solve.</div>
+      <div class="vocab-item"><span class="word" style="color:#004d40;">Equation</span> -- A mathematical statement that two expressions are equal. Example: 345 + 127 = 472.</div>
+      <div class="vocab-item"><span class="word" style="color:#004d40;">Unknown</span> -- The missing value you are solving for.</div>
+    </div>
+
+    <div class="section s6">
+      <h3>Key Words for Addition and Subtraction</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-green">
+          <h4>ADD when you see...</h4>
+          <ul>
+            <li>in all, total, altogether</li>
+            <li>combined, both together</li>
+            <li>how many more do they have</li>
+            <li>gained, collected, received</li>
+            <li>increased by, added</li>
+          </ul>
+        </div>
+        <div class="flex-col fb-pink">
+          <h4>SUBTRACT when you see...</h4>
+          <ul>
+            <li>how many more, how many fewer</li>
+            <li>how many are left, remain</li>
+            <li>difference between</li>
+            <li>lost, spent, gave away, used</li>
+            <li>decreased by, reduced</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="word-problem">
+      <h4>One-Step Problem (Addition)</h4>
+      <p>The school library has 348 fiction books and 215 nonfiction books. How many books are there in all?</p>
+      <p style="margin-top:8px;"><strong>Understand:</strong> I know 348 fiction and 215 nonfiction. I need the total.</p>
+      <p><strong>Plan:</strong> "In all" = add. &nbsp; 348 + 215 = ___</p>
+      <p><strong>Solve:</strong> 348 + 215 = <strong>563 books</strong></p>
+      <p><strong>Check:</strong> 563 - 215 = 348 ✓ &nbsp; Estimate: 300 + 200 = 500 -- reasonable!</p>
+    </div>
+
+    <div class="word-problem">
+      <h4>One-Step Problem (Subtraction)</h4>
+      <p>A bag held 500 marbles. Jake took out 237. How many marbles are left?</p>
+      <p style="margin-top:8px;"><strong>Understand:</strong> Started with 500, removed 237. Need what remains.</p>
+      <p><strong>Plan:</strong> "Left" = subtract. &nbsp; 500 - 237 = ___</p>
+      <p><strong>Solve:</strong> 500 - 237 = <strong>263 marbles</strong></p>
+      <p><strong>Check:</strong> 263 + 237 = 500 ✓</p>
+    </div>
+
+    <div class="word-problem">
+      <h4>Two-Step Problem!</h4>
+      <p>A baker made 250 cookies on Monday and 175 cookies on Tuesday. She sold 318 cookies over the two days. How many cookies does she have left?</p>
+      <p style="margin-top:8px;"><strong>Step 1:</strong> Find the total cookies made. 250 + 175 = <strong>425</strong></p>
+      <p><strong>Step 2:</strong> Subtract the cookies sold. 425 - 318 = <strong>107 cookies left</strong></p>
+      <p><strong>Check:</strong> 107 + 318 = 425, and 425 - 175 = 250 ✓</p>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Maria collected 423 stamps. Her friend gave her 156 more. How many stamps does she have now?</li>
+        <li>A store had 600 toys. They sold 247 on Saturday and 189 on Sunday. How many toys are left? (Two steps!)</li>
+        <li>Team A scored 347 points and Team B scored 289 points. How many more points did Team A score?</li>
+        <li>Write your OWN two-step word problem using addition and subtraction. Solve it with all four steps.</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>You Finished Unit 9!</h3>
+      <p>Key addition words: <strong>in all, total, combined, gained.</strong></p>
+      <p>Key subtraction words: <strong>left, fewer, difference, spent, lost.</strong></p>
+      <p>Two-step problems need <strong>TWO equations</strong> -- solve them in order!</p>
+      <p>Always <strong>check</strong> using the inverse operation!</p>
+      <p class="cta" style="color:#004d40;">Outstanding! You completed all 6 lessons in Unit 9! Now take the Unit 9 Quiz!</p>
+    </div>
+  </div>
+</div>
+
+</div>
+<script>
+  const sections = document.querySelectorAll('.lesson-section');
+  const navLinks = document.querySelectorAll('.nav-bar a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 80) current = s.getAttribute('id'); });
+    navLinks.forEach(l => { l.classList.remove('active'); if (l.getAttribute('href') === '#' + current) l.classList.add('active'); });
+  });
+</script>
+</body>
+</html>
