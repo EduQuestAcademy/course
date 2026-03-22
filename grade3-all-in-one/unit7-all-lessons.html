@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit 7 – Multiplication and Division | Owl Smart 3rd Grade</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #f4f7fb; color: #2d2d2d; line-height: 1.8; }
+    .top-header { background: linear-gradient(135deg, #0d47a1, #1976d2); color: white; text-align: center; padding: 24px 20px 16px; }
+    .top-header h1 { font-size: 1.5em; margin-bottom: 4px; }
+    .top-header p { font-size: 0.95em; opacity: 0.88; }
+    .nav-bar { background: #0d47a1; padding: 0 10px; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.3); overflow-x: auto; white-space: nowrap; }
+    .nav-bar a { display: inline-block; color: rgba(255,255,255,0.8); text-decoration: none; padding: 12px 14px; font-size: 0.82em; font-weight: bold; border-bottom: 3px solid transparent; transition: all 0.2s; }
+    .nav-bar a:hover, .nav-bar a.active { color: white; border-bottom-color: #ffd600; }
+    .main { max-width: 860px; margin: 0 auto; padding: 20px; }
+    .lesson-section { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.08); margin-bottom: 40px; scroll-margin-top: 60px; }
+    .banner { color: white; text-align: center; padding: 28px 24px; }
+    .banner h2 { font-size: 1.45em; margin-bottom: 6px; }
+    .banner p { font-size: 0.97em; opacity: 0.92; margin-bottom: 10px; }
+    .lesson-num { display: inline-block; background: rgba(255,255,255,0.25); border-radius: 20px; padding: 3px 14px; font-size: 0.82em; font-weight: bold; }
+    .b1 { background: linear-gradient(135deg, #0d47a1, #1976d2); }
+    .b2 { background: linear-gradient(135deg, #1b5e20, #388e3c); }
+    .b3 { background: linear-gradient(135deg, #b71c1c, #e53935); }
+    .b4 { background: linear-gradient(135deg, #e65100, #fb8c00); }
+    .b5 { background: linear-gradient(135deg, #4a148c, #7b1fa2); }
+    .b6 { background: linear-gradient(135deg, #004d40, #00897b); }
+    .lesson-content { padding: 26px; }
+    .section { border-left: 5px solid; border-radius: 0 10px 10px 0; padding: 18px 20px; margin-bottom: 20px; }
+    .s1 { background: #e3f2fd; border-color: #0d47a1; } .s1 h3 { color: #0d47a1; }
+    .s2 { background: #e8f5e9; border-color: #1b5e20; } .s2 h3 { color: #1b5e20; }
+    .s3 { background: #ffebee; border-color: #b71c1c; } .s3 h3 { color: #b71c1c; }
+    .s4 { background: #fff3e0; border-color: #e65100; } .s4 h3 { color: #e65100; }
+    .s5 { background: #f3e5f5; border-color: #4a148c; } .s5 h3 { color: #4a148c; }
+    .s6 { background: #e0f2f1; border-color: #004d40; } .s6 h3 { color: #004d40; }
+    .section h3 { margin-bottom: 8px; font-size: 1.05em; }
+    .vocab-box { background: #fff8e1; border: 2px solid #ffc107; border-radius: 10px; padding: 18px 20px; margin-bottom: 20px; }
+    .vocab-box h3 { color: #e65100; margin-bottom: 12px; font-size: 1.05em; }
+    .vocab-item { margin: 8px 0; font-size: 0.95em; }
+    .word { font-weight: bold; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.93em; }
+    th { background: #37474f; color: white; padding: 9px 12px; text-align: left; }
+    td { padding: 9px 12px; border-bottom: 1px solid #e0e0e0; }
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) { background: #f5f5f5; }
+    .tip { background: #e8f5e9; border-left: 4px solid #43a047; border-radius: 0 8px 8px 0; padding: 12px 16px; margin: 12px 0; color: #1b5e20; font-size: 0.93em; }
+    .tip strong { color: #2e7d32; }
+    .try-it { background: #ede7f6; border: 2px dashed #7e57c2; border-radius: 10px; padding: 18px 20px; margin-bottom: 20px; }
+    .try-it h3 { color: #4527a0; margin-bottom: 10px; font-size: 1.05em; }
+    .try-it ol { padding-left: 20px; }
+    .try-it li { margin: 8px 0; font-size: 0.95em; }
+    .remember { background: #fff3e0; border: 2px solid #ff8f00; border-radius: 10px; padding: 18px 20px; text-align: center; margin-bottom: 4px; }
+    .remember h3 { color: #e65100; margin-bottom: 10px; font-size: 1.05em; }
+    .remember p { margin: 5px 0; font-size: 0.95em; }
+    .remember .cta { font-weight: bold; font-size: 1.05em; margin-top: 12px; }
+    .flex-row { display: flex; gap: 12px; flex-wrap: wrap; margin: 10px 0; }
+    .flex-col { flex: 1; min-width: 160px; border-radius: 10px; padding: 14px 16px; }
+    .fb-blue { background: #e3f2fd; border: 2px solid #1976d2; } .fb-blue h4 { color: #0d47a1; margin-bottom: 6px; }
+    .fb-green { background: #e8f5e9; border: 2px solid #388e3c; } .fb-green h4 { color: #1b5e20; margin-bottom: 6px; }
+    .fb-red { background: #ffebee; border: 2px solid #e53935; } .fb-red h4 { color: #b71c1c; margin-bottom: 6px; }
+    .fb-orange { background: #fff3e0; border: 2px solid #f57c00; } .fb-orange h4 { color: #e65100; margin-bottom: 6px; }
+    .fb-purple { background: #f3e5f5; border: 2px solid #7b1fa2; } .fb-purple h4 { color: #4a148c; margin-bottom: 6px; }
+    .fb-teal { background: #e0f2f1; border: 2px solid #00897b; } .fb-teal h4 { color: #004d40; margin-bottom: 6px; }
+    .math-box { background: #e3f2fd; border: 3px solid #1976d2; border-radius: 12px; padding: 18px 22px; margin-bottom: 16px; text-align: center; }
+    .math-box .equation { font-size: 1.6em; font-weight: bold; color: #0d47a1; margin: 8px 0; }
+    .math-box .label { font-size: 0.88em; color: #37474f; }
+    .array-grid { display: inline-grid; gap: 6px; margin: 12px auto; }
+    .dot { width: 28px; height: 28px; background: #1976d2; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+    .array-wrapper { text-align: center; padding: 14px; background: #e3f2fd; border-radius: 10px; margin-bottom: 14px; }
+    .fact-family { background: #fff8e1; border: 2px solid #ffc107; border-radius: 10px; padding: 16px 18px; margin-bottom: 14px; }
+    .fact-family h4 { color: #e65100; margin-bottom: 10px; font-size: 1em; }
+    .fact { font-size: 1.1em; font-weight: bold; color: #0d47a1; margin: 6px 0; }
+    .word-problem { background: #f3e5f5; border: 2px solid #7b1fa2; border-radius: 10px; padding: 16px 18px; margin-bottom: 14px; }
+    .word-problem h4 { color: #4a148c; margin-bottom: 8px; font-size: 1em; }
+    .step { display: flex; gap: 12px; align-items: flex-start; margin: 10px 0; }
+    .step-num { background: #0d47a1; color: white; border-radius: 50%; width: 28px; height: 28px; min-width: 28px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 0.9em; }
+    .times-table { border-collapse: collapse; margin: 12px auto; font-size: 0.88em; }
+    .times-table td, .times-table th { border: 1px solid #90a4ae; padding: 7px 10px; text-align: center; min-width: 32px; }
+    .times-table th { background: #0d47a1; color: white; }
+    .times-table .header-col { background: #0d47a1; color: white; font-weight: bold; }
+    .times-table tr:nth-child(even) td:not(.header-col) { background: #e3f2fd; }
+    .property-box { border-radius: 10px; padding: 14px 16px; margin-bottom: 12px; }
+    ul { padding-left: 20px; } li { margin: 5px 0; font-size: 0.95em; }
+    p { margin-bottom: 8px; font-size: 0.95em; }
+  </style>
+</head>
+<body>
+
+<div class="top-header">
+  <h1>Owl Smart: A 3rd Grade Learning Journey</h1>
+  <p>Unit 7 -- Mathematics: Multiplication and Division &nbsp;|&nbsp; 6 Lessons</p>
+</div>
+
+<div class="nav-bar">
+  <a href="#lesson1">7.1 Understanding x</a>
+  <a href="#lesson2">7.2 Multiplication Facts</a>
+  <a href="#lesson3">7.3 Understanding Division</a>
+  <a href="#lesson4">7.4 x and Division Link</a>
+  <a href="#lesson5">7.5 Word Problems</a>
+  <a href="#lesson6">7.6 Properties of x</a>
+</div>
+
+<div class="main">
+
+<!-- LESSON 7.1 -->
+<div class="lesson-section" id="lesson1">
+  <div class="banner b1">
+    <span class="lesson-num">Lesson 7.1</span>
+    <h2>Understanding Multiplication: Equal Groups and Arrays</h2>
+    <p>Multiplication is just a fast way to count equal groups!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s1">
+      <h3>What Are We Learning Today?</h3>
+      <p>Multiplication is one of the most powerful tools in all of mathematics. Instead of adding the same number over and over, multiplication lets you find the total of <strong>equal groups</strong> in one quick step. Today we learn what multiplication really means using equal groups and arrays!</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#0d47a1;">Multiplication</span> -- A fast way to add equal groups together.</div>
+      <div class="vocab-item"><span class="word" style="color:#0d47a1;">Factor</span> -- The numbers being multiplied together. In 4 x 3, both 4 and 3 are factors.</div>
+      <div class="vocab-item"><span class="word" style="color:#0d47a1;">Product</span> -- The answer to a multiplication problem. In 4 x 3 = 12, the product is 12.</div>
+      <div class="vocab-item"><span class="word" style="color:#0d47a1;">Equal Groups</span> -- Groups that all have the same number of items.</div>
+      <div class="vocab-item"><span class="word" style="color:#0d47a1;">Array</span> -- Objects or symbols arranged in rows and columns to show multiplication.</div>
+      <div class="vocab-item"><span class="word" style="color:#0d47a1;">Skip Counting</span> -- Counting by a number other than 1 (by 2s, 3s, 5s, etc.).</div>
+    </div>
+
+    <div class="section s1">
+      <h3>Equal Groups -- The Big Idea of Multiplication</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-blue">
+          <h4>The Long Way (Adding)</h4>
+          <p>3 bags, each with 4 apples:</p>
+          <p style="font-size:1.1em; font-weight:bold; margin-top:6px;">4 + 4 + 4 = 12</p>
+          <p style="font-size:0.88em; color:#37474f; margin-top:4px;">This works, but it takes a long time for big numbers!</p>
+        </div>
+        <div class="flex-col fb-green">
+          <h4>The Fast Way (Multiplying)</h4>
+          <p>3 groups of 4:</p>
+          <p style="font-size:1.1em; font-weight:bold; margin-top:6px;">3 x 4 = 12</p>
+          <p style="font-size:0.88em; color:#37474f; margin-top:4px;">Same answer -- much faster! Multiplication IS repeated addition.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section s1">
+      <h3>Reading Multiplication Equations</h3>
+      <div class="math-box">
+        <div class="equation">3 x 4 = 12</div>
+        <div class="label">3 groups &nbsp;&nbsp; x &nbsp;&nbsp; 4 in each group &nbsp;&nbsp; = &nbsp;&nbsp; 12 total</div>
+      </div>
+      <p>We read 3 x 4 as <strong>"3 times 4"</strong> or <strong>"3 groups of 4."</strong></p>
+      <table>
+        <tr><th>Equation</th><th>Read as</th><th>Means</th></tr>
+        <tr><td>2 x 5 = 10</td><td>2 times 5</td><td>2 groups of 5 = 10 total</td></tr>
+        <tr><td>4 x 3 = 12</td><td>4 times 3</td><td>4 groups of 3 = 12 total</td></tr>
+        <tr><td>5 x 6 = 30</td><td>5 times 6</td><td>5 groups of 6 = 30 total</td></tr>
+      </table>
+    </div>
+
+    <div class="section s1">
+      <h3>Arrays -- Rows and Columns</h3>
+      <p>An <strong>array</strong> is a neat arrangement of objects in rows (across) and columns (down). Arrays make it easy to see multiplication!</p>
+      <div class="array-wrapper">
+        <p style="font-weight:bold; color:#0d47a1; margin-bottom:8px;">3 rows x 4 columns = 12</p>
+        <div class="array-grid" style="grid-template-columns: repeat(4, 28px);">
+          <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+          <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+          <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+        </div>
+        <p style="font-size:0.88em; color:#37474f; margin-top:8px;">3 x 4 = 12 &nbsp; OR &nbsp; 4 x 3 = 12 (same array, different view!)</p>
+      </div>
+      <div class="tip"><strong>Notice:</strong> You can read the same array two ways! 3 rows of 4 = 12 AND 4 columns of 3 = 12. This is called the Commutative Property -- order doesn't change the product!</div>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Draw an array for 2 x 6. How many dots in total?</li>
+        <li>Write a multiplication equation for: "5 bags with 3 oranges each."</li>
+        <li>There are 4 rows of chairs with 7 chairs in each row. Write a multiplication equation and find the total.</li>
+        <li>Skip count by 4s to find: 6 x 4 = ___. (4, 8, 12...)</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p>Multiplication = <strong>equal groups added together quickly.</strong></p>
+      <p><strong>Factor x Factor = Product</strong></p>
+      <p>Arrays show multiplication in rows and columns.</p>
+      <p class="cta" style="color:#0d47a1;">Great start! Click Lesson 7.2!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 7.2 -->
+<div class="lesson-section" id="lesson2">
+  <div class="banner b2">
+    <span class="lesson-num">Lesson 7.2</span>
+    <h2>Multiplication Facts: Strategies and Fluency</h2>
+    <p>Master your times tables with smart strategies!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s2">
+      <h3>What Are We Learning Today?</h3>
+      <p>Knowing your multiplication facts quickly and accurately -- without having to stop and count -- is one of the most useful skills in all of math! Today we learn smart strategies to help you master your times tables, plus practice tips to build fluency.</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Multiplication Facts</span> -- The basic multiplication equations from 0x0 up to 10x10 (or 12x12) that you should know from memory.</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Fluency</span> -- Being able to recall facts quickly and accurately, without needing to count.</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Strategy</span> -- A smart method or trick for figuring out a fact you are not sure of.</div>
+    </div>
+
+    <div class="section s2">
+      <h3>Smart Strategies for Each Times Table</h3>
+      <table>
+        <tr><th>Times Table</th><th>Strategy</th><th>Example</th></tr>
+        <tr><td><strong>x0</strong></td><td>Any number times 0 = 0</td><td>9 x 0 = 0</td></tr>
+        <tr><td><strong>x1</strong></td><td>Any number times 1 = itself</td><td>7 x 1 = 7</td></tr>
+        <tr><td><strong>x2</strong></td><td>Double the number</td><td>6 x 2 = 12 (double 6)</td></tr>
+        <tr><td><strong>x3</strong></td><td>Double + one more group</td><td>4 x 3 = (4x2) + 4 = 8 + 4 = 12</td></tr>
+        <tr><td><strong>x4</strong></td><td>Double twice (double the x2 fact)</td><td>5 x 4 = double(5x2) = double 10 = 20</td></tr>
+        <tr><td><strong>x5</strong></td><td>Count by 5s; product ends in 0 or 5</td><td>7 x 5 = 35 (5, 10, 15, 20, 25, 30, 35)</td></tr>
+        <tr><td><strong>x6</strong></td><td>x5 fact + one more group</td><td>6 x 6 = (6x5) + 6 = 30 + 6 = 36</td></tr>
+        <tr><td><strong>x9</strong></td><td>Fingers trick OR x10 minus one group</td><td>9 x 7 = (10x7) - 7 = 70 - 7 = 63</td></tr>
+        <tr><td><strong>x10</strong></td><td>Add a zero to the end</td><td>8 x 10 = 80</td></tr>
+      </table>
+    </div>
+
+    <div class="section s2">
+      <h3>The x9 Finger Trick!</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-green">
+          <h4>How It Works</h4>
+          <p>Hold up all 10 fingers. To find 9 x 4, fold down your 4th finger. Count fingers to the LEFT = tens digit. Count fingers to the RIGHT = ones digit.</p>
+          <p style="margin-top:8px; font-size:0.88em;">9 x 4: fold 4th finger → 3 fingers left, 6 fingers right → <strong>36!</strong></p>
+        </div>
+        <div class="flex-col fb-blue">
+          <h4>The x9 Pattern</h4>
+          <p>The digits in every 9x product always add up to 9!</p>
+          <p style="font-size:0.88em; margin-top:6px;">9x1=09 (0+9=9), 9x2=18 (1+8=9), 9x3=27 (2+7=9), 9x4=36 (3+6=9), 9x5=45 (4+5=9)...</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section s2">
+      <h3>Multiplication Chart 1-10</h3>
+      <div style="overflow-x:auto;">
+        <table class="times-table">
+          <tr><th>x</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th></tr>
+          <tr><td class="header-col">1</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td></tr>
+          <tr><td class="header-col">2</td><td>2</td><td>4</td><td>6</td><td>8</td><td>10</td><td>12</td><td>14</td><td>16</td><td>18</td><td>20</td></tr>
+          <tr><td class="header-col">3</td><td>3</td><td>6</td><td>9</td><td>12</td><td>15</td><td>18</td><td>21</td><td>24</td><td>27</td><td>30</td></tr>
+          <tr><td class="header-col">4</td><td>4</td><td>8</td><td>12</td><td>16</td><td>20</td><td>24</td><td>28</td><td>32</td><td>36</td><td>40</td></tr>
+          <tr><td class="header-col">5</td><td>5</td><td>10</td><td>15</td><td>20</td><td>25</td><td>30</td><td>35</td><td>40</td><td>45</td><td>50</td></tr>
+          <tr><td class="header-col">6</td><td>6</td><td>12</td><td>18</td><td>24</td><td>30</td><td>36</td><td>42</td><td>48</td><td>54</td><td>60</td></tr>
+          <tr><td class="header-col">7</td><td>7</td><td>14</td><td>21</td><td>28</td><td>35</td><td>42</td><td>49</td><td>56</td><td>63</td><td>70</td></tr>
+          <tr><td class="header-col">8</td><td>8</td><td>16</td><td>24</td><td>32</td><td>40</td><td>48</td><td>56</td><td>64</td><td>72</td><td>80</td></tr>
+          <tr><td class="header-col">9</td><td>9</td><td>18</td><td>27</td><td>36</td><td>45</td><td>54</td><td>63</td><td>72</td><td>81</td><td>90</td></tr>
+          <tr><td class="header-col">10</td><td>10</td><td>20</td><td>30</td><td>40</td><td>50</td><td>60</td><td>70</td><td>80</td><td>90</td><td>100</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Use the x9 strategy (x10 minus one group) to solve: 9 x 6, 9 x 8, 9 x 7.</li>
+        <li>Use the x5 skip counting strategy to solve: 5 x 8, 5 x 9, 5 x 7.</li>
+        <li>Use the doubling strategy to solve: 4 x 7, 4 x 8, 4 x 6.</li>
+        <li>Time yourself! How many facts from the chart can you say in 60 seconds?</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p><strong>x0</strong> = always 0 &nbsp;|&nbsp; <strong>x1</strong> = always itself &nbsp;|&nbsp; <strong>x10</strong> = add a zero</p>
+      <p><strong>x5</strong> = ends in 0 or 5 &nbsp;|&nbsp; <strong>x9</strong> = (x10) minus one group</p>
+      <p>Practice a little every day -- fluency comes with <strong>repetition!</strong></p>
+      <p class="cta" style="color:#1b5e20;">Excellent! Click Lesson 7.3!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 7.3 -->
+<div class="lesson-section" id="lesson3">
+  <div class="banner b3">
+    <span class="lesson-num">Lesson 7.3</span>
+    <h2>Understanding Division: Sharing and Grouping</h2>
+    <p>Division is all about splitting things up fairly!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s3">
+      <h3>What Are We Learning Today?</h3>
+      <p>Division is the operation we use when we need to <strong>split a number into equal groups</strong>. You use division every day -- sharing pizza, dividing up cards, splitting into teams. Today we learn two ways to think about division: <strong>sharing equally</strong> and <strong>making equal groups</strong>.</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#b71c1c;">Division</span> -- The operation of splitting a number into equal groups.</div>
+      <div class="vocab-item"><span class="word" style="color:#b71c1c;">Dividend</span> -- The number being divided. In 12 / 3, the dividend is 12.</div>
+      <div class="vocab-item"><span class="word" style="color:#b71c1c;">Divisor</span> -- The number you divide by. In 12 / 3, the divisor is 3.</div>
+      <div class="vocab-item"><span class="word" style="color:#b71c1c;">Quotient</span> -- The answer to a division problem. In 12 / 3 = 4, the quotient is 4.</div>
+      <div class="vocab-item"><span class="word" style="color:#b71c1c;">Remainder</span> -- The amount left over when a number cannot be divided equally.</div>
+    </div>
+
+    <div class="section s3">
+      <h3>Two Ways to Think About Division</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-red">
+          <h4>Sharing Equally (Partitive)</h4>
+          <p>You know how many groups. You need to find how many are in each group.</p>
+          <p style="margin-top:8px; font-size:0.9em;"><em>"12 cookies shared equally among 4 friends. How many does each friend get?"</em></p>
+          <p style="margin-top:6px; font-weight:bold; color:#b71c1c;">12 / 4 = 3 each</p>
+        </div>
+        <div class="flex-col fb-orange">
+          <h4>Making Equal Groups (Quotitive)</h4>
+          <p>You know how many in each group. You need to find how many groups.</p>
+          <p style="margin-top:8px; font-size:0.9em;"><em>"12 cookies placed 4 on each plate. How many plates are needed?"</em></p>
+          <p style="margin-top:6px; font-weight:bold; color:#e65100;">12 / 4 = 3 plates</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section s3">
+      <h3>Reading Division Equations</h3>
+      <div class="math-box">
+        <div class="equation">12 ÷ 3 = 4</div>
+        <div class="label">12 (dividend) &nbsp; ÷ &nbsp; 3 (divisor) &nbsp; = &nbsp; 4 (quotient)</div>
+      </div>
+      <table>
+        <tr><th>Equation</th><th>Read as</th><th>Means</th></tr>
+        <tr><td>20 ÷ 4 = 5</td><td>20 divided by 4 equals 5</td><td>20 split into 4 equal groups = 5 in each group</td></tr>
+        <tr><td>18 ÷ 3 = 6</td><td>18 divided by 3 equals 6</td><td>18 split into 3 equal groups = 6 in each group</td></tr>
+        <tr><td>35 ÷ 5 = 7</td><td>35 divided by 5 equals 7</td><td>35 split into 5 equal groups = 7 in each group</td></tr>
+      </table>
+    </div>
+
+    <div class="section s3">
+      <h3>Special Division Rules</h3>
+      <table>
+        <tr><th>Rule</th><th>Example</th><th>Why?</th></tr>
+        <tr><td>Any number divided by 1 = itself</td><td>8 ÷ 1 = 8</td><td>1 group of 8 = 8</td></tr>
+        <tr><td>Any number divided by itself = 1</td><td>8 ÷ 8 = 1</td><td>8 split into 8 groups = 1 each</td></tr>
+        <tr><td>Zero divided by any number = 0</td><td>0 ÷ 5 = 0</td><td>0 things split into any groups = 0 each</td></tr>
+        <tr><td>You CANNOT divide by zero</td><td>8 ÷ 0 = undefined</td><td>You cannot split into 0 groups!</td></tr>
+      </table>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Write a division equation: "24 stickers shared equally among 6 friends."</li>
+        <li>Solve: 36 ÷ 4 = ___ &nbsp; | &nbsp; 45 ÷ 9 = ___ &nbsp; | &nbsp; 28 ÷ 7 = ___</li>
+        <li>Draw a picture showing 15 ÷ 3 = 5 (use circles as groups and dots as objects).</li>
+        <li>What is the quotient of 0 ÷ 7? What about 7 ÷ 7?</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p><strong>Dividend ÷ Divisor = Quotient</strong></p>
+      <p>Division = splitting into <strong>equal groups</strong> (sharing OR grouping)</p>
+      <p>Any number ÷ 1 = itself &nbsp;|&nbsp; Any number ÷ itself = 1 &nbsp;|&nbsp; 0 ÷ any number = 0</p>
+      <p class="cta" style="color:#b71c1c;">Well done! Click Lesson 7.4!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 7.4 -->
+<div class="lesson-section" id="lesson4">
+  <div class="banner b4">
+    <span class="lesson-num">Lesson 7.4</span>
+    <h2>The Relationship Between Multiplication and Division</h2>
+    <p>Multiplication and division are opposites -- and knowing one helps you with the other!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s4">
+      <h3>What Are We Learning Today?</h3>
+      <p>Multiplication and division are <strong>inverse operations</strong> -- they are mathematical opposites that undo each other, just like addition and subtraction. When you know a multiplication fact, you automatically know two division facts! This is called a <strong>fact family</strong>.</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Inverse Operations</span> -- Operations that undo each other. Multiplication and division are inverse operations.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Fact Family</span> -- A set of related multiplication and division equations that use the same three numbers.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Related Facts</span> -- Equations that are connected and can be used to solve each other.</div>
+    </div>
+
+    <div class="section s4">
+      <h3>Fact Families -- Three Numbers, Four Facts!</h3>
+      <div class="fact-family">
+        <h4>Fact Family for 3, 4, and 12</h4>
+        <div class="fact">3 x 4 = 12</div>
+        <div class="fact">4 x 3 = 12</div>
+        <div class="fact">12 ÷ 3 = 4</div>
+        <div class="fact">12 ÷ 4 = 3</div>
+      </div>
+      <div class="fact-family">
+        <h4>Fact Family for 5, 7, and 35</h4>
+        <div class="fact">5 x 7 = 35</div>
+        <div class="fact">7 x 5 = 35</div>
+        <div class="fact">35 ÷ 5 = 7</div>
+        <div class="fact">35 ÷ 7 = 5</div>
+      </div>
+    </div>
+
+    <div class="section s4">
+      <h3>Using Multiplication to Solve Division</h3>
+      <p>When you see a division problem, turn it into a missing-factor multiplication problem!</p>
+      <table>
+        <tr><th>Division Problem</th><th>Think of it as...</th><th>Answer</th></tr>
+        <tr><td>24 ÷ 6 = ___</td><td>6 x ___ = 24?</td><td>4 (because 6 x 4 = 24)</td></tr>
+        <tr><td>42 ÷ 7 = ___</td><td>7 x ___ = 42?</td><td>6 (because 7 x 6 = 42)</td></tr>
+        <tr><td>56 ÷ 8 = ___</td><td>8 x ___ = 56?</td><td>7 (because 8 x 7 = 56)</td></tr>
+        <tr><td>63 ÷ 9 = ___</td><td>9 x ___ = 63?</td><td>7 (because 9 x 7 = 63)</td></tr>
+      </table>
+      <div class="tip"><strong>Strategy:</strong> Instead of struggling with a hard division fact, ask yourself: "What times the divisor equals the dividend?" Your multiplication knowledge saves the day!</div>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Write the complete fact family for: 6, 8, and 48.</li>
+        <li>Write the complete fact family for: 3, 9, and 27.</li>
+        <li>Use multiplication to solve: 54 ÷ 6 = ___ (think: 6 x ___ = 54)</li>
+        <li>Use multiplication to solve: 72 ÷ 8 = ___ (think: 8 x ___ = 72)</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p>Multiplication and division are <strong>inverse operations</strong> -- they undo each other.</p>
+      <p>Every set of three numbers makes a <strong>fact family</strong> of 4 equations.</p>
+      <p>To solve division, ask: <strong>"What times the divisor = dividend?"</strong></p>
+      <p class="cta" style="color:#e65100;">Keep going! Click Lesson 7.5!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 7.5 -->
+<div class="lesson-section" id="lesson5">
+  <div class="banner b5">
+    <span class="lesson-num">Lesson 7.5</span>
+    <h2>Solving Word Problems with Multiplication and Division</h2>
+    <p>Apply your skills to real-life math situations!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s5">
+      <h3>What Are We Learning Today?</h3>
+      <p>Math facts are most powerful when you can use them to solve <strong>real-world problems</strong>! Word problems tell a story with numbers. Your job is to read carefully, figure out what operation to use, and solve it step by step. Today we learn a reliable strategy for tackling any word problem!</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Word Problem</span> -- A math problem written as a real-life story or situation.</div>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Operation</span> -- The mathematical action to perform: add, subtract, multiply, or divide.</div>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Key Words</span> -- Words in a problem that hint at which operation to use.</div>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Unknown</span> -- The number you are trying to find -- what the question is asking for.</div>
+    </div>
+
+    <div class="section s5">
+      <h3>Key Words That Signal Multiplication or Division</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-purple">
+          <h4>Multiply when you see...</h4>
+          <ul>
+            <li>each, every, per</li>
+            <li>groups of, rows of</li>
+            <li>times, twice, double</li>
+            <li>in all, total, altogether</li>
+          </ul>
+        </div>
+        <div class="flex-col fb-blue">
+          <h4>Divide when you see...</h4>
+          <ul>
+            <li>share equally, split</li>
+            <li>each person gets</li>
+            <li>how many groups</li>
+            <li>cut into, separated into</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="section s5">
+      <h3>The 4-Step Problem-Solving Strategy</h3>
+      <div class="step"><div class="step-num">1</div><div><strong>UNDERSTAND</strong> -- Read the problem carefully. What do you know? What are you trying to find?</div></div>
+      <div class="step"><div class="step-num">2</div><div><strong>PLAN</strong> -- What operation will you use? Write a number sentence with a box for the unknown.</div></div>
+      <div class="step"><div class="step-num">3</div><div><strong>SOLVE</strong> -- Calculate the answer. Show your work!</div></div>
+      <div class="step"><div class="step-num">4</div><div><strong>CHECK</strong> -- Does the answer make sense? Use the inverse operation to verify.</div></div>
+    </div>
+
+    <div class="word-problem">
+      <h4>Problem 1 (Multiplication)</h4>
+      <p>A bookshelf has 6 shelves. Each shelf holds 8 books. How many books are on the bookshelf in all?</p>
+      <p style="margin-top:8px;"><strong>Step 1:</strong> I know 6 shelves, 8 books each. I need the total.</p>
+      <p><strong>Step 2:</strong> "In all" + "each" = multiply. 6 x 8 = ___</p>
+      <p><strong>Step 3:</strong> 6 x 8 = <strong>48 books</strong></p>
+      <p><strong>Step 4:</strong> Check: 48 ÷ 6 = 8 ✓</p>
+    </div>
+
+    <div class="word-problem">
+      <h4>Problem 2 (Division)</h4>
+      <p>A teacher has 32 stickers to share equally among 8 students. How many stickers does each student get?</p>
+      <p style="margin-top:8px;"><strong>Step 1:</strong> I know 32 stickers total, 8 students. I need to know how many each student gets.</p>
+      <p><strong>Step 2:</strong> "Share equally" = divide. 32 ÷ 8 = ___</p>
+      <p><strong>Step 3:</strong> 32 ÷ 8 = <strong>4 stickers each</strong></p>
+      <p><strong>Step 4:</strong> Check: 4 x 8 = 32 ✓</p>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>A garden has 7 rows of flowers with 9 flowers in each row. How many flowers are there in all?</li>
+        <li>A box of 56 crayons is divided equally into 8 bags. How many crayons are in each bag?</li>
+        <li>Sam earns $6 for every hour he helps at home. He worked for 5 hours. How much did he earn?</li>
+        <li>Write your OWN word problem using multiplication or division. Solve it and show all four steps.</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p><strong>Each, groups of, in all</strong> = usually multiply.</p>
+      <p><strong>Share equally, split, each person gets</strong> = usually divide.</p>
+      <p>Always: Understand → Plan → Solve → <strong>Check!</strong></p>
+      <p class="cta" style="color:#4a148c;">Almost done! Click Lesson 7.6!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 7.6 -->
+<div class="lesson-section" id="lesson6">
+  <div class="banner b6">
+    <span class="lesson-num">Lesson 7.6</span>
+    <h2>Properties of Multiplication</h2>
+    <p>Powerful rules that make multiplication easier and faster!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s6">
+      <h3>What Are We Learning Today?</h3>
+      <p>Mathematicians have discovered special rules about how multiplication works -- called <strong>properties</strong>. These properties are not just interesting facts; they are powerful tools that let you solve problems faster, check your work, and break hard problems into easier ones!</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#004d40;">Commutative Property</span> -- You can multiply numbers in any order and get the same product. a x b = b x a.</div>
+      <div class="vocab-item"><span class="word" style="color:#004d40;">Associative Property</span> -- When multiplying three numbers, you can change the grouping and get the same product. (a x b) x c = a x (b x c).</div>
+      <div class="vocab-item"><span class="word" style="color:#004d40;">Distributive Property</span> -- You can break a factor into parts, multiply each part, then add the results. a x (b + c) = (a x b) + (a x c).</div>
+      <div class="vocab-item"><span class="word" style="color:#004d40;">Identity Property</span> -- Any number multiplied by 1 equals itself. a x 1 = a.</div>
+      <div class="vocab-item"><span class="word" style="color:#004d40;">Zero Property</span> -- Any number multiplied by 0 equals 0. a x 0 = 0.</div>
+    </div>
+
+    <div class="section s6">
+      <h3>The Five Properties -- Explained Simply</h3>
+
+      <div class="property-box fb-teal">
+        <h4 style="color:#004d40;">1. Commutative Property -- "Order doesn't matter!"</h4>
+        <p>3 x 5 = 15 &nbsp;&nbsp; AND &nbsp;&nbsp; 5 x 3 = 15</p>
+        <p style="font-size:0.9em; color:#37474f; margin-top:4px;">This cuts the number of facts you need to memorise nearly in HALF! If you know 3 x 7, you already know 7 x 3.</p>
+      </div>
+
+      <div class="property-box fb-blue">
+        <h4 style="color:#0d47a1;">2. Associative Property -- "Grouping doesn't matter!"</h4>
+        <p>(2 x 3) x 4 = 6 x 4 = 24 &nbsp;&nbsp; AND &nbsp;&nbsp; 2 x (3 x 4) = 2 x 12 = 24</p>
+        <p style="font-size:0.9em; color:#37474f; margin-top:4px;">When you multiply three numbers, start with whichever pair is easiest!</p>
+      </div>
+
+      <div class="property-box fb-orange">
+        <h4 style="color:#e65100;">3. Distributive Property -- "Break it apart!"</h4>
+        <p>6 x 7 = 6 x (5 + 2) = (6 x 5) + (6 x 2) = 30 + 12 = 42</p>
+        <p style="font-size:0.9em; color:#37474f; margin-top:4px;">Break a tricky fact into easier parts. Perfect for facts you haven't memorised yet!</p>
+      </div>
+
+      <div class="property-box fb-green">
+        <h4 style="color:#1b5e20;">4. Identity Property -- "Times 1 = itself!"</h4>
+        <p>9 x 1 = 9 &nbsp;&nbsp;&nbsp;&nbsp; 1 x 47 = 47 &nbsp;&nbsp;&nbsp;&nbsp; 1 x 1,000 = 1,000</p>
+        <p style="font-size:0.9em; color:#37474f; margin-top:4px;">Multiplying by 1 changes nothing -- the number keeps its identity!</p>
+      </div>
+
+      <div class="property-box fb-red">
+        <h4 style="color:#b71c1c;">5. Zero Property -- "Times 0 = always 0!"</h4>
+        <p>9 x 0 = 0 &nbsp;&nbsp;&nbsp;&nbsp; 0 x 500 = 0 &nbsp;&nbsp;&nbsp;&nbsp; 0 x 0 = 0</p>
+        <p style="font-size:0.9em; color:#37474f; margin-top:4px;">No matter how large the number, multiplying by zero always gives zero.</p>
+      </div>
+    </div>
+
+    <div class="section s6">
+      <h3>Using the Distributive Property to Solve Harder Facts</h3>
+      <table>
+        <tr><th>Hard Fact</th><th>Break It Apart</th><th>Solve Each Part</th><th>Add</th></tr>
+        <tr><td>7 x 8</td><td>7 x (4 + 4)</td><td>(7 x 4) + (7 x 4)</td><td>28 + 28 = 56</td></tr>
+        <tr><td>6 x 9</td><td>6 x (10 - 1)</td><td>(6 x 10) - (6 x 1)</td><td>60 - 6 = 54</td></tr>
+        <tr><td>8 x 7</td><td>8 x (5 + 2)</td><td>(8 x 5) + (8 x 2)</td><td>40 + 16 = 56</td></tr>
+      </table>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Name the property used: "4 x 9 = 9 x 4" -- which property is this?</li>
+        <li>Use the Distributive Property to solve 7 x 6 by breaking it into 7 x (5 + 1).</li>
+        <li>Use the Associative Property: (3 x 2) x 5 = 3 x (2 x 5). Solve both ways -- do you get the same answer?</li>
+        <li>What is 1,000 x 0? What property tells you the answer instantly?</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>You Finished Unit 7!</h3>
+      <p><strong>Commutative</strong> -- order doesn't matter (3x5 = 5x3)</p>
+      <p><strong>Associative</strong> -- grouping doesn't matter ((2x3)x4 = 2x(3x4))</p>
+      <p><strong>Distributive</strong> -- break a factor apart to make it easier</p>
+      <p><strong>Identity</strong> -- x1 = itself &nbsp;|&nbsp; <strong>Zero</strong> -- x0 = always 0</p>
+      <p class="cta" style="color:#004d40;">Outstanding! You completed all 6 lessons in Unit 7! Now take the Unit 7 Quiz!</p>
+    </div>
+  </div>
+</div>
+
+</div>
+<script>
+  const sections = document.querySelectorAll('.lesson-section');
+  const navLinks = document.querySelectorAll('.nav-bar a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 80) current = s.getAttribute('id'); });
+    navLinks.forEach(l => { l.classList.remove('active'); if (l.getAttribute('href') === '#' + current) l.classList.add('active'); });
+  });
+</script>
+</body>
+</html>
