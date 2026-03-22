@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Course Wrap-Up | Owl Smart 3rd Grade</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #f4f7fb; color: #2d2d2d; line-height: 1.8; }
+    .top-header { background: linear-gradient(135deg, #f57f17, #f9a825); color: white; text-align: center; padding: 24px 20px 16px; }
+    .top-header h1 { font-size: 1.5em; margin-bottom: 4px; }
+    .top-header p { font-size: 0.95em; opacity: 0.88; }
+    .nav-bar { background: #f57f17; padding: 0 10px; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.3); overflow-x: auto; white-space: nowrap; }
+    .nav-bar a { display: inline-block; color: rgba(255,255,255,0.9); text-decoration: none; padding: 12px 14px; font-size: 0.82em; font-weight: bold; border-bottom: 3px solid transparent; transition: all 0.2s; }
+    .nav-bar a:hover, .nav-bar a.active { color: white; border-bottom-color: #1a237e; }
+    .main { max-width: 860px; margin: 0 auto; padding: 20px; }
+    .lesson-section { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.08); margin-bottom: 40px; scroll-margin-top: 60px; }
+    .banner { color: white; text-align: center; padding: 28px 24px; }
+    .banner h2 { font-size: 1.45em; margin-bottom: 6px; }
+    .banner p { font-size: 0.97em; opacity: 0.92; margin-bottom: 10px; }
+    .lesson-num { display: inline-block; background: rgba(255,255,255,0.25); border-radius: 20px; padding: 3px 14px; font-size: 0.82em; font-weight: bold; }
+    .b1 { background: linear-gradient(135deg, #f57f17, #fb8c00); }
+    .b2 { background: linear-gradient(135deg, #1b5e20, #388e3c); }
+    .b3 { background: linear-gradient(135deg, #1a237e, #3949ab); }
+    .b4 { background: linear-gradient(135deg, #4a148c, #7b1fa2); }
+    .b5 { background: linear-gradient(135deg, #004d40, #00897b); }
+    .lesson-content { padding: 26px; }
+    .section { border-left: 5px solid; border-radius: 0 10px 10px 0; padding: 18px 20px; margin-bottom: 20px; }
+    .s1 { background: #fff3e0; border-color: #f57f17; } .s1 h3 { color: #e65100; }
+    .s2 { background: #e8f5e9; border-color: #1b5e20; } .s2 h3 { color: #1b5e20; }
+    .s3 { background: #e8eaf6; border-color: #1a237e; } .s3 h3 { color: #1a237e; }
+    .s4 { background: #f3e5f5; border-color: #4a148c; } .s4 h3 { color: #4a148c; }
+    .s5 { background: #e0f2f1; border-color: #004d40; } .s5 h3 { color: #004d40; }
+    .section h3 { margin-bottom: 8px; font-size: 1.05em; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.93em; }
+    th { background: #37474f; color: white; padding: 9px 12px; text-align: left; }
+    td { padding: 9px 12px; border-bottom: 1px solid #e0e0e0; vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) { background: #f5f5f5; }
+    .tip { background: #e8f5e9; border-left: 4px solid #43a047; border-radius: 0 8px 8px 0; padding: 12px 16px; margin: 12px 0; color: #1b5e20; font-size: 0.93em; }
+    .tip strong { color: #2e7d32; }
+    .remember { background: #fff3e0; border: 2px solid #ff8f00; border-radius: 10px; padding: 18px 20px; text-align: center; margin-bottom: 4px; }
+    .remember h3 { color: #e65100; margin-bottom: 10px; font-size: 1.05em; }
+    .remember p { margin: 5px 0; font-size: 0.95em; }
+    .remember .cta { font-weight: bold; font-size: 1.05em; margin-top: 12px; }
+    .flex-row { display: flex; gap: 12px; flex-wrap: wrap; margin: 10px 0; }
+    .flex-col { flex: 1; min-width: 150px; border-radius: 10px; padding: 14px 16px; }
+    .fb-orange { background: #fff3e0; border: 2px solid #f57c00; } .fb-orange h4 { color: #e65100; margin-bottom: 6px; }
+    .fb-green { background: #e8f5e9; border: 2px solid #388e3c; } .fb-green h4 { color: #1b5e20; margin-bottom: 6px; }
+    .fb-navy { background: #e8eaf6; border: 2px solid #3949ab; } .fb-navy h4 { color: #1a237e; margin-bottom: 6px; }
+    .fb-purple { background: #f3e5f5; border: 2px solid #7b1fa2; } .fb-purple h4 { color: #4a148c; margin-bottom: 6px; }
+    .fb-teal { background: #e0f2f1; border: 2px solid #00897b; } .fb-teal h4 { color: #004d40; margin-bottom: 6px; }
+    .fb-blue { background: #e3f2fd; border: 2px solid #1976d2; } .fb-blue h4 { color: #0d47a1; margin-bottom: 6px; }
+    .fb-brown { background: #efebe9; border: 2px solid #795548; } .fb-brown h4 { color: #4e342e; margin-bottom: 6px; }
+    .fb-yellow { background: #fffde7; border: 2px solid #f9a825; } .fb-yellow h4 { color: #f57f17; margin-bottom: 6px; }
+    .unit-row { display: flex; align-items: center; gap: 10px; padding: 7px 12px; border-radius: 8px; margin: 4px 0; background: #f9f9f9; font-size: 0.93em; }
+    .unit-num { background: #1a237e; color: white; border-radius: 6px; padding: 3px 10px; font-weight: bold; font-size: 0.82em; min-width: 62px; text-align: center; flex-shrink: 0; }
+    .unit-check { color: #2e7d32; font-weight: bold; font-size: 1.1em; margin-left: auto; flex-shrink: 0; }
+    .stat-row { display: flex; gap: 12px; flex-wrap: wrap; margin: 14px 0; }
+    .stat-box { flex: 1; min-width: 110px; background: #e8eaf6; border: 2px solid #3949ab; border-radius: 12px; padding: 14px; text-align: center; }
+    .stat-num { font-size: 2em; font-weight: bold; color: #1a237e; display: block; line-height: 1.1; }
+    .stat-label { font-size: 0.8em; color: #546e7a; margin-top: 4px; }
+    ul { padding-left: 20px; } li { margin: 5px 0; font-size: 0.95em; }
+    p { margin-bottom: 8px; font-size: 0.95em; }
+  </style>
+</head>
+<body>
+
+<div class="top-header">
+  <h1>Owl Smart: A 3rd Grade Learning Journey</h1>
+  <p>Course Wrap-Up &nbsp;|&nbsp; You Made It!</p>
+</div>
+
+<div class="nav-bar">
+  <a href="#congrats">Congratulations!</a>
+  <a href="#mastered">What You Mastered</a>
+  <a href="#skills">Skills You Built</a>
+  <a href="#next">What Comes Next</a>
+  <a href="#parents">Note to Parents</a>
+  <a href="#final">Final Message</a>
+</div>
+
+<div class="main">
+
+<!-- SECTION 1: CONGRATULATIONS -->
+<div class="lesson-section" id="congrats">
+  <div class="banner b1">
+    <span class="lesson-num">Course Wrap-Up</span>
+    <h2>Congratulations -- You Did It!</h2>
+    <p>A message for the student who just finished this course</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s1">
+      <h3>You Did Something Remarkable!</h3>
+      <p>If you are reading this, you have worked through <strong>20 units</strong> covering reading, writing, mathematics, science, and social studies. You read lessons, answered questions, took quizzes, and kept going -- even when some topics were challenging. That takes dedication, curiosity, and real effort. Not every student does what you just did.</p>
+      <p>You should feel genuinely proud!</p>
+    </div>
+
+    <div class="stat-row">
+      <div class="stat-box">
+        <span class="stat-num">20</span>
+        <div class="stat-label">Units completed</div>
+      </div>
+      <div class="stat-box">
+        <span class="stat-num">124</span>
+        <div class="stat-label">Lessons worked through</div>
+      </div>
+      <div class="stat-box">
+        <span class="stat-num">300</span>
+        <div class="stat-label">Quiz questions answered</div>
+      </div>
+      <div class="stat-box">
+        <span class="stat-num">4</span>
+        <div class="stat-label">Subjects mastered</div>
+      </div>
+    </div>
+
+    <div class="section s1">
+      <h3>What This Course Covered</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-navy">
+          <h4>English Language Arts</h4>
+          <p>Reading, writing, grammar, and vocabulary across 6 units and 40 lessons.</p>
+        </div>
+        <div class="flex-col fb-blue">
+          <h4>Mathematics</h4>
+          <p>Multiplication, fractions, geometry, measurement, and more across 6 units and 36 lessons.</p>
+        </div>
+        <div class="flex-col fb-green">
+          <h4>Science</h4>
+          <p>Life science, earth science, and physical science across 4 units and 24 lessons.</p>
+        </div>
+        <div class="flex-col fb-brown">
+          <h4>Social Studies</h4>
+          <p>Geography, Washington history, government, and economics across 4 units and 24 lessons.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="remember">
+      <h3>This Achievement Is Yours!</h3>
+      <p>Every lesson you read, every quiz you took, every Try It activity you worked through -- that was all you.</p>
+      <p class="cta" style="color:#e65100;">Scroll down to see everything you mastered!</p>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 2: WHAT YOU MASTERED -->
+<div class="lesson-section" id="mastered">
+  <div class="banner b2">
+    <span class="lesson-num">Looking Back</span>
+    <h2>Everything You Mastered</h2>
+    <p>A complete checklist of your learning journey -- all 20 units!</p>
+  </div>
+  <div class="lesson-content">
+
+    <div class="section s2">
+      <h3>English Language Arts -- Units 1-6</h3>
+      <div class="unit-row"><div class="unit-num">Unit 1</div><div>Reading Literature -- characters, themes, figurative language, point of view</div><div class="unit-check">✓</div></div>
+      <div class="unit-row"><div class="unit-num">Unit 2</div><div>Reading Informational Text -- main idea, text features, comparing sources</div><div class="unit-check">✓</div></div>
+      <div class="unit-row"><div class="unit-num">Unit 3</div><div>Reading Foundational Skills -- prefixes, suffixes, roots, syllables, fluency</div><div class="unit-check">✓</div></div>
+      <div class="unit-row"><div class="unit-num">Unit 4</div><div>Writing -- opinion, informational, narrative, dialogue, editing</div><div class="unit-check">✓</div></div>
+      <div class="unit-row"><div class="unit-num">Unit 5</div><div>Grammar -- nouns, verbs, adjectives, adverbs, conjunctions, punctuation</div><div class="unit-check">✓</div></div>
+      <div class="unit-row"><div class="unit-num">Unit 6</div><div>Vocabulary -- context clues, synonyms, figurative language, dictionary skills</div><div class="unit-check">✓</div></div>
+    </div>
+
+    <div class="section s2">
+      <h3>Mathematics -- Units 7-12</h3>
+      <div class="unit-row"><div class="unit-num">Unit 7</div><div>Multiplication and Division -- equal groups, fact families, properties</div><div class="unit-check">✓</div></div>
+      <div class="unit-row"><div class="unit-num">Unit 8</div><div>Place Value -- hundreds, tens, ones, rounding, even and odd, patterns</div><div class="unit-check">✓</div></div>
+      <div class="unit-row"><div class="unit-num">Unit 9</div><div>Addition and Subtraction -- regrouping, estimating, multi-step word problems</div><div class="unit-check">✓</div></div>
+      <div class="unit-row"><div class="unit-num">Unit 10</div><div>Fractions -- equal parts, number lines, equivalent fractions, comparing</div><div class="unit-check">✓</div></div>
+      <div class="unit-row"><div class="unit-num">Unit 11</div><div>Measurement and Data -- time, length, volume, perimeter, area, graphs</div><div class="unit-check">✓</div></div>
+      <div class="unit-row"><div class="unit-num">Unit 12</div><div>Geometry -- polygons, quadrilaterals, symmetry, 3D shapes</div><div class="unit-check">✓</div></div>
+    </div>
+
+    <div class="section s2">
+      <h3>Science -- Units 13-16</h3>
+      <div class="unit-row"><div class="unit-num">Unit 13</div><div>Life Science -- plant parts, animal groups, adaptations, life cycles</div><div class="unit-check">✓</div></div>
+      <div class="unit-row"><div class="unit-num">Unit 14</div><div>Ecosystems -- food chains, producers and consumers, habitats, interdependence</div><div class="unit-check">✓</div></div>
+      <div class="unit-row"><div class="unit-num">Unit 15</div><div>Earth Science -- weather, water cycle, cloud types, rocks, natural resources</div><div class="unit-check">✓</div></div>
+      <div class="unit-row"><div class="unit-num">Unit 16</div><div>Physical Science -- matter, forces, motion, magnetism, energy, light and sound</div><div class="unit-check">✓</div></div>
+    </div>
+
+    <div class="section s2">
+      <h3>Social Studies -- Units 17-20</h3>
+      <div class="unit-row"><div class="unit-num">Unit 17</div><div>Geography -- community types, maps, landforms, Washington state regions</div><div class="unit-check">✓</div></div>
+      <div class="unit-row"><div class="unit-num">Unit 18</div><div>Washington History and Since Time Immemorial -- Indigenous peoples, treaties, statehood, modern WA</div><div class="unit-check">✓</div></div>
+      <div class="unit-row"><div class="unit-num">Unit 19</div><div>Government -- three branches, Constitution, Bill of Rights, citizenship, voting</div><div class="unit-check">✓</div></div>
+      <div class="unit-row"><div class="unit-num">Unit 20</div><div>Economics and Culture -- needs and wants, trade, budgets, cultural diversity</div><div class="unit-check">✓</div></div>
+    </div>
+
+    <div class="tip"><strong>That is an entire 3rd grade year!</strong> Everything above aligns with Washington State standards -- including Common Core, NGSS, and the Since Time Immemorial curriculum. You learned what every 3rd grader at Sage Crest Elementary needs to know.</div>
+  </div>
+</div>
+
+<!-- SECTION 3: SKILLS YOU BUILT -->
+<div class="lesson-section" id="skills">
+  <div class="banner b3">
+    <span class="lesson-num">Beyond Content</span>
+    <h2>Skills You Built Along the Way</h2>
+    <p>Learning this course gave you more than knowledge -- it built lasting habits!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s3">
+      <h3>More Than Just Facts</h3>
+      <p>A lot of courses teach you facts to memorise. This course did something harder -- it asked you to <strong>think, explain, apply, and write</strong>. Every Try It activity, every open-ended quiz question, and every vocabulary challenge built skills that work in every subject for the rest of your life.</p>
+    </div>
+
+    <div class="flex-row">
+      <div class="flex-col fb-orange">
+        <h4>Study Skills</h4>
+        <p>You learned to read carefully, identify key ideas, work through difficult material step by step, and check your own understanding.</p>
+      </div>
+      <div class="flex-col fb-green">
+        <h4>Persistence</h4>
+        <p>Some lessons and quizzes were harder than others. You kept going anyway. That is one of the most valuable qualities any person can have.</p>
+      </div>
+      <div class="flex-col fb-navy">
+        <h4>Curiosity</h4>
+        <p>This course gave you hundreds of things to wonder about -- from volcanoes to fractions to treaty rights to light refraction. Stay curious!</p>
+      </div>
+    </div>
+
+    <div class="flex-row">
+      <div class="flex-col fb-purple">
+        <h4>Writing and Thinking</h4>
+        <p>The open-ended quiz questions asked you to write, explain, and think deeply. That is harder than multiple choice -- and far more valuable.</p>
+      </div>
+      <div class="flex-col fb-teal">
+        <h4>Cultural Understanding</h4>
+        <p>You learned about the Indigenous peoples of Washington, about cultures from around the world, and about the history that shaped where you live.</p>
+      </div>
+      <div class="flex-col fb-brown">
+        <h4>Vocabulary</h4>
+        <p>Across 20 units you built a rich vocabulary in reading, maths, science, and social studies -- words that will serve you in school and life.</p>
+      </div>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p>The knowledge in this course belongs to you now. Nobody can take it away.</p>
+      <p>And the habits you built -- reading carefully, thinking deeply, keeping going -- those are worth even more.</p>
+      <p class="cta" style="color:#1a237e;">You have what it takes to keep growing!</p>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 4: WHAT COMES NEXT -->
+<div class="lesson-section" id="next">
+  <div class="banner b4">
+    <span class="lesson-num">Looking Forward</span>
+    <h2>What Comes Next?</h2>
+    <p>Ways to keep your learning momentum going strong!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s4">
+      <h3>Keep the Habit Going</h3>
+      <p>The single most important thing you can do after finishing this course is <strong>keep reading every day</strong>. Even 20 minutes a day builds vocabulary, comprehension, and intelligence faster than almost anything else. Read anything you love -- fiction, nonfiction, comics, magazines, graphic novels.</p>
+    </div>
+
+    <div class="section s4">
+      <h3>Suggested Next Steps by Subject</h3>
+      <table>
+        <tr><th>Subject</th><th>Great Next Steps</th></tr>
+        <tr><td><strong>ELA</strong></td><td>Start a chapter book series you love. Keep a journal. Try writing your own short story, poem, or comic strip. Visit the Kennewick library and explore!</td></tr>
+        <tr><td><strong>Math</strong></td><td>Practice multiplication facts daily until they are instant -- 5 minutes a day is enough. Try 4th grade math preview on Khan Academy. Use real money to practice budgeting from Unit 20.</td></tr>
+        <tr><td><strong>Science</strong></td><td>Go outside and observe! Identify plants and animals, watch clouds and predict weather, find rocks and identify them. Visit the REACH Museum in Richland for local science and history.</td></tr>
+        <tr><td><strong>Social Studies</strong></td><td>Visit Sacajawea State Park in Pasco, the Yakama Nation Museum in Toppenish, or Hanford Reach National Monument. Look for local history everywhere in the Tri-Cities!</td></tr>
+      </table>
+    </div>
+
+    <div class="section s4">
+      <h3>Did Any Topic Light You Up?</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-green">
+          <h4>If you loved Science...</h4>
+          <p>Check out books on animals, volcanoes, space, or weather. Try simple experiments at home. Watch nature documentaries. The natural world is endlessly fascinating!</p>
+        </div>
+        <div class="flex-col fb-navy">
+          <h4>If you loved History...</h4>
+          <p>Explore books about Washington's tribes, the Oregon Trail, Columbia River dams, or WWII history. Your own community has extraordinary stories to discover!</p>
+        </div>
+        <div class="flex-col fb-purple">
+          <h4>If you loved Math...</h4>
+          <p>Try logic puzzles, strategy board games, and number challenges. Maths is everywhere -- cooking, sports statistics, building projects -- look for it in everyday life!</p>
+        </div>
+      </div>
+      <div class="tip"><strong>Follow your spark!</strong> The subjects that excite you most are clues about your strengths and interests. Pay attention to what makes you want to keep reading and exploring -- that curiosity is one of the greatest gifts you have.</div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 5: NOTE TO PARENTS -->
+<div class="lesson-section" id="parents">
+  <div class="banner b5">
+    <span class="lesson-num">For Parents</span>
+    <h2>A Final Note to Parents</h2>
+    <p>Thank you for being part of this journey</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s5">
+      <h3>You Made This Possible</h3>
+      <p>Your child completing all 20 units of Owl Smart is a real achievement -- and it would not have happened without your support, encouragement, and investment. Whether you sat nearby during study sessions, celebrated quiz results, reviewed missed answers together, or simply made space and time for learning, your role mattered enormously.</p>
+    </div>
+
+    <div class="section s5">
+      <h3>As You Celebrate This Milestone</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-orange">
+          <h4>Celebrate the effort</h4>
+          <p>Acknowledge how hard your child worked -- not just that it is done. "I am so proud of how hard you kept going" matters more than "you finished!"</p>
+        </div>
+        <div class="flex-col fb-teal">
+          <h4>Take a genuine break</h4>
+          <p>Rest is part of learning. Let your child enjoy the sense of accomplishment before jumping into the next challenge. Celebrate fully!</p>
+        </div>
+        <div class="flex-col fb-navy">
+          <h4>Keep the daily reading habit</h4>
+          <p>Even 15-20 minutes of daily reading will maintain the momentum your child has built. It is the single highest-return learning habit at this age.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section s5">
+      <h3>Connecting Learning to Your Community</h3>
+      <p>Washington state and the Tri-Cities area are rich learning environments. Now that your child has the background knowledge from this course, the world around them looks different:</p>
+      <ul>
+        <li>Driving past the Columbia River connects to Units 14, 15, 17, and 18</li>
+        <li>Seeing the Cascade Mountains on the horizon connects to Units 15, 17, and 18</li>
+        <li>Buying apples or grapes at the market connects to Units 18 and 20</li>
+        <li>Voting season and election news connects to Unit 19</li>
+        <li>Meeting neighbours from different cultural backgrounds connects to Unit 20</li>
+        <li>A visit to Sacajawea State Park in Pasco connects directly to Unit 18</li>
+      </ul>
+      <div class="tip"><strong>The research is clear:</strong> Children who receive engaged parental support in learning consistently outperform those who do not -- not because parents give answers, but because they show that learning matters. You did that. That is a gift your child will carry for life.</div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 6: FINAL MESSAGE -->
+<div class="lesson-section" id="final">
+  <div class="banner b1">
+    <span class="lesson-num">The End -- and the Beginning!</span>
+    <h2>To the Student Who Completed This Course</h2>
+    <p>A final message from Owl Smart</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s1">
+      <h3>You Have a Mind That Can Do Extraordinary Things</h3>
+      <p>You proved it by working through 20 units, 124 lessons, and 300 quiz questions covering some of the most important knowledge a 3rd grader can have.</p>
+      <p>You learned about the salmon that shaped Washington's culture for thousands of years. The fractions that shape mathematics. The forces that shape the physical world. The rights and responsibilities that shape democracy. The Indigenous peoples who have been here since time immemorial.</p>
+      <p>That knowledge is yours now. Nobody can take it from you.</p>
+    </div>
+
+    <div class="section s1">
+      <h3>The World Needs Learners Like You</h3>
+      <p>The world needs people who <strong>love learning</strong>, think carefully, ask good questions, and keep going when things get hard.</p>
+      <p>You showed all of those things in this course. Whatever comes next -- the next grade, the next challenge, the next big idea that captures your imagination -- you are ready for it.</p>
+    </div>
+
+    <div class="remember">
+      <h3>Owl Smart: A 3rd Grade Learning Journey -- Complete!</h3>
+      <p>20 units &nbsp;|&nbsp; 124 lessons &nbsp;|&nbsp; 4 subjects &nbsp;|&nbsp; 1 remarkable student</p>
+      <p>Sage Crest Elementary &nbsp;|&nbsp; Kennewick School District &nbsp;|&nbsp; Washington State</p>
+      <p class="cta" style="color:#e65100;">Keep reading. Keep asking why. Keep going. The adventure is just beginning!</p>
+    </div>
+  </div>
+</div>
+
+</div>
+<script>
+  const sections = document.querySelectorAll('.lesson-section');
+  const navLinks = document.querySelectorAll('.nav-bar a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 80) current = s.getAttribute('id'); });
+    navLinks.forEach(l => { l.classList.remove('active'); if (l.getAttribute('href') === '#' + current) l.classList.add('active'); });
+  });
+</script>
+</body>
+</html>
