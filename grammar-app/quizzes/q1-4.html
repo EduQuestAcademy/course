@@ -552,6 +552,86 @@
     .next-btn { margin: 12px 16px 0; width: calc(100% - 32px); }
   }
 
+
+  /* ── EMBED MODE (?embed=1) ──────────────────────────────────
+     Activated when URL contains ?embed=1 or &embed=1
+     Hides sidebar, removes desktop two-panel, compact header
+  ─────────────────────────────────────────────────────────── */
+  body.embed-mode {
+    background: var(--bg) !important;
+    font-size: 15.5px;
+  }
+  body.embed-mode .quiz-shell {
+    max-width: 100% !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    flex-direction: column !important;
+    min-height: unset !important;
+  }
+  /* Hide sidebar entirely in embed */
+  /* Sidebar hidden in embed — back link stays visible in embed header */
+  body.embed-mode .quiz-sidebar {
+    display: none !important;
+  }
+  /* Compact embed header replaces sidebar on mobile */
+  .embed-header {
+    display: none;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 10px 20px 0;
+    box-shadow: 0 2px 8px rgba(99,102,241,0.08);
+  }
+  body.embed-mode .embed-header { display: block; }
+  .embed-hdr-row {
+    display: flex; align-items: center;
+    justify-content: space-between; margin-bottom: 10px;
+  }
+  /* Back button visible in embed */
+  #embed-back {
+    color: var(--accent-mid); font-size: 0.82em; font-weight: 700;
+    text-decoration: none; background: none; border: none;
+    cursor: pointer; font-family: inherit;
+    padding: 5px 10px; border-radius: var(--r-sm);
+    transition: background 0.15s; flex-shrink: 0;
+  }
+  #embed-back:hover { background: var(--accent-lt); }
+  .embed-lesson-tag {
+    display: inline-flex; align-items: center;
+    background: var(--accent-lt); border: 1.5px solid var(--border-md);
+    border-radius: var(--r-full); padding: 4px 12px;
+    font-size: 0.65em; font-weight: 700; letter-spacing: 0.07em;
+    color: var(--accent); text-transform: uppercase;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .embed-counter {
+    font-size: 0.78em; font-weight: 700;
+    font-family: 'JetBrains Mono', monospace; color: var(--accent-mid);
+  }
+  .embed-prog-track {
+    height: 4px; background: var(--border);
+    border-radius: var(--r-full); overflow: hidden;
+  }
+  .embed-prog-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent), var(--accent-mid));
+    border-radius: var(--r-full);
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  /* Main area in embed is full width */
+  body.embed-mode .quiz-main {
+    min-height: unset !important;
+    padding-bottom: 24px !important;
+  }
+  /* Slightly tighter padding in embed */
+  body.embed-mode .q-wrap { padding: 20px 22px 14px !important; }
+  body.embed-mode .opt-list { padding: 0 22px !important; }
+  body.embed-mode .tf-grid  { padding: 0 22px !important; }
+  body.embed-mode .fill-wrap{ padding: 0 22px !important; }
+  body.embed-mode .expl-box { margin: 12px 22px 0 !important; }
+  body.embed-mode .next-btn { margin: 12px 22px 0 !important; width: calc(100% - 44px) !important; }
+  body.embed-mode .results   { padding: 32px 22px 24px !important; }
+
 </style>
 </head>
 <body>
@@ -614,6 +694,15 @@
 </div>
 
 <script>
+
+// ── EMBED MODE DETECTION ──
+(function() {
+  var params = new URLSearchParams(window.location.search);
+  if (params.get("embed") === "1") {
+    document.body.classList.add("embed-mode");
+  }
+})();
+
 var Q=[{"type": "mcq", "q": "Which of the following is an adjective?", "options": ["Quickly", "Beauty", "Brilliant", "Run"], "answer": 2, "explanation": "Adjectives describe or modify nouns. 'Brilliant' is an adjective. 'Quickly' is an adverb, 'beauty' is a noun, and 'run' is a verb."}, {"type": "mcq", "q": "Which sentence uses an adjective as a predicative adjective?", "options": ["She wore a beautiful dress.", "The sky looks cloudy.", "It was a cold morning.", "He is a talented musician."], "answer": 1, "explanation": "A predicative adjective follows a linking verb and describes the subject. 'Cloudy' follows 'looks' and describes 'the sky'. In the other sentences, the adjectives appear before the nouns (attributive position)."}, {"type": "mcq", "q": "Which sentence has the adjectives in the correct order?", "options": ["An Italian old small beautiful clock.", "A beautiful small old Italian clock.", "A small beautiful Italian old clock.", "An old beautiful small Italian clock."], "answer": 1, "explanation": "English adjective order: opinion – size – age – shape – colour – origin – material. 'Beautiful' (opinion) + 'small' (size) + 'old' (age) + 'Italian' (origin) is correct."}, {"type": "mcq", "q": "Which is a comparative adjective used correctly?", "options": ["This book is more good than the last one.", "This book is better than the last one.", "This book is more better than the last one.", "This book is gooder than the last one."], "answer": 1, "explanation": "The comparative of 'good' is 'better' (irregular). 'More good', 'more better' (double comparative), and 'gooder' are all incorrect. Irregular comparatives: good/better/best, bad/worse/worst, far/farther/farthest."}, {"type": "mcq", "q": "Which sentence uses a superlative adjective correctly?", "options": ["It was the most interestingest film.", "It was the most interesting film.", "It was the interestingest film.", "It was the more interesting film."], "answer": 1, "explanation": "Multi-syllable adjectives form the superlative with 'most'. 'Most interestingest' is a double superlative error. 'More interesting' is comparative, not superlative."}, {"type": "tf", "q": "Absolute adjectives like 'unique', 'perfect', and 'infinite' can be modified with 'very' or 'most'.", "answer": false, "explanation": "False. Absolute adjectives describe qualities that cannot be graded — something is either unique or it isn't. 'Most unique' and 'very perfect' are logically flawed. However, in informal usage, people do say 'more perfect', 'very unique' — but these are technically incorrect."}, {"type": "mcq", "q": "Which sentence uses a compound adjective correctly?", "options": ["A well known author wrote this book.", "A well-known author wrote this book.", "A known-well author wrote this book.", "A wellknown author wrote this book."], "answer": 1, "explanation": "Compound adjectives before a noun are hyphenated: 'well-known'. After a linking verb, no hyphen is needed: 'The author is well known'. 'Known-well' reverses the order incorrectly."}, {"type": "mcq", "q": "In which sentence is the adjective modifying a pronoun rather than a noun?", "options": ["The tall man stood at the door.", "She wore a red coat.", "Something strange happened last night.", "The old bridge was repaired."], "answer": 2, "explanation": "Adjectives can modify indefinite pronouns (something, nothing, anything, everyone). In 'Something strange happened', 'strange' modifies the pronoun 'something'. Note: the adjective follows the pronoun (not before it, as with regular nouns)."}, {"type": "mcq", "q": "Which sentence contains a participial adjective?", "options": ["She opened the large door.", "The broken window needs replacing.", "He drank cold water.", "They seemed happy."], "answer": 1, "explanation": "A participial adjective is a verb participle used as an adjective. 'Broken' is a past participle modifying 'window'. 'Large', 'cold', and 'happy' are regular descriptive adjectives."}, {"type": "fill", "q": "An adjective that comes before the noun it modifies (e.g., 'the tall building') is in the ________ position.", "answer": "attributive", "hint": "It attributes a quality directly to the noun...", "explanation": "When an adjective comes directly before the noun it modifies, it is in the ATTRIBUTIVE position: 'the tall building', 'a beautiful sunset'. When it follows a linking verb, it is in the PREDICATIVE position: 'The building is tall.'"}, {"type": "mcq", "q": "Identify the error in: 'She is more cleverer than her sister.'", "options": ["'She' should be 'Her'", "'More cleverer' is a double comparative — use either 'more clever' or 'cleverer'", "'Than' should be 'then'", "No error — the sentence is correct"], "answer": 1, "explanation": "'More cleverer' is a double comparative error — you cannot use both 'more' and '-er'. Use either 'cleverer' or 'more clever' (both are accepted for 'clever'). For longer adjectives: use 'more'. For shorter ones: use '-er'."}, {"type": "mcq", "q": "Which sentence uses a demonstrative adjective correctly?", "options": ["These informations are useful.", "This advice is very helpful.", "Those furnitures are expensive.", "These equipments are new."], "answer": 1, "explanation": "'Advice', 'information', 'furniture', and 'equipment' are uncountable — they cannot be pluralised. 'This advice' is correct. 'These informations', 'those furnitures', and 'these equipments' all incorrectly pluralise uncountable nouns."}, {"type": "tf", "q": "In English, adjectives change their form to agree with the noun they modify in number and gender.", "answer": false, "explanation": "False. English adjectives do NOT change form to agree with the noun. 'A tall man', 'a tall woman', 'tall men', 'tall women' — the adjective 'tall' stays the same. This is different from many other languages (French, Spanish, Arabic) where adjectives must agree."}, {"type": "mcq", "q": "Which sentence uses an adjective correctly after a verb of perception?", "options": ["The food tastes wonderfully.", "She looks beautifully tonight.", "The music sounds loudly.", "The perfume smells wonderful."], "answer": 3, "explanation": "After verbs of perception (taste, look, smell, sound, feel), an ADJECTIVE (not adverb) is used to describe the subject. 'The perfume smells wonderful' — 'wonderful' is an adjective. 'Wonderfully/beautifully/loudly' are adverbs (wrong here)."}, {"type": "mcq", "q": "Which word group contains ONLY adjectives?", "options": ["quickly, beautifully, softly", "happiness, freedom, justice", "ancient, circular, magnificent, hollow", "run, jump, sing, dance"], "answer": 2, "explanation": "'Ancient', 'circular', 'magnificent', and 'hollow' are all adjectives. The first group contains adverbs, the second contains nouns, and the fourth contains verbs."}, {"type": "mcq", "q": "Which sentence correctly uses an adjective phrase?", "options": ["The full of energy child ran happily.", "The child, full of energy, ran happily.", "The child full of energy ran happily.", "Full of energy the child ran happily."], "answer": 1, "explanation": "'Full of energy' is an adjective phrase (prepositional phrase functioning as an adjective). It is correctly placed after the noun 'child' with commas (non-restrictive). Option C is also acceptable without commas in some contexts."}, {"type": "fill", "q": "When an adjective follows a linking verb and describes the subject, it is called a ________ adjective.", "answer": "predicative", "hint": "It predicts/describes the subject via a linking verb...", "explanation": "A PREDICATIVE adjective follows a linking verb: 'She is clever', 'The soup tastes delicious', 'He seems tired'. Compare with ATTRIBUTIVE adjectives which come before the noun: 'a clever student'."}, {"type": "mcq", "q": "Identify the error in adjective use: 'She was more well-prepared than anyone else in the room.'", "options": ["'More well-prepared' should be 'better-prepared'", "'Anyone else' should be 'someone else'", "'In the room' should be 'at the room'", "No error — the sentence is correct"], "answer": 0, "explanation": "'More well-prepared' is incorrect — the comparative of 'well-prepared' is 'better-prepared' (since 'well' has the irregular comparative 'better'). Alternatively, 'more thoroughly prepared' works."}, {"type": "mcq", "q": "Which sentence uses gradable and non-gradable adjectives correctly?", "options": ["The water is quite boiling.", "The results are absolutely incredible and somewhat unique.", "The film was absolutely fascinating and rather long.", "The answer is very correct."], "answer": 2, "explanation": "'Absolutely' is used with non-gradable adjectives ('absolutely fascinating') and 'rather' with gradable ones ('rather long'). 'Boiling' is non-gradable ('quite boiling' is wrong). 'Unique' is absolute ('somewhat unique' is wrong). 'Very correct' misuses 'very' with an absolute adjective."}, {"type": "mcq", "q": "Which sentence demonstrates the most sophisticated use of adjectives?", "options": ["The old man was very tired and very hungry after the very long walk.", "The elderly, famished professor, his eyes glassy with exhaustion, could barely focus on the endless manuscript before him.", "She was happy. The room was nice. The food was good. The music was loud.", "The man looked really very extremely tired from his very, very long journey."], "answer": 1, "explanation": "Option B demonstrates sophisticated adjective use: 'elderly' (more precise than 'old'), 'famished' (more vivid than 'hungry'), 'glassy' (precise participial adjective), 'endless' (evocative). It avoids repetition and intensifier overuse, using varied, precise vocabulary."}];
 var SKEY="m1_l4",NEXT="q1-5.html",HUB="../modules/module1.html";
 var cur=0,cor=0,answered=false,st=Date.now(),ac=null;

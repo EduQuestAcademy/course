@@ -552,6 +552,86 @@
     .next-btn { margin: 12px 16px 0; width: calc(100% - 32px); }
   }
 
+
+  /* ── EMBED MODE (?embed=1) ──────────────────────────────────
+     Activated when URL contains ?embed=1 or &embed=1
+     Hides sidebar, removes desktop two-panel, compact header
+  ─────────────────────────────────────────────────────────── */
+  body.embed-mode {
+    background: var(--bg) !important;
+    font-size: 15.5px;
+  }
+  body.embed-mode .quiz-shell {
+    max-width: 100% !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    flex-direction: column !important;
+    min-height: unset !important;
+  }
+  /* Hide sidebar entirely in embed */
+  /* Sidebar hidden in embed — back link stays visible in embed header */
+  body.embed-mode .quiz-sidebar {
+    display: none !important;
+  }
+  /* Compact embed header replaces sidebar on mobile */
+  .embed-header {
+    display: none;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 10px 20px 0;
+    box-shadow: 0 2px 8px rgba(99,102,241,0.08);
+  }
+  body.embed-mode .embed-header { display: block; }
+  .embed-hdr-row {
+    display: flex; align-items: center;
+    justify-content: space-between; margin-bottom: 10px;
+  }
+  /* Back button visible in embed */
+  #embed-back {
+    color: var(--accent-mid); font-size: 0.82em; font-weight: 700;
+    text-decoration: none; background: none; border: none;
+    cursor: pointer; font-family: inherit;
+    padding: 5px 10px; border-radius: var(--r-sm);
+    transition: background 0.15s; flex-shrink: 0;
+  }
+  #embed-back:hover { background: var(--accent-lt); }
+  .embed-lesson-tag {
+    display: inline-flex; align-items: center;
+    background: var(--accent-lt); border: 1.5px solid var(--border-md);
+    border-radius: var(--r-full); padding: 4px 12px;
+    font-size: 0.65em; font-weight: 700; letter-spacing: 0.07em;
+    color: var(--accent); text-transform: uppercase;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .embed-counter {
+    font-size: 0.78em; font-weight: 700;
+    font-family: 'JetBrains Mono', monospace; color: var(--accent-mid);
+  }
+  .embed-prog-track {
+    height: 4px; background: var(--border);
+    border-radius: var(--r-full); overflow: hidden;
+  }
+  .embed-prog-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent), var(--accent-mid));
+    border-radius: var(--r-full);
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  /* Main area in embed is full width */
+  body.embed-mode .quiz-main {
+    min-height: unset !important;
+    padding-bottom: 24px !important;
+  }
+  /* Slightly tighter padding in embed */
+  body.embed-mode .q-wrap { padding: 20px 22px 14px !important; }
+  body.embed-mode .opt-list { padding: 0 22px !important; }
+  body.embed-mode .tf-grid  { padding: 0 22px !important; }
+  body.embed-mode .fill-wrap{ padding: 0 22px !important; }
+  body.embed-mode .expl-box { margin: 12px 22px 0 !important; }
+  body.embed-mode .next-btn { margin: 12px 22px 0 !important; width: calc(100% - 44px) !important; }
+  body.embed-mode .results   { padding: 32px 22px 24px !important; }
+
 </style>
 </head>
 <body>
@@ -614,6 +694,15 @@
 </div>
 
 <script>
+
+// ── EMBED MODE DETECTION ──
+(function() {
+  var params = new URLSearchParams(window.location.search);
+  if (params.get("embed") === "1") {
+    document.body.classList.add("embed-mode");
+  }
+})();
+
 var Q=[{"type": "mcq", "q": "Which of the following is a personal pronoun?", "options": ["This", "He", "Who", "Each"], "answer": 1, "explanation": "Personal pronouns refer to specific people. 'He' is a third-person singular personal pronoun. 'This' is demonstrative, 'who' is interrogative/relative, and 'each' is indefinite."}, {"type": "mcq", "q": "Which sentence uses a reflexive pronoun correctly?", "options": ["He did it hisself.", "She hurt herself.", "They finished theirselves.", "We enjoyed ourself."], "answer": 1, "explanation": "Reflexive pronouns are used when subject and object refer to the same person. 'She hurt herself' is correct. 'Hisself' and 'theirselves' are not standard English forms."}, {"type": "mcq", "q": "Identify the demonstrative pronoun in: 'These are the best results we have seen.'", "options": ["Best", "Results", "These", "Seen"], "answer": 2, "explanation": "'These' stands alone as the subject, replacing a noun — making it a demonstrative pronoun. Demonstrative pronouns: this, that, these, those."}, {"type": "mcq", "q": "Which sentence uses a relative pronoun correctly?", "options": ["The book who I read was fascinating.", "The book which I read was fascinating.", "The book what I read was fascinating.", "The book whom I read was fascinating."], "answer": 1, "explanation": "'Which' introduces a relative clause referring to a thing ('the book'). 'Who/whom' refers to people. 'What' cannot introduce a relative clause modifying a noun this way."}, {"type": "mcq", "q": "Which of the following is an indefinite pronoun?", "options": ["She", "Herself", "Which", "Everyone"], "answer": 3, "explanation": "Indefinite pronouns refer to non-specific people or things. 'Everyone' is an indefinite pronoun. 'She' is personal, 'herself' is reflexive, 'which' is relative."}, {"type": "tf", "q": "The pronoun 'whom' is used as the subject of a verb.", "answer": false, "explanation": "False. 'Whom' is the OBJECT form of 'who'. Use 'who' as subject (Who did this?) and 'whom' as object (To whom did you speak?). A test: if you can replace it with 'him', use 'whom'."}, {"type": "mcq", "q": "In which sentence is the pronoun used incorrectly?", "options": ["She gave the book to him.", "Between you and I, this is wrong.", "They invited us to the party.", "He and I went to the market."], "answer": 1, "explanation": "After a preposition, the object form must be used. 'Between you and I' is wrong — it should be 'between you and me'. 'Between' is a preposition requiring the object pronoun 'me'."}, {"type": "mcq", "q": "Which sentence uses a possessive pronoun correctly?", "options": ["The decision is their's.", "The decision is theirs.", "The decision is her's.", "The decision is mines."], "answer": 1, "explanation": "Possessive pronouns (mine, yours, his, hers, ours, theirs) never take an apostrophe. 'Theirs' is correct. 'Their's', 'her's', and 'mines' are all incorrect forms."}, {"type": "mcq", "q": "What is the function of 'it' in: 'It is raining heavily outside.'?", "options": ["Personal pronoun replacing a noun", "Reflexive pronoun", "Dummy subject pronoun", "Demonstrative pronoun"], "answer": 2, "explanation": "'It' here is a dummy (empty) subject — it doesn't refer to any noun but fills the grammatical subject position when talking about weather, time, or environment."}, {"type": "mcq", "q": "Which sentence has clear and correct pronoun reference?", "options": ["After James spoke to David, he felt better.", "When Sarah called the office, it was closed.", "The manager submitted her report on time.", "They say it will rain tomorrow."], "answer": 2, "explanation": "'The manager submitted her report' has clear, unambiguous pronoun reference — 'her' clearly refers to 'the manager'. The other options have unclear or vague pronoun reference."}, {"type": "fill", "q": "The pronouns myself, yourself, himself, herself, itself, ourselves, yourselves, and themselves are called ________ pronouns.", "answer": "reflexive", "hint": "They reflect back to the subject...", "explanation": "These are REFLEXIVE pronouns. They are used when the subject and object refer to the same person/thing, or for emphasis (intensive use). Never say 'hisself' or 'theirselves'."}, {"type": "mcq", "q": "Which sentence uses an interrogative pronoun correctly?", "options": ["Who's jacket is this?", "Whose jacket is this?", "Whom jacket is this?", "Which jacket is her's?"], "answer": 1, "explanation": "'Whose' asks about possession. 'Who's' is a contraction of 'who is'. 'Whose jacket is this?' is correct. Possessive pronouns never have apostrophes."}, {"type": "mcq", "q": "Choose the correct pronoun: 'Neither the students nor the teacher ___ ready.'", "options": ["were", "are", "is", "am"], "answer": 2, "explanation": "With 'neither...nor', the verb agrees with the closest subject. 'Teacher' is singular and closest, so we use 'is'. This is the proximity rule for subject-verb agreement with correlative conjunctions."}, {"type": "tf", "q": "Pronouns must always agree with their antecedents in number and gender.", "answer": true, "explanation": "True. Pronoun-antecedent agreement is essential. 'Each student must submit their assignment' (singular antecedent, generic 'their') and 'The girls finished their work' (plural) both show agreement."}, {"type": "mcq", "q": "Which sentence avoids sexist pronoun usage most effectively?", "options": ["Every student must bring his textbook.", "Every student must bring their textbook.", "Every student must bring her textbook.", "Every student must bring his or her textbook."], "answer": 1, "explanation": "'Their' used with a singular antecedent ('every student') is now widely accepted as a gender-neutral option, endorsed by major style guides. It avoids the assumption that all students are male."}, {"type": "mcq", "q": "Identify the pronoun type in: 'One must do one's best at all times.'", "options": ["Personal pronoun", "Demonstrative pronoun", "Impersonal/indefinite pronoun", "Reflexive pronoun"], "answer": 2, "explanation": "'One' is an impersonal/indefinite pronoun used in formal or literary contexts to refer to people in general without specifying who. 'One's' is its possessive form."}, {"type": "mcq", "q": "Which sentence uses a reciprocal pronoun correctly?", "options": ["They helped each other during the crisis.", "They helped themselves during the crisis.", "They helped one another by themselves.", "They helped theirselves during the crisis."], "answer": 0, "explanation": "Reciprocal pronouns (each other, one another) express a mutual action. 'They helped each other' correctly shows two people helping one another. 'Theirselves' is not a standard English form."}, {"type": "fill", "q": "In the sentence 'It was she who solved the problem,' the pronoun 'she' is in the ________ case.", "answer": "nominative|subjective", "hint": "It comes after a linking verb...", "explanation": "After a linking verb like 'was', the subject form (nominative/subjective case) is used: 'It was she', 'It was he', 'It was I'. Informally, object forms are often used, but formally the nominative is correct."}, {"type": "mcq", "q": "Which sentence contains an error in pronoun case?", "options": ["He and I completed the project.", "The prize was given to her and me.", "Between you and me, this is confidential.", "The teacher asked she and I to stay."], "answer": 3, "explanation": "'The teacher asked she and I to stay' is incorrect. After a verb ('asked'), object pronouns are needed: 'her and me'. 'She' and 'I' are subject pronouns wrongly used as objects."}, {"type": "mcq", "q": "Which sentence demonstrates the most sophisticated and accurate pronoun use?", "options": ["Everyone in the office did their best, but the project, which nobody anticipated would fail, disappointed those who had invested themselves fully in it.", "Everyone in the office did his best, but the project which nobody anticipated would fail, disappointed those who invested theirselves fully in it.", "Everyone in the office did their best, but the project, whom nobody anticipated would fail, disappointed those who had invested themselves fully into it.", "Everyone in the offices did their best, but the project which nobody anticipated would fail, disappointed those who had invested themselves fully in it."], "answer": 0, "explanation": "Option A correctly uses: 'their' (gender-neutral with 'everyone'), 'which' (not 'whom' for a non-person antecedent), 'themselves' (not 'theirselves'), and 'in it' (not 'into it'). All pronoun choices are accurate."}];
 var SKEY="m1_l2",NEXT="q1-3.html",HUB="../modules/module1.html";
 var cur=0,cor=0,answered=false,st=Date.now(),ac=null;

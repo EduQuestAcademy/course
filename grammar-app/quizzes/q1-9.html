@@ -552,6 +552,86 @@
     .next-btn { margin: 12px 16px 0; width: calc(100% - 32px); }
   }
 
+
+  /* ── EMBED MODE (?embed=1) ──────────────────────────────────
+     Activated when URL contains ?embed=1 or &embed=1
+     Hides sidebar, removes desktop two-panel, compact header
+  ─────────────────────────────────────────────────────────── */
+  body.embed-mode {
+    background: var(--bg) !important;
+    font-size: 15.5px;
+  }
+  body.embed-mode .quiz-shell {
+    max-width: 100% !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    flex-direction: column !important;
+    min-height: unset !important;
+  }
+  /* Hide sidebar entirely in embed */
+  /* Sidebar hidden in embed — back link stays visible in embed header */
+  body.embed-mode .quiz-sidebar {
+    display: none !important;
+  }
+  /* Compact embed header replaces sidebar on mobile */
+  .embed-header {
+    display: none;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 10px 20px 0;
+    box-shadow: 0 2px 8px rgba(99,102,241,0.08);
+  }
+  body.embed-mode .embed-header { display: block; }
+  .embed-hdr-row {
+    display: flex; align-items: center;
+    justify-content: space-between; margin-bottom: 10px;
+  }
+  /* Back button visible in embed */
+  #embed-back {
+    color: var(--accent-mid); font-size: 0.82em; font-weight: 700;
+    text-decoration: none; background: none; border: none;
+    cursor: pointer; font-family: inherit;
+    padding: 5px 10px; border-radius: var(--r-sm);
+    transition: background 0.15s; flex-shrink: 0;
+  }
+  #embed-back:hover { background: var(--accent-lt); }
+  .embed-lesson-tag {
+    display: inline-flex; align-items: center;
+    background: var(--accent-lt); border: 1.5px solid var(--border-md);
+    border-radius: var(--r-full); padding: 4px 12px;
+    font-size: 0.65em; font-weight: 700; letter-spacing: 0.07em;
+    color: var(--accent); text-transform: uppercase;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .embed-counter {
+    font-size: 0.78em; font-weight: 700;
+    font-family: 'JetBrains Mono', monospace; color: var(--accent-mid);
+  }
+  .embed-prog-track {
+    height: 4px; background: var(--border);
+    border-radius: var(--r-full); overflow: hidden;
+  }
+  .embed-prog-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent), var(--accent-mid));
+    border-radius: var(--r-full);
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  /* Main area in embed is full width */
+  body.embed-mode .quiz-main {
+    min-height: unset !important;
+    padding-bottom: 24px !important;
+  }
+  /* Slightly tighter padding in embed */
+  body.embed-mode .q-wrap { padding: 20px 22px 14px !important; }
+  body.embed-mode .opt-list { padding: 0 22px !important; }
+  body.embed-mode .tf-grid  { padding: 0 22px !important; }
+  body.embed-mode .fill-wrap{ padding: 0 22px !important; }
+  body.embed-mode .expl-box { margin: 12px 22px 0 !important; }
+  body.embed-mode .next-btn { margin: 12px 22px 0 !important; width: calc(100% - 44px) !important; }
+  body.embed-mode .results   { padding: 32px 22px 24px !important; }
+
 </style>
 </head>
 <body>
@@ -614,6 +694,15 @@
 </div>
 
 <script>
+
+// ── EMBED MODE DETECTION ──
+(function() {
+  var params = new URLSearchParams(window.location.search);
+  if (params.get("embed") === "1") {
+    document.body.classList.add("embed-mode");
+  }
+})();
+
 var Q=[{"type": "mcq", "q": "Which sentence contains a proper noun, a personal pronoun, and an action verb?", "options": ["The city was beautiful and calm.", "She visited Paris last spring.", "Everyone arrived on time.", "Running through the park is enjoyable."], "answer": 1, "explanation": "'Paris' is a proper noun (specific city), 'She' is a personal pronoun, and 'visited' is an action verb. This sentence contains all three elements."}, {"type": "mcq", "q": "Which sentence contains a linking verb and a predicative adjective?", "options": ["She played the piano beautifully.", "The music sounds peaceful.", "He wrote a long letter.", "They built a large house."], "answer": 1, "explanation": "'Sounds' is a linking verb connecting 'music' to the predicative adjective 'peaceful'. The other sentences use action verbs."}, {"type": "mcq", "q": "Identify the part of speech of 'however' in: 'He studied hard; however, he did not pass.'", "options": ["Coordinating conjunction", "Preposition", "Conjunctive adverb", "Subordinating conjunction"], "answer": 2, "explanation": "'However' is a conjunctive adverb — it connects two independent clauses and shows contrast. It requires a semicolon before it and a comma after."}, {"type": "mcq", "q": "Which sentence uses a reflexive pronoun for emphasis (intensive use)?", "options": ["She hurt herself on the door.", "The director herself reviewed every application.", "They enjoyed theirselves at the party.", "He did it hisself."], "answer": 1, "explanation": "'Herself' here adds emphasis — the director PERSONALLY reviewed. This is the intensive (emphatic) use. The other options are either correct reflexive use or non-standard forms."}, {"type": "mcq", "q": "Which sentence uses adjectives in the correct order?", "options": ["A Chinese ancient large gorgeous golden vase.", "A gorgeous large ancient golden Chinese vase.", "A large gorgeous golden ancient Chinese vase.", "A golden gorgeous large Chinese ancient vase."], "answer": 1, "explanation": "Correct adjective order: opinion (gorgeous) – size (large) – age (ancient) – colour (golden) – origin (Chinese). This is the standard sequence in English."}, {"type": "mcq", "q": "Which sentence uses both a preposition of time and a preposition of place correctly?", "options": ["She arrived in the café at noon.", "She arrived at the café in noon.", "She arrived at the café at noon.", "She arrived on the café at noon."], "answer": 2, "explanation": "'At' is correct for specific locations ('at the café') and specific times ('at noon'). 'In noon' and 'on the café' are both incorrect."}, {"type": "tf", "q": "In English, 'hard' and 'hardly' have the same meaning when used as adverbs.", "answer": false, "explanation": "False. 'Hard' (adverb) = with great effort: 'She worked hard.' 'Hardly' = almost not: 'She hardly worked.' These are nearly opposite in meaning! This is a common confusion."}, {"type": "mcq", "q": "Which sentence uses a subordinating conjunction and an adverb of frequency correctly?", "options": ["Whenever it rains, she carries usually an umbrella.", "Whenever it rains, she usually carries an umbrella.", "She usually carries an umbrella whenever rains.", "Usually whenever it rains she carries an umbrella."], "answer": 1, "explanation": "'Whenever' introduces the subordinate clause; 'usually' (adverb of frequency) correctly precedes the main verb 'carries'. The subordinate clause followed by a comma is also correct."}, {"type": "mcq", "q": "Which sentence contains an interjection, a collective noun, and a modal verb?", "options": ["Well, everyone arrived on time for the meeting.", "Wow! The team should celebrate this victory.", "Hmm, she runs every morning before work.", "The group finished their work quickly."], "answer": 1, "explanation": "'Wow' is an interjection, 'team' is a collective noun, and 'should' is a modal verb. Option A has 'everyone' (indefinite pronoun, not collective noun); option C has no modal; option D has no interjection."}, {"type": "mcq", "q": "Which sentence uses ALL parts of speech correctly?", "options": ["Neither the driver nor the passengers was prepared for the delay.", "Although the journey was extremely long, the passengers remained remarkably calm.", "Between you and I, the plan is not good in all.", "The team celebrated their victory, but everyone were exhausted."], "answer": 1, "explanation": "Option B is fully correct: 'Although' (subordinating conjunction), 'extremely' (adverb modifying adjective 'long'), 'remained' (linking verb), 'remarkably calm' (adverb + adjective). The other options contain agreement errors or wrong pronoun/preposition forms."}, {"type": "tf", "q": "Adverbs can only appear immediately after the verb they modify.", "answer": false, "explanation": "False. Adverbs are highly flexible in position: 'Quietly, she left the room' / 'She quietly left the room' / 'She left the room quietly'. All are correct. Some adverbs have preferred positions, but they are not restricted to immediately after the verb."}, {"type": "fill", "q": "The eight traditional parts of speech in English are: noun, pronoun, verb, adjective, adverb, preposition, conjunction, and ________.", "answer": "interjection", "hint": "The last one expresses emotion...", "explanation": "The eight traditional parts of speech are: noun, pronoun, verb, adjective, adverb, preposition, conjunction, and INTERJECTION. Every word in English belongs to one or more of these categories depending on how it functions in a sentence."}, {"type": "mcq", "q": "In which sentence does every word serve a different grammatical function?", "options": ["Run quickly.", "She always runs very quickly.", "The exhausted runner suddenly collapsed.", "Hurray! She ran."], "answer": 2, "explanation": "'The' (article/determiner), 'exhausted' (participial adjective), 'runner' (noun/subject), 'suddenly' (adverb of manner), 'collapsed' (intransitive action verb) — five words, five different grammatical functions."}, {"type": "mcq", "q": "Which sentence demonstrates incorrect use of multiple parts of speech?", "options": ["She spoke eloquently and with great passion.", "He was very tiredly after the long run.", "The committee, which met on Friday, reached a unanimous decision.", "Neither the students nor the teacher was informed."], "answer": 1, "explanation": "'Very tiredly' is incorrect — 'tired' is an adjective (predicative) and should follow 'was': 'He was very tired'. 'Tiredly' is an adverb and cannot be a subject complement after 'was'."}, {"type": "mcq", "q": "Identify the part of speech of 'that' in: 'The book that I recommended has been sold out.'", "options": ["Demonstrative pronoun", "Relative pronoun", "Demonstrative adjective", "Subordinating conjunction"], "answer": 1, "explanation": "'That' introduces a relative clause ('that I recommended') modifying 'the book' — it is a relative pronoun. Compare: 'That book is good' (demonstrative adjective) / 'I know that she left' (subordinating conjunction)."}, {"type": "mcq", "q": "Which sentence uses a gerund, an infinitive, and a participle correctly?", "options": ["Running is healthy, to walk is also good, and she runs daily.", "Swimming regularly, she hoped to improve, having trained for months.", "I enjoy reading, I want to write, and having published a book already.", "To succeed, working hard is essential; having failed once, she tried again."], "answer": 1, "explanation": "'Swimming regularly' = present participle (participial phrase), 'hoped to improve' = infinitive after verb, 'having trained' = perfect participle. All three non-finite verb forms are correctly used in context."}, {"type": "tf", "q": "The word 'well' can function as an adjective, adverb, and interjection depending on context.", "answer": true, "explanation": "True. 'Well' as adjective: 'She is well' (healthy). As adverb: 'She speaks well.' As interjection: 'Well, that's surprising.' Context determines the function. This is an excellent example of how the same word can belong to multiple parts of speech."}, {"type": "fill", "q": "An adjective formed from a verb's -ing or -ed form (e.g., 'a broken window', 'the running water') is called a ________ adjective.", "answer": "participial", "hint": "It participates in both verb and adjective functions...", "explanation": "A PARTICIPIAL adjective is derived from a verb's participle form: past participle (broken, exhausted, excited) or present participle (running, growing, terrifying). They describe nouns just like regular adjectives. Note: 'an exciting match' vs 'the excited crowd'."}, {"type": "mcq", "q": "Which analysis of parts of speech is CORRECT for the sentence: 'Remarkably, even the quietest members spoke confidently.'", "options": ["Remarkably = adjective; even = conjunction; quietest = adverb; confidently = adjective", "Remarkably = sentence adverb; even = focusing adverb; quietest = superlative adjective; confidently = adverb of manner", "Remarkably = noun; even = preposition; quietest = pronoun; confidently = noun", "Remarkably = conjunction; even = adjective; quietest = noun; confidently = verb"], "answer": 1, "explanation": "'Remarkably' = sentence adverb (commenting on the whole statement), 'even' = focusing adverb (adding emphasis/surprise), 'quietest' = superlative adjective, 'confidently' = adverb of manner. This is the correct grammatical analysis."}, {"type": "mcq", "q": "Which sentence demonstrates the most accurate and sophisticated command of all major parts of speech?", "options": ["Not only had the committee thoroughly reviewed the proposals, but it had also unanimously rejected several highly problematic ones.", "The committee, which reviewed all proposals thorough, rejected ones that were high problematic.", "Not only the committee reviewed thorough the proposals but also rejected them high problematically.", "The committee thorough reviewed the proposals, they also rejected the most problematic."], "answer": 0, "explanation": "Option A correctly uses: 'not only…but also' (correlative conjunctions with inversion), 'thoroughly/unanimously/highly' (precise adverbs), 'problematic' (adjective), 'it' (pronoun with clear reference), 'had reviewed/had rejected' (past perfect). All parts of speech are correctly deployed."}];
 var SKEY="m1_l9",NEXT="../modules/module2.html",HUB="../modules/module1.html";
 var cur=0,cor=0,answered=false,st=Date.now(),ac=null;

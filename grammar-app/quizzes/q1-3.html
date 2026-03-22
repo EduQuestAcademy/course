@@ -552,6 +552,86 @@
     .next-btn { margin: 12px 16px 0; width: calc(100% - 32px); }
   }
 
+
+  /* ── EMBED MODE (?embed=1) ──────────────────────────────────
+     Activated when URL contains ?embed=1 or &embed=1
+     Hides sidebar, removes desktop two-panel, compact header
+  ─────────────────────────────────────────────────────────── */
+  body.embed-mode {
+    background: var(--bg) !important;
+    font-size: 15.5px;
+  }
+  body.embed-mode .quiz-shell {
+    max-width: 100% !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    flex-direction: column !important;
+    min-height: unset !important;
+  }
+  /* Hide sidebar entirely in embed */
+  /* Sidebar hidden in embed — back link stays visible in embed header */
+  body.embed-mode .quiz-sidebar {
+    display: none !important;
+  }
+  /* Compact embed header replaces sidebar on mobile */
+  .embed-header {
+    display: none;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 10px 20px 0;
+    box-shadow: 0 2px 8px rgba(99,102,241,0.08);
+  }
+  body.embed-mode .embed-header { display: block; }
+  .embed-hdr-row {
+    display: flex; align-items: center;
+    justify-content: space-between; margin-bottom: 10px;
+  }
+  /* Back button visible in embed */
+  #embed-back {
+    color: var(--accent-mid); font-size: 0.82em; font-weight: 700;
+    text-decoration: none; background: none; border: none;
+    cursor: pointer; font-family: inherit;
+    padding: 5px 10px; border-radius: var(--r-sm);
+    transition: background 0.15s; flex-shrink: 0;
+  }
+  #embed-back:hover { background: var(--accent-lt); }
+  .embed-lesson-tag {
+    display: inline-flex; align-items: center;
+    background: var(--accent-lt); border: 1.5px solid var(--border-md);
+    border-radius: var(--r-full); padding: 4px 12px;
+    font-size: 0.65em; font-weight: 700; letter-spacing: 0.07em;
+    color: var(--accent); text-transform: uppercase;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .embed-counter {
+    font-size: 0.78em; font-weight: 700;
+    font-family: 'JetBrains Mono', monospace; color: var(--accent-mid);
+  }
+  .embed-prog-track {
+    height: 4px; background: var(--border);
+    border-radius: var(--r-full); overflow: hidden;
+  }
+  .embed-prog-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent), var(--accent-mid));
+    border-radius: var(--r-full);
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  /* Main area in embed is full width */
+  body.embed-mode .quiz-main {
+    min-height: unset !important;
+    padding-bottom: 24px !important;
+  }
+  /* Slightly tighter padding in embed */
+  body.embed-mode .q-wrap { padding: 20px 22px 14px !important; }
+  body.embed-mode .opt-list { padding: 0 22px !important; }
+  body.embed-mode .tf-grid  { padding: 0 22px !important; }
+  body.embed-mode .fill-wrap{ padding: 0 22px !important; }
+  body.embed-mode .expl-box { margin: 12px 22px 0 !important; }
+  body.embed-mode .next-btn { margin: 12px 22px 0 !important; width: calc(100% - 44px) !important; }
+  body.embed-mode .results   { padding: 32px 22px 24px !important; }
+
 </style>
 </head>
 <body>
@@ -614,6 +694,15 @@
 </div>
 
 <script>
+
+// ── EMBED MODE DETECTION ──
+(function() {
+  var params = new URLSearchParams(window.location.search);
+  if (params.get("embed") === "1") {
+    document.body.classList.add("embed-mode");
+  }
+})();
+
 var Q=[{"type": "mcq", "q": "Which of the following is an action verb?", "options": ["Seem", "Is", "Climb", "Appear"], "answer": 2, "explanation": "Action verbs describe physical or mental actions. 'Climb' is a physical action. 'Seem' and 'appear' are linking verbs. 'Is' is a form of 'to be' — also a linking verb."}, {"type": "mcq", "q": "Which sentence contains a linking verb?", "options": ["She wrote a long letter.", "The soup smells delicious.", "He kicked the ball hard.", "They built a new house."], "answer": 1, "explanation": "'Smells' links 'soup' to the predicate adjective 'delicious'. Linking verbs connect the subject to a complement rather than expressing action. Other linking verbs: be, seem, appear, feel, taste, look."}, {"type": "mcq", "q": "Identify the auxiliary verb in: 'She has finished her homework.'", "options": ["She", "Has", "Finished", "Homework"], "answer": 1, "explanation": "'Has' is the auxiliary (helping) verb forming the present perfect tense. 'Finished' is the main verb. Auxiliary verbs include: be, have, do, will, shall, would, could, may, might, must, should."}, {"type": "mcq", "q": "Which of the following is a modal verb?", "options": ["Have", "Run", "Should", "Been"], "answer": 2, "explanation": "Modal verbs express possibility, ability, permission, or obligation. 'Should' is a modal verb. 'Have' is a primary auxiliary, 'run' is a main verb, and 'been' is a past participle."}, {"type": "mcq", "q": "Which sentence uses a transitive verb correctly?", "options": ["She arrived at noon.", "The artist painted a beautiful mural.", "He slept soundly.", "The baby laughed."], "answer": 1, "explanation": "A transitive verb requires a direct object. 'Painted' acts on 'a beautiful mural' (the direct object). 'Arrived', 'slept', and 'laughed' are intransitive — they do not take direct objects."}, {"type": "mcq", "q": "Which sentence contains an intransitive verb?", "options": ["She wrote the letter quickly.", "He drives a fast car.", "The birds sang beautifully.", "They cooked dinner together."], "answer": 2, "explanation": "'Sang' has no direct object — 'beautifully' is an adverb. Intransitive verbs do not take direct objects. 'Wrote', 'drives', and 'cooked' all have direct objects (letter, car, dinner)."}, {"type": "tf", "q": "Stative verbs such as 'know', 'believe', and 'love' can normally be used in continuous tenses.", "answer": false, "explanation": "False. Stative verbs describe states rather than actions and are NOT normally used in continuous tenses. 'I am knowing' is incorrect; 'I know' is correct. Some stative verbs can be used in continuous tenses with a change in meaning (e.g., 'I'm thinking about it')."}, {"type": "mcq", "q": "What verb form is used in: 'She was reading when I called.'?", "options": ["Simple past", "Past continuous", "Present perfect", "Past perfect"], "answer": 1, "explanation": "'Was reading' is the past continuous (past progressive), formed with was/were + present participle (-ing). It describes an action in progress at a specific past moment."}, {"type": "mcq", "q": "Which of the following is a phrasal verb?", "options": ["Quickly run", "Give up", "Slowly walk", "Very speak"], "answer": 1, "explanation": "A phrasal verb combines a verb with a particle to create a new meaning. 'Give up' (= stop trying) is a phrasal verb. The meaning differs from the individual words. Other examples: look after, put off, carry out."}, {"type": "mcq", "q": "In which sentence is the verb form used correctly?", "options": ["She don't know the answer.", "He have finished the task.", "By the time she arrived, they had already left.", "They was waiting for an hour."], "answer": 2, "explanation": "'Had already left' correctly uses the past perfect to show that leaving occurred before arriving — two past events in sequence. The other options have subject-verb agreement errors."}, {"type": "fill", "q": "A verb that requires a direct object to complete its meaning is called a ________ verb.", "answer": "transitive", "hint": "It transfers the action to an object...", "explanation": "A TRANSITIVE verb transfers its action to a direct object. Example: 'She reads books.' 'Books' is the direct object. Without the object, the sentence feels incomplete: 'She reads' is still grammatical, but 'She kicked' needs an object."}, {"type": "mcq", "q": "Which sentence uses the causative verb correctly?", "options": ["I cut my hair yesterday.", "I had my hair cut yesterday.", "I was cutting my hair yesterday.", "I got cutting my hair yesterday."], "answer": 1, "explanation": "'Had my hair cut' is the causative construction: have + object + past participle. It means someone else did the action for you. 'Get + object + past participle' is also correct: 'I got my hair cut.'"}, {"type": "mcq", "q": "Identify the error in: 'He suggested to go to the cinema.'", "options": ["'He' should be 'Him'", "'Suggested' should be followed by a gerund, not an infinitive", "'Cinema' should be 'movies'", "No error — the sentence is correct"], "answer": 1, "explanation": "'Suggest' is followed by a gerund (-ing) or a that-clause, NOT an infinitive. Correct: 'He suggested going to the cinema' or 'He suggested that we go to the cinema'. Common verbs + gerund: suggest, recommend, enjoy, avoid."}, {"type": "tf", "q": "The verb 'to be' can function as both a main verb and an auxiliary verb.", "answer": true, "explanation": "True. As a main verb: 'She is a doctor.' As an auxiliary: 'She is working.' (present continuous) or 'The report was written.' (passive). 'To be' is the most versatile verb in English."}, {"type": "mcq", "q": "Which sentence uses a reporting verb correctly?", "options": ["He said me that he was tired.", "She told that she would come.", "He mentioned that he was tired.", "They discussed about the problem."], "answer": 2, "explanation": "'Mentioned + that-clause' is correct. 'Said + me' is wrong (say does not take a person as indirect object — use 'told me'). 'Told + that' without a person is wrong. 'Discussed about' is wrong — 'discuss' doesn't need 'about'."}, {"type": "mcq", "q": "Which sentence correctly uses a verb in the subjunctive mood?", "options": ["It is essential that he attends the meeting.", "It is essential that he attend the meeting.", "It is essential that he attended the meeting.", "It is essential that he is attending the meeting."], "answer": 1, "explanation": "The subjunctive mood uses the base form of the verb (without -s) after expressions of necessity, recommendation, or importance: 'It is essential that he attend' (not 'attends'). Common triggers: suggest, recommend, insist, require, demand + that."}, {"type": "mcq", "q": "In which sentence does a verb function as a noun (gerund)?", "options": ["Running is excellent exercise.", "She was running when I called.", "He runs every morning.", "Run faster!"], "answer": 0, "explanation": "'Running' in 'Running is excellent exercise' is a gerund — a verb form (-ing) functioning as the subject of the sentence (a noun). In the other sentences, 'running'/'runs'/'run' function as verbs."}, {"type": "fill", "q": "The verb form used after auxiliary verbs like 'have' to form perfect tenses is called the ________ participle.", "answer": "past", "hint": "Have + ___ + participle: I have walked", "explanation": "The PAST participle is used with 'have' to form perfect tenses (have walked, has finished, had left) and with 'be' to form the passive voice (was written, is known). Regular past participles end in -ed; irregular ones vary (written, gone, taken)."}, {"type": "mcq", "q": "Which sentence contains an error with a verb and its preposition?", "options": ["She insisted on attending the meeting.", "He apologised for being late.", "They succeeded in completing the task.", "We discussed about the new policy."], "answer": 3, "explanation": "'Discuss' is a transitive verb that does NOT take 'about'. Correct: 'We discussed the new policy.' Confusingly, 'talk about' and 'argue about' do take 'about', but 'discuss' directly governs its object."}, {"type": "mcq", "q": "Which sentence demonstrates the most sophisticated and accurate use of verb forms?", "options": ["Not until she had left the office did she realise that she forgot her keys.", "Not until she left the office did she realise that she had forgotten her keys.", "Not until she had left the office did she realise that she had forgot her keys.", "Not until she was leaving the office did she realise she forget her keys."], "answer": 1, "explanation": "'Realised' (simple past) is the main discovery event. 'Had forgotten' (past perfect) correctly places the forgetting before the realising. 'Left' (simple past) works here because the 'not until' construction naturally implies sequence. 'Had forgot' is grammatically incorrect."}];
 var SKEY="m1_l3",NEXT="q1-4.html",HUB="../modules/module1.html";
 var cur=0,cor=0,answered=false,st=Date.now(),ac=null;

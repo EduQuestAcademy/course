@@ -552,6 +552,86 @@
     .next-btn { margin: 12px 16px 0; width: calc(100% - 32px); }
   }
 
+
+  /* ── EMBED MODE (?embed=1) ──────────────────────────────────
+     Activated when URL contains ?embed=1 or &embed=1
+     Hides sidebar, removes desktop two-panel, compact header
+  ─────────────────────────────────────────────────────────── */
+  body.embed-mode {
+    background: var(--bg) !important;
+    font-size: 15.5px;
+  }
+  body.embed-mode .quiz-shell {
+    max-width: 100% !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    flex-direction: column !important;
+    min-height: unset !important;
+  }
+  /* Hide sidebar entirely in embed */
+  /* Sidebar hidden in embed — back link stays visible in embed header */
+  body.embed-mode .quiz-sidebar {
+    display: none !important;
+  }
+  /* Compact embed header replaces sidebar on mobile */
+  .embed-header {
+    display: none;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 10px 20px 0;
+    box-shadow: 0 2px 8px rgba(99,102,241,0.08);
+  }
+  body.embed-mode .embed-header { display: block; }
+  .embed-hdr-row {
+    display: flex; align-items: center;
+    justify-content: space-between; margin-bottom: 10px;
+  }
+  /* Back button visible in embed */
+  #embed-back {
+    color: var(--accent-mid); font-size: 0.82em; font-weight: 700;
+    text-decoration: none; background: none; border: none;
+    cursor: pointer; font-family: inherit;
+    padding: 5px 10px; border-radius: var(--r-sm);
+    transition: background 0.15s; flex-shrink: 0;
+  }
+  #embed-back:hover { background: var(--accent-lt); }
+  .embed-lesson-tag {
+    display: inline-flex; align-items: center;
+    background: var(--accent-lt); border: 1.5px solid var(--border-md);
+    border-radius: var(--r-full); padding: 4px 12px;
+    font-size: 0.65em; font-weight: 700; letter-spacing: 0.07em;
+    color: var(--accent); text-transform: uppercase;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .embed-counter {
+    font-size: 0.78em; font-weight: 700;
+    font-family: 'JetBrains Mono', monospace; color: var(--accent-mid);
+  }
+  .embed-prog-track {
+    height: 4px; background: var(--border);
+    border-radius: var(--r-full); overflow: hidden;
+  }
+  .embed-prog-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent), var(--accent-mid));
+    border-radius: var(--r-full);
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  /* Main area in embed is full width */
+  body.embed-mode .quiz-main {
+    min-height: unset !important;
+    padding-bottom: 24px !important;
+  }
+  /* Slightly tighter padding in embed */
+  body.embed-mode .q-wrap { padding: 20px 22px 14px !important; }
+  body.embed-mode .opt-list { padding: 0 22px !important; }
+  body.embed-mode .tf-grid  { padding: 0 22px !important; }
+  body.embed-mode .fill-wrap{ padding: 0 22px !important; }
+  body.embed-mode .expl-box { margin: 12px 22px 0 !important; }
+  body.embed-mode .next-btn { margin: 12px 22px 0 !important; width: calc(100% - 44px) !important; }
+  body.embed-mode .results   { padding: 32px 22px 24px !important; }
+
 </style>
 </head>
 <body>
@@ -614,6 +694,15 @@
 </div>
 
 <script>
+
+// ── EMBED MODE DETECTION ──
+(function() {
+  var params = new URLSearchParams(window.location.search);
+  if (params.get("embed") === "1") {
+    document.body.classList.add("embed-mode");
+  }
+})();
+
 var Q=[{"type": "mcq", "q": "Which of the following is an interjection?", "options": ["Quickly", "Beautiful", "Wow", "Run"], "answer": 2, "explanation": "Interjections express sudden emotions or reactions and are grammatically independent. 'Wow' expresses surprise or admiration. 'Quickly' is an adverb, 'beautiful' is an adjective, 'run' is a verb."}, {"type": "mcq", "q": "Which punctuation mark most commonly follows a strong interjection?", "options": ["Full stop (.)", "Question mark (?)", "Exclamation mark (!)", "Semicolon (;)"], "answer": 2, "explanation": "Strong interjections expressing intense emotion are followed by an exclamation mark: 'Ouch! That hurt.' Mild interjections may be followed by a comma: 'Well, that was unexpected.'"}, {"type": "mcq", "q": "Which interjection best fits: '___ I forgot my wallet at home!'", "options": ["Hurray!", "Well done!", "Oh no!", "Bravo!"], "answer": 2, "explanation": "'Oh no!' expresses dismay or sudden realisation of a problem — perfectly matching forgetting a wallet. 'Hurray' expresses celebration, 'well done' expresses praise, 'bravo' congratulates a performance."}, {"type": "mcq", "q": "Which sentence uses an interjection correctly?", "options": ["She ouch fell down the stairs.", "Ouch! That really hurt.", "They wow saw a shooting star.", "He said ouch while running."], "answer": 1, "explanation": "Interjections stand apart from the sentence, separated by punctuation. 'Ouch! That really hurt.' correctly uses the interjection before the related sentence. Interjections cannot be embedded mid-sentence as in the other options."}, {"type": "mcq", "q": "Which of the following is a mild interjection?", "options": ["Ouch", "Well", "Wow", "Yikes"], "answer": 1, "explanation": "'Well' is a mild interjection used to introduce a thought or show hesitation: 'Well, I think we should try.' It's followed by a comma. 'Ouch', 'Wow', and 'Yikes' are stronger interjections expressing more intense reactions."}, {"type": "tf", "q": "Interjections are grammatically connected to the main clause of the sentence.", "answer": false, "explanation": "False. Interjections are grammatically INDEPENDENT — they have no syntactic relationship with the rest of the sentence. They can be removed without affecting the grammar: 'Wow! She passed.' Remove 'Wow!' → 'She passed.' — still complete."}, {"type": "mcq", "q": "What emotion does 'Alas!' typically express?", "options": ["Happiness", "Surprise", "Sorrow or regret", "Anger"], "answer": 2, "explanation": "'Alas' is a literary/formal interjection expressing sorrow, grief, regret, or pity: 'Alas, he never returned.' It's not commonly used in everyday speech — mainly found in literature and formal contexts."}, {"type": "mcq", "q": "Which sentence demonstrates the correct use of a mild interjection with a comma?", "options": ["Well! I think we should try a different approach.", "Well, I think we should try a different approach.", "Well I think we should try a different approach.", "I think well we should try a different approach."], "answer": 1, "explanation": "A mild interjection at the start of a sentence is followed by a comma: 'Well, I think...' An exclamation mark would be too emphatic for a mild interjection. No punctuation omits the pause."}, {"type": "mcq", "q": "Which interjection is most appropriate in formal written English?", "options": ["Yikes", "Oops", "Indeed", "Wow"], "answer": 2, "explanation": "Most interjections are informal, suited to speech or casual writing. 'Indeed' is the most formal of these options — it can be used in formal contexts to signal agreement or emphasis. 'Yikes', 'oops', and 'wow' are informal."}, {"type": "fill", "q": "An interjection expressing sudden pain, such as 'Ouch!', is an example of a ________ interjection.", "answer": "strong|primary", "hint": "It expresses a strong, sudden emotion...", "explanation": "Strong (or primary) interjections are pure exclamations with no other grammatical function: Ouch, Wow, Yikes, Phew, Oops. They express strong, sudden emotions. Mild interjections (Well, Oh, Hmm) have softer emotional force and typically use a comma."}, {"type": "mcq", "q": "Which of the following is NOT a characteristic of interjections?", "options": ["They express emotion", "They can stand alone as sentences", "They must always be followed by an exclamation mark", "They are common in spoken language"], "answer": 2, "explanation": "Interjections do NOT always require an exclamation mark. Mild ones use a comma: 'Well, that's interesting.' Strong ones use an exclamation mark: 'Wow!' The rule depends on the emotional intensity, not a fixed requirement."}, {"type": "mcq", "q": "Which interjection shows the most nuanced use in context?", "options": ["Wow, the quarterly financial report shows a 3% decline in net revenue.", "Hmm, that is a rather complex question — let me think it through carefully.", "Oops! The surgeon successfully completed the operation.", "Hurray, the patient's condition has deteriorated significantly."], "answer": 1, "explanation": "'Hmm' signals thoughtful hesitation in a measured, intellectual tone — perfectly appropriate before a complex question. Option A (Wow + financial report) is too casual, C and D create jarring tone mismatches between the interjection and the context."}, {"type": "tf", "q": "Interjections like 'Please' and 'Sorry' can also function as other parts of speech.", "answer": true, "explanation": "True. Words like 'please', 'sorry', 'thanks', and 'excuse me' can function as interjections in isolated use ('Sorry!' 'Thanks!') but they also have grammatical functions: 'please' as an adverb ('Please sit down'), 'sorry' as an adjective ('I'm sorry')."}, {"type": "mcq", "q": "Which sentence uses an interjection correctly in a dialogue?", "options": ["'Goodness, that was a close call!' she exclaimed.", "'She said goodness that was a close call,' he replied.", "She goodness said that was a close call.", "'That goodness was a close call!' she exclaimed."], "answer": 0, "explanation": "In dialogue, an interjection appears at the start of the quotation followed by a comma, with the rest of the sentence continuing: 'Goodness, that was a close call!' The interjection is inside the quotation marks."}, {"type": "mcq", "q": "Which pair of interjections and their meanings is CORRECT?", "options": ["Alas = happiness; Bravo = sorrow", "Phew = relief; Ouch = pain", "Hurray = disappointment; Wow = boredom", "Hmm = excitement; Yikes = approval"], "answer": 1, "explanation": "'Phew' correctly expresses relief (after a near miss or completing something difficult). 'Ouch' correctly expresses pain. The other pairs are all reversed or incorrect: 'Alas' = sorrow, 'Hurray' = celebration, 'Wow' = surprise/admiration."}, {"type": "mcq", "q": "In formal academic writing, which approach to interjections is most appropriate?", "options": ["Use them frequently to make writing more engaging", "Avoid them entirely — they are inappropriate in formal writing", "Use only mild interjections like 'Indeed' or 'Well'", "Replace them with exclamation marks only"], "answer": 1, "explanation": "In formal academic writing, interjections are generally avoided entirely. Academic writing requires measured, objective language without expressions of personal emotion or surprise. Interjections are better suited to spoken language, fiction, and informal writing."}, {"type": "fill", "q": "The interjection 'Bravo!' is most appropriately used to express ________ for a performance.", "answer": "admiration|appreciation|praise|congratulations", "hint": "You shout it at the end of a concert...", "explanation": "'Bravo!' expresses admiration, appreciation, or congratulations for a good performance — traditionally shouted at the end of operas, concerts, or theatrical performances. 'Brava!' is the feminine form; 'Bravi!' is the plural. It originates from Italian."}, {"type": "mcq", "q": "Which sentence correctly describes how interjections function in communication?", "options": ["Interjections modify the verb of the main clause.", "Interjections express the speaker's emotional reaction and are grammatically isolated from the sentence.", "Interjections always appear at the end of a sentence.", "Interjections must be followed by a noun to complete their meaning."], "answer": 1, "explanation": "Interjections express the speaker's emotional state and are grammatically independent — they have no syntactic relationship with other sentence elements. They most commonly appear at the beginning (rarely at the end) of a sentence."}, {"type": "mcq", "q": "Which interjection would be most appropriate in a text message to a friend after winning a competition?", "options": ["Alas!", "Indeed.", "Yippee! We won!", "Hmm."], "answer": 2, "explanation": "'Yippee!' expresses great excitement and joy — perfectly appropriate for a celebratory text message to a friend. 'Alas' expresses sorrow, 'indeed' is formal, and 'hmm' expresses hesitation. Register and context determine which interjection is appropriate."}, {"type": "mcq", "q": "Which passage demonstrates the most skillful and contextually appropriate use of interjections?", "options": ["Wow! The committee, wow, decided to, oops, cancel, oops, the project. Hmm!", "'Well,' said the detective, pausing to examine the clue, 'this is rather more complex than it first appeared.' 'Indeed,' replied his colleague, raising an eyebrow.", "Hurray! The patient's vital signs have deteriorated significantly. Oops! We need to act immediately.", "She said wow and ouch and hmm throughout the entire presentation, which was very distracting."], "answer": 1, "explanation": "Option B uses interjections with precise emotional register: 'Well' (hesitant deliberation) and 'Indeed' (formal agreement/confirmation) are perfectly matched to a detective scene requiring measured, thoughtful responses. Placement, punctuation, and tone are all correct."}];
 var SKEY="m1_l8",NEXT="q1-9.html",HUB="../modules/module1.html";
 var cur=0,cor=0,answered=false,st=Date.now(),ac=null;

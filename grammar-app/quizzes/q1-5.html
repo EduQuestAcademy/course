@@ -552,6 +552,86 @@
     .next-btn { margin: 12px 16px 0; width: calc(100% - 32px); }
   }
 
+
+  /* ── EMBED MODE (?embed=1) ──────────────────────────────────
+     Activated when URL contains ?embed=1 or &embed=1
+     Hides sidebar, removes desktop two-panel, compact header
+  ─────────────────────────────────────────────────────────── */
+  body.embed-mode {
+    background: var(--bg) !important;
+    font-size: 15.5px;
+  }
+  body.embed-mode .quiz-shell {
+    max-width: 100% !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    flex-direction: column !important;
+    min-height: unset !important;
+  }
+  /* Hide sidebar entirely in embed */
+  /* Sidebar hidden in embed — back link stays visible in embed header */
+  body.embed-mode .quiz-sidebar {
+    display: none !important;
+  }
+  /* Compact embed header replaces sidebar on mobile */
+  .embed-header {
+    display: none;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 10px 20px 0;
+    box-shadow: 0 2px 8px rgba(99,102,241,0.08);
+  }
+  body.embed-mode .embed-header { display: block; }
+  .embed-hdr-row {
+    display: flex; align-items: center;
+    justify-content: space-between; margin-bottom: 10px;
+  }
+  /* Back button visible in embed */
+  #embed-back {
+    color: var(--accent-mid); font-size: 0.82em; font-weight: 700;
+    text-decoration: none; background: none; border: none;
+    cursor: pointer; font-family: inherit;
+    padding: 5px 10px; border-radius: var(--r-sm);
+    transition: background 0.15s; flex-shrink: 0;
+  }
+  #embed-back:hover { background: var(--accent-lt); }
+  .embed-lesson-tag {
+    display: inline-flex; align-items: center;
+    background: var(--accent-lt); border: 1.5px solid var(--border-md);
+    border-radius: var(--r-full); padding: 4px 12px;
+    font-size: 0.65em; font-weight: 700; letter-spacing: 0.07em;
+    color: var(--accent); text-transform: uppercase;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .embed-counter {
+    font-size: 0.78em; font-weight: 700;
+    font-family: 'JetBrains Mono', monospace; color: var(--accent-mid);
+  }
+  .embed-prog-track {
+    height: 4px; background: var(--border);
+    border-radius: var(--r-full); overflow: hidden;
+  }
+  .embed-prog-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent), var(--accent-mid));
+    border-radius: var(--r-full);
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  /* Main area in embed is full width */
+  body.embed-mode .quiz-main {
+    min-height: unset !important;
+    padding-bottom: 24px !important;
+  }
+  /* Slightly tighter padding in embed */
+  body.embed-mode .q-wrap { padding: 20px 22px 14px !important; }
+  body.embed-mode .opt-list { padding: 0 22px !important; }
+  body.embed-mode .tf-grid  { padding: 0 22px !important; }
+  body.embed-mode .fill-wrap{ padding: 0 22px !important; }
+  body.embed-mode .expl-box { margin: 12px 22px 0 !important; }
+  body.embed-mode .next-btn { margin: 12px 22px 0 !important; width: calc(100% - 44px) !important; }
+  body.embed-mode .results   { padding: 32px 22px 24px !important; }
+
 </style>
 </head>
 <body>
@@ -614,6 +694,15 @@
 </div>
 
 <script>
+
+// ── EMBED MODE DETECTION ──
+(function() {
+  var params = new URLSearchParams(window.location.search);
+  if (params.get("embed") === "1") {
+    document.body.classList.add("embed-mode");
+  }
+})();
+
 var Q=[{"type": "mcq", "q": "Which of the following is an adverb?", "options": ["Careful", "Care", "Carefully", "Caring"], "answer": 2, "explanation": "'Carefully' is an adverb of manner — it describes how an action is performed. 'Careful' is an adjective, 'care' is a noun, and 'caring' can be a verb or adjective."}, {"type": "mcq", "q": "What type of adverb is used in: 'She will call you tomorrow.'?", "options": ["Adverb of manner", "Adverb of place", "Adverb of frequency", "Adverb of time"], "answer": 3, "explanation": "'Tomorrow' tells when the action will happen — it's an adverb of time. Manner = how, place = where, frequency = how often, time = when."}, {"type": "mcq", "q": "Which sentence places the adverb of frequency correctly?", "options": ["Always she arrives early.", "She always arrives early.", "She arrives always early.", "She arrives early always."], "answer": 1, "explanation": "Adverbs of frequency (always, usually, often, sometimes, rarely, never) come before the main verb but after auxiliary verbs and 'to be'. 'She always arrives early' is correct."}, {"type": "mcq", "q": "In which sentence does the adverb modify an adjective?", "options": ["He ran quickly to catch the bus.", "She speaks very softly.", "The exam was extremely difficult.", "They arrived late to the meeting."], "answer": 2, "explanation": "'Extremely' modifies the adjective 'difficult'. In the other sentences: 'quickly' modifies 'ran' (verb), 'softly' modifies 'speaks' (verb), 'late' modifies 'arrived' (verb)."}, {"type": "mcq", "q": "Which sentence uses a conjunctive adverb correctly?", "options": ["He was tired, however he continued working.", "He was tired; however, he continued working.", "He was tired however, he continued working.", "He was tired however he continued working."], "answer": 1, "explanation": "Conjunctive adverbs connecting two independent clauses need a semicolon before and a comma after: 'tired; however, he'. A comma alone creates a comma splice error."}, {"type": "tf", "q": "The word 'hard' can function as both an adjective and an adverb.", "answer": true, "explanation": "True. 'A hard question' (adjective) and 'She worked hard' (adverb). Note: 'hardly' means 'almost not' — a very different meaning. 'She worked hardly' would mean she barely worked at all!"}, {"type": "mcq", "q": "Which sentence contains an adverb modifying another adverb?", "options": ["The dog barked loudly at the stranger.", "She finished the task quite quickly.", "He is an extremely talented painter.", "They moved slowly down the road."], "answer": 1, "explanation": "'Quite' (adverb of degree) modifies 'quickly' (adverb of manner). In option C, 'extremely' modifies the adjective 'talented', not another adverb."}, {"type": "mcq", "q": "Identify the error in: 'He drives more careful than his brother.'", "options": ["'Drives' should be 'is driving'", "'More careful' should be 'more carefully' — an adverb is needed to modify the verb", "'His brother' should be 'him'", "No error"], "answer": 1, "explanation": "To modify the verb 'drives', an adverb is needed: 'more carefully'. 'Careful' is an adjective and cannot modify a verb directly. Adjective/adverb confusion is a common error."}, {"type": "mcq", "q": "Which sentence demonstrates correct adverb placement?", "options": ["She is enough tall to reach the shelf.", "She is tall enough to reach the shelf.", "She is tall too to reach the shelf.", "She is very enough tall to reach the shelf."], "answer": 1, "explanation": "'Enough' follows the adjective it modifies: 'tall enough'. 'Too' and 'very' precede adjectives. 'She is too tall', 'She is very tall', 'She is tall enough' — these are the correct patterns."}, {"type": "fill", "q": "An adverb that expresses how often something happens (e.g., always, never, sometimes) is called an adverb of ________.", "answer": "frequency", "hint": "How often does it happen?", "explanation": "Adverbs of FREQUENCY tell us how often an action occurs: always, usually, often, sometimes, rarely, never. They typically come before the main verb but after 'to be' and auxiliary verbs."}, {"type": "mcq", "q": "Which word is NOT an adverb?", "options": ["Quite", "Although", "Very", "Never"], "answer": 1, "explanation": "'Although' is a subordinating conjunction, not an adverb. 'Quite', 'very', and 'never' are all adverbs. 'Although' introduces a subordinate clause of concession."}, {"type": "mcq", "q": "Which sentence uses 'yet' as an adverb correctly?", "options": ["I have yet finished the report.", "I haven't finished the report yet.", "Yet I haven't finished the report.", "I haven't yet finish the report."], "answer": 1, "explanation": "'Yet' used as a time adverb meaning 'up to now' goes at the END of a negative sentence or question: 'I haven't finished yet.' 'I haven't finished the report yet' is correct."}, {"type": "tf", "q": "Adverbs can only modify verbs — they cannot modify adjectives or other adverbs.", "answer": false, "explanation": "False. Adverbs can modify: (1) verbs: 'He runs quickly'; (2) adjectives: 'She is extremely talented'; (3) other adverbs: 'He ran very quickly'; (4) whole sentences: 'Fortunately, she passed.'"}, {"type": "mcq", "q": "Which sentence uses an adverb of degree correctly?", "options": ["She is too much intelligent.", "The coffee is enough hot for me.", "The music is far too loud for this small room.", "He is pretty very talented."], "answer": 2, "explanation": "'Far too + adjective' is a correct intensifying structure. 'Too much' before an adjective is wrong (use 'too' alone). 'Enough' follows adjectives (not before them). 'Pretty very' combines two degree adverbs incorrectly."}, {"type": "mcq", "q": "What is the function of 'frankly' in: 'Frankly, I don't care about the result.'?", "options": ["Adverb of manner", "Adverb of time", "Sentence adverb (commenting adverb)", "Adverb of degree"], "answer": 2, "explanation": "'Frankly' is a sentence adverb (or commenting adverb) — it modifies the entire statement and expresses the speaker's attitude rather than describing how the verb is performed. Other examples: honestly, clearly, unfortunately, surprisingly."}, {"type": "mcq", "q": "Identify the adverb in: 'The nearly finished project impressed everyone.'", "options": ["Project", "Nearly", "Impressed", "Finished"], "answer": 1, "explanation": "'Nearly' is an adverb of degree modifying the participial adjective 'finished'. It tells us how close to finished the project is. 'Finished' functions as a participial adjective here."}, {"type": "mcq", "q": "Which sentence avoids the common error of using an adjective instead of an adverb?", "options": ["She speaks English very good.", "He did terrible on the exam.", "The team played brilliantly in the final.", "She felt badly about the mistake."], "answer": 2, "explanation": "'Brilliantly' correctly modifies the verb 'played'. 'Good' should be 'well', 'terrible' should be 'terribly'. Note: 'felt bad' (not 'badly') is correct after a linking verb — 'feel' is a linking verb here, so an adjective (not adverb) is needed."}, {"type": "fill", "q": "The adverb 'however' used to connect two contrasting independent clauses is called a ________ adverb.", "answer": "conjunctive", "hint": "It joins clauses like a conjunction...", "explanation": "A CONJUNCTIVE adverb connects two independent clauses and shows a logical relationship. Examples: however, therefore, moreover, furthermore, consequently, nevertheless. They need a semicolon before them and a comma after when connecting clauses."}, {"type": "mcq", "q": "Which sentence uses multiple adverb types correctly?", "options": ["She carefully always speaks very softly.", "She always speaks very carefully and quite softly.", "She very speaks always carefully and soft.", "Always carefully she very speaks softly."], "answer": 1, "explanation": "'Always' (frequency) correctly precedes the main verb 'speaks'. 'Very carefully' (degree + manner) and 'quite softly' (degree + manner) are correctly placed after the verb. The word order follows standard adverb placement rules."}, {"type": "mcq", "q": "Which sentence demonstrates the most sophisticated use of adverbs?", "options": ["He spoke really very loudly and very quickly.", "Characteristically, the diplomat spoke with measured precision, choosing each word extraordinarily carefully so as to inadvertently commit to nothing.", "He always speaks loudly and fast.", "She speaks loudly always and very fast usually."], "answer": 1, "explanation": "Option B uses: 'characteristically' (sentence adverb), 'extraordinarily carefully' (adverb of degree + manner), 'inadvertently' (adverb of manner). The adverbs add precise nuance. Options A and C overuse 'very'; option D has incorrect adverb placement."}];
 var SKEY="m1_l5",NEXT="q1-6.html",HUB="../modules/module1.html";
 var cur=0,cor=0,answered=false,st=Date.now(),ac=null;

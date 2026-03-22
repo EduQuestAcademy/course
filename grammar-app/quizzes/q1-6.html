@@ -552,6 +552,86 @@
     .next-btn { margin: 12px 16px 0; width: calc(100% - 32px); }
   }
 
+
+  /* ── EMBED MODE (?embed=1) ──────────────────────────────────
+     Activated when URL contains ?embed=1 or &embed=1
+     Hides sidebar, removes desktop two-panel, compact header
+  ─────────────────────────────────────────────────────────── */
+  body.embed-mode {
+    background: var(--bg) !important;
+    font-size: 15.5px;
+  }
+  body.embed-mode .quiz-shell {
+    max-width: 100% !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    flex-direction: column !important;
+    min-height: unset !important;
+  }
+  /* Hide sidebar entirely in embed */
+  /* Sidebar hidden in embed — back link stays visible in embed header */
+  body.embed-mode .quiz-sidebar {
+    display: none !important;
+  }
+  /* Compact embed header replaces sidebar on mobile */
+  .embed-header {
+    display: none;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 10px 20px 0;
+    box-shadow: 0 2px 8px rgba(99,102,241,0.08);
+  }
+  body.embed-mode .embed-header { display: block; }
+  .embed-hdr-row {
+    display: flex; align-items: center;
+    justify-content: space-between; margin-bottom: 10px;
+  }
+  /* Back button visible in embed */
+  #embed-back {
+    color: var(--accent-mid); font-size: 0.82em; font-weight: 700;
+    text-decoration: none; background: none; border: none;
+    cursor: pointer; font-family: inherit;
+    padding: 5px 10px; border-radius: var(--r-sm);
+    transition: background 0.15s; flex-shrink: 0;
+  }
+  #embed-back:hover { background: var(--accent-lt); }
+  .embed-lesson-tag {
+    display: inline-flex; align-items: center;
+    background: var(--accent-lt); border: 1.5px solid var(--border-md);
+    border-radius: var(--r-full); padding: 4px 12px;
+    font-size: 0.65em; font-weight: 700; letter-spacing: 0.07em;
+    color: var(--accent); text-transform: uppercase;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .embed-counter {
+    font-size: 0.78em; font-weight: 700;
+    font-family: 'JetBrains Mono', monospace; color: var(--accent-mid);
+  }
+  .embed-prog-track {
+    height: 4px; background: var(--border);
+    border-radius: var(--r-full); overflow: hidden;
+  }
+  .embed-prog-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent), var(--accent-mid));
+    border-radius: var(--r-full);
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  /* Main area in embed is full width */
+  body.embed-mode .quiz-main {
+    min-height: unset !important;
+    padding-bottom: 24px !important;
+  }
+  /* Slightly tighter padding in embed */
+  body.embed-mode .q-wrap { padding: 20px 22px 14px !important; }
+  body.embed-mode .opt-list { padding: 0 22px !important; }
+  body.embed-mode .tf-grid  { padding: 0 22px !important; }
+  body.embed-mode .fill-wrap{ padding: 0 22px !important; }
+  body.embed-mode .expl-box { margin: 12px 22px 0 !important; }
+  body.embed-mode .next-btn { margin: 12px 22px 0 !important; width: calc(100% - 44px) !important; }
+  body.embed-mode .results   { padding: 32px 22px 24px !important; }
+
 </style>
 </head>
 <body>
@@ -614,6 +694,15 @@
 </div>
 
 <script>
+
+// ── EMBED MODE DETECTION ──
+(function() {
+  var params = new URLSearchParams(window.location.search);
+  if (params.get("embed") === "1") {
+    document.body.classList.add("embed-mode");
+  }
+})();
+
 var Q=[{"type": "mcq", "q": "Which of the following is a preposition?", "options": ["Quickly", "Beautiful", "Beneath", "Run"], "answer": 2, "explanation": "Prepositions show the relationship between a noun/pronoun and other elements. 'Beneath' is a preposition of place. 'Quickly' is an adverb, 'beautiful' is an adjective, 'run' is a verb."}, {"type": "mcq", "q": "Which sentence uses a preposition of time correctly?", "options": ["She wakes up in six o'clock.", "She wakes up on six o'clock.", "She wakes up at six o'clock.", "She wakes up by six o'clock every morning."], "answer": 2, "explanation": "'At' is used for specific times (at 6 o'clock, at noon). 'In' is used for months, years, seasons. 'On' is used for days and dates. Option D with 'by' means 'no later than six' — also correct but changes meaning."}, {"type": "mcq", "q": "Which sentence uses a preposition of place correctly?", "options": ["We will meet in the station platform.", "We will meet on the station.", "We will meet at the station.", "We will meet by inside the station."], "answer": 2, "explanation": "'At' is used for specific locations and meeting points (at the station, at the corner, at the airport). 'In' is for enclosed spaces. 'On' is for surfaces."}, {"type": "mcq", "q": "Choose the correct preposition: 'She has been working here ___ 2019.'", "options": ["for", "from", "since", "during"], "answer": 2, "explanation": "'Since' marks a specific start point of an ongoing action: 'since 2019'. 'For' marks duration: 'for five years'. 'From' needs a corresponding 'to/until'. 'During' is used with a period, not a specific year alone."}, {"type": "mcq", "q": "Which sentence uses a prepositional phrase as an adjective?", "options": ["He walked through the park slowly.", "She arrived before noon.", "The woman in the red coat is my aunt.", "They sat beside the river."], "answer": 2, "explanation": "'In the red coat' is a prepositional phrase modifying the noun 'woman' (telling us which woman). In the other sentences, the prepositional phrases modify verbs (acting as adverbs of manner, time, or place)."}, {"type": "tf", "q": "In formal English, ending a sentence with a preposition is always a grammatical error.", "answer": false, "explanation": "False. Ending a sentence with a preposition is entirely acceptable in modern English, even formally. Winston Churchill's famous (possibly apocryphal) quote: 'This is something up with which I will not put' mocks the awkwardness of forced preposition avoidance."}, {"type": "mcq", "q": "Which sentence contains a compound preposition?", "options": ["The cat sat on the mat.", "She arrived at midnight.", "He stood in front of the door.", "They passed by the old church."], "answer": 2, "explanation": "'In front of' is a compound preposition (multiple words functioning as one preposition). Other compound prepositions: because of, instead of, on behalf of, in addition to, in spite of."}, {"type": "mcq", "q": "Identify the error: 'She is good in mathematics.'", "options": ["'She' should be 'Her'", "'Is' should be 'are'", "'In' should be 'at' — 'good at' is the correct collocation", "No error"], "answer": 2, "explanation": "The correct collocation is 'good AT' a subject or skill: 'good at mathematics', 'good at sport', 'good at cooking'. 'Good in' is a very common learner error."}, {"type": "mcq", "q": "Which sentence correctly uses 'between' and 'among'?", "options": ["The argument was among the two brothers.", "The prize was shared between the five winners.", "The prize was shared among the five winners.", "The secret was among just the two of them."], "answer": 2, "explanation": "'Between' is used with two, 'among' with three or more. 'Among five winners' is correct. However, 'between' can also be used for more than two when each is considered individually (e.g., 'a treaty between four countries')."}, {"type": "fill", "q": "The preposition used before specific times of day (like 'noon', 'midnight', '3 o'clock') is ________.", "answer": "at", "hint": "AT what time...", "explanation": "'AT' is used with specific clock times and certain times of day: at 3 o'clock, at noon, at midnight, at dawn, at dusk, at the weekend (British English). Compare: 'in the morning/afternoon/evening' (parts of day) and 'on Monday' (days)."}, {"type": "mcq", "q": "Which sentence uses the correct preposition with the adjective?", "options": ["She is afraid from spiders.", "He is interested on history.", "They are fond of classical music.", "We are tired from doing the same thing."], "answer": 2, "explanation": "'Fond of' is the correct collocation. 'Afraid OF', 'interested IN', 'tired OF' are the correct prepositions. Preposition collocations with adjectives must be learned — they often don't follow logical patterns."}, {"type": "mcq", "q": "Which sentence uses 'in' and 'on' correctly with time expressions?", "options": ["I was born on 1995.", "The meeting is in Monday.", "She graduated in June on 2019.", "The conference is on Monday, 15 March, in spring."], "answer": 3, "explanation": "'On' is used for days and dates ('on Monday', 'on 15 March'); 'in' is used for months, years, and seasons ('in spring'). 'On 1995' and 'in Monday' are errors. 'On Monday, 15 March, in spring' correctly uses both."}, {"type": "tf", "q": "'During' and 'for' can always be used interchangeably in time expressions.", "answer": false, "explanation": "False. 'During' refers to a specific time period and emphasises WHEN: 'during the war'. 'For' measures the DURATION of time: 'for five years'. 'I slept during the lecture' (WHEN) vs 'I slept for two hours' (HOW LONG). They are not interchangeable."}, {"type": "mcq", "q": "Which sentence uses a preposition of movement correctly?", "options": ["She walked until the park.", "He ran across the road.", "They swam along of the river.", "We drove until the city."], "answer": 1, "explanation": "'Across' correctly shows movement from one side to the other. 'Until' expresses time, not movement — 'towards the park' or 'to the park' is correct. 'Along of' is not a standard preposition."}, {"type": "mcq", "q": "Which sentence is a correct example of a phrasal verb used with the right preposition?", "options": ["She looked up into the word in the dictionary.", "He gave up on trying to solve the problem.", "They carried out in the experiment successfully.", "We came across to an interesting article."], "answer": 1, "explanation": "'Gave up on trying' is correct — 'give up on' means to stop trying with something/someone. 'Look up' doesn't need 'into'. 'Carry out' doesn't need 'in'. 'Come across' doesn't need 'to'."}, {"type": "mcq", "q": "Choose the correct prepositions: 'She was praised ___ her work ___ the whole team.'", "options": ["She was praised of her work before the whole team.", "She was praised for her work in front of the whole team.", "She was praised by her work in front of the whole team.", "She was praised about her work among the whole team."], "answer": 1, "explanation": "'Praised for' (reason for praise) + 'in front of' (compound preposition meaning 'before/in the presence of') = 'praised for her work in front of the whole team'. 'Praised by' introduces the agent (person who praised), not the reason."}, {"type": "fill", "q": "The preposition used to show something is touching and supported by a surface (e.g., 'the book ___ the table') is ________.", "answer": "on", "hint": "The book is resting on...", "explanation": "'ON' indicates contact with and support by a surface: 'on the table', 'on the floor', 'on the wall', 'on the ceiling'. Compare: 'in the drawer' (inside), 'above the table' (higher than, not touching), 'under the table' (below)."}, {"type": "mcq", "q": "Which sentence shows the most precise use of multiple prepositions?", "options": ["She walked to the park with her dog in the morning on a Monday.", "She walked to the park with her dog at dawn on a quiet Monday in March.", "She walked in the park by her dog during the morning at a Monday.", "She walked at the park with her dog in Monday morning."], "answer": 1, "explanation": "'To the park' (destination), 'with her dog' (accompaniment), 'at dawn' (specific time), 'on a quiet Monday' (day), 'in March' (month) — all prepositions are correctly and precisely deployed. Option C uses 'by' incorrectly and 'at a Monday'. Option D uses 'at the park' and 'in Monday' incorrectly."}, {"type": "mcq", "q": "Identify all preposition errors in: 'She arrived to London in a Friday during two days ago.'", "options": ["Only 'to London' is wrong — should be 'in London' or 'arrived at London'", "'To London', 'in a Friday', and 'during two days ago' are all wrong", "Only 'during two days ago' is wrong", "'In a Friday' and 'during' are wrong, but 'arrived to London' is acceptable"], "answer": 1, "explanation": "Three errors: (1) 'arrived in/at London' not 'arrived to'; (2) 'on a Friday' not 'in a Friday'; (3) 'two days ago' does not take 'during' — 'two days ago' is a complete time expression needing no preposition."}, {"type": "mcq", "q": "Which sentence demonstrates the most sophisticated use of prepositional phrases?", "options": ["The report, submitted on behalf of the committee and in lieu of the annual audit, was reviewed by all stakeholders within the allocated timeframe.", "The report was done for the committee instead of the audit and looked at by people in the time given.", "The report, which was about the committee, was done instead of the audit within the time.", "The report on behalf the committee in lieu to the audit was reviewed by all the stakeholders."], "answer": 0, "explanation": "Option A uses: 'on behalf of' (correct compound preposition), 'in lieu of' (formal compound preposition meaning 'instead of'), 'by all stakeholders' (correct passive agent preposition), 'within the allocated timeframe' (precise time preposition). All prepositions are grammatically accurate and contextually precise."}];
 var SKEY="m1_l6",NEXT="q1-7.html",HUB="../modules/module1.html";
 var cur=0,cor=0,answered=false,st=Date.now(),ac=null;

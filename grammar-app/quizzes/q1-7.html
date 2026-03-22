@@ -552,6 +552,86 @@
     .next-btn { margin: 12px 16px 0; width: calc(100% - 32px); }
   }
 
+
+  /* ── EMBED MODE (?embed=1) ──────────────────────────────────
+     Activated when URL contains ?embed=1 or &embed=1
+     Hides sidebar, removes desktop two-panel, compact header
+  ─────────────────────────────────────────────────────────── */
+  body.embed-mode {
+    background: var(--bg) !important;
+    font-size: 15.5px;
+  }
+  body.embed-mode .quiz-shell {
+    max-width: 100% !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    flex-direction: column !important;
+    min-height: unset !important;
+  }
+  /* Hide sidebar entirely in embed */
+  /* Sidebar hidden in embed — back link stays visible in embed header */
+  body.embed-mode .quiz-sidebar {
+    display: none !important;
+  }
+  /* Compact embed header replaces sidebar on mobile */
+  .embed-header {
+    display: none;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 10px 20px 0;
+    box-shadow: 0 2px 8px rgba(99,102,241,0.08);
+  }
+  body.embed-mode .embed-header { display: block; }
+  .embed-hdr-row {
+    display: flex; align-items: center;
+    justify-content: space-between; margin-bottom: 10px;
+  }
+  /* Back button visible in embed */
+  #embed-back {
+    color: var(--accent-mid); font-size: 0.82em; font-weight: 700;
+    text-decoration: none; background: none; border: none;
+    cursor: pointer; font-family: inherit;
+    padding: 5px 10px; border-radius: var(--r-sm);
+    transition: background 0.15s; flex-shrink: 0;
+  }
+  #embed-back:hover { background: var(--accent-lt); }
+  .embed-lesson-tag {
+    display: inline-flex; align-items: center;
+    background: var(--accent-lt); border: 1.5px solid var(--border-md);
+    border-radius: var(--r-full); padding: 4px 12px;
+    font-size: 0.65em; font-weight: 700; letter-spacing: 0.07em;
+    color: var(--accent); text-transform: uppercase;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .embed-counter {
+    font-size: 0.78em; font-weight: 700;
+    font-family: 'JetBrains Mono', monospace; color: var(--accent-mid);
+  }
+  .embed-prog-track {
+    height: 4px; background: var(--border);
+    border-radius: var(--r-full); overflow: hidden;
+  }
+  .embed-prog-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent), var(--accent-mid));
+    border-radius: var(--r-full);
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  /* Main area in embed is full width */
+  body.embed-mode .quiz-main {
+    min-height: unset !important;
+    padding-bottom: 24px !important;
+  }
+  /* Slightly tighter padding in embed */
+  body.embed-mode .q-wrap { padding: 20px 22px 14px !important; }
+  body.embed-mode .opt-list { padding: 0 22px !important; }
+  body.embed-mode .tf-grid  { padding: 0 22px !important; }
+  body.embed-mode .fill-wrap{ padding: 0 22px !important; }
+  body.embed-mode .expl-box { margin: 12px 22px 0 !important; }
+  body.embed-mode .next-btn { margin: 12px 22px 0 !important; width: calc(100% - 44px) !important; }
+  body.embed-mode .results   { padding: 32px 22px 24px !important; }
+
 </style>
 </head>
 <body>
@@ -614,6 +694,15 @@
 </div>
 
 <script>
+
+// ── EMBED MODE DETECTION ──
+(function() {
+  var params = new URLSearchParams(window.location.search);
+  if (params.get("embed") === "1") {
+    document.body.classList.add("embed-mode");
+  }
+})();
+
 var Q=[{"type": "mcq", "q": "Which of the following is a coordinating conjunction?", "options": ["Although", "Because", "But", "Moreover"], "answer": 2, "explanation": "Coordinating conjunctions (FANBOYS: For, And, Nor, But, Or, Yet, So) join two equal grammatical elements. 'But' is a coordinating conjunction. 'Although' and 'because' are subordinating conjunctions; 'moreover' is a conjunctive adverb."}, {"type": "mcq", "q": "Which sentence uses a subordinating conjunction correctly?", "options": ["She was tired and she continued working.", "Although she was tired, she continued working.", "She was tired but she continued working.", "She was tired so continued working."], "answer": 1, "explanation": "'Although' is a subordinating conjunction that introduces a subordinate clause of concession. It joins the dependent clause to the main clause. When the subordinate clause comes first, it is followed by a comma."}, {"type": "mcq", "q": "Which of the following is a correlative conjunction pair?", "options": ["And…but", "Either…or", "Because…so", "Not…only"], "answer": 1, "explanation": "Correlative conjunctions work in pairs: either…or, neither…nor, not only…but also, both…and, whether…or. 'And…but' are separate coordinating conjunctions. 'Not…only' is incomplete."}, {"type": "mcq", "q": "Identify the conjunction type in: 'She studied hard so that she could pass the exam.'", "options": ["Coordinating conjunction", "Correlative conjunction", "Subordinating conjunction of purpose", "Conjunctive adverb"], "answer": 2, "explanation": "'So that' is a subordinating conjunction of purpose — it introduces a subordinate clause explaining why the main clause action was performed. Other subordinating conjunctions of purpose: in order that, in case."}, {"type": "mcq", "q": "Which sentence uses 'neither…nor' correctly?", "options": ["Neither the manager nor the employees was informed.", "Neither the manager nor the employees were informed.", "Neither the manager or the employees were informed.", "Neither the manager nor the employees are informed yesterday."], "answer": 1, "explanation": "With 'neither…nor', the verb agrees with the nearest subject. 'Employees' (plural) is closest, so 'were' is correct. 'Neither…or' is wrong — the pair is always 'neither…nor'."}, {"type": "tf", "q": "A coordinating conjunction can join two independent clauses when placed between them with a comma.", "answer": true, "explanation": "True. A comma + coordinating conjunction (FANBOYS) correctly joins two independent clauses: 'She was tired, but she continued working.' Without the conjunction, the comma alone creates a comma splice error."}, {"type": "mcq", "q": "Which sentence uses 'not only…but also' correctly?", "options": ["Not only she sings but also plays.", "She not only sings but also plays the piano.", "She sings not only but also plays the piano.", "Not only she sings but also the piano."], "answer": 1, "explanation": "'Not only…but also' must link grammatically parallel elements. 'She not only [sings] but also [plays the piano]' correctly links two verb phrases. Note: when 'not only' starts the sentence, the subject and auxiliary invert: 'Not only does she sing, but she also plays.'"}, {"type": "mcq", "q": "What error appears in: 'I like both swimming and to run.'?", "options": ["'Both' should be 'either'", "The sentence lacks parallel structure — 'swimming' and 'to run' should be the same form", "'And' should be 'or'", "'Like' should be 'likes'"], "answer": 1, "explanation": "'Both…and' requires parallel structure. 'Swimming' (gerund) and 'to run' (infinitive) are not parallel. Correct: 'both swimming and running' OR 'both to swim and to run'. Parallelism is essential with all correlative conjunctions."}, {"type": "mcq", "q": "Which conjunction best completes: '___ the weather was poor, the event went ahead.'?", "options": ["Because", "So", "Although", "Despite"], "answer": 2, "explanation": "'Although' is a subordinating conjunction showing concession (contrast between poor weather and the event proceeding). 'Despite' is a preposition (needs a noun/gerund: 'despite the poor weather'). 'Because' shows reason; 'so' shows result."}, {"type": "fill", "q": "The conjunctions for, and, nor, but, or, yet, so are collectively remembered using the acronym ________.", "answer": "FANBOYS", "hint": "Each letter stands for a conjunction...", "explanation": "FANBOYS is the mnemonic for the seven coordinating conjunctions: For, And, Nor, But, Or, Yet, So. These join two grammatically equal elements — words, phrases, or independent clauses."}, {"type": "mcq", "q": "Which sentence uses a conjunction of concession correctly?", "options": ["She didn't get the job even though she was the most qualified candidate.", "She didn't get the job because she was the most qualified candidate.", "She got the job so she was the most qualified candidate.", "She didn't get the job since she was the most qualified candidate."], "answer": 0, "explanation": "'Even though' is a strong conjunction of concession — it highlights a surprising contrast between the subordinate and main clause. Being highly qualified yet not getting the job is the unexpected/contradictory result."}, {"type": "tf", "q": "The word 'however' is a conjunction and should be used the same way as 'but'.", "answer": false, "explanation": "False. 'However' is a conjunctive ADVERB, not a conjunction. 'But' joins clauses directly with a comma: 'She was tired, but she continued.' 'However' requires a semicolon before it: 'She was tired; however, she continued.' Using only a comma before 'however' creates a comma splice."}, {"type": "mcq", "q": "Which sentence demonstrates subject-verb agreement with correlative conjunctions?", "options": ["Neither the students nor the teacher are ready.", "Either the manager or the directors is responsible.", "Neither the teacher nor the students are ready.", "Both the teacher and the students is ready."], "answer": 2, "explanation": "With 'neither…nor' and 'either…or', the verb agrees with the NEAREST subject. In 'Neither the teacher nor the students ARE ready', 'students' (plural) is nearest, so 'are' is correct. 'Both' always takes a plural verb."}, {"type": "mcq", "q": "Which sentence uses a conjunction to show cause and effect?", "options": ["She studied hard; however, she failed.", "She studied hard, so she passed the exam.", "She studied hard, but she was nervous.", "Although she studied hard, she was nervous."], "answer": 1, "explanation": "'So' here is a coordinating conjunction showing result/consequence (cause: studied hard → effect: passed). Other conjunctions showing cause/effect: because, since, as, therefore, consequently, hence."}, {"type": "mcq", "q": "Which sentence uses 'while' as a conjunction of contrast (not time)?", "options": ["While she was sleeping, the phone rang.", "While I enjoy jazz, my sister prefers classical music.", "He called while I was having dinner.", "She arrived while we were still discussing the plan."], "answer": 1, "explanation": "'While' can show both time ('while she was sleeping') and contrast ('while I enjoy jazz…'). In option B, 'while' shows contrast between two different preferences — it functions like 'whereas'. Context determines the meaning."}, {"type": "mcq", "q": "Identify the error in: 'The plan failed due to we didn't prepare adequately.'", "options": ["'The plan' should be 'Our plan'", "'Due to' cannot introduce a clause — use 'because' or 'due to the fact that'", "'Adequately' should be 'adequate'", "'Didn't' should be 'did not'"], "answer": 1, "explanation": "'Due to' is a preposition, not a conjunction, and must be followed by a noun phrase: 'due to poor preparation'. To introduce a clause, use 'because' or 'because of the fact that'. This is a very common error."}, {"type": "fill", "q": "The conjunctions 'both…and', 'either…or', 'neither…nor', and 'not only…but also' are called ________ conjunctions.", "answer": "correlative", "hint": "They work in pairs — correl-...", "explanation": "CORRELATIVE conjunctions work in pairs to join grammatically equal elements. Each part of the pair must be followed by the same grammatical structure (parallelism). Other correlative conjunctions: whether…or, as…as, no sooner…than, hardly…when."}, {"type": "mcq", "q": "Which sentence correctly uses a conjunction to express condition?", "options": ["Unless you practise daily, you will improve.", "Unless you don't practise daily, you won't improve.", "If you won't practise, you will improve.", "Provided that you don't practise, you will improve."], "answer": 0, "explanation": "'Unless' means 'if not' — it already contains the negative, so adding 'don't' creates a double negative. 'Unless you practise' = 'if you do not practise'. The result should be negative: 'you won't improve'."}, {"type": "mcq", "q": "Which sentence uses multiple conjunctions with correct punctuation and parallelism?", "options": ["She is not only intelligent, but hardworking, and also she has a good personality.", "Not only is she intelligent, but she is also hardworking and personable.", "She is intelligent and hardworking, but also, she is personable, too.", "Although she is intelligent and hardworking but she is also personable."], "answer": 1, "explanation": "Option B correctly uses: 'Not only…but also' with inverted word order, two parallel adjectives ('intelligent', 'hardworking'), and a third ('personable') joined with 'and'. The structure is parallel throughout. Option D incorrectly uses 'although…but' (double conjunction of contrast)."}, {"type": "mcq", "q": "Which sentence demonstrates the most sophisticated use of conjunctions?", "options": ["He tried hard, and he failed, but he tried again, and he succeeded.", "Having tried and failed, he persisted nonetheless; not only did he overcome the initial setback, but he ultimately succeeded where others had given up.", "He tried hard but failed. Then he tried again. He succeeded.", "Although he tried, he failed, but although he tried again, he succeeded."], "answer": 1, "explanation": "Option B uses: 'nonetheless' (concessive conjunctive adverb), 'not only…but' with correct inversion and ellipsis, 'where' (relative conjunction of circumstance). It varies sentence structure, avoids conjunction repetition, and demonstrates high-level cohesive sophistication."}];
 var SKEY="m1_l7",NEXT="q1-8.html",HUB="../modules/module1.html";
 var cur=0,cor=0,answered=false,st=Date.now(),ac=null;
