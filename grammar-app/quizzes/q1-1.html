@@ -75,50 +75,53 @@
   .options-list { display: flex; flex-direction: column; gap: 10px; padding: 0 20px; }
   .option-btn {
     display: flex; align-items: center; gap: 14px;
-    background: rgba(255,255,255,0.09); border: 1.5px solid rgba(255,255,255,0.18);
+    background: rgba(255,255,255,0.92); border: 2px solid rgba(255,255,255,0.5);
     border-radius: var(--radius); padding: 14px 16px;
     cursor: pointer; transition: all 0.15s; text-align: left;
-    font-family: 'Plus Jakarta Sans', sans-serif; width: 100%; color: #fff;
+    font-family: 'Plus Jakarta Sans', sans-serif; width: 100%; color: #1a3a6b;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
   }
-  .option-btn:hover { background: rgba(255,255,255,0.14); border-color: rgba(255,255,255,0.28); }
+  .option-btn:hover { background: #ffffff; border-color: var(--accent); transform: translateY(-1px); box-shadow: 0 4px 14px rgba(0,0,0,0.2); }
   .option-btn:active { transform: scale(0.98); }
   .option-btn:disabled { cursor: default; }
   .option-key {
     width: 30px; height: 30px; flex-shrink: 0; border-radius: 8px;
-    background: rgba(255,255,255,0.15);
+    background: #1e3f7a;
     display: flex; align-items: center; justify-content: center;
     font-size: 0.72em; font-weight: 700; font-family: 'JetBrains Mono', monospace;
-    color: rgba(255,255,255,0.8); transition: all 0.15s;
+    color: #fff; transition: all 0.15s;
   }
-  .option-text { font-size: 0.9em; line-height: 1.4; flex: 1; font-weight: 500; }
+  .option-text { font-size: 0.9em; line-height: 1.4; flex: 1; font-weight: 600; color: #1a3a6b; }
   .option-indicator { font-size: 1em; opacity: 0; transition: opacity 0.2s; }
 
   /* Answer states */
-  .option-btn.correct { border-color: var(--correct); background: var(--correct-bg); }
-  .option-btn.correct .option-key { background: var(--correct); color: #fff; }
+  .option-btn.correct { border-color: #059669; background: #d1fae5; color: #065f46; }
+  .option-btn.correct .option-key { background: #059669; color: #fff; }
   .option-btn.correct .option-indicator { opacity: 1; }
-  .option-btn.wrong { border-color: var(--wrong); background: var(--wrong-bg); }
-  .option-btn.wrong .option-key { background: var(--wrong); color: #fff; }
+  .option-btn.wrong { border-color: #dc2626; background: #fee2e2; color: #7f1d1d; }
+  .option-btn.wrong .option-key { background: #dc2626; color: #fff; }
   .option-btn.wrong .option-indicator { opacity: 1; }
-  .option-btn.dimmed { opacity: 0.35; }
+  .option-btn.dimmed { opacity: 0.45; }
 
   /* FILL IN BLANK */
   .fill-blank-wrap { padding: 0 20px; }
   .fill-input {
-    width: 100%; background: rgba(255,255,255,0.09);
-    border: 1.5px solid rgba(255,255,255,0.18);
+    width: 100%; background: rgba(255,255,255,0.92);
+    border: 2px solid rgba(255,255,255,0.5);
     border-radius: var(--radius); padding: 14px 16px;
-    font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.95em; color: #fff;
+    font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.95em; color: #1a3a6b;
     outline: none; transition: border-color 0.2s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
   }
-  .fill-input:focus { border-color: var(--accent); }
-  .fill-input.correct { border-color: var(--correct); background: var(--correct-bg); }
-  .fill-input.wrong { border-color: var(--wrong); background: var(--wrong-bg); }
+  .fill-input:focus { border-color: var(--accent); background: #fff; }
+  .fill-input.correct { border-color: #059669; background: #d1fae5; color: #065f46; }
+  .fill-input.wrong { border-color: #dc2626; background: #fee2e2; color: #7f1d1d; }
   .fill-submit {
     margin-top: 10px; width: 100%; background: var(--accent);
     border: none; border-radius: var(--radius); padding: 13px;
     font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.9em;
     font-weight: 700; color: white; cursor: pointer;
+    box-shadow: 0 2px 8px rgba(79,142,247,0.35);
   }
   .fill-submit:disabled { opacity: 0.5; cursor: default; }
 
