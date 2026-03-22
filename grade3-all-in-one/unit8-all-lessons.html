@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit 8 – Place Value and Number Sense | Owl Smart 3rd Grade</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #f4f7fb; color: #2d2d2d; line-height: 1.8; }
+    .top-header { background: linear-gradient(135deg, #880e4f, #c2185b); color: white; text-align: center; padding: 24px 20px 16px; }
+    .top-header h1 { font-size: 1.5em; margin-bottom: 4px; }
+    .top-header p { font-size: 0.95em; opacity: 0.88; }
+    .nav-bar { background: #880e4f; padding: 0 10px; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.3); overflow-x: auto; white-space: nowrap; }
+    .nav-bar a { display: inline-block; color: rgba(255,255,255,0.8); text-decoration: none; padding: 12px 14px; font-size: 0.82em; font-weight: bold; border-bottom: 3px solid transparent; transition: all 0.2s; }
+    .nav-bar a:hover, .nav-bar a.active { color: white; border-bottom-color: #ffd600; }
+    .main { max-width: 860px; margin: 0 auto; padding: 20px; }
+    .lesson-section { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.08); margin-bottom: 40px; scroll-margin-top: 60px; }
+    .banner { color: white; text-align: center; padding: 28px 24px; }
+    .banner h2 { font-size: 1.45em; margin-bottom: 6px; }
+    .banner p { font-size: 0.97em; opacity: 0.92; margin-bottom: 10px; }
+    .lesson-num { display: inline-block; background: rgba(255,255,255,0.25); border-radius: 20px; padding: 3px 14px; font-size: 0.82em; font-weight: bold; }
+    .b1 { background: linear-gradient(135deg, #880e4f, #c2185b); }
+    .b2 { background: linear-gradient(135deg, #0d47a1, #1976d2); }
+    .b3 { background: linear-gradient(135deg, #1b5e20, #388e3c); }
+    .b4 { background: linear-gradient(135deg, #e65100, #fb8c00); }
+    .b5 { background: linear-gradient(135deg, #4a148c, #7b1fa2); }
+    .b6 { background: linear-gradient(135deg, #004d40, #00897b); }
+    .lesson-content { padding: 26px; }
+    .section { border-left: 5px solid; border-radius: 0 10px 10px 0; padding: 18px 20px; margin-bottom: 20px; }
+    .s1 { background: #fce4ec; border-color: #880e4f; } .s1 h3 { color: #880e4f; }
+    .s2 { background: #e3f2fd; border-color: #0d47a1; } .s2 h3 { color: #0d47a1; }
+    .s3 { background: #e8f5e9; border-color: #1b5e20; } .s3 h3 { color: #1b5e20; }
+    .s4 { background: #fff3e0; border-color: #e65100; } .s4 h3 { color: #e65100; }
+    .s5 { background: #f3e5f5; border-color: #4a148c; } .s5 h3 { color: #4a148c; }
+    .s6 { background: #e0f2f1; border-color: #004d40; } .s6 h3 { color: #004d40; }
+    .section h3 { margin-bottom: 8px; font-size: 1.05em; }
+    .vocab-box { background: #fff8e1; border: 2px solid #ffc107; border-radius: 10px; padding: 18px 20px; margin-bottom: 20px; }
+    .vocab-box h3 { color: #e65100; margin-bottom: 12px; font-size: 1.05em; }
+    .vocab-item { margin: 8px 0; font-size: 0.95em; }
+    .word { font-weight: bold; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.93em; }
+    th { background: #37474f; color: white; padding: 9px 12px; text-align: left; }
+    td { padding: 9px 12px; border-bottom: 1px solid #e0e0e0; }
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) { background: #f5f5f5; }
+    .tip { background: #e8f5e9; border-left: 4px solid #43a047; border-radius: 0 8px 8px 0; padding: 12px 16px; margin: 12px 0; color: #1b5e20; font-size: 0.93em; }
+    .tip strong { color: #2e7d32; }
+    .try-it { background: #ede7f6; border: 2px dashed #7e57c2; border-radius: 10px; padding: 18px 20px; margin-bottom: 20px; }
+    .try-it h3 { color: #4527a0; margin-bottom: 10px; font-size: 1.05em; }
+    .try-it ol { padding-left: 20px; }
+    .try-it li { margin: 8px 0; font-size: 0.95em; }
+    .remember { background: #fff3e0; border: 2px solid #ff8f00; border-radius: 10px; padding: 18px 20px; text-align: center; margin-bottom: 4px; }
+    .remember h3 { color: #e65100; margin-bottom: 10px; font-size: 1.05em; }
+    .remember p { margin: 5px 0; font-size: 0.95em; }
+    .remember .cta { font-weight: bold; font-size: 1.05em; margin-top: 12px; }
+    .flex-row { display: flex; gap: 12px; flex-wrap: wrap; margin: 10px 0; }
+    .flex-col { flex: 1; min-width: 150px; border-radius: 10px; padding: 14px 16px; }
+    .fb-pink { background: #fce4ec; border: 2px solid #e91e63; } .fb-pink h4 { color: #880e4f; margin-bottom: 6px; }
+    .fb-blue { background: #e3f2fd; border: 2px solid #1976d2; } .fb-blue h4 { color: #0d47a1; margin-bottom: 6px; }
+    .fb-green { background: #e8f5e9; border: 2px solid #388e3c; } .fb-green h4 { color: #1b5e20; margin-bottom: 6px; }
+    .fb-orange { background: #fff3e0; border: 2px solid #f57c00; } .fb-orange h4 { color: #e65100; margin-bottom: 6px; }
+    .fb-purple { background: #f3e5f5; border: 2px solid #7b1fa2; } .fb-purple h4 { color: #4a148c; margin-bottom: 6px; }
+    .fb-teal { background: #e0f2f1; border: 2px solid #00897b; } .fb-teal h4 { color: #004d40; margin-bottom: 6px; }
+    .place-value-chart { display: flex; gap: 8px; justify-content: center; margin: 16px 0; flex-wrap: wrap; }
+    .pv-block { text-align: center; border-radius: 12px; padding: 14px 18px; min-width: 100px; }
+    .pv-hundreds { background: #880e4f; color: white; }
+    .pv-tens { background: #0d47a1; color: white; }
+    .pv-ones { background: #1b5e20; color: white; }
+    .pv-block .place-name { font-size: 0.82em; font-weight: bold; opacity: 0.85; margin-bottom: 4px; }
+    .pv-block .place-digit { font-size: 2em; font-weight: bold; }
+    .pv-block .place-value { font-size: 0.82em; opacity: 0.85; margin-top: 4px; }
+    .number-line { background: #e3f2fd; border-radius: 10px; padding: 16px; margin: 12px 0; overflow-x: auto; }
+    .nl-inner { display: flex; align-items: center; gap: 0; min-width: 400px; }
+    .nl-mark { text-align: center; flex: 1; }
+    .nl-num { font-weight: bold; font-size: 0.85em; color: #0d47a1; }
+    .nl-line { height: 4px; background: #0d47a1; flex: 1; }
+    .nl-tick { width: 2px; height: 14px; background: #0d47a1; margin: 0 auto; }
+    .comparison-box { display: flex; align-items: center; justify-content: center; gap: 20px; background: #f9f9f9; border-radius: 10px; padding: 16px; margin: 12px 0; font-size: 1.3em; font-weight: bold; }
+    .comparison-box .num { background: #0d47a1; color: white; border-radius: 8px; padding: 8px 16px; }
+    .comparison-box .sym { color: #880e4f; font-size: 1.5em; }
+    .rounding-box { background: #fff3e0; border: 2px solid #f57c00; border-radius: 10px; padding: 16px 18px; margin-bottom: 14px; }
+    .rounding-box h4 { color: #e65100; margin-bottom: 8px; }
+    .even-odd-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; margin: 12px 0; }
+    .eo-num { text-align: center; border-radius: 8px; padding: 10px 4px; font-weight: bold; font-size: 1em; }
+    .even { background: #0d47a1; color: white; }
+    .odd { background: #880e4f; color: white; }
+    .pattern-row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin: 10px 0; }
+    .pattern-num { background: #004d40; color: white; border-radius: 8px; padding: 6px 14px; font-weight: bold; font-size: 0.95em; }
+    .pattern-arrow { color: #004d40; font-size: 1.2em; font-weight: bold; }
+    ul { padding-left: 20px; } li { margin: 5px 0; font-size: 0.95em; }
+    p { margin-bottom: 8px; font-size: 0.95em; }
+  </style>
+</head>
+<body>
+
+<div class="top-header">
+  <h1>Owl Smart: A 3rd Grade Learning Journey</h1>
+  <p>Unit 8 -- Place Value and Number Sense &nbsp;|&nbsp; 6 Lessons</p>
+</div>
+
+<div class="nav-bar">
+  <a href="#lesson1">8.1 Place Value</a>
+  <a href="#lesson2">8.2 Reading Numbers</a>
+  <a href="#lesson3">8.3 Comparing Numbers</a>
+  <a href="#lesson4">8.4 Rounding</a>
+  <a href="#lesson5">8.5 Even and Odd</a>
+  <a href="#lesson6">8.6 Number Patterns</a>
+</div>
+
+<div class="main">
+
+<!-- LESSON 8.1 -->
+<div class="lesson-section" id="lesson1">
+  <div class="banner b1">
+    <span class="lesson-num">Lesson 8.1</span>
+    <h2>Place Value: Hundreds, Tens, and Ones</h2>
+    <p>The position of a digit tells you its value -- that is the power of place value!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s1">
+      <h3>What Are We Learning Today?</h3>
+      <p>Our number system is called the <strong>base-ten system</strong>. This means every position in a number is worth 10 times more than the position to its right. The digit 3 in 300 is worth much more than the digit 3 in 30 or the digit 3 in 3! Today we master the hundreds, tens, and ones places.</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#880e4f;">Place Value</span> -- The value of a digit based on its POSITION in the number.</div>
+      <div class="vocab-item"><span class="word" style="color:#880e4f;">Digit</span> -- The symbols 0-9 used to write numbers.</div>
+      <div class="vocab-item"><span class="word" style="color:#880e4f;">Hundreds Place</span> -- The third position from the right. A digit here is worth that many hundreds.</div>
+      <div class="vocab-item"><span class="word" style="color:#880e4f;">Tens Place</span> -- The second position from the right. A digit here is worth that many tens.</div>
+      <div class="vocab-item"><span class="word" style="color:#880e4f;">Ones Place</span> -- The first position from the right. A digit here is worth exactly that many.</div>
+      <div class="vocab-item"><span class="word" style="color:#880e4f;">Expanded Form</span> -- Writing a number as the sum of the values of each digit. Example: 347 = 300 + 40 + 7.</div>
+    </div>
+
+    <div class="section s1">
+      <h3>The Place Value Chart</h3>
+      <p style="text-align:center; margin-bottom:10px;">Let's look at the number <strong style="font-size:1.3em;">347</strong></p>
+      <div class="place-value-chart">
+        <div class="pv-block pv-hundreds">
+          <div class="place-name">HUNDREDS</div>
+          <div class="place-digit">3</div>
+          <div class="place-value">= 300</div>
+        </div>
+        <div class="pv-block pv-tens">
+          <div class="place-name">TENS</div>
+          <div class="place-digit">4</div>
+          <div class="place-value">= 40</div>
+        </div>
+        <div class="pv-block pv-ones">
+          <div class="place-name">ONES</div>
+          <div class="place-digit">7</div>
+          <div class="place-value">= 7</div>
+        </div>
+      </div>
+      <p style="text-align:center; font-size:1.1em; font-weight:bold; margin-top:8px;">347 = 300 + 40 + 7</p>
+    </div>
+
+    <div class="section s1">
+      <h3>Three Ways to Show a Number</h3>
+      <table>
+        <tr><th>Form</th><th>What It Looks Like</th><th>Example for 256</th></tr>
+        <tr><td><strong>Standard Form</strong></td><td>The regular number</td><td>256</td></tr>
+        <tr><td><strong>Expanded Form</strong></td><td>Sum of each place value</td><td>200 + 50 + 6</td></tr>
+        <tr><td><strong>Word Form</strong></td><td>Written out in words</td><td>two hundred fifty-six</td></tr>
+      </table>
+    </div>
+
+    <div class="section s1">
+      <h3>The Value of Each Digit Changes by Position</h3>
+      <table>
+        <tr><th>Number</th><th>Digit 5 is in the...</th><th>Value of the 5</th></tr>
+        <tr><td>500</td><td>Hundreds place</td><td>500</td></tr>
+        <tr><td>50</td><td>Tens place</td><td>50</td></tr>
+        <tr><td>5</td><td>Ones place</td><td>5</td></tr>
+        <tr><td>537</td><td>Hundreds place</td><td>500</td></tr>
+        <tr><td>257</td><td>Tens place</td><td>50</td></tr>
+        <tr><td>275</td><td>Ones place</td><td>5</td></tr>
+      </table>
+      <div class="tip"><strong>Key Insight:</strong> The same digit can have a completely different VALUE depending on WHERE it sits in the number! This is why understanding place value is the foundation of all number sense.</div>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Write the number 492 in expanded form and in word form.</li>
+        <li>What is the value of the digit 7 in each number: 700, 370, 47, 714?</li>
+        <li>Build the number with: 5 hundreds, 3 tens, 8 ones. What is the number?</li>
+        <li>What number has 4 hundreds, 0 tens, and 6 ones?</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p>Hundreds -- Tens -- Ones: position determines <strong>value!</strong></p>
+      <p><strong>Expanded form</strong> = 347 = 300 + 40 + 7</p>
+      <p>The same digit in a different place has a <strong>completely different value.</strong></p>
+      <p class="cta" style="color:#880e4f;">Great start! Click Lesson 8.2!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 8.2 -->
+<div class="lesson-section" id="lesson2">
+  <div class="banner b2">
+    <span class="lesson-num">Lesson 8.2</span>
+    <h2>Reading and Writing Numbers to 1,000</h2>
+    <p>Read and write any number up to one thousand with confidence!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s2">
+      <h3>What Are We Learning Today?</h3>
+      <p>Today we practice reading numbers written in words and writing them as digits -- all the way up to <strong>1,000</strong>! This includes tricky numbers like those with zeros in the middle, such as 405 or 730.</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#0d47a1;">Word Form</span> -- A number written out completely in words. Example: four hundred sixty-two.</div>
+      <div class="vocab-item"><span class="word" style="color:#0d47a1;">Standard Form</span> -- A number written using digits. Example: 462.</div>
+      <div class="vocab-item"><span class="word" style="color:#0d47a1;">Hyphen</span> -- The dash (-) used when writing two-digit numbers 21-99 in word form. Example: sixty-seven.</div>
+    </div>
+
+    <div class="section s2">
+      <h3>Numbers in Word Form -- The Patterns</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-blue">
+          <h4>Ones (1-19)</h4>
+          <p style="font-size:0.88em;">one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve, thirteen, fourteen, fifteen, sixteen, seventeen, eighteen, nineteen</p>
+        </div>
+        <div class="flex-col fb-pink">
+          <h4>Tens (20-90)</h4>
+          <p style="font-size:0.88em;">twenty, thirty, forty, fifty, sixty, seventy, eighty, ninety</p>
+          <p style="font-size:0.88em; margin-top:6px;">Combine: twenty-one, thirty-five, forty-eight...</p>
+        </div>
+        <div class="flex-col fb-green">
+          <h4>Hundreds (100-900)</h4>
+          <p style="font-size:0.88em;">one hundred, two hundred, three hundred...</p>
+          <p style="font-size:0.88em; margin-top:6px;">Combine: three hundred forty-seven, five hundred twelve...</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section s2">
+      <h3>Tricky Numbers -- Zeros in the Middle!</h3>
+      <table>
+        <tr><th>Standard Form</th><th>Word Form</th><th>Expanded Form</th></tr>
+        <tr><td>405</td><td>four hundred five</td><td>400 + 0 + 5 = 400 + 5</td></tr>
+        <tr><td>730</td><td>seven hundred thirty</td><td>700 + 30 + 0 = 700 + 30</td></tr>
+        <tr><td>600</td><td>six hundred</td><td>600 + 0 + 0 = 600</td></tr>
+        <tr><td>312</td><td>three hundred twelve</td><td>300 + 10 + 2</td></tr>
+        <tr><td>1,000</td><td>one thousand</td><td>1,000</td></tr>
+      </table>
+      <div class="tip"><strong>Tricky part:</strong> When a place has a zero, we skip it in word form. 405 = "four hundred five" (NOT "four hundred zero five"). The zero holds the tens place but we don't say "zero tens" aloud!</div>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Write in word form: 524, 307, 890, 1,000</li>
+        <li>Write in standard form: "six hundred forty-one," "two hundred nine," "five hundred"</li>
+        <li>Write in expanded form: 763, 408, 550</li>
+        <li>What number is: 800 + 0 + 3?</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p>Use a <strong>hyphen</strong> for two-digit numbers in word form (twenty-four).</p>
+      <p>When a place has <strong>zero</strong>, skip it in word form but keep it in standard form!</p>
+      <p>405 = "four hundred five" -- not "four hundred zero five."</p>
+      <p class="cta" style="color:#0d47a1;">Excellent! Click Lesson 8.3!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 8.3 -->
+<div class="lesson-section" id="lesson3">
+  <div class="banner b3">
+    <span class="lesson-num">Lesson 8.3</span>
+    <h2>Comparing and Ordering Numbers</h2>
+    <p>Use place value to decide which numbers are greater, less, or equal!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s3">
+      <h3>What Are We Learning Today?</h3>
+      <p>Comparing numbers means deciding which is <strong>greater</strong>, which is <strong>less</strong>, or whether they are <strong>equal</strong>. We use three special symbols: &gt; (greater than), &lt; (less than), and = (equal to). The key is always to compare <strong>place by place, starting from the left!</strong></p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Greater Than (&gt;)</span> -- The number on the left is larger. The open mouth faces the bigger number.</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Less Than (&lt;)</span> -- The number on the left is smaller. The pointed end faces the smaller number.</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Equal To (=)</span> -- Both numbers have the same value.</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Ordering</span> -- Arranging numbers from smallest to largest (ascending) or largest to smallest (descending).</div>
+    </div>
+
+    <div class="section s3">
+      <h3>The Alligator Trick -- Remember the Symbols!</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-green" style="text-align:center;">
+          <h4>Greater Than &gt;</h4>
+          <p style="font-size:2.5em; font-weight:bold; color:#1b5e20;">8 &gt; 5</p>
+          <p style="font-size:0.88em;">The alligator's mouth opens toward the BIGGER number (8). The alligator always wants to eat the bigger number!</p>
+        </div>
+        <div class="flex-col fb-blue" style="text-align:center;">
+          <h4>Less Than &lt;</h4>
+          <p style="font-size:2.5em; font-weight:bold; color:#0d47a1;">3 &lt; 9</p>
+          <p style="font-size:0.88em;">The point faces the SMALLER number (3). 3 is less than 9.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section s3">
+      <h3>How to Compare 3-Digit Numbers -- Step by Step</h3>
+      <table>
+        <tr><th>Step</th><th>What to Do</th><th>Example: 547 vs 563</th></tr>
+        <tr><td><strong>1</strong></td><td>Compare the HUNDREDS digit first</td><td>5 = 5 (same -- move to next place)</td></tr>
+        <tr><td><strong>2</strong></td><td>Compare the TENS digit</td><td>4 &lt; 6 (different! 547 is less than 563)</td></tr>
+        <tr><td><strong>3</strong></td><td>Write the comparison</td><td>547 &lt; 563</td></tr>
+      </table>
+      <div class="flex-row" style="margin-top:12px;">
+        <div style="text-align:center; flex:1; background:#e8f5e9; border-radius:10px; padding:14px;">
+          <p style="font-size:1.3em; font-weight:bold; color:#1b5e20;">473 &gt; 368</p>
+          <p style="font-size:0.88em;">Hundreds: 4 &gt; 3 -- stop here, we know!</p>
+        </div>
+        <div style="text-align:center; flex:1; background:#e3f2fd; border-radius:10px; padding:14px;">
+          <p style="font-size:1.3em; font-weight:bold; color:#0d47a1;">251 &lt; 259</p>
+          <p style="font-size:0.88em;">Hundreds: 2=2, Tens: 5=5, Ones: 1 &lt; 9</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section s3">
+      <h3>Ordering Numbers -- Smallest to Largest</h3>
+      <p>Order these numbers from least to greatest: <strong>472, 247, 742, 427</strong></p>
+      <div class="number-line">
+        <div class="pattern-row" style="justify-content:center;">
+          <div class="pattern-num" style="background:#1b5e20;">247</div>
+          <div class="pattern-arrow">&lt;</div>
+          <div class="pattern-num" style="background:#1b5e20;">427</div>
+          <div class="pattern-arrow">&lt;</div>
+          <div class="pattern-num" style="background:#1b5e20;">472</div>
+          <div class="pattern-arrow">&lt;</div>
+          <div class="pattern-num" style="background:#1b5e20;">742</div>
+        </div>
+      </div>
+      <p style="font-size:0.9em; color:#37474f; margin-top:8px;"><em>Compare hundreds digits first: 2 &lt; 4 &lt; 4 &lt; 7. For the tie at 4 (427 and 472), compare tens: 2 &lt; 7.</em></p>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Write &gt;, &lt;, or = between each pair: &nbsp; 423 ___ 432 &nbsp; | &nbsp; 700 ___ 700 &nbsp; | &nbsp; 561 ___ 516</li>
+        <li>Order from least to greatest: 834, 384, 843, 438</li>
+        <li>Order from greatest to least: 291, 912, 129, 219</li>
+        <li>I am a 3-digit number. My hundreds digit is greater than 5. My tens digit is less than 4. My ones digit equals my tens digit. What could I be?</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p><strong>&gt;</strong> greater than &nbsp;|&nbsp; <strong>&lt;</strong> less than &nbsp;|&nbsp; <strong>=</strong> equal to</p>
+      <p>Always compare <strong>left to right</strong>: hundreds first, then tens, then ones.</p>
+      <p>The alligator's mouth always opens toward the <strong>bigger number!</strong></p>
+      <p class="cta" style="color:#1b5e20;">Well done! Click Lesson 8.4!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 8.4 -->
+<div class="lesson-section" id="lesson4">
+  <div class="banner b4">
+    <span class="lesson-num">Lesson 8.4</span>
+    <h2>Rounding to the Nearest 10 and 100</h2>
+    <p>Rounding gives us a close estimate -- fast and useful!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s4">
+      <h3>What Are We Learning Today?</h3>
+      <p>Rounding means finding the nearest "neat" number -- the nearest 10 or the nearest 100. We round when we need a quick estimate rather than an exact answer. Rounding is used every day: "About how much will this cost?" or "Roughly how far is the trip?" are rounding questions!</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Rounding</span> -- Replacing a number with a nearby "neat" number that is close in value.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Estimate</span> -- An approximate answer -- close but not exact.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Nearest Ten</span> -- The multiple of 10 that a number is closest to (10, 20, 30, 40...).</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Nearest Hundred</span> -- The multiple of 100 that a number is closest to (100, 200, 300...).</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Halfway Point</span> -- When a digit is exactly 5, we always round UP.</div>
+    </div>
+
+    <div class="section s4">
+      <h3>The Rounding Rule</h3>
+      <div class="rounding-box">
+        <h4>Rounding to the Nearest 10 -- Look at the ONES digit</h4>
+        <p><strong>If the ones digit is 0, 1, 2, 3, or 4</strong> -- round DOWN (keep the tens digit the same, ones become 0)</p>
+        <p><strong>If the ones digit is 5, 6, 7, 8, or 9</strong> -- round UP (increase the tens digit by 1, ones become 0)</p>
+        <p style="margin-top:10px;"><em>Examples: 43 → 40 &nbsp;|&nbsp; 47 → 50 &nbsp;|&nbsp; 65 → 70 &nbsp;|&nbsp; 82 → 80</em></p>
+      </div>
+      <div class="rounding-box">
+        <h4>Rounding to the Nearest 100 -- Look at the TENS digit</h4>
+        <p><strong>If the tens digit is 0, 1, 2, 3, or 4</strong> -- round DOWN (keep the hundreds digit, tens and ones become 0)</p>
+        <p><strong>If the tens digit is 5, 6, 7, 8, or 9</strong> -- round UP (increase the hundreds digit by 1, tens and ones become 0)</p>
+        <p style="margin-top:10px;"><em>Examples: 320 → 300 &nbsp;|&nbsp; 380 → 400 &nbsp;|&nbsp; 450 → 500 &nbsp;|&nbsp; 749 → 700</em></p>
+      </div>
+    </div>
+
+    <div class="section s4">
+      <h3>Using a Number Line to Round</h3>
+      <p>Round 47 to the nearest 10:</p>
+      <div class="number-line">
+        <div class="pattern-row" style="justify-content:center; align-items:center;">
+          <div class="pattern-num" style="background:#0d47a1;">40</div>
+          <div style="font-size:0.8em; color:#0d47a1; text-align:center; padding:0 8px;">41 42 43 44</div>
+          <div class="pattern-num" style="background:#880e4f;">45</div>
+          <div style="font-size:0.8em; color:#0d47a1; text-align:center; padding:0 8px;"><strong>46 47</strong> 48 49</div>
+          <div class="pattern-num" style="background:#0d47a1;">50</div>
+        </div>
+      </div>
+      <p style="font-size:0.9em; color:#37474f; text-align:center; margin-top:8px;">47 is between 40 and 50. It is closer to 50 (only 3 away vs 7 away). So 47 rounds UP to <strong>50</strong>.</p>
+    </div>
+
+    <div class="section s4">
+      <h3>Practice Rounding Chart</h3>
+      <table>
+        <tr><th>Number</th><th>Round to nearest 10</th><th>Round to nearest 100</th></tr>
+        <tr><td>234</td><td>230 (ones: 4, round down)</td><td>200 (tens: 3, round down)</td></tr>
+        <tr><td>567</td><td>570 (ones: 7, round up)</td><td>600 (tens: 6, round up)</td></tr>
+        <tr><td>450</td><td>450 (ones: 0, round down)</td><td>500 (tens: 5, round up)</td></tr>
+        <tr><td>782</td><td>780 (ones: 2, round down)</td><td>800 (tens: 8, round up)</td></tr>
+      </table>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Round to the nearest 10: 63, 78, 45, 91, 34</li>
+        <li>Round to the nearest 100: 350, 420, 870, 150, 649</li>
+        <li>A store sells 387 apples in one day. About how many apples is that, rounded to the nearest hundred?</li>
+        <li>There are 54 students going on a field trip. About how many is that, rounded to the nearest ten?</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p>To round to nearest 10: look at the <strong>ones digit.</strong></p>
+      <p>To round to nearest 100: look at the <strong>tens digit.</strong></p>
+      <p>Digits 0-4: round <strong>DOWN</strong> &nbsp;|&nbsp; Digits 5-9: round <strong>UP</strong></p>
+      <p class="cta" style="color:#e65100;">Keep going! Click Lesson 8.5!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 8.5 -->
+<div class="lesson-section" id="lesson5">
+  <div class="banner b5">
+    <span class="lesson-num">Lesson 8.5</span>
+    <h2>Even and Odd Numbers</h2>
+    <p>Every whole number is either even or odd -- learn to tell them apart!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s5">
+      <h3>What Are We Learning Today?</h3>
+      <p>Every whole number is either <strong>even</strong> or <strong>odd</strong>. This simple fact has powerful consequences in mathematics! Today we learn how to identify even and odd numbers and explore the patterns they create when you add, subtract, or multiply them.</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Even Number</span> -- A number that can be divided into two equal groups with nothing left over. Even numbers end in 0, 2, 4, 6, or 8.</div>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Odd Number</span> -- A number that CANNOT be divided into two equal groups -- there is always one left over. Odd numbers end in 1, 3, 5, 7, or 9.</div>
+    </div>
+
+    <div class="section s5">
+      <h3>Identifying Even and Odd Numbers</h3>
+      <p style="font-weight:bold; color:#0d47a1; margin-bottom:6px;">Even numbers (end in 0, 2, 4, 6, 8):</p>
+      <div class="even-odd-grid">
+        <div class="eo-num even">2</div><div class="eo-num even">4</div><div class="eo-num even">6</div><div class="eo-num even">8</div><div class="eo-num even">10</div>
+        <div class="eo-num even">12</div><div class="eo-num even">20</div><div class="eo-num even">34</div><div class="eo-num even">58</div><div class="eo-num even">100</div>
+      </div>
+      <p style="font-weight:bold; color:#880e4f; margin-bottom:6px; margin-top:10px;">Odd numbers (end in 1, 3, 5, 7, 9):</p>
+      <div class="even-odd-grid">
+        <div class="eo-num odd">1</div><div class="eo-num odd">3</div><div class="eo-num odd">5</div><div class="eo-num odd">7</div><div class="eo-num odd">9</div>
+        <div class="eo-num odd">11</div><div class="eo-num odd">23</div><div class="eo-num odd">47</div><div class="eo-num odd">69</div><div class="eo-num odd">301</div>
+      </div>
+      <div class="tip"><strong>Quick Check:</strong> To tell if any number is even or odd, just look at the LAST digit (the ones digit). If it ends in 0, 2, 4, 6, or 8 -- even! If it ends in 1, 3, 5, 7, or 9 -- odd! The other digits do not matter at all.</div>
+    </div>
+
+    <div class="section s5">
+      <h3>Even and Odd Patterns</h3>
+      <table>
+        <tr><th>Operation</th><th>Rule</th><th>Example</th></tr>
+        <tr><td>Even + Even</td><td>= Even</td><td>4 + 6 = 10 (even)</td></tr>
+        <tr><td>Odd + Odd</td><td>= Even</td><td>3 + 5 = 8 (even)</td></tr>
+        <tr><td>Even + Odd</td><td>= Odd</td><td>4 + 3 = 7 (odd)</td></tr>
+        <tr><td>Even x Even</td><td>= Even</td><td>4 x 6 = 24 (even)</td></tr>
+        <tr><td>Even x Odd</td><td>= Even</td><td>4 x 3 = 12 (even)</td></tr>
+        <tr><td>Odd x Odd</td><td>= Odd</td><td>3 x 5 = 15 (odd)</td></tr>
+      </table>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Circle the even numbers: 47, 82, 165, 300, 991, 428, 73, 560</li>
+        <li>Without calculating, predict whether each answer will be even or odd: &nbsp; 7 + 9 = ___ &nbsp; | &nbsp; 6 + 8 = ___ &nbsp; | &nbsp; 5 + 4 = ___</li>
+        <li>Is the product of two odd numbers always odd, always even, or sometimes both? Give two examples.</li>
+        <li>Write all the even numbers between 51 and 61.</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p><strong>EVEN</strong> = ends in 0, 2, 4, 6, 8 (can be split into two equal groups)</p>
+      <p><strong>ODD</strong> = ends in 1, 3, 5, 7, 9 (always one left over)</p>
+      <p>Odd + Odd = Even &nbsp;|&nbsp; Even + Even = Even &nbsp;|&nbsp; Even + Odd = Odd</p>
+      <p class="cta" style="color:#4a148c;">Almost there! Click Lesson 8.6!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 8.6 -->
+<div class="lesson-section" id="lesson6">
+  <div class="banner b6">
+    <span class="lesson-num">Lesson 8.6</span>
+    <h2>Number Patterns and Skip Counting</h2>
+    <p>Discover the beautiful patterns hiding in numbers!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s6">
+      <h3>What Are We Learning Today?</h3>
+      <p>Numbers follow <strong>patterns</strong> -- predictable sequences where each number relates to the next by a consistent rule. Recognising number patterns is a key mathematical thinking skill. Skip counting is one of the most useful patterns -- and it connects directly to multiplication!</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#004d40;">Pattern</span> -- A sequence that follows a consistent rule.</div>
+      <div class="vocab-item"><span class="word" style="color:#004d40;">Skip Counting</span> -- Counting by a number other than 1 (by 2s, 3s, 5s, 10s, 100s).</div>
+      <div class="vocab-item"><span class="word" style="color:#004d40;">Rule</span> -- The operation that tells you how to get from one number to the next in a pattern.</div>
+      <div class="vocab-item"><span class="word" style="color:#004d40;">Sequence</span> -- A list of numbers arranged in a specific order following a rule.</div>
+      <div class="vocab-item"><span class="word" style="color:#004d40;">Increasing Pattern</span> -- A pattern where the numbers get bigger.</div>
+      <div class="vocab-item"><span class="word" style="color:#004d40;">Decreasing Pattern</span> -- A pattern where the numbers get smaller.</div>
+    </div>
+
+    <div class="section s6">
+      <h3>Skip Counting Sequences</h3>
+      <p style="font-weight:bold; color:#004d40; margin-bottom:6px;">Skip count by 2s:</p>
+      <div class="pattern-row">
+        <div class="pattern-num">2</div><div class="pattern-arrow">+2</div>
+        <div class="pattern-num">4</div><div class="pattern-arrow">+2</div>
+        <div class="pattern-num">6</div><div class="pattern-arrow">+2</div>
+        <div class="pattern-num">8</div><div class="pattern-arrow">+2</div>
+        <div class="pattern-num">10</div><div class="pattern-arrow">+2</div>
+        <div class="pattern-num">12</div>
+      </div>
+      <p style="font-weight:bold; color:#004d40; margin-bottom:6px; margin-top:12px;">Skip count by 5s:</p>
+      <div class="pattern-row">
+        <div class="pattern-num">5</div><div class="pattern-arrow">+5</div>
+        <div class="pattern-num">10</div><div class="pattern-arrow">+5</div>
+        <div class="pattern-num">15</div><div class="pattern-arrow">+5</div>
+        <div class="pattern-num">20</div><div class="pattern-arrow">+5</div>
+        <div class="pattern-num">25</div><div class="pattern-arrow">+5</div>
+        <div class="pattern-num">30</div>
+      </div>
+      <p style="font-weight:bold; color:#004d40; margin-bottom:6px; margin-top:12px;">Skip count by 100s:</p>
+      <div class="pattern-row">
+        <div class="pattern-num">100</div><div class="pattern-arrow">+100</div>
+        <div class="pattern-num">200</div><div class="pattern-arrow">+100</div>
+        <div class="pattern-num">300</div><div class="pattern-arrow">+100</div>
+        <div class="pattern-num">400</div><div class="pattern-arrow">+100</div>
+        <div class="pattern-num">500</div><div class="pattern-arrow">+100</div>
+        <div class="pattern-num">600</div>
+      </div>
+    </div>
+
+    <div class="section s6">
+      <h3>Finding the Rule in a Pattern</h3>
+      <table>
+        <tr><th>Pattern</th><th>Rule</th><th>Next Three Numbers</th></tr>
+        <tr><td>3, 6, 9, 12, ___</td><td>Add 3 each time</td><td>15, 18, 21</td></tr>
+        <tr><td>100, 90, 80, 70, ___</td><td>Subtract 10 each time</td><td>60, 50, 40</td></tr>
+        <tr><td>4, 8, 12, 16, ___</td><td>Add 4 (count by 4s)</td><td>20, 24, 28</td></tr>
+        <tr><td>500, 400, 300, ___</td><td>Subtract 100 each time</td><td>200, 100, 0</td></tr>
+        <tr><td>2, 4, 8, 16, ___</td><td>Double (multiply by 2)</td><td>32, 64, 128</td></tr>
+      </table>
+    </div>
+
+    <div class="section s6">
+      <h3>Skip Counting Connects to Multiplication!</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-teal">
+          <h4>Skip count by 6s:</h4>
+          <p>6, 12, 18, 24, 30, 36...</p>
+          <p style="margin-top:6px; font-size:0.88em;">These are the multiples of 6 -- the same as the 6 times table! 6x1=6, 6x2=12, 6x3=18...</p>
+        </div>
+        <div class="flex-col fb-green">
+          <h4>Why it matters:</h4>
+          <p>Skip counting IS multiplication! If you can skip count by 7s, you already know your 7 times table.</p>
+          <p style="margin-top:6px; font-size:0.88em;">7, 14, 21, 28, 35, 42, 49, 56, 63, 70</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Find the rule and write the next three numbers: &nbsp; 25, 50, 75, ___, ___, ___</li>
+        <li>Find the rule and write the next three numbers: &nbsp; 200, 175, 150, ___, ___, ___</li>
+        <li>Skip count by 8s starting from 0: 0, 8, ___, ___, ___, ___, ___, ___</li>
+        <li>What is the pattern? 1, 2, 4, 8, 16, ___, ___. What makes this pattern different from the others?</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>You Finished Unit 8!</h3>
+      <p>A <strong>pattern</strong> follows a consistent rule -- find the rule and you can predict what comes next!</p>
+      <p><strong>Skip counting</strong> is the same as listing the multiples of a number.</p>
+      <p>Increasing patterns add or multiply. Decreasing patterns subtract or divide.</p>
+      <p class="cta" style="color:#004d40;">Incredible work! You completed all 6 lessons in Unit 8! Now take the Unit 8 Quiz!</p>
+    </div>
+  </div>
+</div>
+
+</div>
+<script>
+  const sections = document.querySelectorAll('.lesson-section');
+  const navLinks = document.querySelectorAll('.nav-bar a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 80) current = s.getAttribute('id'); });
+    navLinks.forEach(l => { l.classList.remove('active'); if (l.getAttribute('href') === '#' + current) l.classList.add('active'); });
+  });
+</script>
+</body>
+</html>
