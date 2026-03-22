@@ -563,11 +563,28 @@
   }
   body.embed-mode .quiz-shell {
     max-width: 100% !important;
+    width: 100% !important;
     margin: 0 !important;
     border-radius: 0 !important;
     box-shadow: none !important;
     flex-direction: column !important;
     min-height: unset !important;
+  }
+  body.embed-mode {
+    overflow-x: hidden !important;
+  }
+  body.embed-mode .quiz-main {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  body.embed-mode .q-wrap,
+  body.embed-mode .opt-list,
+  body.embed-mode .tf-grid,
+  body.embed-mode .fill-wrap,
+  body.embed-mode .expl-box,
+  body.embed-mode .next-btn,
+  body.embed-mode .results {
+    max-width: 100% !important;
   }
   /* Hide sidebar entirely in embed */
   /* Sidebar hidden in embed — back link stays visible in embed header */
