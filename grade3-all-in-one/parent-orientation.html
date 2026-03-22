@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parent Orientation | Owl Smart 3rd Grade</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #f4f7fb; color: #2d2d2d; line-height: 1.8; }
+    .top-header { background: linear-gradient(135deg, #1a237e, #283593); color: white; text-align: center; padding: 32px 20px 24px; }
+    .top-header h1 { font-size: 1.7em; margin-bottom: 6px; }
+    .top-header .subtitle { font-size: 1em; opacity: 0.9; margin-bottom: 4px; }
+    .top-header .tagline { font-size: 0.92em; opacity: 0.75; }
+    .main { max-width: 860px; margin: 0 auto; padding: 24px 20px; }
+
+    /* Section cards */
+    .card { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.08); margin-bottom: 28px; }
+    .card-header { padding: 18px 24px 14px; color: white; }
+    .card-header h2 { font-size: 1.2em; margin-bottom: 3px; }
+    .card-header p { font-size: 0.88em; opacity: 0.88; }
+    .card-body { padding: 22px 24px; }
+    .ch-navy { background: linear-gradient(135deg, #1a237e, #3949ab); }
+    .ch-teal { background: linear-gradient(135deg, #004d40, #00897b); }
+    .ch-green { background: linear-gradient(135deg, #1b5e20, #388e3c); }
+    .ch-orange { background: linear-gradient(135deg, #e65100, #fb8c00); }
+    .ch-purple { background: linear-gradient(135deg, #4a148c, #7b1fa2); }
+    .ch-brown { background: linear-gradient(135deg, #4e342e, #795548); }
+    .ch-pink { background: linear-gradient(135deg, #880e4f, #c2185b); }
+    .ch-grey { background: linear-gradient(135deg, #37474f, #546e7a); }
+
+    /* Inner elements */
+    .flex-row { display: flex; gap: 14px; flex-wrap: wrap; margin: 12px 0; }
+    .flex-col { flex: 1; min-width: 180px; border-radius: 10px; padding: 14px 16px; }
+    .fb-navy { background: #e8eaf6; border: 2px solid #3949ab; } .fb-navy h4 { color: #1a237e; margin-bottom: 6px; }
+    .fb-teal { background: #e0f2f1; border: 2px solid #00897b; } .fb-teal h4 { color: #004d40; margin-bottom: 6px; }
+    .fb-green { background: #e8f5e9; border: 2px solid #388e3c; } .fb-green h4 { color: #1b5e20; margin-bottom: 6px; }
+    .fb-orange { background: #fff3e0; border: 2px solid #f57c00; } .fb-orange h4 { color: #e65100; margin-bottom: 6px; }
+    .fb-purple { background: #f3e5f5; border: 2px solid #7b1fa2; } .fb-purple h4 { color: #4a148c; margin-bottom: 6px; }
+    .fb-brown { background: #efebe9; border: 2px solid #795548; } .fb-brown h4 { color: #4e342e; margin-bottom: 6px; }
+    .fb-yellow { background: #fffde7; border: 2px solid #f9a825; } .fb-yellow h4 { color: #f57f17; margin-bottom: 6px; }
+    .fb-blue { background: #e3f2fd; border: 2px solid #1976d2; } .fb-blue h4 { color: #0d47a1; margin-bottom: 6px; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.93em; }
+    th { background: #37474f; color: white; padding: 9px 12px; text-align: left; }
+    td { padding: 9px 12px; border-bottom: 1px solid #e0e0e0; vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) { background: #f5f5f5; }
+    .tip { background: #e8f5e9; border-left: 4px solid #43a047; border-radius: 0 8px 8px 0; padding: 12px 16px; margin: 14px 0; color: #1b5e20; font-size: 0.93em; }
+    .tip strong { color: #2e7d32; }
+    .note { background: #fff3e0; border-left: 4px solid #fb8c00; border-radius: 0 8px 8px 0; padding: 12px 16px; margin: 14px 0; font-size: 0.93em; color: #37474f; }
+    .note strong { color: #e65100; }
+    .highlight-box { background: #e8eaf6; border: 2px solid #3949ab; border-radius: 10px; padding: 16px 18px; margin: 14px 0; }
+    .highlight-box h4 { color: #1a237e; margin-bottom: 8px; }
+    .unit-tag { display: inline-block; border-radius: 16px; padding: 3px 12px; font-size: 0.82em; font-weight: bold; color: white; margin: 3px; }
+    .ut-ela { background: #1a237e; }
+    .ut-math { background: #0d47a1; }
+    .ut-sci { background: #1b5e20; }
+    .ut-ss { background: #4e342e; }
+    .schedule-row { display: flex; align-items: center; gap: 12px; margin: 10px 0; padding: 10px 14px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #1a237e; }
+    .schedule-day { background: #1a237e; color: white; border-radius: 8px; padding: 4px 12px; font-weight: bold; font-size: 0.88em; min-width: 80px; text-align: center; }
+    ul { padding-left: 20px; } li { margin: 6px 0; font-size: 0.95em; }
+    p { margin-bottom: 10px; font-size: 0.95em; }
+    .emoji-list { list-style: none; padding-left: 0; }
+    .emoji-list li { padding: 6px 0; font-size: 0.95em; }
+    .closing-box { background: linear-gradient(135deg, #1a237e, #283593); color: white; border-radius: 16px; padding: 28px 24px; text-align: center; margin-top: 8px; }
+    .closing-box h2 { font-size: 1.3em; margin-bottom: 10px; }
+    .closing-box p { font-size: 0.95em; opacity: 0.92; margin: 6px 0; }
+  </style>
+</head>
+<body>
+
+<div class="top-header">
+  <h1>Parent Orientation Guide</h1>
+  <div class="subtitle">Owl Smart: A 3rd Grade Learning Journey</div>
+  <div class="tagline">Everything you need to know to support your child through this course</div>
+</div>
+
+<div class="main">
+
+  <!-- WELCOME -->
+  <div class="card">
+    <div class="card-header ch-navy">
+      <h2>Welcome, Parents!</h2>
+      <p>A note before your child begins</p>
+    </div>
+    <div class="card-body">
+      <p>Thank you for investing in your child's education with Owl Smart. This course was built specifically for 3rd graders at <strong>Sage Crest Elementary in the Kennewick School District</strong> — covering all the core subjects of a complete 3rd grade year in an engaging, self-paced format.</p>
+      <p>This guide will help you understand what the course covers, how to set up a healthy study routine, how to use the quizzes effectively, and how you can support your child without doing the work for them. Learning is most powerful when a student does the thinking — your role is to encourage, celebrate effort, and stay curious alongside them.</p>
+      <div class="tip"><strong>The goal of this course is not just to cover content — it is to build confidence, curiosity, and a love of learning that carries your child through school and life.</strong></div>
+    </div>
+  </div>
+
+  <!-- WHAT'S IN THE COURSE -->
+  <div class="card">
+    <div class="card-header ch-teal">
+      <h2>What's in the Course?</h2>
+      <p>20 units, 124 lessons, 20 quizzes — a complete 3rd grade year</p>
+    </div>
+    <div class="card-body">
+      <div class="flex-row">
+        <div class="flex-col fb-navy">
+          <h4>English Language Arts (Units 1–6)</h4>
+          <ul>
+            <li>Reading Literature and Nonfiction</li>
+            <li>Reading Foundational Skills</li>
+            <li>Writing (opinion, narrative, informational)</li>
+            <li>Grammar and Conventions</li>
+            <li>Vocabulary</li>
+          </ul>
+        </div>
+        <div class="flex-col fb-blue">
+          <h4>Mathematics (Units 7–12)</h4>
+          <ul>
+            <li>Multiplication and Division</li>
+            <li>Place Value and Number Sense</li>
+            <li>Addition and Subtraction</li>
+            <li>Fractions</li>
+            <li>Measurement, Data, and Geometry</li>
+          </ul>
+        </div>
+      </div>
+      <div class="flex-row">
+        <div class="flex-col fb-green">
+          <h4>Science (Units 13–16)</h4>
+          <ul>
+            <li>Life Science: Plants and Animals</li>
+            <li>Ecosystems and Habitats</li>
+            <li>Earth Science: Weather and Geology</li>
+            <li>Physical Science: Matter and Energy</li>
+          </ul>
+        </div>
+        <div class="flex-col fb-brown">
+          <h4>Social Studies (Units 17–20)</h4>
+          <ul>
+            <li>Communities, Geography, and Maps</li>
+            <li>Washington State History + Since Time Immemorial</li>
+            <li>Government and Citizenship</li>
+            <li>Economics and Culture</li>
+          </ul>
+        </div>
+      </div>
+      <div class="note"><strong>Standards Alignment:</strong> All lessons are aligned to Common Core State Standards (ELA and Math), Next Generation Science Standards (NGSS), Washington State Social Studies Standards, and the Washington State <em>Since Time Immemorial</em> curriculum — which is a state requirement for all Washington students.</div>
+    </div>
+  </div>
+
+  <!-- HOW EACH UNIT IS STRUCTURED -->
+  <div class="card">
+    <div class="card-header ch-green">
+      <h2>How Each Unit Is Structured</h2>
+      <p>What your child will see in every lesson and unit</p>
+    </div>
+    <div class="card-body">
+      <p>Every unit follows the same consistent structure so your child always knows what to expect:</p>
+      <div class="flex-row">
+        <div class="flex-col fb-teal">
+          <h4>Combined Lesson Page</h4>
+          <p>All lessons in the unit are in one scrollable page with a sticky navigation bar at the top. Your child can click any lesson name to jump directly to it.</p>
+        </div>
+        <div class="flex-col fb-orange">
+          <h4>Inside Each Lesson</h4>
+          <p>Every lesson has: an introduction, key vocabulary, clear explanations with colourful visuals, real-world examples, and a <strong>Try It Yourself</strong> activity.</p>
+        </div>
+        <div class="flex-col fb-purple">
+          <h4>Unit Quiz</h4>
+          <p>After reading all lessons, your child takes a 15-question quiz: 9 multiple choice, 3 true/false, 2 fill-in-the-blank, and 1 open-ended writing question.</p>
+        </div>
+      </div>
+      <div class="highlight-box">
+        <h4>The "Try It Yourself" Activities</h4>
+        <p>Each lesson ends with 4 questions or activities. These are NOT graded — they are meant for your child to work through in a notebook or on paper. Encourage your child to actually try them rather than skipping ahead. Writing answers by hand strengthens learning far more than just reading!</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- RECOMMENDED STUDY SCHEDULE -->
+  <div class="card">
+    <div class="card-header ch-orange">
+      <h2>Recommended Study Schedule</h2>
+      <p>Flexible options to fit your family's rhythm</p>
+    </div>
+    <div class="card-body">
+      <p>This course is designed to be self-paced — there is no deadline. Here are three schedule options to consider:</p>
+
+      <p style="font-weight:bold; color:#e65100; margin-top:14px; margin-bottom:6px;">Option A: Light Touch (1-2 sessions per week)</p>
+      <div class="schedule-row"><div class="schedule-day">Session 1</div><div>Read 1-2 lessons from the current unit. Work through the Try It activities in a notebook.</div></div>
+      <div class="schedule-row"><div class="schedule-day">Session 2</div><div>Finish remaining lessons, then take the unit quiz when all lessons are complete.</div></div>
+      <p style="font-size:0.88em; color:#37474f; margin-top:4px;">At this pace, expect to complete one unit every 2-3 weeks. Full course: roughly one school year.</p>
+
+      <p style="font-weight:bold; color:#e65100; margin-top:16px; margin-bottom:6px;">Option B: Steady Progress (3-4 sessions per week)</p>
+      <div class="schedule-row"><div class="schedule-day">Mon / Wed</div><div>Read lessons and complete Try It activities (20-30 minutes per session).</div></div>
+      <div class="schedule-row"><div class="schedule-day">Fri / Sat</div><div>Continue lessons OR take the quiz if all lessons are finished.</div></div>
+      <p style="font-size:0.88em; color:#37474f; margin-top:4px;">At this pace, expect one unit every 1-2 weeks. Full course: 5-6 months.</p>
+
+      <p style="font-weight:bold; color:#e65100; margin-top:16px; margin-bottom:6px;">Option C: Accelerated (5 sessions per week — summer mode)</p>
+      <div class="schedule-row"><div class="schedule-day">Mon – Fri</div><div>One lesson per day (20-25 minutes). Take the quiz at the end of each unit.</div></div>
+      <p style="font-size:0.88em; color:#37474f; margin-top:4px;">At this pace, complete the full course in about 5-6 months of daily study.</p>
+
+      <div class="tip" style="margin-top:16px;"><strong>Best practice:</strong> Short, consistent sessions (20-30 minutes) are far more effective than rare long sessions. Daily or near-daily habit builds real retention. Even just 20 minutes of focused study five days a week produces extraordinary results over a school year!</div>
+    </div>
+  </div>
+
+  <!-- HOW TO USE THE QUIZZES -->
+  <div class="card">
+    <div class="card-header ch-purple">
+      <h2>How to Use the Quizzes</h2>
+      <p>Quizzes are a tool for learning, not just grading</p>
+    </div>
+    <div class="card-body">
+      <p>Each unit ends with a 15-question quiz. Here is how to get the most from them:</p>
+      <div class="flex-row">
+        <div class="flex-col fb-purple">
+          <h4>Before the Quiz</h4>
+          <ul>
+            <li>Make sure all lessons in the unit are read — not just skimmed</li>
+            <li>Ask your child to explain 2-3 things they learned from the unit</li>
+            <li>Let your child take the quiz independently with no help</li>
+          </ul>
+        </div>
+        <div class="flex-col fb-navy">
+          <h4>After the Quiz</h4>
+          <ul>
+            <li>Review missed questions together — the explanations in each answer are detailed and educational</li>
+            <li>Go back to the lesson for any topic that scored poorly</li>
+            <li>Celebrate effort, not just score!</li>
+          </ul>
+        </div>
+      </div>
+      <table style="margin-top:12px;">
+        <tr><th>Question Type</th><th>What It Measures</th><th>Parent Tip</th></tr>
+        <tr><td><strong>Multiple Choice (9)</strong></td><td>Recall and understanding of key concepts</td><td>Encourage your child to read all four options before choosing</td></tr>
+        <tr><td><strong>True / False (3)</strong></td><td>Understanding of specific facts and common misconceptions</td><td>Ask "how do you know?" after they answer</td></tr>
+        <tr><td><strong>Fill in the Blank (2)</strong></td><td>Vocabulary and terminology retention</td><td>Encourage guessing even if unsure — partial credit may apply</td></tr>
+        <tr><td><strong>Open Ended (1)</strong></td><td>Deeper thinking, explanation, and application</td><td>Read the answer together and discuss -- these are the most valuable questions!</td></tr>
+      </table>
+      <div class="note"><strong>About scores:</strong> The passing score is set at 70%. If your child scores below 70%, encourage them to re-read the relevant lessons before retaking the quiz. Getting a question wrong and then understanding why is one of the most powerful ways to learn — treat low scores as useful information, not failures!</div>
+    </div>
+  </div>
+
+  <!-- YOUR ROLE AS A PARENT -->
+  <div class="card">
+    <div class="card-header ch-brown">
+      <h2>Your Role as a Parent</h2>
+      <p>How to support without taking over</p>
+    </div>
+    <div class="card-body">
+      <div class="flex-row">
+        <div class="flex-col fb-green">
+          <h4>DO these things:</h4>
+          <ul>
+            <li>Create a consistent, distraction-free study space</li>
+            <li>Sit nearby (you don't have to watch — just be present)</li>
+            <li>Ask your child to teach YOU what they learned — this is incredibly powerful for retention</li>
+            <li>Celebrate progress and effort genuinely</li>
+            <li>Connect lessons to real life ("We're driving past the Cascade Mountains — we just learned about those!")</li>
+            <li>Review wrong quiz answers together calmly</li>
+          </ul>
+        </div>
+        <div class="flex-col fb-orange">
+          <h4>AVOID these things:</h4>
+          <ul>
+            <li>Answering quiz questions for your child</li>
+            <li>Rushing through lessons just to finish quickly</li>
+            <li>Making study time feel like a punishment</li>
+            <li>Comparing your child's pace to others</li>
+            <li>Skipping the "Try It Yourself" activities — they matter!</li>
+            <li>Letting your child skip units they find hard — those are the most important to work through</li>
+          </ul>
+        </div>
+      </div>
+      <div class="highlight-box">
+        <h4>The "Teach It Back" Strategy</h4>
+        <p>After your child finishes a lesson, ask them: <em>"Can you teach me what you just learned as if I knew nothing about it?"</em> Research shows that explaining something out loud is one of the most effective ways to lock it into long-term memory. Even if their explanation is incomplete, the act of trying to recall and explain deepens learning dramatically. This works for any age and any subject!</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUBJECT-SPECIFIC TIPS -->
+  <div class="card">
+    <div class="card-header ch-pink">
+      <h2>Subject-Specific Tips</h2>
+      <p>How to support learning in each subject area</p>
+    </div>
+    <div class="card-body">
+      <table>
+        <tr><th>Subject</th><th>How You Can Help at Home</th></tr>
+        <tr>
+          <td><strong>ELA<br>(Units 1–6)</strong></td>
+          <td>Read together every day — even just 10 minutes. Ask questions about what you read: "Who is the main character? What is the problem?" When your child writes, celebrate the attempt before correcting. Read their Try It writing activities aloud together.</td>
+        </tr>
+        <tr>
+          <td><strong>Mathematics<br>(Units 7–12)</strong></td>
+          <td>Practice multiplication facts during car rides or meals — make it a game! Use real money to practice budgets (Unit 20) and fractions in cooking. Point out shapes and measurements in everyday life. For multiplication tables, 5 minutes of daily practice builds fluency faster than one long session.</td>
+        </tr>
+        <tr>
+          <td><strong>Science<br>(Units 13–16)</strong></td>
+          <td>Go outside! Identify plants and animals in your neighbourhood. Watch the clouds and predict weather. Look for landforms on drives. The Columbia River, Cascade Mountains, and eastern Washington landscape are living textbooks for Units 14–15. Connect what you see to what your child has learned.</td>
+        </tr>
+        <tr>
+          <td><strong>Social Studies<br>(Units 17–20)</strong></td>
+          <td>Discuss current events in simple terms. Point out Kennewick landmarks and discuss local history. Unit 18 (Since Time Immemorial) deserves special attention — approach it with openness and discuss why it is important to learn this history. Visit the Sacajawea State Park in Pasco as a real-world connection to Unit 18!</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- SINCE TIME IMMEMORIAL NOTE -->
+  <div class="card">
+    <div class="card-header ch-brown">
+      <h2>A Special Note: Unit 18 and Since Time Immemorial</h2>
+      <p>Important context for parents</p>
+    </div>
+    <div class="card-body">
+      <p>Washington state law requires that all public school students learn about the history, culture, and government of the Indigenous peoples of Washington — a curriculum called <strong>Since Time Immemorial (STI)</strong>. Unit 18 of this course covers this material.</p>
+      <p>You may find that some of this content covers aspects of history that are difficult or unfamiliar — including the impact of colonisation on Indigenous peoples, the boarding school era, and the ongoing importance of treaty rights. This is intentional. The Washington State Legislature determined that all students deserve to know this history.</p>
+      <div class="highlight-box">
+        <h4>How to approach this unit with your child:</h4>
+        <ul>
+          <li>Approach it with curiosity and openness rather than defensiveness</li>
+          <li>Affirm that Indigenous peoples' cultures are living and thriving today — not just ancient history</li>
+          <li>If your child has questions you cannot answer, say "I don't know — let's find out together"</li>
+          <li>Consider visiting Sacajawea State Park (Pasco) or the Yakama Nation Museum (Toppenish) for a powerful real-world connection</li>
+          <li>Remind your child: learning difficult history helps us build a more just and understanding community</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- TECHNICAL NOTES -->
+  <div class="card">
+    <div class="card-header ch-grey">
+      <h2>Technical Notes</h2>
+      <p>Getting the most out of the course platform</p>
+    </div>
+    <div class="card-body">
+      <div class="flex-row">
+        <div class="flex-col fb-blue">
+          <h4>Accessing Lessons</h4>
+          <p>Each unit's lessons are in a single embedded page. The sticky navigation bar at the top lets your child jump between lessons without scrolling all the way up.</p>
+        </div>
+        <div class="flex-col fb-teal">
+          <h4>Best Devices</h4>
+          <p>The course works on any device — tablet, laptop, desktop, or phone. For reading and writing activities, a larger screen (tablet or laptop) is recommended. A stylus or keyboard makes the open-ended quiz questions easier.</p>
+        </div>
+        <div class="flex-col fb-orange">
+          <h4>Notebooks</h4>
+          <p>We strongly recommend a dedicated physical notebook for "Try It Yourself" activities. Writing by hand (rather than typing) significantly improves retention and is a valuable skill in itself.</p>
+        </div>
+      </div>
+      <div class="tip"><strong>Keep a Learning Journal:</strong> Encourage your child to keep a simple notebook as their "Owl Smart Learning Journal." They write answers to Try It activities, draw diagrams, jot down new vocabulary, and record things they find interesting. Looking back through it at the end of the course is a wonderful way to see how much they have grown!</div>
+    </div>
+  </div>
+
+  <!-- CLOSING -->
+  <div class="closing-box">
+    <h2>You are giving your child an extraordinary gift.</h2>
+    <p>A child who loves learning and feels confident in school carries that advantage for life.</p>
+    <p>This course was built with care, curiosity, and deep respect for the children of Kennewick and Washington state.</p>
+    <p style="margin-top:14px; font-size:1.05em; font-weight:bold;">We hope it brings joy, wonder, and growth to your family.</p>
+    <p style="margin-top:8px; opacity:0.85;">Now — let the Owl Smart journey begin!</p>
+  </div>
+
+</div>
+</body>
+</html>
