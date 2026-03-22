@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit 10 – Fractions | Owl Smart 3rd Grade</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #f4f7fb; color: #2d2d2d; line-height: 1.8; }
+    .top-header { background: linear-gradient(135deg, #e65100, #bf360c); color: white; text-align: center; padding: 24px 20px 16px; }
+    .top-header h1 { font-size: 1.5em; margin-bottom: 4px; }
+    .top-header p { font-size: 0.95em; opacity: 0.88; }
+    .nav-bar { background: #e65100; padding: 0 10px; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.3); overflow-x: auto; white-space: nowrap; }
+    .nav-bar a { display: inline-block; color: rgba(255,255,255,0.8); text-decoration: none; padding: 12px 14px; font-size: 0.82em; font-weight: bold; border-bottom: 3px solid transparent; transition: all 0.2s; }
+    .nav-bar a:hover, .nav-bar a.active { color: white; border-bottom-color: #ffd600; }
+    .main { max-width: 860px; margin: 0 auto; padding: 20px; }
+    .lesson-section { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.08); margin-bottom: 40px; scroll-margin-top: 60px; }
+    .banner { color: white; text-align: center; padding: 28px 24px; }
+    .banner h2 { font-size: 1.45em; margin-bottom: 6px; }
+    .banner p { font-size: 0.97em; opacity: 0.92; margin-bottom: 10px; }
+    .lesson-num { display: inline-block; background: rgba(255,255,255,0.25); border-radius: 20px; padding: 3px 14px; font-size: 0.82em; font-weight: bold; }
+    .b1 { background: linear-gradient(135deg, #e65100, #bf360c); }
+    .b2 { background: linear-gradient(135deg, #0d47a1, #1976d2); }
+    .b3 { background: linear-gradient(135deg, #1b5e20, #388e3c); }
+    .b4 { background: linear-gradient(135deg, #4a148c, #7b1fa2); }
+    .b5 { background: linear-gradient(135deg, #880e4f, #c2185b); }
+    .b6 { background: linear-gradient(135deg, #004d40, #00897b); }
+    .lesson-content { padding: 26px; }
+    .section { border-left: 5px solid; border-radius: 0 10px 10px 0; padding: 18px 20px; margin-bottom: 20px; }
+    .s1 { background: #fbe9e7; border-color: #e65100; } .s1 h3 { color: #e65100; }
+    .s2 { background: #e3f2fd; border-color: #0d47a1; } .s2 h3 { color: #0d47a1; }
+    .s3 { background: #e8f5e9; border-color: #1b5e20; } .s3 h3 { color: #1b5e20; }
+    .s4 { background: #f3e5f5; border-color: #4a148c; } .s4 h3 { color: #4a148c; }
+    .s5 { background: #fce4ec; border-color: #880e4f; } .s5 h3 { color: #880e4f; }
+    .s6 { background: #e0f2f1; border-color: #004d40; } .s6 h3 { color: #004d40; }
+    .section h3 { margin-bottom: 8px; font-size: 1.05em; }
+    .vocab-box { background: #fff8e1; border: 2px solid #ffc107; border-radius: 10px; padding: 18px 20px; margin-bottom: 20px; }
+    .vocab-box h3 { color: #e65100; margin-bottom: 12px; font-size: 1.05em; }
+    .vocab-item { margin: 8px 0; font-size: 0.95em; }
+    .word { font-weight: bold; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.93em; }
+    th { background: #37474f; color: white; padding: 9px 12px; text-align: left; }
+    td { padding: 9px 12px; border-bottom: 1px solid #e0e0e0; }
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) { background: #f5f5f5; }
+    .tip { background: #e8f5e9; border-left: 4px solid #43a047; border-radius: 0 8px 8px 0; padding: 12px 16px; margin: 12px 0; color: #1b5e20; font-size: 0.93em; }
+    .tip strong { color: #2e7d32; }
+    .try-it { background: #ede7f6; border: 2px dashed #7e57c2; border-radius: 10px; padding: 18px 20px; margin-bottom: 20px; }
+    .try-it h3 { color: #4527a0; margin-bottom: 10px; font-size: 1.05em; }
+    .try-it ol { padding-left: 20px; }
+    .try-it li { margin: 8px 0; font-size: 0.95em; }
+    .remember { background: #fff3e0; border: 2px solid #ff8f00; border-radius: 10px; padding: 18px 20px; text-align: center; margin-bottom: 4px; }
+    .remember h3 { color: #e65100; margin-bottom: 10px; font-size: 1.05em; }
+    .remember p { margin: 5px 0; font-size: 0.95em; }
+    .remember .cta { font-weight: bold; font-size: 1.05em; margin-top: 12px; }
+    .flex-row { display: flex; gap: 12px; flex-wrap: wrap; margin: 10px 0; }
+    .flex-col { flex: 1; min-width: 150px; border-radius: 10px; padding: 14px 16px; }
+    .fb-orange { background: #fbe9e7; border: 2px solid #f57c00; } .fb-orange h4 { color: #e65100; margin-bottom: 6px; }
+    .fb-blue { background: #e3f2fd; border: 2px solid #1976d2; } .fb-blue h4 { color: #0d47a1; margin-bottom: 6px; }
+    .fb-green { background: #e8f5e9; border: 2px solid #388e3c; } .fb-green h4 { color: #1b5e20; margin-bottom: 6px; }
+    .fb-purple { background: #f3e5f5; border: 2px solid #7b1fa2; } .fb-purple h4 { color: #4a148c; margin-bottom: 6px; }
+    .fb-pink { background: #fce4ec; border: 2px solid #e91e63; } .fb-pink h4 { color: #880e4f; margin-bottom: 6px; }
+    .fb-teal { background: #e0f2f1; border: 2px solid #00897b; } .fb-teal h4 { color: #004d40; margin-bottom: 6px; }
+    /* Fraction visuals */
+    .fraction { display: inline-flex; flex-direction: column; align-items: center; font-size: 1.2em; font-weight: bold; margin: 0 6px; vertical-align: middle; }
+    .fraction .num { border-bottom: 2px solid currentColor; padding: 0 4px; line-height: 1.3; }
+    .fraction .den { padding: 0 4px; line-height: 1.3; }
+    .frac-big { font-size: 1.5em; }
+    .pie-row { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; margin: 14px 0; }
+    .pie-item { text-align: center; }
+    .pie-item svg { display: block; margin: 0 auto 6px; }
+    .pie-label { font-size: 0.88em; font-weight: bold; color: #37474f; }
+    .number-line-wrap { background: #e3f2fd; border-radius: 10px; padding: 18px 16px; margin: 12px 0; overflow-x: auto; }
+    .nl { position: relative; height: 50px; min-width: 340px; margin: 8px 16px; }
+    .nl-line { position: absolute; top: 24px; left: 0; right: 0; height: 3px; background: #0d47a1; }
+    .nl-point { position: absolute; top: 14px; width: 3px; height: 22px; background: #0d47a1; }
+    .nl-label { position: absolute; top: 38px; font-size: 0.8em; font-weight: bold; color: #0d47a1; transform: translateX(-50%); white-space: nowrap; }
+    .nl-dot { position: absolute; top: 16px; width: 18px; height: 18px; background: #e65100; border-radius: 50%; transform: translateX(-50%); }
+    .strip-row { display: flex; gap: 10px; flex-wrap: wrap; margin: 12px 0; align-items: flex-start; }
+    .strip-wrap { flex: 1; min-width: 200px; }
+    .strip-label { font-size: 0.85em; font-weight: bold; color: #37474f; margin-bottom: 4px; }
+    .strip { display: flex; height: 36px; border: 2px solid #37474f; border-radius: 4px; overflow: hidden; }
+    .strip-part { flex: 1; border-right: 1px solid #90a4ae; display: flex; align-items: center; justify-content: center; font-size: 0.75em; font-weight: bold; }
+    .strip-part:last-child { border-right: none; }
+    .shaded { background: #e65100; color: white; }
+    .unshaded { background: #fbe9e7; color: #e65100; }
+    .shaded-blue { background: #0d47a1; color: white; }
+    .unshaded-blue { background: #e3f2fd; color: #0d47a1; }
+    .set-row { display: flex; gap: 8px; flex-wrap: wrap; margin: 12px 0; }
+    .set-circle { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8em; font-weight: bold; border: 2px solid; }
+    .set-shaded { background: #0d47a1; color: white; border-color: #0d47a1; }
+    .set-unshaded { background: white; color: #0d47a1; border-color: #0d47a1; }
+    .compare-box { display: flex; align-items: center; justify-content: center; gap: 20px; background: #f9f9f9; border-radius: 10px; padding: 14px; margin: 12px 0; font-size: 1.3em; font-weight: bold; }
+    .compare-box .sym { color: #e65100; font-size: 1.4em; }
+    ul { padding-left: 20px; } li { margin: 5px 0; font-size: 0.95em; }
+    p { margin-bottom: 8px; font-size: 0.95em; }
+  </style>
+</head>
+<body>
+
+<div class="top-header">
+  <h1>Owl Smart: A 3rd Grade Learning Journey</h1>
+  <p>Unit 10 -- Fractions &nbsp;|&nbsp; 6 Lessons</p>
+</div>
+
+<div class="nav-bar">
+  <a href="#lesson1">10.1 Equal Parts</a>
+  <a href="#lesson2">10.2 Number Line</a>
+  <a href="#lesson3">10.3 Equivalent Fractions</a>
+  <a href="#lesson4">10.4 Comparing Fractions</a>
+  <a href="#lesson5">10.5 Fractions of a Set</a>
+  <a href="#lesson6">10.6 Whole Numbers</a>
+</div>
+
+<div class="main">
+
+<!-- LESSON 10.1 -->
+<div class="lesson-section" id="lesson1">
+  <div class="banner b1">
+    <span class="lesson-num">Lesson 10.1</span>
+    <h2>Understanding Fractions: Equal Parts of a Whole</h2>
+    <p>A fraction names equal parts of a whole -- learn to read, write, and draw them!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s1">
+      <h3>What Are We Learning Today?</h3>
+      <p>Have you ever shared a pizza equally with friends? Each slice is a <strong>fraction</strong> of the whole pizza! A fraction describes equal parts -- how many parts you have out of how many equal parts the whole is divided into. Today we learn to read, write, and draw fractions.</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Fraction</span> -- A number that represents equal parts of a whole.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Numerator</span> -- The TOP number of a fraction. Tells HOW MANY equal parts you have.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Denominator</span> -- The BOTTOM number of a fraction. Tells how many TOTAL equal parts the whole is divided into.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Unit Fraction</span> -- A fraction with 1 as the numerator. Example: 1/2, 1/3, 1/4, 1/8.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Equal Parts</span> -- Parts that are all the SAME SIZE. Fractions MUST use equal parts!</div>
+    </div>
+
+    <div class="section s1">
+      <h3>Reading and Writing a Fraction</h3>
+      <div style="text-align:center; margin: 16px 0; font-size:1.05em;">
+        <div style="display:inline-block; background:#fbe9e7; border:2px solid #e65100; border-radius:12px; padding:16px 28px;">
+          <span style="font-size:2.2em; font-weight:bold; color:#e65100; display:block; line-height:1.2; border-bottom:3px solid #e65100;">3</span>
+          <span style="font-size:2.2em; font-weight:bold; color:#0d47a1; display:block; line-height:1.2; margin-top:4px;">4</span>
+          <p style="margin-top:10px; font-size:0.82em; color:#37474f;">Three-fourths: 3 out of 4 equal parts</p>
+        </div>
+        <div style="display:inline-block; vertical-align:top; text-align:left; margin-left:24px; margin-top:10px;">
+          <p><span style="color:#e65100; font-weight:bold;">3 (numerator)</span> -- how many shaded parts</p>
+          <p style="margin-top:8px;"><span style="color:#0d47a1; font-weight:bold;">4 (denominator)</span> -- total equal parts</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section s1">
+      <h3>Common Fractions and How to Say Them</h3>
+      <table>
+        <tr><th>Fraction</th><th>Say It As</th><th>Meaning</th></tr>
+        <tr><td style="font-size:1.1em; font-weight:bold;">1/2</td><td>one-half</td><td>1 out of 2 equal parts</td></tr>
+        <tr><td style="font-size:1.1em; font-weight:bold;">1/3</td><td>one-third</td><td>1 out of 3 equal parts</td></tr>
+        <tr><td style="font-size:1.1em; font-weight:bold;">1/4</td><td>one-fourth (or one-quarter)</td><td>1 out of 4 equal parts</td></tr>
+        <tr><td style="font-size:1.1em; font-weight:bold;">2/3</td><td>two-thirds</td><td>2 out of 3 equal parts</td></tr>
+        <tr><td style="font-size:1.1em; font-weight:bold;">3/4</td><td>three-fourths</td><td>3 out of 4 equal parts</td></tr>
+        <tr><td style="font-size:1.1em; font-weight:bold;">3/8</td><td>three-eighths</td><td>3 out of 8 equal parts</td></tr>
+      </table>
+    </div>
+
+    <div class="section s1">
+      <h3>Fraction Bar Models -- Shaded Parts</h3>
+      <div class="strip-row">
+        <div class="strip-wrap">
+          <div class="strip-label">1/2 -- one half shaded</div>
+          <div class="strip">
+            <div class="strip-part shaded">1/2</div>
+            <div class="strip-part unshaded">1/2</div>
+          </div>
+        </div>
+        <div class="strip-wrap">
+          <div class="strip-label">2/3 -- two thirds shaded</div>
+          <div class="strip">
+            <div class="strip-part shaded">1/3</div>
+            <div class="strip-part shaded">1/3</div>
+            <div class="strip-part unshaded">1/3</div>
+          </div>
+        </div>
+      </div>
+      <div class="strip-row">
+        <div class="strip-wrap">
+          <div class="strip-label">3/4 -- three fourths shaded</div>
+          <div class="strip">
+            <div class="strip-part shaded">1/4</div>
+            <div class="strip-part shaded">1/4</div>
+            <div class="strip-part shaded">1/4</div>
+            <div class="strip-part unshaded">1/4</div>
+          </div>
+        </div>
+        <div class="strip-wrap">
+          <div class="strip-label">5/8 -- five eighths shaded</div>
+          <div class="strip">
+            <div class="strip-part shaded" style="font-size:0.65em;">1/8</div>
+            <div class="strip-part shaded" style="font-size:0.65em;">1/8</div>
+            <div class="strip-part shaded" style="font-size:0.65em;">1/8</div>
+            <div class="strip-part shaded" style="font-size:0.65em;">1/8</div>
+            <div class="strip-part shaded" style="font-size:0.65em;">1/8</div>
+            <div class="strip-part unshaded" style="font-size:0.65em;">1/8</div>
+            <div class="strip-part unshaded" style="font-size:0.65em;">1/8</div>
+            <div class="strip-part unshaded" style="font-size:0.65em;">1/8</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tip"><strong>CRITICAL RULE:</strong> The parts MUST be equal in size! If someone cuts a pizza into pieces of different sizes, the smaller pieces are NOT one-half -- even if there are two pieces. Fractions only work with equal parts!</div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>A rectangle is divided into 6 equal parts. 4 parts are shaded. Write the fraction for the shaded part and the unshaded part.</li>
+        <li>What is the numerator and denominator of 5/8? What does each number tell you?</li>
+        <li>Draw a bar model for 3/5 and shade the correct number of parts.</li>
+        <li>If a pizza is cut into 8 equal slices and you eat 3, what fraction of the pizza did you eat? What fraction is left?</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p><strong>Numerator</strong> (top) = how many parts you HAVE.</p>
+      <p><strong>Denominator</strong> (bottom) = total EQUAL parts in the whole.</p>
+      <p>Fractions MUST be equal parts -- size matters!</p>
+      <p class="cta" style="color:#e65100;">Great start! Click Lesson 10.2!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 10.2 -->
+<div class="lesson-section" id="lesson2">
+  <div class="banner b2">
+    <span class="lesson-num">Lesson 10.2</span>
+    <h2>Fractions on a Number Line</h2>
+    <p>Place fractions on a number line to see exactly where they belong!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s2">
+      <h3>What Are We Learning Today?</h3>
+      <p>Fractions are numbers -- and like all numbers, they have a specific place on the <strong>number line</strong>! Placing fractions on a number line helps us see their size and relationship to whole numbers. Today we learn to divide number lines into equal parts and locate fractions precisely.</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#0d47a1;">Number Line</span> -- A line with numbers placed at equal intervals showing their order and value.</div>
+      <div class="vocab-item"><span class="word" style="color:#0d47a1;">Interval</span> -- The space between two points on a number line. For fractions, each interval is one unit fraction.</div>
+      <div class="vocab-item"><span class="word" style="color:#0d47a1;">Partition</span> -- To divide a number line into equal sections.</div>
+    </div>
+
+    <div class="section s2">
+      <h3>How to Place Fractions on a Number Line</h3>
+      <div style="background:#e3f2fd; border-radius:10px; padding:16px 18px; margin-bottom:14px;">
+        <p style="font-weight:bold; color:#0d47a1; margin-bottom:8px;">Step 1:</p>
+        <p>Draw a number line from 0 to 1. The denominator tells you how many EQUAL parts to divide it into.</p>
+        <p style="font-weight:bold; color:#0d47a1; margin:8px 0;">Step 2:</p>
+        <p>Mark equal tick marks. For fourths, make 4 equal spaces (5 tick marks including 0 and 1).</p>
+        <p style="font-weight:bold; color:#0d47a1; margin:8px 0;">Step 3:</p>
+        <p>Count from 0. The numerator tells you how many spaces to count.</p>
+      </div>
+
+      <p style="font-weight:bold; color:#0d47a1; margin:10px 0 4px;">Halves -- divided into 2 equal parts:</p>
+      <div class="number-line-wrap">
+        <div class="nl">
+          <div class="nl-line"></div>
+          <div class="nl-point" style="left:0%"></div>
+          <div class="nl-label" style="left:0%">0</div>
+          <div class="nl-point" style="left:50%"></div>
+          <div class="nl-label" style="left:50%">1/2</div>
+          <div class="nl-dot" style="left:50%"></div>
+          <div class="nl-point" style="left:100%"></div>
+          <div class="nl-label" style="left:100%">1</div>
+        </div>
+      </div>
+
+      <p style="font-weight:bold; color:#0d47a1; margin:14px 0 4px;">Fourths -- divided into 4 equal parts:</p>
+      <div class="number-line-wrap">
+        <div class="nl">
+          <div class="nl-line"></div>
+          <div class="nl-point" style="left:0%"></div>
+          <div class="nl-label" style="left:0%">0</div>
+          <div class="nl-point" style="left:25%"></div>
+          <div class="nl-label" style="left:25%">1/4</div>
+          <div class="nl-point" style="left:50%"></div>
+          <div class="nl-label" style="left:50%">2/4</div>
+          <div class="nl-dot" style="left:75%"></div>
+          <div class="nl-point" style="left:75%"></div>
+          <div class="nl-label" style="left:75%">3/4</div>
+          <div class="nl-point" style="left:100%"></div>
+          <div class="nl-label" style="left:100%">1</div>
+        </div>
+      </div>
+
+      <p style="font-weight:bold; color:#0d47a1; margin:14px 0 4px;">Eighths -- divided into 8 equal parts:</p>
+      <div class="number-line-wrap">
+        <div class="nl">
+          <div class="nl-line"></div>
+          <div class="nl-point" style="left:0%"></div><div class="nl-label" style="left:0%">0</div>
+          <div class="nl-point" style="left:12.5%"></div><div class="nl-label" style="left:12.5%">1/8</div>
+          <div class="nl-point" style="left:25%"></div><div class="nl-label" style="left:25%">2/8</div>
+          <div class="nl-point" style="left:37.5%"></div><div class="nl-label" style="left:37.5%">3/8</div>
+          <div class="nl-dot" style="left:37.5%"></div>
+          <div class="nl-point" style="left:50%"></div><div class="nl-label" style="left:50%">4/8</div>
+          <div class="nl-point" style="left:62.5%"></div><div class="nl-label" style="left:62.5%">5/8</div>
+          <div class="nl-point" style="left:75%"></div><div class="nl-label" style="left:75%">6/8</div>
+          <div class="nl-point" style="left:87.5%"></div><div class="nl-label" style="left:87.5%">7/8</div>
+          <div class="nl-point" style="left:100%"></div><div class="nl-label" style="left:100%">1</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section s2">
+      <h3>What the Number Line Tells Us</h3>
+      <table>
+        <tr><th>Fraction</th><th>Closer to 0 or 1?</th><th>Why?</th></tr>
+        <tr><td>1/4</td><td>Closer to 0</td><td>Only 1 of 4 parts from 0</td></tr>
+        <tr><td>3/4</td><td>Closer to 1</td><td>3 of 4 parts -- only 1/4 away from 1</td></tr>
+        <tr><td>1/2</td><td>Exactly in the middle!</td><td>Halfway between 0 and 1</td></tr>
+        <tr><td>7/8</td><td>Very close to 1</td><td>Only 1/8 away from 1</td></tr>
+        <tr><td>1/8</td><td>Very close to 0</td><td>Only 1/8 away from 0</td></tr>
+      </table>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Draw a number line from 0 to 1. Divide it into thirds and label 0, 1/3, 2/3, and 1. Place a dot at 2/3.</li>
+        <li>Draw a number line from 0 to 1. Divide it into sixths and label all fractions.</li>
+        <li>Is 5/8 closer to 0, to 1/2, or to 1? How do you know?</li>
+        <li>What fraction is exactly halfway between 0 and 1? Between 0 and 1/2?</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p>The <strong>denominator</strong> tells you how many equal parts to divide the number line into.</p>
+      <p>The <strong>numerator</strong> tells you how many spaces to count from 0.</p>
+      <p>0 is at the left end. 1 (the whole) is at the right end.</p>
+      <p class="cta" style="color:#0d47a1;">Excellent! Click Lesson 10.3!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 10.3 -->
+<div class="lesson-section" id="lesson3">
+  <div class="banner b3">
+    <span class="lesson-num">Lesson 10.3</span>
+    <h2>Equivalent Fractions</h2>
+    <p>Different fractions can name the same amount -- discover equivalent fractions!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s3">
+      <h3>What Are We Learning Today?</h3>
+      <p>Did you know that 1/2 and 2/4 and 4/8 all name the <strong>exact same amount</strong>? Even though they look different, they represent the same point on a number line and the same portion of a whole. These are called <strong>equivalent fractions</strong>!</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Equivalent Fractions</span> -- Fractions that have different numerators and denominators but represent the same value.</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Simplest Form</span> -- A fraction where the numerator and denominator share no common factor other than 1.</div>
+    </div>
+
+    <div class="section s3">
+      <h3>Seeing Equivalent Fractions with Bar Models</h3>
+      <div class="strip-row">
+        <div class="strip-wrap" style="min-width:300px;">
+          <div class="strip-label">1/2</div>
+          <div class="strip">
+            <div class="strip-part shaded" style="background:#1b5e20; color:white;">1/2</div>
+            <div class="strip-part unshaded" style="background:#e8f5e9; color:#1b5e20;">1/2</div>
+          </div>
+        </div>
+      </div>
+      <div class="strip-row">
+        <div class="strip-wrap" style="min-width:300px;">
+          <div class="strip-label">2/4 (same size as 1/2!)</div>
+          <div class="strip">
+            <div class="strip-part shaded" style="background:#1b5e20; color:white;">1/4</div>
+            <div class="strip-part shaded" style="background:#1b5e20; color:white;">1/4</div>
+            <div class="strip-part unshaded" style="background:#e8f5e9; color:#1b5e20;">1/4</div>
+            <div class="strip-part unshaded" style="background:#e8f5e9; color:#1b5e20;">1/4</div>
+          </div>
+        </div>
+      </div>
+      <div class="strip-row">
+        <div class="strip-wrap" style="min-width:300px;">
+          <div class="strip-label">4/8 (same size as 1/2 and 2/4!)</div>
+          <div class="strip">
+            <div class="strip-part shaded" style="background:#1b5e20; color:white; font-size:0.65em;">1/8</div>
+            <div class="strip-part shaded" style="background:#1b5e20; color:white; font-size:0.65em;">1/8</div>
+            <div class="strip-part shaded" style="background:#1b5e20; color:white; font-size:0.65em;">1/8</div>
+            <div class="strip-part shaded" style="background:#1b5e20; color:white; font-size:0.65em;">1/8</div>
+            <div class="strip-part unshaded" style="background:#e8f5e9; color:#1b5e20; font-size:0.65em;">1/8</div>
+            <div class="strip-part unshaded" style="background:#e8f5e9; color:#1b5e20; font-size:0.65em;">1/8</div>
+            <div class="strip-part unshaded" style="background:#e8f5e9; color:#1b5e20; font-size:0.65em;">1/8</div>
+            <div class="strip-part unshaded" style="background:#e8f5e9; color:#1b5e20; font-size:0.65em;">1/8</div>
+          </div>
+        </div>
+      </div>
+      <p style="text-align:center; font-weight:bold; margin-top:8px; color:#1b5e20; font-size:1.05em;">1/2 = 2/4 = 4/8 -- all the same amount!</p>
+    </div>
+
+    <div class="section s3">
+      <h3>Common Equivalent Fraction Families</h3>
+      <table>
+        <tr><th>Fraction</th><th>Equivalent Fractions</th></tr>
+        <tr><td><strong>1/2</strong></td><td>2/4, 3/6, 4/8</td></tr>
+        <tr><td><strong>1/3</strong></td><td>2/6</td></tr>
+        <tr><td><strong>2/3</strong></td><td>4/6</td></tr>
+        <tr><td><strong>1/4</strong></td><td>2/8</td></tr>
+        <tr><td><strong>3/4</strong></td><td>6/8</td></tr>
+      </table>
+      <div class="tip"><strong>On the number line:</strong> Equivalent fractions land on the EXACT SAME POINT. 1/2 and 2/4 and 4/8 are all at the exact middle between 0 and 1. Same location = same value = equivalent!</div>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Draw two bar models the same size. Shade 1/4 in one and 2/8 in the other. Are they the same amount?</li>
+        <li>Find an equivalent fraction for 2/3 using sixths.</li>
+        <li>Are 3/4 and 6/8 equivalent? Draw bar models to prove your answer.</li>
+        <li>On a number line divided into eighths, what fraction with a denominator of 4 is the same as 6/8?</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p>Equivalent fractions look <strong>different</strong> but represent the <strong>same value.</strong></p>
+      <p>Use bar models or number lines to <strong>prove</strong> that fractions are equivalent.</p>
+      <p>Key family: <strong>1/2 = 2/4 = 4/8</strong> -- memorise this one!</p>
+      <p class="cta" style="color:#1b5e20;">Well done! Click Lesson 10.4!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 10.4 -->
+<div class="lesson-section" id="lesson4">
+  <div class="banner b4">
+    <span class="lesson-num">Lesson 10.4</span>
+    <h2>Comparing Fractions</h2>
+    <p>Which fraction is bigger? Use smart strategies to compare!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s4">
+      <h3>What Are We Learning Today?</h3>
+      <p>Just like we compare whole numbers using &gt;, &lt;, and =, we can compare fractions! Today we learn three powerful strategies for comparing fractions: same denominator, same numerator, and comparing to 1/2 as a benchmark.</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Benchmark Fraction</span> -- A common fraction used as a reference point for comparing, such as 1/2.</div>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Same Denominator</span> -- Fractions with the same bottom number -- easy to compare! Just compare numerators.</div>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Same Numerator</span> -- Fractions with the same top number -- the one with the larger denominator is SMALLER.</div>
+    </div>
+
+    <div class="section s4">
+      <h3>Three Strategies for Comparing Fractions</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-purple">
+          <h4>Strategy 1: Same Denominator</h4>
+          <p>Same-sized pieces -- more pieces = bigger fraction!</p>
+          <p style="margin-top:8px; font-size:0.95em; font-weight:bold; text-align:center;">3/8 &lt; 5/8</p>
+          <p style="font-size:0.85em; text-align:center; margin-top:4px;">Both cut into 8ths. 3 pieces &lt; 5 pieces.</p>
+        </div>
+        <div class="flex-col fb-blue">
+          <h4>Strategy 2: Same Numerator</h4>
+          <p>Same number of pieces -- smaller pieces = smaller fraction!</p>
+          <p style="margin-top:8px; font-size:0.95em; font-weight:bold; text-align:center;">1/4 &gt; 1/8</p>
+          <p style="font-size:0.85em; text-align:center; margin-top:4px;">Both 1 piece. Fourths are bigger than eighths.</p>
+        </div>
+        <div class="flex-col fb-orange">
+          <h4>Strategy 3: Compare to 1/2</h4>
+          <p>Is the fraction more or less than half?</p>
+          <p style="margin-top:8px; font-size:0.95em; font-weight:bold; text-align:center;">3/8 &lt; 3/4</p>
+          <p style="font-size:0.85em; text-align:center; margin-top:4px;">3/8 is less than 1/2. 3/4 is more than 1/2. So 3/8 &lt; 3/4.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section s4">
+      <h3>The Key Insight: Bigger Denominator = Smaller Pieces!</h3>
+      <div class="strip-row">
+        <div class="strip-wrap">
+          <div class="strip-label">1/2 -- large piece</div>
+          <div class="strip">
+            <div class="strip-part shaded">1/2</div>
+            <div class="strip-part unshaded">1/2</div>
+          </div>
+        </div>
+        <div class="strip-wrap">
+          <div class="strip-label">1/4 -- smaller piece</div>
+          <div class="strip">
+            <div class="strip-part shaded">1/4</div>
+            <div class="strip-part unshaded">1/4</div>
+            <div class="strip-part unshaded">1/4</div>
+            <div class="strip-part unshaded">1/4</div>
+          </div>
+        </div>
+        <div class="strip-wrap">
+          <div class="strip-label">1/8 -- very small piece</div>
+          <div class="strip">
+            <div class="strip-part shaded" style="font-size:0.65em;">1/8</div>
+            <div class="strip-part unshaded" style="font-size:0.65em;">1/8</div>
+            <div class="strip-part unshaded" style="font-size:0.65em;">1/8</div>
+            <div class="strip-part unshaded" style="font-size:0.65em;">1/8</div>
+            <div class="strip-part unshaded" style="font-size:0.65em;">1/8</div>
+            <div class="strip-part unshaded" style="font-size:0.65em;">1/8</div>
+            <div class="strip-part unshaded" style="font-size:0.65em;">1/8</div>
+            <div class="strip-part unshaded" style="font-size:0.65em;">1/8</div>
+          </div>
+        </div>
+      </div>
+      <p style="text-align:center; font-size:1.05em; font-weight:bold; color:#4a148c; margin-top:8px;">1/2 &gt; 1/4 &gt; 1/8</p>
+      <div class="tip"><strong>Remember:</strong> When comparing fractions with the same numerator (like 1/2, 1/4, 1/8), the more pieces the whole is cut into, the SMALLER each piece is! Think of sharing a pizza -- cut into 8 slices gives you a smaller piece than cut into 2 slices.</div>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Use &gt;, &lt;, or =: &nbsp; 5/6 ___ 3/6 &nbsp; | &nbsp; 1/3 ___ 1/6 &nbsp; | &nbsp; 2/4 ___ 1/2</li>
+        <li>Compare 3/8 and 3/4. Which strategy did you use? Draw bar models to check.</li>
+        <li>Order from least to greatest: 7/8, 1/8, 4/8, 3/8</li>
+        <li>Which is bigger: 2/3 or 2/6? Explain your thinking.</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p><strong>Same denominator</strong>: compare numerators -- more pieces = bigger.</p>
+      <p><strong>Same numerator</strong>: compare denominators -- bigger denominator = smaller pieces = smaller fraction.</p>
+      <p><strong>Benchmark 1/2</strong>: Is each fraction above or below half? Use this to compare!</p>
+      <p class="cta" style="color:#4a148c;">Keep going! Click Lesson 10.5!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 10.5 -->
+<div class="lesson-section" id="lesson5">
+  <div class="banner b5">
+    <span class="lesson-num">Lesson 10.5</span>
+    <h2>Fractions of a Set</h2>
+    <p>Fractions can describe part of a group of objects, not just a shape!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s5">
+      <h3>What Are We Learning Today?</h3>
+      <p>So far we have used fractions for parts of a whole shape. But fractions also describe <strong>part of a set</strong> (a group of objects)! If 3 out of 8 students are wearing hats, then 3/8 of the students are wearing hats. Today we learn to find and use fractions of sets.</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#880e4f;">Fraction of a Set</span> -- A fraction that describes how many objects in a group have a certain attribute.</div>
+      <div class="vocab-item"><span class="word" style="color:#880e4f;">Set</span> -- A group or collection of objects.</div>
+      <div class="vocab-item"><span class="word" style="color:#880e4f;">Total in Set</span> -- The total number of objects -- this becomes the denominator.</div>
+    </div>
+
+    <div class="section s5">
+      <h3>How to Find a Fraction of a Set</h3>
+      <div style="background:#fce4ec; border-radius:10px; padding:16px 18px; margin-bottom:14px;">
+        <p><strong>Rule:</strong> The total number of objects = denominator. The number with the attribute = numerator.</p>
+      </div>
+      <p style="font-weight:bold; margin-bottom:8px;">Example: 3 out of 8 balls are blue.</p>
+      <div class="set-row">
+        <div class="set-circle set-shaded">B</div>
+        <div class="set-circle set-shaded">B</div>
+        <div class="set-circle set-shaded">B</div>
+        <div class="set-circle set-unshaded">R</div>
+        <div class="set-circle set-unshaded">R</div>
+        <div class="set-circle set-unshaded">R</div>
+        <div class="set-circle set-unshaded">R</div>
+        <div class="set-circle set-unshaded">R</div>
+      </div>
+      <p style="margin-top:10px; font-size:1em;"><strong>3/8</strong> of the balls are blue. &nbsp; <strong>5/8</strong> of the balls are red.</p>
+      <p style="font-size:0.9em; color:#37474f; margin-top:4px;">3 (blue) + 5 (red) = 8 (total). Numerators must add up to the denominator!</p>
+    </div>
+
+    <div class="section s5">
+      <h3>Finding a Fraction of a Number</h3>
+      <p>To find a fraction of a number (like 1/4 of 12), think of it as <strong>dividing into equal groups</strong>:</p>
+      <table>
+        <tr><th>Problem</th><th>Think</th><th>Answer</th></tr>
+        <tr><td>1/2 of 10</td><td>10 divided into 2 equal groups = 5 each</td><td>5</td></tr>
+        <tr><td>1/4 of 12</td><td>12 divided into 4 equal groups = 3 each</td><td>3</td></tr>
+        <tr><td>1/3 of 15</td><td>15 divided into 3 equal groups = 5 each</td><td>5</td></tr>
+        <tr><td>3/4 of 12</td><td>1/4 of 12 = 3, then 3 x 3 = 9</td><td>9</td></tr>
+      </table>
+      <div class="tip"><strong>Key Insight:</strong> Finding 1/4 of a number is the same as dividing by 4! Finding 1/3 of a number is dividing by 3! The denominator tells you what to divide by for unit fractions.</div>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>There are 12 students. 5 are wearing glasses. What fraction is wearing glasses? What fraction is not?</li>
+        <li>Find 1/4 of 20. Find 1/3 of 18. Find 1/2 of 14.</li>
+        <li>Find 3/4 of 16. (Hint: Find 1/4 first, then multiply by 3.)</li>
+        <li>A bag has 6 red marbles, 4 blue marbles, and 2 green marbles. What fraction of the marbles are red? Blue? Green?</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p><strong>Total objects</strong> = denominator &nbsp;|&nbsp; <strong>Objects with attribute</strong> = numerator.</p>
+      <p>Finding <strong>1/denominator</strong> of a number = dividing by the denominator.</p>
+      <p>For 3/4 of a set: find 1/4 first, then <strong>multiply by 3.</strong></p>
+      <p class="cta" style="color:#880e4f;">Almost there! Click Lesson 10.6!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 10.6 -->
+<div class="lesson-section" id="lesson6">
+  <div class="banner b6">
+    <span class="lesson-num">Lesson 10.6</span>
+    <h2>Whole Numbers as Fractions</h2>
+    <p>Whole numbers are fractions too -- discover the connection!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s6">
+      <h3>What Are We Learning Today?</h3>
+      <p>Fractions and whole numbers are part of the same number family! Every whole number can be written as a fraction, and some fractions equal whole numbers. Understanding this connection deepens your number sense and prepares you for more advanced fraction work later!</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#004d40;">Whole Number</span> -- The counting numbers and zero: 0, 1, 2, 3, 4...</div>
+      <div class="vocab-item"><span class="word" style="color:#004d40;">Whole as a Fraction</span> -- Any whole number written with 1 as the denominator. Example: 3 = 3/1.</div>
+      <div class="vocab-item"><span class="word" style="color:#004d40;">Fraction Equal to 1</span> -- Any fraction where the numerator equals the denominator. Example: 4/4 = 1.</div>
+      <div class="vocab-item"><span class="word" style="color:#004d40;">Fraction Greater Than 1</span> -- A fraction where the numerator is greater than the denominator. Example: 5/4 is more than 1 whole.</div>
+    </div>
+
+    <div class="section s6">
+      <h3>Every Whole Number Can Be Written as a Fraction</h3>
+      <table>
+        <tr><th>Whole Number</th><th>As a Fraction</th><th>Why?</th></tr>
+        <tr><td>1</td><td>1/1, 2/2, 3/3, 4/4, 8/8</td><td>All parts of the whole are present!</td></tr>
+        <tr><td>2</td><td>2/1, 4/2, 6/3, 8/4</td><td>2 complete wholes</td></tr>
+        <tr><td>3</td><td>3/1, 6/2, 9/3, 12/4</td><td>3 complete wholes</td></tr>
+        <tr><td>0</td><td>0/1, 0/2, 0/4, 0/8</td><td>Zero parts of any whole = 0</td></tr>
+      </table>
+    </div>
+
+    <div class="section s6">
+      <h3>Fractions Equal to 1 Whole</h3>
+      <div class="strip-row">
+        <div class="strip-wrap">
+          <div class="strip-label">2/2 = 1 whole (all 2 halves)</div>
+          <div class="strip">
+            <div class="strip-part shaded" style="background:#004d40;">1/2</div>
+            <div class="strip-part shaded" style="background:#004d40;">1/2</div>
+          </div>
+        </div>
+      </div>
+      <div class="strip-row">
+        <div class="strip-wrap">
+          <div class="strip-label">4/4 = 1 whole (all 4 fourths)</div>
+          <div class="strip">
+            <div class="strip-part shaded" style="background:#004d40;">1/4</div>
+            <div class="strip-part shaded" style="background:#004d40;">1/4</div>
+            <div class="strip-part shaded" style="background:#004d40;">1/4</div>
+            <div class="strip-part shaded" style="background:#004d40;">1/4</div>
+          </div>
+        </div>
+      </div>
+      <div class="strip-row">
+        <div class="strip-wrap">
+          <div class="strip-label">8/8 = 1 whole (all 8 eighths)</div>
+          <div class="strip">
+            <div class="strip-part shaded" style="background:#004d40; font-size:0.65em;">1/8</div>
+            <div class="strip-part shaded" style="background:#004d40; font-size:0.65em;">1/8</div>
+            <div class="strip-part shaded" style="background:#004d40; font-size:0.65em;">1/8</div>
+            <div class="strip-part shaded" style="background:#004d40; font-size:0.65em;">1/8</div>
+            <div class="strip-part shaded" style="background:#004d40; font-size:0.65em;">1/8</div>
+            <div class="strip-part shaded" style="background:#004d40; font-size:0.65em;">1/8</div>
+            <div class="strip-part shaded" style="background:#004d40; font-size:0.65em;">1/8</div>
+            <div class="strip-part shaded" style="background:#004d40; font-size:0.65em;">1/8</div>
+          </div>
+        </div>
+      </div>
+      <div class="tip"><strong>Rule:</strong> When the numerator and denominator are EQUAL, the fraction = 1. No matter what the denominator is: 2/2 = 3/3 = 4/4 = 8/8 = 100/100 = 1!</div>
+    </div>
+
+    <div class="section s6">
+      <h3>On the Number Line -- Fractions Beyond 1</h3>
+      <div class="number-line-wrap">
+        <div class="nl" style="min-width:400px;">
+          <div class="nl-line"></div>
+          <div class="nl-point" style="left:0%"></div><div class="nl-label" style="left:0%">0/4</div>
+          <div class="nl-point" style="left:25%"></div><div class="nl-label" style="left:25%">1/4</div>
+          <div class="nl-point" style="left:50%"></div><div class="nl-label" style="left:50%">2/4</div>
+          <div class="nl-point" style="left:75%"></div><div class="nl-label" style="left:75%">3/4</div>
+          <div class="nl-point" style="left:100%"></div><div class="nl-label" style="left:95%">4/4 = 1</div>
+        </div>
+      </div>
+      <p style="font-size:0.9em; color:#37474f; margin-top:4px; text-align:center;">0/4 = 0 &nbsp;|&nbsp; 2/4 = 1/2 &nbsp;|&nbsp; 4/4 = 1 whole</p>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Write the whole number 1 as a fraction using thirds, fourths, and eighths.</li>
+        <li>Which of these fractions equal 1? &nbsp; 3/4, 6/6, 4/8, 5/5, 2/3</li>
+        <li>On a number line from 0 to 1 divided into sixths, what fraction is at the very end (= 1 whole)?</li>
+        <li>If 8/8 = 1, what does 16/8 equal? What about 24/8?</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>You Finished Unit 10!</h3>
+      <p>When <strong>numerator = denominator</strong>, the fraction = 1 whole.</p>
+      <p>Every whole number can be written as a fraction with <strong>1 as the denominator.</strong></p>
+      <p>0/anything = 0 &nbsp;|&nbsp; anything/itself = 1</p>
+      <p class="cta" style="color:#004d40;">Incredible work! You completed all 6 lessons in Unit 10! Now take the Unit 10 Quiz!</p>
+    </div>
+  </div>
+</div>
+
+</div>
+<script>
+  const sections = document.querySelectorAll('.lesson-section');
+  const navLinks = document.querySelectorAll('.nav-bar a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 80) current = s.getAttribute('id'); });
+    navLinks.forEach(l => { l.classList.remove('active'); if (l.getAttribute('href') === '#' + current) l.classList.add('active'); });
+  });
+</script>
+</body>
+</html>
