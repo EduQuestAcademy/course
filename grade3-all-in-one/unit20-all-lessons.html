@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit 20 – Economics and Culture | Owl Smart 3rd Grade</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #f4f7fb; color: #2d2d2d; line-height: 1.8; }
+    .top-header { background: linear-gradient(135deg, #f57f17, #f9a825); color: white; text-align: center; padding: 24px 20px 16px; }
+    .top-header h1 { font-size: 1.5em; margin-bottom: 4px; }
+    .top-header p { font-size: 0.95em; opacity: 0.88; }
+    .nav-bar { background: #f57f17; padding: 0 10px; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.3); overflow-x: auto; white-space: nowrap; }
+    .nav-bar a { display: inline-block; color: rgba(255,255,255,0.9); text-decoration: none; padding: 12px 14px; font-size: 0.82em; font-weight: bold; border-bottom: 3px solid transparent; transition: all 0.2s; }
+    .nav-bar a:hover, .nav-bar a.active { color: white; border-bottom-color: #1a237e; }
+    .main { max-width: 860px; margin: 0 auto; padding: 20px; }
+    .lesson-section { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.08); margin-bottom: 40px; scroll-margin-top: 60px; }
+    .banner { color: white; text-align: center; padding: 28px 24px; }
+    .banner h2 { font-size: 1.45em; margin-bottom: 6px; }
+    .banner p { font-size: 0.97em; opacity: 0.92; margin-bottom: 10px; }
+    .lesson-num { display: inline-block; background: rgba(255,255,255,0.25); border-radius: 20px; padding: 3px 14px; font-size: 0.82em; font-weight: bold; }
+    .b1 { background: linear-gradient(135deg, #f57f17, #fb8c00); }
+    .b2 { background: linear-gradient(135deg, #1b5e20, #388e3c); }
+    .b3 { background: linear-gradient(135deg, #1a237e, #3949ab); }
+    .b4 { background: linear-gradient(135deg, #880e4f, #c2185b); }
+    .b5 { background: linear-gradient(135deg, #4a148c, #7b1fa2); }
+    .b6 { background: linear-gradient(135deg, #004d40, #00897b); }
+    .lesson-content { padding: 26px; }
+    .section { border-left: 5px solid; border-radius: 0 10px 10px 0; padding: 18px 20px; margin-bottom: 20px; }
+    .s1 { background: #fff3e0; border-color: #f57f17; } .s1 h3 { color: #e65100; }
+    .s2 { background: #e8f5e9; border-color: #1b5e20; } .s2 h3 { color: #1b5e20; }
+    .s3 { background: #e8eaf6; border-color: #1a237e; } .s3 h3 { color: #1a237e; }
+    .s4 { background: #fce4ec; border-color: #880e4f; } .s4 h3 { color: #880e4f; }
+    .s5 { background: #f3e5f5; border-color: #4a148c; } .s5 h3 { color: #4a148c; }
+    .s6 { background: #e0f2f1; border-color: #004d40; } .s6 h3 { color: #004d40; }
+    .section h3 { margin-bottom: 8px; font-size: 1.05em; }
+    .vocab-box { background: #fff8e1; border: 2px solid #ffc107; border-radius: 10px; padding: 18px 20px; margin-bottom: 20px; }
+    .vocab-box h3 { color: #e65100; margin-bottom: 12px; font-size: 1.05em; }
+    .vocab-item { margin: 8px 0; font-size: 0.95em; }
+    .word { font-weight: bold; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.93em; }
+    th { background: #37474f; color: white; padding: 9px 12px; text-align: left; }
+    td { padding: 9px 12px; border-bottom: 1px solid #e0e0e0; }
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) { background: #f5f5f5; }
+    .tip { background: #e8f5e9; border-left: 4px solid #43a047; border-radius: 0 8px 8px 0; padding: 12px 16px; margin: 12px 0; color: #1b5e20; font-size: 0.93em; }
+    .tip strong { color: #2e7d32; }
+    .try-it { background: #ede7f6; border: 2px dashed #7e57c2; border-radius: 10px; padding: 18px 20px; margin-bottom: 20px; }
+    .try-it h3 { color: #4527a0; margin-bottom: 10px; font-size: 1.05em; }
+    .try-it ol { padding-left: 20px; }
+    .try-it li { margin: 8px 0; font-size: 0.95em; }
+    .remember { background: #fff3e0; border: 2px solid #ff8f00; border-radius: 10px; padding: 18px 20px; text-align: center; margin-bottom: 4px; }
+    .remember h3 { color: #e65100; margin-bottom: 10px; font-size: 1.05em; }
+    .remember p { margin: 5px 0; font-size: 0.95em; }
+    .remember .cta { font-weight: bold; font-size: 1.05em; margin-top: 12px; }
+    .flex-row { display: flex; gap: 12px; flex-wrap: wrap; margin: 10px 0; }
+    .flex-col { flex: 1; min-width: 150px; border-radius: 10px; padding: 14px 16px; }
+    .fb-orange { background: #fff3e0; border: 2px solid #f57c00; } .fb-orange h4 { color: #e65100; margin-bottom: 6px; }
+    .fb-green { background: #e8f5e9; border: 2px solid #388e3c; } .fb-green h4 { color: #1b5e20; margin-bottom: 6px; }
+    .fb-navy { background: #e8eaf6; border: 2px solid #3949ab; } .fb-navy h4 { color: #1a237e; margin-bottom: 6px; }
+    .fb-pink { background: #fce4ec; border: 2px solid #e91e63; } .fb-pink h4 { color: #880e4f; margin-bottom: 6px; }
+    .fb-purple { background: #f3e5f5; border: 2px solid #7b1fa2; } .fb-purple h4 { color: #4a148c; margin-bottom: 6px; }
+    .fb-teal { background: #e0f2f1; border: 2px solid #00897b; } .fb-teal h4 { color: #004d40; margin-bottom: 6px; }
+    .fb-blue { background: #e3f2fd; border: 2px solid #1976d2; } .fb-blue h4 { color: #0d47a1; margin-bottom: 6px; }
+    .fb-red { background: #ffebee; border: 2px solid #e53935; } .fb-red h4 { color: #b71c1c; margin-bottom: 6px; }
+    .fb-yellow { background: #fffde7; border: 2px solid #f9a825; } .fb-yellow h4 { color: #f57f17; margin-bottom: 6px; }
+    .econ-box { background: #fff3e0; border: 2px solid #fb8c00; border-radius: 10px; padding: 16px 18px; margin-bottom: 14px; }
+    .econ-box h4 { color: #e65100; margin-bottom: 8px; font-size: 0.98em; }
+    .budget-bar { display: flex; height: 36px; border-radius: 8px; overflow: hidden; margin: 10px 0; }
+    .budget-seg { display: flex; align-items: center; justify-content: center; font-size: 0.78em; font-weight: bold; color: white; }
+    .culture-card { border-radius: 10px; padding: 14px 16px; margin-bottom: 12px; }
+    .celebration-box { background: linear-gradient(135deg, #f57f17, #fbc02d); color: white; border-radius: 16px; padding: 24px; text-align: center; margin: 20px 0; }
+    .celebration-box h3 { font-size: 1.4em; margin-bottom: 10px; }
+    .celebration-box p { font-size: 0.95em; opacity: 0.95; margin: 6px 0; }
+    ul { padding-left: 20px; } li { margin: 5px 0; font-size: 0.95em; }
+    p { margin-bottom: 8px; font-size: 0.95em; }
+  </style>
+</head>
+<body>
+
+<div class="top-header">
+  <h1>Owl Smart: A 3rd Grade Learning Journey</h1>
+  <p>Unit 20 -- Economics and Culture &nbsp;|&nbsp; 6 Lessons &nbsp;|&nbsp; THE FINAL UNIT!</p>
+</div>
+
+<div class="nav-bar">
+  <a href="#lesson1">20.1 Needs &amp; Wants</a>
+  <a href="#lesson2">20.2 Goods &amp; Trade</a>
+  <a href="#lesson3">20.3 Markets</a>
+  <a href="#lesson4">20.4 Money &amp; Budgets</a>
+  <a href="#lesson5">20.5 Culture</a>
+  <a href="#lesson6">20.6 WA Economy &amp; Culture</a>
+</div>
+
+<div class="main">
+
+<!-- LESSON 20.1 -->
+<div class="lesson-section" id="lesson1">
+  <div class="banner b1">
+    <span class="lesson-num">Lesson 20.1</span>
+    <h2>Needs, Wants, and Scarcity</h2>
+    <p>Why can't we have everything we want? Economics begins with this question!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s1">
+      <h3>What Are We Learning Today?</h3>
+      <p>Economics is the study of how people make choices about using limited resources. The foundation of economics is a simple but powerful idea: people have <strong>unlimited wants</strong> but <strong>limited resources</strong>. Because of this, we must always make choices about what to spend our time and money on. This is called <strong>scarcity</strong>!</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Economics</span> -- The study of how people make choices about using limited resources to meet their wants and needs.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Needs</span> -- Things people MUST have to survive: food, water, clothing, shelter, healthcare.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Wants</span> -- Things people would LIKE to have but do not need to survive: toys, video games, vacations, candy.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Scarcity</span> -- When there is not enough of something to satisfy everyone who wants it. Resources are limited but wants are unlimited.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Choice</span> -- Because of scarcity, people must decide what to get or do and what to give up.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Opportunity Cost</span> -- What you give up when you make a choice. If you spend $10 on a book, you give up whatever else you could have bought with that $10.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Trade-off</span> -- Giving up one thing to get another.</div>
+    </div>
+
+    <div class="section s1">
+      <h3>Needs vs. Wants -- Know the Difference!</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-orange">
+          <h4>NEEDS (must have to survive)</h4>
+          <ul>
+            <li>Food and water</li>
+            <li>Shelter (a place to live)</li>
+            <li>Clothing appropriate for the weather</li>
+            <li>Basic healthcare</li>
+            <li>Safety</li>
+          </ul>
+          <p style="font-size:0.85em; margin-top:8px; color:#37474f;"><em>Without these, life is at risk.</em></p>
+        </div>
+        <div class="flex-col fb-yellow">
+          <h4>WANTS (nice to have)</h4>
+          <ul>
+            <li>Toys, games, and electronics</li>
+            <li>Candy and snacks</li>
+            <li>New clothes (beyond what you need)</li>
+            <li>Vacations</li>
+            <li>Streaming services</li>
+          </ul>
+          <p style="font-size:0.85em; margin-top:8px; color:#37474f;"><em>Life continues without these.</em></p>
+        </div>
+      </div>
+      <div class="tip"><strong>Tricky ones!</strong> A phone is mostly a want -- but for someone who needs it to call 911 in an emergency, it might be a need. A fancy restaurant meal is a want -- but basic food is a need. Context matters! The key question: "Would I be in danger without this?"</div>
+    </div>
+
+    <div class="section s1">
+      <h3>Scarcity -- The Foundation of Economics</h3>
+      <p>Scarcity means there is never enough of everything to give everyone everything they want. This is true at every level:</p>
+      <div class="flex-row">
+        <div class="flex-col fb-orange">
+          <h4>Personal Scarcity</h4>
+          <p>You get $10 for your birthday. You want a $10 book AND a $10 game. You can't have both. That is personal scarcity -- not enough money for everything you want.</p>
+        </div>
+        <div class="flex-col fb-red">
+          <h4>Community Scarcity</h4>
+          <p>A city has a limited budget. It can build a new park OR a new library -- not both. The city must choose. That is scarcity at the community level.</p>
+        </div>
+        <div class="flex-col fb-navy">
+          <h4>Global Scarcity</h4>
+          <p>Fresh water, farmland, oil, and even time are limited resources that the whole world must share and manage carefully.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section s1">
+      <h3>Opportunity Cost -- What You Give Up</h3>
+      <div class="econ-box">
+        <h4>Example: Maya has $15.</h4>
+        <p>She can buy: Option A -- a book for $15, OR Option B -- a board game for $15.</p>
+        <p style="margin-top:8px;">She chooses the book (Option A).</p>
+        <p style="margin-top:8px;"><strong>Opportunity cost = Option B (the board game)</strong> -- that is what she gave up when she chose the book. Every choice has an opportunity cost -- the next-best alternative you didn't choose.</p>
+      </div>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Sort these into NEEDS or WANTS: food, new sneakers, water, a vacation, a house, a video game, medicine, internet.</li>
+        <li>You have one hour of free time. You want to read AND play outside, but you can only do one. What is your opportunity cost if you choose to read?</li>
+        <li>A school has budget for one new thing: a new computer lab OR new playground equipment. Why must they choose? What economic concept is this?</li>
+        <li>Can the same item be a need for one person and a want for another? Explain.</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p><strong>Needs</strong> = food, water, shelter, clothing, safety.</p>
+      <p><strong>Wants</strong> = everything else we'd like but don't need to survive.</p>
+      <p><strong>Scarcity</strong> = limited resources + unlimited wants = we must choose!</p>
+      <p><strong>Opportunity cost</strong> = what you give up when you make a choice.</p>
+      <p class="cta" style="color:#e65100;">Great start! Click Lesson 20.2!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 20.2 -->
+<div class="lesson-section" id="lesson2">
+  <div class="banner b2">
+    <span class="lesson-num">Lesson 20.2</span>
+    <h2>Goods, Services, and Trade</h2>
+    <p>The world economy runs on the exchange of goods and services!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s2">
+      <h3>What Are We Learning Today?</h3>
+      <p>Every day you use hundreds of goods (physical things) and benefit from services (work people do). People and communities cannot produce everything they need on their own -- so they <strong>trade</strong>! Trade allows people to specialise in what they are best at and exchange with others for what they need. Today we explore goods, services, and trade!</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Goods</span> -- Physical products that people make, buy, and sell. You can touch them! Example: food, clothing, cars, books.</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Services</span> -- Work that people do for others. You cannot touch a service! Example: teaching, nursing, repairing, cooking.</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Trade</span> -- The exchange of goods or services between people, communities, or countries.</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Barter</span> -- Trading goods or services directly without using money.</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Specialisation</span> -- When a person, community, or country focuses on producing what it does best, then trades for everything else.</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Import</span> -- Goods or services brought into a country from another country.</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Export</span> -- Goods or services sent out of a country to another country.</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Interdependence</span> -- When communities or countries depend on each other for goods and services.</div>
+    </div>
+
+    <div class="section s2">
+      <h3>Goods vs. Services</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-green">
+          <h4>GOODS (physical things you can touch)</h4>
+          <table style="margin:6px 0;">
+            <tr><th style="background:#1b5e20;">Type</th><th style="background:#1b5e20;">Examples</th></tr>
+            <tr><td>Food</td><td>apples, bread, milk</td></tr>
+            <tr><td>Clothing</td><td>shirts, shoes, coats</td></tr>
+            <tr><td>Electronics</td><td>phones, computers</td></tr>
+            <tr><td>Tools</td><td>hammers, tractors</td></tr>
+          </table>
+        </div>
+        <div class="flex-col fb-blue">
+          <h4>SERVICES (work done for others)</h4>
+          <table style="margin:6px 0;">
+            <tr><th style="background:#0d47a1;">Profession</th><th style="background:#0d47a1;">Service</th></tr>
+            <tr><td>Teacher</td><td>Education</td></tr>
+            <tr><td>Doctor</td><td>Healthcare</td></tr>
+            <tr><td>Plumber</td><td>Fixing pipes</td></tr>
+            <tr><td>Bus driver</td><td>Transportation</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="section s2">
+      <h3>Why Trade Happens -- Specialisation!</h3>
+      <p>Nobody can produce everything they need alone. So people specialise in what they do best and trade for everything else:</p>
+      <div class="econ-box">
+        <h4>Example: A Farming Community and a City</h4>
+        <p>Farmers in eastern Washington are great at growing apples and wheat -- they specialise in agriculture. People in Seattle are great at building software and aeroplanes -- they specialise in technology and manufacturing. The farmers trade food to the city; the city provides technology and manufactured goods to the farmers. Both are better off by specialising and trading!</p>
+      </div>
+      <div class="tip"><strong>Global Trade:</strong> The same principle works between countries! The US exports wheat, aircraft, and software. It imports electronics, clothing, and coffee from countries that specialise in those things. International trade makes everyone wealthier by letting each country focus on its strengths.</div>
+    </div>
+
+    <div class="section s2">
+      <h3>Washington State's Major Exports</h3>
+      <table>
+        <tr><th>Export</th><th>Where From</th><th>Where It Goes</th></tr>
+        <tr><td>Aircraft (Boeing)</td><td>Everett and Renton</td><td>Airlines worldwide</td></tr>
+        <tr><td>Apples and fruit</td><td>Yakima Valley, Wenatchee</td><td>US and worldwide</td></tr>
+        <tr><td>Wheat</td><td>Palouse region (eastern WA)</td><td>Asia, especially Japan and Korea</td></tr>
+        <tr><td>Software (Microsoft)</td><td>Redmond</td><td>Worldwide</td></tr>
+        <tr><td>Salmon and seafood</td><td>Pacific Coast</td><td>US and worldwide</td></tr>
+        <tr><td>Wine</td><td>Yakima Valley, Walla Walla</td><td>US and international markets</td></tr>
+      </table>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Give THREE examples each of goods and services you encounter on a typical school day.</li>
+        <li>What is barter? How is it different from using money? Give an example of a barter exchange.</li>
+        <li>Why is specialisation beneficial? Use the apple farmer and software company example in your explanation.</li>
+        <li>Name TWO things Washington state exports and TWO things the US likely imports from other countries.</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p><strong>Goods</strong> = physical things (food, clothing, tools).</p>
+      <p><strong>Services</strong> = work done for others (teaching, nursing, repairing).</p>
+      <p><strong>Specialisation + Trade</strong> = everyone is better off!</p>
+      <p><strong>Import</strong> = brought in. <strong>Export</strong> = sent out.</p>
+      <p class="cta" style="color:#1b5e20;">Excellent! Click Lesson 20.3!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 20.3 -->
+<div class="lesson-section" id="lesson3">
+  <div class="banner b3">
+    <span class="lesson-num">Lesson 20.3</span>
+    <h2>Producers, Consumers, and Markets</h2>
+    <p>How supply, demand, and price work together in the marketplace!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s3">
+      <h3>What Are We Learning Today?</h3>
+      <p>Every economic transaction involves someone who <strong>produces</strong> (makes or provides) something and someone who <strong>consumes</strong> (buys or uses) it. The place where buyers and sellers come together is called a <strong>market</strong>. Today we explore how markets work and the fascinating relationship between supply, demand, and price!</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#1a237e;">Producer</span> -- A person or business that makes or provides goods and services for sale.</div>
+      <div class="vocab-item"><span class="word" style="color:#1a237e;">Consumer</span> -- A person who buys and uses goods and services.</div>
+      <div class="vocab-item"><span class="word" style="color:#1a237e;">Market</span> -- Any place (physical or online) where buyers and sellers come together to exchange goods and services.</div>
+      <div class="vocab-item"><span class="word" style="color:#1a237e;">Supply</span> -- How much of a good or service producers are willing and able to offer for sale.</div>
+      <div class="vocab-item"><span class="word" style="color:#1a237e;">Demand</span> -- How much of a good or service consumers want and are able to buy.</div>
+      <div class="vocab-item"><span class="word" style="color:#1a237e;">Price</span> -- The amount of money a buyer pays to a seller for a good or service.</div>
+      <div class="vocab-item"><span class="word" style="color:#1a237e;">Competition</span> -- When multiple businesses sell similar products and try to attract the same customers, often by offering lower prices or better quality.</div>
+    </div>
+
+    <div class="section s3">
+      <h3>Supply and Demand -- How Prices Are Set</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-navy">
+          <h4>When demand goes UP and supply stays the same...</h4>
+          <p>Price goes UP. Everyone wants it but there is only so much available.</p>
+          <p style="font-size:0.85em; margin-top:6px;"><em>Example: New toy released before the holidays -- everyone wants it, few available → price rises.</em></p>
+        </div>
+        <div class="flex-col fb-green">
+          <h4>When supply goes UP and demand stays the same...</h4>
+          <p>Price goes DOWN. There is plenty for everyone.</p>
+          <p style="font-size:0.85em; margin-top:6px;"><em>Example: A great apple harvest in Washington -- tons of apples, prices drop.</em></p>
+        </div>
+      </div>
+      <table style="margin-top:12px;">
+        <tr><th>Situation</th><th>Supply</th><th>Demand</th><th>Price</th></tr>
+        <tr><td>Big harvest of apples in WA</td><td>HIGH</td><td>Normal</td><td>Falls (more apples than buyers)</td></tr>
+        <tr><td>Drought destroys wheat crop</td><td>LOW</td><td>Normal</td><td>Rises (less wheat, same demand)</td></tr>
+        <tr><td>New popular toy released</td><td>Normal</td><td>HIGH</td><td>Rises (same toys, more buyers)</td></tr>
+        <tr><td>Holiday season passes</td><td>Normal</td><td>LOW</td><td>Falls (nobody wants old toys now)</td></tr>
+      </table>
+    </div>
+
+    <div class="section s3">
+      <h3>Competition Benefits Consumers!</h3>
+      <p>When many businesses sell the same product, they must compete for customers. This benefits consumers:</p>
+      <div class="flex-row">
+        <div class="flex-col fb-orange">
+          <h4>Competition leads to:</h4>
+          <ul>
+            <li>Lower prices (to attract buyers)</li>
+            <li>Better quality (to beat rivals)</li>
+            <li>More innovation (new features)</li>
+            <li>Better customer service</li>
+          </ul>
+        </div>
+        <div class="flex-col fb-pink">
+          <h4>Without competition (monopoly):</h4>
+          <ul>
+            <li>Higher prices (no reason to lower them)</li>
+            <li>Less choice for consumers</li>
+            <li>Less pressure to improve quality</li>
+          </ul>
+          <p style="font-size:0.85em; margin-top:6px;"><em>Example: When only ONE company supplies internet in an area, prices are high and service may be poor.</em></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section s3">
+      <h3>Types of Markets</h3>
+      <table>
+        <tr><th>Market Type</th><th>Description</th><th>Example</th></tr>
+        <tr><td><strong>Local market</strong></td><td>Buying and selling in your community</td><td>Kennewick farmers market, local grocery store</td></tr>
+        <tr><td><strong>National market</strong></td><td>Goods and services sold across the country</td><td>Walmart, Amazon (US operations)</td></tr>
+        <tr><td><strong>Global market</strong></td><td>Trade between countries worldwide</td><td>Boeing selling planes to airlines in Asia</td></tr>
+        <tr><td><strong>Online market</strong></td><td>Buying and selling over the internet</td><td>Amazon, eBay, Etsy</td></tr>
+        <tr><td><strong>Stock market</strong></td><td>Buying and selling shares of companies</td><td>New York Stock Exchange</td></tr>
+      </table>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Name a producer and a consumer in each of these transactions: buying groceries, getting a haircut, downloading a song.</li>
+        <li>If a drought reduces the apple harvest in Washington, what happens to apple prices? Why?</li>
+        <li>Why is competition usually good for consumers? Give a real-world example.</li>
+        <li>List THREE different markets you or your family use. What type of market is each one?</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p><strong>Producer</strong> = makes/sells. <strong>Consumer</strong> = buys/uses.</p>
+      <p>High demand + low supply = price goes UP.</p>
+      <p>Low demand + high supply = price goes DOWN.</p>
+      <p><strong>Competition</strong> keeps prices low and quality high!</p>
+      <p class="cta" style="color:#1a237e;">Well done! Click Lesson 20.4!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 20.4 -->
+<div class="lesson-section" id="lesson4">
+  <div class="banner b4">
+    <span class="lesson-num">Lesson 20.4</span>
+    <h2>Money, Saving, and Budgeting</h2>
+    <p>Smart money skills you can use RIGHT NOW -- and for the rest of your life!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s4">
+      <h3>What Are We Learning Today?</h3>
+      <p>Understanding money is one of the most important life skills you will ever learn. Today we learn how money works, why saving matters, and how to make a <strong>budget</strong> -- a plan for spending and saving. These skills will help you your whole life!</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#880e4f;">Money</span> -- A medium of exchange that people use to buy goods and services. It replaces barter.</div>
+      <div class="vocab-item"><span class="word" style="color:#880e4f;">Income</span> -- Money earned from working or other sources.</div>
+      <div class="vocab-item"><span class="word" style="color:#880e4f;">Expense</span> -- Money spent on goods and services.</div>
+      <div class="vocab-item"><span class="word" style="color:#880e4f;">Saving</span> -- Setting aside money now to use in the future.</div>
+      <div class="vocab-item"><span class="word" style="color:#880e4f;">Budget</span> -- A plan that shows income and expenses to help manage money wisely.</div>
+      <div class="vocab-item"><span class="word" style="color:#880e4f;">Bank</span> -- A business where people deposit (store) money safely and can earn interest on savings.</div>
+      <div class="vocab-item"><span class="word" style="color:#880e4f;">Interest</span> -- Money a bank pays you for keeping your savings there (or money you pay for borrowing).</div>
+      <div class="vocab-item"><span class="word" style="color:#880e4f;">Debt</span> -- Money owed to someone else. Borrowing more than you can repay creates debt problems.</div>
+    </div>
+
+    <div class="section s4">
+      <h3>Why Money is Important</h3>
+      <p>Before money existed, people used barter (direct trade). But barter had big problems:</p>
+      <ul>
+        <li>You had to find someone who had exactly what you wanted AND wanted exactly what you had</li>
+        <li>Hard to divide goods (how do you trade half a cow for some grain?)</li>
+        <li>Difficult to save value for later</li>
+      </ul>
+      <p style="margin-top:8px;">Money solves all these problems! It is a universally accepted medium of exchange that everyone in a society agrees to use. Over history, money has taken many forms -- shells, gold, silver coins, paper bills, and now digital currency!</p>
+    </div>
+
+    <div class="section s4">
+      <h3>Making a Budget -- The Smart Money Plan</h3>
+      <p>A budget is a plan for your money. The basic rule: <strong>income minus expenses = savings</strong>. You should always try to spend LESS than you earn!</p>
+      <div class="econ-box">
+        <h4>Example: Sam's Monthly Budget ($30 allowance)</h4>
+        <div class="budget-bar">
+          <div class="budget-seg" style="width:33%; background:#1b5e20;">Save $10</div>
+          <div class="budget-seg" style="width:33%; background:#1565c0;">Spend $10</div>
+          <div class="budget-seg" style="width:34%; background:#e65100;">Give/Donate $10</div>
+        </div>
+        <table style="margin-top:10px;">
+          <tr><th>Category</th><th>Amount</th><th>Purpose</th></tr>
+          <tr><td>Income</td><td>$30.00</td><td>Monthly allowance</td></tr>
+          <tr><td>Save</td><td>-$10.00</td><td>Saving for a new book</td></tr>
+          <tr><td>Spend</td><td>-$10.00</td><td>Snacks, small purchases</td></tr>
+          <tr><td>Give</td><td>-$10.00</td><td>Donation or gift</td></tr>
+          <tr><td style="font-weight:bold;">Remaining</td><td style="font-weight:bold;">$0.00</td><td>Every dollar has a plan!</td></tr>
+        </table>
+      </div>
+      <div class="tip"><strong>The 3 S's of Smart Spending:</strong> <strong>Save</strong> first (pay yourself first!), then <strong>Spend</strong> wisely, then <strong>Share</strong> (donate or give). Making a plan for every dollar means money goes where you intend it to go!</div>
+    </div>
+
+    <div class="section s4">
+      <h3>Why Saving Matters</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-pink">
+          <h4>Short-Term Saving</h4>
+          <p>Saving for something you want soon -- like a new toy or book. You set aside a little each week until you have enough.</p>
+          <p style="font-size:0.85em; margin-top:6px;"><em>Example: Save $5/week for 6 weeks = $30 for a new game!</em></p>
+        </div>
+        <div class="flex-col fb-navy">
+          <h4>Long-Term Saving</h4>
+          <p>Saving for something big in the future -- college, a car, emergencies. Banks pay you INTEREST on savings, helping your money grow!</p>
+          <p style="font-size:0.85em; margin-top:6px;"><em>The earlier you start saving, the more it grows!</em></p>
+        </div>
+        <div class="flex-col fb-orange">
+          <h4>Emergency Fund</h4>
+          <p>Saving money for unexpected events -- a broken phone, unexpected medical bills, job loss. Having savings reduces stress and protects your family.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>You receive $20 as a birthday gift. Make a simple budget showing how you would spend, save, and share that money.</li>
+        <li>Why is having a budget helpful? What problems does it prevent?</li>
+        <li>If you save $3 every week, how much will you have after 10 weeks? After 20 weeks?</li>
+        <li>What is the difference between a short-term and a long-term financial goal? Give one example of each.</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p>A <strong>budget</strong> = income - expenses = savings. Always spend less than you earn!</p>
+      <p>Save first, then spend wisely, then share -- the <strong>3 S's!</strong></p>
+      <p>Money in a bank earns <strong>interest</strong> -- your savings grow over time!</p>
+      <p class="cta" style="color:#880e4f;">Keep going! Click Lesson 20.5!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 20.5 -->
+<div class="lesson-section" id="lesson5">
+  <div class="banner b5">
+    <span class="lesson-num">Lesson 20.5</span>
+    <h2>Culture: Traditions, Customs, and the Arts</h2>
+    <p>Culture is the way of life of a group of people -- it makes each community unique and beautiful!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s5">
+      <h3>What Are We Learning Today?</h3>
+      <p><strong>Culture</strong> is the shared beliefs, values, customs, traditions, language, food, music, art, and ways of life of a group of people. Every human community has a culture -- and cultures make our world endlessly rich and fascinating. Today we explore what culture is, why it matters, and how to respect and appreciate cultural diversity!</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Culture</span> -- The beliefs, values, customs, traditions, language, arts, and way of life shared by a group of people.</div>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Tradition</span> -- A custom or practice passed down from generation to generation.</div>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Custom</span> -- A common practice or behaviour in a culture.</div>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Heritage</span> -- The traditions, achievements, and values passed down from ancestors to future generations.</div>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Cultural Diversity</span> -- The variety of cultures, backgrounds, and traditions in a community. Diversity enriches communities!</div>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Cultural Respect</span> -- Treating other people's cultures with appreciation and understanding, even when they are different from your own.</div>
+    </div>
+
+    <div class="section s5">
+      <h3>Elements of Culture</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-purple">
+          <h4>Language</h4>
+          <p>The primary way cultures communicate and express ideas. Language carries cultural knowledge, stories, and values.</p>
+        </div>
+        <div class="flex-col fb-orange">
+          <h4>Food</h4>
+          <p>What people eat and how they prepare it reflects their history, geography, and values. Food is often central to celebrations and family life.</p>
+        </div>
+        <div class="flex-col fb-green">
+          <h4>Music and Dance</h4>
+          <p>Every culture has unique musical traditions -- from Indigenous drum songs to jazz to classical to pop -- expressing joy, sorrow, spirituality, and community.</p>
+        </div>
+        <div class="flex-col fb-navy">
+          <h4>Art and Craft</h4>
+          <p>Visual art, sculpture, weaving, carving, pottery -- each culture expresses its worldview through unique artistic traditions.</p>
+        </div>
+        <div class="flex-col fb-pink">
+          <h4>Religion and Beliefs</h4>
+          <p>Spiritual beliefs shape holidays, rituals, moral values, and community life. Many cultures are deeply shaped by religious traditions.</p>
+        </div>
+        <div class="flex-col fb-blue">
+          <h4>Family and Community</h4>
+          <p>How families are structured, how communities care for each other, and how decisions are made all reflect cultural values.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section s5">
+      <h3>Cultural Traditions Around the World</h3>
+      <table>
+        <tr><th>Culture</th><th>Tradition or Custom</th><th>What It Celebrates or Teaches</th></tr>
+        <tr><td>Mexican-American</td><td>Día de los Muertos (Day of the Dead)</td><td>Honouring and remembering loved ones who have passed</td></tr>
+        <tr><td>Chinese</td><td>Lunar New Year with dragon dances and fireworks</td><td>New beginnings, family reunion, good fortune</td></tr>
+        <tr><td>Indigenous Northwest</td><td>Potlatch ceremonies and salmon feast</td><td>Generosity, community, honouring relationships with nature</td></tr>
+        <tr><td>Japanese</td><td>Obon Festival (honouring ancestors)</td><td>Remembrance of ancestors, community celebration</td></tr>
+        <tr><td>African American</td><td>Kwanzaa (7-day celebration)</td><td>African heritage, community, family, culture</td></tr>
+        <tr><td>American</td><td>Thanksgiving</td><td>Gratitude, family, harvest -- though also complex historical meaning</td></tr>
+      </table>
+    </div>
+
+    <div class="section s5">
+      <h3>Cultural Respect -- Celebrating Differences!</h3>
+      <p>Washington state and Kennewick are home to people from many cultural backgrounds. Cultural respect means:</p>
+      <ul>
+        <li><strong>Curiosity:</strong> Being genuinely interested in learning about other cultures</li>
+        <li><strong>Respect:</strong> Treating different customs with dignity, even when unfamiliar</li>
+        <li><strong>Humility:</strong> Recognising that your culture is one of many equally valid ways of life</li>
+        <li><strong>Appreciation:</strong> Enjoying and celebrating cultural differences as enriching</li>
+        <li><strong>Understanding:</strong> Learning the history and meaning behind cultural practices</li>
+      </ul>
+      <div class="tip"><strong>Cultural Exchange Makes Everyone Richer!</strong> The food you eat, the music you listen to, and the words you use are all influenced by dozens of cultures. Pizza (Italian), tacos (Mexican), jeans (originally French), basketball (invented by Canadian James Naismith) -- American culture is a beautiful blend of the world's cultures!</div>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Name THREE elements of YOUR family's culture or heritage. What makes them special?</li>
+        <li>What is the difference between a tradition and a custom?</li>
+        <li>Why is cultural diversity valuable for a community?</li>
+        <li>Find ONE cultural tradition from a culture different from yours. What does it celebrate or teach?</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p>Culture = language, food, music, art, beliefs, and traditions of a group.</p>
+      <p>Every culture has equal value and deserves <strong>respect and curiosity.</strong></p>
+      <p><strong>Cultural diversity</strong> enriches communities -- our differences make us stronger together!</p>
+      <p class="cta" style="color:#4a148c;">Last lesson -- make it count! Click Lesson 20.6!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 20.6 -->
+<div class="lesson-section" id="lesson6">
+  <div class="banner b6">
+    <span class="lesson-num">Lesson 20.6</span>
+    <h2>Washington State's Economy and Cultural Diversity</h2>
+    <p>The final lesson -- exploring the incredible economy and culture of your home state!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s6">
+      <h3>What Are We Learning Today?</h3>
+      <p>Washington state has one of the most diverse and dynamic economies in the United States. From world-leading technology companies to abundant agriculture, from aerospace to maritime trade, Washington produces and trades goods and services that reach every corner of the world. And its people represent cultures from around the globe, making it one of the most culturally rich states in the nation!</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#004d40;">Economy</span> -- The system of producing, distributing, and consuming goods and services in a region or country.</div>
+      <div class="vocab-item"><span class="word" style="color:#004d40;">Industry</span> -- A branch of economic activity: agriculture, technology, manufacturing, fishing, tourism.</div>
+      <div class="vocab-item"><span class="word" style="color:#004d40;">Innovation</span> -- The creation of new ideas, products, or ways of doing things. Seattle is a global hub of innovation!</div>
+      <div class="vocab-item"><span class="word" style="color:#004d40;">Immigrant</span> -- A person who moves to a new country to live. Immigrants have shaped Washington's culture and economy throughout its history.</div>
+    </div>
+
+    <div class="section s6">
+      <h3>Washington State's Major Industries</h3>
+      <table>
+        <tr><th>Industry</th><th>Key Products/Services</th><th>Region</th></tr>
+        <tr><td><strong>Technology</strong></td><td>Software (Microsoft), e-commerce (Amazon), cloud computing</td><td>Seattle/Bellevue</td></tr>
+        <tr><td><strong>Aerospace</strong></td><td>Commercial aircraft (Boeing 737, 787), military aircraft</td><td>Everett, Renton, Seattle</td></tr>
+        <tr><td><strong>Agriculture</strong></td><td>Apples, wheat, hops, potatoes, grapes, cherries, asparagus</td><td>Eastern WA (your region!)</td></tr>
+        <tr><td><strong>Maritime / Shipping</strong></td><td>Port of Seattle and Tacoma -- among busiest US ports</td><td>Puget Sound</td></tr>
+        <tr><td><strong>Military / Defense</strong></td><td>Joint Base Lewis-McChord, Hanford cleanup, Navy shipyards</td><td>Tacoma, Bremerton, Richland</td></tr>
+        <tr><td><strong>Fishing / Seafood</strong></td><td>Salmon, halibut, Dungeness crab, oysters</td><td>Pacific Coast, Puget Sound</td></tr>
+        <tr><td><strong>Tourism</strong></td><td>National parks, ski resorts, wine country, Seattle attractions</td><td>Statewide</td></tr>
+        <tr><td><strong>Renewable Energy</strong></td><td>Hydroelectric (Columbia River dams), wind farms</td><td>Columbia River, Eastern WA</td></tr>
+      </table>
+    </div>
+
+    <div class="section s6">
+      <h3>Kennewick and the Tri-Cities Economy</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-teal">
+          <h4>Agriculture</h4>
+          <p>The Columbia Basin is one of America's most productive farming regions. Apples, grapes, potatoes, asparagus, hops, and wheat grow abundantly thanks to irrigation from the Columbia River. The Yakima Valley wine industry has grown to world-class status!</p>
+        </div>
+        <div class="flex-col fb-green">
+          <h4>Hanford / Energy</h4>
+          <p>The Hanford Site cleanup employs thousands of scientists, engineers, and workers in the Tri-Cities. It is also home to the Pacific Northwest National Laboratory -- a world-class energy research facility.</p>
+        </div>
+        <div class="flex-col fb-blue">
+          <h4>Trade and Commerce</h4>
+          <p>The Columbia, Snake, and Yakima Rivers made Kennewick a natural trade hub. Today barge traffic still moves agricultural goods on the Columbia River to Portland and to the Pacific Ocean for export.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section s6">
+      <h3>Washington's Cultural Diversity</h3>
+      <p>Washington state is home to people from every part of the world. Major cultural communities include:</p>
+      <div class="flex-row">
+        <div class="flex-col fb-purple">
+          <h4>Indigenous Peoples</h4>
+          <p>29 federally recognised tribes with vibrant living cultures -- Yakama, Tulalip, Makah, Colville, Spokane, and more.</p>
+        </div>
+        <div class="flex-col fb-orange">
+          <h4>Latino/Hispanic Community</h4>
+          <p>A large and growing community, especially in eastern Washington agricultural areas. Essential to farming and food processing industries.</p>
+        </div>
+        <div class="flex-col fb-navy">
+          <h4>Asian American Community</h4>
+          <p>Large communities from China, Japan, Korea, Vietnam, Philippines, and India -- especially in Seattle. Major contributions to tech industry.</p>
+        </div>
+        <div class="flex-col fb-pink">
+          <h4>African American Community</h4>
+          <p>Long history in Washington, especially Seattle area. Important contributions to music (Seattle jazz and R&B), civil rights, and community leadership.</p>
+        </div>
+      </div>
+      <div class="tip"><strong>The Tri-Cities / Kennewick:</strong> Kennewick's population is about 30% Hispanic/Latino -- one of the highest percentages in Washington state. This reflects the important role of the Latino community in eastern Washington's agricultural economy and cultural life. Dia de los Muertos, Cinco de Mayo, and Mexican cultural traditions are celebrated throughout the Tri-Cities community!</div>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Name THREE major industries in Washington state. What does each one produce or provide?</li>
+        <li>How does the Columbia River benefit the Kennewick economy? Name at least TWO ways.</li>
+        <li>What cultural groups make up the diverse community in the Kennewick/Tri-Cities area?</li>
+        <li>Name ONE product from Washington state that is exported to another country. Who buys it and why?</li>
+      </ol>
+    </div>
+
+    <div class="celebration-box">
+      <h3>You Have Completed ALL 20 Units of Owl Smart!</h3>
+      <p>From reading and writing to fractions and geometry...</p>
+      <p>From plants and ecosystems to matter and energy...</p>
+      <p>From tribal history to government and economics...</p>
+      <p style="margin-top:12px; font-size:1.05em; font-weight:bold;">You have mastered a full year of 3rd grade learning!</p>
+      <p style="margin-top:8px;">Take the Unit 20 Quiz and then celebrate -- you have earned it!</p>
+    </div>
+  </div>
+</div>
+
+</div>
+<script>
+  const sections = document.querySelectorAll('.lesson-section');
+  const navLinks = document.querySelectorAll('.nav-bar a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 80) current = s.getAttribute('id'); });
+    navLinks.forEach(l => { l.classList.remove('active'); if (l.getAttribute('href') === '#' + current) l.classList.add('active'); });
+  });
+</script>
+</body>
+</html>
