@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit 15 – Earth Science: Weather, Water, and Earth's Surface | Owl Smart 3rd Grade</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #f4f7fb; color: #2d2d2d; line-height: 1.8; }
+    .top-header { background: linear-gradient(135deg, #1565c0, #1976d2); color: white; text-align: center; padding: 24px 20px 16px; }
+    .top-header h1 { font-size: 1.5em; margin-bottom: 4px; }
+    .top-header p { font-size: 0.95em; opacity: 0.88; }
+    .nav-bar { background: #1565c0; padding: 0 10px; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.3); overflow-x: auto; white-space: nowrap; }
+    .nav-bar a { display: inline-block; color: rgba(255,255,255,0.8); text-decoration: none; padding: 12px 14px; font-size: 0.82em; font-weight: bold; border-bottom: 3px solid transparent; transition: all 0.2s; }
+    .nav-bar a:hover, .nav-bar a.active { color: white; border-bottom-color: #ffd600; }
+    .main { max-width: 860px; margin: 0 auto; padding: 20px; }
+    .lesson-section { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.08); margin-bottom: 40px; scroll-margin-top: 60px; }
+    .banner { color: white; text-align: center; padding: 28px 24px; }
+    .banner h2 { font-size: 1.45em; margin-bottom: 6px; }
+    .banner p { font-size: 0.97em; opacity: 0.92; margin-bottom: 10px; }
+    .lesson-num { display: inline-block; background: rgba(255,255,255,0.25); border-radius: 20px; padding: 3px 14px; font-size: 0.82em; font-weight: bold; }
+    .b1 { background: linear-gradient(135deg, #1565c0, #1976d2); }
+    .b2 { background: linear-gradient(135deg, #006064, #00838f); }
+    .b3 { background: linear-gradient(135deg, #4a148c, #7b1fa2); }
+    .b4 { background: linear-gradient(135deg, #4e342e, #6d4c41); }
+    .b5 { background: linear-gradient(135deg, #e65100, #f57c00); }
+    .b6 { background: linear-gradient(135deg, #1b5e20, #388e3c); }
+    .lesson-content { padding: 26px; }
+    .section { border-left: 5px solid; border-radius: 0 10px 10px 0; padding: 18px 20px; margin-bottom: 20px; }
+    .s1 { background: #e3f2fd; border-color: #1565c0; } .s1 h3 { color: #1565c0; }
+    .s2 { background: #e0f7fa; border-color: #006064; } .s2 h3 { color: #006064; }
+    .s3 { background: #f3e5f5; border-color: #4a148c; } .s3 h3 { color: #4a148c; }
+    .s4 { background: #efebe9; border-color: #4e342e; } .s4 h3 { color: #4e342e; }
+    .s5 { background: #fff3e0; border-color: #e65100; } .s5 h3 { color: #e65100; }
+    .s6 { background: #e8f5e9; border-color: #1b5e20; } .s6 h3 { color: #1b5e20; }
+    .section h3 { margin-bottom: 8px; font-size: 1.05em; }
+    .vocab-box { background: #fff8e1; border: 2px solid #ffc107; border-radius: 10px; padding: 18px 20px; margin-bottom: 20px; }
+    .vocab-box h3 { color: #e65100; margin-bottom: 12px; font-size: 1.05em; }
+    .vocab-item { margin: 8px 0; font-size: 0.95em; }
+    .word { font-weight: bold; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.93em; }
+    th { background: #37474f; color: white; padding: 9px 12px; text-align: left; }
+    td { padding: 9px 12px; border-bottom: 1px solid #e0e0e0; }
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) { background: #f5f5f5; }
+    .tip { background: #e8f5e9; border-left: 4px solid #43a047; border-radius: 0 8px 8px 0; padding: 12px 16px; margin: 12px 0; color: #1b5e20; font-size: 0.93em; }
+    .tip strong { color: #2e7d32; }
+    .try-it { background: #ede7f6; border: 2px dashed #7e57c2; border-radius: 10px; padding: 18px 20px; margin-bottom: 20px; }
+    .try-it h3 { color: #4527a0; margin-bottom: 10px; font-size: 1.05em; }
+    .try-it ol { padding-left: 20px; }
+    .try-it li { margin: 8px 0; font-size: 0.95em; }
+    .remember { background: #fff3e0; border: 2px solid #ff8f00; border-radius: 10px; padding: 18px 20px; text-align: center; margin-bottom: 4px; }
+    .remember h3 { color: #e65100; margin-bottom: 10px; font-size: 1.05em; }
+    .remember p { margin: 5px 0; font-size: 0.95em; }
+    .remember .cta { font-weight: bold; font-size: 1.05em; margin-top: 12px; }
+    .flex-row { display: flex; gap: 12px; flex-wrap: wrap; margin: 10px 0; }
+    .flex-col { flex: 1; min-width: 150px; border-radius: 10px; padding: 14px 16px; }
+    .fb-blue { background: #e3f2fd; border: 2px solid #1976d2; } .fb-blue h4 { color: #1565c0; margin-bottom: 6px; }
+    .fb-teal { background: #e0f7fa; border: 2px solid #00838f; } .fb-teal h4 { color: #006064; margin-bottom: 6px; }
+    .fb-purple { background: #f3e5f5; border: 2px solid #7b1fa2; } .fb-purple h4 { color: #4a148c; margin-bottom: 6px; }
+    .fb-brown { background: #efebe9; border: 2px solid #795548; } .fb-brown h4 { color: #4e342e; margin-bottom: 6px; }
+    .fb-orange { background: #fff3e0; border: 2px solid #f57c00; } .fb-orange h4 { color: #e65100; margin-bottom: 6px; }
+    .fb-green { background: #e8f5e9; border: 2px solid #388e3c; } .fb-green h4 { color: #1b5e20; margin-bottom: 6px; }
+    .fb-red { background: #ffebee; border: 2px solid #e53935; } .fb-red h4 { color: #b71c1c; margin-bottom: 6px; }
+    .fb-yellow { background: #fffde7; border: 2px solid #f9a825; } .fb-yellow h4 { color: #f57f17; margin-bottom: 6px; }
+    .science-box { background: #e3f2fd; border: 2px solid #1976d2; border-radius: 10px; padding: 16px 18px; margin-bottom: 14px; }
+    .science-box h4 { color: #1565c0; margin-bottom: 8px; font-size: 0.98em; }
+    .cycle-row { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin: 12px 0; justify-content: center; }
+    .cycle-box { border-radius: 10px; padding: 8px 14px; font-size: 0.88em; font-weight: bold; text-align: center; min-width: 90px; color: white; }
+    .cb-blue { background: #1565c0; }
+    .cb-teal { background: #006064; }
+    .cb-purple { background: #4a148c; }
+    .cb-brown { background: #5d4037; }
+    .cb-green { background: #2e7d32; }
+    .cycle-arrow { color: #37474f; font-size: 1.4em; font-weight: bold; }
+    .layer-box { border-radius: 0; padding: 12px 16px; margin: 2px 0; font-size: 0.92em; }
+    .cloud-card { border-radius: 10px; padding: 12px 14px; margin-bottom: 10px; }
+    ul { padding-left: 20px; } li { margin: 5px 0; font-size: 0.95em; }
+    p { margin-bottom: 8px; font-size: 0.95em; }
+  </style>
+</head>
+<body>
+
+<div class="top-header">
+  <h1>Owl Smart: A 3rd Grade Learning Journey</h1>
+  <p>Unit 15 -- Earth Science: Weather, Water, and Earth's Surface &nbsp;|&nbsp; 6 Lessons</p>
+</div>
+
+<div class="nav-bar">
+  <a href="#lesson1">15.1 Weather &amp; Climate</a>
+  <a href="#lesson2">15.2 Water Cycle</a>
+  <a href="#lesson3">15.3 Clouds &amp; Rain</a>
+  <a href="#lesson4">15.4 Earth's Layers</a>
+  <a href="#lesson5">15.5 Rocks &amp; Fossils</a>
+  <a href="#lesson6">15.6 Natural Resources</a>
+</div>
+
+<div class="main">
+
+<!-- LESSON 15.1 -->
+<div class="lesson-section" id="lesson1">
+  <div class="banner b1">
+    <span class="lesson-num">Lesson 15.1</span>
+    <h2>Weather and Climate</h2>
+    <p>Weather changes day by day -- climate describes patterns over many years!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s1">
+      <h3>What Are We Learning Today?</h3>
+      <p>Have you heard someone say "climate is what you expect, weather is what you get"? Today we learn the important difference between <strong>weather</strong> (what's happening in the atmosphere right now) and <strong>climate</strong> (the long-term patterns of an area), and the tools scientists use to measure both.</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#1565c0;">Weather</span> -- The condition of the atmosphere at a specific place and time (today's temperature, clouds, wind, rain).</div>
+      <div class="vocab-item"><span class="word" style="color:#1565c0;">Climate</span> -- The average weather patterns of an area over a long period of time (30+ years).</div>
+      <div class="vocab-item"><span class="word" style="color:#1565c0;">Temperature</span> -- How hot or cold the air is. Measured in degrees Fahrenheit (°F) or Celsius (°C).</div>
+      <div class="vocab-item"><span class="word" style="color:#1565c0;">Precipitation</span> -- Any form of water falling from clouds: rain, snow, sleet, hail.</div>
+      <div class="vocab-item"><span class="word" style="color:#1565c0;">Wind</span> -- Moving air caused by differences in air pressure.</div>
+      <div class="vocab-item"><span class="word" style="color:#1565c0;">Humidity</span> -- The amount of water vapour in the air. High humidity feels muggy and damp.</div>
+      <div class="vocab-item"><span class="word" style="color:#1565c0;">Meteorologist</span> -- A scientist who studies and forecasts weather.</div>
+    </div>
+
+    <div class="section s1">
+      <h3>Weather vs. Climate -- The Key Difference</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-blue">
+          <h4>Weather (Short-Term)</h4>
+          <p>What is happening right NOW in the atmosphere.</p>
+          <p style="margin-top:8px; font-size:0.88em;"><em>"It is raining in Kennewick today."</em></p>
+          <p style="font-size:0.88em;"><em>"It will be 85°F tomorrow."</em></p>
+          <p style="font-size:0.88em;"><em>"There is a thunderstorm this afternoon."</em></p>
+        </div>
+        <div class="flex-col fb-teal">
+          <h4>Climate (Long-Term)</h4>
+          <p>The PATTERN of weather in an area over 30+ years.</p>
+          <p style="margin-top:8px; font-size:0.88em;"><em>"Eastern Washington has hot, dry summers and cold winters."</em></p>
+          <p style="font-size:0.88em;"><em>"The Amazon rainforest gets rain almost every day."</em></p>
+        </div>
+      </div>
+      <div class="tip"><strong>Memory Trick:</strong> "Climate is what you expect; weather is what you get!" You know Seattle has a rainy climate -- but you never know exactly when the next storm will hit. That specific storm is weather!</div>
+    </div>
+
+    <div class="section s1">
+      <h3>Weather Measurement Tools</h3>
+      <table>
+        <tr><th>Tool</th><th>What It Measures</th><th>Units</th></tr>
+        <tr><td><strong>Thermometer</strong></td><td>Air temperature</td><td>Degrees Fahrenheit (°F) or Celsius (°C)</td></tr>
+        <tr><td><strong>Rain Gauge</strong></td><td>Amount of rainfall</td><td>Inches or centimeters</td></tr>
+        <tr><td><strong>Wind Vane</strong></td><td>Direction the wind is coming FROM</td><td>N, S, E, W, NE, etc.</td></tr>
+        <tr><td><strong>Anemometer</strong></td><td>Wind speed</td><td>Miles per hour (mph) or km/h</td></tr>
+        <tr><td><strong>Barometer</strong></td><td>Air pressure</td><td>Inches of mercury or millibars</td></tr>
+        <tr><td><strong>Hygrometer</strong></td><td>Humidity (water vapour in air)</td><td>Percentage (%)</td></tr>
+      </table>
+    </div>
+
+    <div class="section s1">
+      <h3>Washington State Weather and Climate</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-blue">
+          <h4>West of Cascades (Wet side)</h4>
+          <p>Mild, rainy climate. Seattle gets about 38 inches of rain per year. Rarely very hot or very cold. Dense forests thrive here.</p>
+        </div>
+        <div class="flex-col fb-yellow">
+          <h4>East of Cascades (Dry side)</h4>
+          <p>Semi-arid climate. Kennewick gets only about 8 inches of rain per year! Hot summers (100°F+), cold winters. Irrigation needed for agriculture.</p>
+        </div>
+      </div>
+      <p style="font-size:0.9em; color:#37474f; margin-top:8px;">The Cascade Mountains create a "rain shadow" -- they block moist Pacific air, making eastern Washington much drier than western Washington!</p>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Write TWO examples of weather and TWO examples of climate.</li>
+        <li>What tool would you use to measure: how fast the wind is blowing? How much it rained last night?</li>
+        <li>Why does Kennewick (eastern WA) get much less rain than Seattle (western WA)?</li>
+        <li>Look up today's weather forecast for Kennewick. Write the temperature, precipitation, and wind conditions.</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p><strong>Weather</strong> = short-term atmospheric conditions right now.</p>
+      <p><strong>Climate</strong> = long-term average weather patterns (30+ years).</p>
+      <p>Thermometer measures temperature. Rain gauge measures rainfall.</p>
+      <p class="cta" style="color:#1565c0;">Great start! Click Lesson 15.2!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 15.2 -->
+<div class="lesson-section" id="lesson2">
+  <div class="banner b2">
+    <span class="lesson-num">Lesson 15.2</span>
+    <h2>The Water Cycle</h2>
+    <p>Water is always moving -- follow its incredible journey around Earth!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s2">
+      <h3>What Are We Learning Today?</h3>
+      <p>Did you know the water you drink today might have been in a dinosaur's pond 65 million years ago? Earth has a fixed amount of water that <strong>cycles continuously</strong> through the oceans, atmosphere, land, and living things. This endless journey is called the <strong>water cycle</strong>!</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#006064;">Evaporation</span> -- Liquid water turning into water vapour (gas) when heated by the sun.</div>
+      <div class="vocab-item"><span class="word" style="color:#006064;">Condensation</span> -- Water vapour cooling and turning back into liquid water droplets (forming clouds).</div>
+      <div class="vocab-item"><span class="word" style="color:#006064;">Precipitation</span> -- Water falling from clouds as rain, snow, sleet, or hail.</div>
+      <div class="vocab-item"><span class="word" style="color:#006064;">Collection</span> -- Water gathering in oceans, lakes, rivers, and groundwater.</div>
+      <div class="vocab-item"><span class="word" style="color:#006064;">Transpiration</span> -- Water released by plants through their leaves into the atmosphere.</div>
+      <div class="vocab-item"><span class="word" style="color:#006064;">Runoff</span> -- Water that flows over land into streams and rivers after precipitation.</div>
+      <div class="vocab-item"><span class="word" style="color:#006064;">Groundwater</span> -- Water that seeps into the soil and collects underground in aquifers.</div>
+    </div>
+
+    <div class="section s2">
+      <h3>The Four Main Stages of the Water Cycle</h3>
+      <div class="cycle-row">
+        <div class="cycle-box cb-teal">EVAPORATION<br>Sun heats water<br>→ vapour rises</div>
+        <div class="cycle-arrow">→</div>
+        <div class="cycle-box cb-purple">CONDENSATION<br>Vapour cools<br>→ clouds form</div>
+        <div class="cycle-arrow">→</div>
+        <div class="cycle-box cb-blue">PRECIPITATION<br>Water falls<br>as rain/snow</div>
+        <div class="cycle-arrow">→</div>
+        <div class="cycle-box cb-teal">COLLECTION<br>Water gathers<br>in ocean/lakes</div>
+        <div class="cycle-arrow">→</div>
+        <div style="font-weight:bold; color:#006064; font-size:1.2em;">...</div>
+      </div>
+      <p style="text-align:center; font-size:0.88em; color:#37474f; margin-top:6px;">The cycle repeats endlessly -- no beginning, no end!</p>
+    </div>
+
+    <div class="section s2">
+      <h3>Each Stage in Detail</h3>
+      <table>
+        <tr><th>Stage</th><th>What Happens</th><th>Where</th></tr>
+        <tr><td><strong>Evaporation</strong></td><td>The sun heats water in oceans, lakes, and rivers, turning it into invisible water vapour that rises into the atmosphere</td><td>Oceans, lakes, rivers (71% from oceans!)</td></tr>
+        <tr><td><strong>Transpiration</strong></td><td>Plants release water vapour through tiny pores in their leaves -- similar to sweating!</td><td>Forest canopies, grasslands, farms</td></tr>
+        <tr><td><strong>Condensation</strong></td><td>Rising water vapour cools as it goes higher. Cool air cannot hold as much vapour, so it turns back into tiny liquid droplets, forming clouds</td><td>In the atmosphere (clouds!)</td></tr>
+        <tr><td><strong>Precipitation</strong></td><td>When cloud droplets combine and become too heavy to stay airborne, they fall as rain, snow, sleet, or hail</td><td>Falls onto land and oceans</td></tr>
+        <tr><td><strong>Runoff</strong></td><td>Water flows over land surface into streams and rivers</td><td>Slopes, hillsides, urban areas</td></tr>
+        <tr><td><strong>Infiltration</strong></td><td>Water seeps into the soil, replenishing groundwater</td><td>Soil, rock layers underground</td></tr>
+        <tr><td><strong>Collection</strong></td><td>Water gathers in oceans, lakes, rivers, glaciers, and underground aquifers</td><td>All water bodies on Earth</td></tr>
+      </table>
+    </div>
+
+    <div class="science-box">
+      <h4>Washington's Water Cycle in Action!</h4>
+      <p>The Pacific Ocean evaporates enormous amounts of water. Wind carries the moist air eastward. When it hits the Olympic Mountains and Cascades, it is forced upward. As it rises, it cools and condenses, creating enormous rainfall and snowfall on the western slopes. This is why the Hoh Rainforest on the Olympic Peninsula is one of the wettest places in the continental US!</p>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Put the water cycle stages in order: Precipitation, Collection, Condensation, Evaporation.</li>
+        <li>What causes water to evaporate? Where does most evaporation happen on Earth?</li>
+        <li>Why do clouds form high in the atmosphere rather than at ground level?</li>
+        <li>Pour a small amount of water on a warm sidewalk on a sunny day. What happens? Which stage of the water cycle is this?</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p><strong>Evaporation</strong> → <strong>Condensation</strong> → <strong>Precipitation</strong> → <strong>Collection</strong></p>
+      <p>The sun drives the water cycle by providing energy for evaporation.</p>
+      <p>Earth's water is <strong>recycled</strong> -- the same water has been cycling for billions of years!</p>
+      <p class="cta" style="color:#006064;">Excellent! Click Lesson 15.3!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 15.3 -->
+<div class="lesson-section" id="lesson3">
+  <div class="banner b3">
+    <span class="lesson-num">Lesson 15.3</span>
+    <h2>Types of Clouds and Precipitation</h2>
+    <p>Read the sky like a scientist -- clouds tell us what weather is coming!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s3">
+      <h3>What Are We Learning Today?</h3>
+      <p>Clouds are not just fluffy decorations in the sky! Each type of cloud tells us something different about the weather. Learning to identify clouds is one of the oldest and most useful skills in weather forecasting. Today we learn the main cloud types and what each one means for the weather ahead!</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Cumulus</span> -- Puffy, white, cotton-ball clouds. Fair weather when small; can grow into thunderstorms.</div>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Stratus</span> -- Flat, grey, blanket-like clouds that cover the whole sky. Bring drizzle or grey skies.</div>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Cirrus</span> -- Thin, wispy, high clouds made of ice crystals. Often signal a weather change coming.</div>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Cumulonimbus</span> -- Massive, tall thunderstorm clouds. Bring heavy rain, lightning, and strong winds.</div>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Nimbostratus</span> -- Dark, thick stratus clouds that bring steady, prolonged rain or snow.</div>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Fog</span> -- Stratus clouds at ground level. Forms when warm moist air meets a cool surface.</div>
+    </div>
+
+    <div class="section s3">
+      <h3>Cloud Identification Guide</h3>
+      <table>
+        <tr><th>Cloud Type</th><th>Altitude</th><th>Appearance</th><th>Weather It Brings</th></tr>
+        <tr><td><strong>Cirrus</strong></td><td>Very high (above 20,000 ft)</td><td>Thin, wispy white streaks -- looks like brushstrokes</td><td>Often means rain or snow in 24-48 hours</td></tr>
+        <tr><td><strong>Cumulus</strong></td><td>Low to middle</td><td>Puffy, white, flat-bottomed -- looks like cotton balls</td><td>Fair weather; if very tall, possible thunderstorm</td></tr>
+        <tr><td><strong>Stratus</strong></td><td>Low</td><td>Flat grey layer covering entire sky like a blanket</td><td>Overcast skies, drizzle, or light rain</td></tr>
+        <tr><td><strong>Cumulonimbus</strong></td><td>Very tall (can reach 50,000 ft!)</td><td>Enormous dark anvil-shaped tower</td><td>Thunderstorms, heavy rain, hail, tornadoes</td></tr>
+        <tr><td><strong>Nimbostratus</strong></td><td>Low to middle</td><td>Dark grey, featureless blanket</td><td>Steady, long-lasting rain or snow</td></tr>
+        <tr><td><strong>Altocumulus</strong></td><td>Middle</td><td>Rows of white and grey puffs</td><td>Possible afternoon thunderstorms</td></tr>
+      </table>
+    </div>
+
+    <div class="section s3">
+      <h3>Types of Precipitation</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-blue">
+          <h4>Rain</h4>
+          <p>Liquid water droplets. Forms when cloud droplets combine and fall. Most common precipitation in Washington state.</p>
+        </div>
+        <div class="flex-col fb-teal">
+          <h4>Snow</h4>
+          <p>Ice crystals that form when water vapour freezes directly into solid crystals. Requires below-freezing temperatures.</p>
+        </div>
+        <div class="flex-col fb-purple">
+          <h4>Sleet</h4>
+          <p>Rain that freezes into ice pellets before hitting the ground. Forms when rain falls through a freezing layer of air.</p>
+        </div>
+        <div class="flex-col fb-orange">
+          <h4>Hail</h4>
+          <p>Balls of ice formed in powerful thunderstorm clouds. Strong updrafts toss ice pellets up and down, adding layers of ice until too heavy to stay airborne.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section s3">
+      <h3>Cloud Name Clues!</h3>
+      <div class="tip"><strong>Cloud Name Prefixes and Suffixes:</strong><br>
+      <strong>Cumulo-</strong> = heap/pile (puffy) &nbsp;|&nbsp; <strong>Strato-</strong> = layer/sheet (flat) &nbsp;|&nbsp; <strong>Cirro-</strong> = curl/wisp (high)<br>
+      <strong>-nimbus/-nimbo-</strong> = rain-bearing &nbsp;|&nbsp; <strong>Alto-</strong> = middle height<br>
+      So: <strong>CumuloNIMBUS</strong> = puffy + rain = huge storm cloud! <strong>NIMBOstratus</strong> = rain + layer = steady rain blanket!</div>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Go outside and look at the clouds. What type do you see? What weather might be coming?</li>
+        <li>You see wispy, high white clouds in the morning. Should you plan for rain tomorrow? What type are they?</li>
+        <li>What type of cloud brings thunderstorms? How does it look different from a fair-weather cumulus cloud?</li>
+        <li>Describe the difference between sleet and hail. How does each form?</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p><strong>Cirrus</strong> = wispy, high, weather change coming.</p>
+      <p><strong>Cumulus</strong> = puffy, fair weather (unless very tall = thunderstorm!).</p>
+      <p><strong>Stratus</strong> = grey blanket, drizzle. &nbsp;|&nbsp; <strong>Cumulonimbus</strong> = THUNDERSTORM!</p>
+      <p class="cta" style="color:#4a148c;">Well done! Click Lesson 15.4!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 15.4 -->
+<div class="lesson-section" id="lesson4">
+  <div class="banner b4">
+    <span class="lesson-num">Lesson 15.4</span>
+    <h2>Earth's Layers and Landforms</h2>
+    <p>From the centre of the Earth to its highest mountains -- explore our planet's structure!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s4">
+      <h3>What Are We Learning Today?</h3>
+      <p>Earth is not just a solid ball of rock! It has distinct layers like an onion, each with different properties. And Earth's surface -- the part we live on -- is shaped by incredible forces into mountains, valleys, plains, and more. Today we journey from Earth's core to its highest peaks!</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#4e342e;">Crust</span> -- Earth's outermost solid layer. The thin shell we live on (5-70 km thick).</div>
+      <div class="vocab-item"><span class="word" style="color:#4e342e;">Mantle</span> -- The thick layer of hot, semi-solid rock beneath the crust. The largest layer.</div>
+      <div class="vocab-item"><span class="word" style="color:#4e342e;">Outer Core</span> -- A layer of liquid iron and nickel. Its movement creates Earth's magnetic field!</div>
+      <div class="vocab-item"><span class="word" style="color:#4e342e;">Inner Core</span> -- A solid ball of iron and nickel at Earth's very centre. Extremely hot (~5,000°C)!</div>
+      <div class="vocab-item"><span class="word" style="color:#4e342e;">Tectonic Plates</span> -- Giant pieces of Earth's crust that move slowly, causing earthquakes, volcanoes, and mountains.</div>
+      <div class="vocab-item"><span class="word" style="color:#4e342e;">Landform</span> -- A natural feature of Earth's surface (mountain, valley, plain, canyon, plateau).</div>
+      <div class="vocab-item"><span class="word" style="color:#4e342e;">Erosion</span> -- The wearing away and movement of rock and soil by water, wind, ice, or gravity.</div>
+    </div>
+
+    <div class="section s4">
+      <h3>Earth's Four Layers</h3>
+      <div style="background:#efebe9; border-radius:10px; overflow:hidden; margin:12px 0;">
+        <div class="layer-box" style="background:#795548; color:white; border-radius:10px 10px 0 0;">
+          <strong>CRUST</strong> -- 5 to 70 km thick. The solid surface we live on. Oceanic crust (ocean floor) is thinner and denser. Continental crust (land) is thicker and lighter.
+        </div>
+        <div class="layer-box" style="background:#8d6e63; color:white;">
+          <strong>MANTLE</strong> -- About 2,900 km thick. Hot, slow-moving rock. The upper mantle can flow slowly over millions of years -- this movement moves tectonic plates!
+        </div>
+        <div class="layer-box" style="background:#e65100; color:white;">
+          <strong>OUTER CORE</strong> -- About 2,200 km thick. Liquid iron and nickel at ~4,000°C. Its swirling movement generates Earth's magnetic field -- which protects us from solar radiation!
+        </div>
+        <div class="layer-box" style="background:#bf360c; color:white; border-radius:0 0 10px 10px;">
+          <strong>INNER CORE</strong> -- Radius about 1,200 km. Solid iron and nickel despite temperatures of ~5,000°C -- held solid by enormous pressure. The very heart of our planet!
+        </div>
+      </div>
+    </div>
+
+    <div class="section s4">
+      <h3>How Landforms Are Created</h3>
+      <table>
+        <tr><th>Landform</th><th>How It Forms</th><th>Example</th></tr>
+        <tr><td><strong>Mountains</strong></td><td>Tectonic plates collide and push rock upward</td><td>Cascade Mountains, Himalayas</td></tr>
+        <tr><td><strong>Volcanoes</strong></td><td>Magma pushes through cracks in the crust</td><td>Mount Rainier, Mount St. Helens</td></tr>
+        <tr><td><strong>Valleys</strong></td><td>Rivers or glaciers carve out low areas over time</td><td>Columbia River Gorge</td></tr>
+        <tr><td><strong>Canyons</strong></td><td>Rivers cut deep into rock over millions of years</td><td>Grand Canyon</td></tr>
+        <tr><td><strong>Plains</strong></td><td>Flat areas formed by sediment deposit or erosion</td><td>Columbia Basin in eastern Washington</td></tr>
+        <tr><td><strong>Deltas</strong></td><td>Sediment deposited where a river meets the ocean</td><td>Mississippi River Delta</td></tr>
+      </table>
+    </div>
+
+    <div class="science-box">
+      <h4>Washington State Geology is Amazing!</h4>
+      <p>Washington has extraordinary geological features: the Cascade Volcanoes (including Mount Rainier at 14,411 ft -- the highest peak in the Cascades!), the Columbia River Gorge carved by Ice Age floods, the scablands of eastern Washington carved by the Missoula Floods, and ongoing tectonic activity with the Juan de Fuca Plate subducting under North America -- making the Pacific Northwest a geologically active zone.</p>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>List Earth's four layers from outermost to innermost. Which layer do we live on?</li>
+        <li>Which of Earth's layers is liquid? Why is this important?</li>
+        <li>How are the Cascade Mountains and Mount Rainier related to tectonic plate movement?</li>
+        <li>What is erosion? Give TWO agents (causes) of erosion and an example of each.</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p>Earth's layers: <strong>Crust → Mantle → Outer Core → Inner Core</strong></p>
+      <p>Tectonic plates move → create mountains, volcanoes, earthquakes.</p>
+      <p><strong>Erosion</strong> by water, wind, and ice shapes Earth's surface over time.</p>
+      <p class="cta" style="color:#4e342e;">Keep going! Click Lesson 15.5!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 15.5 -->
+<div class="lesson-section" id="lesson5">
+  <div class="banner b5">
+    <span class="lesson-num">Lesson 15.5</span>
+    <h2>Rocks, Soil, and Fossils</h2>
+    <p>The ground beneath your feet tells the story of Earth's past!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s5">
+      <h3>What Are We Learning Today?</h3>
+      <p>Every rock has a story. Rocks record billions of years of Earth's history -- from ancient lava flows to the remains of creatures that lived 500 million years ago. Today we learn the three types of rocks, how soil forms, and how fossils preserve clues about prehistoric life!</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Igneous Rock</span> -- Rock formed from cooled magma or lava. Example: granite, basalt, obsidian.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Sedimentary Rock</span> -- Rock formed from layers of sediment (sand, mud, shells) pressed together. Example: sandstone, limestone, shale.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Metamorphic Rock</span> -- Rock that has been changed by intense heat and pressure. Example: marble (from limestone), slate (from shale).</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Rock Cycle</span> -- The slow process by which rocks transform from one type to another over millions of years.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Soil</span> -- A mixture of weathered rock, minerals, water, air, and organic matter (dead plants/animals).</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Fossil</span> -- The preserved remains or trace of an organism that lived long ago, found in rock.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Paleontologist</span> -- A scientist who studies fossils to learn about prehistoric life.</div>
+    </div>
+
+    <div class="section s5">
+      <h3>The Three Types of Rocks</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-red">
+          <h4>Igneous (Fire Rocks)</h4>
+          <p>Form when magma (underground) or lava (surface) cools and solidifies.</p>
+          <p style="margin-top:6px; font-size:0.88em;"><strong>Examples:</strong> Granite (slow-cooling = large crystals), Basalt (fast-cooling = small crystals), Obsidian (very fast cooling = glassy)</p>
+          <p style="font-size:0.88em; margin-top:4px;"><em>Washington has huge basalt formations from ancient lava flows!</em></p>
+        </div>
+        <div class="flex-col fb-brown">
+          <h4>Sedimentary (Layered Rocks)</h4>
+          <p>Form when sediment (sand, mud, shells) is deposited in layers and compressed over millions of years.</p>
+          <p style="margin-top:6px; font-size:0.88em;"><strong>Examples:</strong> Sandstone, Limestone (from shells), Shale, Coal</p>
+          <p style="font-size:0.88em; margin-top:4px;"><em>Fossils are almost always found in sedimentary rock!</em></p>
+        </div>
+        <div class="flex-col fb-purple">
+          <h4>Metamorphic (Changed Rocks)</h4>
+          <p>Form when existing rocks are subjected to extreme heat and pressure deep inside Earth, changing their structure.</p>
+          <p style="margin-top:6px; font-size:0.88em;"><strong>Examples:</strong> Marble (from limestone), Slate (from shale), Quartzite (from sandstone)</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section s5">
+      <h3>Soil -- More Than Just Dirt!</h3>
+      <p>Healthy soil is one of Earth's most valuable resources. It takes <strong>hundreds of years</strong> to form just one inch of topsoil!</p>
+      <table>
+        <tr><th>What's in Soil?</th><th>Why It Matters</th></tr>
+        <tr><td>Weathered rock and minerals</td><td>Provides nutrients like iron, calcium, potassium for plants</td></tr>
+        <tr><td>Humus (decomposed organic matter)</td><td>Rich in nutrients; holds water; makes soil dark and fertile</td></tr>
+        <tr><td>Water</td><td>Dissolves nutrients so plants can absorb them through roots</td></tr>
+        <tr><td>Air (in pore spaces)</td><td>Oxygen for plant roots and soil organisms</td></tr>
+        <tr><td>Living organisms</td><td>Earthworms, bacteria, fungi -- all improve soil structure</td></tr>
+      </table>
+    </div>
+
+    <div class="section s5">
+      <h3>Fossils -- Windows into the Past</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-brown">
+          <h4>How Fossils Form</h4>
+          <ol style="padding-left:16px; font-size:0.88em;">
+            <li>Organism dies and is buried quickly in sediment</li>
+            <li>Soft parts decay; hard parts (bones, shells) remain</li>
+            <li>Minerals slowly replace the organic material</li>
+            <li>Sediment hardens to rock around the fossil</li>
+            <li>Erosion eventually exposes it at the surface</li>
+          </ol>
+        </div>
+        <div class="flex-col fb-orange">
+          <h4>Types of Fossils</h4>
+          <ul style="font-size:0.88em;">
+            <li><strong>Body fossils</strong>: actual preserved remains (bones, teeth, shells)</li>
+            <li><strong>Trace fossils</strong>: evidence of activity (footprints, burrows, eggs)</li>
+            <li><strong>Mould fossils</strong>: impressions left in rock</li>
+            <li><strong>Amber fossils</strong>: organisms trapped in ancient tree resin</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Which type of rock forms from cooled magma? From compressed sediment layers? From heat and pressure?</li>
+        <li>Why are fossils almost always found in sedimentary rock rather than igneous or metamorphic rock?</li>
+        <li>List FOUR components of healthy soil and explain why each matters.</li>
+        <li>If you found a fossil of an ocean fish on top of a mountain, what does that tell you about Earth's past?</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p><strong>Igneous</strong> = cooled lava/magma. <strong>Sedimentary</strong> = compressed layers. <strong>Metamorphic</strong> = heat + pressure.</p>
+      <p>Fossils form in <strong>sedimentary</strong> rock -- layers trap and preserve remains.</p>
+      <p>Soil takes hundreds of years to form -- it is a precious resource!</p>
+      <p class="cta" style="color:#e65100;">One more! Click Lesson 15.6!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 15.6 -->
+<div class="lesson-section" id="lesson6">
+  <div class="banner b6">
+    <span class="lesson-num">Lesson 15.6</span>
+    <h2>Natural Resources and Conservation</h2>
+    <p>Earth provides everything we need -- our job is to use it wisely!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s6">
+      <h3>What Are We Learning Today?</h3>
+      <p>Almost everything you use every day came from Earth -- the metal in your pencil, the cotton in your shirt, the water in your cup. These are called <strong>natural resources</strong>. Some resources can be replaced quickly; others take millions of years to form. Today we learn to distinguish them and understand why conservation matters!</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Natural Resource</span> -- Anything from nature that people use: water, soil, air, plants, animals, minerals, fossil fuels.</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Renewable Resource</span> -- A resource that can be replaced naturally in a reasonable amount of time. Example: sunlight, wind, water, trees (if managed sustainably).</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Nonrenewable Resource</span> -- A resource that cannot be replaced once used because it takes millions of years to form. Example: coal, oil, natural gas, most minerals.</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Fossil Fuel</span> -- Coal, oil, and natural gas formed from ancient organisms over millions of years. Nonrenewable.</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Conservation</span> -- Using natural resources carefully and efficiently so they last longer.</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Pollution</span> -- Harmful substances released into air, water, or soil by human activities.</div>
+    </div>
+
+    <div class="section s6">
+      <h3>Renewable vs. Nonrenewable Resources</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-green">
+          <h4>Renewable Resources</h4>
+          <p>Can be replenished naturally.</p>
+          <ul style="font-size:0.88em; margin-top:6px;">
+            <li>Solar energy (sunlight)</li>
+            <li>Wind energy</li>
+            <li>Water (hydropower)</li>
+            <li>Trees (if replanted)</li>
+            <li>Geothermal energy</li>
+            <li>Tidal energy</li>
+          </ul>
+        </div>
+        <div class="flex-col fb-red">
+          <h4>Nonrenewable Resources</h4>
+          <p>Take millions of years to form -- once gone, gone!</p>
+          <ul style="font-size:0.88em; margin-top:6px;">
+            <li>Coal (compressed ancient plants)</li>
+            <li>Oil / petroleum</li>
+            <li>Natural gas</li>
+            <li>Metals (iron, copper, gold)</li>
+            <li>Most minerals</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="section s6">
+      <h3>How We Use Natural Resources</h3>
+      <table>
+        <tr><th>Resource</th><th>How We Use It</th><th>Renewable?</th></tr>
+        <tr><td><strong>Water</strong></td><td>Drinking, farming, electricity (hydropower), industry</td><td>Renewable (cycles), but can be wasted</td></tr>
+        <tr><td><strong>Soil</strong></td><td>Growing food, building, filtering water</td><td>Very slowly renewable (hundreds of years!)</td></tr>
+        <tr><td><strong>Trees / Forests</strong></td><td>Lumber, paper, oxygen, habitat, food</td><td>Renewable if replanted sustainably</td></tr>
+        <tr><td><strong>Oil / Petroleum</strong></td><td>Fuel for cars, plastics, medicines, asphalt</td><td>Nonrenewable (millions of years to form)</td></tr>
+        <tr><td><strong>Sunlight</strong></td><td>Solar panels, plant growth, heating</td><td>Renewable -- will last 5 billion more years!</td></tr>
+        <tr><td><strong>Wind</strong></td><td>Wind turbines generate clean electricity</td><td>Renewable -- always blowing somewhere!</td></tr>
+      </table>
+    </div>
+
+    <div class="section s6">
+      <h3>The 3 Rs of Conservation</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-green">
+          <h4>REDUCE</h4>
+          <p>Use LESS in the first place. Turn off lights. Take shorter showers. Buy only what you need. Reducing is the most powerful of the three Rs!</p>
+        </div>
+        <div class="flex-col fb-blue">
+          <h4>REUSE</h4>
+          <p>Use items again instead of throwing them away. Refillable water bottles. Cloth shopping bags. Repairing instead of replacing.</p>
+        </div>
+        <div class="flex-col fb-teal">
+          <h4>RECYCLE</h4>
+          <p>Turn waste materials into new products. Paper, glass, plastic, and metals can all be recycled, saving energy and raw materials.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="science-box">
+      <h4>Washington State and Clean Energy</h4>
+      <p>Washington state is a leader in clean energy! The Columbia River provides hydroelectric power -- about 70% of Washington's electricity comes from hydropower dams! Eastern Washington is also home to enormous wind farms. Washington gets more of its electricity from renewable sources than almost any other state. The goal is to reduce dependence on fossil fuels and protect the environment for future generations.</p>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Give TWO examples each of renewable and nonrenewable resources.</li>
+        <li>Why is soil considered a "slowly renewable" resource? How long does it take to form?</li>
+        <li>Name THREE things you personally do (or could do) to conserve natural resources.</li>
+        <li>Why is it important to switch to renewable energy sources like solar and wind?</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>You Finished Unit 15!</h3>
+      <p><strong>Renewable</strong> = can be replenished (sun, wind, water, trees).</p>
+      <p><strong>Nonrenewable</strong> = cannot be replaced in human lifetime (coal, oil, gas).</p>
+      <p>The 3 Rs: <strong>Reduce → Reuse → Recycle</strong></p>
+      <p>Everyone can help conserve Earth's resources!</p>
+      <p class="cta" style="color:#1b5e20;">Incredible work! You completed all 6 lessons in Unit 15! Now take the Unit 15 Quiz!</p>
+    </div>
+  </div>
+</div>
+
+</div>
+<script>
+  const sections = document.querySelectorAll('.lesson-section');
+  const navLinks = document.querySelectorAll('.nav-bar a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 80) current = s.getAttribute('id'); });
+    navLinks.forEach(l => { l.classList.remove('active'); if (l.getAttribute('href') === '#' + current) l.classList.add('active'); });
+  });
+</script>
+</body>
+</html>
