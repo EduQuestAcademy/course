@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 1 — Parts of Speech | Grammar Mastery</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap');
+  :root {
+    --accent:#4f8ef7; --accent-bg:rgba(79,142,247,0.15);
+    --surface:rgba(255,255,255,0.09); --surface2:rgba(255,255,255,0.05);
+    --border:rgba(255,255,255,0.15); --text:#ffffff;
+    --text-dim:rgba(255,255,255,0.65); --text-faint:rgba(255,255,255,0.36);
+    --radius:14px;
+  }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body {
+    font-family:'Plus Jakarta Sans',sans-serif;
+    background:linear-gradient(160deg,#1e3f7a 0%,#0f2552 50%,#091a3e 100%);
+    background-attachment:fixed; color:#fff; min-height:100vh; overflow-x:hidden;
+  }
+  body::before {
+    content:''; position:fixed; inset:0;
+    background-image:radial-gradient(rgba(255,255,255,0.05) 1px,transparent 1px);
+    background-size:26px 26px; pointer-events:none; z-index:0;
+  }
+  .app { position:relative; z-index:1; max-width:480px; margin:0 auto; padding-bottom:40px; }
+
+  .header {
+    padding:20px; border-bottom:1px solid var(--border);
+    background:rgba(9,26,62,0.82); position:sticky; top:0; z-index:50;
+    backdrop-filter:blur(22px); -webkit-backdrop-filter:blur(22px);
+  }
+  .back-btn {
+    display:inline-flex; align-items:center; gap:7px;
+    color:var(--accent); font-size:0.82em; font-weight:700;
+    background:none; border:none; cursor:pointer;
+    font-family:'Plus Jakarta Sans',sans-serif; padding:0;
+    text-decoration:none; margin-bottom:16px;
+  }
+  .module-hero { display:flex; align-items:center; gap:14px; margin-bottom:14px; }
+  .hero-icon {
+    width:52px; height:52px; border-radius:14px;
+    background:linear-gradient(135deg,#5b21b6,#4f8ef7);
+    display:flex; align-items:center; justify-content:center; font-size:1.5em;
+    box-shadow:0 4px 16px rgba(91,33,182,0.4);
+  }
+  .hero-tag { font-size:0.64em; font-weight:700; letter-spacing:0.1em; color:var(--accent); text-transform:uppercase; font-family:'JetBrains Mono',monospace; }
+  .hero-title { font-size:1.08em; font-weight:800; margin-top:3px; }
+  .hero-sub { font-size:0.7em; color:var(--text-dim); margin-top:3px; }
+  .mod-prog-row { display:flex; align-items:center; gap:12px; }
+  .mod-prog-track { flex:1; height:7px; background:rgba(255,255,255,0.12); border-radius:4px; overflow:hidden; }
+  .mod-prog-fill { height:100%; background:linear-gradient(90deg,#5b21b6,#4f8ef7); border-radius:4px; transition:width 0.8s; }
+  .mod-prog-pct { font-size:0.7em; font-family:'JetBrains Mono',monospace; color:var(--accent); min-width:34px; text-align:right; }
+
+  .sec-label {
+    font-size:0.64em; font-weight:700; letter-spacing:0.13em;
+    text-transform:uppercase; color:var(--text-faint); padding:20px 20px 10px;
+  }
+  .lessons-list { display:flex; flex-direction:column; gap:10px; padding:0 20px; }
+
+  .lesson-card {
+    display:flex; align-items:center; gap:14px;
+    background:var(--surface); border:1px solid var(--border);
+    border-radius:var(--radius); padding:14px 16px;
+    text-decoration:none; color:#fff;
+    transition:transform 0.15s, background 0.15s;
+  }
+  .lesson-card:active { transform:scale(0.98); }
+  .lesson-card.completed { background:rgba(79,142,247,0.15); border-color:rgba(79,142,247,0.4); }
+  .lesson-card.locked { opacity:0.4; pointer-events:none; }
+
+  .lesson-badge {
+    width:36px; height:36px; flex-shrink:0; border-radius:10px;
+    background:rgba(255,255,255,0.1);
+    display:flex; align-items:center; justify-content:center;
+    font-size:0.72em; font-weight:700; font-family:'JetBrains Mono',monospace;
+    color:rgba(255,255,255,0.6);
+  }
+  .lesson-card.completed .lesson-badge { background:rgba(79,142,247,0.25); color:var(--accent); }
+  .lesson-info { flex:1; min-width:0; }
+  .lesson-title { font-size:0.88em; font-weight:700; line-height:1.3; }
+  .lesson-meta  { font-size:0.65em; color:var(--text-dim); margin-top:3px; }
+  .lesson-right { flex-shrink:0; display:flex; flex-direction:column; align-items:flex-end; gap:4px; }
+  .lesson-score { font-size:0.72em; font-weight:700; font-family:'JetBrains Mono',monospace; color:var(--accent); }
+  .lesson-chevron { color:var(--text-faint); font-size:1em; }
+
+  .module-quiz-card {
+    margin:16px 20px 0; display:block; text-decoration:none; color:#fff;
+    background:linear-gradient(135deg,rgba(91,33,182,0.5),rgba(79,142,247,0.35));
+    border:1px solid rgba(79,142,247,0.4);
+    border-radius:var(--radius); padding:16px;
+    transition:transform 0.15s;
+  }
+  .module-quiz-card:active { transform:scale(0.98); }
+  .module-quiz-card.locked { opacity:0.4; pointer-events:none; }
+  .mqc-top { display:flex; align-items:center; gap:12px; margin-bottom:8px; }
+  .mqc-icon { font-size:1.4em; }
+  .mqc-tag  { font-size:0.62em; font-weight:700; letter-spacing:0.1em; color:var(--accent); text-transform:uppercase; font-family:'JetBrains Mono',monospace; }
+  .mqc-title{ font-size:0.92em; font-weight:800; }
+  .mqc-sub  { font-size:0.7em; color:var(--text-dim); }
+  .mqc-note { font-size:0.68em; color:var(--text-faint); margin-top:6px; }
+
+  @keyframes fadeUp { from{opacity:0;transform:translateY(14px)} to{opacity:1;transform:translateY(0)} }
+  .lesson-card { animation:fadeUp 0.3s ease both; }
+  .lesson-card:nth-child(1){animation-delay:.05s}.lesson-card:nth-child(2){animation-delay:.10s}
+  .lesson-card:nth-child(3){animation-delay:.15s}.lesson-card:nth-child(4){animation-delay:.20s}
+  .lesson-card:nth-child(5){animation-delay:.25s}.lesson-card:nth-child(6){animation-delay:.30s}
+  .lesson-card:nth-child(7){animation-delay:.35s}.lesson-card:nth-child(8){animation-delay:.40s}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="header">
+    <a class="back-btn" href="../index.html">← Back to Dashboard</a>
+    <div class="module-hero">
+      <div class="hero-icon">🔤</div>
+      <div>
+        <div class="hero-tag">Module 1</div>
+        <div class="hero-title">The Parts of Speech System</div>
+        <div class="hero-sub">8 lessons · 1 module quiz · 180 questions total</div>
+      </div>
+    </div>
+    <div class="mod-prog-row">
+      <div class="mod-prog-track"><div class="mod-prog-fill" id="modFill" style="width:0%"></div></div>
+      <div class="mod-prog-pct" id="modPct">0%</div>
+    </div>
+  </div>
+
+  <div class="sec-label">Lessons</div>
+  <div class="lessons-list" id="lessonsList"></div>
+
+  <a class="module-quiz-card" id="mqCard" href="../quizzes/q1-9.html">
+    <div class="mqc-top">
+      <div class="mqc-icon">🏆</div>
+      <div>
+        <div class="mqc-tag">Module Quiz</div>
+        <div class="mqc-title">Parts of Speech — Full Assessment</div>
+      </div>
+    </div>
+    <div class="mqc-sub">20 questions · Covers all 8 lessons · Mixed difficulty</div>
+    <div class="mqc-note" id="mqNote"></div>
+  </a>
+</div>
+
+<script>
+const LESSONS=[
+  {id:1,title:'Nouns: People, Places, Things, and Ideas'},
+  {id:2,title:'Pronouns: Replacing Nouns'},
+  {id:3,title:'Verbs: Types, Functions, and Structure'},
+  {id:4,title:'Adjectives: Defining Nouns'},
+  {id:5,title:'Adverbs: Describing Verbs and More'},
+  {id:6,title:'Prepositions: Showing Relationship'},
+  {id:7,title:'Conjunctions: Joining Words and Ideas'},
+  {id:8,title:'Interjections: Expressing Emotions and Reactions'},
+];
+function getData(){try{return JSON.parse(localStorage.getItem('grammar_app')||'{}');}catch(e){return{};}}
+
+function render(){
+  const d=getData(); const progress=d.progress||{};
+  let done=0;
+  const list=document.getElementById('lessonsList');
+  list.innerHTML=LESSONS.map(l=>{
+    const key=`m1_l${l.id}`;
+    const score=progress[key];
+    const completed=score!==undefined;
+    if(completed) done++;
+    return `
+    <a class="lesson-card ${completed?'completed':''}" href="../quizzes/q1-${l.id}.html">
+      <div class="lesson-badge">${completed?'✓':String(l.id).padStart(2,'0')}</div>
+      <div class="lesson-info">
+        <div class="lesson-title">Lesson 1.${l.id} — ${l.title}</div>
+        <div class="lesson-meta">20 questions · Multiple choice, True/False, Fill-in-blank</div>
+      </div>
+      <div class="lesson-right">
+        ${completed?`<div class="lesson-score">${score}%</div>`:''}
+        <div class="lesson-chevron">›</div>
+      </div>
+    </a>`;
+  }).join('');
+
+  const mqScore=progress['m1_l9'];
+  const mqDone=mqScore!==undefined;
+  const allDone=done>=LESSONS.length;
+  const mqCard=document.getElementById('mqCard');
+  const mqNote=document.getElementById('mqNote');
+  if(!allDone){ mqCard.classList.add('locked'); mqNote.textContent='🔒 Complete all 8 lessons to unlock'; }
+  else { mqCard.classList.remove('locked'); mqNote.textContent=mqDone?`Your score: ${mqScore}%`:'Ready — tap to begin!'; }
+
+  const total=LESSONS.length+1;
+  const totalDone=done+(mqDone?1:0);
+  const pct=Math.round(totalDone/total*100);
+  document.getElementById('modFill').style.width=pct+'%';
+  document.getElementById('modPct').textContent=pct+'%';
+}
+render();
+</script>
+</body>
+</html>
