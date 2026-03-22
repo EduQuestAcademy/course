@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit 6 – Vocabulary | Owl Smart 3rd Grade</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #f4f7fb; color: #2d2d2d; line-height: 1.8; }
+    .top-header { background: linear-gradient(135deg, #e65100, #ff8f00); color: white; text-align: center; padding: 24px 20px 16px; }
+    .top-header h1 { font-size: 1.5em; margin-bottom: 4px; }
+    .top-header p { font-size: 0.95em; opacity: 0.88; }
+    .nav-bar { background: #e65100; padding: 0 10px; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.3); overflow-x: auto; white-space: nowrap; }
+    .nav-bar a { display: inline-block; color: rgba(255,255,255,0.8); text-decoration: none; padding: 12px 14px; font-size: 0.82em; font-weight: bold; border-bottom: 3px solid transparent; transition: all 0.2s; }
+    .nav-bar a:hover, .nav-bar a.active { color: white; border-bottom-color: #ffd600; }
+    .main { max-width: 860px; margin: 0 auto; padding: 20px; }
+    .lesson-section { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.08); margin-bottom: 40px; scroll-margin-top: 60px; }
+    .banner { color: white; text-align: center; padding: 28px 24px; }
+    .banner h2 { font-size: 1.45em; margin-bottom: 6px; }
+    .banner p { font-size: 0.97em; opacity: 0.92; margin-bottom: 10px; }
+    .lesson-num { display: inline-block; background: rgba(255,255,255,0.25); border-radius: 20px; padding: 3px 14px; font-size: 0.82em; font-weight: bold; }
+    .b1 { background: linear-gradient(135deg, #e65100, #ff8f00); }
+    .b2 { background: linear-gradient(135deg, #1a237e, #3949ab); }
+    .b3 { background: linear-gradient(135deg, #1b5e20, #43a047); }
+    .b4 { background: linear-gradient(135deg, #4a148c, #7b1fa2); }
+    .b5 { background: linear-gradient(135deg, #37474f, #546e7a); }
+    .lesson-content { padding: 26px; }
+    .section { border-left: 5px solid; border-radius: 0 10px 10px 0; padding: 18px 20px; margin-bottom: 20px; }
+    .s1 { background: #fff3e0; border-color: #e65100; } .s1 h3 { color: #e65100; }
+    .s2 { background: #e8eaf6; border-color: #1a237e; } .s2 h3 { color: #1a237e; }
+    .s3 { background: #e8f5e9; border-color: #1b5e20; } .s3 h3 { color: #1b5e20; }
+    .s4 { background: #f3e5f5; border-color: #4a148c; } .s4 h3 { color: #4a148c; }
+    .s5 { background: #eceff1; border-color: #37474f; } .s5 h3 { color: #37474f; }
+    .section h3 { margin-bottom: 8px; font-size: 1.05em; }
+    .vocab-box { background: #fff8e1; border: 2px solid #ffc107; border-radius: 10px; padding: 18px 20px; margin-bottom: 20px; }
+    .vocab-box h3 { color: #e65100; margin-bottom: 12px; font-size: 1.05em; }
+    .vocab-item { margin: 8px 0; font-size: 0.95em; }
+    .word { font-weight: bold; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.93em; }
+    th { background: #37474f; color: white; padding: 9px 12px; text-align: left; }
+    td { padding: 9px 12px; border-bottom: 1px solid #e0e0e0; }
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) { background: #f5f5f5; }
+    .tip { background: #e8f5e9; border-left: 4px solid #43a047; border-radius: 0 8px 8px 0; padding: 12px 16px; margin: 12px 0; color: #1b5e20; font-size: 0.93em; }
+    .tip strong { color: #2e7d32; }
+    .try-it { background: #ede7f6; border: 2px dashed #7e57c2; border-radius: 10px; padding: 18px 20px; margin-bottom: 20px; }
+    .try-it h3 { color: #4527a0; margin-bottom: 10px; font-size: 1.05em; }
+    .try-it ol { padding-left: 20px; }
+    .try-it li { margin: 8px 0; font-size: 0.95em; }
+    .remember { background: #fff3e0; border: 2px solid #ff8f00; border-radius: 10px; padding: 18px 20px; text-align: center; margin-bottom: 4px; }
+    .remember h3 { color: #e65100; margin-bottom: 10px; font-size: 1.05em; }
+    .remember p { margin: 5px 0; font-size: 0.95em; }
+    .remember .cta { font-weight: bold; font-size: 1.05em; margin-top: 12px; }
+    .flex-row { display: flex; gap: 12px; flex-wrap: wrap; margin: 10px 0; }
+    .flex-col { flex: 1; min-width: 160px; border-radius: 10px; padding: 14px 16px; }
+    .fb-orange { background: #fff3e0; border: 2px solid #f57c00; } .fb-orange h4 { color: #e65100; margin-bottom: 6px; }
+    .fb-blue { background: #e3f2fd; border: 2px solid #1976d2; } .fb-blue h4 { color: #0d47a1; margin-bottom: 6px; }
+    .fb-green { background: #e8f5e9; border: 2px solid #388e3c; } .fb-green h4 { color: #1b5e20; margin-bottom: 6px; }
+    .fb-purple { background: #f3e5f5; border: 2px solid #7b1fa2; } .fb-purple h4 { color: #4a148c; margin-bottom: 6px; }
+    .fb-grey { background: #eceff1; border: 2px solid #78909c; } .fb-grey h4 { color: #37474f; margin-bottom: 6px; }
+    .fb-red { background: #ffebee; border: 2px solid #e53935; } .fb-red h4 { color: #b71c1c; margin-bottom: 6px; }
+    .example-box { background: #f9f9f9; border: 2px solid #b0bec5; border-radius: 10px; padding: 16px 18px; margin-bottom: 14px; }
+    .example-box h4 { color: #37474f; margin-bottom: 8px; font-size: 0.98em; }
+    .clue-highlight { background: #fff9c4; padding: 2px 6px; border-radius: 4px; font-weight: bold; }
+    .word-highlight { background: #ffccbc; padding: 2px 6px; border-radius: 4px; font-weight: bold; }
+    .synonym-tag { display: inline-block; background: #1b5e20; color: white; border-radius: 16px; padding: 4px 14px; font-size: 0.85em; font-weight: bold; margin: 3px; }
+    .antonym-tag { display: inline-block; background: #b71c1c; color: white; border-radius: 16px; padding: 4px 14px; font-size: 0.85em; font-weight: bold; margin: 3px; }
+    .shade-bar { display: flex; align-items: center; gap: 0; margin: 10px 0; border-radius: 10px; overflow: hidden; }
+    .shade-item { flex: 1; text-align: center; padding: 10px 6px; font-size: 0.82em; font-weight: bold; color: white; }
+    .idiom-card { background: #f3e5f5; border: 2px solid #7b1fa2; border-radius: 10px; padding: 14px 16px; margin-bottom: 12px; }
+    .idiom-card .idiom-phrase { font-size: 1.05em; font-weight: bold; color: #4a148c; margin-bottom: 4px; }
+    .idiom-card .idiom-meaning { font-size: 0.93em; color: #37474f; }
+    .dict-entry { background: #eceff1; border-left: 5px solid #546e7a; border-radius: 0 10px 10px 0; padding: 14px 18px; margin-bottom: 12px; font-size: 0.93em; }
+    .dict-entry .entry-word { font-size: 1.1em; font-weight: bold; color: #263238; }
+    .dict-entry .entry-pos { font-style: italic; color: #546e7a; font-size: 0.88em; margin: 2px 0; }
+    .dict-entry .entry-def { color: #37474f; }
+    .dict-entry .entry-ex { font-style: italic; color: #546e7a; margin-top: 4px; font-size: 0.9em; }
+    ul { padding-left: 20px; } li { margin: 5px 0; font-size: 0.95em; }
+    p { margin-bottom: 8px; font-size: 0.95em; }
+  </style>
+</head>
+<body>
+
+<div class="top-header">
+  <h1>Owl Smart: A 3rd Grade Learning Journey</h1>
+  <p>Unit 6 -- Vocabulary &nbsp;|&nbsp; 5 Lessons</p>
+</div>
+
+<div class="nav-bar">
+  <a href="#lesson1">6.1 Context Clues</a>
+  <a href="#lesson2">6.2 Synonyms &amp; Antonyms</a>
+  <a href="#lesson3">6.3 Shades of Meaning</a>
+  <a href="#lesson4">6.4 Figurative Language</a>
+  <a href="#lesson5">6.5 Dictionary &amp; Thesaurus</a>
+</div>
+
+<div class="main">
+
+<!-- LESSON 6.1 -->
+<div class="lesson-section" id="lesson1">
+  <div class="banner b1">
+    <span class="lesson-num">Lesson 6.1</span>
+    <h2>Context Clues: Figuring Out Unknown Words</h2>
+    <p>Use the words around a mystery word to crack its meaning!</p>
+  </div>
+  <div class="lesson-content">
+
+    <div class="section s1">
+      <h3>What Are We Learning Today?</h3>
+      <p>You are reading a book and suddenly -- a word you have never seen before! What do you do? Stop and look it up every single time? That would take forever! Instead, smart readers use <strong>context clues</strong> -- the words and sentences AROUND the unknown word -- to figure out what it means. Today we learn five types of context clues!</p>
+    </div>
+
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Context Clues</span> -- Words and sentences surrounding an unknown word that hint at its meaning.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Definition Clue</span> -- The author directly defines the word right in the sentence.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Synonym Clue</span> -- A word with a similar meaning appears nearby to help explain the unknown word.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Antonym Clue</span> -- A word with the opposite meaning appears nearby as a contrast.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Example Clue</span> -- Examples are given that help illustrate what the word means.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Inference Clue</span> -- No direct hint is given -- you have to use overall meaning to make a smart guess.</div>
+    </div>
+
+    <div class="section s1">
+      <h3>Five Types of Context Clues</h3>
+      <table>
+        <tr><th>Type</th><th>Signal Words</th><th>How It Works</th></tr>
+        <tr><td><strong>Definition</strong></td><td>is, means, is called, refers to, or (followed by definition), dashes (--)</td><td>The author tells you exactly what the word means right in the sentence.</td></tr>
+        <tr><td><strong>Synonym</strong></td><td>also called, or, in other words, similarly, likewise</td><td>A word with a similar meaning appears near the unknown word.</td></tr>
+        <tr><td><strong>Antonym</strong></td><td>but, however, unlike, on the other hand, instead of, although</td><td>A word with the OPPOSITE meaning helps you figure out the unknown word.</td></tr>
+        <tr><td><strong>Example</strong></td><td>for example, such as, including, like</td><td>Examples of the word are given so you can infer its category or meaning.</td></tr>
+        <tr><td><strong>Inference</strong></td><td>(no signal words)</td><td>You use the overall meaning of the passage to make a smart guess.</td></tr>
+      </table>
+    </div>
+
+    <div class="section s1">
+      <h3>See Each Type in Action</h3>
+
+      <div class="example-box">
+        <h4>Definition Clue</h4>
+        <p>"The <span class="word-highlight">habitat</span> -- <span class="clue-highlight">the natural environment where an animal lives and finds food</span> -- of the polar bear is the Arctic."</p>
+        <p style="margin-top:6px; font-size:0.9em; color:#37474f;">The dashes signal that a definition is coming right after the word!</p>
+      </div>
+
+      <div class="example-box">
+        <h4>Synonym Clue</h4>
+        <p>"The old man was <span class="word-highlight">frail</span>, or <span class="clue-highlight">weak and delicate</span>, after his long illness."</p>
+        <p style="margin-top:6px; font-size:0.9em; color:#37474f;">"Or" signals that a synonym or explanation is coming.</p>
+      </div>
+
+      <div class="example-box">
+        <h4>Antonym Clue</h4>
+        <p>"Unlike her <span class="clue-highlight">talkative</span> sister, Mia was <span class="word-highlight">reticent</span> and rarely spoke in class."</p>
+        <p style="margin-top:6px; font-size:0.9em; color:#37474f;">"Unlike" signals contrast -- if her sister is talkative, Mia must be quiet/shy.</p>
+      </div>
+
+      <div class="example-box">
+        <h4>Example Clue</h4>
+        <p>"There were many <span class="word-highlight">nocturnal</span> animals at the zoo, <span class="clue-highlight">such as owls, bats, and raccoons</span>."</p>
+        <p style="margin-top:6px; font-size:0.9em; color:#37474f;">All examples are animals active at night -- nocturnal must mean active at night!</p>
+      </div>
+
+      <div class="example-box">
+        <h4>Inference Clue</h4>
+        <p>"After the hurricane, the town was in <span class="word-highlight">devastation</span>. Houses were destroyed, trees were uprooted, and the streets were flooded."</p>
+        <p style="margin-top:6px; font-size:0.9em; color:#37474f;">No signal word -- but the description of destruction tells us devastation means terrible damage.</p>
+      </div>
+    </div>
+
+    <div class="tip"><strong>Strategy:</strong> When you hit an unknown word, ask yourself: (1) Is there a definition nearby? (2) Is there a synonym or opposite? (3) Are there examples? (4) What does the rest of the sentence or paragraph tell me? Then make your best guess and keep reading!</div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>"The scientist was <em>meticulous</em> -- she checked every detail three times and never made a careless error." What does meticulous mean? What type of clue helped you?</li>
+        <li>"He felt <em>jubilant</em> when he won, but his opponent was disappointed." What does jubilant mean? What type of clue is this?</li>
+        <li>Find an unfamiliar word in a book you are reading. Write the sentence it appears in and explain what context clues you used.</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p>Five types of context clues: <strong>Definition, Synonym, Antonym, Example, Inference</strong></p>
+      <p>Look for signal words: <strong>or, but, such as, unlike, for example</strong></p>
+      <p>Always read the sentences AROUND the unknown word -- the answer is often right there!</p>
+      <p class="cta" style="color:#e65100;">Great start! Click Lesson 6.2!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 6.2 -->
+<div class="lesson-section" id="lesson2">
+  <div class="banner b2">
+    <span class="lesson-num">Lesson 6.2</span>
+    <h2>Synonyms and Antonyms</h2>
+    <p>Words that mean the same, words that mean the opposite -- build a richer vocabulary!</p>
+  </div>
+  <div class="lesson-content">
+
+    <div class="section s2">
+      <h3>What Are We Learning Today?</h3>
+      <p>Knowing synonyms helps you avoid repeating the same word over and over. Knowing antonyms helps you understand contrast and opposites. Together, they make your vocabulary much richer and your writing far more interesting and precise!</p>
+    </div>
+
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#1a237e;">Synonym</span> -- A word that means the SAME or nearly the same as another word. Example: happy / joyful.</div>
+      <div class="vocab-item"><span class="word" style="color:#1a237e;">Antonym</span> -- A word that means the OPPOSITE of another word. Example: happy / sad.</div>
+      <div class="vocab-item"><span class="word" style="color:#1a237e;">Precise Language</span> -- Choosing the EXACT right word for the meaning you want.</div>
+    </div>
+
+    <div class="section s2">
+      <h3>Common Synonyms and Antonyms</h3>
+      <table>
+        <tr><th>Word</th><th>Synonyms (same meaning)</th><th>Antonyms (opposite meaning)</th></tr>
+        <tr><td><strong>happy</strong></td><td>joyful, cheerful, delighted, pleased, content</td><td>sad, miserable, unhappy, gloomy, sorrowful</td></tr>
+        <tr><td><strong>big</strong></td><td>large, enormous, huge, giant, massive</td><td>small, tiny, little, miniature, petite</td></tr>
+        <tr><td><strong>fast</strong></td><td>quick, rapid, swift, speedy, hasty</td><td>slow, sluggish, gradual, unhurried, leisurely</td></tr>
+        <tr><td><strong>brave</strong></td><td>courageous, bold, fearless, daring, heroic</td><td>cowardly, timid, fearful, hesitant, afraid</td></tr>
+        <tr><td><strong>smart</strong></td><td>intelligent, clever, brilliant, wise, sharp</td><td>foolish, ignorant, unwise, slow, careless</td></tr>
+        <tr><td><strong>beautiful</strong></td><td>stunning, gorgeous, lovely, attractive, elegant</td><td>ugly, unattractive, plain, hideous, dull</td></tr>
+      </table>
+    </div>
+
+    <div class="section s2">
+      <h3>Why Synonyms Are Not EXACTLY the Same</h3>
+      <p>Synonyms are similar -- but they are not always interchangeable! Each word has its own shade of meaning.</p>
+      <div class="flex-row">
+        <div class="flex-col fb-blue">
+          <h4>happy / ecstatic / content</h4>
+          <p><strong>happy</strong> = feeling good</p>
+          <p><strong>ecstatic</strong> = EXTREMELY happy, overjoyed</p>
+          <p><strong>content</strong> = quietly satisfied, not necessarily excited</p>
+        </div>
+        <div class="flex-col fb-green">
+          <h4>angry / furious / annoyed</h4>
+          <p><strong>annoyed</strong> = mildly bothered</p>
+          <p><strong>angry</strong> = clearly upset</p>
+          <p><strong>furious</strong> = extremely, intensely angry</p>
+        </div>
+      </div>
+      <div class="tip"><strong>Writing Tip:</strong> Using precise synonyms makes your writing more vivid. Instead of "The dog was big," try "The dog was enormous." Instead of "She was happy," try "She was ecstatic." The right synonym adds power to your writing!</div>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Write TWO synonyms and ONE antonym for each word: <em>cold, tired, walk, old</em></li>
+        <li>Replace the underlined words with a more precise synonym: "The <u>big</u> storm caused a lot of <u>bad</u> damage to the <u>old</u> building."</li>
+        <li>Write a sentence using an antonym pair to show contrast: "She was _____, but her brother was _____."</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p><strong>SYNONYM</strong> = same or similar meaning (happy / joyful)</p>
+      <p><strong>ANTONYM</strong> = opposite meaning (happy / sad)</p>
+      <p>Choose the most <strong>precise</strong> synonym for the exact meaning you want!</p>
+      <p class="cta" style="color:#1a237e;">Excellent! Click Lesson 6.3!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 6.3 -->
+<div class="lesson-section" id="lesson3">
+  <div class="banner b3">
+    <span class="lesson-num">Lesson 6.3</span>
+    <h2>Shades of Meaning: Word Relationships</h2>
+    <p>Words on a spectrum -- from mild to strong, learn to choose with precision!</p>
+  </div>
+  <div class="lesson-content">
+
+    <div class="section s3">
+      <h3>What Are We Learning Today?</h3>
+      <p>Words are not just "same" or "opposite." Many words exist on a <strong>spectrum</strong> -- a scale from mild to strong, small to large, or quiet to loud. Understanding these shades of meaning helps you choose the EXACT right word every time you write!</p>
+    </div>
+
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Shades of Meaning</span> -- The slight differences in meaning between words that are similar but not identical.</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Intensity</span> -- The strength or degree of a word's meaning (weak to strong).</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Connotation</span> -- The feeling or emotion a word carries beyond its basic definition.</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Word Spectrum</strong> -- A scale that arranges related words from weakest to strongest meaning.</div>
+    </div>
+
+    <div class="section s3">
+      <h3>Word Spectrums -- Weak to Strong</h3>
+
+      <p style="font-weight:bold; color:#1b5e20; margin-bottom:6px;">Feelings: Sad</p>
+      <div class="shade-bar">
+        <div class="shade-item" style="background:#90a4ae;">gloomy</div>
+        <div class="shade-item" style="background:#78909c;">sad</div>
+        <div class="shade-item" style="background:#607d8b;">sorrowful</div>
+        <div class="shade-item" style="background:#546e7a;">heartbroken</div>
+        <div class="shade-item" style="background:#37474f;">devastated</div>
+      </div>
+
+      <p style="font-weight:bold; color:#1b5e20; margin-bottom:6px; margin-top:16px;">Feelings: Happy</p>
+      <div class="shade-bar">
+        <div class="shade-item" style="background:#aed581;">pleased</div>
+        <div class="shade-item" style="background:#8bc34a;">happy</div>
+        <div class="shade-item" style="background:#7cb342;">cheerful</div>
+        <div class="shade-item" style="background:#558b2f;">joyful</div>
+        <div class="shade-item" style="background:#1b5e20;">ecstatic</div>
+      </div>
+
+      <p style="font-weight:bold; color:#1b5e20; margin-bottom:6px; margin-top:16px;">Size</p>
+      <div class="shade-bar">
+        <div class="shade-item" style="background:#ef9a9a;">small</div>
+        <div class="shade-item" style="background:#e57373;">large</div>
+        <div class="shade-item" style="background:#ef5350;">huge</div>
+        <div class="shade-item" style="background:#e53935;">enormous</div>
+        <div class="shade-item" style="background:#b71c1c;">colossal</div>
+      </div>
+
+      <p style="font-weight:bold; color:#1b5e20; margin-bottom:6px; margin-top:16px;">Anger</p>
+      <div class="shade-bar">
+        <div class="shade-item" style="background:#ffcc80;">annoyed</div>
+        <div class="shade-item" style="background:#ffa726;">irritated</div>
+        <div class="shade-item" style="background:#fb8c00;">angry</div>
+        <div class="shade-item" style="background:#e65100;">furious</div>
+        <div class="shade-item" style="background:#bf360c;">enraged</div>
+      </div>
+    </div>
+
+    <div class="section s3">
+      <h3>Positive vs. Negative Connotations</h3>
+      <p>Some words mean nearly the same thing but carry different feelings -- one positive, one negative.</p>
+      <table>
+        <tr><th>Positive Connotation</th><th>Neutral</th><th>Negative Connotation</th></tr>
+        <tr><td>thrifty (smart with money)</td><td>careful with money</td><td>cheap (stingy, mean)</td></tr>
+        <tr><td>confident (sure of yourself)</td><td>self-assured</td><td>arrogant (thinks too highly of oneself)</td></tr>
+        <tr><td>persistent (keeps trying)</td><td>determined</td><td>stubborn (refuses to change)</td></tr>
+        <tr><td>curious (eager to learn)</td><td>interested</td><td>nosy (intrudes into others' business)</td></tr>
+      </table>
+      <div class="tip"><strong>Think about it:</strong> Would you rather be called "thrifty" or "cheap"? Both relate to money, but one sounds like a compliment and one sounds like an insult! Word choice matters a lot.</div>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Arrange these words from weakest to strongest: <em>furious, annoyed, irritated, angry, enraged</em></li>
+        <li>Arrange these words from smallest to largest: <em>enormous, tiny, big, huge, small, gigantic</em></li>
+        <li>Is "curious" positive or negative? Is "nosy" positive or negative? Write a sentence using each one to show the difference.</li>
+        <li>Choose the BEST word: "She was (upset / devastated) when her dog ran away." Which word is stronger? Which fits better?</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p>Words exist on a <strong>spectrum</strong> from mild to strong.</p>
+      <p>Similar words can have different <strong>connotations</strong> -- positive or negative feelings.</p>
+      <p>Choosing the right word on the spectrum makes your writing <strong>powerful and precise!</strong></p>
+      <p class="cta" style="color:#1b5e20;">Well done! Click Lesson 6.4!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 6.4 -->
+<div class="lesson-section" id="lesson4">
+  <div class="banner b4">
+    <span class="lesson-num">Lesson 6.4</span>
+    <h2>Figurative Language: Idioms, Similes, and Metaphors</h2>
+    <p>When words mean MORE than what they say -- the magic of figurative language!</p>
+  </div>
+  <div class="lesson-content">
+
+    <div class="section s4">
+      <h3>What Are We Learning Today?</h3>
+      <p>We explored literal vs. nonliteral language in Unit 1. Now we go deeper into <strong>three powerful types of figurative language</strong> -- idioms, similes, and metaphors. These are the tools that make writing come alive, paint pictures in the reader's mind, and make language memorable and beautiful.</p>
+    </div>
+
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Figurative Language</span> -- Language that uses words in creative, non-literal ways to create vivid images and comparisons.</div>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Idiom</span> -- A phrase whose meaning is completely different from the literal meaning of its words.</div>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Simile</span> -- A comparison between two different things using "like" or "as."</div>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Metaphor</span> -- A comparison that says one thing IS another thing, without using "like" or "as."</div>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Personification</span> -- Giving human qualities or actions to non-human things.</div>
+    </div>
+
+    <div class="section s4">
+      <h3>Idioms -- Hidden Meanings!</h3>
+      <p>Idioms are phrases that do NOT mean what the words literally say. You have to know the hidden meaning!</p>
+      <div class="idiom-card">
+        <div class="idiom-phrase">"It's raining cats and dogs."</div>
+        <div class="idiom-meaning">Literal: Animals are falling from the sky! &nbsp;|&nbsp; <strong>Real meaning: It is raining very heavily.</strong></div>
+      </div>
+      <div class="idiom-card">
+        <div class="idiom-phrase">"Break a leg!"</div>
+        <div class="idiom-meaning">Literal: Injure your leg! &nbsp;|&nbsp; <strong>Real meaning: Good luck!</strong></div>
+      </div>
+      <div class="idiom-card">
+        <div class="idiom-phrase">"I have butterflies in my stomach."</div>
+        <div class="idiom-meaning">Literal: Insects inside you! &nbsp;|&nbsp; <strong>Real meaning: I feel nervous.</strong></div>
+      </div>
+      <div class="idiom-card">
+        <div class="idiom-phrase">"Hit the books."</div>
+        <div class="idiom-meaning">Literal: Strike books with your hand! &nbsp;|&nbsp; <strong>Real meaning: Study hard.</strong></div>
+      </div>
+      <div class="idiom-card">
+        <div class="idiom-phrase">"Under the weather."</div>
+        <div class="idiom-meaning">Literal: Below the clouds! &nbsp;|&nbsp; <strong>Real meaning: Feeling sick or unwell.</strong></div>
+      </div>
+    </div>
+
+    <div class="section s4">
+      <h3>Similes -- Comparisons Using "Like" or "As"</h3>
+      <table>
+        <tr><th>Simile</th><th>What It Means</th></tr>
+        <tr><td>"She was as brave as a lion."</td><td>She was extremely brave, like a fearless lion.</td></tr>
+        <tr><td>"He ran like the wind."</td><td>He ran incredibly fast.</td></tr>
+        <tr><td>"The classroom was as quiet as a library."</td><td>The classroom was completely silent.</td></tr>
+        <tr><td>"Her smile was like sunshine on a cloudy day."</td><td>Her smile was warm and uplifting.</td></tr>
+        <tr><td>"He was as stubborn as a mule."</td><td>He refused to change his mind at all.</td></tr>
+      </table>
+    </div>
+
+    <div class="section s4">
+      <h3>Metaphors -- One Thing IS Another Thing</h3>
+      <table>
+        <tr><th>Metaphor</th><th>What It Means</th></tr>
+        <tr><td>"Life is a rollercoaster."</td><td>Life has exciting highs and scary lows, just like a rollercoaster.</td></tr>
+        <tr><td>"The classroom was a zoo."</td><td>The classroom was wild and chaotic, like a zoo.</td></tr>
+        <tr><td>"Time is money."</td><td>Time is as valuable and limited as money -- don't waste it!</td></tr>
+        <tr><td>"Her voice was music to my ears."</td><td>Her voice was extremely pleasant and beautiful to hear.</td></tr>
+        <tr><td>"He is a shining star."</td><td>He stands out and is excellent at what he does.</td></tr>
+      </table>
+      <div class="tip"><strong>Simile vs. Metaphor:</strong> Simile uses LIKE or AS. Metaphor does NOT -- it says one thing IS another. "She was like a lion" = simile. "She was a lion" = metaphor. Both are comparisons, but metaphors are more direct and powerful!</div>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Write the REAL meaning of these idioms: "Bite the bullet." / "Spill the beans." / "The ball is in your court."</li>
+        <li>Write THREE original similes. Use: "as ___ as ___" or "___ like ___."</li>
+        <li>Write TWO original metaphors. Remember: no "like" or "as" -- say one thing IS another.</li>
+        <li>Find ONE example of figurative language in a book you are reading. What type is it? What does it mean?</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p><strong>IDIOM</strong> -- phrase with a hidden meaning ("hit the books" = study)</p>
+      <p><strong>SIMILE</strong> -- comparison using LIKE or AS ("brave as a lion")</p>
+      <p><strong>METAPHOR</strong> -- says one thing IS another ("life is a rollercoaster")</p>
+      <p class="cta" style="color:#4a148c;">Almost there! Click Lesson 6.5!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 6.5 -->
+<div class="lesson-section" id="lesson5">
+  <div class="banner b5">
+    <span class="lesson-num">Lesson 6.5</span>
+    <h2>Using a Dictionary and Thesaurus</h2>
+    <p>Master the two most powerful vocabulary tools every writer needs!</p>
+  </div>
+  <div class="lesson-content">
+
+    <div class="section s5">
+      <h3>What Are We Learning Today?</h3>
+      <p>When context clues are not enough, two amazing tools can help: the <strong>dictionary</strong> (which tells you what a word means) and the <strong>thesaurus</strong> (which gives you synonyms and antonyms). Today we learn how to use both of these tools effectively to grow your vocabulary and improve your writing!</p>
+    </div>
+
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#37474f;">Dictionary</span> -- A reference book (or website) that lists words alphabetically and gives their definitions, part of speech, pronunciation, and example sentences.</div>
+      <div class="vocab-item"><span class="word" style="color:#37474f;">Thesaurus</span> -- A reference book (or website) that lists synonyms and antonyms for words -- used to find more precise or interesting alternatives.</div>
+      <div class="vocab-item"><span class="word" style="color:#37474f;">Entry Word</span> -- The word being defined in the dictionary (shown in bold at the start of each entry).</div>
+      <div class="vocab-item"><span class="word" style="color:#37474f;">Part of Speech</span> -- The grammatical role of a word: noun (n.), verb (v.), adjective (adj.), adverb (adv.).</div>
+      <div class="vocab-item"><span class="word" style="color:#37474f;">Guide Words</span> -- The two words at the top of each dictionary page showing the first and last entry on that page.</div>
+    </div>
+
+    <div class="section s5">
+      <h3>How to Read a Dictionary Entry</h3>
+      <div class="dict-entry">
+        <div class="entry-word">cou·ra·geous</div>
+        <div class="entry-pos">adjective (adj.)</div>
+        <div class="entry-def">Not afraid of danger or difficulty; brave and determined when facing challenges.</div>
+        <div class="entry-ex">"The courageous firefighter ran into the burning building to save the family."</div>
+      </div>
+      <div class="dict-entry">
+        <div class="entry-word">ven·ture</div>
+        <div class="entry-pos">verb (v.) | noun (n.)</div>
+        <div class="entry-def">v. To go somewhere or do something that involves risk or uncertainty. | n. A risky or daring project or journey.</div>
+        <div class="entry-ex">"She decided to venture into the dark forest despite her fear."</div>
+      </div>
+      <div class="section s5" style="margin-top:14px;">
+        <h3>Parts of a Dictionary Entry</h3>
+        <table>
+          <tr><th>Part</th><th>What It Tells You</th></tr>
+          <tr><td><strong>Entry word</strong></td><td>The word being defined (syllable dots show where to divide it)</td></tr>
+          <tr><td><strong>Part of speech</strong></td><td>Whether it is a noun, verb, adjective, adverb, etc.</td></tr>
+          <tr><td><strong>Definition</strong></td><td>What the word means (some words have multiple definitions!)</td></tr>
+          <tr><td><strong>Example sentence</strong></td><td>Shows how to use the word correctly in context</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="section s5">
+      <h3>How to Use a Thesaurus</h3>
+      <p>A thesaurus is used when you want to avoid repeating a word or find a more precise/interesting alternative. Look up the word and choose the synonym that best fits your meaning.</p>
+      <div class="example-box">
+        <h4>Thesaurus Entry for "said"</h4>
+        <p><strong>said</strong> (verb) -- Synonyms: <span class="synonym-tag">whispered</span> <span class="synonym-tag">shouted</span> <span class="synonym-tag">exclaimed</span> <span class="synonym-tag">replied</span> <span class="synonym-tag">muttered</span> <span class="synonym-tag">announced</span> <span class="synonym-tag">declared</span> <span class="synonym-tag">asked</span></p>
+        <p style="margin-top:8px; font-size:0.9em; color:#37474f;">Instead of: "Help me," he said. &nbsp; Try: "Help me," he <strong>cried</strong>. or "Help me," he <strong>whispered urgently</strong>.</p>
+      </div>
+      <div class="tip"><strong>Warning!</strong> Do not just pick ANY synonym from the thesaurus. Make sure it fits the meaning and tone of your sentence. "Enormous" and "colossal" are both synonyms for "big" -- but "colossal mistake" sounds much more serious than "enormous mistake"!</div>
+    </div>
+
+    <div class="section s5">
+      <h3>Dictionary vs. Thesaurus -- When to Use Each</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-grey">
+          <h4>Use a DICTIONARY when:</h4>
+          <ul>
+            <li>You find an unknown word and context clues are not enough</li>
+            <li>You need the exact, precise definition</li>
+            <li>You want to check spelling or pronunciation</li>
+            <li>You want to know what part of speech a word is</li>
+          </ul>
+        </div>
+        <div class="flex-col fb-purple">
+          <h4>Use a THESAURUS when:</h4>
+          <ul>
+            <li>You are repeating the same word too many times</li>
+            <li>You want a more exciting or precise word</li>
+            <li>You want to vary your vocabulary in writing</li>
+            <li>You know the meaning but want a stronger word</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Look up THREE words in a dictionary. Write the part of speech and definition for each.</li>
+        <li>Use a thesaurus to find THREE better alternatives for the word "good" in: "The movie was good." Rewrite the sentence three different ways.</li>
+        <li>Look up the word "run" in a dictionary. How many different definitions does it have?</li>
+        <li>Write a paragraph about any topic. Then use a thesaurus to replace at least FOUR words with more precise or interesting synonyms.</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>You Finished Unit 6 -- AND All 6 ELA Units!</h3>
+      <p><strong>DICTIONARY</strong> -- tells you what a word means, its part of speech, and how to use it.</p>
+      <p><strong>THESAURUS</strong> -- gives you synonyms to make your writing more varied and precise.</p>
+      <p>Always choose the synonym that <strong>best fits</strong> your meaning -- not just any synonym!</p>
+      <p class="cta" style="color:#37474f;">INCREDIBLE work! You have completed ALL 6 ELA units! Now take the Unit 6 Quiz!</p>
+    </div>
+  </div>
+</div>
+
+</div>
+<script>
+  const sections = document.querySelectorAll('.lesson-section');
+  const navLinks = document.querySelectorAll('.nav-bar a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 80) current = s.getAttribute('id'); });
+    navLinks.forEach(l => { l.classList.remove('active'); if (l.getAttribute('href') === '#' + current) l.classList.add('active'); });
+  });
+</script>
+</body>
+</html>
