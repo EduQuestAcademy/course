@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit 17 – Communities, Geography, and Maps | Owl Smart 3rd Grade</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #f4f7fb; color: #2d2d2d; line-height: 1.8; }
+    .top-header { background: linear-gradient(135deg, #1a237e, #283593); color: white; text-align: center; padding: 24px 20px 16px; }
+    .top-header h1 { font-size: 1.5em; margin-bottom: 4px; }
+    .top-header p { font-size: 0.95em; opacity: 0.88; }
+    .nav-bar { background: #1a237e; padding: 0 10px; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.3); overflow-x: auto; white-space: nowrap; }
+    .nav-bar a { display: inline-block; color: rgba(255,255,255,0.8); text-decoration: none; padding: 12px 14px; font-size: 0.82em; font-weight: bold; border-bottom: 3px solid transparent; transition: all 0.2s; }
+    .nav-bar a:hover, .nav-bar a.active { color: white; border-bottom-color: #ffd600; }
+    .main { max-width: 860px; margin: 0 auto; padding: 20px; }
+    .lesson-section { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.08); margin-bottom: 40px; scroll-margin-top: 60px; }
+    .banner { color: white; text-align: center; padding: 28px 24px; }
+    .banner h2 { font-size: 1.45em; margin-bottom: 6px; }
+    .banner p { font-size: 0.97em; opacity: 0.92; margin-bottom: 10px; }
+    .lesson-num { display: inline-block; background: rgba(255,255,255,0.25); border-radius: 20px; padding: 3px 14px; font-size: 0.82em; font-weight: bold; }
+    .b1 { background: linear-gradient(135deg, #1a237e, #3949ab); }
+    .b2 { background: linear-gradient(135deg, #004d40, #00897b); }
+    .b3 { background: linear-gradient(135deg, #1b5e20, #388e3c); }
+    .b4 { background: linear-gradient(135deg, #e65100, #fb8c00); }
+    .b5 { background: linear-gradient(135deg, #4a148c, #7b1fa2); }
+    .b6 { background: linear-gradient(135deg, #880e4f, #c2185b); }
+    .lesson-content { padding: 26px; }
+    .section { border-left: 5px solid; border-radius: 0 10px 10px 0; padding: 18px 20px; margin-bottom: 20px; }
+    .s1 { background: #e8eaf6; border-color: #1a237e; } .s1 h3 { color: #1a237e; }
+    .s2 { background: #e0f2f1; border-color: #004d40; } .s2 h3 { color: #004d40; }
+    .s3 { background: #e8f5e9; border-color: #1b5e20; } .s3 h3 { color: #1b5e20; }
+    .s4 { background: #fff3e0; border-color: #e65100; } .s4 h3 { color: #e65100; }
+    .s5 { background: #f3e5f5; border-color: #4a148c; } .s5 h3 { color: #4a148c; }
+    .s6 { background: #fce4ec; border-color: #880e4f; } .s6 h3 { color: #880e4f; }
+    .section h3 { margin-bottom: 8px; font-size: 1.05em; }
+    .vocab-box { background: #fff8e1; border: 2px solid #ffc107; border-radius: 10px; padding: 18px 20px; margin-bottom: 20px; }
+    .vocab-box h3 { color: #e65100; margin-bottom: 12px; font-size: 1.05em; }
+    .vocab-item { margin: 8px 0; font-size: 0.95em; }
+    .word { font-weight: bold; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.93em; }
+    th { background: #1a237e; color: white; padding: 9px 12px; text-align: left; }
+    td { padding: 9px 12px; border-bottom: 1px solid #e0e0e0; }
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) { background: #f5f5f5; }
+    .tip { background: #e8f5e9; border-left: 4px solid #43a047; border-radius: 0 8px 8px 0; padding: 12px 16px; margin: 12px 0; color: #1b5e20; font-size: 0.93em; }
+    .tip strong { color: #2e7d32; }
+    .try-it { background: #ede7f6; border: 2px dashed #7e57c2; border-radius: 10px; padding: 18px 20px; margin-bottom: 20px; }
+    .try-it h3 { color: #4527a0; margin-bottom: 10px; font-size: 1.05em; }
+    .try-it ol { padding-left: 20px; }
+    .try-it li { margin: 8px 0; font-size: 0.95em; }
+    .remember { background: #fff3e0; border: 2px solid #ff8f00; border-radius: 10px; padding: 18px 20px; text-align: center; margin-bottom: 4px; }
+    .remember h3 { color: #e65100; margin-bottom: 10px; font-size: 1.05em; }
+    .remember p { margin: 5px 0; font-size: 0.95em; }
+    .remember .cta { font-weight: bold; font-size: 1.05em; margin-top: 12px; }
+    .flex-row { display: flex; gap: 12px; flex-wrap: wrap; margin: 10px 0; }
+    .flex-col { flex: 1; min-width: 150px; border-radius: 10px; padding: 14px 16px; }
+    .fb-navy { background: #e8eaf6; border: 2px solid #3949ab; } .fb-navy h4 { color: #1a237e; margin-bottom: 6px; }
+    .fb-teal { background: #e0f2f1; border: 2px solid #00897b; } .fb-teal h4 { color: #004d40; margin-bottom: 6px; }
+    .fb-green { background: #e8f5e9; border: 2px solid #388e3c; } .fb-green h4 { color: #1b5e20; margin-bottom: 6px; }
+    .fb-orange { background: #fff3e0; border: 2px solid #f57c00; } .fb-orange h4 { color: #e65100; margin-bottom: 6px; }
+    .fb-purple { background: #f3e5f5; border: 2px solid #7b1fa2; } .fb-purple h4 { color: #4a148c; margin-bottom: 6px; }
+    .fb-pink { background: #fce4ec; border: 2px solid #e91e63; } .fb-pink h4 { color: #880e4f; margin-bottom: 6px; }
+    .fb-blue { background: #e3f2fd; border: 2px solid #1976d2; } .fb-blue h4 { color: #0d47a1; margin-bottom: 6px; }
+    .fb-brown { background: #efebe9; border: 2px solid #795548; } .fb-brown h4 { color: #4e342e; margin-bottom: 6px; }
+    .community-card { border-radius: 12px; padding: 16px 18px; margin-bottom: 12px; }
+    .cc-urban { background: #e8eaf6; border: 2px solid #3949ab; }
+    .cc-suburban { background: #e3f2fd; border: 2px solid #0288d1; }
+    .cc-rural { background: #e8f5e9; border: 2px solid #388e3c; }
+    .ss-box { background: #f9f9f9; border: 2px solid #90a4ae; border-radius: 10px; padding: 16px 18px; margin-bottom: 14px; }
+    .ss-box h4 { color: #37474f; margin-bottom: 8px; font-size: 0.98em; }
+    .circle-diagram { display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 0; margin: 14px 0; }
+    .circle-level { border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 0.82em; text-align: center; color: white; margin: -2px; }
+    ul { padding-left: 20px; } li { margin: 5px 0; font-size: 0.95em; }
+    p { margin-bottom: 8px; font-size: 0.95em; }
+  </style>
+</head>
+<body>
+
+<div class="top-header">
+  <h1>Owl Smart: A 3rd Grade Learning Journey</h1>
+  <p>Unit 17 -- Communities, Geography, and Maps &nbsp;|&nbsp; 6 Lessons</p>
+</div>
+
+<div class="nav-bar">
+  <a href="#lesson1">17.1 Communities</a>
+  <a href="#lesson2">17.2 Maps</a>
+  <a href="#lesson3">17.3 Landforms</a>
+  <a href="#lesson4">17.4 Washington Regions</a>
+  <a href="#lesson5">17.5 Geography &amp; Life</a>
+  <a href="#lesson6">17.6 Our Place in the World</a>
+</div>
+
+<div class="main">
+
+<!-- LESSON 17.1 -->
+<div class="lesson-section" id="lesson1">
+  <div class="banner b1">
+    <span class="lesson-num">Lesson 17.1</span>
+    <h2>Types of Communities: Urban, Suburban, and Rural</h2>
+    <p>People live in very different kinds of communities -- discover what makes each unique!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s1">
+      <h3>What Are We Learning Today?</h3>
+      <p>A <strong>community</strong> is a group of people who live in the same area and share resources, services, and a sense of belonging. Communities come in very different sizes and types! Today we explore the three main types: <strong>urban</strong>, <strong>suburban</strong>, and <strong>rural</strong> -- and discover what life is like in each one.</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#1a237e;">Community</span> -- A group of people living in the same place and sharing services and resources.</div>
+      <div class="vocab-item"><span class="word" style="color:#1a237e;">Urban</span> -- A city. Dense population, tall buildings, lots of businesses and services.</div>
+      <div class="vocab-item"><span class="word" style="color:#1a237e;">Suburban</span> -- An area surrounding a city. Mix of homes, schools, and shopping. Lower density than urban.</div>
+      <div class="vocab-item"><span class="word" style="color:#1a237e;">Rural</span> -- Countryside away from cities. Farms, forests, open space. Low population density.</div>
+      <div class="vocab-item"><span class="word" style="color:#1a237e;">Population Density</span> -- How many people live in a given area. Cities have high density; rural areas have low density.</div>
+      <div class="vocab-item"><span class="word" style="color:#1a237e;">Goods</span> -- Physical products people buy and sell (food, clothing, tools).</div>
+      <div class="vocab-item"><span class="word" style="color:#1a237e;">Services</span> -- Jobs that help people rather than making products (teaching, nursing, firefighting).</div>
+    </div>
+
+    <div class="community-card cc-urban">
+      <h4 style="color:#1a237e; margin-bottom:8px;">URBAN Communities (Cities)</h4>
+      <div class="flex-row" style="margin:0;">
+        <div style="flex:1; min-width:160px;">
+          <p style="font-size:0.9em;"><strong>Population:</strong> Very high (thousands to millions of people)</p>
+          <p style="font-size:0.9em;"><strong>Housing:</strong> Apartments, condos, tall buildings</p>
+          <p style="font-size:0.9em;"><strong>Transportation:</strong> Buses, trains, subways, taxis</p>
+        </div>
+        <div style="flex:1; min-width:160px;">
+          <p style="font-size:0.9em;"><strong>Services:</strong> Museums, hospitals, universities, sports stadiums</p>
+          <p style="font-size:0.9em;"><strong>Washington examples:</strong> Seattle, Spokane, Tacoma</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="community-card cc-suburban">
+      <h4 style="color:#0d47a1; margin-bottom:8px;">SUBURBAN Communities (Suburbs)</h4>
+      <div class="flex-row" style="margin:0;">
+        <div style="flex:1; min-width:160px;">
+          <p style="font-size:0.9em;"><strong>Population:</strong> Medium (thousands of people)</p>
+          <p style="font-size:0.9em;"><strong>Housing:</strong> Single-family homes with yards</p>
+          <p style="font-size:0.9em;"><strong>Transportation:</strong> Cars, some buses</p>
+        </div>
+        <div style="flex:1; min-width:160px;">
+          <p style="font-size:0.9em;"><strong>Services:</strong> Malls, parks, schools, community centres</p>
+          <p style="font-size:0.9em;"><strong>Washington examples:</strong> Bellevue, Redmond, Kennewick!</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="community-card cc-rural">
+      <h4 style="color:#1b5e20; margin-bottom:8px;">RURAL Communities (Countryside)</h4>
+      <div class="flex-row" style="margin:0;">
+        <div style="flex:1; min-width:160px;">
+          <p style="font-size:0.9em;"><strong>Population:</strong> Low (hundreds or fewer people)</p>
+          <p style="font-size:0.9em;"><strong>Housing:</strong> Houses on large lots, farms</p>
+          <p style="font-size:0.9em;"><strong>Transportation:</strong> Mostly cars, long distances to travel</p>
+        </div>
+        <div style="flex:1; min-width:160px;">
+          <p style="font-size:0.9em;"><strong>Services:</strong> Farming, forestry, ranching</p>
+          <p style="font-size:0.9em;"><strong>Washington examples:</strong> Walla Walla wine country, Palouse wheat farms, small mountain towns</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section s1">
+      <h3>Comparing the Three Community Types</h3>
+      <table>
+        <tr><th>Feature</th><th>Urban (City)</th><th>Suburban</th><th>Rural</th></tr>
+        <tr><td>Population density</td><td>Very high</td><td>Medium</td><td>Low</td></tr>
+        <tr><td>Typical housing</td><td>Apartments/condos</td><td>Single-family homes</td><td>Farms/houses</td></tr>
+        <tr><td>Transportation</td><td>Public transit</td><td>Cars + some transit</td><td>Cars only</td></tr>
+        <tr><td>Open space</td><td>Little (parks)</td><td>Some yards/parks</td><td>Lots of space</td></tr>
+        <tr><td>Main industries</td><td>Finance, tech, services</td><td>Mix of industries</td><td>Agriculture, forestry</td></tr>
+      </table>
+      <div class="tip"><strong>Kennewick Connection:</strong> Kennewick is part of the Tri-Cities area (with Richland and Pasco). With about 80,000 people, it is a mid-sized city -- sometimes called a suburban community. It has the services of a city but a more spread-out feel than a major urban centre like Seattle.</div>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>What type of community do you live in? How do you know?</li>
+        <li>Name TWO advantages of living in an urban community and TWO advantages of rural living.</li>
+        <li>How do you think transportation is different for someone living on a farm vs. someone living in downtown Seattle?</li>
+        <li>What goods and services does your community provide to the people who live there?</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p><strong>Urban</strong> = city, high density. <strong>Suburban</strong> = near a city, medium density.</p>
+      <p><strong>Rural</strong> = countryside, low density, farms and open space.</p>
+      <p>All three types depend on each other -- cities need food from farms, farms need services from cities!</p>
+      <p class="cta" style="color:#1a237e;">Great start! Click Lesson 17.2!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 17.2 -->
+<div class="lesson-section" id="lesson2">
+  <div class="banner b2">
+    <span class="lesson-num">Lesson 17.2</span>
+    <h2>Maps: Keys, Symbols, and Compass Roses</h2>
+    <p>Maps are tools that help us understand the world -- learn to read them like a pro!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s2">
+      <h3>What Are We Learning Today?</h3>
+      <p>A map is a flat representation of all or part of Earth's surface. Maps are incredibly useful tools -- they help us navigate, understand geography, plan trips, and see how places relate to each other. Today we learn the key parts of a map and how to read them accurately!</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#004d40;">Map</span> -- A flat drawing that shows all or part of Earth's surface from above.</div>
+      <div class="vocab-item"><span class="word" style="color:#004d40;">Map Key (Legend)</span> -- A box on the map that explains what each symbol or colour means.</div>
+      <div class="vocab-item"><span class="word" style="color:#004d40;">Map Symbol</span> -- A picture, shape, or colour used on a map to represent a real feature.</div>
+      <div class="vocab-item"><span class="word" style="color:#004d40;">Compass Rose</span> -- A symbol on a map showing the four cardinal directions: North, South, East, West.</div>
+      <div class="vocab-item"><span class="word" style="color:#004d40;">Cardinal Directions</span> -- North, South, East, West (N, S, E, W).</div>
+      <div class="vocab-item"><span class="word" style="color:#004d40;">Intermediate Directions</span> -- The directions between cardinal directions: Northeast, Northwest, Southeast, Southwest.</div>
+      <div class="vocab-item"><span class="word" style="color:#004d40;">Scale</span> -- The ratio between distance on the map and actual distance on Earth.</div>
+      <div class="vocab-item"><span class="word" style="color:#004d40;">Grid</span> -- A pattern of lines (latitude and longitude) that helps locate places on a map.</div>
+    </div>
+
+    <div class="section s2">
+      <h3>The Five Essential Parts of Every Map</h3>
+      <table>
+        <tr><th>Part</th><th>What It Does</th><th>Example</th></tr>
+        <tr><td><strong>Title</strong></td><td>Tells you what the map shows</td><td>"Map of Washington State Cities"</td></tr>
+        <tr><td><strong>Key / Legend</strong></td><td>Explains what symbols and colours mean</td><td>Blue = river, green = forest, star = capital city</td></tr>
+        <tr><td><strong>Compass Rose</strong></td><td>Shows directions (N, S, E, W and intermediate)</td><td>Arrow pointing up = North</td></tr>
+        <tr><td><strong>Scale</strong></td><td>Shows how map distance relates to real distance</td><td>1 inch = 50 miles</td></tr>
+        <tr><td><strong>Grid</strong></td><td>Lines of latitude and longitude to find exact locations</td><td>Kennewick is at about 46°N, 119°W</td></tr>
+      </table>
+    </div>
+
+    <div class="section s2">
+      <h3>Cardinal and Intermediate Directions</h3>
+      <div style="background:#e0f2f1; border-radius:12px; padding:18px; text-align:center; margin:12px 0;">
+        <div style="display:grid; grid-template-columns: 1fr 1fr 1fr; gap:6px; max-width:240px; margin:0 auto;">
+          <div style="background:#004d40; color:white; border-radius:8px; padding:8px; font-size:0.82em; font-weight:bold;">NW</div>
+          <div style="background:#00695c; color:white; border-radius:8px; padding:8px; font-size:0.9em; font-weight:bold;">N</div>
+          <div style="background:#004d40; color:white; border-radius:8px; padding:8px; font-size:0.82em; font-weight:bold;">NE</div>
+          <div style="background:#00695c; color:white; border-radius:8px; padding:8px; font-size:0.9em; font-weight:bold;">W</div>
+          <div style="background:#26a69a; color:white; border-radius:8px; padding:8px; font-size:0.88em; font-weight:bold;">MAP</div>
+          <div style="background:#00695c; color:white; border-radius:8px; padding:8px; font-size:0.9em; font-weight:bold;">E</div>
+          <div style="background:#004d40; color:white; border-radius:8px; padding:8px; font-size:0.82em; font-weight:bold;">SW</div>
+          <div style="background:#00695c; color:white; border-radius:8px; padding:8px; font-size:0.9em; font-weight:bold;">S</div>
+          <div style="background:#004d40; color:white; border-radius:8px; padding:8px; font-size:0.82em; font-weight:bold;">SE</div>
+        </div>
+        <p style="font-size:0.82em; color:#004d40; margin-top:10px; font-weight:bold;">Memory trick: "Never Eat Soggy Waffles" = North, East, South, West (clockwise!)</p>
+      </div>
+    </div>
+
+    <div class="section s2">
+      <h3>Types of Maps</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-teal">
+          <h4>Political Map</h4>
+          <p>Shows borders between countries, states, and cities. Useful for understanding government boundaries.</p>
+        </div>
+        <div class="flex-col fb-green">
+          <h4>Physical Map</h4>
+          <p>Shows natural features -- mountains, rivers, plains. Uses colours: green = low, brown = mountains, blue = water.</p>
+        </div>
+        <div class="flex-col fb-orange">
+          <h4>Road Map</h4>
+          <p>Shows roads, highways, and how to get from place to place. Used for navigation.</p>
+        </div>
+        <div class="flex-col fb-navy">
+          <h4>Population Map</h4>
+          <p>Uses colours or dots to show where people live and how densely populated each area is.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>What are the four cardinal directions? What memory trick helps you remember the order?</li>
+        <li>On a map of Washington state, Seattle is in the northwest. Spokane is in the east. In what direction would you travel to get from Kennewick to Seattle?</li>
+        <li>Why is a map key (legend) important? What would happen if a map had no key?</li>
+        <li>What is map scale? If 1 inch = 100 miles on a map, and two cities are 3 inches apart, how far apart are they in real life?</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p>Every map needs: <strong>Title, Key/Legend, Compass Rose, Scale, Grid.</strong></p>
+      <p>Cardinal directions: <strong>N, S, E, W</strong> -- "Never Eat Soggy Waffles!"</p>
+      <p>The map key explains what every symbol and colour on the map means.</p>
+      <p class="cta" style="color:#004d40;">Excellent! Click Lesson 17.3!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 17.3 -->
+<div class="lesson-section" id="lesson3">
+  <div class="banner b3">
+    <span class="lesson-num">Lesson 17.3</span>
+    <h2>Landforms and Bodies of Water</h2>
+    <p>Earth's surface is shaped into amazing features -- learn their names and characteristics!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s3">
+      <h3>What Are We Learning Today?</h3>
+      <p>Earth's surface has an incredible variety of natural features -- towering mountains, deep valleys, winding rivers, and vast plains. These features are called <strong>landforms</strong> and <strong>bodies of water</strong>. Today we learn to identify and describe them -- and find many of them right here in Washington state!</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Mountain</span> -- A very high, steep landform rising sharply above surrounding land.</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Valley</span> -- A low area of land between hills or mountains, often with a river.</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Plain</span> -- A large, flat area of land. Good for farming!</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Plateau</span> -- A flat area of land at a high elevation -- a "table" of land.</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Peninsula</span> -- Land surrounded by water on three sides. Example: Olympic Peninsula.</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Island</span> -- Land completely surrounded by water.</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">River</span> -- A large body of flowing freshwater that moves toward an ocean, lake, or another river.</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Bay</span> -- A body of water partially surrounded by land, opening to a larger water body.</div>
+      <div class="vocab-item"><span class="word" style="color:#1b5e20;">Ocean</span> -- The largest body of saltwater covering most of Earth's surface.</div>
+    </div>
+
+    <div class="section s3">
+      <h3>Major Landforms</h3>
+      <table>
+        <tr><th>Landform</th><th>Description</th><th>Washington Example</th></tr>
+        <tr><td><strong>Mountain</strong></td><td>Very high, steep landform</td><td>Mount Rainier (14,411 ft!) -- highest in WA</td></tr>
+        <tr><td><strong>Mountain Range</strong></td><td>A chain of connected mountains</td><td>Cascade Range, Olympic Mountains</td></tr>
+        <tr><td><strong>Valley</strong></td><td>Low land between mountains</td><td>Yakima Valley (famous for apples!)</td></tr>
+        <tr><td><strong>Plain</strong></td><td>Large, flat land area</td><td>Columbia Basin (wheat farming)</td></tr>
+        <tr><td><strong>Plateau</strong></td><td>Flat land at high elevation</td><td>Columbia Plateau (eastern WA)</td></tr>
+        <tr><td><strong>Peninsula</strong></td><td>Land surrounded by water on three sides</td><td>Olympic Peninsula</td></tr>
+        <tr><td><strong>Canyon</strong></td><td>Deep, narrow valley with steep sides</td><td>Columbia River Gorge</td></tr>
+        <tr><td><strong>Volcano</strong></td><td>Mountain formed by lava</td><td>Mount St. Helens, Mount Rainier</td></tr>
+      </table>
+    </div>
+
+    <div class="section s3">
+      <h3>Bodies of Water</h3>
+      <table>
+        <tr><th>Body of Water</th><th>Description</th><th>Washington Example</th></tr>
+        <tr><td><strong>Ocean</strong></td><td>Largest saltwater body -- covers 71% of Earth</td><td>Pacific Ocean (western border of WA!)</td></tr>
+        <tr><td><strong>River</strong></td><td>Flowing freshwater moving toward ocean/lake</td><td>Columbia River (one of longest in US!)</td></tr>
+        <tr><td><strong>Lake</strong></td><td>Body of freshwater surrounded by land</td><td>Lake Washington, Banks Lake</td></tr>
+        <tr><td><strong>Bay</strong></td><td>Smaller body of water partially enclosed by land</td><td>Puget Sound (actually a sound, like a long bay)</td></tr>
+        <tr><td><strong>Strait</strong></td><td>Narrow body of water connecting two larger bodies</td><td>Strait of Juan de Fuca (US/Canada border)</td></tr>
+        <tr><td><strong>Wetland</strong></td><td>Area where water covers soil all or part of the year</td><td>Columbia River floodplains</td></tr>
+      </table>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Name THREE landforms found in Washington state. For each one, say where it is and describe it.</li>
+        <li>What is the difference between a bay and a lake?</li>
+        <li>Why are plains and valleys good for farming? Think about their features.</li>
+        <li>Look at a map of Washington state. What ocean borders it to the west? What country is to the north?</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p><strong>Landforms</strong>: mountain, valley, plain, plateau, peninsula, canyon.</p>
+      <p><strong>Bodies of water</strong>: ocean, river, lake, bay, strait.</p>
+      <p>Washington state has ALL of these -- it is geographically extraordinary!</p>
+      <p class="cta" style="color:#1b5e20;">Well done! Click Lesson 17.4!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 17.4 -->
+<div class="lesson-section" id="lesson4">
+  <div class="banner b4">
+    <span class="lesson-num">Lesson 17.4</span>
+    <h2>Geographic Regions of Washington State</h2>
+    <p>Washington has dramatically different regions -- explore each one!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s4">
+      <h3>What Are We Learning Today?</h3>
+      <p>Washington state is one of the most geographically diverse states in the nation! In just one day's drive, you can go from a temperate rainforest to an active volcano to a desert to a major ocean port. Today we explore Washington's distinct geographic regions and what makes each one special.</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Region</span> -- An area with common characteristics that set it apart from surrounding areas.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Rain Shadow</span> -- An area on the dry side of a mountain range that receives little precipitation.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Cascade Mountains</span> -- A volcanic mountain range that divides Washington into wet west and dry east.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Columbia Plateau</span> -- A large flat volcanic plateau covering much of eastern Washington.</div>
+      <div class="vocab-item"><span class="word" style="color:#e65100;">Puget Sound Lowlands</span> -- The low, flat area around Puget Sound in western Washington -- most populated region.</div>
+    </div>
+
+    <div class="section s4">
+      <h3>Washington's Five Main Regions</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-blue">
+          <h4>1. Coast and Olympic Peninsula</h4>
+          <p><strong>Features:</strong> Pacific Ocean coastline, rainforests, mountains</p>
+          <p><strong>Climate:</strong> Very wet! 140+ inches of rain/year in some spots</p>
+          <p><strong>Known for:</strong> Hoh Rainforest, Olympic National Park, fishing industry</p>
+        </div>
+        <div class="flex-col fb-teal">
+          <h4>2. Puget Sound Lowlands</h4>
+          <p><strong>Features:</strong> Flat land, Puget Sound, islands</p>
+          <p><strong>Climate:</strong> Mild and rainy (38 inches/year)</p>
+          <p><strong>Known for:</strong> Seattle, Boeing, Microsoft, Amazon, port trade</p>
+        </div>
+        <div class="flex-col fb-green">
+          <h4>3. Cascade Mountains</h4>
+          <p><strong>Features:</strong> Volcanic peaks, forests, ski areas</p>
+          <p><strong>Climate:</strong> Cold, heavy snowfall</p>
+          <p><strong>Known for:</strong> Mount Rainier, North Cascades, skiing, hiking</p>
+        </div>
+      </div>
+      <div class="flex-row">
+        <div class="flex-col fb-orange">
+          <h4>4. Columbia Plateau (Eastern WA)</h4>
+          <p><strong>Features:</strong> Flat volcanic plateau, wheat fields, scablands</p>
+          <p><strong>Climate:</strong> Semi-arid (rain shadow from Cascades)</p>
+          <p><strong>Known for:</strong> Wheat farming, Spokane, Kennewick, Columbia River dams</p>
+        </div>
+        <div class="flex-col fb-purple">
+          <h4>5. Okanogan Highlands</h4>
+          <p><strong>Features:</strong> Rolling hills, forests, valleys</p>
+          <p><strong>Climate:</strong> Cold winters, warm summers</p>
+          <p><strong>Known for:</strong> Apple orchards, mining, cattle ranching</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ss-box">
+      <h4>Kennewick and the Tri-Cities: Your Home Region!</h4>
+      <p>Kennewick sits in the Columbia Plateau region, at the confluence (meeting point) of the Columbia, Snake, and Yakima Rivers. This location made it an important crossroads for trade and settlement. The area gets only about 8 inches of rain per year -- but thanks to irrigation from the Columbia River, the surrounding area grows apples, grapes, hops, asparagus, and many other crops. The Tri-Cities area (Kennewick, Richland, Pasco) is also home to the Hanford Site, which played a major role in US history during World War II and the Cold War.</p>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>What geographic feature divides Washington into wet western and dry eastern regions?</li>
+        <li>Why does eastern Washington get so much less rain than western Washington?</li>
+        <li>Which region of Washington do you live in? Name TWO things that region is known for.</li>
+        <li>How has the Columbia River been important to the development of the Kennewick/Tri-Cities area?</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p>The <strong>Cascade Mountains</strong> divide Washington into a wet west side and a dry east side.</p>
+      <p>The <strong>rain shadow effect</strong> makes eastern Washington semi-arid.</p>
+      <p>Kennewick is in the <strong>Columbia Plateau</strong> region -- shaped by the Columbia River!</p>
+      <p class="cta" style="color:#e65100;">Keep going! Click Lesson 17.5!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 17.5 -->
+<div class="lesson-section" id="lesson5">
+  <div class="banner b5">
+    <span class="lesson-num">Lesson 17.5</span>
+    <h2>How Geography Affects How People Live</h2>
+    <p>The land shapes everything -- where we live, what we eat, and how we work!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s5">
+      <h3>What Are We Learning Today?</h3>
+      <p>Geography is not just about maps and landforms -- it shapes every aspect of human life! Where you live determines your climate, what food can be grown nearby, what jobs are available, what sports are popular, how people travel, and even what languages are spoken. Today we explore how geography and human life are deeply connected.</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Human-Environment Interaction</span> -- How people adapt to, depend on, and modify their natural environment.</div>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Agriculture</span> -- The practice of farming -- growing crops and raising animals for food.</div>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Irrigation</span> -- A system of watering crops using canals, pipes, or sprinklers. Allows farming in dry areas.</div>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Industry</span> -- Economic activity that produces goods or provides services for trade.</div>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Trade Route</span> -- A path used to move goods from one place to another for exchange.</div>
+      <div class="vocab-item"><span class="word" style="color:#4a148c;">Adapt</span> -- To change behaviour or practices to suit a different environment or situation.</div>
+    </div>
+
+    <div class="section s5">
+      <h3>Geography Shapes Human Life in Four Key Ways</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-purple">
+          <h4>1. Where People Settle</h4>
+          <p>People settle near water, flat land, and mild climates. That is why most major cities are near rivers or coasts -- water = transportation + food + power.</p>
+          <p style="font-size:0.85em; margin-top:6px;"><em>Example: Seattle on Puget Sound; Kennewick at the Columbia River confluence.</em></p>
+        </div>
+        <div class="flex-col fb-green">
+          <h4>2. What Food People Eat</h4>
+          <p>Geography determines what can be grown or caught. Coastal people eat seafood. Prairie people raise cattle. River valley people grow fruits and vegetables.</p>
+          <p style="font-size:0.85em; margin-top:6px;"><em>Example: Eastern WA apples, Puget Sound salmon, Palouse wheat.</em></p>
+        </div>
+        <div class="flex-col fb-orange">
+          <h4>3. What Jobs People Have</h4>
+          <p>Geography creates industries. Mountains → mining and skiing. Forests → logging and tourism. Oceans → fishing and shipping. Flat land → farming.</p>
+          <p style="font-size:0.85em; margin-top:6px;"><em>Example: Kennewick has agriculture, nuclear technology (Hanford), and river trade.</em></p>
+        </div>
+        <div class="flex-col fb-blue">
+          <h4>4. How People Travel</h4>
+          <p>Mountains block travel (passes needed). Rivers are natural highways. Plains allow roads in any direction. Oceans connect distant places by ship.</p>
+          <p style="font-size:0.85em; margin-top:6px;"><em>Example: Columbia River was the highway of the Pacific Northwest for thousands of years.</em></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section s5">
+      <h3>People Adapt to AND Modify Their Environment</h3>
+      <table>
+        <tr><th>Environmental Challenge</th><th>How Humans Adapted</th><th>Washington Example</th></tr>
+        <tr><td>Dry climate, little rain</td><td>Built irrigation canals to bring river water to farms</td><td>Columbia Basin Irrigation Project</td></tr>
+        <tr><td>River blocking travel</td><td>Built bridges, ferries, and tunnels</td><td>Bridges over the Columbia River</td></tr>
+        <tr><td>Mountain blocking travel</td><td>Built mountain passes and tunnels</td><td>Snoqualmie Pass through Cascades</td></tr>
+        <tr><td>Flooding rivers</td><td>Built dams for flood control and power</td><td>Grand Coulee Dam on Columbia River</td></tr>
+        <tr><td>Need for electricity</td><td>Used rivers to generate hydroelectric power</td><td>14 major dams on Columbia River!</td></tr>
+      </table>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Why do most large cities tend to develop near rivers or coasts?</li>
+        <li>How has irrigation changed what is possible to grow in eastern Washington?</li>
+        <li>Name ONE way humans have modified the Columbia River. What were the benefits and costs?</li>
+        <li>How does living near mountains affect the sports and activities available to people?</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>Remember This!</h3>
+      <p>Geography shapes where people <strong>settle, what they eat, what jobs they have, and how they travel.</strong></p>
+      <p>People both <strong>adapt to</strong> (change their behaviour) and <strong>modify</strong> (change the environment) their surroundings.</p>
+      <p class="cta" style="color:#4a148c;">One more! Click Lesson 17.6!</p>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON 17.6 -->
+<div class="lesson-section" id="lesson6">
+  <div class="banner b6">
+    <span class="lesson-num">Lesson 17.6</span>
+    <h2>Our Place in the World: From Neighborhood to Globe</h2>
+    <p>You are part of many communities -- from your street to planet Earth!</p>
+  </div>
+  <div class="lesson-content">
+    <div class="section s6">
+      <h3>What Are We Learning Today?</h3>
+      <p>Every person on Earth belongs to many overlapping communities at the same time -- your street, your city, your state, your country, and the world. Understanding how these layers connect helps us see our place in the bigger picture and understand how we are connected to people around the globe!</p>
+    </div>
+    <div class="vocab-box">
+      <h3>Key Words to Know</h3>
+      <div class="vocab-item"><span class="word" style="color:#880e4f;">Address</span> -- The specific location of a place (street number, street name, city, state, ZIP code, country).</div>
+      <div class="vocab-item"><span class="word" style="color:#880e4f;">Neighbourhood</span> -- The immediate area where you live -- your street and nearby streets.</div>
+      <div class="vocab-item"><span class="word" style="color:#880e4f;">City</span> -- A large community with many people, businesses, and services.</div>
+      <div class="vocab-item"><span class="word" style="color:#880e4f;">County</span> -- A division of a state. Washington has 39 counties. Kennewick is in Benton County.</div>
+      <div class="vocab-item"><span class="word" style="color:#880e4f;">State</span> -- A large political division of a country. The US has 50 states.</div>
+      <div class="vocab-item"><span class="word" style="color:#880e4f;">Country (Nation)</span> -- A large territory with its own government. The United States is a country.</div>
+      <div class="vocab-item"><span class="word" style="color:#880e4f;">Continent</span> -- One of the seven major landmasses on Earth.</div>
+      <div class="vocab-item"><span class="word" style="color:#880e4f;">Globe</span> -- A three-dimensional model of Earth.</div>
+    </div>
+
+    <div class="section s6">
+      <h3>The Geographic Hierarchy -- From Smallest to Largest</h3>
+      <table>
+        <tr><th>Level</th><th>Your Location</th><th>Description</th></tr>
+        <tr><td><strong>Home</strong></td><td>Your house/apartment</td><td>Your specific address</td></tr>
+        <tr><td><strong>Neighbourhood</strong></td><td>Your street and nearby area</td><td>A small part of a city</td></tr>
+        <tr><td><strong>City</strong></td><td>Kennewick</td><td>A community with government and services</td></tr>
+        <tr><td><strong>County</strong></td><td>Benton County</td><td>A division of a state; 39 counties in Washington</td></tr>
+        <tr><td><strong>State</strong></td><td>Washington</td><td>One of 50 states in the USA</td></tr>
+        <tr><td><strong>Country</strong></td><td>United States of America</td><td>A nation with its own government and laws</td></tr>
+        <tr><td><strong>Continent</strong></td><td>North America</td><td>One of Earth's 7 major landmasses</td></tr>
+        <tr><td><strong>Planet</strong></td><td>Earth</td><td>Our home planet in the solar system</td></tr>
+      </table>
+    </div>
+
+    <div class="section s6">
+      <h3>The Seven Continents</h3>
+      <div class="flex-row">
+        <div class="flex-col fb-blue"><h4>North America</h4><p style="font-size:0.85em;">USA, Canada, Mexico, Central America</p></div>
+        <div class="flex-col fb-green"><h4>South America</h4><p style="font-size:0.85em;">Brazil, Argentina, Peru, Colombia</p></div>
+        <div class="flex-col fb-orange"><h4>Europe</h4><p style="font-size:0.85em;">UK, France, Germany, Spain, Italy</p></div>
+        <div class="flex-col fb-pink"><h4>Africa</h4><p style="font-size:0.85em;">Nigeria, Kenya, Egypt, South Africa</p></div>
+        <div class="flex-col fb-navy"><h4>Asia</h4><p style="font-size:0.85em;">China, India, Japan, Russia (partly)</p></div>
+        <div class="flex-col fb-purple"><h4>Australia/Oceania</h4><p style="font-size:0.85em;">Australia, New Zealand, Pacific islands</p></div>
+        <div class="flex-col fb-teal"><h4>Antarctica</h4><p style="font-size:0.85em;">The frozen continent -- no countries, only research stations!</p></div>
+      </div>
+      <div class="tip"><strong>Memory trick for continents:</strong> "Eat An Apple As A Nighttime Snack" = Europe, Antarctica, Asia, Africa, Australia, North America, South America!</div>
+    </div>
+
+    <div class="try-it">
+      <h3>Try It Yourself!</h3>
+      <ol>
+        <li>Write your complete geographic hierarchy from your home address all the way to your planet.</li>
+        <li>Name all seven continents. Which continent do you live on?</li>
+        <li>Washington state borders Canada to the north and which ocean to the west?</li>
+        <li>Kennewick is in what county? What state? What country?</li>
+      </ol>
+    </div>
+
+    <div class="remember">
+      <h3>You Finished Unit 17!</h3>
+      <p>From home → neighbourhood → city → county → state → country → continent → Earth!</p>
+      <p>Kennewick → Benton County → <strong>Washington State</strong> → USA → North America → Earth.</p>
+      <p>7 continents: <strong>North America, South America, Europe, Africa, Asia, Australia, Antarctica.</strong></p>
+      <p class="cta" style="color:#880e4f;">Fantastic work! You completed all 6 lessons in Unit 17! Now take the Unit 17 Quiz!</p>
+    </div>
+  </div>
+</div>
+
+</div>
+<script>
+  const sections = document.querySelectorAll('.lesson-section');
+  const navLinks = document.querySelectorAll('.nav-bar a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 80) current = s.getAttribute('id'); });
+    navLinks.forEach(l => { l.classList.remove('active'); if (l.getAttribute('href') === '#' + current) l.classList.add('active'); });
+  });
+</script>
+</body>
+</html>
