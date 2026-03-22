@@ -1,0 +1,60 @@
+settings,"Unit 13 Quiz: Life Science — Plants and Animals","Test your understanding of all 6 lessons from Unit 13!",0,minutes,,3,70,15,,question_pagination,sorting,,200
+question,"Which of the following is something ALL living things need to survive?","",single_choice,1.0,1,1,1,1,"All living things need water to survive. Water is essential for every biological process in every living cell. Animals drink water directly or get it from food. Plants absorb it through their roots. Without water, cells cannot function and organisms die quickly. Food, shelter, and air are also needs, but water is universally essential for all life."
+answer,"Sunlight",,0,0,a,0
+answer,"Water",,1,0,b,1
+answer,"Soil",,0,0,c,2
+answer,"A shell",,0,0,d,3
+question,"Which plant part is responsible for making the plant's food through photosynthesis?","",single_choice,1.0,1,1,1,1,"The LEAVES make the plant's food through photosynthesis. Leaves are flat and wide to capture maximum sunlight. They contain chlorophyll (the green pigment) that absorbs sunlight energy. Using sunlight, water from the roots, and carbon dioxide from the air, leaves produce sugar for the plant and release oxygen as a byproduct."
+answer,"Roots",,0,0,a,0
+answer,"Stem",,0,0,b,1
+answer,"Leaves",,1,0,c,2
+answer,"Flower",,0,0,d,3
+question,"A seed needs which THREE things to germinate?","",single_choice,1.0,1,1,1,1,"A seed needs water, warmth, and oxygen to germinate. It does NOT need sunlight at first -- it uses the food energy stored inside the seed itself to fuel the first stages of growth. Once the seedling pushes above ground and grows its first leaves, it then needs sunlight to begin photosynthesis."
+answer,"Sunlight, water, and warmth",,0,0,a,0
+answer,"Soil, sunlight, and oxygen",,0,0,b,1
+answer,"Water, warmth, and oxygen",,1,0,c,2
+answer,"Water, fertiliser, and sunlight",,0,0,d,3
+question,"Bees carry pollen from flower to flower. What is this process called?","",single_choice,1.0,1,1,1,1,"This process is called POLLINATION. When bees visit flowers to collect nectar, pollen sticks to their bodies. When they visit the next flower, they transfer that pollen, enabling seeds to form. Bees are the most important pollinators for many food crops. About 1/3 of our food depends on pollination by bees and other animals."
+answer,"Germination",,0,0,a,0
+answer,"Seed dispersal",,0,0,b,1
+answer,"Photosynthesis",,0,0,c,2
+answer,"Pollination",,1,0,d,3
+question,"Which group of vertebrates is warm-blooded, has hair or fur, and feeds its young with milk?","",single_choice,1.0,1,1,1,1,"MAMMALS are warm-blooded, have hair or fur, and feed their young with milk. Mammals include dogs, whales, bats, bears, deer, and humans. Birds are also warm-blooded but have feathers, not fur. Reptiles have scales and are cold-blooded. Fish breathe with gills and are cold-blooded."
+answer,"Birds",,0,0,a,0
+answer,"Reptiles",,0,0,b,1
+answer,"Mammals",,1,0,c,2
+answer,"Fish",,0,0,d,3
+question,"A polar bear's thick white fur is an example of what type of adaptation?","",single_choice,1.0,1,1,1,1,"Thick white fur is a PHYSICAL adaptation -- a body feature that helps survival. It provides warmth in the Arctic cold AND acts as camouflage against snow and ice. Behavioral adaptations are actions (like hibernating or migrating). The polar bear's fur is something it is born with as part of its body structure."
+answer,"Behavioral adaptation",,0,0,a,0
+answer,"Physical adaptation",,1,0,b,1
+answer,"Migration pattern",,0,0,c,2
+answer,"Life cycle stage",,0,0,d,3
+question,"Which of these is a behavioral adaptation?","",single_choice,1.0,1,1,1,1,"HIBERNATION is a behavioral adaptation -- it is an action (sleeping deeply through winter) that helps the animal survive when food is scarce. Sharp claws, waterproof feathers, and a camel's hump are all physical adaptations -- they are body structures, not actions. Behavioral adaptations are things an animal DOES, not physical features of its body."
+answer,"Sharp claws on an eagle",,0,0,a,0
+answer,"Waterproof feathers on a duck",,0,0,b,1
+answer,"A camel's hump",,0,0,c,2
+answer,"Hibernation in bears during winter",,1,0,d,3
+question,"What are the FOUR stages of complete metamorphosis in the correct order?","",single_choice,1.0,1,1,1,1,"Complete metamorphosis has four stages: Egg → Larva (caterpillar) → Pupa (chrysalis) → Adult (butterfly). This is 'complete' because the organism looks completely different at each stage. The larva eats and grows, the pupa transforms inside the chrysalis, and the adult emerges. Butterflies, beetles, and bees all go through complete metamorphosis."
+answer,"Egg → Nymph → Pupa → Adult",,0,0,a,0
+answer,"Egg → Larva → Pupa → Adult",,1,0,b,1
+answer,"Egg → Tadpole → Froglet → Adult",,0,0,c,2
+answer,"Seed → Sprout → Plant → Flower",,0,0,d,3
+question,"About what percentage of all animal species are invertebrates?","",single_choice,1.0,1,1,1,1,"About 97% of all animal species are invertebrates -- animals without a backbone! This includes insects, spiders, crabs, worms, jellyfish, snails, and many more. Vertebrates (fish, amphibians, reptiles, birds, mammals) make up only about 3% of all animal species. Despite their smaller numbers, vertebrates are often more familiar to us."
+answer,"About 25%",,0,0,a,0
+answer,"About 50%",,0,0,b,1
+answer,"About 75%",,0,0,c,2
+answer,"About 97%",,1,0,d,3
+question,"Plants make their own food using sunlight through a process called photosynthesis.","",true_false,1.0,1,1,1,1,"True! Photosynthesis is the process by which plants use sunlight energy, water from the soil, and carbon dioxide from the air to produce sugar (food) and oxygen. This makes plants PRODUCERS -- they produce their own food. Animals cannot do this; they must eat other organisms to get energy."
+answer,"True",,1,0,true,0
+answer,"False",,0,0,false,1
+question,"Frogs and salamanders are examples of reptiles.","",true_false,1.0,1,1,1,1,"False! Frogs and salamanders are AMPHIBIANS, not reptiles. Amphibians are cold-blooded vertebrates that typically spend part of their life in water and part on land, have moist skin, and breathe through their skin and lungs. Reptiles have dry scales and most lay hard-shelled eggs on land. Examples of reptiles include snakes, lizards, turtles, and crocodiles."
+answer,"True",,0,0,true,0
+answer,"False",,1,0,false,1
+question,"Seeds with feathery or wing-like structures are most likely dispersed by wind.","",true_false,1.0,1,1,1,1,"True! Seeds with feathery parachutes (like dandelions) or wing-like structures (like maple helicopter seeds) are perfectly designed for wind dispersal. They are lightweight and shaped to catch air currents, carrying them far from the parent plant. This is an excellent adaptation that helps plants colonise new areas without competing with the parent plant for resources."
+answer,"True",,1,0,true,0
+answer,"False",,0,0,false,1
+question,"The process of a seed beginning to grow -- pushing a root downward and a sprout upward -- is called {dash}.","",fill_in_the_blank,1.0,1,1,1,1,"This process is called GERMINATION. When a seed receives the right conditions (water, warmth, and oxygen), it begins to grow. First the root emerges and grows downward for water and anchoring, then the shoot (sprout) pushes upward toward the surface. Once above ground and exposed to sunlight, the seedling begins photosynthesis."
+answer,"germination",,1,0,,0
+question,"Animals without a backbone are called {dash}.","",fill_in_the_blank,1.0,1,1,1,1,"Animals without a backbone are called INVERTEBRATES. The prefix 'in-' means 'not,' and 'vertebrate' refers to the backbone (vertebral column). Invertebrates make up the vast majority of all animal species and include insects, spiders, crabs, worms, jellyfish, snails, and sea stars. Animals WITH a backbone are called vertebrates."
+answer,"invertebrates|invertebrate",,1,0,,0
+question,"Compare the life cycle of a butterfly to the life cycle of a frog. (a) What stages does each go through? (b) What is the biggest similarity between the two? (c) What is the biggest difference?","",open_ended,1.0,1,1,1,1,"A strong answer will state: (a) Butterfly: egg → larva (caterpillar) → pupa (chrysalis) → adult butterfly. Frog: egg → tadpole → froglet → adult frog. (b) SIMILARITY: Both go through dramatic changes in body form (metamorphosis) -- the young look completely different from the adults. Both start from eggs. Both end as adults that can reproduce. (c) DIFFERENCE: The butterfly has a distinct pupa/chrysalis stage where it is completely still and transforming; the frog has no pupa stage. The frog tadpole lives in water and has a tail; the caterpillar lives on land. The frog gradually changes (incomplete-like progression), while the butterfly has a complete resting transformation stage. Award credit for accurate stages, a meaningful similarity, and a meaningful difference."
