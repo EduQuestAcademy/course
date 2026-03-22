@@ -7,23 +7,21 @@
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap');
   :root {
-    --bg:      #f3f4f6;
+    --bg:      #e8f0fe;
     --white:   #ffffff;
-    --border:  #e5e7eb;
-    --text:    #111827;
-    --text-md: #374151;
+    --border:  #c7d2fe;
+    --text:    #1e1b4b;
+    --text-md: #3730a3;
     --text-sm: #6b7280;
     --text-xs: #9ca3af;
-    --blue:    #2563eb;
-    --blue-lt: #dbeafe;
     --radius:  14px;
-    --shadow:  0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04);
-    --shadow-md: 0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
+    --shadow:  0 1px 4px rgba(0,0,0,0.07), 0 1px 2px rgba(0,0,0,0.04);
+    --shadow-md: 0 4px 14px rgba(0,0,0,0.09);
   }
   * { box-sizing:border-box; margin:0; padding:0; }
   html { scroll-behavior:smooth; }
   body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); min-height:100vh; }
-  .app { max-width:480px; margin:0 auto; padding-bottom:90px; background:var(--bg); min-height:100vh; }
+  .app { max-width:480px; margin:0 auto; padding-bottom:90px; min-height:100vh; }
 
   /* ── HEADER ── */
   .header {
@@ -31,114 +29,139 @@
     background:var(--white);
     border-bottom:1px solid var(--border);
     position:sticky; top:0; z-index:50;
-    box-shadow:var(--shadow);
+    box-shadow:0 2px 10px rgba(99,102,241,0.1);
   }
   .header-top { display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; }
   .logo { display:flex; align-items:center; gap:10px; }
   .logo-icon {
-    width:40px; height:40px; flex-shrink:0;
-    background:linear-gradient(135deg,#2563eb,#7c3aed);
-    border-radius:11px; display:flex; align-items:center;
-    justify-content:center; font-size:19px;
-    box-shadow:0 2px 8px rgba(37,99,235,0.3);
+    width:42px; height:42px; flex-shrink:0;
+    background:linear-gradient(135deg,#4f46e5,#7c3aed);
+    border-radius:12px; display:flex; align-items:center;
+    justify-content:center; font-size:20px;
+    box-shadow:0 3px 10px rgba(79,70,229,0.35);
   }
-  .logo-name { font-size:0.92em; font-weight:700; color:var(--text); line-height:1.2; }
+  .logo-name { font-size:0.93em; font-weight:800; color:#1e1b4b; line-height:1.2; }
   .logo-sub  { font-size:0.62em; color:var(--text-sm); margin-top:1px; display:block; }
 
   .streak-pill {
     display:flex; align-items:center; gap:5px;
-    background:#fffbeb; border:1.5px solid #fde68a;
-    border-radius:20px; padding:5px 12px;
-    font-size:0.82em; font-weight:700; color:#b45309;
+    background:#fffbeb; border:1.5px solid #fbbf24;
+    border-radius:20px; padding:6px 13px;
+    font-size:0.83em; font-weight:700; color:#92400e;
   }
 
-  /* Progress */
   .prog-row { display:flex; justify-content:space-between; margin-bottom:6px; }
-  .prog-row span  { font-size:0.72em; font-weight:500; color:var(--text-sm); }
-  .prog-row strong{ font-size:0.72em; font-weight:700; color:var(--blue); font-family:'JetBrains Mono',monospace; }
-  .prog-track { height:8px; background:#e5e7eb; border-radius:4px; overflow:hidden; }
-  .prog-fill  { height:100%; background:linear-gradient(90deg,#2563eb,#7c3aed); border-radius:4px; transition:width 0.9s cubic-bezier(0.4,0,0.2,1); }
+  .prog-row span  { font-size:0.72em; font-weight:600; color:var(--text-sm); }
+  .prog-row strong{ font-size:0.72em; font-weight:700; color:#4f46e5; font-family:'JetBrains Mono',monospace; }
+  .prog-track { height:8px; background:#c7d2fe; border-radius:4px; overflow:hidden; }
+  .prog-fill  { height:100%; background:linear-gradient(90deg,#4f46e5,#7c3aed,#06b6d4); border-radius:4px; transition:width 0.9s cubic-bezier(0.4,0,0.2,1); }
 
-  /* ── STATS ── */
+  /* ── STATS — colour coded ── */
   .stats-row { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; padding:14px 16px 4px; }
   .stat-card {
-    background:var(--white); border:1px solid var(--border);
     border-radius:var(--radius); padding:14px 8px; text-align:center;
-    box-shadow:var(--shadow);
+    box-shadow:var(--shadow-md); border:none;
   }
-  .stat-num { font-size:1.55em; font-weight:800; font-family:'JetBrains Mono',monospace; color:var(--text); }
-  .stat-lbl { font-size:0.62em; color:var(--text-sm); margin-top:3px; font-weight:500; }
+  .stat-card.s1 { background:linear-gradient(135deg,#4f46e5,#6366f1); }
+  .stat-card.s2 { background:linear-gradient(135deg,#059669,#10b981); }
+  .stat-card.s3 { background:linear-gradient(135deg,#d97706,#f59e0b); }
+  .stat-num { font-size:1.55em; font-weight:800; font-family:'JetBrains Mono',monospace; color:#fff; }
+  .stat-lbl { font-size:0.62em; color:rgba(255,255,255,0.82); margin-top:3px; font-weight:600; }
 
   /* ── SECTION LABEL ── */
   .sec-label {
     font-size:0.65em; font-weight:700; letter-spacing:0.1em;
-    text-transform:uppercase; color:var(--text-xs);
+    text-transform:uppercase; color:#6366f1;
     padding:18px 16px 8px;
   }
 
-  /* ── BADGES ── */
+  /* ── BADGES — colour coded ── */
   .badges-strip { display:flex; gap:9px; padding:0 16px 4px; overflow-x:auto; scrollbar-width:none; }
   .badges-strip::-webkit-scrollbar { display:none; }
+
   .badge {
     flex-shrink:0; display:flex; flex-direction:column; align-items:center;
     gap:5px; padding:10px 13px;
-    background:var(--white); border:1px solid var(--border);
+    background:var(--white); border:1.5px solid var(--border);
     border-radius:12px; box-shadow:var(--shadow);
+    min-width:70px;
   }
-  .badge.earned { background:#fffbeb; border-color:#fde68a; }
-  .badge-icon  { font-size:1.3em; filter:grayscale(1) opacity(0.3); }
-  .badge.earned .badge-icon { filter:none; }
-  .badge-name  { font-size:0.6em; color:var(--text-xs); white-space:nowrap; font-weight:600; }
-  .badge.earned .badge-name { color:#b45309; }
+  .badge-icon { font-size:1.3em; filter:grayscale(1) opacity(0.28); }
+  .badge-name { font-size:0.6em; color:var(--text-xs); white-space:nowrap; font-weight:600; }
 
-  /* ── MODULE CARDS ── */
+  /* Each earned badge gets its own colour */
+  .badge.earned.b0 { background:#ede9fe; border-color:#a78bfa; }
+  .badge.earned.b0 .badge-name { color:#5b21b6; }
+  .badge.earned.b1 { background:#fef3c7; border-color:#fbbf24; }
+  .badge.earned.b1 .badge-name { color:#92400e; }
+  .badge.earned.b2 { background:#dbeafe; border-color:#60a5fa; }
+  .badge.earned.b2 .badge-name { color:#1e40af; }
+  .badge.earned.b3 { background:#dcfce7; border-color:#4ade80; }
+  .badge.earned.b3 .badge-name { color:#065f46; }
+  .badge.earned.b4 { background:#fee2e2; border-color:#f87171; }
+  .badge.earned.b4 .badge-name { color:#7f1d1d; }
+  .badge.earned.b5 { background:#fce7f3; border-color:#f472b6; }
+  .badge.earned.b5 .badge-name { color:#831843; }
+  .badge.earned.b6 { background:#ecfccb; border-color:#86efac; }
+  .badge.earned.b6 .badge-name { color:#3f6212; }
+  .badge.earned.b7 { background:#cffafe; border-color:#67e8f9; }
+  .badge.earned.b7 .badge-name { color:#0e7490; }
+  .badge.earned.b8 { background:#ffedd5; border-color:#fb923c; }
+  .badge.earned.b8 .badge-name { color:#7c2d12; }
+  .badge.earned.b9 { background:#f0fdf4; border-color:#4ade80; }
+  .badge.earned.b9 .badge-name { color:#14532d; }
+  .badge.earned .badge-icon { filter:none; }
+
+  /* ── MODULE CARDS — solid colour backgrounds ── */
   .modules-grid { display:flex; flex-direction:column; gap:10px; padding:6px 16px; }
 
   .module-card {
     display:block; border-radius:var(--radius);
-    text-decoration:none; color:var(--text);
-    background:var(--white); border:1px solid var(--border);
-    box-shadow:var(--shadow);
-    overflow:hidden; transition:box-shadow 0.18s, transform 0.18s;
+    text-decoration:none; color:#fff;
+    overflow:hidden; position:relative;
+    box-shadow:var(--shadow-md);
+    border:none;
+    transition:transform 0.18s, box-shadow 0.18s;
   }
-  .module-card:active { transform:scale(0.98); box-shadow:var(--shadow); }
-
-  .mc-inner { padding:14px 16px; }
+  .module-card:active { transform:scale(0.978); }
+  /* Top highlight */
+  .module-card::before {
+    content:''; position:absolute; top:0; left:0; right:0; height:40%;
+    background:linear-gradient(180deg,rgba(255,255,255,0.14) 0%,transparent 100%);
+    pointer-events:none; z-index:0;
+  }
+  .mc-inner { padding:14px 16px; position:relative; z-index:1; }
   .mc-top { display:flex; align-items:center; gap:13px; }
-
   .mc-icon {
     width:44px; height:44px; flex-shrink:0; border-radius:11px;
+    background:rgba(255,255,255,0.22);
     display:flex; align-items:center; justify-content:center; font-size:1.25em;
   }
-
   .mc-info { flex:1; min-width:0; }
-  .mc-num  { font-size:0.62em; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; font-family:'JetBrains Mono',monospace; margin-bottom:2px; }
-  .mc-title{ font-size:0.92em; font-weight:700; line-height:1.25; color:var(--text); }
-  .mc-meta { font-size:0.66em; color:var(--text-sm); margin-top:2px; font-weight:500; }
+  .mc-num  { font-size:0.62em; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; font-family:'JetBrains Mono',monospace; color:rgba(255,255,255,0.75); margin-bottom:2px; }
+  .mc-title{ font-size:0.93em; font-weight:800; color:#fff; line-height:1.25; }
+  .mc-meta { font-size:0.66em; color:rgba(255,255,255,0.7); margin-top:2px; font-weight:500; }
 
-  /* Ring */
   .ring-wrap { position:relative; width:42px; height:42px; flex-shrink:0; }
   .ring-wrap svg { transform:rotate(-90deg); }
-  .ring-pct {
-    position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
-    font-size:0.56em; font-weight:700; font-family:'JetBrains Mono',monospace;
-  }
+  .ring-pct { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-size:0.56em; font-weight:700; font-family:'JetBrains Mono',monospace; color:#fff; }
 
-  .mc-bar { margin-top:11px; height:4px; background:#f3f4f6; border-radius:2px; overflow:hidden; }
-  .mc-bar-fill { height:100%; border-radius:2px; transition:width 0.9s cubic-bezier(0.4,0,0.2,1); }
+  .mc-bar { margin-top:11px; height:4px; background:rgba(255,255,255,0.25); border-radius:2px; overflow:hidden; }
+  .mc-bar-fill { height:100%; background:rgba(255,255,255,0.8); border-radius:2px; transition:width 0.9s cubic-bezier(0.4,0,0.2,1); }
 
   .mc-bottom { display:flex; justify-content:space-between; align-items:center; margin-top:8px; }
   .dots { display:flex; gap:4px; flex-wrap:wrap; }
-  .dot { width:6px; height:6px; border-radius:50%; background:#e5e7eb; }
-  .mc-status { font-size:0.62em; color:var(--text-sm); font-family:'JetBrains Mono',monospace; font-weight:600; }
-  .mc-status.complete { color:#059669; }
+  .dot { width:6px; height:6px; border-radius:50%; background:rgba(255,255,255,0.28); }
+  .dot.done { background:rgba(255,255,255,0.88); }
+  .mc-status { font-size:0.62em; color:rgba(255,255,255,0.75); font-family:'JetBrains Mono',monospace; font-weight:600; }
+  .mc-status.complete { color:#fff; }
 
   /* ── BOTTOM NAV ── */
   .bottom-nav {
     position:fixed; bottom:0; left:50%; transform:translateX(-50%);
     width:100%; max-width:480px;
     background:var(--white); border-top:1px solid var(--border);
-    box-shadow:0 -2px 10px rgba(0,0,0,0.06);
+    box-shadow:0 -2px 12px rgba(99,102,241,0.12);
     display:flex; justify-content:space-around;
     padding:10px 0 max(10px,env(safe-area-inset-bottom)); z-index:100;
   }
@@ -147,13 +170,13 @@
     padding:4px 20px; background:none; border:none; cursor:pointer;
     color:var(--text-xs); font-family:'Inter',sans-serif; transition:color 0.2s;
   }
-  .nav-btn.active { color:var(--blue); }
+  .nav-btn.active { color:#4f46e5; }
   .nav-btn span { font-size:0.6em; font-weight:600; }
   .nav-icon { font-size:1.25em; }
 
   .toast {
     position:fixed; bottom:90px; left:50%; transform:translateX(-50%) translateY(10px);
-    background:var(--text); border-radius:20px; padding:10px 20px;
+    background:#1e1b4b; border-radius:20px; padding:10px 20px;
     font-size:0.82em; color:#fff;
     opacity:0; transition:all 0.3s; pointer-events:none; z-index:200; white-space:nowrap;
   }
@@ -192,9 +215,9 @@
   </div>
 
   <div class="stats-row">
-    <div class="stat-card"><div class="stat-num" id="statQuizzes">0</div><div class="stat-lbl">Quizzes Done</div></div>
-    <div class="stat-card"><div class="stat-num" id="statBest">—</div><div class="stat-lbl">Best Score</div></div>
-    <div class="stat-card"><div class="stat-num" id="statBadges">0</div><div class="stat-lbl">Badges</div></div>
+    <div class="stat-card s1"><div class="stat-num" id="statQuizzes">0</div><div class="stat-lbl">Quizzes Done</div></div>
+    <div class="stat-card s2"><div class="stat-num" id="statBest">—</div><div class="stat-lbl">Best Score</div></div>
+    <div class="stat-card s3"><div class="stat-num" id="statBadges">0</div><div class="stat-lbl">Badges</div></div>
   </div>
 
   <div class="sec-label">Achievements</div>
@@ -221,20 +244,19 @@
 <div class="toast" id="toast"></div>
 
 <script>
-// Each module: distinct icon bg colour + accent colour
 const MODULES=[
-  {id:1,  title:'The Parts of Speech System',       icon:'🔤', iconBg:'#ede9fe', iconClr:'#5b21b6', accentClr:'#7c3aed', lessons:8},
-  {id:2,  title:'The Sentence',                      icon:'📝', iconBg:'#dbeafe', iconClr:'#1e40af', accentClr:'#2563eb', lessons:10},
-  {id:3,  title:'Articles and Determiners',          icon:'🔍', iconBg:'#fef3c7', iconClr:'#92400e', accentClr:'#d97706', lessons:10},
-  {id:4,  title:'The Tense System',                  icon:'⏱️', iconBg:'#dcfce7', iconClr:'#065f46', accentClr:'#059669', lessons:15},
-  {id:5,  title:'Modal Verbs',                       icon:'💬', iconBg:'#fce7f3', iconClr:'#9d174d', accentClr:'#db2777', lessons:10},
-  {id:6,  title:'Active and Passive Voice',          icon:'🔄', iconBg:'#cffafe', iconClr:'#0e7490', accentClr:'#0891b2', lessons:7},
-  {id:7,  title:'Reported Speech',                   icon:'🗣️', iconBg:'#ffedd5', iconClr:'#7c2d12', accentClr:'#ea580c', lessons:8},
-  {id:8,  title:'Sentence Structures and Clauses',   icon:'🧩', iconBg:'#ecfccb', iconClr:'#3f6212', accentClr:'#65a30d', lessons:9},
-  {id:9,  title:'Conditionals and Hypotheticals',    icon:'🤔', iconBg:'#e0f2fe', iconClr:'#0c4a6e', accentClr:'#0284c7', lessons:8},
-  {id:10, title:'Transformation and Synthesis',      icon:'⚡', iconBg:'#f3e8ff', iconClr:'#581c87', accentClr:'#9333ea', lessons:7},
-  {id:11, title:'Integrated Grammar Mastery',        icon:'🎯', iconBg:'#ccfbf1', iconClr:'#134e4a', accentClr:'#0d9488', lessons:6},
-  {id:12, title:'British and American English',      icon:'🌍', iconBg:'#fee2e2', iconClr:'#7f1d1d', accentClr:'#dc2626', lessons:5},
+  {id:1,  title:'The Parts of Speech System',       icon:'🔤', bg:'#5b21b6', lessons:8},
+  {id:2,  title:'The Sentence',                      icon:'📝', bg:'#1d4ed8', lessons:10},
+  {id:3,  title:'Articles and Determiners',          icon:'🔍', bg:'#b45309', lessons:10},
+  {id:4,  title:'The Tense System',                  icon:'⏱️', bg:'#065f46', lessons:15},
+  {id:5,  title:'Modal Verbs',                       icon:'💬', bg:'#9d174d', lessons:10},
+  {id:6,  title:'Active and Passive Voice',          icon:'🔄', bg:'#0e7490', lessons:7},
+  {id:7,  title:'Reported Speech',                   icon:'🗣️', bg:'#c2410c', lessons:8},
+  {id:8,  title:'Sentence Structures & Clauses',     icon:'🧩', bg:'#4d7c0f', lessons:9},
+  {id:9,  title:'Conditionals & Hypotheticals',      icon:'🤔', bg:'#1e40af', lessons:8},
+  {id:10, title:'Transformation and Synthesis',      icon:'⚡', bg:'#6b21a8', lessons:7},
+  {id:11, title:'Integrated Grammar Mastery',        icon:'🎯', bg:'#0f766e', lessons:6},
+  {id:12, title:'British and American English',      icon:'🌍', bg:'#b91c1c', lessons:5},
 ];
 const BADGES=[
   {id:'first_quiz',    icon:'⭐', name:'First Step'},
@@ -254,59 +276,56 @@ function saveData(d){try{localStorage.setItem('grammar_app',JSON.stringify(d));}
 function getStreak(d){if(!d.lastStudy)return 1;const t=new Date().toDateString(),y=new Date(Date.now()-86400000).toDateString();return(d.lastStudy===t||d.lastStudy===y)?(d.streak||1):1;}
 
 function render(){
-  const d=getData(),progress=d.progress||{},earned=d.badges||[];
+  const d=getData(),p=d.progress||{},e=d.badges||[];
   document.getElementById('streakCount').textContent=getStreak(d);
   let total=0,done=0,best=0,tdone=0;
-  MODULES.forEach(m=>{
-    const q=m.lessons+1;total+=q;
-    for(let l=1;l<=q;l++){const v=progress[`m${m.id}_l${l}`];if(v!==undefined){done++;tdone++;if(v>best)best=v;}}
-  });
+  MODULES.forEach(m=>{const q=m.lessons+1;total+=q;for(let l=1;l<=q;l++){const v=p[`m${m.id}_l${l}`];if(v!==undefined){done++;tdone++;if(v>best)best=v;}}});
   const pct=total?Math.round(done/total*100):0;
   document.getElementById('overallPct').textContent=pct+'%';
   document.getElementById('overallBar').style.width=pct+'%';
   document.getElementById('statQuizzes').textContent=tdone;
   document.getElementById('statBest').textContent=tdone?best+'%':'—';
-  document.getElementById('statBadges').textContent=earned.length;
+  document.getElementById('statBadges').textContent=e.length;
 
-  document.getElementById('badgesStrip').innerHTML=BADGES.map(b=>
-    `<div class="badge ${earned.includes(b.id)?'earned':''}" title="${b.name}">
+  // Badges with colour classes
+  document.getElementById('badgesStrip').innerHTML=BADGES.map((b,i)=>`
+    <div class="badge ${e.includes(b.id)?`earned b${i}`:''}">
       <div class="badge-icon">${b.icon}</div>
       <div class="badge-name">${b.name}</div>
     </div>`).join('');
 
+  // Module cards
   document.getElementById('modulesGrid').innerHTML=MODULES.map(m=>{
     let dl=0;const q=m.lessons+1;
-    for(let l=1;l<=q;l++) if(progress[`m${m.id}_l${l}`]!==undefined) dl++;
+    for(let l=1;l<=q;l++) if(p[`m${m.id}_l${l}`]!==undefined) dl++;
     const mp=Math.round(dl/q*100),hp=dl>0,ic=dl===q;
     const r=16,circ=2*Math.PI*r,dash=circ-(mp/100)*circ;
     const dots=Array.from({length:m.lessons},(_,i)=>
-      `<div class="dot ${progress[`m${m.id}_l${i+1}`]!==undefined?'done':''}"></div>`).join('');
+      `<div class="dot ${p[`m${m.id}_l${i+1}`]!==undefined?'done':''}"></div>`).join('');
     return `
-    <a class="module-card" href="modules/module${m.id}.html">
+    <a class="module-card" href="modules/module${m.id}.html" style="background:${m.bg};">
       <div class="mc-inner">
         <div class="mc-top">
-          <div class="mc-icon" style="background:${m.iconBg}">${m.icon}</div>
+          <div class="mc-icon">${m.icon}</div>
           <div class="mc-info">
-            <div class="mc-num" style="color:${m.accentClr}">Module ${m.id}</div>
+            <div class="mc-num">Module ${m.id}</div>
             <div class="mc-title">${m.title}</div>
             <div class="mc-meta">${m.lessons} lessons + module quiz · ${(m.lessons+1)*20} questions</div>
           </div>
           <div class="ring-wrap">
             <svg width="42" height="42" viewBox="0 0 42 42">
-              <circle cx="21" cy="21" r="${r}" fill="none" stroke="#f3f4f6" stroke-width="3"/>
-              <circle cx="21" cy="21" r="${r}" fill="none" stroke="${m.accentClr}"
+              <circle cx="21" cy="21" r="${r}" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="3"/>
+              <circle cx="21" cy="21" r="${r}" fill="none" stroke="rgba(255,255,255,0.85)"
                 stroke-width="3" stroke-linecap="round"
                 stroke-dasharray="${circ.toFixed(1)}" stroke-dashoffset="${dash.toFixed(1)}"/>
             </svg>
-            <div class="ring-pct" style="color:${m.accentClr}">${hp?(ic?'✓':mp+'%'):''}</div>
+            <div class="ring-pct">${hp?(ic?'✓':mp+'%'):''}</div>
           </div>
         </div>
-        <div class="mc-bar">
-          <div class="mc-bar-fill" style="width:${mp}%;background:${m.accentClr}"></div>
-        </div>
+        <div class="mc-bar"><div class="mc-bar-fill" style="width:${mp}%"></div></div>
         <div class="mc-bottom">
-          <div class="dots">${dots.replace(/class="dot done"/g,`class="dot done" style="background:${m.accentClr}"`)}</div>
-          <div class="mc-status ${ic?'complete':''}" style="${hp&&!ic?`color:${m.accentClr}`:''}">${ic?'✓ Complete':hp?`${dl}/${q} done`:`${q} quizzes`}</div>
+          <div class="dots">${dots}</div>
+          <div class="mc-status ${ic?'complete':''}">${ic?'✓ Complete':hp?`${dl}/${q} done`:`${q} quizzes`}</div>
         </div>
       </div>
     </a>`;
