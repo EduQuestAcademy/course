@@ -4,67 +4,79 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
 <title>Lesson 1.7 — Conjunctions: Joining Words and Ideas | Grammar Mastery</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap');
   :root{
-    --bg:#e8f0fe;--white:#ffffff;--border:#d1d5db;
-    --text:#111827;--text-md:#374151;--text-sm:#6b7280;--text-xs:#9ca3af;
-    --accent:#5b21b6;--accent-lt:#ede9fe;--accent-mid:#7c3aed;
+    --bg:#e8f0fe;--white:#fff;--border:#c7d2fe;
+    --text:#1e1b4b;--text-md:#374151;--text-sm:#6b7280;--text-xs:#9ca3af;
+    --accent:#5b21b6;--accent-mid:#7c3aed;--accent-lt:#ede9fe;
     --ok:#059669;--ok-lt:#d1fae5;--ok-dk:#065f46;
     --no:#dc2626;--no-lt:#fee2e2;--no-dk:#7f1d1d;
-    --gold:#b45309;--radius:14px;
+    --radius:14px;
     --shadow:0 1px 4px rgba(0,0,0,0.08),0 1px 2px rgba(0,0,0,0.04);
+    --shadow-md:0 4px 14px rgba(0,0,0,0.09);
   }
   *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
   html{scroll-behavior:smooth;}
-  body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;}
-  .app{max-width:480px;margin:0 auto;padding-bottom:40px;background:var(--bg);min-height:100vh;}
+  body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;font-size:16px;}
+  .app{max-width:540px;margin:0 auto;padding-bottom:40px;background:var(--bg);min-height:100vh;}
+
+  /* HEADER */
   .qh{
-    padding:14px 16px;display:flex;align-items:center;justify-content:space-between;
+    padding:14px 18px;display:flex;align-items:center;justify-content:space-between;
     background:var(--white);border-bottom:1px solid var(--border);
     position:sticky;top:0;z-index:50;
-    box-shadow:0 2px 8px rgba(0,0,0,0.07);
+    box-shadow:0 2px 10px rgba(99,102,241,0.1);
   }
-  .back{color:var(--accent-mid);font-size:0.83em;font-weight:700;background:none;border:none;cursor:pointer;font-family:'Inter',sans-serif;text-decoration:none;}
+  .back{color:var(--accent-mid);font-size:0.87em;font-weight:700;background:none;border:none;
+    cursor:pointer;font-family:'Inter',sans-serif;text-decoration:none;letter-spacing:-0.01em;}
   .qm{text-align:right;}
-  .qc{font-size:0.72em;font-family:'JetBrains Mono',monospace;color:var(--accent-mid);font-weight:700;}
-  .ql{font-size:0.62em;color:var(--text-xs);margin-top:1px;}
-  .mt{background:#f3f4f6;border:1px solid var(--border);border-radius:9px;padding:7px 9px;font-size:1em;cursor:pointer;}
+  .qc{font-size:0.78em;font-family:'JetBrains Mono',monospace;color:var(--accent-mid);font-weight:700;}
+  .ql{font-size:0.68em;color:var(--text-xs);margin-top:2px;}
+  .mt{background:var(--accent-lt);border:1.5px solid #c4b5fd;border-radius:10px;
+    padding:7px 10px;font-size:1.1em;cursor:pointer;line-height:1;}
+
+  /* PROGRESS */
   .qp{height:5px;background:#c7d2fe;}
-  .qpf{height:100%;background:linear-gradient(90deg,#5b21b6,#2563eb);transition:width .4s cubic-bezier(.4,0,.2,1);}
-  .qa{padding:22px 16px 14px;}
+  .qpf{height:100%;background:linear-gradient(90deg,#5b21b6,#7c3aed);
+    transition:width .4s cubic-bezier(.4,0,.2,1);}
+
+  /* QUESTION AREA */
+  .qa{padding:24px 18px 16px;}
   .qtb{
     display:inline-flex;align-items:center;
     background:var(--accent-lt);border:1.5px solid #c4b5fd;
-    border-radius:20px;padding:5px 14px;
-    font-size:0.62em;font-weight:700;letter-spacing:0.06em;
+    border-radius:20px;padding:5px 15px;
+    font-size:0.68em;font-weight:700;letter-spacing:0.07em;
     color:var(--accent);text-transform:uppercase;
-    font-family:'JetBrains Mono',monospace;margin-bottom:13px;
+    font-family:'JetBrains Mono',monospace;margin-bottom:14px;
   }
-  .qt{font-size:1.05em;font-weight:700;line-height:1.55;color:var(--text);}
-  .ol{display:flex;flex-direction:column;gap:9px;padding:0 16px;}
+  .qt{font-size:1.1em;font-weight:700;line-height:1.55;color:var(--text);}
+
+  /* OPTIONS */
+  .ol{display:flex;flex-direction:column;gap:10px;padding:0 18px;}
   .ob{
-    display:flex;align-items:center;gap:13px;
+    display:flex;align-items:center;gap:14px;
     background:var(--white);border:1.5px solid var(--border);
-    border-radius:var(--radius);padding:14px 15px;
+    border-radius:var(--radius);padding:15px 16px;
     cursor:pointer;transition:all .15s;text-align:left;
     font-family:'Inter',sans-serif;width:100%;color:var(--text);
     box-shadow:var(--shadow);
   }
-  .ob:hover{border-color:#a78bfa;background:#faf5ff;box-shadow:0 3px 10px rgba(124,58,237,0.12);}
+  .ob:hover{border-color:#a78bfa;background:#faf5ff;box-shadow:0 3px 12px rgba(124,58,237,0.13);}
   .ob:active{transform:scale(.98);}
   .ob:disabled{cursor:default;}
   .ok2{
-    width:31px;height:31px;flex-shrink:0;border-radius:9px;
+    width:33px;height:33px;flex-shrink:0;border-radius:9px;
     background:var(--accent-lt);
     display:flex;align-items:center;justify-content:center;
-    font-size:0.73em;font-weight:700;font-family:'JetBrains Mono',monospace;
+    font-size:0.78em;font-weight:700;font-family:'JetBrains Mono',monospace;
     color:var(--accent);transition:all .15s;
   }
-  .ot{font-size:0.9em;line-height:1.4;flex:1;font-weight:500;color:var(--text);}
-  .oi{font-size:1em;opacity:0;transition:opacity .2s;}
+  .ot{font-size:0.95em;line-height:1.4;flex:1;font-weight:500;color:var(--text);}
+  .oi{font-size:1.1em;opacity:0;transition:opacity .2s;}
+
+  /* States */
   .ob.correct{border-color:var(--ok);background:var(--ok-lt);}
   .ob.correct .ok2{background:var(--ok);color:white;}
   .ob.correct .oi{opacity:1;}
@@ -72,375 +84,324 @@
   .ob.wrong .ok2{background:var(--no);color:white;}
   .ob.wrong .oi{opacity:1;}
   .ob.dimmed{opacity:.38;}
-  .fb{padding:0 16px;}
+
+  /* TRUE/FALSE */
+  .tfo{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:0 18px;}
+
+  /* FILL IN BLANK */
+  .fb{padding:0 18px;}
   .fi{
     width:100%;background:var(--white);border:1.5px solid var(--border);
-    border-radius:var(--radius);padding:13px 15px;
-    font-family:'Inter',sans-serif;font-size:0.95em;color:var(--text);
+    border-radius:var(--radius);padding:14px 16px;
+    font-family:'Inter',sans-serif;font-size:1em;color:var(--text);
     outline:none;transition:border-color .2s;box-shadow:var(--shadow);
   }
   .fi:focus{border-color:var(--accent-mid);box-shadow:0 0 0 3px rgba(124,58,237,0.1);}
   .fi.correct{border-color:var(--ok);background:var(--ok-lt);color:var(--ok-dk);}
   .fi.wrong{border-color:var(--no);background:var(--no-lt);color:var(--no-dk);}
+  .hint{font-size:0.75em;color:var(--text-xs);margin-top:6px;padding-left:2px;}
   .fs{
-    margin-top:9px;width:100%;
+    margin-top:10px;width:100%;
     background:linear-gradient(135deg,#5b21b6,#7c3aed);
-    border:none;border-radius:var(--radius);padding:13px;
-    font-family:'Inter',sans-serif;font-size:0.9em;font-weight:700;color:white;cursor:pointer;
-    box-shadow:0 3px 10px rgba(91,33,182,0.3);
+    border:none;border-radius:var(--radius);padding:14px;
+    font-family:'Inter',sans-serif;font-size:1em;font-weight:700;color:white;cursor:pointer;
+    box-shadow:0 3px 10px rgba(91,33,182,0.28);
   }
   .fs:disabled{opacity:.5;cursor:default;}
-  .tfo{display:grid;grid-template-columns:1fr 1fr;gap:9px;padding:0 16px;}
+
+  /* EXPLANATION */
   .eb{
-    margin:13px 16px 0;background:var(--white);border:1px solid var(--border);
-    border-left:4px solid var(--accent-mid);
-    border-radius:var(--radius);padding:13px 15px;
-    font-size:0.83em;line-height:1.65;color:var(--text-md);
+    margin:14px 18px 0;background:var(--white);
+    border:1px solid var(--border);border-left:4px solid var(--accent-mid);
+    border-radius:var(--radius);padding:14px 16px;
+    font-size:0.88em;line-height:1.7;color:var(--text-md);
     display:none;box-shadow:var(--shadow);
   }
-  .eb.show{display:block;animation:fi2 .3s ease;}
-  .el{font-size:0.7em;font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-family:'JetBrains Mono',monospace;margin-bottom:5px;}
+  .eb.show{display:block;animation:fadeIn .3s ease;}
+  .el{font-size:0.72em;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+    font-family:'JetBrains Mono',monospace;margin-bottom:5px;}
   .el.correct{color:var(--ok);}
   .el.wrong{color:var(--no);}
+
+  /* NEXT BUTTON */
   .nb2{
-    display:none;margin:13px 16px 0;width:calc(100% - 32px);
+    display:none;margin:14px 18px 0;width:calc(100% - 36px);
     background:linear-gradient(135deg,#5b21b6,#7c3aed);
     border:none;border-radius:var(--radius);
-    padding:14px;font-family:'Inter',sans-serif;font-size:0.95em;
+    padding:15px;font-family:'Inter',sans-serif;font-size:1em;
     font-weight:700;color:white;cursor:pointer;
-    box-shadow:0 3px 10px rgba(91,33,182,0.3);
+    box-shadow:0 3px 10px rgba(91,33,182,0.28);
   }
-  .nb2.show{display:block;animation:fu .3s ease;}
+  .nb2.show{display:block;animation:fadeUp .3s ease;}
   .nb2:active{transform:scale(.98);}
-  .rs{display:none;padding:28px 16px;flex-direction:column;align-items:center;}
-  .rs.show{display:flex;animation:fu .5s ease;}
-  .rtr{font-size:3.8em;margin-bottom:8px;animation:bn .6s ease;}
+
+  /* RESULTS */
+  .rs{display:none;padding:30px 18px;flex-direction:column;align-items:center;}
+  .rs.show{display:flex;animation:fadeUp .5s ease;}
+  .rtr{font-size:4em;margin-bottom:10px;animation:bounce .6s ease;}
   .rsb{
-    font-size:3.2em;font-weight:800;font-family:'JetBrains Mono',monospace;
+    font-size:3.5em;font-weight:800;font-family:'JetBrains Mono',monospace;
     background:linear-gradient(135deg,#5b21b6,#2563eb);
     -webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px;
   }
-  .rl{font-size:0.88em;color:var(--text-sm);margin-bottom:22px;font-weight:500;}
+  .rl{font-size:0.9em;color:var(--text-sm);margin-bottom:24px;font-weight:500;}
   .rbd{
     width:100%;background:var(--white);border:1px solid var(--border);
-    border-radius:var(--radius);padding:14px;margin-bottom:18px;box-shadow:var(--shadow);
+    border-radius:var(--radius);padding:16px;margin-bottom:20px;
+    box-shadow:var(--shadow);
   }
-  .bdr{display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid #f3f4f6;font-size:0.83em;color:var(--text-md);}
+  .bdr{display:flex;justify-content:space-between;align-items:center;
+    padding:8px 0;border-bottom:1px solid #f3f4f6;font-size:0.88em;color:var(--text-md);}
   .bdr:last-child{border-bottom:none;}
   .bdc{color:var(--ok);font-weight:700;font-family:'JetBrains Mono',monospace;}
   .bdw{color:var(--no);font-weight:700;font-family:'JetBrains Mono',monospace;}
-  .nbp{background:#fffbeb;border:1px solid #fde68a;border-radius:12px;padding:12px 15px;width:100%;display:flex;align-items:center;gap:11px;margin-bottom:14px;box-shadow:var(--shadow);}
-  .rbs{display:flex;flex-direction:column;gap:9px;width:100%;}
+  .nbp{background:#fffbeb;border:1.5px solid #fde68a;border-radius:12px;
+    padding:12px 16px;width:100%;display:flex;align-items:center;gap:12px;margin-bottom:14px;
+    box-shadow:var(--shadow);}
+  .rbs{display:flex;flex-direction:column;gap:10px;width:100%;}
   .bp{
-    background:linear-gradient(135deg,#5b21b6,#7c3aed);border:none;border-radius:var(--radius);
-    padding:14px;font-family:'Inter',sans-serif;font-size:0.95em;font-weight:700;
+    background:linear-gradient(135deg,#5b21b6,#7c3aed);border:none;
+    border-radius:var(--radius);padding:15px;
+    font-family:'Inter',sans-serif;font-size:1em;font-weight:700;
     color:white;cursor:pointer;text-align:center;text-decoration:none;display:block;
-    box-shadow:0 3px 10px rgba(91,33,182,0.3);
+    box-shadow:0 3px 10px rgba(91,33,182,0.28);
   }
   .bs{
     background:var(--white);border:1.5px solid var(--border);
-    border-radius:var(--radius);padding:13px;
-    font-family:'Inter',sans-serif;font-size:0.88em;font-weight:600;
-    color:var(--text-sm);cursor:pointer;text-align:center;text-decoration:none;display:block;
-    box-shadow:var(--shadow);
+    border-radius:var(--radius);padding:14px;
+    font-family:'Inter',sans-serif;font-size:0.92em;font-weight:600;
+    color:var(--text-sm);cursor:pointer;text-align:center;
+    text-decoration:none;display:block;box-shadow:var(--shadow);
   }
-  .qcard{animation:fu .3s ease;}
-  @keyframes fu{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
-  @keyframes fi2{from{opacity:0}to{opacity:1}}
-  @keyframes bn{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
-  @keyframes sk{0%,100%{transform:translateX(0)}25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
-  .shake{animation:sk .3s ease;}
+
+  .qcard{animation:fadeUp .3s ease;}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+  @keyframes bounce{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
+  @keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+  .shake{animation:shake .3s ease;}
+
+  /* MOBILE RESPONSIVE */
+  @media(max-width:420px){
+    body{font-size:17px;}
+    .qt{font-size:1.05em;}
+    .ob{padding:16px;}
+    .ot{font-size:0.97em;}
+  }
 </style>
 </head>
 <body>
 <div class="app">
 <div class="qh">
   <a class="back" href="../modules/module1.html">&larr; Module 1</a>
-  <div class="qm"><div class="qc" id="qc">Q 1 of 20</div><div class="ql">Lesson 1.7 &mdash; Conjunctions: Joining Words and Ideas</div></div>
-  <button class="mt" id="mb" onclick="tM()">&#128266;</button>
+  <div class="qm">
+    <div class="qc" id="qc">Q 1 of 20</div>
+    <div class="ql">Lesson 1.7 &mdash; Conjunctions: Joining Words and Ideas</div>
+  </div>
+  <button class="mt" id="mb" onclick="tM()">🔊</button>
 </div>
 <div class="qp"><div class="qpf" id="pf" style="width:0%"></div></div>
 <div id="qa"></div>
 <div class="rs" id="rs"></div>
 </div>
+
 <script>
-var Q=[
-{
-"type": "mcq",
-"q": "Which of the following is a coordinating conjunction?",
-"options": [
-"Although",
-"Because",
-"But",
-"Moreover"
-],
-"answer": 2,
-"explanation": "Coordinating conjunctions (FANBOYS: For, And, Nor, But, Or, Yet, So) join two equal grammatical elements. 'But' is a coordinating conjunction. 'Although' and 'because' are subordinating conjunctions; 'moreover' is a conjunctive adverb."
-},
-{
-"type": "mcq",
-"q": "Which sentence uses a subordinating conjunction correctly?",
-"options": [
-"She was tired and she continued working.",
-"Although she was tired, she continued working.",
-"She was tired but she continued working.",
-"She was tired so continued working."
-],
-"answer": 1,
-"explanation": "'Although' is a subordinating conjunction that introduces a subordinate clause of concession. It joins the dependent clause to the main clause. When the subordinate clause comes first, it is followed by a comma."
-},
-{
-"type": "mcq",
-"q": "Which of the following is a correlative conjunction pair?",
-"options": [
-"And…but",
-"Either…or",
-"Because…so",
-"Not…only"
-],
-"answer": 1,
-"explanation": "Correlative conjunctions work in pairs: either…or, neither…nor, not only…but also, both…and, whether…or. 'And…but' are separate coordinating conjunctions. 'Not…only' is incomplete."
-},
-{
-"type": "mcq",
-"q": "Identify the conjunction type in: 'She studied hard so that she could pass the exam.'",
-"options": [
-"Coordinating conjunction",
-"Correlative conjunction",
-"Subordinating conjunction of purpose",
-"Conjunctive adverb"
-],
-"answer": 2,
-"explanation": "'So that' is a subordinating conjunction of purpose — it introduces a subordinate clause explaining why the main clause action was performed. Other subordinating conjunctions of purpose: in order that, in case."
-},
-{
-"type": "mcq",
-"q": "Which sentence uses 'neither…nor' correctly?",
-"options": [
-"Neither the manager nor the employees was informed.",
-"Neither the manager nor the employees were informed.",
-"Neither the manager or the employees were informed.",
-"Neither the manager nor the employees are informed yesterday."
-],
-"answer": 1,
-"explanation": "With 'neither…nor', the verb agrees with the nearest subject. 'Employees' (plural) is closest, so 'were' is correct. 'Neither…or' is wrong — the pair is always 'neither…nor'."
-},
-{
-"type": "tf",
-"q": "A coordinating conjunction can join two independent clauses when placed between them with a comma.",
-"answer": true,
-"explanation": "True. A comma + coordinating conjunction (FANBOYS) correctly joins two independent clauses: 'She was tired, but she continued working.' Without the conjunction, the comma alone creates a comma splice error."
-},
-{
-"type": "mcq",
-"q": "Which sentence uses 'not only…but also' correctly?",
-"options": [
-"Not only she sings but also plays.",
-"She not only sings but also plays the piano.",
-"She sings not only but also plays the piano.",
-"Not only she sings but also the piano."
-],
-"answer": 1,
-"explanation": "'Not only…but also' must link grammatically parallel elements. 'She not only [sings] but also [plays the piano]' correctly links two verb phrases. Note: when 'not only' starts the sentence, the subject and auxiliary invert: 'Not only does she sing, but she also plays.'"
-},
-{
-"type": "mcq",
-"q": "What error appears in: 'I like both swimming and to run.'?",
-"options": [
-"'Both' should be 'either'",
-"The sentence lacks parallel structure — 'swimming' and 'to run' should be the same form",
-"'And' should be 'or'",
-"'Like' should be 'likes'"
-],
-"answer": 1,
-"explanation": "'Both…and' requires parallel structure. 'Swimming' (gerund) and 'to run' (infinitive) are not parallel. Correct: 'both swimming and running' OR 'both to swim and to run'. Parallelism is essential with all correlative conjunctions."
-},
-{
-"type": "mcq",
-"q": "Which conjunction best completes: '___ the weather was poor, the event went ahead.'?",
-"options": [
-"Because",
-"So",
-"Although",
-"Despite"
-],
-"answer": 2,
-"explanation": "'Although' is a subordinating conjunction showing concession (contrast between poor weather and the event proceeding). 'Despite' is a preposition (needs a noun/gerund: 'despite the poor weather'). 'Because' shows reason; 'so' shows result."
-},
-{
-"type": "fill",
-"q": "The conjunctions for, and, nor, but, or, yet, so are collectively remembered using the acronym ________.",
-"answer": "FANBOYS",
-"hint": "Each letter stands for a conjunction...",
-"explanation": "FANBOYS is the mnemonic for the seven coordinating conjunctions: For, And, Nor, But, Or, Yet, So. These join two grammatically equal elements — words, phrases, or independent clauses."
-},
-{
-"type": "mcq",
-"q": "Which sentence uses a conjunction of concession correctly?",
-"options": [
-"She didn't get the job even though she was the most qualified candidate.",
-"She didn't get the job because she was the most qualified candidate.",
-"She got the job so she was the most qualified candidate.",
-"She didn't get the job since she was the most qualified candidate."
-],
-"answer": 0,
-"explanation": "'Even though' is a strong conjunction of concession — it highlights a surprising contrast between the subordinate and main clause. Being highly qualified yet not getting the job is the unexpected/contradictory result."
-},
-{
-"type": "tf",
-"q": "The word 'however' is a conjunction and should be used the same way as 'but'.",
-"answer": false,
-"explanation": "False. 'However' is a conjunctive ADVERB, not a conjunction. 'But' joins clauses directly with a comma: 'She was tired, but she continued.' 'However' requires a semicolon before it: 'She was tired; however, she continued.' Using only a comma before 'however' creates a comma splice."
-},
-{
-"type": "mcq",
-"q": "Which sentence demonstrates subject-verb agreement with correlative conjunctions?",
-"options": [
-"Neither the students nor the teacher are ready.",
-"Either the manager or the directors is responsible.",
-"Neither the teacher nor the students are ready.",
-"Both the teacher and the students is ready."
-],
-"answer": 2,
-"explanation": "With 'neither…nor' and 'either…or', the verb agrees with the NEAREST subject. In 'Neither the teacher nor the students ARE ready', 'students' (plural) is nearest, so 'are' is correct. 'Both' always takes a plural verb."
-},
-{
-"type": "mcq",
-"q": "Which sentence uses a conjunction to show cause and effect?",
-"options": [
-"She studied hard; however, she failed.",
-"She studied hard, so she passed the exam.",
-"She studied hard, but she was nervous.",
-"Although she studied hard, she was nervous."
-],
-"answer": 1,
-"explanation": "'So' here is a coordinating conjunction showing result/consequence (cause: studied hard → effect: passed). Other conjunctions showing cause/effect: because, since, as, therefore, consequently, hence."
-},
-{
-"type": "mcq",
-"q": "Which sentence uses 'while' as a conjunction of contrast (not time)?",
-"options": [
-"While she was sleeping, the phone rang.",
-"While I enjoy jazz, my sister prefers classical music.",
-"He called while I was having dinner.",
-"She arrived while we were still discussing the plan."
-],
-"answer": 1,
-"explanation": "'While' can show both time ('while she was sleeping') and contrast ('while I enjoy jazz…'). In option B, 'while' shows contrast between two different preferences — it functions like 'whereas'. Context determines the meaning."
-},
-{
-"type": "mcq",
-"q": "Identify the error in: 'The plan failed due to we didn't prepare adequately.'",
-"options": [
-"'The plan' should be 'Our plan'",
-"'Due to' cannot introduce a clause — use 'because' or 'due to the fact that'",
-"'Adequately' should be 'adequate'",
-"'Didn't' should be 'did not'"
-],
-"answer": 1,
-"explanation": "'Due to' is a preposition, not a conjunction, and must be followed by a noun phrase: 'due to poor preparation'. To introduce a clause, use 'because' or 'because of the fact that'. This is a very common error."
-},
-{
-"type": "fill",
-"q": "The conjunctions 'both…and', 'either…or', 'neither…nor', and 'not only…but also' are called ________ conjunctions.",
-"answer": "correlative",
-"hint": "They work in pairs — correl-...",
-"explanation": "CORRELATIVE conjunctions work in pairs to join grammatically equal elements. Each part of the pair must be followed by the same grammatical structure (parallelism). Other correlative conjunctions: whether…or, as…as, no sooner…than, hardly…when."
-},
-{
-"type": "mcq",
-"q": "Which sentence correctly uses a conjunction to express condition?",
-"options": [
-"Unless you practise daily, you will improve.",
-"Unless you don't practise daily, you won't improve.",
-"If you won't practise, you will improve.",
-"Provided that you don't practise, you will improve."
-],
-"answer": 0,
-"explanation": "'Unless' means 'if not' — it already contains the negative, so adding 'don't' creates a double negative. 'Unless you practise' = 'if you do not practise'. The result should be negative: 'you won't improve'."
-},
-{
-"type": "mcq",
-"q": "Which sentence uses multiple conjunctions with correct punctuation and parallelism?",
-"options": [
-"She is not only intelligent, but hardworking, and also she has a good personality.",
-"Not only is she intelligent, but she is also hardworking and personable.",
-"She is intelligent and hardworking, but also, she is personable, too.",
-"Although she is intelligent and hardworking but she is also personable."
-],
-"answer": 1,
-"explanation": "Option B correctly uses: 'Not only…but also' with inverted word order, two parallel adjectives ('intelligent', 'hardworking'), and a third ('personable') joined with 'and'. The structure is parallel throughout. Option D incorrectly uses 'although…but' (double conjunction of contrast)."
-},
-{
-"type": "mcq",
-"q": "Which sentence demonstrates the most sophisticated use of conjunctions?",
-"options": [
-"He tried hard, and he failed, but he tried again, and he succeeded.",
-"Having tried and failed, he persisted nonetheless; not only did he overcome the initial setback, but he ultimately succeeded where others had given up.",
-"He tried hard but failed. Then he tried again. He succeeded.",
-"Although he tried, he failed, but although he tried again, he succeeded."
-],
-"answer": 1,
-"explanation": "Option B uses: 'nonetheless' (concessive conjunctive adverb), 'not only…but' with correct inversion and ellipsis, 'where' (relative conjunction of circumstance). It varies sentence structure, avoids conjunction repetition, and demonstrates high-level cohesive sophistication."
-}
-];
-var cur=0,cor=0,ans=false,st=Date.now(),ac=null;
+var Q=[{"type": "mcq", "q": "Which of the following is a coordinating conjunction?", "options": ["Although", "Because", "But", "Moreover"], "answer": 2, "explanation": "Coordinating conjunctions (FANBOYS: For, And, Nor, But, Or, Yet, So) join two equal grammatical elements. 'But' is a coordinating conjunction. 'Although' and 'because' are subordinating conjunctions; 'moreover' is a conjunctive adverb."}, {"type": "mcq", "q": "Which sentence uses a subordinating conjunction correctly?", "options": ["She was tired and she continued working.", "Although she was tired, she continued working.", "She was tired but she continued working.", "She was tired so continued working."], "answer": 1, "explanation": "'Although' is a subordinating conjunction that introduces a subordinate clause of concession. It joins the dependent clause to the main clause. When the subordinate clause comes first, it is followed by a comma."}, {"type": "mcq", "q": "Which of the following is a correlative conjunction pair?", "options": ["And…but", "Either…or", "Because…so", "Not…only"], "answer": 1, "explanation": "Correlative conjunctions work in pairs: either…or, neither…nor, not only…but also, both…and, whether…or. 'And…but' are separate coordinating conjunctions. 'Not…only' is incomplete."}, {"type": "mcq", "q": "Identify the conjunction type in: 'She studied hard so that she could pass the exam.'", "options": ["Coordinating conjunction", "Correlative conjunction", "Subordinating conjunction of purpose", "Conjunctive adverb"], "answer": 2, "explanation": "'So that' is a subordinating conjunction of purpose — it introduces a subordinate clause explaining why the main clause action was performed. Other subordinating conjunctions of purpose: in order that, in case."}, {"type": "mcq", "q": "Which sentence uses 'neither…nor' correctly?", "options": ["Neither the manager nor the employees was informed.", "Neither the manager nor the employees were informed.", "Neither the manager or the employees were informed.", "Neither the manager nor the employees are informed yesterday."], "answer": 1, "explanation": "With 'neither…nor', the verb agrees with the nearest subject. 'Employees' (plural) is closest, so 'were' is correct. 'Neither…or' is wrong — the pair is always 'neither…nor'."}, {"type": "tf", "q": "A coordinating conjunction can join two independent clauses when placed between them with a comma.", "answer": true, "explanation": "True. A comma + coordinating conjunction (FANBOYS) correctly joins two independent clauses: 'She was tired, but she continued working.' Without the conjunction, the comma alone creates a comma splice error."}, {"type": "mcq", "q": "Which sentence uses 'not only…but also' correctly?", "options": ["Not only she sings but also plays.", "She not only sings but also plays the piano.", "She sings not only but also plays the piano.", "Not only she sings but also the piano."], "answer": 1, "explanation": "'Not only…but also' must link grammatically parallel elements. 'She not only [sings] but also [plays the piano]' correctly links two verb phrases. Note: when 'not only' starts the sentence, the subject and auxiliary invert: 'Not only does she sing, but she also plays.'"}, {"type": "mcq", "q": "What error appears in: 'I like both swimming and to run.'?", "options": ["'Both' should be 'either'", "The sentence lacks parallel structure — 'swimming' and 'to run' should be the same form", "'And' should be 'or'", "'Like' should be 'likes'"], "answer": 1, "explanation": "'Both…and' requires parallel structure. 'Swimming' (gerund) and 'to run' (infinitive) are not parallel. Correct: 'both swimming and running' OR 'both to swim and to run'. Parallelism is essential with all correlative conjunctions."}, {"type": "mcq", "q": "Which conjunction best completes: '___ the weather was poor, the event went ahead.'?", "options": ["Because", "So", "Although", "Despite"], "answer": 2, "explanation": "'Although' is a subordinating conjunction showing concession (contrast between poor weather and the event proceeding). 'Despite' is a preposition (needs a noun/gerund: 'despite the poor weather'). 'Because' shows reason; 'so' shows result."}, {"type": "fill", "q": "The conjunctions for, and, nor, but, or, yet, so are collectively remembered using the acronym ________.", "answer": "FANBOYS", "hint": "Each letter stands for a conjunction...", "explanation": "FANBOYS is the mnemonic for the seven coordinating conjunctions: For, And, Nor, But, Or, Yet, So. These join two grammatically equal elements — words, phrases, or independent clauses."}, {"type": "mcq", "q": "Which sentence uses a conjunction of concession correctly?", "options": ["She didn't get the job even though she was the most qualified candidate.", "She didn't get the job because she was the most qualified candidate.", "She got the job so she was the most qualified candidate.", "She didn't get the job since she was the most qualified candidate."], "answer": 0, "explanation": "'Even though' is a strong conjunction of concession — it highlights a surprising contrast between the subordinate and main clause. Being highly qualified yet not getting the job is the unexpected/contradictory result."}, {"type": "tf", "q": "The word 'however' is a conjunction and should be used the same way as 'but'.", "answer": false, "explanation": "False. 'However' is a conjunctive ADVERB, not a conjunction. 'But' joins clauses directly with a comma: 'She was tired, but she continued.' 'However' requires a semicolon before it: 'She was tired; however, she continued.' Using only a comma before 'however' creates a comma splice."}, {"type": "mcq", "q": "Which sentence demonstrates subject-verb agreement with correlative conjunctions?", "options": ["Neither the students nor the teacher are ready.", "Either the manager or the directors is responsible.", "Neither the teacher nor the students are ready.", "Both the teacher and the students is ready."], "answer": 2, "explanation": "With 'neither…nor' and 'either…or', the verb agrees with the NEAREST subject. In 'Neither the teacher nor the students ARE ready', 'students' (plural) is nearest, so 'are' is correct. 'Both' always takes a plural verb."}, {"type": "mcq", "q": "Which sentence uses a conjunction to show cause and effect?", "options": ["She studied hard; however, she failed.", "She studied hard, so she passed the exam.", "She studied hard, but she was nervous.", "Although she studied hard, she was nervous."], "answer": 1, "explanation": "'So' here is a coordinating conjunction showing result/consequence (cause: studied hard → effect: passed). Other conjunctions showing cause/effect: because, since, as, therefore, consequently, hence."}, {"type": "mcq", "q": "Which sentence uses 'while' as a conjunction of contrast (not time)?", "options": ["While she was sleeping, the phone rang.", "While I enjoy jazz, my sister prefers classical music.", "He called while I was having dinner.", "She arrived while we were still discussing the plan."], "answer": 1, "explanation": "'While' can show both time ('while she was sleeping') and contrast ('while I enjoy jazz…'). In option B, 'while' shows contrast between two different preferences — it functions like 'whereas'. Context determines the meaning."}, {"type": "mcq", "q": "Identify the error in: 'The plan failed due to we didn't prepare adequately.'", "options": ["'The plan' should be 'Our plan'", "'Due to' cannot introduce a clause — use 'because' or 'due to the fact that'", "'Adequately' should be 'adequate'", "'Didn't' should be 'did not'"], "answer": 1, "explanation": "'Due to' is a preposition, not a conjunction, and must be followed by a noun phrase: 'due to poor preparation'. To introduce a clause, use 'because' or 'because of the fact that'. This is a very common error."}, {"type": "fill", "q": "The conjunctions 'both…and', 'either…or', 'neither…nor', and 'not only…but also' are called ________ conjunctions.", "answer": "correlative", "hint": "They work in pairs — correl-...", "explanation": "CORRELATIVE conjunctions work in pairs to join grammatically equal elements. Each part of the pair must be followed by the same grammatical structure (parallelism). Other correlative conjunctions: whether…or, as…as, no sooner…than, hardly…when."}, {"type": "mcq", "q": "Which sentence correctly uses a conjunction to express condition?", "options": ["Unless you practise daily, you will improve.", "Unless you don't practise daily, you won't improve.", "If you won't practise, you will improve.", "Provided that you don't practise, you will improve."], "answer": 0, "explanation": "'Unless' means 'if not' — it already contains the negative, so adding 'don't' creates a double negative. 'Unless you practise' = 'if you do not practise'. The result should be negative: 'you won't improve'."}, {"type": "mcq", "q": "Which sentence uses multiple conjunctions with correct punctuation and parallelism?", "options": ["She is not only intelligent, but hardworking, and also she has a good personality.", "Not only is she intelligent, but she is also hardworking and personable.", "She is intelligent and hardworking, but also, she is personable, too.", "Although she is intelligent and hardworking but she is also personable."], "answer": 1, "explanation": "Option B correctly uses: 'Not only…but also' with inverted word order, two parallel adjectives ('intelligent', 'hardworking'), and a third ('personable') joined with 'and'. The structure is parallel throughout. Option D incorrectly uses 'although…but' (double conjunction of contrast)."}, {"type": "mcq", "q": "Which sentence demonstrates the most sophisticated use of conjunctions?", "options": ["He tried hard, and he failed, but he tried again, and he succeeded.", "Having tried and failed, he persisted nonetheless; not only did he overcome the initial setback, but he ultimately succeeded where others had given up.", "He tried hard but failed. Then he tried again. He succeeded.", "Although he tried, he failed, but although he tried again, he succeeded."], "answer": 1, "explanation": "Option B uses: 'nonetheless' (concessive conjunctive adverb), 'not only…but' with correct inversion and ellipsis, 'where' (relative conjunction of circumstance). It varies sentence structure, avoids conjunction repetition, and demonstrates high-level cohesive sophistication."}];
+var SKEY="m1_l7";
+var NEXT="q1-8.html";
+var HUB="../modules/module1.html";
+var cur=0,cor=0,answered=false,st=Date.now(),ac=null;
+
 function gAC(){if(!ac)ac=new(window.AudioContext||window.webkitAudioContext)();return ac;}
 function gD(){try{return JSON.parse(localStorage.getItem('grammar_app')||'{}');}catch(e){return{};}}
 function sD(d){try{localStorage.setItem('grammar_app',JSON.stringify(d));}catch(e){}}
-function tM(){var d=gD();d.muted=!d.muted;sD(d);document.getElementById('mb').textContent=d.muted?'&#128263;':'&#128266;';}
-function pT(t){var d=gD();if(d.muted)return;try{var c=gAC();if(c.state==='suspended')c.resume();if(t==='c')pC(c);else if(t==='w')pW(c);else pF(c);}catch(e){}}
-function pC(c){[[523,0],[659,.1],[784,.2]].forEach(function(a){var o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);o.frequency.value=a[0];o.type='sine';var t=c.currentTime+a[1];g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.18,t+.02);g.gain.exponentialRampToValueAtTime(.001,t+.3);o.start(t);o.stop(t+.3);});}
-function pW(c){[[240,0],[200,.1]].forEach(function(a){var o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);o.frequency.value=a[0];o.type='sawtooth';var t=c.currentTime+a[1];g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.08,t+.02);g.gain.exponentialRampToValueAtTime(.001,t+.25);o.start(t);o.stop(t+.25);});}
-function pF(c){[[523,0],[659,.15],[784,.3],[1047,.45]].forEach(function(a){var o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);o.frequency.value=a[0];o.type='sine';var t=c.currentTime+a[1];g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.2,t+.03);g.gain.exponentialRampToValueAtTime(.001,t+.5);o.start(t);o.stop(t+.5);});}
+
+function tM(){
+  var d=gD();d.muted=!d.muted;sD(d);
+  document.getElementById('mb').textContent=d.muted?'🔇':'🔊';
+}
+
+function pT(t){
+  var d=gD();if(d.muted)return;
+  try{var c=gAC();if(c.state==='suspended')c.resume();
+    if(t==='c')pC(c);else if(t==='w')pW(c);else pF(c);}catch(e){}
+}
+function pC(c){[[523,0],[659,.1],[784,.2]].forEach(function(a){
+  var o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);
+  o.frequency.value=a[0];o.type='sine';var t=c.currentTime+a[1];
+  g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.18,t+.02);
+  g.gain.exponentialRampToValueAtTime(.001,t+.3);o.start(t);o.stop(t+.3);});}
+function pW(c){[[240,0],[200,.1]].forEach(function(a){
+  var o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);
+  o.frequency.value=a[0];o.type='sawtooth';var t=c.currentTime+a[1];
+  g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.08,t+.02);
+  g.gain.exponentialRampToValueAtTime(.001,t+.25);o.start(t);o.stop(t+.25);});}
+function pF(c){[[523,0],[659,.15],[784,.3],[1047,.45]].forEach(function(a){
+  var o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);
+  o.frequency.value=a[0];o.type='sine';var t=c.currentTime+a[1];
+  g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.2,t+.03);
+  g.gain.exponentialRampToValueAtTime(.001,t+.5);o.start(t);o.stop(t+.5);});}
+
 function rQ(){
-  var q=Q[cur];ans=false;
+  var q=Q[cur];answered=false;
   document.getElementById('pf').style.width=(cur/Q.length*100)+'%';
   document.getElementById('qc').textContent='Q '+(cur+1)+' of '+Q.length;
   var area=document.getElementById('qa');
-  var lbs={mcq:'Multiple Choice',tf:'True or False',fill:'Fill in the Blank',transform:'Sentence Transformation'};
-  var lbl=lbs[q.type]||'Question';
+  var labels={mcq:'Multiple Choice',tf:'True or False',fill:'Fill in the Blank',transform:'Sentence Transformation'};
+  var lbl=labels[q.type]||'Question';
   var oh='';
   if(q.type==='mcq'){
-    oh='<div class="ol">'+q.options.map(function(o,i){return '<button class="ob" onclick="sO('+i+')" data-i="'+i+'"><div class="ok2">'+String.fromCharCode(65+i)+'</div><div class="ot">'+o+'</div><div class="oi">'+(i===q.answer?'&#10003;':'&#10007;')+'</div></button>';}).join('')+'</div>';
-  }else if(q.type==='tf'){
-    oh='<div class="tfo"><button class="ob" onclick="sT(true)" data-v="true"><div class="ok2">T</div><div class="ot">True</div><div class="oi">'+(q.answer?'&#10003;':'&#10007;')+'</div></button><button class="ob" onclick="sT(false)" data-v="false"><div class="ok2">F</div><div class="ot">False</div><div class="oi">'+(!q.answer?'&#10003;':'&#10007;')+'</div></button></div>';
-  }else{
-    oh='<div class="fb"><input class="fi" id="fi" type="text" placeholder="'+(q.type==='transform'?'Rewrite the sentence...':'Type your answer...')+'" autocomplete="off" autocapitalize="none" spellcheck="false" onkeydown="if(event.keyCode===13)sF()">'+(q.hint?'<div style="font-size:.7em;color:#9ca3af;margin-top:6px;">&#128161; '+q.hint+'</div>':'')+'<button class="fs" id="fsb" onclick="sF()">Check Answer</button></div>';
+    oh='<div class="ol">'+q.options.map(function(opt,i){
+      return '<button class="ob" onclick="selOpt('+i+')" data-i="'+i+'">'+
+        '<div class="ok2">'+String.fromCharCode(65+i)+'</div>'+
+        '<div class="ot">'+opt+'</div>'+
+        '<div class="oi">'+(i===q.answer?'✓':'✗')+'</div></button>';
+    }).join('')+'</div>';
+  } else if(q.type==='tf'){
+    oh='<div class="tfo">'+
+      '<button class="ob" onclick="selTF(true)" data-v="true">'+
+        '<div class="ok2">T</div><div class="ot">True</div>'+
+        '<div class="oi">'+(q.answer?'✓':'✗')+'</div></button>'+
+      '<button class="ob" onclick="selTF(false)" data-v="false">'+
+        '<div class="ok2">F</div><div class="ot">False</div>'+
+        '<div class="oi">'+(!q.answer?'✓':'✗')+'</div></button>'+
+    '</div>';
+  } else {
+    var ph=q.type==='transform'?'Rewrite the sentence...':'Type your answer...';
+    oh='<div class="fb">'+
+      '<input class="fi" id="fi" type="text" placeholder="'+ph+'" '+
+        'autocomplete="off" autocapitalize="none" spellcheck="false" '+
+        'onkeydown="if(event.keyCode===13)subFill()">'+
+      (q.hint?'<div class="hint">💡 Hint: '+q.hint+'</div>':'')+
+      '<button class="fs" id="fsb" onclick="subFill()">Check Answer</button>'+
+    '</div>';
   }
-  area.innerHTML='<div class="qcard"><div class="qa"><div class="qtb">'+lbl+'</div><div class="qt">'+q.q+'</div></div>'+oh+'<div class="eb" id="eb"></div><button class="nb2" id="nb" onclick="nQ()">'+(cur+1<Q.length?'Next Question &rarr;':'See Results &#127919;')+'</button></div>';
-  if(q.type==='fill'||q.type==='transform')setTimeout(function(){var e=document.getElementById('fi');if(e)e.focus();},100);
-  var d=gD();document.getElementById('mb').textContent=d.muted?'&#128263;':'&#128266;';
+  area.innerHTML='<div class="qcard">'+
+    '<div class="qa"><div class="qtb">'+lbl+'</div><div class="qt">'+q.q+'</div></div>'+
+    oh+
+    '<div class="eb" id="eb"></div>'+
+    '<button class="nb2" id="nb" onclick="nextQ()">'+
+      (cur+1<Q.length?'Next Question →':'See Results 🎯')+
+    '</button></div>';
+  if(q.type==='fill'||q.type==='transform'){
+    setTimeout(function(){var e=document.getElementById('fi');if(e)e.focus();},150);
+  }
+  var d=gD();document.getElementById('mb').textContent=d.muted?'🔇':'🔊';
 }
-function sO(i){if(ans)return;ans=true;var q=Q[cur];var ok=i===q.answer;if(ok)cor++;pT(ok?'c':'w');document.querySelectorAll('.ob').forEach(function(b,j){if(j===q.answer)b.classList.add('correct');else if(j===i&&!ok){b.classList.add('wrong');b.classList.add('shake');}else b.classList.add('dimmed');b.disabled=true;});shE(ok,q.explanation);document.getElementById('nb').classList.add('show');}
-function sT(v){if(ans)return;ans=true;var q=Q[cur];var ok=v===q.answer;if(ok)cor++;pT(ok?'c':'w');document.querySelectorAll('.ob').forEach(function(b){var bv=b.dataset.v==='true';if(bv===q.answer)b.classList.add('correct');else if(bv===v&&!ok)b.classList.add('wrong');else b.classList.add('dimmed');b.disabled=true;});shE(ok,q.explanation);document.getElementById('nb').classList.add('show');}
-function sF(){if(ans)return;var inp=document.getElementById('fi');if(!inp||!inp.value.trim())return;ans=true;var q=Q[cur];var v=inp.value.trim().toLowerCase();var aa=(q.answer||'').toLowerCase().split('|');var ok=aa.some(function(a){return v===a.trim();});if(ok)cor++;pT(ok?'c':'w');inp.classList.add(ok?'correct':'wrong');inp.disabled=true;document.getElementById('fsb').disabled=true;if(!ok){var cd=document.createElement('div');cd.style.cssText='font-size:.78em;color:var(--ok);margin-top:6px;';cd.textContent='Answer: '+q.answer;inp.parentNode.insertBefore(cd,document.getElementById('fsb'));inp.classList.add('shake');}shE(ok,q.explanation);document.getElementById('nb').classList.add('show');}
-function shE(ok,text){var b=document.getElementById('eb');b.innerHTML='<div class="el '+(ok?'correct':'wrong')+'">'+(ok?'&#10003; Correct!':'&#10007; Incorrect')+'</div><div>'+text+'</div>';b.classList.add('show');setTimeout(function(){b.scrollIntoView({behavior:'smooth',block:'nearest'});},100);}
-function nQ(){cur++;if(cur>=Q.length)shR();else{rQ();window.scrollTo({top:0,behavior:'smooth'});}}
-function shR(){
+
+function selOpt(i){
+  if(answered)return;answered=true;
+  var q=Q[cur];var ok=i===q.answer;if(ok)cor++;pT(ok?'c':'w');
+  document.querySelectorAll('.ob').forEach(function(b,j){
+    if(j===q.answer)b.classList.add('correct');
+    else if(j===i&&!ok){b.classList.add('wrong');b.classList.add('shake');}
+    else b.classList.add('dimmed');
+    b.disabled=true;
+  });
+  showExpl(ok,q.explanation);
+  document.getElementById('nb').classList.add('show');
+}
+
+function selTF(v){
+  if(answered)return;answered=true;
+  var q=Q[cur];var ok=v===q.answer;if(ok)cor++;pT(ok?'c':'w');
+  document.querySelectorAll('.ob').forEach(function(b){
+    var bv=b.dataset.v==='true';
+    if(bv===q.answer)b.classList.add('correct');
+    else if(bv===v&&!ok)b.classList.add('wrong');
+    else b.classList.add('dimmed');
+    b.disabled=true;
+  });
+  showExpl(ok,q.explanation);
+  document.getElementById('nb').classList.add('show');
+}
+
+function subFill(){
+  if(answered)return;
+  var inp=document.getElementById('fi');
+  if(!inp||!inp.value.trim())return;
+  answered=true;
+  var q=Q[cur];var v=inp.value.trim().toLowerCase();
+  var ans=(q.answer||'').toLowerCase().split('|');
+  var ok=ans.some(function(a){return v===a.trim();});
+  if(ok)cor++;pT(ok?'c':'w');
+  inp.classList.add(ok?'correct':'wrong');
+  inp.disabled=true;document.getElementById('fsb').disabled=true;
+  if(!ok){
+    var cd=document.createElement('div');
+    cd.style.cssText='font-size:.82em;color:#059669;margin-top:7px;font-weight:600;';
+    cd.textContent='✓ Answer: '+q.answer;
+    inp.parentNode.insertBefore(cd,document.getElementById('fsb'));
+    inp.classList.add('shake');
+  }
+  showExpl(ok,q.explanation);
+  document.getElementById('nb').classList.add('show');
+}
+
+function showExpl(ok,text){
+  var b=document.getElementById('eb');
+  b.innerHTML='<div class="el '+(ok?'correct':'wrong')+'">'+(ok?'✓ Correct!':'✗ Incorrect')+'</div><div>'+text+'</div>';
+  b.classList.add('show');
+  setTimeout(function(){b.scrollIntoView({behavior:'smooth',block:'nearest'});},120);
+}
+
+function nextQ(){
+  cur++;
+  if(cur>=Q.length)showResults();
+  else{rQ();window.scrollTo({top:0,behavior:'smooth'});}
+}
+
+function showResults(){
   pT('complete');
   document.getElementById('pf').style.width='100%';
   document.getElementById('qa').style.display='none';
   document.getElementById('qc').textContent='Complete!';
   var tot=Q.length,pct=Math.round(cor/tot*100),tt=Math.round((Date.now()-st)/1000);
   var d=gD();if(!d.progress)d.progress={};
-  var prev=d.progress["m1_l7"];var isF=prev===undefined;var isI=!isF&&pct>prev;
-  d.progress["m1_l7"]=Math.max(pct,prev||0);
-  if(!d.badges)d.badges=[];var nb2=[];
-  if(isF&&!d.badges.includes('first_quiz')){d.badges.push('first_quiz');nb2.push('&#11088; First Step');}
-  if(pct===100&&!d.badges.includes('perfect_score')){d.badges.push('perfect_score');nb2.push('&#128175; Perfect Score!');}
-  if(isI&&!d.badges.includes('comeback')){d.badges.push('comeback');nb2.push('&#128170; Comeback!');}
-  if(tt<120&&!d.badges.includes('speed_demon')){d.badges.push('speed_demon');nb2.push('&#9889; Speed Run!');}
+  var prev=d.progress[SKEY];var isFirst=prev===undefined;var isImproved=!isFirst&&pct>prev;
+  d.progress[SKEY]=Math.max(pct,prev||0);
+  if(!d.badges)d.badges=[];var newBadges=[];
+  if(isFirst&&!d.badges.includes('first_quiz')){d.badges.push('first_quiz');newBadges.push('⭐ First Step');}
+  if(pct===100&&!d.badges.includes('perfect_score')){d.badges.push('perfect_score');newBadges.push('💯 Perfect Score!');}
+  if(isImproved&&!d.badges.includes('comeback')){d.badges.push('comeback');newBadges.push('💪 Comeback!');}
+  if(tt<120&&!d.badges.includes('speed_demon')){d.badges.push('speed_demon');newBadges.push('⚡ Speed Run!');}
   sD(d);
-  var tr=pct>=90?'&#127942;':pct>=70?'&#127894;':pct>=50?'&#129352;':'&#128218;';
+  var trophy=pct>=90?'🏆':pct>=70?'🥇':pct>=50?'🥈':'📚';
   var msg=pct>=90?'Outstanding!':pct>=70?'Great work!':pct>=50?'Good effort!':'Keep practising!';
-  var bH=nb2.map(function(n){return '<div class="nbp"><span style="font-size:1.8em">'+n.split(' ')[0]+'</span><div><div style="font-size:.78em;font-weight:700;color:#b45309">Badge Unlocked!</div><div style="font-size:.7em;color:#6b7280">'+n.split(' ').slice(1).join(' ')+'</div></div></div>';}).join('');
+  var badgeHTML=newBadges.map(function(n){
+    return '<div class="nbp"><span style="font-size:1.8em">'+n.split(' ')[0]+'</span>'+
+      '<div><div style="font-size:.82em;font-weight:700;color:#b45309">Badge Unlocked!</div>'+
+      '<div style="font-size:.75em;color:#6b7280">'+n.split(' ').slice(1).join(' ')+'</div></div></div>';
+  }).join('');
   var sc=document.getElementById('rs');
-  sc.innerHTML='<div class="rtr">'+tr+'</div><div class="rsb">'+pct+'%</div><div class="rl">'+msg+' '+cor+'/'+tot+' correct</div>'+bH+'<div class="rbd"><div class="bdr"><span>Correct</span><span class="bdc">&#10003; '+cor+'</span></div><div class="bdr"><span>Incorrect</span><span class="bdw">&#10007; '+(tot-cor)+'</span></div><div class="bdr"><span>Score</span><span style="font-weight:700;font-family:JetBrains Mono,monospace">'+pct+'%</span></div><div class="bdr"><span>Time</span><span style="font-family:JetBrains Mono,monospace;color:#6b7280">'+Math.floor(tt/60)+'m '+tt%60+'s</span></div></div><div class="rbs"><a class="bp" href="q1-8.html">Next Lesson &rarr;</a><button class="bs" onclick="rRQ()">&#8635; Retry</button><a class="bs" href="../modules/module1.html">&larr; Module 1</a></div>';
+  sc.innerHTML=
+    '<div class="rtr">'+trophy+'</div>'+
+    '<div class="rsb">'+pct+'%</div>'+
+    '<div class="rl">'+msg+' — '+cor+'/'+tot+' correct</div>'+
+    badgeHTML+
+    '<div class="rbd">'+
+      '<div class="bdr"><span>Correct</span><span class="bdc">✓ '+cor+'</span></div>'+
+      '<div class="bdr"><span>Incorrect</span><span class="bdw">✗ '+(tot-cor)+'</span></div>'+
+      '<div class="bdr"><span>Score</span><span style="font-weight:700;font-family:JetBrains Mono,monospace">'+pct+'%</span></div>'+
+      '<div class="bdr"><span>Time</span><span style="font-family:JetBrains Mono,monospace;color:#6b7280">'+Math.floor(tt/60)+'m '+tt%60+'s</span></div>'+
+    '</div>'+
+    '<div class="rbs">'+
+      '<a class="bp" href="'+NEXT+'">Next Lesson →</a>'+
+      '<button class="bs" onclick="retryQuiz()">↺ Retry this quiz</button>'+
+      '<a class="bs" href="'+HUB+'">← Back to Module 1</a>'+
+    '</div>';
   sc.classList.add('show');window.scrollTo({top:0,behavior:'smooth'});
 }
-function rRQ(){cur=0;cor=0;ans=false;st=Date.now();document.getElementById('rs').classList.remove('show');document.getElementById('qa').style.display='';rQ();window.scrollTo({top:0,behavior:'smooth'});}
-var d0=gD();document.getElementById('mb').textContent=d0.muted?'&#128263;':'&#128266;';
+
+function retryQuiz(){
+  cur=0;cor=0;answered=false;st=Date.now();
+  document.getElementById('rs').classList.remove('show');
+  document.getElementById('qa').style.display='';
+  rQ();window.scrollTo({top:0,behavior:'smooth'});
+}
+
+var d0=gD();
+document.getElementById('mb').textContent=d0.muted?'🔇':'🔊';
 rQ();
 </script>
 </body>

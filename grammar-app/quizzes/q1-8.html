@@ -4,67 +4,79 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
 <title>Lesson 1.8 — Interjections: Expressing Emotions | Grammar Mastery</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap');
   :root{
-    --bg:#e8f0fe;--white:#ffffff;--border:#d1d5db;
-    --text:#111827;--text-md:#374151;--text-sm:#6b7280;--text-xs:#9ca3af;
-    --accent:#5b21b6;--accent-lt:#ede9fe;--accent-mid:#7c3aed;
+    --bg:#e8f0fe;--white:#fff;--border:#c7d2fe;
+    --text:#1e1b4b;--text-md:#374151;--text-sm:#6b7280;--text-xs:#9ca3af;
+    --accent:#5b21b6;--accent-mid:#7c3aed;--accent-lt:#ede9fe;
     --ok:#059669;--ok-lt:#d1fae5;--ok-dk:#065f46;
     --no:#dc2626;--no-lt:#fee2e2;--no-dk:#7f1d1d;
-    --gold:#b45309;--radius:14px;
+    --radius:14px;
     --shadow:0 1px 4px rgba(0,0,0,0.08),0 1px 2px rgba(0,0,0,0.04);
+    --shadow-md:0 4px 14px rgba(0,0,0,0.09);
   }
   *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
   html{scroll-behavior:smooth;}
-  body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;}
-  .app{max-width:480px;margin:0 auto;padding-bottom:40px;background:var(--bg);min-height:100vh;}
+  body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;font-size:16px;}
+  .app{max-width:540px;margin:0 auto;padding-bottom:40px;background:var(--bg);min-height:100vh;}
+
+  /* HEADER */
   .qh{
-    padding:14px 16px;display:flex;align-items:center;justify-content:space-between;
+    padding:14px 18px;display:flex;align-items:center;justify-content:space-between;
     background:var(--white);border-bottom:1px solid var(--border);
     position:sticky;top:0;z-index:50;
-    box-shadow:0 2px 8px rgba(0,0,0,0.07);
+    box-shadow:0 2px 10px rgba(99,102,241,0.1);
   }
-  .back{color:var(--accent-mid);font-size:0.83em;font-weight:700;background:none;border:none;cursor:pointer;font-family:'Inter',sans-serif;text-decoration:none;}
+  .back{color:var(--accent-mid);font-size:0.87em;font-weight:700;background:none;border:none;
+    cursor:pointer;font-family:'Inter',sans-serif;text-decoration:none;letter-spacing:-0.01em;}
   .qm{text-align:right;}
-  .qc{font-size:0.72em;font-family:'JetBrains Mono',monospace;color:var(--accent-mid);font-weight:700;}
-  .ql{font-size:0.62em;color:var(--text-xs);margin-top:1px;}
-  .mt{background:#f3f4f6;border:1px solid var(--border);border-radius:9px;padding:7px 9px;font-size:1em;cursor:pointer;}
+  .qc{font-size:0.78em;font-family:'JetBrains Mono',monospace;color:var(--accent-mid);font-weight:700;}
+  .ql{font-size:0.68em;color:var(--text-xs);margin-top:2px;}
+  .mt{background:var(--accent-lt);border:1.5px solid #c4b5fd;border-radius:10px;
+    padding:7px 10px;font-size:1.1em;cursor:pointer;line-height:1;}
+
+  /* PROGRESS */
   .qp{height:5px;background:#c7d2fe;}
-  .qpf{height:100%;background:linear-gradient(90deg,#5b21b6,#2563eb);transition:width .4s cubic-bezier(.4,0,.2,1);}
-  .qa{padding:22px 16px 14px;}
+  .qpf{height:100%;background:linear-gradient(90deg,#5b21b6,#7c3aed);
+    transition:width .4s cubic-bezier(.4,0,.2,1);}
+
+  /* QUESTION AREA */
+  .qa{padding:24px 18px 16px;}
   .qtb{
     display:inline-flex;align-items:center;
     background:var(--accent-lt);border:1.5px solid #c4b5fd;
-    border-radius:20px;padding:5px 14px;
-    font-size:0.62em;font-weight:700;letter-spacing:0.06em;
+    border-radius:20px;padding:5px 15px;
+    font-size:0.68em;font-weight:700;letter-spacing:0.07em;
     color:var(--accent);text-transform:uppercase;
-    font-family:'JetBrains Mono',monospace;margin-bottom:13px;
+    font-family:'JetBrains Mono',monospace;margin-bottom:14px;
   }
-  .qt{font-size:1.05em;font-weight:700;line-height:1.55;color:var(--text);}
-  .ol{display:flex;flex-direction:column;gap:9px;padding:0 16px;}
+  .qt{font-size:1.1em;font-weight:700;line-height:1.55;color:var(--text);}
+
+  /* OPTIONS */
+  .ol{display:flex;flex-direction:column;gap:10px;padding:0 18px;}
   .ob{
-    display:flex;align-items:center;gap:13px;
+    display:flex;align-items:center;gap:14px;
     background:var(--white);border:1.5px solid var(--border);
-    border-radius:var(--radius);padding:14px 15px;
+    border-radius:var(--radius);padding:15px 16px;
     cursor:pointer;transition:all .15s;text-align:left;
     font-family:'Inter',sans-serif;width:100%;color:var(--text);
     box-shadow:var(--shadow);
   }
-  .ob:hover{border-color:#a78bfa;background:#faf5ff;box-shadow:0 3px 10px rgba(124,58,237,0.12);}
+  .ob:hover{border-color:#a78bfa;background:#faf5ff;box-shadow:0 3px 12px rgba(124,58,237,0.13);}
   .ob:active{transform:scale(.98);}
   .ob:disabled{cursor:default;}
   .ok2{
-    width:31px;height:31px;flex-shrink:0;border-radius:9px;
+    width:33px;height:33px;flex-shrink:0;border-radius:9px;
     background:var(--accent-lt);
     display:flex;align-items:center;justify-content:center;
-    font-size:0.73em;font-weight:700;font-family:'JetBrains Mono',monospace;
+    font-size:0.78em;font-weight:700;font-family:'JetBrains Mono',monospace;
     color:var(--accent);transition:all .15s;
   }
-  .ot{font-size:0.9em;line-height:1.4;flex:1;font-weight:500;color:var(--text);}
-  .oi{font-size:1em;opacity:0;transition:opacity .2s;}
+  .ot{font-size:0.95em;line-height:1.4;flex:1;font-weight:500;color:var(--text);}
+  .oi{font-size:1.1em;opacity:0;transition:opacity .2s;}
+
+  /* States */
   .ob.correct{border-color:var(--ok);background:var(--ok-lt);}
   .ob.correct .ok2{background:var(--ok);color:white;}
   .ob.correct .oi{opacity:1;}
@@ -72,375 +84,324 @@
   .ob.wrong .ok2{background:var(--no);color:white;}
   .ob.wrong .oi{opacity:1;}
   .ob.dimmed{opacity:.38;}
-  .fb{padding:0 16px;}
+
+  /* TRUE/FALSE */
+  .tfo{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:0 18px;}
+
+  /* FILL IN BLANK */
+  .fb{padding:0 18px;}
   .fi{
     width:100%;background:var(--white);border:1.5px solid var(--border);
-    border-radius:var(--radius);padding:13px 15px;
-    font-family:'Inter',sans-serif;font-size:0.95em;color:var(--text);
+    border-radius:var(--radius);padding:14px 16px;
+    font-family:'Inter',sans-serif;font-size:1em;color:var(--text);
     outline:none;transition:border-color .2s;box-shadow:var(--shadow);
   }
   .fi:focus{border-color:var(--accent-mid);box-shadow:0 0 0 3px rgba(124,58,237,0.1);}
   .fi.correct{border-color:var(--ok);background:var(--ok-lt);color:var(--ok-dk);}
   .fi.wrong{border-color:var(--no);background:var(--no-lt);color:var(--no-dk);}
+  .hint{font-size:0.75em;color:var(--text-xs);margin-top:6px;padding-left:2px;}
   .fs{
-    margin-top:9px;width:100%;
+    margin-top:10px;width:100%;
     background:linear-gradient(135deg,#5b21b6,#7c3aed);
-    border:none;border-radius:var(--radius);padding:13px;
-    font-family:'Inter',sans-serif;font-size:0.9em;font-weight:700;color:white;cursor:pointer;
-    box-shadow:0 3px 10px rgba(91,33,182,0.3);
+    border:none;border-radius:var(--radius);padding:14px;
+    font-family:'Inter',sans-serif;font-size:1em;font-weight:700;color:white;cursor:pointer;
+    box-shadow:0 3px 10px rgba(91,33,182,0.28);
   }
   .fs:disabled{opacity:.5;cursor:default;}
-  .tfo{display:grid;grid-template-columns:1fr 1fr;gap:9px;padding:0 16px;}
+
+  /* EXPLANATION */
   .eb{
-    margin:13px 16px 0;background:var(--white);border:1px solid var(--border);
-    border-left:4px solid var(--accent-mid);
-    border-radius:var(--radius);padding:13px 15px;
-    font-size:0.83em;line-height:1.65;color:var(--text-md);
+    margin:14px 18px 0;background:var(--white);
+    border:1px solid var(--border);border-left:4px solid var(--accent-mid);
+    border-radius:var(--radius);padding:14px 16px;
+    font-size:0.88em;line-height:1.7;color:var(--text-md);
     display:none;box-shadow:var(--shadow);
   }
-  .eb.show{display:block;animation:fi2 .3s ease;}
-  .el{font-size:0.7em;font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-family:'JetBrains Mono',monospace;margin-bottom:5px;}
+  .eb.show{display:block;animation:fadeIn .3s ease;}
+  .el{font-size:0.72em;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+    font-family:'JetBrains Mono',monospace;margin-bottom:5px;}
   .el.correct{color:var(--ok);}
   .el.wrong{color:var(--no);}
+
+  /* NEXT BUTTON */
   .nb2{
-    display:none;margin:13px 16px 0;width:calc(100% - 32px);
+    display:none;margin:14px 18px 0;width:calc(100% - 36px);
     background:linear-gradient(135deg,#5b21b6,#7c3aed);
     border:none;border-radius:var(--radius);
-    padding:14px;font-family:'Inter',sans-serif;font-size:0.95em;
+    padding:15px;font-family:'Inter',sans-serif;font-size:1em;
     font-weight:700;color:white;cursor:pointer;
-    box-shadow:0 3px 10px rgba(91,33,182,0.3);
+    box-shadow:0 3px 10px rgba(91,33,182,0.28);
   }
-  .nb2.show{display:block;animation:fu .3s ease;}
+  .nb2.show{display:block;animation:fadeUp .3s ease;}
   .nb2:active{transform:scale(.98);}
-  .rs{display:none;padding:28px 16px;flex-direction:column;align-items:center;}
-  .rs.show{display:flex;animation:fu .5s ease;}
-  .rtr{font-size:3.8em;margin-bottom:8px;animation:bn .6s ease;}
+
+  /* RESULTS */
+  .rs{display:none;padding:30px 18px;flex-direction:column;align-items:center;}
+  .rs.show{display:flex;animation:fadeUp .5s ease;}
+  .rtr{font-size:4em;margin-bottom:10px;animation:bounce .6s ease;}
   .rsb{
-    font-size:3.2em;font-weight:800;font-family:'JetBrains Mono',monospace;
+    font-size:3.5em;font-weight:800;font-family:'JetBrains Mono',monospace;
     background:linear-gradient(135deg,#5b21b6,#2563eb);
     -webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px;
   }
-  .rl{font-size:0.88em;color:var(--text-sm);margin-bottom:22px;font-weight:500;}
+  .rl{font-size:0.9em;color:var(--text-sm);margin-bottom:24px;font-weight:500;}
   .rbd{
     width:100%;background:var(--white);border:1px solid var(--border);
-    border-radius:var(--radius);padding:14px;margin-bottom:18px;box-shadow:var(--shadow);
+    border-radius:var(--radius);padding:16px;margin-bottom:20px;
+    box-shadow:var(--shadow);
   }
-  .bdr{display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid #f3f4f6;font-size:0.83em;color:var(--text-md);}
+  .bdr{display:flex;justify-content:space-between;align-items:center;
+    padding:8px 0;border-bottom:1px solid #f3f4f6;font-size:0.88em;color:var(--text-md);}
   .bdr:last-child{border-bottom:none;}
   .bdc{color:var(--ok);font-weight:700;font-family:'JetBrains Mono',monospace;}
   .bdw{color:var(--no);font-weight:700;font-family:'JetBrains Mono',monospace;}
-  .nbp{background:#fffbeb;border:1px solid #fde68a;border-radius:12px;padding:12px 15px;width:100%;display:flex;align-items:center;gap:11px;margin-bottom:14px;box-shadow:var(--shadow);}
-  .rbs{display:flex;flex-direction:column;gap:9px;width:100%;}
+  .nbp{background:#fffbeb;border:1.5px solid #fde68a;border-radius:12px;
+    padding:12px 16px;width:100%;display:flex;align-items:center;gap:12px;margin-bottom:14px;
+    box-shadow:var(--shadow);}
+  .rbs{display:flex;flex-direction:column;gap:10px;width:100%;}
   .bp{
-    background:linear-gradient(135deg,#5b21b6,#7c3aed);border:none;border-radius:var(--radius);
-    padding:14px;font-family:'Inter',sans-serif;font-size:0.95em;font-weight:700;
+    background:linear-gradient(135deg,#5b21b6,#7c3aed);border:none;
+    border-radius:var(--radius);padding:15px;
+    font-family:'Inter',sans-serif;font-size:1em;font-weight:700;
     color:white;cursor:pointer;text-align:center;text-decoration:none;display:block;
-    box-shadow:0 3px 10px rgba(91,33,182,0.3);
+    box-shadow:0 3px 10px rgba(91,33,182,0.28);
   }
   .bs{
     background:var(--white);border:1.5px solid var(--border);
-    border-radius:var(--radius);padding:13px;
-    font-family:'Inter',sans-serif;font-size:0.88em;font-weight:600;
-    color:var(--text-sm);cursor:pointer;text-align:center;text-decoration:none;display:block;
-    box-shadow:var(--shadow);
+    border-radius:var(--radius);padding:14px;
+    font-family:'Inter',sans-serif;font-size:0.92em;font-weight:600;
+    color:var(--text-sm);cursor:pointer;text-align:center;
+    text-decoration:none;display:block;box-shadow:var(--shadow);
   }
-  .qcard{animation:fu .3s ease;}
-  @keyframes fu{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
-  @keyframes fi2{from{opacity:0}to{opacity:1}}
-  @keyframes bn{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
-  @keyframes sk{0%,100%{transform:translateX(0)}25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
-  .shake{animation:sk .3s ease;}
+
+  .qcard{animation:fadeUp .3s ease;}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+  @keyframes bounce{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
+  @keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+  .shake{animation:shake .3s ease;}
+
+  /* MOBILE RESPONSIVE */
+  @media(max-width:420px){
+    body{font-size:17px;}
+    .qt{font-size:1.05em;}
+    .ob{padding:16px;}
+    .ot{font-size:0.97em;}
+  }
 </style>
 </head>
 <body>
 <div class="app">
 <div class="qh">
   <a class="back" href="../modules/module1.html">&larr; Module 1</a>
-  <div class="qm"><div class="qc" id="qc">Q 1 of 20</div><div class="ql">Lesson 1.8 &mdash; Interjections: Expressing Emotions</div></div>
-  <button class="mt" id="mb" onclick="tM()">&#128266;</button>
+  <div class="qm">
+    <div class="qc" id="qc">Q 1 of 20</div>
+    <div class="ql">Lesson 1.8 &mdash; Interjections: Expressing Emotions</div>
+  </div>
+  <button class="mt" id="mb" onclick="tM()">🔊</button>
 </div>
 <div class="qp"><div class="qpf" id="pf" style="width:0%"></div></div>
 <div id="qa"></div>
 <div class="rs" id="rs"></div>
 </div>
+
 <script>
-var Q=[
-{
-"type": "mcq",
-"q": "Which of the following is an interjection?",
-"options": [
-"Quickly",
-"Beautiful",
-"Wow",
-"Run"
-],
-"answer": 2,
-"explanation": "Interjections express sudden emotions or reactions and are grammatically independent. 'Wow' expresses surprise or admiration. 'Quickly' is an adverb, 'beautiful' is an adjective, 'run' is a verb."
-},
-{
-"type": "mcq",
-"q": "Which punctuation mark most commonly follows a strong interjection?",
-"options": [
-"Full stop (.)",
-"Question mark (?)",
-"Exclamation mark (!)",
-"Semicolon (;)"
-],
-"answer": 2,
-"explanation": "Strong interjections expressing intense emotion are followed by an exclamation mark: 'Ouch! That hurt.' Mild interjections may be followed by a comma: 'Well, that was unexpected.'"
-},
-{
-"type": "mcq",
-"q": "Which interjection best fits: '___ I forgot my wallet at home!'",
-"options": [
-"Hurray!",
-"Well done!",
-"Oh no!",
-"Bravo!"
-],
-"answer": 2,
-"explanation": "'Oh no!' expresses dismay or sudden realisation of a problem — perfectly matching forgetting a wallet. 'Hurray' expresses celebration, 'well done' expresses praise, 'bravo' congratulates a performance."
-},
-{
-"type": "mcq",
-"q": "Which sentence uses an interjection correctly?",
-"options": [
-"She ouch fell down the stairs.",
-"Ouch! That really hurt.",
-"They wow saw a shooting star.",
-"He said ouch while running."
-],
-"answer": 1,
-"explanation": "Interjections stand apart from the sentence, separated by punctuation. 'Ouch! That really hurt.' correctly uses the interjection before the related sentence. Interjections cannot be embedded mid-sentence as in the other options."
-},
-{
-"type": "mcq",
-"q": "Which of the following is a mild interjection?",
-"options": [
-"Ouch",
-"Well",
-"Wow",
-"Yikes"
-],
-"answer": 1,
-"explanation": "'Well' is a mild interjection used to introduce a thought or show hesitation: 'Well, I think we should try.' It's followed by a comma. 'Ouch', 'Wow', and 'Yikes' are stronger interjections expressing more intense reactions."
-},
-{
-"type": "tf",
-"q": "Interjections are grammatically connected to the main clause of the sentence.",
-"answer": false,
-"explanation": "False. Interjections are grammatically INDEPENDENT — they have no syntactic relationship with the rest of the sentence. They can be removed without affecting the grammar: 'Wow! She passed.' Remove 'Wow!' → 'She passed.' — still complete."
-},
-{
-"type": "mcq",
-"q": "What emotion does 'Alas!' typically express?",
-"options": [
-"Happiness",
-"Surprise",
-"Sorrow or regret",
-"Anger"
-],
-"answer": 2,
-"explanation": "'Alas' is a literary/formal interjection expressing sorrow, grief, regret, or pity: 'Alas, he never returned.' It's not commonly used in everyday speech — mainly found in literature and formal contexts."
-},
-{
-"type": "mcq",
-"q": "Which sentence demonstrates the correct use of a mild interjection with a comma?",
-"options": [
-"Well! I think we should try a different approach.",
-"Well, I think we should try a different approach.",
-"Well I think we should try a different approach.",
-"I think well we should try a different approach."
-],
-"answer": 1,
-"explanation": "A mild interjection at the start of a sentence is followed by a comma: 'Well, I think...' An exclamation mark would be too emphatic for a mild interjection. No punctuation omits the pause."
-},
-{
-"type": "mcq",
-"q": "Which interjection is most appropriate in formal written English?",
-"options": [
-"Yikes",
-"Oops",
-"Indeed",
-"Wow"
-],
-"answer": 2,
-"explanation": "Most interjections are informal, suited to speech or casual writing. 'Indeed' is the most formal of these options — it can be used in formal contexts to signal agreement or emphasis. 'Yikes', 'oops', and 'wow' are informal."
-},
-{
-"type": "fill",
-"q": "An interjection expressing sudden pain, such as 'Ouch!', is an example of a ________ interjection.",
-"answer": "strong|primary",
-"hint": "It expresses a strong, sudden emotion...",
-"explanation": "Strong (or primary) interjections are pure exclamations with no other grammatical function: Ouch, Wow, Yikes, Phew, Oops. They express strong, sudden emotions. Mild interjections (Well, Oh, Hmm) have softer emotional force and typically use a comma."
-},
-{
-"type": "mcq",
-"q": "Which of the following is NOT a characteristic of interjections?",
-"options": [
-"They express emotion",
-"They can stand alone as sentences",
-"They must always be followed by an exclamation mark",
-"They are common in spoken language"
-],
-"answer": 2,
-"explanation": "Interjections do NOT always require an exclamation mark. Mild ones use a comma: 'Well, that's interesting.' Strong ones use an exclamation mark: 'Wow!' The rule depends on the emotional intensity, not a fixed requirement."
-},
-{
-"type": "mcq",
-"q": "Which interjection shows the most nuanced use in context?",
-"options": [
-"Wow, the quarterly financial report shows a 3% decline in net revenue.",
-"Hmm, that is a rather complex question — let me think it through carefully.",
-"Oops! The surgeon successfully completed the operation.",
-"Hurray, the patient's condition has deteriorated significantly."
-],
-"answer": 1,
-"explanation": "'Hmm' signals thoughtful hesitation in a measured, intellectual tone — perfectly appropriate before a complex question. Option A (Wow + financial report) is too casual, C and D create jarring tone mismatches between the interjection and the context."
-},
-{
-"type": "tf",
-"q": "Interjections like 'Please' and 'Sorry' can also function as other parts of speech.",
-"answer": true,
-"explanation": "True. Words like 'please', 'sorry', 'thanks', and 'excuse me' can function as interjections in isolated use ('Sorry!' 'Thanks!') but they also have grammatical functions: 'please' as an adverb ('Please sit down'), 'sorry' as an adjective ('I'm sorry')."
-},
-{
-"type": "mcq",
-"q": "Which sentence uses an interjection correctly in a dialogue?",
-"options": [
-"'Goodness, that was a close call!' she exclaimed.",
-"'She said goodness that was a close call,' he replied.",
-"She goodness said that was a close call.",
-"'That goodness was a close call!' she exclaimed."
-],
-"answer": 0,
-"explanation": "In dialogue, an interjection appears at the start of the quotation followed by a comma, with the rest of the sentence continuing: 'Goodness, that was a close call!' The interjection is inside the quotation marks."
-},
-{
-"type": "mcq",
-"q": "Which pair of interjections and their meanings is CORRECT?",
-"options": [
-"Alas = happiness; Bravo = sorrow",
-"Phew = relief; Ouch = pain",
-"Hurray = disappointment; Wow = boredom",
-"Hmm = excitement; Yikes = approval"
-],
-"answer": 1,
-"explanation": "'Phew' correctly expresses relief (after a near miss or completing something difficult). 'Ouch' correctly expresses pain. The other pairs are all reversed or incorrect: 'Alas' = sorrow, 'Hurray' = celebration, 'Wow' = surprise/admiration."
-},
-{
-"type": "mcq",
-"q": "In formal academic writing, which approach to interjections is most appropriate?",
-"options": [
-"Use them frequently to make writing more engaging",
-"Avoid them entirely — they are inappropriate in formal writing",
-"Use only mild interjections like 'Indeed' or 'Well'",
-"Replace them with exclamation marks only"
-],
-"answer": 1,
-"explanation": "In formal academic writing, interjections are generally avoided entirely. Academic writing requires measured, objective language without expressions of personal emotion or surprise. Interjections are better suited to spoken language, fiction, and informal writing."
-},
-{
-"type": "fill",
-"q": "The interjection 'Bravo!' is most appropriately used to express ________ for a performance.",
-"answer": "admiration|appreciation|praise|congratulations",
-"hint": "You shout it at the end of a concert...",
-"explanation": "'Bravo!' expresses admiration, appreciation, or congratulations for a good performance — traditionally shouted at the end of operas, concerts, or theatrical performances. 'Brava!' is the feminine form; 'Bravi!' is the plural. It originates from Italian."
-},
-{
-"type": "mcq",
-"q": "Which sentence correctly describes how interjections function in communication?",
-"options": [
-"Interjections modify the verb of the main clause.",
-"Interjections express the speaker's emotional reaction and are grammatically isolated from the sentence.",
-"Interjections always appear at the end of a sentence.",
-"Interjections must be followed by a noun to complete their meaning."
-],
-"answer": 1,
-"explanation": "Interjections express the speaker's emotional state and are grammatically independent — they have no syntactic relationship with other sentence elements. They most commonly appear at the beginning (rarely at the end) of a sentence."
-},
-{
-"type": "mcq",
-"q": "Which interjection would be most appropriate in a text message to a friend after winning a competition?",
-"options": [
-"Alas!",
-"Indeed.",
-"Yippee! We won!",
-"Hmm."
-],
-"answer": 2,
-"explanation": "'Yippee!' expresses great excitement and joy — perfectly appropriate for a celebratory text message to a friend. 'Alas' expresses sorrow, 'indeed' is formal, and 'hmm' expresses hesitation. Register and context determine which interjection is appropriate."
-},
-{
-"type": "mcq",
-"q": "Which passage demonstrates the most skillful and contextually appropriate use of interjections?",
-"options": [
-"Wow! The committee, wow, decided to, oops, cancel, oops, the project. Hmm!",
-"'Well,' said the detective, pausing to examine the clue, 'this is rather more complex than it first appeared.' 'Indeed,' replied his colleague, raising an eyebrow.",
-"Hurray! The patient's vital signs have deteriorated significantly. Oops! We need to act immediately.",
-"She said wow and ouch and hmm throughout the entire presentation, which was very distracting."
-],
-"answer": 1,
-"explanation": "Option B uses interjections with precise emotional register: 'Well' (hesitant deliberation) and 'Indeed' (formal agreement/confirmation) are perfectly matched to a detective scene requiring measured, thoughtful responses. Placement, punctuation, and tone are all correct."
-}
-];
-var cur=0,cor=0,ans=false,st=Date.now(),ac=null;
+var Q=[{"type": "mcq", "q": "Which of the following is an interjection?", "options": ["Quickly", "Beautiful", "Wow", "Run"], "answer": 2, "explanation": "Interjections express sudden emotions or reactions and are grammatically independent. 'Wow' expresses surprise or admiration. 'Quickly' is an adverb, 'beautiful' is an adjective, 'run' is a verb."}, {"type": "mcq", "q": "Which punctuation mark most commonly follows a strong interjection?", "options": ["Full stop (.)", "Question mark (?)", "Exclamation mark (!)", "Semicolon (;)"], "answer": 2, "explanation": "Strong interjections expressing intense emotion are followed by an exclamation mark: 'Ouch! That hurt.' Mild interjections may be followed by a comma: 'Well, that was unexpected.'"}, {"type": "mcq", "q": "Which interjection best fits: '___ I forgot my wallet at home!'", "options": ["Hurray!", "Well done!", "Oh no!", "Bravo!"], "answer": 2, "explanation": "'Oh no!' expresses dismay or sudden realisation of a problem — perfectly matching forgetting a wallet. 'Hurray' expresses celebration, 'well done' expresses praise, 'bravo' congratulates a performance."}, {"type": "mcq", "q": "Which sentence uses an interjection correctly?", "options": ["She ouch fell down the stairs.", "Ouch! That really hurt.", "They wow saw a shooting star.", "He said ouch while running."], "answer": 1, "explanation": "Interjections stand apart from the sentence, separated by punctuation. 'Ouch! That really hurt.' correctly uses the interjection before the related sentence. Interjections cannot be embedded mid-sentence as in the other options."}, {"type": "mcq", "q": "Which of the following is a mild interjection?", "options": ["Ouch", "Well", "Wow", "Yikes"], "answer": 1, "explanation": "'Well' is a mild interjection used to introduce a thought or show hesitation: 'Well, I think we should try.' It's followed by a comma. 'Ouch', 'Wow', and 'Yikes' are stronger interjections expressing more intense reactions."}, {"type": "tf", "q": "Interjections are grammatically connected to the main clause of the sentence.", "answer": false, "explanation": "False. Interjections are grammatically INDEPENDENT — they have no syntactic relationship with the rest of the sentence. They can be removed without affecting the grammar: 'Wow! She passed.' Remove 'Wow!' → 'She passed.' — still complete."}, {"type": "mcq", "q": "What emotion does 'Alas!' typically express?", "options": ["Happiness", "Surprise", "Sorrow or regret", "Anger"], "answer": 2, "explanation": "'Alas' is a literary/formal interjection expressing sorrow, grief, regret, or pity: 'Alas, he never returned.' It's not commonly used in everyday speech — mainly found in literature and formal contexts."}, {"type": "mcq", "q": "Which sentence demonstrates the correct use of a mild interjection with a comma?", "options": ["Well! I think we should try a different approach.", "Well, I think we should try a different approach.", "Well I think we should try a different approach.", "I think well we should try a different approach."], "answer": 1, "explanation": "A mild interjection at the start of a sentence is followed by a comma: 'Well, I think...' An exclamation mark would be too emphatic for a mild interjection. No punctuation omits the pause."}, {"type": "mcq", "q": "Which interjection is most appropriate in formal written English?", "options": ["Yikes", "Oops", "Indeed", "Wow"], "answer": 2, "explanation": "Most interjections are informal, suited to speech or casual writing. 'Indeed' is the most formal of these options — it can be used in formal contexts to signal agreement or emphasis. 'Yikes', 'oops', and 'wow' are informal."}, {"type": "fill", "q": "An interjection expressing sudden pain, such as 'Ouch!', is an example of a ________ interjection.", "answer": "strong|primary", "hint": "It expresses a strong, sudden emotion...", "explanation": "Strong (or primary) interjections are pure exclamations with no other grammatical function: Ouch, Wow, Yikes, Phew, Oops. They express strong, sudden emotions. Mild interjections (Well, Oh, Hmm) have softer emotional force and typically use a comma."}, {"type": "mcq", "q": "Which of the following is NOT a characteristic of interjections?", "options": ["They express emotion", "They can stand alone as sentences", "They must always be followed by an exclamation mark", "They are common in spoken language"], "answer": 2, "explanation": "Interjections do NOT always require an exclamation mark. Mild ones use a comma: 'Well, that's interesting.' Strong ones use an exclamation mark: 'Wow!' The rule depends on the emotional intensity, not a fixed requirement."}, {"type": "mcq", "q": "Which interjection shows the most nuanced use in context?", "options": ["Wow, the quarterly financial report shows a 3% decline in net revenue.", "Hmm, that is a rather complex question — let me think it through carefully.", "Oops! The surgeon successfully completed the operation.", "Hurray, the patient's condition has deteriorated significantly."], "answer": 1, "explanation": "'Hmm' signals thoughtful hesitation in a measured, intellectual tone — perfectly appropriate before a complex question. Option A (Wow + financial report) is too casual, C and D create jarring tone mismatches between the interjection and the context."}, {"type": "tf", "q": "Interjections like 'Please' and 'Sorry' can also function as other parts of speech.", "answer": true, "explanation": "True. Words like 'please', 'sorry', 'thanks', and 'excuse me' can function as interjections in isolated use ('Sorry!' 'Thanks!') but they also have grammatical functions: 'please' as an adverb ('Please sit down'), 'sorry' as an adjective ('I'm sorry')."}, {"type": "mcq", "q": "Which sentence uses an interjection correctly in a dialogue?", "options": ["'Goodness, that was a close call!' she exclaimed.", "'She said goodness that was a close call,' he replied.", "She goodness said that was a close call.", "'That goodness was a close call!' she exclaimed."], "answer": 0, "explanation": "In dialogue, an interjection appears at the start of the quotation followed by a comma, with the rest of the sentence continuing: 'Goodness, that was a close call!' The interjection is inside the quotation marks."}, {"type": "mcq", "q": "Which pair of interjections and their meanings is CORRECT?", "options": ["Alas = happiness; Bravo = sorrow", "Phew = relief; Ouch = pain", "Hurray = disappointment; Wow = boredom", "Hmm = excitement; Yikes = approval"], "answer": 1, "explanation": "'Phew' correctly expresses relief (after a near miss or completing something difficult). 'Ouch' correctly expresses pain. The other pairs are all reversed or incorrect: 'Alas' = sorrow, 'Hurray' = celebration, 'Wow' = surprise/admiration."}, {"type": "mcq", "q": "In formal academic writing, which approach to interjections is most appropriate?", "options": ["Use them frequently to make writing more engaging", "Avoid them entirely — they are inappropriate in formal writing", "Use only mild interjections like 'Indeed' or 'Well'", "Replace them with exclamation marks only"], "answer": 1, "explanation": "In formal academic writing, interjections are generally avoided entirely. Academic writing requires measured, objective language without expressions of personal emotion or surprise. Interjections are better suited to spoken language, fiction, and informal writing."}, {"type": "fill", "q": "The interjection 'Bravo!' is most appropriately used to express ________ for a performance.", "answer": "admiration|appreciation|praise|congratulations", "hint": "You shout it at the end of a concert...", "explanation": "'Bravo!' expresses admiration, appreciation, or congratulations for a good performance — traditionally shouted at the end of operas, concerts, or theatrical performances. 'Brava!' is the feminine form; 'Bravi!' is the plural. It originates from Italian."}, {"type": "mcq", "q": "Which sentence correctly describes how interjections function in communication?", "options": ["Interjections modify the verb of the main clause.", "Interjections express the speaker's emotional reaction and are grammatically isolated from the sentence.", "Interjections always appear at the end of a sentence.", "Interjections must be followed by a noun to complete their meaning."], "answer": 1, "explanation": "Interjections express the speaker's emotional state and are grammatically independent — they have no syntactic relationship with other sentence elements. They most commonly appear at the beginning (rarely at the end) of a sentence."}, {"type": "mcq", "q": "Which interjection would be most appropriate in a text message to a friend after winning a competition?", "options": ["Alas!", "Indeed.", "Yippee! We won!", "Hmm."], "answer": 2, "explanation": "'Yippee!' expresses great excitement and joy — perfectly appropriate for a celebratory text message to a friend. 'Alas' expresses sorrow, 'indeed' is formal, and 'hmm' expresses hesitation. Register and context determine which interjection is appropriate."}, {"type": "mcq", "q": "Which passage demonstrates the most skillful and contextually appropriate use of interjections?", "options": ["Wow! The committee, wow, decided to, oops, cancel, oops, the project. Hmm!", "'Well,' said the detective, pausing to examine the clue, 'this is rather more complex than it first appeared.' 'Indeed,' replied his colleague, raising an eyebrow.", "Hurray! The patient's vital signs have deteriorated significantly. Oops! We need to act immediately.", "She said wow and ouch and hmm throughout the entire presentation, which was very distracting."], "answer": 1, "explanation": "Option B uses interjections with precise emotional register: 'Well' (hesitant deliberation) and 'Indeed' (formal agreement/confirmation) are perfectly matched to a detective scene requiring measured, thoughtful responses. Placement, punctuation, and tone are all correct."}];
+var SKEY="m1_l8";
+var NEXT="q1-9.html";
+var HUB="../modules/module1.html";
+var cur=0,cor=0,answered=false,st=Date.now(),ac=null;
+
 function gAC(){if(!ac)ac=new(window.AudioContext||window.webkitAudioContext)();return ac;}
 function gD(){try{return JSON.parse(localStorage.getItem('grammar_app')||'{}');}catch(e){return{};}}
 function sD(d){try{localStorage.setItem('grammar_app',JSON.stringify(d));}catch(e){}}
-function tM(){var d=gD();d.muted=!d.muted;sD(d);document.getElementById('mb').textContent=d.muted?'&#128263;':'&#128266;';}
-function pT(t){var d=gD();if(d.muted)return;try{var c=gAC();if(c.state==='suspended')c.resume();if(t==='c')pC(c);else if(t==='w')pW(c);else pF(c);}catch(e){}}
-function pC(c){[[523,0],[659,.1],[784,.2]].forEach(function(a){var o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);o.frequency.value=a[0];o.type='sine';var t=c.currentTime+a[1];g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.18,t+.02);g.gain.exponentialRampToValueAtTime(.001,t+.3);o.start(t);o.stop(t+.3);});}
-function pW(c){[[240,0],[200,.1]].forEach(function(a){var o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);o.frequency.value=a[0];o.type='sawtooth';var t=c.currentTime+a[1];g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.08,t+.02);g.gain.exponentialRampToValueAtTime(.001,t+.25);o.start(t);o.stop(t+.25);});}
-function pF(c){[[523,0],[659,.15],[784,.3],[1047,.45]].forEach(function(a){var o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);o.frequency.value=a[0];o.type='sine';var t=c.currentTime+a[1];g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.2,t+.03);g.gain.exponentialRampToValueAtTime(.001,t+.5);o.start(t);o.stop(t+.5);});}
+
+function tM(){
+  var d=gD();d.muted=!d.muted;sD(d);
+  document.getElementById('mb').textContent=d.muted?'🔇':'🔊';
+}
+
+function pT(t){
+  var d=gD();if(d.muted)return;
+  try{var c=gAC();if(c.state==='suspended')c.resume();
+    if(t==='c')pC(c);else if(t==='w')pW(c);else pF(c);}catch(e){}
+}
+function pC(c){[[523,0],[659,.1],[784,.2]].forEach(function(a){
+  var o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);
+  o.frequency.value=a[0];o.type='sine';var t=c.currentTime+a[1];
+  g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.18,t+.02);
+  g.gain.exponentialRampToValueAtTime(.001,t+.3);o.start(t);o.stop(t+.3);});}
+function pW(c){[[240,0],[200,.1]].forEach(function(a){
+  var o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);
+  o.frequency.value=a[0];o.type='sawtooth';var t=c.currentTime+a[1];
+  g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.08,t+.02);
+  g.gain.exponentialRampToValueAtTime(.001,t+.25);o.start(t);o.stop(t+.25);});}
+function pF(c){[[523,0],[659,.15],[784,.3],[1047,.45]].forEach(function(a){
+  var o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);
+  o.frequency.value=a[0];o.type='sine';var t=c.currentTime+a[1];
+  g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.2,t+.03);
+  g.gain.exponentialRampToValueAtTime(.001,t+.5);o.start(t);o.stop(t+.5);});}
+
 function rQ(){
-  var q=Q[cur];ans=false;
+  var q=Q[cur];answered=false;
   document.getElementById('pf').style.width=(cur/Q.length*100)+'%';
   document.getElementById('qc').textContent='Q '+(cur+1)+' of '+Q.length;
   var area=document.getElementById('qa');
-  var lbs={mcq:'Multiple Choice',tf:'True or False',fill:'Fill in the Blank',transform:'Sentence Transformation'};
-  var lbl=lbs[q.type]||'Question';
+  var labels={mcq:'Multiple Choice',tf:'True or False',fill:'Fill in the Blank',transform:'Sentence Transformation'};
+  var lbl=labels[q.type]||'Question';
   var oh='';
   if(q.type==='mcq'){
-    oh='<div class="ol">'+q.options.map(function(o,i){return '<button class="ob" onclick="sO('+i+')" data-i="'+i+'"><div class="ok2">'+String.fromCharCode(65+i)+'</div><div class="ot">'+o+'</div><div class="oi">'+(i===q.answer?'&#10003;':'&#10007;')+'</div></button>';}).join('')+'</div>';
-  }else if(q.type==='tf'){
-    oh='<div class="tfo"><button class="ob" onclick="sT(true)" data-v="true"><div class="ok2">T</div><div class="ot">True</div><div class="oi">'+(q.answer?'&#10003;':'&#10007;')+'</div></button><button class="ob" onclick="sT(false)" data-v="false"><div class="ok2">F</div><div class="ot">False</div><div class="oi">'+(!q.answer?'&#10003;':'&#10007;')+'</div></button></div>';
-  }else{
-    oh='<div class="fb"><input class="fi" id="fi" type="text" placeholder="'+(q.type==='transform'?'Rewrite the sentence...':'Type your answer...')+'" autocomplete="off" autocapitalize="none" spellcheck="false" onkeydown="if(event.keyCode===13)sF()">'+(q.hint?'<div style="font-size:.7em;color:#9ca3af;margin-top:6px;">&#128161; '+q.hint+'</div>':'')+'<button class="fs" id="fsb" onclick="sF()">Check Answer</button></div>';
+    oh='<div class="ol">'+q.options.map(function(opt,i){
+      return '<button class="ob" onclick="selOpt('+i+')" data-i="'+i+'">'+
+        '<div class="ok2">'+String.fromCharCode(65+i)+'</div>'+
+        '<div class="ot">'+opt+'</div>'+
+        '<div class="oi">'+(i===q.answer?'✓':'✗')+'</div></button>';
+    }).join('')+'</div>';
+  } else if(q.type==='tf'){
+    oh='<div class="tfo">'+
+      '<button class="ob" onclick="selTF(true)" data-v="true">'+
+        '<div class="ok2">T</div><div class="ot">True</div>'+
+        '<div class="oi">'+(q.answer?'✓':'✗')+'</div></button>'+
+      '<button class="ob" onclick="selTF(false)" data-v="false">'+
+        '<div class="ok2">F</div><div class="ot">False</div>'+
+        '<div class="oi">'+(!q.answer?'✓':'✗')+'</div></button>'+
+    '</div>';
+  } else {
+    var ph=q.type==='transform'?'Rewrite the sentence...':'Type your answer...';
+    oh='<div class="fb">'+
+      '<input class="fi" id="fi" type="text" placeholder="'+ph+'" '+
+        'autocomplete="off" autocapitalize="none" spellcheck="false" '+
+        'onkeydown="if(event.keyCode===13)subFill()">'+
+      (q.hint?'<div class="hint">💡 Hint: '+q.hint+'</div>':'')+
+      '<button class="fs" id="fsb" onclick="subFill()">Check Answer</button>'+
+    '</div>';
   }
-  area.innerHTML='<div class="qcard"><div class="qa"><div class="qtb">'+lbl+'</div><div class="qt">'+q.q+'</div></div>'+oh+'<div class="eb" id="eb"></div><button class="nb2" id="nb" onclick="nQ()">'+(cur+1<Q.length?'Next Question &rarr;':'See Results &#127919;')+'</button></div>';
-  if(q.type==='fill'||q.type==='transform')setTimeout(function(){var e=document.getElementById('fi');if(e)e.focus();},100);
-  var d=gD();document.getElementById('mb').textContent=d.muted?'&#128263;':'&#128266;';
+  area.innerHTML='<div class="qcard">'+
+    '<div class="qa"><div class="qtb">'+lbl+'</div><div class="qt">'+q.q+'</div></div>'+
+    oh+
+    '<div class="eb" id="eb"></div>'+
+    '<button class="nb2" id="nb" onclick="nextQ()">'+
+      (cur+1<Q.length?'Next Question →':'See Results 🎯')+
+    '</button></div>';
+  if(q.type==='fill'||q.type==='transform'){
+    setTimeout(function(){var e=document.getElementById('fi');if(e)e.focus();},150);
+  }
+  var d=gD();document.getElementById('mb').textContent=d.muted?'🔇':'🔊';
 }
-function sO(i){if(ans)return;ans=true;var q=Q[cur];var ok=i===q.answer;if(ok)cor++;pT(ok?'c':'w');document.querySelectorAll('.ob').forEach(function(b,j){if(j===q.answer)b.classList.add('correct');else if(j===i&&!ok){b.classList.add('wrong');b.classList.add('shake');}else b.classList.add('dimmed');b.disabled=true;});shE(ok,q.explanation);document.getElementById('nb').classList.add('show');}
-function sT(v){if(ans)return;ans=true;var q=Q[cur];var ok=v===q.answer;if(ok)cor++;pT(ok?'c':'w');document.querySelectorAll('.ob').forEach(function(b){var bv=b.dataset.v==='true';if(bv===q.answer)b.classList.add('correct');else if(bv===v&&!ok)b.classList.add('wrong');else b.classList.add('dimmed');b.disabled=true;});shE(ok,q.explanation);document.getElementById('nb').classList.add('show');}
-function sF(){if(ans)return;var inp=document.getElementById('fi');if(!inp||!inp.value.trim())return;ans=true;var q=Q[cur];var v=inp.value.trim().toLowerCase();var aa=(q.answer||'').toLowerCase().split('|');var ok=aa.some(function(a){return v===a.trim();});if(ok)cor++;pT(ok?'c':'w');inp.classList.add(ok?'correct':'wrong');inp.disabled=true;document.getElementById('fsb').disabled=true;if(!ok){var cd=document.createElement('div');cd.style.cssText='font-size:.78em;color:var(--ok);margin-top:6px;';cd.textContent='Answer: '+q.answer;inp.parentNode.insertBefore(cd,document.getElementById('fsb'));inp.classList.add('shake');}shE(ok,q.explanation);document.getElementById('nb').classList.add('show');}
-function shE(ok,text){var b=document.getElementById('eb');b.innerHTML='<div class="el '+(ok?'correct':'wrong')+'">'+(ok?'&#10003; Correct!':'&#10007; Incorrect')+'</div><div>'+text+'</div>';b.classList.add('show');setTimeout(function(){b.scrollIntoView({behavior:'smooth',block:'nearest'});},100);}
-function nQ(){cur++;if(cur>=Q.length)shR();else{rQ();window.scrollTo({top:0,behavior:'smooth'});}}
-function shR(){
+
+function selOpt(i){
+  if(answered)return;answered=true;
+  var q=Q[cur];var ok=i===q.answer;if(ok)cor++;pT(ok?'c':'w');
+  document.querySelectorAll('.ob').forEach(function(b,j){
+    if(j===q.answer)b.classList.add('correct');
+    else if(j===i&&!ok){b.classList.add('wrong');b.classList.add('shake');}
+    else b.classList.add('dimmed');
+    b.disabled=true;
+  });
+  showExpl(ok,q.explanation);
+  document.getElementById('nb').classList.add('show');
+}
+
+function selTF(v){
+  if(answered)return;answered=true;
+  var q=Q[cur];var ok=v===q.answer;if(ok)cor++;pT(ok?'c':'w');
+  document.querySelectorAll('.ob').forEach(function(b){
+    var bv=b.dataset.v==='true';
+    if(bv===q.answer)b.classList.add('correct');
+    else if(bv===v&&!ok)b.classList.add('wrong');
+    else b.classList.add('dimmed');
+    b.disabled=true;
+  });
+  showExpl(ok,q.explanation);
+  document.getElementById('nb').classList.add('show');
+}
+
+function subFill(){
+  if(answered)return;
+  var inp=document.getElementById('fi');
+  if(!inp||!inp.value.trim())return;
+  answered=true;
+  var q=Q[cur];var v=inp.value.trim().toLowerCase();
+  var ans=(q.answer||'').toLowerCase().split('|');
+  var ok=ans.some(function(a){return v===a.trim();});
+  if(ok)cor++;pT(ok?'c':'w');
+  inp.classList.add(ok?'correct':'wrong');
+  inp.disabled=true;document.getElementById('fsb').disabled=true;
+  if(!ok){
+    var cd=document.createElement('div');
+    cd.style.cssText='font-size:.82em;color:#059669;margin-top:7px;font-weight:600;';
+    cd.textContent='✓ Answer: '+q.answer;
+    inp.parentNode.insertBefore(cd,document.getElementById('fsb'));
+    inp.classList.add('shake');
+  }
+  showExpl(ok,q.explanation);
+  document.getElementById('nb').classList.add('show');
+}
+
+function showExpl(ok,text){
+  var b=document.getElementById('eb');
+  b.innerHTML='<div class="el '+(ok?'correct':'wrong')+'">'+(ok?'✓ Correct!':'✗ Incorrect')+'</div><div>'+text+'</div>';
+  b.classList.add('show');
+  setTimeout(function(){b.scrollIntoView({behavior:'smooth',block:'nearest'});},120);
+}
+
+function nextQ(){
+  cur++;
+  if(cur>=Q.length)showResults();
+  else{rQ();window.scrollTo({top:0,behavior:'smooth'});}
+}
+
+function showResults(){
   pT('complete');
   document.getElementById('pf').style.width='100%';
   document.getElementById('qa').style.display='none';
   document.getElementById('qc').textContent='Complete!';
   var tot=Q.length,pct=Math.round(cor/tot*100),tt=Math.round((Date.now()-st)/1000);
   var d=gD();if(!d.progress)d.progress={};
-  var prev=d.progress["m1_l8"];var isF=prev===undefined;var isI=!isF&&pct>prev;
-  d.progress["m1_l8"]=Math.max(pct,prev||0);
-  if(!d.badges)d.badges=[];var nb2=[];
-  if(isF&&!d.badges.includes('first_quiz')){d.badges.push('first_quiz');nb2.push('&#11088; First Step');}
-  if(pct===100&&!d.badges.includes('perfect_score')){d.badges.push('perfect_score');nb2.push('&#128175; Perfect Score!');}
-  if(isI&&!d.badges.includes('comeback')){d.badges.push('comeback');nb2.push('&#128170; Comeback!');}
-  if(tt<120&&!d.badges.includes('speed_demon')){d.badges.push('speed_demon');nb2.push('&#9889; Speed Run!');}
+  var prev=d.progress[SKEY];var isFirst=prev===undefined;var isImproved=!isFirst&&pct>prev;
+  d.progress[SKEY]=Math.max(pct,prev||0);
+  if(!d.badges)d.badges=[];var newBadges=[];
+  if(isFirst&&!d.badges.includes('first_quiz')){d.badges.push('first_quiz');newBadges.push('⭐ First Step');}
+  if(pct===100&&!d.badges.includes('perfect_score')){d.badges.push('perfect_score');newBadges.push('💯 Perfect Score!');}
+  if(isImproved&&!d.badges.includes('comeback')){d.badges.push('comeback');newBadges.push('💪 Comeback!');}
+  if(tt<120&&!d.badges.includes('speed_demon')){d.badges.push('speed_demon');newBadges.push('⚡ Speed Run!');}
   sD(d);
-  var tr=pct>=90?'&#127942;':pct>=70?'&#127894;':pct>=50?'&#129352;':'&#128218;';
+  var trophy=pct>=90?'🏆':pct>=70?'🥇':pct>=50?'🥈':'📚';
   var msg=pct>=90?'Outstanding!':pct>=70?'Great work!':pct>=50?'Good effort!':'Keep practising!';
-  var bH=nb2.map(function(n){return '<div class="nbp"><span style="font-size:1.8em">'+n.split(' ')[0]+'</span><div><div style="font-size:.78em;font-weight:700;color:#b45309">Badge Unlocked!</div><div style="font-size:.7em;color:#6b7280">'+n.split(' ').slice(1).join(' ')+'</div></div></div>';}).join('');
+  var badgeHTML=newBadges.map(function(n){
+    return '<div class="nbp"><span style="font-size:1.8em">'+n.split(' ')[0]+'</span>'+
+      '<div><div style="font-size:.82em;font-weight:700;color:#b45309">Badge Unlocked!</div>'+
+      '<div style="font-size:.75em;color:#6b7280">'+n.split(' ').slice(1).join(' ')+'</div></div></div>';
+  }).join('');
   var sc=document.getElementById('rs');
-  sc.innerHTML='<div class="rtr">'+tr+'</div><div class="rsb">'+pct+'%</div><div class="rl">'+msg+' '+cor+'/'+tot+' correct</div>'+bH+'<div class="rbd"><div class="bdr"><span>Correct</span><span class="bdc">&#10003; '+cor+'</span></div><div class="bdr"><span>Incorrect</span><span class="bdw">&#10007; '+(tot-cor)+'</span></div><div class="bdr"><span>Score</span><span style="font-weight:700;font-family:JetBrains Mono,monospace">'+pct+'%</span></div><div class="bdr"><span>Time</span><span style="font-family:JetBrains Mono,monospace;color:#6b7280">'+Math.floor(tt/60)+'m '+tt%60+'s</span></div></div><div class="rbs"><a class="bp" href="q1-9.html">Next Lesson &rarr;</a><button class="bs" onclick="rRQ()">&#8635; Retry</button><a class="bs" href="../modules/module1.html">&larr; Module 1</a></div>';
+  sc.innerHTML=
+    '<div class="rtr">'+trophy+'</div>'+
+    '<div class="rsb">'+pct+'%</div>'+
+    '<div class="rl">'+msg+' — '+cor+'/'+tot+' correct</div>'+
+    badgeHTML+
+    '<div class="rbd">'+
+      '<div class="bdr"><span>Correct</span><span class="bdc">✓ '+cor+'</span></div>'+
+      '<div class="bdr"><span>Incorrect</span><span class="bdw">✗ '+(tot-cor)+'</span></div>'+
+      '<div class="bdr"><span>Score</span><span style="font-weight:700;font-family:JetBrains Mono,monospace">'+pct+'%</span></div>'+
+      '<div class="bdr"><span>Time</span><span style="font-family:JetBrains Mono,monospace;color:#6b7280">'+Math.floor(tt/60)+'m '+tt%60+'s</span></div>'+
+    '</div>'+
+    '<div class="rbs">'+
+      '<a class="bp" href="'+NEXT+'">Next Lesson →</a>'+
+      '<button class="bs" onclick="retryQuiz()">↺ Retry this quiz</button>'+
+      '<a class="bs" href="'+HUB+'">← Back to Module 1</a>'+
+    '</div>';
   sc.classList.add('show');window.scrollTo({top:0,behavior:'smooth'});
 }
-function rRQ(){cur=0;cor=0;ans=false;st=Date.now();document.getElementById('rs').classList.remove('show');document.getElementById('qa').style.display='';rQ();window.scrollTo({top:0,behavior:'smooth'});}
-var d0=gD();document.getElementById('mb').textContent=d0.muted?'&#128263;':'&#128266;';
+
+function retryQuiz(){
+  cur=0;cor=0;answered=false;st=Date.now();
+  document.getElementById('rs').classList.remove('show');
+  document.getElementById('qa').style.display='';
+  rQ();window.scrollTo({top:0,behavior:'smooth'});
+}
+
+var d0=gD();
+document.getElementById('mb').textContent=d0.muted?'🔇':'🔊';
 rQ();
 </script>
 </body>

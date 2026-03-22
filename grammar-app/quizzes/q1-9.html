@@ -4,67 +4,79 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
 <title>Lesson 1.Module Quiz — Parts of Speech — Full Assessment | Grammar Mastery</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap');
   :root{
-    --bg:#e8f0fe;--white:#ffffff;--border:#d1d5db;
-    --text:#111827;--text-md:#374151;--text-sm:#6b7280;--text-xs:#9ca3af;
-    --accent:#5b21b6;--accent-lt:#ede9fe;--accent-mid:#7c3aed;
+    --bg:#e8f0fe;--white:#fff;--border:#c7d2fe;
+    --text:#1e1b4b;--text-md:#374151;--text-sm:#6b7280;--text-xs:#9ca3af;
+    --accent:#5b21b6;--accent-mid:#7c3aed;--accent-lt:#ede9fe;
     --ok:#059669;--ok-lt:#d1fae5;--ok-dk:#065f46;
     --no:#dc2626;--no-lt:#fee2e2;--no-dk:#7f1d1d;
-    --gold:#b45309;--radius:14px;
+    --radius:14px;
     --shadow:0 1px 4px rgba(0,0,0,0.08),0 1px 2px rgba(0,0,0,0.04);
+    --shadow-md:0 4px 14px rgba(0,0,0,0.09);
   }
   *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
   html{scroll-behavior:smooth;}
-  body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;}
-  .app{max-width:480px;margin:0 auto;padding-bottom:40px;background:var(--bg);min-height:100vh;}
+  body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;font-size:16px;}
+  .app{max-width:540px;margin:0 auto;padding-bottom:40px;background:var(--bg);min-height:100vh;}
+
+  /* HEADER */
   .qh{
-    padding:14px 16px;display:flex;align-items:center;justify-content:space-between;
+    padding:14px 18px;display:flex;align-items:center;justify-content:space-between;
     background:var(--white);border-bottom:1px solid var(--border);
     position:sticky;top:0;z-index:50;
-    box-shadow:0 2px 8px rgba(0,0,0,0.07);
+    box-shadow:0 2px 10px rgba(99,102,241,0.1);
   }
-  .back{color:var(--accent-mid);font-size:0.83em;font-weight:700;background:none;border:none;cursor:pointer;font-family:'Inter',sans-serif;text-decoration:none;}
+  .back{color:var(--accent-mid);font-size:0.87em;font-weight:700;background:none;border:none;
+    cursor:pointer;font-family:'Inter',sans-serif;text-decoration:none;letter-spacing:-0.01em;}
   .qm{text-align:right;}
-  .qc{font-size:0.72em;font-family:'JetBrains Mono',monospace;color:var(--accent-mid);font-weight:700;}
-  .ql{font-size:0.62em;color:var(--text-xs);margin-top:1px;}
-  .mt{background:#f3f4f6;border:1px solid var(--border);border-radius:9px;padding:7px 9px;font-size:1em;cursor:pointer;}
+  .qc{font-size:0.78em;font-family:'JetBrains Mono',monospace;color:var(--accent-mid);font-weight:700;}
+  .ql{font-size:0.68em;color:var(--text-xs);margin-top:2px;}
+  .mt{background:var(--accent-lt);border:1.5px solid #c4b5fd;border-radius:10px;
+    padding:7px 10px;font-size:1.1em;cursor:pointer;line-height:1;}
+
+  /* PROGRESS */
   .qp{height:5px;background:#c7d2fe;}
-  .qpf{height:100%;background:linear-gradient(90deg,#5b21b6,#2563eb);transition:width .4s cubic-bezier(.4,0,.2,1);}
-  .qa{padding:22px 16px 14px;}
+  .qpf{height:100%;background:linear-gradient(90deg,#5b21b6,#7c3aed);
+    transition:width .4s cubic-bezier(.4,0,.2,1);}
+
+  /* QUESTION AREA */
+  .qa{padding:24px 18px 16px;}
   .qtb{
     display:inline-flex;align-items:center;
     background:var(--accent-lt);border:1.5px solid #c4b5fd;
-    border-radius:20px;padding:5px 14px;
-    font-size:0.62em;font-weight:700;letter-spacing:0.06em;
+    border-radius:20px;padding:5px 15px;
+    font-size:0.68em;font-weight:700;letter-spacing:0.07em;
     color:var(--accent);text-transform:uppercase;
-    font-family:'JetBrains Mono',monospace;margin-bottom:13px;
+    font-family:'JetBrains Mono',monospace;margin-bottom:14px;
   }
-  .qt{font-size:1.05em;font-weight:700;line-height:1.55;color:var(--text);}
-  .ol{display:flex;flex-direction:column;gap:9px;padding:0 16px;}
+  .qt{font-size:1.1em;font-weight:700;line-height:1.55;color:var(--text);}
+
+  /* OPTIONS */
+  .ol{display:flex;flex-direction:column;gap:10px;padding:0 18px;}
   .ob{
-    display:flex;align-items:center;gap:13px;
+    display:flex;align-items:center;gap:14px;
     background:var(--white);border:1.5px solid var(--border);
-    border-radius:var(--radius);padding:14px 15px;
+    border-radius:var(--radius);padding:15px 16px;
     cursor:pointer;transition:all .15s;text-align:left;
     font-family:'Inter',sans-serif;width:100%;color:var(--text);
     box-shadow:var(--shadow);
   }
-  .ob:hover{border-color:#a78bfa;background:#faf5ff;box-shadow:0 3px 10px rgba(124,58,237,0.12);}
+  .ob:hover{border-color:#a78bfa;background:#faf5ff;box-shadow:0 3px 12px rgba(124,58,237,0.13);}
   .ob:active{transform:scale(.98);}
   .ob:disabled{cursor:default;}
   .ok2{
-    width:31px;height:31px;flex-shrink:0;border-radius:9px;
+    width:33px;height:33px;flex-shrink:0;border-radius:9px;
     background:var(--accent-lt);
     display:flex;align-items:center;justify-content:center;
-    font-size:0.73em;font-weight:700;font-family:'JetBrains Mono',monospace;
+    font-size:0.78em;font-weight:700;font-family:'JetBrains Mono',monospace;
     color:var(--accent);transition:all .15s;
   }
-  .ot{font-size:0.9em;line-height:1.4;flex:1;font-weight:500;color:var(--text);}
-  .oi{font-size:1em;opacity:0;transition:opacity .2s;}
+  .ot{font-size:0.95em;line-height:1.4;flex:1;font-weight:500;color:var(--text);}
+  .oi{font-size:1.1em;opacity:0;transition:opacity .2s;}
+
+  /* States */
   .ob.correct{border-color:var(--ok);background:var(--ok-lt);}
   .ob.correct .ok2{background:var(--ok);color:white;}
   .ob.correct .oi{opacity:1;}
@@ -72,369 +84,324 @@
   .ob.wrong .ok2{background:var(--no);color:white;}
   .ob.wrong .oi{opacity:1;}
   .ob.dimmed{opacity:.38;}
-  .fb{padding:0 16px;}
+
+  /* TRUE/FALSE */
+  .tfo{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:0 18px;}
+
+  /* FILL IN BLANK */
+  .fb{padding:0 18px;}
   .fi{
     width:100%;background:var(--white);border:1.5px solid var(--border);
-    border-radius:var(--radius);padding:13px 15px;
-    font-family:'Inter',sans-serif;font-size:0.95em;color:var(--text);
+    border-radius:var(--radius);padding:14px 16px;
+    font-family:'Inter',sans-serif;font-size:1em;color:var(--text);
     outline:none;transition:border-color .2s;box-shadow:var(--shadow);
   }
   .fi:focus{border-color:var(--accent-mid);box-shadow:0 0 0 3px rgba(124,58,237,0.1);}
   .fi.correct{border-color:var(--ok);background:var(--ok-lt);color:var(--ok-dk);}
   .fi.wrong{border-color:var(--no);background:var(--no-lt);color:var(--no-dk);}
+  .hint{font-size:0.75em;color:var(--text-xs);margin-top:6px;padding-left:2px;}
   .fs{
-    margin-top:9px;width:100%;
+    margin-top:10px;width:100%;
     background:linear-gradient(135deg,#5b21b6,#7c3aed);
-    border:none;border-radius:var(--radius);padding:13px;
-    font-family:'Inter',sans-serif;font-size:0.9em;font-weight:700;color:white;cursor:pointer;
-    box-shadow:0 3px 10px rgba(91,33,182,0.3);
+    border:none;border-radius:var(--radius);padding:14px;
+    font-family:'Inter',sans-serif;font-size:1em;font-weight:700;color:white;cursor:pointer;
+    box-shadow:0 3px 10px rgba(91,33,182,0.28);
   }
   .fs:disabled{opacity:.5;cursor:default;}
-  .tfo{display:grid;grid-template-columns:1fr 1fr;gap:9px;padding:0 16px;}
+
+  /* EXPLANATION */
   .eb{
-    margin:13px 16px 0;background:var(--white);border:1px solid var(--border);
-    border-left:4px solid var(--accent-mid);
-    border-radius:var(--radius);padding:13px 15px;
-    font-size:0.83em;line-height:1.65;color:var(--text-md);
+    margin:14px 18px 0;background:var(--white);
+    border:1px solid var(--border);border-left:4px solid var(--accent-mid);
+    border-radius:var(--radius);padding:14px 16px;
+    font-size:0.88em;line-height:1.7;color:var(--text-md);
     display:none;box-shadow:var(--shadow);
   }
-  .eb.show{display:block;animation:fi2 .3s ease;}
-  .el{font-size:0.7em;font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-family:'JetBrains Mono',monospace;margin-bottom:5px;}
+  .eb.show{display:block;animation:fadeIn .3s ease;}
+  .el{font-size:0.72em;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+    font-family:'JetBrains Mono',monospace;margin-bottom:5px;}
   .el.correct{color:var(--ok);}
   .el.wrong{color:var(--no);}
+
+  /* NEXT BUTTON */
   .nb2{
-    display:none;margin:13px 16px 0;width:calc(100% - 32px);
+    display:none;margin:14px 18px 0;width:calc(100% - 36px);
     background:linear-gradient(135deg,#5b21b6,#7c3aed);
     border:none;border-radius:var(--radius);
-    padding:14px;font-family:'Inter',sans-serif;font-size:0.95em;
+    padding:15px;font-family:'Inter',sans-serif;font-size:1em;
     font-weight:700;color:white;cursor:pointer;
-    box-shadow:0 3px 10px rgba(91,33,182,0.3);
+    box-shadow:0 3px 10px rgba(91,33,182,0.28);
   }
-  .nb2.show{display:block;animation:fu .3s ease;}
+  .nb2.show{display:block;animation:fadeUp .3s ease;}
   .nb2:active{transform:scale(.98);}
-  .rs{display:none;padding:28px 16px;flex-direction:column;align-items:center;}
-  .rs.show{display:flex;animation:fu .5s ease;}
-  .rtr{font-size:3.8em;margin-bottom:8px;animation:bn .6s ease;}
+
+  /* RESULTS */
+  .rs{display:none;padding:30px 18px;flex-direction:column;align-items:center;}
+  .rs.show{display:flex;animation:fadeUp .5s ease;}
+  .rtr{font-size:4em;margin-bottom:10px;animation:bounce .6s ease;}
   .rsb{
-    font-size:3.2em;font-weight:800;font-family:'JetBrains Mono',monospace;
+    font-size:3.5em;font-weight:800;font-family:'JetBrains Mono',monospace;
     background:linear-gradient(135deg,#5b21b6,#2563eb);
     -webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px;
   }
-  .rl{font-size:0.88em;color:var(--text-sm);margin-bottom:22px;font-weight:500;}
+  .rl{font-size:0.9em;color:var(--text-sm);margin-bottom:24px;font-weight:500;}
   .rbd{
     width:100%;background:var(--white);border:1px solid var(--border);
-    border-radius:var(--radius);padding:14px;margin-bottom:18px;box-shadow:var(--shadow);
+    border-radius:var(--radius);padding:16px;margin-bottom:20px;
+    box-shadow:var(--shadow);
   }
-  .bdr{display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid #f3f4f6;font-size:0.83em;color:var(--text-md);}
+  .bdr{display:flex;justify-content:space-between;align-items:center;
+    padding:8px 0;border-bottom:1px solid #f3f4f6;font-size:0.88em;color:var(--text-md);}
   .bdr:last-child{border-bottom:none;}
   .bdc{color:var(--ok);font-weight:700;font-family:'JetBrains Mono',monospace;}
   .bdw{color:var(--no);font-weight:700;font-family:'JetBrains Mono',monospace;}
-  .nbp{background:#fffbeb;border:1px solid #fde68a;border-radius:12px;padding:12px 15px;width:100%;display:flex;align-items:center;gap:11px;margin-bottom:14px;box-shadow:var(--shadow);}
-  .rbs{display:flex;flex-direction:column;gap:9px;width:100%;}
+  .nbp{background:#fffbeb;border:1.5px solid #fde68a;border-radius:12px;
+    padding:12px 16px;width:100%;display:flex;align-items:center;gap:12px;margin-bottom:14px;
+    box-shadow:var(--shadow);}
+  .rbs{display:flex;flex-direction:column;gap:10px;width:100%;}
   .bp{
-    background:linear-gradient(135deg,#5b21b6,#7c3aed);border:none;border-radius:var(--radius);
-    padding:14px;font-family:'Inter',sans-serif;font-size:0.95em;font-weight:700;
+    background:linear-gradient(135deg,#5b21b6,#7c3aed);border:none;
+    border-radius:var(--radius);padding:15px;
+    font-family:'Inter',sans-serif;font-size:1em;font-weight:700;
     color:white;cursor:pointer;text-align:center;text-decoration:none;display:block;
-    box-shadow:0 3px 10px rgba(91,33,182,0.3);
+    box-shadow:0 3px 10px rgba(91,33,182,0.28);
   }
   .bs{
     background:var(--white);border:1.5px solid var(--border);
-    border-radius:var(--radius);padding:13px;
-    font-family:'Inter',sans-serif;font-size:0.88em;font-weight:600;
-    color:var(--text-sm);cursor:pointer;text-align:center;text-decoration:none;display:block;
-    box-shadow:var(--shadow);
+    border-radius:var(--radius);padding:14px;
+    font-family:'Inter',sans-serif;font-size:0.92em;font-weight:600;
+    color:var(--text-sm);cursor:pointer;text-align:center;
+    text-decoration:none;display:block;box-shadow:var(--shadow);
   }
-  .qcard{animation:fu .3s ease;}
-  @keyframes fu{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
-  @keyframes fi2{from{opacity:0}to{opacity:1}}
-  @keyframes bn{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
-  @keyframes sk{0%,100%{transform:translateX(0)}25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
-  .shake{animation:sk .3s ease;}
+
+  .qcard{animation:fadeUp .3s ease;}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+  @keyframes bounce{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
+  @keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+  .shake{animation:shake .3s ease;}
+
+  /* MOBILE RESPONSIVE */
+  @media(max-width:420px){
+    body{font-size:17px;}
+    .qt{font-size:1.05em;}
+    .ob{padding:16px;}
+    .ot{font-size:0.97em;}
+  }
 </style>
 </head>
 <body>
 <div class="app">
 <div class="qh">
   <a class="back" href="../modules/module1.html">&larr; Module 1</a>
-  <div class="qm"><div class="qc" id="qc">Q 1 of 20</div><div class="ql">Lesson 1.Module Quiz &mdash; Parts of Speech — Full Assessment</div></div>
-  <button class="mt" id="mb" onclick="tM()">&#128266;</button>
+  <div class="qm">
+    <div class="qc" id="qc">Q 1 of 20</div>
+    <div class="ql">Lesson 1.Module Quiz &mdash; Parts of Speech — Full Assessment</div>
+  </div>
+  <button class="mt" id="mb" onclick="tM()">🔊</button>
 </div>
 <div class="qp"><div class="qpf" id="pf" style="width:0%"></div></div>
 <div id="qa"></div>
 <div class="rs" id="rs"></div>
 </div>
+
 <script>
-var Q=[
-{
-"type": "mcq",
-"q": "Which sentence contains a proper noun, a personal pronoun, and an action verb?",
-"options": [
-"The city was beautiful and calm.",
-"She visited Paris last spring.",
-"Everyone arrived on time.",
-"Running through the park is enjoyable."
-],
-"answer": 1,
-"explanation": "'Paris' is a proper noun (specific city), 'She' is a personal pronoun, and 'visited' is an action verb. This sentence contains all three elements."
-},
-{
-"type": "mcq",
-"q": "Which sentence contains a linking verb and a predicative adjective?",
-"options": [
-"She played the piano beautifully.",
-"The music sounds peaceful.",
-"He wrote a long letter.",
-"They built a large house."
-],
-"answer": 1,
-"explanation": "'Sounds' is a linking verb connecting 'music' to the predicative adjective 'peaceful'. The other sentences use action verbs."
-},
-{
-"type": "mcq",
-"q": "Identify the part of speech of 'however' in: 'He studied hard; however, he did not pass.'",
-"options": [
-"Coordinating conjunction",
-"Preposition",
-"Conjunctive adverb",
-"Subordinating conjunction"
-],
-"answer": 2,
-"explanation": "'However' is a conjunctive adverb — it connects two independent clauses and shows contrast. It requires a semicolon before it and a comma after."
-},
-{
-"type": "mcq",
-"q": "Which sentence uses a reflexive pronoun for emphasis (intensive use)?",
-"options": [
-"She hurt herself on the door.",
-"The director herself reviewed every application.",
-"They enjoyed theirselves at the party.",
-"He did it hisself."
-],
-"answer": 1,
-"explanation": "'Herself' here adds emphasis — the director PERSONALLY reviewed. This is the intensive (emphatic) use. The other options are either correct reflexive use or non-standard forms."
-},
-{
-"type": "mcq",
-"q": "Which sentence uses adjectives in the correct order?",
-"options": [
-"A Chinese ancient large gorgeous golden vase.",
-"A gorgeous large ancient golden Chinese vase.",
-"A large gorgeous golden ancient Chinese vase.",
-"A golden gorgeous large Chinese ancient vase."
-],
-"answer": 1,
-"explanation": "Correct adjective order: opinion (gorgeous) – size (large) – age (ancient) – colour (golden) – origin (Chinese). This is the standard sequence in English."
-},
-{
-"type": "mcq",
-"q": "Which sentence uses both a preposition of time and a preposition of place correctly?",
-"options": [
-"She arrived in the café at noon.",
-"She arrived at the café in noon.",
-"She arrived at the café at noon.",
-"She arrived on the café at noon."
-],
-"answer": 2,
-"explanation": "'At' is correct for specific locations ('at the café') and specific times ('at noon'). 'In noon' and 'on the café' are both incorrect."
-},
-{
-"type": "tf",
-"q": "In English, 'hard' and 'hardly' have the same meaning when used as adverbs.",
-"answer": false,
-"explanation": "False. 'Hard' (adverb) = with great effort: 'She worked hard.' 'Hardly' = almost not: 'She hardly worked.' These are nearly opposite in meaning! This is a common confusion."
-},
-{
-"type": "mcq",
-"q": "Which sentence uses a subordinating conjunction and an adverb of frequency correctly?",
-"options": [
-"Whenever it rains, she carries usually an umbrella.",
-"Whenever it rains, she usually carries an umbrella.",
-"She usually carries an umbrella whenever rains.",
-"Usually whenever it rains she carries an umbrella."
-],
-"answer": 1,
-"explanation": "'Whenever' introduces the subordinate clause; 'usually' (adverb of frequency) correctly precedes the main verb 'carries'. The subordinate clause followed by a comma is also correct."
-},
-{
-"type": "mcq",
-"q": "Which sentence contains an interjection, a collective noun, and a modal verb?",
-"options": [
-"Well, everyone arrived on time for the meeting.",
-"Wow! The team should celebrate this victory.",
-"Hmm, she runs every morning before work.",
-"The group finished their work quickly."
-],
-"answer": 1,
-"explanation": "'Wow' is an interjection, 'team' is a collective noun, and 'should' is a modal verb. Option A has 'everyone' (indefinite pronoun, not collective noun); option C has no modal; option D has no interjection."
-},
-{
-"type": "mcq",
-"q": "Which sentence uses ALL parts of speech correctly?",
-"options": [
-"Neither the driver nor the passengers was prepared for the delay.",
-"Although the journey was extremely long, the passengers remained remarkably calm.",
-"Between you and I, the plan is not good in all.",
-"The team celebrated their victory, but everyone were exhausted."
-],
-"answer": 1,
-"explanation": "Option B is fully correct: 'Although' (subordinating conjunction), 'extremely' (adverb modifying adjective 'long'), 'remained' (linking verb), 'remarkably calm' (adverb + adjective). The other options contain agreement errors or wrong pronoun/preposition forms."
-},
-{
-"type": "tf",
-"q": "Adverbs can only appear immediately after the verb they modify.",
-"answer": false,
-"explanation": "False. Adverbs are highly flexible in position: 'Quietly, she left the room' / 'She quietly left the room' / 'She left the room quietly'. All are correct. Some adverbs have preferred positions, but they are not restricted to immediately after the verb."
-},
-{
-"type": "fill",
-"q": "The eight traditional parts of speech in English are: noun, pronoun, verb, adjective, adverb, preposition, conjunction, and ________.",
-"answer": "interjection",
-"hint": "The last one expresses emotion...",
-"explanation": "The eight traditional parts of speech are: noun, pronoun, verb, adjective, adverb, preposition, conjunction, and INTERJECTION. Every word in English belongs to one or more of these categories depending on how it functions in a sentence."
-},
-{
-"type": "mcq",
-"q": "In which sentence does every word serve a different grammatical function?",
-"options": [
-"Run quickly.",
-"She always runs very quickly.",
-"The exhausted runner suddenly collapsed.",
-"Hurray! She ran."
-],
-"answer": 2,
-"explanation": "'The' (article/determiner), 'exhausted' (participial adjective), 'runner' (noun/subject), 'suddenly' (adverb of manner), 'collapsed' (intransitive action verb) — five words, five different grammatical functions."
-},
-{
-"type": "mcq",
-"q": "Which sentence demonstrates incorrect use of multiple parts of speech?",
-"options": [
-"She spoke eloquently and with great passion.",
-"He was very tiredly after the long run.",
-"The committee, which met on Friday, reached a unanimous decision.",
-"Neither the students nor the teacher was informed."
-],
-"answer": 1,
-"explanation": "'Very tiredly' is incorrect — 'tired' is an adjective (predicative) and should follow 'was': 'He was very tired'. 'Tiredly' is an adverb and cannot be a subject complement after 'was'."
-},
-{
-"type": "mcq",
-"q": "Identify the part of speech of 'that' in: 'The book that I recommended has been sold out.'",
-"options": [
-"Demonstrative pronoun",
-"Relative pronoun",
-"Demonstrative adjective",
-"Subordinating conjunction"
-],
-"answer": 1,
-"explanation": "'That' introduces a relative clause ('that I recommended') modifying 'the book' — it is a relative pronoun. Compare: 'That book is good' (demonstrative adjective) / 'I know that she left' (subordinating conjunction)."
-},
-{
-"type": "mcq",
-"q": "Which sentence uses a gerund, an infinitive, and a participle correctly?",
-"options": [
-"Running is healthy, to walk is also good, and she runs daily.",
-"Swimming regularly, she hoped to improve, having trained for months.",
-"I enjoy reading, I want to write, and having published a book already.",
-"To succeed, working hard is essential; having failed once, she tried again."
-],
-"answer": 1,
-"explanation": "'Swimming regularly' = present participle (participial phrase), 'hoped to improve' = infinitive after verb, 'having trained' = perfect participle. All three non-finite verb forms are correctly used in context."
-},
-{
-"type": "tf",
-"q": "The word 'well' can function as an adjective, adverb, and interjection depending on context.",
-"answer": true,
-"explanation": "True. 'Well' as adjective: 'She is well' (healthy). As adverb: 'She speaks well.' As interjection: 'Well, that's surprising.' Context determines the function. This is an excellent example of how the same word can belong to multiple parts of speech."
-},
-{
-"type": "fill",
-"q": "An adjective formed from a verb's -ing or -ed form (e.g., 'a broken window', 'the running water') is called a ________ adjective.",
-"answer": "participial",
-"hint": "It participates in both verb and adjective functions...",
-"explanation": "A PARTICIPIAL adjective is derived from a verb's participle form: past participle (broken, exhausted, excited) or present participle (running, growing, terrifying). They describe nouns just like regular adjectives. Note: 'an exciting match' vs 'the excited crowd'."
-},
-{
-"type": "mcq",
-"q": "Which analysis of parts of speech is CORRECT for the sentence: 'Remarkably, even the quietest members spoke confidently.'",
-"options": [
-"Remarkably = adjective; even = conjunction; quietest = adverb; confidently = adjective",
-"Remarkably = sentence adverb; even = focusing adverb; quietest = superlative adjective; confidently = adverb of manner",
-"Remarkably = noun; even = preposition; quietest = pronoun; confidently = noun",
-"Remarkably = conjunction; even = adjective; quietest = noun; confidently = verb"
-],
-"answer": 1,
-"explanation": "'Remarkably' = sentence adverb (commenting on the whole statement), 'even' = focusing adverb (adding emphasis/surprise), 'quietest' = superlative adjective, 'confidently' = adverb of manner. This is the correct grammatical analysis."
-},
-{
-"type": "mcq",
-"q": "Which sentence demonstrates the most accurate and sophisticated command of all major parts of speech?",
-"options": [
-"Not only had the committee thoroughly reviewed the proposals, but it had also unanimously rejected several highly problematic ones.",
-"The committee, which reviewed all proposals thorough, rejected ones that were high problematic.",
-"Not only the committee reviewed thorough the proposals but also rejected them high problematically.",
-"The committee thorough reviewed the proposals, they also rejected the most problematic."
-],
-"answer": 0,
-"explanation": "Option A correctly uses: 'not only…but also' (correlative conjunctions with inversion), 'thoroughly/unanimously/highly' (precise adverbs), 'problematic' (adjective), 'it' (pronoun with clear reference), 'had reviewed/had rejected' (past perfect). All parts of speech are correctly deployed."
-}
-];
-var cur=0,cor=0,ans=false,st=Date.now(),ac=null;
+var Q=[{"type": "mcq", "q": "Which sentence contains a proper noun, a personal pronoun, and an action verb?", "options": ["The city was beautiful and calm.", "She visited Paris last spring.", "Everyone arrived on time.", "Running through the park is enjoyable."], "answer": 1, "explanation": "'Paris' is a proper noun (specific city), 'She' is a personal pronoun, and 'visited' is an action verb. This sentence contains all three elements."}, {"type": "mcq", "q": "Which sentence contains a linking verb and a predicative adjective?", "options": ["She played the piano beautifully.", "The music sounds peaceful.", "He wrote a long letter.", "They built a large house."], "answer": 1, "explanation": "'Sounds' is a linking verb connecting 'music' to the predicative adjective 'peaceful'. The other sentences use action verbs."}, {"type": "mcq", "q": "Identify the part of speech of 'however' in: 'He studied hard; however, he did not pass.'", "options": ["Coordinating conjunction", "Preposition", "Conjunctive adverb", "Subordinating conjunction"], "answer": 2, "explanation": "'However' is a conjunctive adverb — it connects two independent clauses and shows contrast. It requires a semicolon before it and a comma after."}, {"type": "mcq", "q": "Which sentence uses a reflexive pronoun for emphasis (intensive use)?", "options": ["She hurt herself on the door.", "The director herself reviewed every application.", "They enjoyed theirselves at the party.", "He did it hisself."], "answer": 1, "explanation": "'Herself' here adds emphasis — the director PERSONALLY reviewed. This is the intensive (emphatic) use. The other options are either correct reflexive use or non-standard forms."}, {"type": "mcq", "q": "Which sentence uses adjectives in the correct order?", "options": ["A Chinese ancient large gorgeous golden vase.", "A gorgeous large ancient golden Chinese vase.", "A large gorgeous golden ancient Chinese vase.", "A golden gorgeous large Chinese ancient vase."], "answer": 1, "explanation": "Correct adjective order: opinion (gorgeous) – size (large) – age (ancient) – colour (golden) – origin (Chinese). This is the standard sequence in English."}, {"type": "mcq", "q": "Which sentence uses both a preposition of time and a preposition of place correctly?", "options": ["She arrived in the café at noon.", "She arrived at the café in noon.", "She arrived at the café at noon.", "She arrived on the café at noon."], "answer": 2, "explanation": "'At' is correct for specific locations ('at the café') and specific times ('at noon'). 'In noon' and 'on the café' are both incorrect."}, {"type": "tf", "q": "In English, 'hard' and 'hardly' have the same meaning when used as adverbs.", "answer": false, "explanation": "False. 'Hard' (adverb) = with great effort: 'She worked hard.' 'Hardly' = almost not: 'She hardly worked.' These are nearly opposite in meaning! This is a common confusion."}, {"type": "mcq", "q": "Which sentence uses a subordinating conjunction and an adverb of frequency correctly?", "options": ["Whenever it rains, she carries usually an umbrella.", "Whenever it rains, she usually carries an umbrella.", "She usually carries an umbrella whenever rains.", "Usually whenever it rains she carries an umbrella."], "answer": 1, "explanation": "'Whenever' introduces the subordinate clause; 'usually' (adverb of frequency) correctly precedes the main verb 'carries'. The subordinate clause followed by a comma is also correct."}, {"type": "mcq", "q": "Which sentence contains an interjection, a collective noun, and a modal verb?", "options": ["Well, everyone arrived on time for the meeting.", "Wow! The team should celebrate this victory.", "Hmm, she runs every morning before work.", "The group finished their work quickly."], "answer": 1, "explanation": "'Wow' is an interjection, 'team' is a collective noun, and 'should' is a modal verb. Option A has 'everyone' (indefinite pronoun, not collective noun); option C has no modal; option D has no interjection."}, {"type": "mcq", "q": "Which sentence uses ALL parts of speech correctly?", "options": ["Neither the driver nor the passengers was prepared for the delay.", "Although the journey was extremely long, the passengers remained remarkably calm.", "Between you and I, the plan is not good in all.", "The team celebrated their victory, but everyone were exhausted."], "answer": 1, "explanation": "Option B is fully correct: 'Although' (subordinating conjunction), 'extremely' (adverb modifying adjective 'long'), 'remained' (linking verb), 'remarkably calm' (adverb + adjective). The other options contain agreement errors or wrong pronoun/preposition forms."}, {"type": "tf", "q": "Adverbs can only appear immediately after the verb they modify.", "answer": false, "explanation": "False. Adverbs are highly flexible in position: 'Quietly, she left the room' / 'She quietly left the room' / 'She left the room quietly'. All are correct. Some adverbs have preferred positions, but they are not restricted to immediately after the verb."}, {"type": "fill", "q": "The eight traditional parts of speech in English are: noun, pronoun, verb, adjective, adverb, preposition, conjunction, and ________.", "answer": "interjection", "hint": "The last one expresses emotion...", "explanation": "The eight traditional parts of speech are: noun, pronoun, verb, adjective, adverb, preposition, conjunction, and INTERJECTION. Every word in English belongs to one or more of these categories depending on how it functions in a sentence."}, {"type": "mcq", "q": "In which sentence does every word serve a different grammatical function?", "options": ["Run quickly.", "She always runs very quickly.", "The exhausted runner suddenly collapsed.", "Hurray! She ran."], "answer": 2, "explanation": "'The' (article/determiner), 'exhausted' (participial adjective), 'runner' (noun/subject), 'suddenly' (adverb of manner), 'collapsed' (intransitive action verb) — five words, five different grammatical functions."}, {"type": "mcq", "q": "Which sentence demonstrates incorrect use of multiple parts of speech?", "options": ["She spoke eloquently and with great passion.", "He was very tiredly after the long run.", "The committee, which met on Friday, reached a unanimous decision.", "Neither the students nor the teacher was informed."], "answer": 1, "explanation": "'Very tiredly' is incorrect — 'tired' is an adjective (predicative) and should follow 'was': 'He was very tired'. 'Tiredly' is an adverb and cannot be a subject complement after 'was'."}, {"type": "mcq", "q": "Identify the part of speech of 'that' in: 'The book that I recommended has been sold out.'", "options": ["Demonstrative pronoun", "Relative pronoun", "Demonstrative adjective", "Subordinating conjunction"], "answer": 1, "explanation": "'That' introduces a relative clause ('that I recommended') modifying 'the book' — it is a relative pronoun. Compare: 'That book is good' (demonstrative adjective) / 'I know that she left' (subordinating conjunction)."}, {"type": "mcq", "q": "Which sentence uses a gerund, an infinitive, and a participle correctly?", "options": ["Running is healthy, to walk is also good, and she runs daily.", "Swimming regularly, she hoped to improve, having trained for months.", "I enjoy reading, I want to write, and having published a book already.", "To succeed, working hard is essential; having failed once, she tried again."], "answer": 1, "explanation": "'Swimming regularly' = present participle (participial phrase), 'hoped to improve' = infinitive after verb, 'having trained' = perfect participle. All three non-finite verb forms are correctly used in context."}, {"type": "tf", "q": "The word 'well' can function as an adjective, adverb, and interjection depending on context.", "answer": true, "explanation": "True. 'Well' as adjective: 'She is well' (healthy). As adverb: 'She speaks well.' As interjection: 'Well, that's surprising.' Context determines the function. This is an excellent example of how the same word can belong to multiple parts of speech."}, {"type": "fill", "q": "An adjective formed from a verb's -ing or -ed form (e.g., 'a broken window', 'the running water') is called a ________ adjective.", "answer": "participial", "hint": "It participates in both verb and adjective functions...", "explanation": "A PARTICIPIAL adjective is derived from a verb's participle form: past participle (broken, exhausted, excited) or present participle (running, growing, terrifying). They describe nouns just like regular adjectives. Note: 'an exciting match' vs 'the excited crowd'."}, {"type": "mcq", "q": "Which analysis of parts of speech is CORRECT for the sentence: 'Remarkably, even the quietest members spoke confidently.'", "options": ["Remarkably = adjective; even = conjunction; quietest = adverb; confidently = adjective", "Remarkably = sentence adverb; even = focusing adverb; quietest = superlative adjective; confidently = adverb of manner", "Remarkably = noun; even = preposition; quietest = pronoun; confidently = noun", "Remarkably = conjunction; even = adjective; quietest = noun; confidently = verb"], "answer": 1, "explanation": "'Remarkably' = sentence adverb (commenting on the whole statement), 'even' = focusing adverb (adding emphasis/surprise), 'quietest' = superlative adjective, 'confidently' = adverb of manner. This is the correct grammatical analysis."}, {"type": "mcq", "q": "Which sentence demonstrates the most accurate and sophisticated command of all major parts of speech?", "options": ["Not only had the committee thoroughly reviewed the proposals, but it had also unanimously rejected several highly problematic ones.", "The committee, which reviewed all proposals thorough, rejected ones that were high problematic.", "Not only the committee reviewed thorough the proposals but also rejected them high problematically.", "The committee thorough reviewed the proposals, they also rejected the most problematic."], "answer": 0, "explanation": "Option A correctly uses: 'not only…but also' (correlative conjunctions with inversion), 'thoroughly/unanimously/highly' (precise adverbs), 'problematic' (adjective), 'it' (pronoun with clear reference), 'had reviewed/had rejected' (past perfect). All parts of speech are correctly deployed."}];
+var SKEY="m1_l9";
+var NEXT="../modules/module2.html";
+var HUB="../modules/module1.html";
+var cur=0,cor=0,answered=false,st=Date.now(),ac=null;
+
 function gAC(){if(!ac)ac=new(window.AudioContext||window.webkitAudioContext)();return ac;}
 function gD(){try{return JSON.parse(localStorage.getItem('grammar_app')||'{}');}catch(e){return{};}}
 function sD(d){try{localStorage.setItem('grammar_app',JSON.stringify(d));}catch(e){}}
-function tM(){var d=gD();d.muted=!d.muted;sD(d);document.getElementById('mb').textContent=d.muted?'&#128263;':'&#128266;';}
-function pT(t){var d=gD();if(d.muted)return;try{var c=gAC();if(c.state==='suspended')c.resume();if(t==='c')pC(c);else if(t==='w')pW(c);else pF(c);}catch(e){}}
-function pC(c){[[523,0],[659,.1],[784,.2]].forEach(function(a){var o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);o.frequency.value=a[0];o.type='sine';var t=c.currentTime+a[1];g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.18,t+.02);g.gain.exponentialRampToValueAtTime(.001,t+.3);o.start(t);o.stop(t+.3);});}
-function pW(c){[[240,0],[200,.1]].forEach(function(a){var o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);o.frequency.value=a[0];o.type='sawtooth';var t=c.currentTime+a[1];g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.08,t+.02);g.gain.exponentialRampToValueAtTime(.001,t+.25);o.start(t);o.stop(t+.25);});}
-function pF(c){[[523,0],[659,.15],[784,.3],[1047,.45]].forEach(function(a){var o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);o.frequency.value=a[0];o.type='sine';var t=c.currentTime+a[1];g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.2,t+.03);g.gain.exponentialRampToValueAtTime(.001,t+.5);o.start(t);o.stop(t+.5);});}
+
+function tM(){
+  var d=gD();d.muted=!d.muted;sD(d);
+  document.getElementById('mb').textContent=d.muted?'🔇':'🔊';
+}
+
+function pT(t){
+  var d=gD();if(d.muted)return;
+  try{var c=gAC();if(c.state==='suspended')c.resume();
+    if(t==='c')pC(c);else if(t==='w')pW(c);else pF(c);}catch(e){}
+}
+function pC(c){[[523,0],[659,.1],[784,.2]].forEach(function(a){
+  var o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);
+  o.frequency.value=a[0];o.type='sine';var t=c.currentTime+a[1];
+  g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.18,t+.02);
+  g.gain.exponentialRampToValueAtTime(.001,t+.3);o.start(t);o.stop(t+.3);});}
+function pW(c){[[240,0],[200,.1]].forEach(function(a){
+  var o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);
+  o.frequency.value=a[0];o.type='sawtooth';var t=c.currentTime+a[1];
+  g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.08,t+.02);
+  g.gain.exponentialRampToValueAtTime(.001,t+.25);o.start(t);o.stop(t+.25);});}
+function pF(c){[[523,0],[659,.15],[784,.3],[1047,.45]].forEach(function(a){
+  var o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);
+  o.frequency.value=a[0];o.type='sine';var t=c.currentTime+a[1];
+  g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.2,t+.03);
+  g.gain.exponentialRampToValueAtTime(.001,t+.5);o.start(t);o.stop(t+.5);});}
+
 function rQ(){
-  var q=Q[cur];ans=false;
+  var q=Q[cur];answered=false;
   document.getElementById('pf').style.width=(cur/Q.length*100)+'%';
   document.getElementById('qc').textContent='Q '+(cur+1)+' of '+Q.length;
   var area=document.getElementById('qa');
-  var lbs={mcq:'Multiple Choice',tf:'True or False',fill:'Fill in the Blank',transform:'Sentence Transformation'};
-  var lbl=lbs[q.type]||'Question';
+  var labels={mcq:'Multiple Choice',tf:'True or False',fill:'Fill in the Blank',transform:'Sentence Transformation'};
+  var lbl=labels[q.type]||'Question';
   var oh='';
   if(q.type==='mcq'){
-    oh='<div class="ol">'+q.options.map(function(o,i){return '<button class="ob" onclick="sO('+i+')" data-i="'+i+'"><div class="ok2">'+String.fromCharCode(65+i)+'</div><div class="ot">'+o+'</div><div class="oi">'+(i===q.answer?'&#10003;':'&#10007;')+'</div></button>';}).join('')+'</div>';
-  }else if(q.type==='tf'){
-    oh='<div class="tfo"><button class="ob" onclick="sT(true)" data-v="true"><div class="ok2">T</div><div class="ot">True</div><div class="oi">'+(q.answer?'&#10003;':'&#10007;')+'</div></button><button class="ob" onclick="sT(false)" data-v="false"><div class="ok2">F</div><div class="ot">False</div><div class="oi">'+(!q.answer?'&#10003;':'&#10007;')+'</div></button></div>';
-  }else{
-    oh='<div class="fb"><input class="fi" id="fi" type="text" placeholder="'+(q.type==='transform'?'Rewrite the sentence...':'Type your answer...')+'" autocomplete="off" autocapitalize="none" spellcheck="false" onkeydown="if(event.keyCode===13)sF()">'+(q.hint?'<div style="font-size:.7em;color:#9ca3af;margin-top:6px;">&#128161; '+q.hint+'</div>':'')+'<button class="fs" id="fsb" onclick="sF()">Check Answer</button></div>';
+    oh='<div class="ol">'+q.options.map(function(opt,i){
+      return '<button class="ob" onclick="selOpt('+i+')" data-i="'+i+'">'+
+        '<div class="ok2">'+String.fromCharCode(65+i)+'</div>'+
+        '<div class="ot">'+opt+'</div>'+
+        '<div class="oi">'+(i===q.answer?'✓':'✗')+'</div></button>';
+    }).join('')+'</div>';
+  } else if(q.type==='tf'){
+    oh='<div class="tfo">'+
+      '<button class="ob" onclick="selTF(true)" data-v="true">'+
+        '<div class="ok2">T</div><div class="ot">True</div>'+
+        '<div class="oi">'+(q.answer?'✓':'✗')+'</div></button>'+
+      '<button class="ob" onclick="selTF(false)" data-v="false">'+
+        '<div class="ok2">F</div><div class="ot">False</div>'+
+        '<div class="oi">'+(!q.answer?'✓':'✗')+'</div></button>'+
+    '</div>';
+  } else {
+    var ph=q.type==='transform'?'Rewrite the sentence...':'Type your answer...';
+    oh='<div class="fb">'+
+      '<input class="fi" id="fi" type="text" placeholder="'+ph+'" '+
+        'autocomplete="off" autocapitalize="none" spellcheck="false" '+
+        'onkeydown="if(event.keyCode===13)subFill()">'+
+      (q.hint?'<div class="hint">💡 Hint: '+q.hint+'</div>':'')+
+      '<button class="fs" id="fsb" onclick="subFill()">Check Answer</button>'+
+    '</div>';
   }
-  area.innerHTML='<div class="qcard"><div class="qa"><div class="qtb">'+lbl+'</div><div class="qt">'+q.q+'</div></div>'+oh+'<div class="eb" id="eb"></div><button class="nb2" id="nb" onclick="nQ()">'+(cur+1<Q.length?'Next Question &rarr;':'See Results &#127919;')+'</button></div>';
-  if(q.type==='fill'||q.type==='transform')setTimeout(function(){var e=document.getElementById('fi');if(e)e.focus();},100);
-  var d=gD();document.getElementById('mb').textContent=d.muted?'&#128263;':'&#128266;';
+  area.innerHTML='<div class="qcard">'+
+    '<div class="qa"><div class="qtb">'+lbl+'</div><div class="qt">'+q.q+'</div></div>'+
+    oh+
+    '<div class="eb" id="eb"></div>'+
+    '<button class="nb2" id="nb" onclick="nextQ()">'+
+      (cur+1<Q.length?'Next Question →':'See Results 🎯')+
+    '</button></div>';
+  if(q.type==='fill'||q.type==='transform'){
+    setTimeout(function(){var e=document.getElementById('fi');if(e)e.focus();},150);
+  }
+  var d=gD();document.getElementById('mb').textContent=d.muted?'🔇':'🔊';
 }
-function sO(i){if(ans)return;ans=true;var q=Q[cur];var ok=i===q.answer;if(ok)cor++;pT(ok?'c':'w');document.querySelectorAll('.ob').forEach(function(b,j){if(j===q.answer)b.classList.add('correct');else if(j===i&&!ok){b.classList.add('wrong');b.classList.add('shake');}else b.classList.add('dimmed');b.disabled=true;});shE(ok,q.explanation);document.getElementById('nb').classList.add('show');}
-function sT(v){if(ans)return;ans=true;var q=Q[cur];var ok=v===q.answer;if(ok)cor++;pT(ok?'c':'w');document.querySelectorAll('.ob').forEach(function(b){var bv=b.dataset.v==='true';if(bv===q.answer)b.classList.add('correct');else if(bv===v&&!ok)b.classList.add('wrong');else b.classList.add('dimmed');b.disabled=true;});shE(ok,q.explanation);document.getElementById('nb').classList.add('show');}
-function sF(){if(ans)return;var inp=document.getElementById('fi');if(!inp||!inp.value.trim())return;ans=true;var q=Q[cur];var v=inp.value.trim().toLowerCase();var aa=(q.answer||'').toLowerCase().split('|');var ok=aa.some(function(a){return v===a.trim();});if(ok)cor++;pT(ok?'c':'w');inp.classList.add(ok?'correct':'wrong');inp.disabled=true;document.getElementById('fsb').disabled=true;if(!ok){var cd=document.createElement('div');cd.style.cssText='font-size:.78em;color:var(--ok);margin-top:6px;';cd.textContent='Answer: '+q.answer;inp.parentNode.insertBefore(cd,document.getElementById('fsb'));inp.classList.add('shake');}shE(ok,q.explanation);document.getElementById('nb').classList.add('show');}
-function shE(ok,text){var b=document.getElementById('eb');b.innerHTML='<div class="el '+(ok?'correct':'wrong')+'">'+(ok?'&#10003; Correct!':'&#10007; Incorrect')+'</div><div>'+text+'</div>';b.classList.add('show');setTimeout(function(){b.scrollIntoView({behavior:'smooth',block:'nearest'});},100);}
-function nQ(){cur++;if(cur>=Q.length)shR();else{rQ();window.scrollTo({top:0,behavior:'smooth'});}}
-function shR(){
+
+function selOpt(i){
+  if(answered)return;answered=true;
+  var q=Q[cur];var ok=i===q.answer;if(ok)cor++;pT(ok?'c':'w');
+  document.querySelectorAll('.ob').forEach(function(b,j){
+    if(j===q.answer)b.classList.add('correct');
+    else if(j===i&&!ok){b.classList.add('wrong');b.classList.add('shake');}
+    else b.classList.add('dimmed');
+    b.disabled=true;
+  });
+  showExpl(ok,q.explanation);
+  document.getElementById('nb').classList.add('show');
+}
+
+function selTF(v){
+  if(answered)return;answered=true;
+  var q=Q[cur];var ok=v===q.answer;if(ok)cor++;pT(ok?'c':'w');
+  document.querySelectorAll('.ob').forEach(function(b){
+    var bv=b.dataset.v==='true';
+    if(bv===q.answer)b.classList.add('correct');
+    else if(bv===v&&!ok)b.classList.add('wrong');
+    else b.classList.add('dimmed');
+    b.disabled=true;
+  });
+  showExpl(ok,q.explanation);
+  document.getElementById('nb').classList.add('show');
+}
+
+function subFill(){
+  if(answered)return;
+  var inp=document.getElementById('fi');
+  if(!inp||!inp.value.trim())return;
+  answered=true;
+  var q=Q[cur];var v=inp.value.trim().toLowerCase();
+  var ans=(q.answer||'').toLowerCase().split('|');
+  var ok=ans.some(function(a){return v===a.trim();});
+  if(ok)cor++;pT(ok?'c':'w');
+  inp.classList.add(ok?'correct':'wrong');
+  inp.disabled=true;document.getElementById('fsb').disabled=true;
+  if(!ok){
+    var cd=document.createElement('div');
+    cd.style.cssText='font-size:.82em;color:#059669;margin-top:7px;font-weight:600;';
+    cd.textContent='✓ Answer: '+q.answer;
+    inp.parentNode.insertBefore(cd,document.getElementById('fsb'));
+    inp.classList.add('shake');
+  }
+  showExpl(ok,q.explanation);
+  document.getElementById('nb').classList.add('show');
+}
+
+function showExpl(ok,text){
+  var b=document.getElementById('eb');
+  b.innerHTML='<div class="el '+(ok?'correct':'wrong')+'">'+(ok?'✓ Correct!':'✗ Incorrect')+'</div><div>'+text+'</div>';
+  b.classList.add('show');
+  setTimeout(function(){b.scrollIntoView({behavior:'smooth',block:'nearest'});},120);
+}
+
+function nextQ(){
+  cur++;
+  if(cur>=Q.length)showResults();
+  else{rQ();window.scrollTo({top:0,behavior:'smooth'});}
+}
+
+function showResults(){
   pT('complete');
   document.getElementById('pf').style.width='100%';
   document.getElementById('qa').style.display='none';
   document.getElementById('qc').textContent='Complete!';
   var tot=Q.length,pct=Math.round(cor/tot*100),tt=Math.round((Date.now()-st)/1000);
   var d=gD();if(!d.progress)d.progress={};
-  var prev=d.progress["m1_l9"];var isF=prev===undefined;var isI=!isF&&pct>prev;
-  d.progress["m1_l9"]=Math.max(pct,prev||0);
-  if(!d.badges)d.badges=[];var nb2=[];
-  if(isF&&!d.badges.includes('first_quiz')){d.badges.push('first_quiz');nb2.push('&#11088; First Step');}
-  if(pct===100&&!d.badges.includes('perfect_score')){d.badges.push('perfect_score');nb2.push('&#128175; Perfect Score!');}
-  if(isI&&!d.badges.includes('comeback')){d.badges.push('comeback');nb2.push('&#128170; Comeback!');}
-  if(tt<120&&!d.badges.includes('speed_demon')){d.badges.push('speed_demon');nb2.push('&#9889; Speed Run!');}
+  var prev=d.progress[SKEY];var isFirst=prev===undefined;var isImproved=!isFirst&&pct>prev;
+  d.progress[SKEY]=Math.max(pct,prev||0);
+  if(!d.badges)d.badges=[];var newBadges=[];
+  if(isFirst&&!d.badges.includes('first_quiz')){d.badges.push('first_quiz');newBadges.push('⭐ First Step');}
+  if(pct===100&&!d.badges.includes('perfect_score')){d.badges.push('perfect_score');newBadges.push('💯 Perfect Score!');}
+  if(isImproved&&!d.badges.includes('comeback')){d.badges.push('comeback');newBadges.push('💪 Comeback!');}
+  if(tt<120&&!d.badges.includes('speed_demon')){d.badges.push('speed_demon');newBadges.push('⚡ Speed Run!');}
   sD(d);
-  var tr=pct>=90?'&#127942;':pct>=70?'&#127894;':pct>=50?'&#129352;':'&#128218;';
+  var trophy=pct>=90?'🏆':pct>=70?'🥇':pct>=50?'🥈':'📚';
   var msg=pct>=90?'Outstanding!':pct>=70?'Great work!':pct>=50?'Good effort!':'Keep practising!';
-  var bH=nb2.map(function(n){return '<div class="nbp"><span style="font-size:1.8em">'+n.split(' ')[0]+'</span><div><div style="font-size:.78em;font-weight:700;color:#b45309">Badge Unlocked!</div><div style="font-size:.7em;color:#6b7280">'+n.split(' ').slice(1).join(' ')+'</div></div></div>';}).join('');
+  var badgeHTML=newBadges.map(function(n){
+    return '<div class="nbp"><span style="font-size:1.8em">'+n.split(' ')[0]+'</span>'+
+      '<div><div style="font-size:.82em;font-weight:700;color:#b45309">Badge Unlocked!</div>'+
+      '<div style="font-size:.75em;color:#6b7280">'+n.split(' ').slice(1).join(' ')+'</div></div></div>';
+  }).join('');
   var sc=document.getElementById('rs');
-  sc.innerHTML='<div class="rtr">'+tr+'</div><div class="rsb">'+pct+'%</div><div class="rl">'+msg+' '+cor+'/'+tot+' correct</div>'+bH+'<div class="rbd"><div class="bdr"><span>Correct</span><span class="bdc">&#10003; '+cor+'</span></div><div class="bdr"><span>Incorrect</span><span class="bdw">&#10007; '+(tot-cor)+'</span></div><div class="bdr"><span>Score</span><span style="font-weight:700;font-family:JetBrains Mono,monospace">'+pct+'%</span></div><div class="bdr"><span>Time</span><span style="font-family:JetBrains Mono,monospace;color:#6b7280">'+Math.floor(tt/60)+'m '+tt%60+'s</span></div></div><div class="rbs"><a class="bp" href="../modules/module2.html">Next Lesson &rarr;</a><button class="bs" onclick="rRQ()">&#8635; Retry</button><a class="bs" href="../modules/module1.html">&larr; Module 1</a></div>';
+  sc.innerHTML=
+    '<div class="rtr">'+trophy+'</div>'+
+    '<div class="rsb">'+pct+'%</div>'+
+    '<div class="rl">'+msg+' — '+cor+'/'+tot+' correct</div>'+
+    badgeHTML+
+    '<div class="rbd">'+
+      '<div class="bdr"><span>Correct</span><span class="bdc">✓ '+cor+'</span></div>'+
+      '<div class="bdr"><span>Incorrect</span><span class="bdw">✗ '+(tot-cor)+'</span></div>'+
+      '<div class="bdr"><span>Score</span><span style="font-weight:700;font-family:JetBrains Mono,monospace">'+pct+'%</span></div>'+
+      '<div class="bdr"><span>Time</span><span style="font-family:JetBrains Mono,monospace;color:#6b7280">'+Math.floor(tt/60)+'m '+tt%60+'s</span></div>'+
+    '</div>'+
+    '<div class="rbs">'+
+      '<a class="bp" href="'+NEXT+'">Next Lesson →</a>'+
+      '<button class="bs" onclick="retryQuiz()">↺ Retry this quiz</button>'+
+      '<a class="bs" href="'+HUB+'">← Back to Module 1</a>'+
+    '</div>';
   sc.classList.add('show');window.scrollTo({top:0,behavior:'smooth'});
 }
-function rRQ(){cur=0;cor=0;ans=false;st=Date.now();document.getElementById('rs').classList.remove('show');document.getElementById('qa').style.display='';rQ();window.scrollTo({top:0,behavior:'smooth'});}
-var d0=gD();document.getElementById('mb').textContent=d0.muted?'&#128263;':'&#128266;';
+
+function retryQuiz(){
+  cur=0;cor=0;answered=false;st=Date.now();
+  document.getElementById('rs').classList.remove('show');
+  document.getElementById('qa').style.display='';
+  rQ();window.scrollTo({top:0,behavior:'smooth'});
+}
+
+var d0=gD();
+document.getElementById('mb').textContent=d0.muted?'🔇':'🔊';
 rQ();
 </script>
 </body>
