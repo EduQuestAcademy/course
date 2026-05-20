@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Lesson 11.6 — Integrated Mastery — Extended Tasks | Grammar Mastery</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap');
+  :root{--bg:#eef2ff;--surface:#ffffff;--surface2:#f5f3ff;--border:#ddd6fe;--border-md:#c4b5fd;--tx:#1e1b4b;--tx-md:#374151;--tx-sm:#6b7280;--tx-xs:#9ca3af;--accent:#5b21b6;--accent-mid:#7c3aed;--accent-lt:#ede9fe;--accent-glow:rgba(124,58,237,0.18);--ok:#059669;--ok-lt:#d1fae5;--ok-dk:#065f46;--no:#dc2626;--no-lt:#fee2e2;--no-dk:#991b1b;--r-sm:8px;--r-md:12px;--r-lg:16px;--r-xl:20px;--r-full:999px;--sh-sm:0 1px 4px rgba(0,0,0,0.07);--sh-lg:0 8px 32px rgba(0,0,0,0.10);--sh-accent:0 4px 20px rgba(91,33,182,0.25);--sidebar-w:300px;}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--tx);min-height:100vh;font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;}
+  .quiz-shell{min-height:100vh;display:flex;flex-direction:column;}
+  .quiz-sidebar{background:var(--surface);border-bottom:1px solid var(--border);box-shadow:var(--sh-sm);position:sticky;top:0;z-index:50;}
+  .quiz-main{flex:1;padding-bottom:48px;}
+  @media(min-width:640px){body{font-size:17px;}.quiz-shell{max-width:720px;margin:0 auto;}}
+  @media(min-width:1024px){body{font-size:16px;background:linear-gradient(135deg,#eef2ff 0%,#f5f3ff 50%,#ede9fe 100%);background-attachment:fixed;}.quiz-shell{max-width:1080px;margin:32px auto;flex-direction:row;align-items:flex-start;border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--sh-lg);min-height:calc(100vh - 64px);}.quiz-sidebar{width:var(--sidebar-w);min-width:var(--sidebar-w);flex-shrink:0;position:sticky;top:32px;height:calc(100vh - 64px);border-bottom:none;border-right:1px solid var(--border);box-shadow:none;display:flex;flex-direction:column;overflow-y:auto;}.quiz-main{flex:1;min-width:0;background:var(--surface);min-height:calc(100vh - 64px);padding-bottom:64px;}}
+  .sb-top{padding:20px 20px 16px;border-bottom:1px solid var(--border);}
+  .sb-back{display:inline-flex;align-items:center;gap:6px;color:var(--accent-mid);font-size:0.82em;font-weight:700;text-decoration:none;background:none;border:none;cursor:pointer;font-family:inherit;padding:6px 10px;border-radius:var(--r-sm);transition:background 0.15s;margin-bottom:16px;}
+  .sb-back:hover{background:var(--accent-lt);}
+  .sb-lesson-tag{display:inline-flex;align-items:center;background:var(--accent-lt);border:1.5px solid var(--border-md);border-radius:var(--r-full);padding:4px 12px;font-size:0.65em;font-weight:700;letter-spacing:0.07em;color:var(--accent);text-transform:uppercase;font-family:'JetBrains Mono',monospace;margin-bottom:8px;}
+  .sb-title{font-size:0.95em;font-weight:800;color:var(--tx);line-height:1.3;}
+  .sb-progress{padding:16px 20px;border-bottom:1px solid var(--border);}
+  .sb-prog-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;}
+  .sb-prog-label{font-size:0.72em;font-weight:600;color:var(--tx-sm);}
+  .sb-prog-count{font-size:0.78em;font-weight:700;font-family:'JetBrains Mono',monospace;color:var(--accent-mid);}
+  .sb-prog-track{height:6px;background:var(--border);border-radius:var(--r-full);overflow:hidden;}
+  .sb-prog-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent-mid));border-radius:var(--r-full);transition:width 0.5s cubic-bezier(0.4,0,0.2,1);}
+  .sb-dots{padding:16px 20px;flex:1;display:none;}
+  @media(min-width:1024px){.sb-dots{display:block;}}
+  .sb-dots-label{font-size:0.65em;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--tx-xs);margin-bottom:12px;}
+  .sb-dots-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;}
+  .sb-dot{aspect-ratio:1;border-radius:var(--r-sm);background:var(--border);border:1.5px solid transparent;display:flex;align-items:center;justify-content:center;font-size:0.65em;font-weight:700;font-family:'JetBrains Mono',monospace;color:var(--tx-xs);transition:all 0.2s;}
+  .sb-dot.active{background:var(--accent);color:white;border-color:var(--accent);box-shadow:var(--sh-accent);transform:scale(1.08);}
+  .sb-dot.done-ok{background:var(--ok-lt);color:var(--ok);border-color:var(--ok);}
+  .sb-dot.done-no{background:var(--no-lt);color:var(--no);border-color:var(--no);}
+  .sb-bottom{padding:16px 20px;border-top:1px solid var(--border);margin-top:auto;display:flex;align-items:center;justify-content:space-between;}
+  .sb-score-wrap{display:flex;flex-direction:column;gap:1px;}
+  .sb-score-num{font-size:1.5em;font-weight:800;font-family:'JetBrains Mono',monospace;background:linear-gradient(135deg,var(--accent),var(--accent-mid));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1;}
+  .sb-score-label{font-size:0.65em;color:var(--tx-xs);font-weight:600;}
+  .mute-btn{background:var(--accent-lt);border:1.5px solid var(--border-md);border-radius:var(--r-md);padding:8px 12px;font-size:1.1em;cursor:pointer;line-height:1;transition:all 0.15s;}
+  .mute-btn:hover{background:var(--border-md);}
+  .mobile-header{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;}
+  @media(min-width:1024px){.mobile-header{display:none;}}
+  .mobile-back{color:var(--accent-mid);font-size:0.85em;font-weight:700;text-decoration:none;background:none;border:none;cursor:pointer;font-family:inherit;}
+  .mobile-counter{text-align:center;}
+  .mobile-count-num{font-size:0.78em;font-family:'JetBrains Mono',monospace;color:var(--accent-mid);font-weight:700;}
+  .mobile-count-sub{font-size:0.62em;color:var(--tx-xs);margin-top:1px;}
+  .top-prog{height:4px;background:var(--border);}
+  @media(min-width:1024px){.top-prog{display:none;}}
+  .top-prog-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent-mid));transition:width 0.4s cubic-bezier(0.4,0,0.2,1);}
+  .q-wrap{padding:28px 24px 16px;}
+  @media(min-width:640px){.q-wrap{padding:32px 32px 20px;}}
+  @media(min-width:1024px){.q-wrap{padding:40px 44px 24px;}}
+  .q-type-badge{display:inline-flex;align-items:center;background:var(--accent-lt);border:1.5px solid var(--border-md);border-radius:var(--r-full);padding:5px 14px;font-size:0.65em;font-weight:700;letter-spacing:0.07em;color:var(--accent);text-transform:uppercase;font-family:'JetBrains Mono',monospace;margin-bottom:16px;}
+  .q-text{font-size:1.15em;font-weight:700;line-height:1.6;color:var(--tx);letter-spacing:-0.01em;}
+  @media(min-width:1024px){.q-text{font-size:1.2em;}}
+  .opt-list{display:flex;flex-direction:column;gap:10px;padding:0 24px;}
+  @media(min-width:640px){.opt-list{padding:0 32px;}}
+  @media(min-width:1024px){.opt-list{padding:0 44px;gap:12px;}}
+  .opt-btn{display:flex;align-items:center;gap:14px;background:var(--surface);border:1.5px solid var(--border);border-radius:var(--r-lg);padding:14px 16px;cursor:pointer;text-align:left;width:100%;font-family:inherit;color:var(--tx);box-shadow:0 1px 4px rgba(0,0,0,0.07);transition:border-color 0.15s,background 0.15s,box-shadow 0.15s,transform 0.1s;position:relative;overflow:hidden;animation:fadeUp 0.25s ease both;}
+  .opt-btn:nth-child(1){animation-delay:.04s}.opt-btn:nth-child(2){animation-delay:.08s}.opt-btn:nth-child(3){animation-delay:.12s}.opt-btn:nth-child(4){animation-delay:.16s}
+  .opt-btn:hover{border-color:var(--border-md);background:var(--surface2);box-shadow:0 3px 14px rgba(124,58,237,0.18);}
+  .opt-btn:active{transform:scale(0.985);}
+  .opt-btn:disabled{cursor:default;transform:none;}
+  .opt-key{width:34px;height:34px;flex-shrink:0;border-radius:var(--r-sm);background:var(--accent-lt);display:flex;align-items:center;justify-content:center;font-size:0.75em;font-weight:700;font-family:'JetBrains Mono',monospace;color:var(--accent);}
+  .opt-text{flex:1;font-size:0.95em;line-height:1.45;font-weight:500;}
+  .opt-icon{font-size:1em;opacity:0;transition:opacity 0.2s,transform 0.2s;transform:scale(0.6);flex-shrink:0;}
+  .opt-btn.correct{border-color:var(--ok);background:var(--ok-lt);box-shadow:0 0 0 3px rgba(5,150,105,0.12);}
+  .opt-btn.correct .opt-key{background:var(--ok);color:white;}
+  .opt-btn.correct .opt-icon{opacity:1;transform:scale(1);}
+  .opt-btn.wrong{border-color:var(--no);background:var(--no-lt);box-shadow:0 0 0 3px rgba(220,38,38,0.12);}
+  .opt-btn.wrong .opt-key{background:var(--no);color:white;}
+  .opt-btn.wrong .opt-icon{opacity:1;transform:scale(1);}
+  .opt-btn.dimmed{opacity:0.38;}
+  .tf-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:0 24px;}
+  @media(min-width:640px){.tf-grid{padding:0 32px;}}
+  @media(min-width:1024px){.tf-grid{padding:0 44px;gap:14px;}}
+  .fill-wrap{padding:0 24px;}
+  @media(min-width:640px){.fill-wrap{padding:0 32px;}}
+  @media(min-width:1024px){.fill-wrap{padding:0 44px;}}
+  .fill-input{width:100%;background:var(--surface);border:1.5px solid var(--border);border-radius:var(--r-lg);padding:14px 18px;font-family:inherit;font-size:1em;color:var(--tx);outline:none;transition:border-color 0.2s,box-shadow 0.2s;box-shadow:0 1px 4px rgba(0,0,0,0.07);}
+  .fill-input:focus{border-color:var(--accent-mid);box-shadow:0 0 0 3px rgba(124,58,237,0.12);}
+  .fill-input.correct{border-color:var(--ok);background:var(--ok-lt);color:var(--ok-dk);}
+  .fill-input.wrong{border-color:var(--no);background:var(--no-lt);color:var(--no-dk);}
+  .fill-hint{font-size:0.75em;color:var(--tx-xs);margin-top:6px;padding-left:2px;}
+  .fill-submit{margin-top:10px;width:100%;background:linear-gradient(135deg,var(--accent),var(--accent-mid));border:none;border-radius:var(--r-lg);padding:14px;font-family:inherit;font-size:0.95em;font-weight:700;color:white;cursor:pointer;box-shadow:var(--sh-accent);transition:opacity 0.15s,transform 0.1s;}
+  .fill-submit:hover{opacity:0.9;}.fill-submit:active{transform:scale(0.98);}.fill-submit:disabled{opacity:0.45;cursor:default;}
+  .expl-box{margin:16px 24px 0;background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--accent-mid);border-radius:var(--r-lg);padding:16px 18px;font-size:0.88em;line-height:1.75;color:#374151;display:none;box-shadow:0 1px 4px rgba(0,0,0,0.07);}
+  @media(min-width:640px){.expl-box{margin:16px 32px 0;}}
+  @media(min-width:1024px){.expl-box{margin:20px 44px 0;font-size:0.9em;}}
+  .expl-box.show{display:block;animation:fadeIn 0.3s ease;}
+  .expl-box.correct-box{border-left-color:var(--ok);}.expl-box.wrong-box{border-left-color:var(--no);}
+  .expl-label{font-size:0.7em;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;font-family:'JetBrains Mono',monospace;margin-bottom:6px;}
+  .expl-label.correct{color:var(--ok);}.expl-label.wrong{color:var(--no);}
+  .next-btn{display:none;margin:16px 24px 0;width:calc(100% - 48px);background:linear-gradient(135deg,var(--accent),var(--accent-mid));border:none;border-radius:var(--r-lg);padding:16px;font-family:inherit;font-size:1em;font-weight:700;color:white;cursor:pointer;box-shadow:var(--sh-accent);transition:opacity 0.15s,transform 0.1s;}
+  .next-btn:hover{opacity:0.92;}.next-btn:active{transform:scale(0.985);}.next-btn.show{display:block;animation:fadeUp 0.3s ease;}
+  @media(min-width:640px){.next-btn{margin:16px 32px 0;width:calc(100% - 64px);}}
+  @media(min-width:1024px){.next-btn{margin:20px 44px 0;width:calc(100% - 88px);padding:17px;}}
+  .results{display:none;flex-direction:column;align-items:center;padding:48px 24px 40px;}
+  .results.show{display:flex;animation:fadeUp 0.5s ease;}
+  @media(min-width:1024px){.results{padding:60px 80px 60px;}}
+  .res-trophy{font-size:5em;margin-bottom:12px;animation:bounce 0.7s ease;}
+  .res-score{font-size:4em;font-weight:800;font-family:'JetBrains Mono',monospace;background:linear-gradient(135deg,var(--accent),#2563eb);-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1;margin-bottom:6px;}
+  .res-msg{font-size:0.95em;color:var(--tx-sm);margin-bottom:28px;font-weight:500;}
+  .res-badge-wrap{background:#fffbeb;border:1.5px solid #fde68a;border-radius:var(--r-lg);padding:14px 18px;width:100%;display:flex;align-items:center;gap:14px;margin-bottom:14px;}
+  .res-stats{width:100%;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:4px 18px;margin-bottom:24px;}
+  .res-stat-row{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid #f3f4f6;font-size:0.88em;color:#374151;}
+  .res-stat-row:last-child{border-bottom:none;}
+  .res-correct{color:var(--ok);font-weight:700;font-family:'JetBrains Mono',monospace;}
+  .res-wrong{color:var(--no);font-weight:700;font-family:'JetBrains Mono',monospace;}
+  .res-mono{font-family:'JetBrains Mono',monospace;font-weight:600;}
+  .res-actions{display:flex;flex-direction:column;gap:10px;width:100%;}
+  .res-primary{background:linear-gradient(135deg,var(--accent),var(--accent-mid));border:none;border-radius:var(--r-lg);padding:16px;font-family:inherit;font-size:1em;font-weight:700;color:white;cursor:pointer;text-align:center;text-decoration:none;display:block;box-shadow:var(--sh-accent);transition:opacity 0.15s;}
+  .res-primary:hover{opacity:0.9;}
+  .res-secondary{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--r-lg);padding:14px;font-family:inherit;font-size:0.92em;font-weight:600;color:var(--tx-sm);cursor:pointer;text-align:center;text-decoration:none;display:block;transition:border-color 0.15s,background 0.15s;}
+  .res-secondary:hover{border-color:var(--border-md);background:var(--surface2);}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+  @keyframes bounce{0%,100%{transform:scale(1)}40%{transform:scale(1.2)}70%{transform:scale(0.95)}}
+  @keyframes shake{0%,100%{transform:translateX(0)}20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}
+  .shake{animation:shake 0.35s ease;}
+  @media(max-width:400px){body{font-size:15px;}.q-wrap{padding:20px 16px 12px;}.opt-list,.tf-grid,.fill-wrap{padding:0 16px;}.expl-box{margin:12px 16px 0;}.next-btn{margin:12px 16px 0;width:calc(100% - 32px);}}
+  body.embed-mode{background:var(--bg)!important;font-size:15.5px;}
+  body.embed-mode .quiz-shell{max-width:100%!important;width:100%!important;margin:0!important;border-radius:0!important;box-shadow:none!important;flex-direction:column!important;min-height:unset!important;}
+  body.embed-mode .quiz-sidebar{display:none!important;}
+  body.embed-mode .quiz-main{width:100%!important;max-width:100%!important;min-height:unset!important;padding-bottom:24px!important;}
+  body.embed-mode .q-wrap{padding:20px 22px 14px!important;}
+  body.embed-mode .opt-list{padding:0 22px!important;}
+  body.embed-mode .tf-grid{padding:0 22px!important;}
+  body.embed-mode .fill-wrap{padding:0 22px!important;}
+  body.embed-mode .expl-box{margin:12px 22px 0!important;}
+  body.embed-mode .next-btn{margin:12px 22px 0!important;width:calc(100% - 44px)!important;}
+  body.embed-mode .results{padding:32px 22px 24px!important;}
+</style>
+</head>
+<body>
+<div class="quiz-shell">
+  <aside class="quiz-sidebar">
+    <div class="mobile-header">
+      <a class="mobile-back" href="../index.html">← Dashboard</a>
+      <div class="mobile-counter">
+        <div class="mobile-count-num" id="mob-count">Q 1 of 20</div>
+        <div class="mobile-count-sub">Lesson 11.6 — Integrated Mastery — Extended Tasks</div>
+      </div>
+      <button class="mute-btn" id="mb" onclick="tM()">🔊</button>
+    </div>
+    <div class="top-prog"><div class="top-prog-fill" id="mob-bar" style="width:0%"></div></div>
+    <div class="sb-top">
+      <a class="sb-back" href="../index.html">← Dashboard</a>
+      <div class="sb-lesson-tag">Lesson 11.6</div>
+      <div class="sb-title">Integrated Mastery — Extended Tasks</div>
+    </div>
+    <div class="sb-progress">
+      <div class="sb-prog-row"><span class="sb-prog-label">Progress</span><span class="sb-prog-count" id="sb-count">0 / 20</span></div>
+      <div class="sb-prog-track"><div class="sb-prog-fill" id="sb-bar" style="width:0%"></div></div>
+    </div>
+    <div class="sb-dots"><div class="sb-dots-label">Questions</div><div class="sb-dots-grid" id="sb-dots-grid"></div></div>
+    <div class="sb-bottom">
+      <div class="sb-score-wrap"><div class="sb-score-num" id="sb-score">0%</div><div class="sb-score-label">Current score</div></div>
+      <button class="mute-btn" id="mb2" onclick="tM()">🔊</button>
+    </div>
+  </aside>
+  <main class="quiz-main">
+    <div id="qa"></div>
+    <div class="results" id="rs"></div>
+  </main>
+</div>
+<script>
+(function(){var p=new URLSearchParams(window.location.search);if(p.get("embed")==="1")document.body.classList.add("embed-mode");})();
+var Q=[{"type": "mcq", "q": "A student writes: 'The policy has introduced last year caused many problems.' Identify ALL errors:", "options": ["One error: tense", "TWO ERRORS: (1) 'has introduced' should be 'introduced' (specific past time = simple past, not present perfect); (2) MISSING RELATIVE PRONOUN: 'that/which was introduced' — needs a connector between 'policy' and 'last year'", "No errors", "One error: missing article"], "answer": 1, "explanation": "TWO ERRORS: (1) TENSE: 'has introduced' → 'INTRODUCED' (specific past time 'last year' requires simple past); (2) STRUCTURE: 'The policy introduced last year' needs either 'The policy THAT WAS introduced last year' (relative clause) or 'The policy INTRODUCED last year' (reduced relative — correct). The current form is a run-on."}, {"type": "mcq", "q": "Transform: 'She was too exhausted to continue.' Begin with 'Such was...':", "options": ["Such was her exhaustion that she couldn't continue.", "Such exhausted she was that she couldn't continue.", "Such the exhaustion that she couldn't continue.", "Such was she exhausted that she couldn't continue."], "answer": 0, "explanation": "'SUCH WAS HER EXHAUSTION that she couldn't continue.' TRANSFORMATION: TOO + adjective → SUCH WAS + noun phrase + THAT. 'Too exhausted to continue' → 'such was her exhaustion that she couldn't continue.' The adjective ('exhausted') becomes a noun ('exhaustion'); 'such was' + possessive noun phrase + 'that' + result."}, {"type": "tf", "q": "'Having been rejected by three publishers, the novel was eventually accepted by a fourth, which went on to win a major award.' This sentence correctly combines passive, perfect participial, and relative clause.", "answer": true, "explanation": "True. THREE SYSTEMS COMBINED: (1) PASSIVE PERFECT PARTICIPIAL: 'Having been rejected by three publishers' (passive + perfect aspect + participial); (2) PASSIVE: 'was eventually accepted'; (3) NON-DEFINING RELATIVE CLAUSE: 'which went on to win a major award' (referring to the fourth publisher). All three are used correctly."}, {"type": "mcq", "q": "Improve this weak student sentence: 'People think that exercise is good and they say it helps mental health too.'", "options": ["It is widely believed that exercise is beneficial; furthermore, research suggests it significantly improves mental health.", "People think exercise is good and helpful for mental health.", "Exercise is good. It helps mental health.", "People widely think that exercise helps mental health."], "answer": 0, "explanation": "'It is WIDELY BELIEVED that exercise is BENEFICIAL; furthermore, research SUGGESTS it SIGNIFICANTLY IMPROVES mental health.' IMPROVEMENTS: (1) Impersonal passive ('it is widely believed'); (2) Formal vocabulary ('beneficial' not 'good'); (3) Semicolon for formal connection; (4) 'Furthermore' as academic connector; (5) 'research suggests' (hedged attribution)."}, {"type": "fill", "q": "'Not until she ________ (read) the final chapter ________ (understand) the author's true intention.' Complete with inversion.", "answer": "had read / did she understand", "hint": "Not until + past perfect + inversion (did + subject + base verb)...", "explanation": "'Not until she HAD READ the final chapter DID SHE UNDERSTAND the author's true intention.' INVERSION after fronted 'not until': DID + she + base verb (understand). The past perfect in the 'not until' clause shows the reading was completed before understanding followed."}, {"type": "mcq", "q": "A news headline reads: 'Three arrested after robbery.' Expand to a full formal sentence:", "options": ["Three were arrested after robbery.", "Three people have been arrested in connection with a robbery that took place yesterday.", "Police arrested three. The robbery happened.", "Three persons are arrested after a robbery took place."], "answer": 1, "explanation": "'Three people HAVE BEEN ARRESTED in connection with a robbery THAT TOOK PLACE yesterday.' EXPANSION: (1) 'Three' → 'Three people' (article + noun); (2) 'arrested' → 'have been arrested' (present perfect passive — recent with present relevance); (3) 'after robbery' → 'in connection with a robbery that took place yesterday' (relative clause + time expression)."}, {"type": "mcq", "q": "'Despite her considerable experience, the position was not offered to her.' Rewrite beginning 'Although':", "options": ["Although she had considerable experience, the position was not offered to her.", "Although her experience was considerable, she did not offer the position.", "Although considerable experience, the position was not offered.", "She was not offered the position although having considerable experience."], "answer": 0, "explanation": "'ALTHOUGH SHE HAD CONSIDERABLE EXPERIENCE, the position was not offered to her.' DESPITE + noun phrase → ALTHOUGH + full clause. 'Her considerable experience' → 'she had considerable experience.' 'Despite' (preposition + noun) converts to 'Although' (conjunction + full subject + verb clause). Passive maintained."}, {"type": "tf", "q": "'The research that was conducted over five years has produced results that may revolutionise the field' integrates four grammatical systems correctly.", "answer": true, "explanation": "True. FOUR SYSTEMS: (1) DEFINING RELATIVE CLAUSE: 'that was conducted over five years'; (2) PASSIVE: 'was conducted'; (3) PRESENT PERFECT: 'has produced'; (4) HEDGED MODAL: 'may revolutionise' (appropriate epistemic caution). All four systems operate correctly and naturally together in one sophisticated sentence."}, {"type": "mcq", "q": "Which is the most effective combination of the sentences: 'The experiment failed. Researchers were disappointed. They will try a new approach.'", "options": ["The experiment failed and the researchers were disappointed and they will try a new approach.", "The experiment having failed, the disappointed researchers will now try a new approach.", "The experiment failed but the researchers were disappointed so they will try a new approach.", "Researchers were disappointed after the experiment failed they will try a new approach."], "answer": 1, "explanation": "'The experiment HAVING FAILED, the disappointed researchers WILL NOW TRY a new approach.' ELEGANT COMBINATION: (1) Perfect participial ('having failed') condenses first sentence; (2) Adjective ('disappointed') condenses second; (3) Main clause expresses the forward-looking consequence. Three sentences become one through participial + adjective + main clause integration."}, {"type": "mcq", "q": "Convert to reported speech: '\"We would have succeeded had you supported us,\" the director said.'", "options": ["The director said they would have succeeded had she supported them.", "The director said that they would have succeeded if she had supported them.", "The director said they would have succeeded if they had been supported.", "Both A and B are correct."], "answer": 3, "explanation": "BOTH A and B are correct: (A) 'they WOULD HAVE SUCCEEDED HAD SHE SUPPORTED them' (inverted third conditional preserved in reported speech); (B) 'they WOULD HAVE SUCCEEDED if she HAD SUPPORTED them' (non-inverted third conditional). Both preserve the third conditional meaning. Pronouns: 'we' → 'they'; 'you' → 'she/he' depending on context."}, {"type": "mcq", "q": "'It being a public holiday, the offices were closed.' Identify the grammatical structure and its function:", "options": ["Dangling participle — incorrect", "ABSOLUTE CLAUSE: 'it being a public holiday' has its own subject ('it') different from 'the offices' — formally expresses the circumstance/reason for closure", "A reduced adverbial clause", "A non-defining relative clause"], "answer": 1, "explanation": "ABSOLUTE CLAUSE: 'IT BEING A PUBLIC HOLIDAY' — 'it' is the subject of 'being'; 'the offices' is the main clause subject. Different subjects = absolute clause (not a dangling participle). Expresses the CIRCUMSTANCE/REASON formally and elegantly. Equivalent to: 'Since it was a public holiday, the offices were closed.'"}, {"type": "fill", "q": "Complete the academic sentence: 'The findings ________ (present) in this paper ________ (challenge) the prevailing view that technology ________ (inevitably / improve) educational outcomes.'", "answer": "presented / challenge / inevitably improves", "hint": "Past participial (reduced relative) + present simple + adverb + present simple...", "explanation": "'The findings PRESENTED in this paper CHALLENGE the prevailing view that technology INEVITABLY IMPROVES educational outcomes.' (1) 'Presented' = reduced relative passive; (2) 'challenge' = present simple main verb; (3) 'inevitably improves' = adverb + present simple in noun clause. Academic register throughout."}, {"type": "tf", "q": "Mastery of integrated grammar allows writers to simultaneously control meaning, register, precision, and rhetorical effect.", "answer": true, "explanation": "True. INTEGRATED GRAMMAR MASTERY enables SIMULTANEOUS CONTROL of: (1) MEANING (what is communicated); (2) REGISTER (formal/informal, academic/narrative); (3) PRECISION (exact relationships between ideas); (4) RHETORICAL EFFECT (emphasis, persuasion, emotion). Grammar is not just a set of rules — it is the primary tool of effective communication."}, {"type": "mcq", "q": "'Not a single proposal submitted by the committee was accepted by the board.' What is the most important grammatical observation about this sentence?", "options": ["It uses simple past", "MULTIPLE SYSTEMS: fronted 'not a single' (emphasis/inversion of expected positive), passive ('was accepted'), reduced relative ('submitted by the committee'), formal register — all integrated naturally", "It is too long", "It uses active voice"], "answer": 1, "explanation": "MULTIPLE INTEGRATED SYSTEMS: (1) EMPHATIC NEGATIVE: 'Not a single' (stronger than 'No proposal'); (2) PASSIVE REDUCED RELATIVE: 'submitted by the committee' (= that had been submitted); (3) PASSIVE MAIN VERB: 'was accepted'; (4) FORMAL REGISTER throughout. The complexity is invisible because the systems combine smoothly."}, {"type": "mcq", "q": "Which single improvement would MOST elevate this sentence: 'The government made many changes to the policy.'", "options": ["Add an adjective: 'The government made many big changes'", "NOMINALISE AND SPECIFY: 'The government implemented substantial revisions to the policy' — 'made changes' → 'implemented revisions' (formal verbs); 'many' → 'substantial' (precise quantifier)", "Make it passive: 'Many changes were made'", "Add 'very': 'The government made very many changes'"], "answer": 1, "explanation": "'The government IMPLEMENTED SUBSTANTIAL REVISIONS to the policy.' IMPROVEMENT: (1) 'Made changes' → 'IMPLEMENTED REVISIONS' (more formal, precise verb + nominal); (2) 'Many' → 'SUBSTANTIAL' (qualitative precision, not just quantity). Both improvements raise register and precision simultaneously — the hallmarks of integrated grammar mastery."}, {"type": "mcq", "q": "Why is integrated grammar mastery the goal of advanced grammar study?", "options": ["Because it allows learners to memorise more rules", "Because it enables the simultaneous deployment of multiple grammatical systems — tense, voice, aspect, modality, clause structure — in service of clear, appropriate, and sophisticated communication", "Because it makes language more complicated", "Because it only matters for academic writing"], "answer": 1, "explanation": "INTEGRATED GRAMMAR MASTERY = the ability to use ALL grammatical systems TOGETHER, SIMULTANEOUSLY, and PURPOSEFULLY. Not separate rules memorised in isolation, but a fluid command that serves communication in any context — academic argument, narrative prose, professional communication, or everyday conversation. This is the pinnacle of language proficiency."}];
+var SKEY="m11_l6",NEXT="q11-7.html",HUB="../index.html";
+var cur=0,cor=0,answered=false,st=Date.now(),ac=null,dotStates=[];
+function gAC(){if(!ac)ac=new(window.AudioContext||window.webkitAudioContext)();return ac;}
+function gD(){try{return JSON.parse(localStorage.getItem('grammar_app')||'{}');}catch(e){return{};}}
+function sD(d){try{localStorage.setItem('grammar_app',JSON.stringify(d));}catch(e){}}
+function tM(){var d=gD();d.muted=!d.muted;sD(d);var ic=d.muted?'🔇':'🔊';document.getElementById('mb').textContent=ic;document.getElementById('mb2').textContent=ic;}
+function pT(t){var d=gD();if(d.muted)return;try{var c=gAC();if(c.state==='suspended')c.resume();if(t==='c')pC(c);else if(t==='w')pW(c);else pF(c);}catch(e){}}
+function pC(c){[[523,0],[659,.1],[784,.2]].forEach(function(a){var o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);o.frequency.value=a[0];o.type='sine';var t=c.currentTime+a[1];g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.18,t+.02);g.gain.exponentialRampToValueAtTime(.001,t+.3);o.start(t);o.stop(t+.3);});}
+function pW(c){[[240,0],[200,.1]].forEach(function(a){var o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);o.frequency.value=a[0];o.type='sawtooth';var t=c.currentTime+a[1];g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.08,t+.02);g.gain.exponentialRampToValueAtTime(.001,t+.25);o.start(t);o.stop(t+.25);});}
+function pF(c){[[523,0],[659,.15],[784,.3],[1047,.45]].forEach(function(a){var o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);o.frequency.value=a[0];o.type='sine';var t=c.currentTime+a[1];g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.2,t+.03);g.gain.exponentialRampToValueAtTime(.001,t+.5);o.start(t);o.stop(t+.5);});}
+function updProgress(){var pct=Math.round(cur/Q.length*100);document.getElementById('mob-bar').style.width=pct+'%';document.getElementById('sb-bar').style.width=pct+'%';document.getElementById('mob-count').textContent='Q '+(cur+1)+' of '+Q.length;document.getElementById('sb-count').textContent=cur+' / '+Q.length;var sp=cur>0?Math.round(cor/cur*100):0;document.getElementById('sb-score').textContent=cur>0?sp+'%':'—';updDots();}
+function updDots(){var grid=document.getElementById('sb-dots-grid');if(!grid)return;var html='';for(var i=0;i<Q.length;i++){var cls='sb-dot '+(i===cur?'active':(dotStates[i]||''));html+='<div class="'+cls+'">'+(i+1)+'</div>';}grid.innerHTML=html;}
+function rQ(){updProgress();var q=Q[cur];answered=false;var labels={mcq:'Multiple Choice',tf:'True or False',fill:'Fill in the Blank'};var lbl=labels[q.type]||'Question';var opts='';
+if(q.type==='mcq'){opts='<div class="opt-list">'+q.options.map(function(o,i){return '<button class="opt-btn" onclick="selOpt('+i+')" data-i="'+i+'"><div class="opt-key">'+String.fromCharCode(65+i)+'</div><div class="opt-text">'+o+'</div><div class="opt-icon">'+(i===q.answer?'✓':'✗')+'</div></button>';}).join('')+'</div>';}
+else if(q.type==='tf'){opts='<div class="tf-grid"><button class="opt-btn" onclick="selTF(true)" data-v="true"><div class="opt-key">T</div><div class="opt-text">True</div><div class="opt-icon">'+(q.answer?'✓':'✗')+'</div></button><button class="opt-btn" onclick="selTF(false)" data-v="false"><div class="opt-key">F</div><div class="opt-text">False</div><div class="opt-icon">'+(!q.answer?'✓':'✗')+'</div></button></div>';}
+else{opts='<div class="fill-wrap"><input class="fill-input" id="fi" type="text" placeholder="Type your answer..." autocomplete="off" autocapitalize="none" spellcheck="false" onkeydown="if(event.keyCode===13)subFill()">'+(q.hint?'<div class="fill-hint">💡 '+q.hint+'</div>':'')+'<button class="fill-submit" id="fsb" onclick="subFill()">Check Answer</button></div>';}
+document.getElementById('qa').innerHTML='<div class="q-wrap" style="animation:fadeUp .3s ease"><div class="q-type-badge">'+lbl+'</div><div class="q-text">'+q.q+'</div></div>'+opts+'<div class="expl-box" id="eb"></div><button class="next-btn" id="nb" onclick="nextQ()">'+(cur+1<Q.length?'Next Question →':'See Results 🎯')+'</button>';
+if(q.type==='fill'){setTimeout(function(){var e=document.getElementById('fi');if(e)e.focus();},150);}
+var d=gD();var ic=d.muted?'🔇':'🔊';document.getElementById('mb').textContent=ic;document.getElementById('mb2').textContent=ic;}
+function selOpt(i){if(answered)return;answered=true;var q=Q[cur];var ok=i===q.answer;if(ok)cor++;pT(ok?'c':'w');dotStates[cur]=ok?'done-ok':'done-no';document.querySelectorAll('.opt-btn').forEach(function(b,j){if(j===q.answer)b.classList.add('correct');else if(j===i&&!ok){b.classList.add('wrong');b.classList.add('shake');}else b.classList.add('dimmed');b.disabled=true;});showExpl(ok,q.explanation);document.getElementById('nb').classList.add('show');updDots();}
+function selTF(v){if(answered)return;answered=true;var q=Q[cur];var ok=v===q.answer;if(ok)cor++;pT(ok?'c':'w');dotStates[cur]=ok?'done-ok':'done-no';document.querySelectorAll('.opt-btn').forEach(function(b){var bv=b.dataset.v==='true';if(bv===q.answer)b.classList.add('correct');else if(bv===v&&!ok)b.classList.add('wrong');else b.classList.add('dimmed');b.disabled=true;});showExpl(ok,q.explanation);document.getElementById('nb').classList.add('show');updDots();}
+function subFill(){if(answered)return;var inp=document.getElementById('fi');if(!inp||!inp.value.trim())return;answered=true;var q=Q[cur];var v=inp.value.trim().toLowerCase();var ans=(q.answer||'').toLowerCase().split('|');var ok=ans.some(function(a){return v===a.trim();});if(ok)cor++;pT(ok?'c':'w');dotStates[cur]=ok?'done-ok':'done-no';inp.classList.add(ok?'correct':'wrong');inp.disabled=true;document.getElementById('fsb').disabled=true;if(!ok){var cd=document.createElement('div');cd.style.cssText='font-size:.82em;color:var(--ok);margin-top:8px;font-weight:600;';cd.textContent='✓ Answer: '+q.answer;inp.parentNode.insertBefore(cd,document.getElementById('fsb'));inp.classList.add('shake');}showExpl(ok,q.explanation);document.getElementById('nb').classList.add('show');updDots();}
+function showExpl(ok,text){var b=document.getElementById('eb');b.className='expl-box '+(ok?'correct-box':'wrong-box');b.innerHTML='<div class="expl-label '+(ok?'correct':'wrong')+'">'+(ok?'✓ Correct!':'✗ Incorrect')+'</div><div>'+text+'</div>';b.classList.add('show');setTimeout(function(){b.scrollIntoView({behavior:'smooth',block:'nearest'});},120);}
+function nextQ(){cur++;if(cur>=Q.length)showResults();else{rQ();window.scrollTo({top:0,behavior:'smooth'});var m=document.querySelector('.quiz-main');if(m)m.scrollTo({top:0,behavior:'smooth'});}}
+function showResults(){pT('complete');document.getElementById('qa').style.display='none';document.getElementById('mob-count').textContent='Complete!';document.getElementById('sb-count').textContent='20 / 20';document.getElementById('sb-bar').style.width='100%';document.getElementById('mob-bar').style.width='100%';
+var tot=Q.length,pct=Math.round(cor/tot*100),tt=Math.round((Date.now()-st)/1000);document.getElementById('sb-score').textContent=pct+'%';dotStates=dotStates.map(function(d){return d||'done-ok';});updDots();
+var d=gD();if(!d.progress)d.progress={};var prev=d.progress[SKEY];d.progress[SKEY]=Math.max(pct,prev||0);if(!d.badges)d.badges=[];var nb2=[];
+if(prev===undefined&&!d.badges.includes('first_quiz')){d.badges.push('first_quiz');nb2.push('⭐ First Step');}
+if(pct===100&&!d.badges.includes('perfect_score')){d.badges.push('perfect_score');nb2.push('💯 Perfect Score!');}
+if(prev!==undefined&&pct>prev&&!d.badges.includes('comeback')){d.badges.push('comeback');nb2.push('💪 Comeback!');}
+if(tt<120&&!d.badges.includes('speed_demon')){d.badges.push('speed_demon');nb2.push('⚡ Speed Run!');}
+sD(d);
+var trophy=pct>=90?'🏆':pct>=70?'🥇':pct>=50?'🥈':'📚';var msg=pct>=90?'Outstanding work!':pct>=70?'Great job!':pct>=50?'Good effort!':'Keep practising!';
+var bH=nb2.map(function(n){return '<div class="res-badge-wrap"><span style="font-size:1.8em">'+n.split(' ')[0]+'</span><div><div style="font-size:.82em;font-weight:700;color:#b45309">Badge Unlocked!</div><div style="font-size:.75em;color:#6b7280">'+n.split(' ').slice(1).join(' ')+'</div></div></div>';}).join('');
+var sc=document.getElementById('rs');
+sc.innerHTML='<div class="res-trophy">'+trophy+'</div><div class="res-score">'+pct+'%</div><div class="res-msg">'+msg+' — '+cor+'/'+tot+' correct</div>'+bH+'<div class="res-stats"><div class="res-stat-row"><span>Correct</span><span class="res-correct">✓ '+cor+'</span></div><div class="res-stat-row"><span>Incorrect</span><span class="res-wrong">✗ '+(tot-cor)+'</span></div><div class="res-stat-row"><span>Score</span><span class="res-mono">'+pct+'%</span></div><div class="res-stat-row"><span>Time</span><span class="res-mono">'+Math.floor(tt/60)+'m '+tt%60+'s</span></div></div><div class="res-actions"><a class="res-primary" href="'+NEXT+'">Next Lesson →</a><button class="res-secondary" onclick="retryQuiz()">↺ Retry this quiz</button><a class="res-secondary" href="'+HUB+'">← Back to Dashboard</a></div>';
+sc.classList.add('show');window.scrollTo({top:0,behavior:'smooth'});}
+function retryQuiz(){cur=0;cor=0;answered=false;st=Date.now();dotStates=[];document.getElementById('rs').classList.remove('show');document.getElementById('qa').style.display='';rQ();window.scrollTo({top:0,behavior:'smooth'});}
+updDots();rQ();
+</script>
+</body>
+</html>
