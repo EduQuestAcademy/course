@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Lesson 12.1 — Overview — The Two Varieties and Their Relationship | Grammar Mastery</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap');
+  :root{--bg:#eef2ff;--surface:#ffffff;--surface2:#f5f3ff;--border:#ddd6fe;--border-md:#c4b5fd;--tx:#1e1b4b;--tx-md:#374151;--tx-sm:#6b7280;--tx-xs:#9ca3af;--accent:#5b21b6;--accent-mid:#7c3aed;--accent-lt:#ede9fe;--accent-glow:rgba(124,58,237,0.18);--ok:#059669;--ok-lt:#d1fae5;--ok-dk:#065f46;--no:#dc2626;--no-lt:#fee2e2;--no-dk:#991b1b;--r-sm:8px;--r-md:12px;--r-lg:16px;--r-xl:20px;--r-full:999px;--sh-sm:0 1px 4px rgba(0,0,0,0.07);--sh-lg:0 8px 32px rgba(0,0,0,0.10);--sh-accent:0 4px 20px rgba(91,33,182,0.25);--sidebar-w:300px;}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--tx);min-height:100vh;font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;}
+  .quiz-shell{min-height:100vh;display:flex;flex-direction:column;}
+  .quiz-sidebar{background:var(--surface);border-bottom:1px solid var(--border);box-shadow:var(--sh-sm);position:sticky;top:0;z-index:50;}
+  .quiz-main{flex:1;padding-bottom:48px;}
+  @media(min-width:640px){body{font-size:17px;}.quiz-shell{max-width:720px;margin:0 auto;}}
+  @media(min-width:1024px){body{font-size:16px;background:linear-gradient(135deg,#eef2ff 0%,#f5f3ff 50%,#ede9fe 100%);background-attachment:fixed;}.quiz-shell{max-width:1080px;margin:32px auto;flex-direction:row;align-items:flex-start;border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--sh-lg);min-height:calc(100vh - 64px);}.quiz-sidebar{width:var(--sidebar-w);min-width:var(--sidebar-w);flex-shrink:0;position:sticky;top:32px;height:calc(100vh - 64px);border-bottom:none;border-right:1px solid var(--border);box-shadow:none;display:flex;flex-direction:column;overflow-y:auto;}.quiz-main{flex:1;min-width:0;background:var(--surface);min-height:calc(100vh - 64px);padding-bottom:64px;}}
+  .sb-top{padding:20px 20px 16px;border-bottom:1px solid var(--border);}
+  .sb-back{display:inline-flex;align-items:center;gap:6px;color:var(--accent-mid);font-size:0.82em;font-weight:700;text-decoration:none;background:none;border:none;cursor:pointer;font-family:inherit;padding:6px 10px;border-radius:var(--r-sm);transition:background 0.15s;margin-bottom:16px;}
+  .sb-back:hover{background:var(--accent-lt);}
+  .sb-lesson-tag{display:inline-flex;align-items:center;background:var(--accent-lt);border:1.5px solid var(--border-md);border-radius:var(--r-full);padding:4px 12px;font-size:0.65em;font-weight:700;letter-spacing:0.07em;color:var(--accent);text-transform:uppercase;font-family:'JetBrains Mono',monospace;margin-bottom:8px;}
+  .sb-title{font-size:0.95em;font-weight:800;color:var(--tx);line-height:1.3;}
+  .sb-progress{padding:16px 20px;border-bottom:1px solid var(--border);}
+  .sb-prog-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;}
+  .sb-prog-label{font-size:0.72em;font-weight:600;color:var(--tx-sm);}
+  .sb-prog-count{font-size:0.78em;font-weight:700;font-family:'JetBrains Mono',monospace;color:var(--accent-mid);}
+  .sb-prog-track{height:6px;background:var(--border);border-radius:var(--r-full);overflow:hidden;}
+  .sb-prog-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent-mid));border-radius:var(--r-full);transition:width 0.5s cubic-bezier(0.4,0,0.2,1);}
+  .sb-dots{padding:16px 20px;flex:1;display:none;}
+  @media(min-width:1024px){.sb-dots{display:block;}}
+  .sb-dots-label{font-size:0.65em;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--tx-xs);margin-bottom:12px;}
+  .sb-dots-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;}
+  .sb-dot{aspect-ratio:1;border-radius:var(--r-sm);background:var(--border);border:1.5px solid transparent;display:flex;align-items:center;justify-content:center;font-size:0.65em;font-weight:700;font-family:'JetBrains Mono',monospace;color:var(--tx-xs);transition:all 0.2s;}
+  .sb-dot.active{background:var(--accent);color:white;border-color:var(--accent);box-shadow:var(--sh-accent);transform:scale(1.08);}
+  .sb-dot.done-ok{background:var(--ok-lt);color:var(--ok);border-color:var(--ok);}
+  .sb-dot.done-no{background:var(--no-lt);color:var(--no);border-color:var(--no);}
+  .sb-bottom{padding:16px 20px;border-top:1px solid var(--border);margin-top:auto;display:flex;align-items:center;justify-content:space-between;}
+  .sb-score-wrap{display:flex;flex-direction:column;gap:1px;}
+  .sb-score-num{font-size:1.5em;font-weight:800;font-family:'JetBrains Mono',monospace;background:linear-gradient(135deg,var(--accent),var(--accent-mid));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1;}
+  .sb-score-label{font-size:0.65em;color:var(--tx-xs);font-weight:600;}
+  .mute-btn{background:var(--accent-lt);border:1.5px solid var(--border-md);border-radius:var(--r-md);padding:8px 12px;font-size:1.1em;cursor:pointer;line-height:1;transition:all 0.15s;}
+  .mute-btn:hover{background:var(--border-md);}
+  .mobile-header{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;}
+  @media(min-width:1024px){.mobile-header{display:none;}}
+  .mobile-back{color:var(--accent-mid);font-size:0.85em;font-weight:700;text-decoration:none;background:none;border:none;cursor:pointer;font-family:inherit;}
+  .mobile-counter{text-align:center;}
+  .mobile-count-num{font-size:0.78em;font-family:'JetBrains Mono',monospace;color:var(--accent-mid);font-weight:700;}
+  .mobile-count-sub{font-size:0.62em;color:var(--tx-xs);margin-top:1px;}
+  .top-prog{height:4px;background:var(--border);}
+  @media(min-width:1024px){.top-prog{display:none;}}
+  .top-prog-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent-mid));transition:width 0.4s cubic-bezier(0.4,0,0.2,1);}
+  .q-wrap{padding:28px 24px 16px;}
+  @media(min-width:640px){.q-wrap{padding:32px 32px 20px;}}
+  @media(min-width:1024px){.q-wrap{padding:40px 44px 24px;}}
+  .q-type-badge{display:inline-flex;align-items:center;background:var(--accent-lt);border:1.5px solid var(--border-md);border-radius:var(--r-full);padding:5px 14px;font-size:0.65em;font-weight:700;letter-spacing:0.07em;color:var(--accent);text-transform:uppercase;font-family:'JetBrains Mono',monospace;margin-bottom:16px;}
+  .q-text{font-size:1.15em;font-weight:700;line-height:1.6;color:var(--tx);letter-spacing:-0.01em;}
+  @media(min-width:1024px){.q-text{font-size:1.2em;}}
+  .opt-list{display:flex;flex-direction:column;gap:10px;padding:0 24px;}
+  @media(min-width:640px){.opt-list{padding:0 32px;}}
+  @media(min-width:1024px){.opt-list{padding:0 44px;gap:12px;}}
+  .opt-btn{display:flex;align-items:center;gap:14px;background:var(--surface);border:1.5px solid var(--border);border-radius:var(--r-lg);padding:14px 16px;cursor:pointer;text-align:left;width:100%;font-family:inherit;color:var(--tx);box-shadow:0 1px 4px rgba(0,0,0,0.07);transition:border-color 0.15s,background 0.15s,box-shadow 0.15s,transform 0.1s;position:relative;overflow:hidden;animation:fadeUp 0.25s ease both;}
+  .opt-btn:nth-child(1){animation-delay:.04s}.opt-btn:nth-child(2){animation-delay:.08s}.opt-btn:nth-child(3){animation-delay:.12s}.opt-btn:nth-child(4){animation-delay:.16s}
+  .opt-btn:hover{border-color:var(--border-md);background:var(--surface2);box-shadow:0 3px 14px rgba(124,58,237,0.18);}
+  .opt-btn:active{transform:scale(0.985);}
+  .opt-btn:disabled{cursor:default;transform:none;}
+  .opt-key{width:34px;height:34px;flex-shrink:0;border-radius:var(--r-sm);background:var(--accent-lt);display:flex;align-items:center;justify-content:center;font-size:0.75em;font-weight:700;font-family:'JetBrains Mono',monospace;color:var(--accent);}
+  .opt-text{flex:1;font-size:0.95em;line-height:1.45;font-weight:500;}
+  .opt-icon{font-size:1em;opacity:0;transition:opacity 0.2s,transform 0.2s;transform:scale(0.6);flex-shrink:0;}
+  .opt-btn.correct{border-color:var(--ok);background:var(--ok-lt);box-shadow:0 0 0 3px rgba(5,150,105,0.12);}
+  .opt-btn.correct .opt-key{background:var(--ok);color:white;}
+  .opt-btn.correct .opt-icon{opacity:1;transform:scale(1);}
+  .opt-btn.wrong{border-color:var(--no);background:var(--no-lt);box-shadow:0 0 0 3px rgba(220,38,38,0.12);}
+  .opt-btn.wrong .opt-key{background:var(--no);color:white;}
+  .opt-btn.wrong .opt-icon{opacity:1;transform:scale(1);}
+  .opt-btn.dimmed{opacity:0.38;}
+  .tf-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:0 24px;}
+  @media(min-width:640px){.tf-grid{padding:0 32px;}}
+  @media(min-width:1024px){.tf-grid{padding:0 44px;gap:14px;}}
+  .fill-wrap{padding:0 24px;}
+  @media(min-width:640px){.fill-wrap{padding:0 32px;}}
+  @media(min-width:1024px){.fill-wrap{padding:0 44px;}}
+  .fill-input{width:100%;background:var(--surface);border:1.5px solid var(--border);border-radius:var(--r-lg);padding:14px 18px;font-family:inherit;font-size:1em;color:var(--tx);outline:none;transition:border-color 0.2s,box-shadow 0.2s;box-shadow:0 1px 4px rgba(0,0,0,0.07);}
+  .fill-input:focus{border-color:var(--accent-mid);box-shadow:0 0 0 3px rgba(124,58,237,0.12);}
+  .fill-input.correct{border-color:var(--ok);background:var(--ok-lt);color:var(--ok-dk);}
+  .fill-input.wrong{border-color:var(--no);background:var(--no-lt);color:var(--no-dk);}
+  .fill-hint{font-size:0.75em;color:var(--tx-xs);margin-top:6px;padding-left:2px;}
+  .fill-submit{margin-top:10px;width:100%;background:linear-gradient(135deg,var(--accent),var(--accent-mid));border:none;border-radius:var(--r-lg);padding:14px;font-family:inherit;font-size:0.95em;font-weight:700;color:white;cursor:pointer;box-shadow:var(--sh-accent);transition:opacity 0.15s,transform 0.1s;}
+  .fill-submit:hover{opacity:0.9;}.fill-submit:active{transform:scale(0.98);}.fill-submit:disabled{opacity:0.45;cursor:default;}
+  .expl-box{margin:16px 24px 0;background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--accent-mid);border-radius:var(--r-lg);padding:16px 18px;font-size:0.88em;line-height:1.75;color:#374151;display:none;box-shadow:0 1px 4px rgba(0,0,0,0.07);}
+  @media(min-width:640px){.expl-box{margin:16px 32px 0;}}
+  @media(min-width:1024px){.expl-box{margin:20px 44px 0;font-size:0.9em;}}
+  .expl-box.show{display:block;animation:fadeIn 0.3s ease;}
+  .expl-box.correct-box{border-left-color:var(--ok);}.expl-box.wrong-box{border-left-color:var(--no);}
+  .expl-label{font-size:0.7em;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;font-family:'JetBrains Mono',monospace;margin-bottom:6px;}
+  .expl-label.correct{color:var(--ok);}.expl-label.wrong{color:var(--no);}
+  .next-btn{display:none;margin:16px 24px 0;width:calc(100% - 48px);background:linear-gradient(135deg,var(--accent),var(--accent-mid));border:none;border-radius:var(--r-lg);padding:16px;font-family:inherit;font-size:1em;font-weight:700;color:white;cursor:pointer;box-shadow:var(--sh-accent);transition:opacity 0.15s,transform 0.1s;}
+  .next-btn:hover{opacity:0.92;}.next-btn:active{transform:scale(0.985);}.next-btn.show{display:block;animation:fadeUp 0.3s ease;}
+  @media(min-width:640px){.next-btn{margin:16px 32px 0;width:calc(100% - 64px);}}
+  @media(min-width:1024px){.next-btn{margin:20px 44px 0;width:calc(100% - 88px);padding:17px;}}
+  .results{display:none;flex-direction:column;align-items:center;padding:48px 24px 40px;}
+  .results.show{display:flex;animation:fadeUp 0.5s ease;}
+  @media(min-width:1024px){.results{padding:60px 80px 60px;}}
+  .res-trophy{font-size:5em;margin-bottom:12px;animation:bounce 0.7s ease;}
+  .res-score{font-size:4em;font-weight:800;font-family:'JetBrains Mono',monospace;background:linear-gradient(135deg,var(--accent),#2563eb);-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1;margin-bottom:6px;}
+  .res-msg{font-size:0.95em;color:var(--tx-sm);margin-bottom:28px;font-weight:500;}
+  .res-badge-wrap{background:#fffbeb;border:1.5px solid #fde68a;border-radius:var(--r-lg);padding:14px 18px;width:100%;display:flex;align-items:center;gap:14px;margin-bottom:14px;}
+  .res-stats{width:100%;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:4px 18px;margin-bottom:24px;}
+  .res-stat-row{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid #f3f4f6;font-size:0.88em;color:#374151;}
+  .res-stat-row:last-child{border-bottom:none;}
+  .res-correct{color:var(--ok);font-weight:700;font-family:'JetBrains Mono',monospace;}
+  .res-wrong{color:var(--no);font-weight:700;font-family:'JetBrains Mono',monospace;}
+  .res-mono{font-family:'JetBrains Mono',monospace;font-weight:600;}
+  .res-actions{display:flex;flex-direction:column;gap:10px;width:100%;}
+  .res-primary{background:linear-gradient(135deg,var(--accent),var(--accent-mid));border:none;border-radius:var(--r-lg);padding:16px;font-family:inherit;font-size:1em;font-weight:700;color:white;cursor:pointer;text-align:center;text-decoration:none;display:block;box-shadow:var(--sh-accent);transition:opacity 0.15s;}
+  .res-primary:hover{opacity:0.9;}
+  .res-secondary{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--r-lg);padding:14px;font-family:inherit;font-size:0.92em;font-weight:600;color:var(--tx-sm);cursor:pointer;text-align:center;text-decoration:none;display:block;transition:border-color 0.15s,background 0.15s;}
+  .res-secondary:hover{border-color:var(--border-md);background:var(--surface2);}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+  @keyframes bounce{0%,100%{transform:scale(1)}40%{transform:scale(1.2)}70%{transform:scale(0.95)}}
+  @keyframes shake{0%,100%{transform:translateX(0)}20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}
+  .shake{animation:shake 0.35s ease;}
+  @media(max-width:400px){body{font-size:15px;}.q-wrap{padding:20px 16px 12px;}.opt-list,.tf-grid,.fill-wrap{padding:0 16px;}.expl-box{margin:12px 16px 0;}.next-btn{margin:12px 16px 0;width:calc(100% - 32px);}}
+  body.embed-mode{background:var(--bg)!important;font-size:15.5px;}
+  body.embed-mode .quiz-shell{max-width:100%!important;width:100%!important;margin:0!important;border-radius:0!important;box-shadow:none!important;flex-direction:column!important;min-height:unset!important;}
+  body.embed-mode .quiz-sidebar{display:none!important;}
+  body.embed-mode .quiz-main{width:100%!important;max-width:100%!important;min-height:unset!important;padding-bottom:24px!important;}
+  body.embed-mode .q-wrap{padding:20px 22px 14px!important;}
+  body.embed-mode .opt-list{padding:0 22px!important;}
+  body.embed-mode .tf-grid{padding:0 22px!important;}
+  body.embed-mode .fill-wrap{padding:0 22px!important;}
+  body.embed-mode .expl-box{margin:12px 22px 0!important;}
+  body.embed-mode .next-btn{margin:12px 22px 0!important;width:calc(100% - 44px)!important;}
+  body.embed-mode .results{padding:32px 22px 24px!important;}
+</style>
+</head>
+<body>
+<div class="quiz-shell">
+  <aside class="quiz-sidebar">
+    <div class="mobile-header">
+      <a class="mobile-back" href="../index.html">← Dashboard</a>
+      <div class="mobile-counter">
+        <div class="mobile-count-num" id="mob-count">Q 1 of 20</div>
+        <div class="mobile-count-sub">Lesson 12.1 — Overview — The Two Varieties and Their Relationship</div>
+      </div>
+      <button class="mute-btn" id="mb" onclick="tM()">🔊</button>
+    </div>
+    <div class="top-prog"><div class="top-prog-fill" id="mob-bar" style="width:0%"></div></div>
+    <div class="sb-top">
+      <a class="sb-back" href="../index.html">← Dashboard</a>
+      <div class="sb-lesson-tag">Lesson 12.1</div>
+      <div class="sb-title">Overview — The Two Varieties and Their Relationship</div>
+    </div>
+    <div class="sb-progress">
+      <div class="sb-prog-row"><span class="sb-prog-label">Progress</span><span class="sb-prog-count" id="sb-count">0 / 20</span></div>
+      <div class="sb-prog-track"><div class="sb-prog-fill" id="sb-bar" style="width:0%"></div></div>
+    </div>
+    <div class="sb-dots"><div class="sb-dots-label">Questions</div><div class="sb-dots-grid" id="sb-dots-grid"></div></div>
+    <div class="sb-bottom">
+      <div class="sb-score-wrap"><div class="sb-score-num" id="sb-score">0%</div><div class="sb-score-label">Current score</div></div>
+      <button class="mute-btn" id="mb2" onclick="tM()">🔊</button>
+    </div>
+  </aside>
+  <main class="quiz-main">
+    <div id="qa"></div>
+    <div class="results" id="rs"></div>
+  </main>
+</div>
+<script>
+(function(){var p=new URLSearchParams(window.location.search);if(p.get("embed")==="1")document.body.classList.add("embed-mode");})();
+var Q=[{"type": "mcq", "q": "Which variety of English is generally considered the historical origin from which American English developed?", "options": ["Australian English", "British English", "Canadian English", "South African English"], "answer": 1, "explanation": "BRITISH ENGLISH (BrE) is the historical origin. American English (AmE) developed from British English brought to North America by settlers from the 17th century. Over time, AmE developed independently, preserving some older British features while also innovating. Neither variety is 'more correct' — both are complete, prestigious standards."}, {"type": "mcq", "q": "Which statement best describes the relationship between British and American English?", "options": ["They are completely different languages", "They are mutually intelligible varieties of the same language with systematic differences in spelling, vocabulary, grammar, and pronunciation", "American English is simply incorrect British English", "British English is old-fashioned; American English is modern"], "answer": 1, "explanation": "BrE and AmE are MUTUALLY INTELLIGIBLE VARIETIES — speakers of each can generally understand the other. They share the same grammatical core but differ systematically in spelling (colour/color), vocabulary (lift/elevator), grammar (have got/have), and pronunciation. Neither is superior; both are fully developed standard varieties."}, {"type": "tf", "q": "American English has preserved some features that were used in 17th-century British English but are now considered archaic in Britain.", "answer": true, "explanation": "True. AmE PRESERVES OLDER FEATURES: 'fall' (autumn — used in Britain until 18th century), 'gotten' (past participle of 'get' — used in older British English), 'I will' for first person (British English traditionally used 'shall'). American English can seem old-fashioned to British ears for historical reasons."}, {"type": "mcq", "q": "Which global institution is most associated with setting standards for British English?", "options": ["The Oxford English Dictionary and BBC English", "The Webster's Dictionary only", "The American Heritage Dictionary", "The French Academy"], "answer": 0, "explanation": "BRITISH ENGLISH STANDARDS: The OXFORD ENGLISH DICTIONARY (OED) is the most authoritative reference. BBC English has long been a pronunciation model (Received Pronunciation / RP). Style guides (e.g., Oxford Style Guide) and examination bodies (Cambridge, IELTS) also establish written standards."}, {"type": "mcq", "q": "Noah Webster (1758–1843) played a key role in:", "options": ["Establishing British English spelling standards", "STANDARDISING AMERICAN ENGLISH spelling — his 1828 dictionary simplified many British spellings (colour→color, honour→honor, programme→program)", "Inventing the English language", "Promoting British English in America"], "answer": 1, "explanation": "NOAH WEBSTER standardised AMERICAN ENGLISH SPELLING. His 'An American Dictionary of the English Language' (1828) systematically reformed spellings: -our → -or (colour/color), -re → -er (centre/center), -ise → -ize (standardise/standardize), double letters → single (travelled/traveled). His reforms reflected American national identity."}, {"type": "tf", "q": "Neither British nor American English is inherently 'more correct' — both are complete, standardised varieties of English.", "answer": true, "explanation": "True. LANGUAGE EQUALITY: Both BrE and AmE are fully developed, prestigious, standardised varieties. Calling AmE 'wrong' British or BrE 'old-fashioned' reflects social attitudes, not linguistic fact. Both have their own norms, literature, and international influence. Learners should choose one variety and be consistent."}, {"type": "mcq", "q": "What is the approximate percentage of the world's English speakers who use American English as their primary variety?", "options": ["Less than 10%", "About 20%", "About 65–70% (if we include international English heavily influenced by AmE)", "100%"], "answer": 2, "explanation": "AMERICAN ENGLISH DOMINANCE: AmE is the variety most heard globally through: Hollywood films, American TV, technology (Silicon Valley), and international media. It influences global English enormously. While BrE remains prestigious in academia and many international contexts, AmE has the largest global footprint."}, {"type": "mcq", "q": "'English is a global language.' What does this mean for BrE/AmE differences?", "options": ["Only one variety should be used worldwide", "Learners should be aware that BOTH varieties are valid internationally — choosing one and being consistent is more important than preferring either", "AmE has replaced BrE globally", "BrE is the only correct international standard"], "answer": 1, "explanation": "GLOBAL ENGLISH REALITY: Both BrE and AmE are internationally accepted. International English exams (IELTS, TOEFL, Cambridge) accept both. Learners are advised to: (1) choose ONE variety; (2) be CONSISTENT within a text; (3) understand the other variety for comprehension. Neither variety is 'more international.'"}, {"type": "mcq", "q": "Which of the following is a feature that BOTH British AND American English share?", "options": ["Identical spelling for all words", "The same grammar, sentence structure, and core vocabulary — differences are at the margins, not the core", "Identical punctuation rules", "Identical pronunciation"], "answer": 1, "explanation": "SHARED CORE: Despite differences, BrE and AmE share: (1) IDENTICAL GRAMMAR for most structures; (2) SHARED CORE VOCABULARY (the vast majority of words); (3) SAME WRITING SYSTEMS; (4) MUTUAL INTELLIGIBILITY. The differences — while important — are at the margins of the system, not the core."}, {"type": "mcq", "q": "Why is it important for English language learners to understand the differences between BrE and AmE?", "options": ["To choose which is correct", "To AVOID CONFUSION when reading different texts, to know which variety to use in different contexts (British exams, American academic papers), and to communicate with speakers of both varieties", "Because they are totally different languages", "Only for advanced learners"], "answer": 1, "explanation": "PRACTICAL IMPORTANCE: (1) EXAMINATION CONTEXT: IELTS/Cambridge = BrE preferred; TOEFL = AmE. (2) PROFESSIONAL CONTEXT: UK company = BrE; US company = AmE. (3) COMPREHENSION: reading texts from both varieties. (4) CONSISTENCY: choosing one variety to avoid mixing. Understanding both enables full global communication."}, {"type": "mcq", "q": "'Received Pronunciation' (RP) is:", "options": ["The pronunciation used by all British people", "The prestige accent historically associated with educated Southern British English — the BrE 'standard' for broadcasting and teaching", "The American standard pronunciation", "The Australian standard"], "answer": 1, "explanation": "RECEIVED PRONUNCIATION (RP): the historically prestigious British accent associated with public schools, the BBC, and upper-class speech. It is non-regional (doesn't reveal where in Britain the speaker is from). 'General American' is the equivalent AmE prestige accent. RP is the model for most BrE pronunciation teaching."}, {"type": "tf", "q": "Indian English, Nigerian English, and Australian English are all valid World Englishes, not 'incorrect' versions of BrE or AmE.", "answer": true, "explanation": "True. WORLD ENGLISHES: Kachru's 'Three Circles' framework recognises Inner Circle (BrE, AmE, AusE, etc.), Outer Circle (Indian English, Nigerian English, etc.), and Expanding Circle (English as foreign language). All inner and outer circle varieties are LEGITIMATE, NATIVISED Englishes with their own standards."}, {"type": "mcq", "q": "Which decade saw the greatest expansion of American English influence globally?", "options": ["1800s", "1900–1930", "POST-WWII ONWARDS — American cultural, economic, and military dominance accelerated global spread of AmE through media, technology, and pop culture", "1600s"], "answer": 2, "explanation": "POST-WWII AmE EXPANSION: After 1945, American cultural products (Hollywood, rock music, TV, later internet/tech) spread AmE globally. The Cold War, Marshall Plan, and American economic dominance made AmE the language of modernity and pop culture. The internet (1990s onwards) accelerated this further."}, {"type": "mcq", "q": "When a learner writes 'I travelled to the centre of the city' and then 'I traveled to the center of the city' in the same document, what error are they making?", "options": ["Spelling error", "INCONSISTENCY — mixing BrE ('travelled', 'centre') and AmE ('traveled', 'center') in the same text. Learners should choose ONE variety and maintain it throughout", "Grammar error", "Punctuation error"], "answer": 1, "explanation": "VARIETY MIXING ERROR: Using BrE spelling in one sentence and AmE in another is INCONSISTENT. Consistent variety use is important in: (1) formal writing and exams; (2) professional documents; (3) academic papers. Both varieties are correct — but mixing them signals confusion and lack of control."}, {"type": "mcq", "q": "Which of these is TRUE about BrE and AmE grammatical differences?", "options": ["They have completely different grammatical systems", "BrE and AmE grammatical differences are RELATIVELY MINOR — the same core grammar applies; differences appear mainly in tense use (present perfect vs simple past), modal verbs, and prepositions", "AmE uses no grammar", "BrE grammar is more complex"], "answer": 1, "explanation": "GRAMMATICAL SIMILARITY: The vast majority of BrE and AmE grammar is IDENTICAL. Key differences are: (1) PRESENT PERFECT vs SIMPLE PAST ('I've just eaten' BrE / 'I just ate' AmE); (2) MODAL: 'shall' (BrE) vs 'will' (AmE); (3) PREPOSITIONS: 'at the weekend' (BrE) vs 'on the weekend' (AmE). Minor but important."}, {"type": "mcq", "q": "The term 'Mid-Atlantic English' refers to:", "options": ["English spoken in the Atlantic Ocean", "A HYBRID VARIETY blending BrE and AmE features — used by some international speakers and professionals who interact with both British and American contexts", "Australian English", "South African English"], "answer": 1, "explanation": "MID-ATLANTIC ENGLISH: a blend of BrE and AmE features used by some internationally mobile professionals, actors, and global organizations. It is neither fully BrE nor AmE but draws on both. While not a standardised variety, it reflects the reality of globalisation — speakers naturally blend features from exposure to both varieties."}, {"type": "tf", "q": "The spelling reform movement championed by George Bernard Shaw advocated for greater simplification of English spelling.", "answer": true, "explanation": "True. SPELLING REFORM: George Bernard Shaw (and others) advocated for more phonetically consistent English spelling. Shaw left money in his will for the development of a new alphabet (the Shavian alphabet). While widespread reform hasn't occurred, American English's spelling simplifications (color, favor) can be seen as partial moves in this direction."}, {"type": "mcq", "q": "'The two varieties are different enough that speakers of one cannot understand the other.' Is this statement accurate?", "options": ["Yes — they are mutually unintelligible", "No — BrE and AmE are MUTUALLY INTELLIGIBLE; most differences are minor and context usually makes meaning clear. Some slang and vocabulary may cause confusion, but core communication is not impeded", "Only in formal contexts", "Only in informal speech"], "answer": 1, "explanation": "MUTUAL INTELLIGIBILITY: BrE and AmE speakers understand each other perfectly well in most contexts. Vocabulary differences ('lift/elevator') may occasionally cause brief confusion, but core communication is never impeded. Films, TV, and international media ensure both varieties are widely understood globally."}, {"type": "mcq", "q": "Which best describes the current global status of English?", "options": ["English is declining as a global language", "English serves as the world's primary LINGUA FRANCA — used between speakers of different L1s — with both BrE and AmE serving as reference standards", "Only BrE is internationally recognised", "Only AmE is internationally recognised"], "answer": 1, "explanation": "ENGLISH AS LINGUA FRANCA (ELF): English is the world's most widely used language for international communication. Both BrE and AmE (and other varieties) contribute to this global role. ELF research shows that non-native speakers outnumber native speakers — English belongs to all its users, not just British or American speakers."}];
+var SKEY="m12_l1",NEXT="q12-2.html",HUB="../index.html";
+var cur=0,cor=0,answered=false,st=Date.now(),ac=null,dotStates=[];
+function gAC(){if(!ac)ac=new(window.AudioContext||window.webkitAudioContext)();return ac;}
+function gD(){try{return JSON.parse(localStorage.getItem('grammar_app')||'{}');}catch(e){return{};}}
+function sD(d){try{localStorage.setItem('grammar_app',JSON.stringify(d));}catch(e){}}
+function tM(){var d=gD();d.muted=!d.muted;sD(d);var ic=d.muted?'🔇':'🔊';document.getElementById('mb').textContent=ic;document.getElementById('mb2').textContent=ic;}
+function pT(t){var d=gD();if(d.muted)return;try{var c=gAC();if(c.state==='suspended')c.resume();if(t==='c')pC(c);else if(t==='w')pW(c);else pF(c);}catch(e){}}
+function pC(c){[[523,0],[659,.1],[784,.2]].forEach(function(a){var o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);o.frequency.value=a[0];o.type='sine';var t=c.currentTime+a[1];g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.18,t+.02);g.gain.exponentialRampToValueAtTime(.001,t+.3);o.start(t);o.stop(t+.3);});}
+function pW(c){[[240,0],[200,.1]].forEach(function(a){var o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);o.frequency.value=a[0];o.type='sawtooth';var t=c.currentTime+a[1];g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.08,t+.02);g.gain.exponentialRampToValueAtTime(.001,t+.25);o.start(t);o.stop(t+.25);});}
+function pF(c){[[523,0],[659,.15],[784,.3],[1047,.45]].forEach(function(a){var o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);o.frequency.value=a[0];o.type='sine';var t=c.currentTime+a[1];g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.2,t+.03);g.gain.exponentialRampToValueAtTime(.001,t+.5);o.start(t);o.stop(t+.5);});}
+function updProgress(){var pct=Math.round(cur/Q.length*100);document.getElementById('mob-bar').style.width=pct+'%';document.getElementById('sb-bar').style.width=pct+'%';document.getElementById('mob-count').textContent='Q '+(cur+1)+' of '+Q.length;document.getElementById('sb-count').textContent=cur+' / '+Q.length;var sp=cur>0?Math.round(cor/cur*100):0;document.getElementById('sb-score').textContent=cur>0?sp+'%':'—';updDots();}
+function updDots(){var grid=document.getElementById('sb-dots-grid');if(!grid)return;var html='';for(var i=0;i<Q.length;i++){var cls='sb-dot '+(i===cur?'active':(dotStates[i]||''));html+='<div class="'+cls+'">'+(i+1)+'</div>';}grid.innerHTML=html;}
+function rQ(){updProgress();var q=Q[cur];answered=false;var labels={mcq:'Multiple Choice',tf:'True or False',fill:'Fill in the Blank'};var lbl=labels[q.type]||'Question';var opts='';
+if(q.type==='mcq'){opts='<div class="opt-list">'+q.options.map(function(o,i){return '<button class="opt-btn" onclick="selOpt('+i+')" data-i="'+i+'"><div class="opt-key">'+String.fromCharCode(65+i)+'</div><div class="opt-text">'+o+'</div><div class="opt-icon">'+(i===q.answer?'✓':'✗')+'</div></button>';}).join('')+'</div>';}
+else if(q.type==='tf'){opts='<div class="tf-grid"><button class="opt-btn" onclick="selTF(true)" data-v="true"><div class="opt-key">T</div><div class="opt-text">True</div><div class="opt-icon">'+(q.answer?'✓':'✗')+'</div></button><button class="opt-btn" onclick="selTF(false)" data-v="false"><div class="opt-key">F</div><div class="opt-text">False</div><div class="opt-icon">'+(!q.answer?'✓':'✗')+'</div></button></div>';}
+else{opts='<div class="fill-wrap"><input class="fill-input" id="fi" type="text" placeholder="Type your answer..." autocomplete="off" autocapitalize="none" spellcheck="false" onkeydown="if(event.keyCode===13)subFill()">'+(q.hint?'<div class="fill-hint">💡 '+q.hint+'</div>':'')+'<button class="fill-submit" id="fsb" onclick="subFill()">Check Answer</button></div>';}
+document.getElementById('qa').innerHTML='<div class="q-wrap" style="animation:fadeUp .3s ease"><div class="q-type-badge">'+lbl+'</div><div class="q-text">'+q.q+'</div></div>'+opts+'<div class="expl-box" id="eb"></div><button class="next-btn" id="nb" onclick="nextQ()">'+(cur+1<Q.length?'Next Question →':'See Results 🎯')+'</button>';
+if(q.type==='fill'){setTimeout(function(){var e=document.getElementById('fi');if(e)e.focus();},150);}
+var d=gD();var ic=d.muted?'🔇':'🔊';document.getElementById('mb').textContent=ic;document.getElementById('mb2').textContent=ic;}
+function selOpt(i){if(answered)return;answered=true;var q=Q[cur];var ok=i===q.answer;if(ok)cor++;pT(ok?'c':'w');dotStates[cur]=ok?'done-ok':'done-no';document.querySelectorAll('.opt-btn').forEach(function(b,j){if(j===q.answer)b.classList.add('correct');else if(j===i&&!ok){b.classList.add('wrong');b.classList.add('shake');}else b.classList.add('dimmed');b.disabled=true;});showExpl(ok,q.explanation);document.getElementById('nb').classList.add('show');updDots();}
+function selTF(v){if(answered)return;answered=true;var q=Q[cur];var ok=v===q.answer;if(ok)cor++;pT(ok?'c':'w');dotStates[cur]=ok?'done-ok':'done-no';document.querySelectorAll('.opt-btn').forEach(function(b){var bv=b.dataset.v==='true';if(bv===q.answer)b.classList.add('correct');else if(bv===v&&!ok)b.classList.add('wrong');else b.classList.add('dimmed');b.disabled=true;});showExpl(ok,q.explanation);document.getElementById('nb').classList.add('show');updDots();}
+function subFill(){if(answered)return;var inp=document.getElementById('fi');if(!inp||!inp.value.trim())return;answered=true;var q=Q[cur];var v=inp.value.trim().toLowerCase();var ans=(q.answer||'').toLowerCase().split('|');var ok=ans.some(function(a){return v===a.trim();});if(ok)cor++;pT(ok?'c':'w');dotStates[cur]=ok?'done-ok':'done-no';inp.classList.add(ok?'correct':'wrong');inp.disabled=true;document.getElementById('fsb').disabled=true;if(!ok){var cd=document.createElement('div');cd.style.cssText='font-size:.82em;color:var(--ok);margin-top:8px;font-weight:600;';cd.textContent='✓ Answer: '+q.answer;inp.parentNode.insertBefore(cd,document.getElementById('fsb'));inp.classList.add('shake');}showExpl(ok,q.explanation);document.getElementById('nb').classList.add('show');updDots();}
+function showExpl(ok,text){var b=document.getElementById('eb');b.className='expl-box '+(ok?'correct-box':'wrong-box');b.innerHTML='<div class="expl-label '+(ok?'correct':'wrong')+'">'+(ok?'✓ Correct!':'✗ Incorrect')+'</div><div>'+text+'</div>';b.classList.add('show');setTimeout(function(){b.scrollIntoView({behavior:'smooth',block:'nearest'});},120);}
+function nextQ(){cur++;if(cur>=Q.length)showResults();else{rQ();window.scrollTo({top:0,behavior:'smooth'});var m=document.querySelector('.quiz-main');if(m)m.scrollTo({top:0,behavior:'smooth'});}}
+function showResults(){pT('complete');document.getElementById('qa').style.display='none';document.getElementById('mob-count').textContent='Complete!';document.getElementById('sb-count').textContent='20 / 20';document.getElementById('sb-bar').style.width='100%';document.getElementById('mob-bar').style.width='100%';
+var tot=Q.length,pct=Math.round(cor/tot*100),tt=Math.round((Date.now()-st)/1000);document.getElementById('sb-score').textContent=pct+'%';dotStates=dotStates.map(function(d){return d||'done-ok';});updDots();
+var d=gD();if(!d.progress)d.progress={};var prev=d.progress[SKEY];d.progress[SKEY]=Math.max(pct,prev||0);if(!d.badges)d.badges=[];var nb2=[];
+if(prev===undefined&&!d.badges.includes('first_quiz')){d.badges.push('first_quiz');nb2.push('⭐ First Step');}
+if(pct===100&&!d.badges.includes('perfect_score')){d.badges.push('perfect_score');nb2.push('💯 Perfect Score!');}
+if(prev!==undefined&&pct>prev&&!d.badges.includes('comeback')){d.badges.push('comeback');nb2.push('💪 Comeback!');}
+if(tt<120&&!d.badges.includes('speed_demon')){d.badges.push('speed_demon');nb2.push('⚡ Speed Run!');}
+sD(d);
+var trophy=pct>=90?'🏆':pct>=70?'🥇':pct>=50?'🥈':'📚';var msg=pct>=90?'Outstanding work!':pct>=70?'Great job!':pct>=50?'Good effort!':'Keep practising!';
+var bH=nb2.map(function(n){return '<div class="res-badge-wrap"><span style="font-size:1.8em">'+n.split(' ')[0]+'</span><div><div style="font-size:.82em;font-weight:700;color:#b45309">Badge Unlocked!</div><div style="font-size:.75em;color:#6b7280">'+n.split(' ').slice(1).join(' ')+'</div></div></div>';}).join('');
+var sc=document.getElementById('rs');
+sc.innerHTML='<div class="res-trophy">'+trophy+'</div><div class="res-score">'+pct+'%</div><div class="res-msg">'+msg+' — '+cor+'/'+tot+' correct</div>'+bH+'<div class="res-stats"><div class="res-stat-row"><span>Correct</span><span class="res-correct">✓ '+cor+'</span></div><div class="res-stat-row"><span>Incorrect</span><span class="res-wrong">✗ '+(tot-cor)+'</span></div><div class="res-stat-row"><span>Score</span><span class="res-mono">'+pct+'%</span></div><div class="res-stat-row"><span>Time</span><span class="res-mono">'+Math.floor(tt/60)+'m '+tt%60+'s</span></div></div><div class="res-actions"><a class="res-primary" href="'+NEXT+'">Next Lesson →</a><button class="res-secondary" onclick="retryQuiz()">↺ Retry this quiz</button><a class="res-secondary" href="'+HUB+'">← Back to Dashboard</a></div>';
+sc.classList.add('show');window.scrollTo({top:0,behavior:'smooth'});}
+function retryQuiz(){cur=0;cor=0;answered=false;st=Date.now();dotStates=[];document.getElementById('rs').classList.remove('show');document.getElementById('qa').style.display='';rQ();window.scrollTo({top:0,behavior:'smooth'});}
+updDots();rQ();
+</script>
+</body>
+</html>
